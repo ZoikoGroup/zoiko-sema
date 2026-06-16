@@ -133,20 +133,20 @@ export default function HeroSection({
 
             {/* Badge */}
             <span className="anim-1 inline-flex items-center gap-2 w-fit mb-6 px-4 py-1.5 rounded-full border bg-white/80 backdrop-blur-sm text-sm font-medium cursor-default transition-all duration-300 hover:-translate-y-px hover:shadow-md"
-              style={{ borderColor: "#c7d2fe", color: "#474787" }}>
+              style={{ borderColor: "#474688", color: "#474787" }}>
               <span aria-hidden="true" className="badge-dot w-2 h-2 rounded-full flex-shrink-0" style={{ background: "#474787" }} />
               Zoiko Sema — Intelligent Communication
             </span>
 
             {/* Headline */}
-            <h1 className="anim-2 font-bold leading-[1.08] tracking-tight text-gray-900 mb-5"
-              style={{ fontSize: "clamp(34px,4.2vw,56px)" }}>
+            <h1 className="anim-2 font-bold leading-[1.08] tracking-tight text-[#15131F] mb-5"
+              style={{ fontSize: "clamp(34px,4.2vw,51px)" }}>
               Where conversations
               <br />become clarity
             </h1>
 
             {/* Sub-copy */}
-            <p className="anim-3 text-[15.5px] leading-[1.75] text-gray-500 mb-8 max-w-[490px]">
+            <p className="anim-3 text-[15.5px] leading-[1.75] text-[#5C5870] mb-8 max-w-[490px]">
               Sema brings secure messaging, audio calls, video meetings, AI
               summaries and team collaboration into one intelligent communication
               platform — built for businesses, teams and individuals, with a
@@ -179,7 +179,7 @@ export default function HeroSection({
             </div>
 
             {/* ── Divider ── */}
-            <div className="anim-4 w-full h-px bg-gray-200 mb-7" />
+            <div className="anim-4 w-full h-px bg-[#474688] mb-7" />
 
             {/* ── Stats with count-up ── */}
             <div ref={statsRef} aria-label="Platform statistics" className="anim-5 flex items-center gap-10">
