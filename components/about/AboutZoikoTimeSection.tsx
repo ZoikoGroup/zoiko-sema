@@ -140,7 +140,7 @@ export default function AboutZoikoTimeSection() {
 
             <h2
               className="font-bold leading-[1.1] tracking-tight text-white mb-6 max-w-[680px]"
-              style={{ fontSize: "clamp(26px,4vw,35px)" }}
+              style={{ fontSize: "clamp(26px,4vw,36px)" }}
             >
               The route from conversation intelligence to workforce truth
             </h2>
