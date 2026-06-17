@@ -346,7 +346,7 @@ export default function Footer() {
                 visible={assurance.visible}
                 delay={80}
                 items={[
-                  { label: "About Sema", href: "/about" },
+                  { label: "About Sema", href: "/about/" },
                   { label: "About Zoiko Tech", href: "/about/zoiko-tech" },
                   { label: "Careers", href: "/careers" },
                   { label: "Partners", href: "/partners" },
