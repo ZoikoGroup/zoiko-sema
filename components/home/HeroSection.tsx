@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 interface HeroSectionProps {
   heroImageUrl?: string;
@@ -39,9 +39,7 @@ export default function HeroSection({
   const countries  = useCountUp(23, 1800, statsVisible);
   const uptime     = useCountUp(999, 2000, statsVisible); // rendered as 99.9
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+
 
   // trigger count-up when stats row enters viewport
   useEffect(() => {
@@ -116,12 +114,12 @@ export default function HeroSection({
         }
       `}</style>
 
-      <section
-        ref={heroRef}
-        aria-label="Hero"
-        style={{ backgroundColor: "#ECF3FF" }}
-        className={`relative flex items-center overflow-hidden min-h-[88vh] ${mounted ? "mounted" : ""}`}
-      >
+    <section
+  ref={heroRef}
+  aria-label="Hero"
+  style={{ backgroundColor: "#ECF3FF" }}
+  className="relative flex items-center overflow-hidden min-h-[88vh] mounted"
+>
         {/* ── Blobs ── */}
         <div aria-hidden="true" className="hero-blob-1 pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full opacity-30 blur-[90px]" style={{ background: "#c7d2fe" }} />
         <div aria-hidden="true" className="hero-blob-2 pointer-events-none absolute bottom-0 right-[35%] w-[360px] h-[360px] rounded-full opacity-20 blur-[80px]" style={{ background: "#a5b4fc" }} />

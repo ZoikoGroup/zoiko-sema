@@ -1,4 +1,16 @@
-import { HeroSection, WorksForSection } from "@/components/home";
+import { 
+  HeroSection, 
+  WorksForSection, 
+  EveryConversationSection, 
+  UnderstandsSection, 
+  ZoikoTimeSection, 
+  BuiltForSection,
+  ConversationsGridSection ,
+  DesignedForTrustSection,
+  StartGrowSection,
+  PricingSection,
+  TestimonialCarouselSection
+ } from "@/components/home";
 
 export default function HomePage() {
   return (
@@ -6,7 +18,15 @@ export default function HomePage() {
       <div>
         <HeroSection heroImageUrl="/Home/banner.webp" />
         <WorksForSection />
-        {/* more sections here */}
+        <EveryConversationSection />
+        <UnderstandsSection />
+        <ZoikoTimeSection />
+        <BuiltForSection />
+        <ConversationsGridSection />
+        <DesignedForTrustSection />
+        <StartGrowSection />
+        <PricingSection />
+        <TestimonialCarouselSection />
       </div>
     </main>
   );

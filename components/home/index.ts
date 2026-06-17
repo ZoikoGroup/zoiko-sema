@@ -1,2 +1,11 @@
 export { default as HeroSection } from "./HeroSection";
 export { default as WorksForSection } from "./WorksForSection";
+export { default as EveryConversationSection } from "./EveryConversationSection";
+export { default as UnderstandsSection } from "./UnderstandsSection";
+export { default as ZoikoTimeSection } from "./ZoikoTimeSection";
+export { default as BuiltForSection } from "./BuiltForSection";
+export { default as ConversationsGridSection } from "./ConversationsGridSection";
+export { default as DesignedForTrustSection } from "./DesignedForTrustSection";
+export { default as StartGrowSection } from "./StartGrowSection";
+export { default as PricingSection } from "./PricingSection";
+export { default as TestimonialCarouselSection } from "./TestimonialCarouselSection";

@@ -118,11 +118,11 @@ export default function WorksForSection() {
           >
             <h2
               className="font-bold leading-[1.1] tracking-tight text-gray-900 mb-4"
-              style={{ fontSize: "clamp(26px,3.5vw,44px)" }}
+              style={{ fontSize: "clamp(26px,3.5vw,35px)" }}
             >
               Built for the way you work and the way your business runs
             </h2>
-            <p className="mx-auto max-w-[580px] text-[15.5px] leading-[1.75] text-gray-500">
+            <p className="mx-auto max-w-[800px] text-[15.5px] leading-[1.75] text-gray-500">
               Sema is business-first and individual-accessible. Companies get governed
               communication and operational clarity. Individuals get secure, intelligent
               calls and conversations — no business account required.
@@ -151,7 +151,7 @@ export default function WorksForSection() {
               {/* Title */}
               <h3
                 className="font-bold leading-tight text-white mb-3"
-                style={{ fontSize: "clamp(22px,2.2vw,30px)" }}
+                style={{ fontSize: "clamp(22px,2.2vw,28px)" }}
               >
                 Sema for Business
               </h3>
@@ -224,11 +224,11 @@ export default function WorksForSection() {
                 {teamsFeatures.map((row, i) => (
                   <React.Fragment key={i}>
                     <div className="flex items-center gap-2">
-                      <span className="wf-dot" style={{ background: "#c08080" }} />
+                      <span className="wf-dot" style={{ background: "#2A6BE3" }} />
                       <span className="text-[13px] leading-snug text-gray-700">{row.left}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <span className="wf-dot" style={{ background: "#c08080" }} />
+                      <span className="wf-dot" style={{ background: "#2A6BE3" }} />
                       <span className="text-[13px] leading-snug text-gray-700">{row.right}</span>
                     </div>
                   </React.Fragment>
