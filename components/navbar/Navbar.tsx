@@ -45,7 +45,7 @@ export default function Navbar() {
           {/* Desktop Buttons — UNCHANGED */}
           <div className="hidden lg:flex items-center gap-4">
             <Link
-              href="/demo"
+              href="/get-a-demo/"
               className="border border-blue-600 text-blue-600 px-8 py-3 rounded-full font-medium hover:bg-blue-50 transition"
             >
               Get a demo
@@ -120,7 +120,7 @@ export default function Navbar() {
 
               {/* CTA buttons */}
               <Link
-                href="/demo"
+                href="/get-a-demo/"
                 onClick={() => setMobileMenu(false)}
                 className="flex items-center justify-center px-5 py-3 rounded-full font-medium transition-colors duration-150"
                 style={{
