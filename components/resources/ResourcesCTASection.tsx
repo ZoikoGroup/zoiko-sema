@@ -106,7 +106,7 @@ export default function ResourcesCTASection() {
           {/* ── CTAs — stacked, full-ish width ── */}
           <div className="rc-enter-3 flex flex-col items-center gap-3 max-w-[380px] mx-auto">
             <Link
-              href="#get-demo"
+              href="/get-a-demo/"
               className="rc-btn-primary inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[15px] font-semibold w-full"
               style={{ background: "#F4F6FE", color: "#15131F" }}
             >
@@ -115,7 +115,7 @@ export default function ResourcesCTASection() {
             </Link>
 
             <Link
-              href="#start-free"
+              href="/start-free/"
               className="rc-btn-secondary inline-flex items-center justify-center rounded-full border px-7 py-3.5 text-[15px] font-medium text-white w-full"
               style={{ borderColor: "rgba(255,255,255,0.4)", background: "transparent" }}
             >

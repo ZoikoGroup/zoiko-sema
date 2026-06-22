@@ -344,7 +344,7 @@ export default function StartFreeHeroSection() {
               <Link href="/pricing" className="sf-link text-[13.5px] font-medium text-white">
                 Compare plans
               </Link>
-              <Link href="/get-demo" className="sf-link text-[13.5px] font-medium text-white">
+              <Link href="/get-a-demo/" className="sf-link text-[13.5px] font-medium text-white">
                 Get a demo instead
               </Link>
             </div>

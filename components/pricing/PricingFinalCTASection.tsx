@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 /**
  * FinalCTASection
  * Closing CTA band — solid indigo background, centered heading + copy,
@@ -20,13 +22,21 @@ export default function PricingFinalCTASection() {
         </p>
 
         <div className="mt-7 flex flex-col items-center gap-3">
-          <button className="w-full max-w-sm rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-[#2A2657] shadow-sm transition-all duration-200 hover:bg-slate-100 hover:shadow-md active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4B4789]">
+          {/* Get a Demo Button */}
+          <Link
+            href="/get-a-demo/"
+            className="w-full max-w-sm rounded-full bg-white px-6 py-3.5 text-center text-sm font-semibold text-[#2A2657] shadow-sm transition-all duration-200 hover:bg-slate-100 hover:shadow-md active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4B4789]"
+          >
             Get a demo
-          </button>
+          </Link>
 
-          <button className="w-full max-w-sm rounded-full border border-white/40 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:border-white/70 hover:bg-white/10 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4B4789]">
+          {/* Start Free Button */}
+          <Link
+            href="/start-free/"
+            className="w-full max-w-sm rounded-full border border-white/40 px-6 py-3.5 text-center text-sm font-semibold text-white transition-all duration-200 hover:border-white/70 hover:bg-white/10 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4B4789]"
+          >
             Start free
-          </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -154,7 +154,7 @@ export default function HeroSection({
             {/* CTAs */}
             <div className="anim-4 flex flex-wrap items-center gap-3 mb-7">
               {/* Primary */}
-              <a href="#start"
+              <a href="/start-free/"
                 className="btn-primary group relative inline-flex items-center gap-2 overflow-hidden rounded-full px-7 py-3.5 text-[15px] font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:opacity-90 active:translate-y-0"
                 style={{ background: "#474787" }}>
                 <span aria-hidden="true" className="shimmer-line" />
@@ -163,7 +163,7 @@ export default function HeroSection({
               </a>
 
               {/* Secondary */}
-              <a href="#demo"
+              <a href="/get-a-demo/"
                 className="group inline-flex items-center gap-2.5 rounded-full border border-gray-300 bg-white/90 backdrop-blur-sm px-6 py-3.5 text-[15px] font-medium text-gray-700 transition-all duration-200 hover:border-gray-400 hover:bg-white hover:-translate-y-0.5 hover:shadow-md active:translate-y-0">
                 <span aria-hidden="true"
                   className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full text-white transition-all duration-200 group-hover:scale-110"

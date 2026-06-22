@@ -119,7 +119,7 @@ export default function UseCasesHeroSection() {
             </a>
 
             <a
-              href="#demo"
+              href="/get-a-demo/"
               className="uc-btn-s inline-flex items-center gap-2.5 rounded-full border border-gray-300 bg-white/90 backdrop-blur-sm px-6 py-3.5 text-[15px] font-medium text-gray-700"
             >
               <span

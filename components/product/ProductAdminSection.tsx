@@ -178,7 +178,7 @@ export default function ProductAdminSection({
             style={{ animationDelay: "0.08s" }}
           >
             <a
-              href="#demo"
+              href="/get-a-demo/"
               className="pa-btn-p inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-[15px] font-semibold text-white"
               style={{ background: "#474787" }}
             >

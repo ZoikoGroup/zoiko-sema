@@ -184,7 +184,7 @@ export default function StartGrowSection() {
                 </div>
 
                 <a
-                  href="#start-free"
+                  href="/start-free/"
                   className="sg-btn sg-btn-light inline-flex items-center justify-center rounded-full px-7 py-4 text-[15px] font-semibold text-white"
                   style={{ background: "#474787" }}
                 >

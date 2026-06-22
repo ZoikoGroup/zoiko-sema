@@ -107,7 +107,7 @@ export default function SolutionsCTASection() {
           {/* ── CTAs ── */}
           <div className="sc-enter-3 flex flex-wrap items-center justify-center gap-4 mb-7">
             <Link
-              href="#start-free"
+              href="/start-free/"
               className="sc-btn-primary inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-[15px] font-semibold"
               style={{ background: "#F4F6FE", color: "#15131F" }}
             >
@@ -116,7 +116,7 @@ export default function SolutionsCTASection() {
             </Link>
 
             <Link
-              href="#demo"
+              href="/get-a-demo/"
               className="sc-btn-secondary inline-flex items-center gap-2.5 rounded-full border px-6 py-3.5 text-[15px] font-medium text-white"
               style={{ borderColor: "rgba(255,255,255,0.4)", background: "transparent" }}
             >

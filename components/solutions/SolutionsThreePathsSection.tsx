@@ -29,7 +29,7 @@ const paths: PathCard[] = [
     desc: "Some people use Sema for personal communication and never want it to become a work tool. That is a legitimate use case. Sema supports secure messaging, audio calls, video calls and AI-assisted memory for individuals.",
     steps: [{ label: "Solo" }, { label: "Solo" }],
     cta: "Start free",
-    href: "#start-free-solo",
+    href: "#/start-free/",
     primary: false,
   },
   {
@@ -40,7 +40,7 @@ const paths: PathCard[] = [
     desc: "One person tries Sema, brings it to colleagues, a team workspace forms and the organization later adopts more structure. The natural product-led growth path — without forced upgrades along the way.",
     steps: [{ label: "Solo" }, { label: "Team" }, { label: "Business" }],
     cta: "Start free",
-    href: "#start-free-grow",
+    href: "/start-free/",
     primary: false,
   },
   {
@@ -51,7 +51,7 @@ const paths: PathCard[] = [
     desc: "Some organizations want top-down deployment, security review, governance, compliance planning and ZoikoTime integration design from day one. Sema is built to be deployed at scale when that's the right fit.",
     steps: [{ label: "Business" }, { label: "Org-wide" }, { label: "+ ZoikoTime", highlighted: true }],
     cta: "Get a demo",
-    href: "#get-demo-business",
+    href: "/get-a-demo/",
     primary: true,
   },
 ];

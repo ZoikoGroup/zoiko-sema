@@ -298,7 +298,7 @@ export default function TestimonialCarouselSection() {
 
             <div className="flex flex-wrap justify-center items-center gap-3">
               <a
-                href="#start-free"
+                href="/start-free/"
                 className="tc-btn inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[14.5px] font-semibold text-white"
                 style={{ background: "#474787" }}
               >

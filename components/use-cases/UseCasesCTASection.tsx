@@ -108,7 +108,7 @@ export default function UseCasesCTASection() {
           {/* ── CTAs ── */}
           <div className="uc-enter-3 flex flex-wrap items-center justify-center gap-4">
             <Link
-              href="#start-free"
+              href="/start-free/"
               className="uc-btn-primary inline-flex items-center gap-2 rounded-full px-20 py-3.5 text-[15px] font-semibold"
               style={{ background: "#F4F6FE", color: "#15131F" }}
             >
@@ -117,7 +117,7 @@ export default function UseCasesCTASection() {
             </Link>
 
             <Link
-              href="#demo"
+              href="/get-a-demo/"
               className="uc-btn-secondary inline-flex items-center gap-2.5 rounded-full border px-20 py-3 text-[15px] font-medium text-white"
               style={{ borderColor: "rgba(255,255,255,0.4)", background: "transparent" }}
             >

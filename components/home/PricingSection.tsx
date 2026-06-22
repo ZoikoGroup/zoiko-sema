@@ -26,7 +26,7 @@ const plans: Plan[] = [
       "Mobile + web access",
     ],
     cta: "Start free",
-    href: "#start-free",
+    href: "/start-free/",
     popular: false,
   },
   {
@@ -89,7 +89,7 @@ const plans: Plan[] = [
       "ZoikoTime design",
     ],
     cta: "Get a demo",
-    href: "#get-demo",
+    href: "/get-a-demo/",
     popular: false,
   },
 ];

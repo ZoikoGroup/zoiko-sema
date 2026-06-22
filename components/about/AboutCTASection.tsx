@@ -136,7 +136,7 @@ export default function AboutCTASection() {
           {/* ── CTAs ── */}
           <div className="atc-anim-3 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="#start-free"
+              href="/start-free/"
               className="atc-btn-primary inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-[15px] font-semibold"
               style={{ background: "#F4F6FE", color: "#15131F" }}
             >
@@ -145,7 +145,7 @@ export default function AboutCTASection() {
             </a>
 
             <a
-              href="#demo"
+              href="/get-a-demo/"
               className="atc-btn-secondary inline-flex items-center gap-2.5 rounded-full border px-6 py-3.5 text-[15px] font-medium text-white"
               style={{ borderColor: "rgba(255,255,255,0.25)", background: "rgba(255,255,255,0.06)" }}
             >

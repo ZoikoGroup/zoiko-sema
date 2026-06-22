@@ -48,7 +48,7 @@ const plans: Plan[] = [
       { label: "Help center support" },
     ],
     cta: "Start free",
-    href: "#start-free",
+    href: "/start-free/",
   },
   {
     name: "Pro",
@@ -100,7 +100,7 @@ const plans: Plan[] = [
       { label: "99.9% SLA" },
     ],
     cta: "Get a demo",
-    href: "#get-demo",
+    href: "/get-a-demo/",
   },
 ];
 

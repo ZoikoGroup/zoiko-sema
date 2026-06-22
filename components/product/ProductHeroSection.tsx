@@ -152,7 +152,7 @@ export default function ProductHeroSection() {
           {/* CTAs */}
           <div className="ph-a5 flex flex-wrap items-center justify-center gap-3">
             <a
-              href="#start"
+              href="/start-free/"
               className="ph-btn-p inline-flex items-center gap-2 rounded-full px-20 py-3.5 text-[15px] font-semibold text-white"
               style={{ background: "#474787" }}
             >
@@ -161,7 +161,7 @@ export default function ProductHeroSection() {
             </a>
 
             <a
-              href="#demo"
+              href="/get-a-demo/"
               className="ph-btn-s inline-flex items-center gap-2.5 rounded-full border border-gray-300 bg-white/90 backdrop-blur-sm px-20 py-3.5 text-[15px] font-medium text-gray-700"
             >
               <span

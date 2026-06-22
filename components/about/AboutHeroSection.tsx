@@ -142,7 +142,7 @@ export default function AboutHeroSection() {
           <div className="ah-a4 flex flex-wrap items-center justify-center gap-3">
             {/* Primary */}
             <a
-              href="#start"
+              href="/start-free/"
               className="ah-btn-p inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-[15px] font-semibold text-white"
               style={{ background: "#474787" }}
             >
@@ -152,7 +152,7 @@ export default function AboutHeroSection() {
 
             {/* Secondary */}
             <a
-              href="#demo"
+              href="/get-a-demo/"
               className="ah-btn-s inline-flex items-center gap-2.5 rounded-full border border-gray-300 bg-white/90 backdrop-blur-sm px-6 py-3.5 text-[15px] font-medium text-gray-700"
             >
               <span
