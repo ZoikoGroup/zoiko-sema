@@ -260,7 +260,7 @@ export default function Footer() {
                   { label: "Video Meetings", href: "/video-meetings/" },
                   { label: "AI Meeting Summaries", href: "/product/ai-meetings" },
                   { label: "Channels & Spaces", href: "/channels-spaces/" },
-                  { label: "Admin Console", href: "/product/admin-console" },
+                  { label: "Admin Console", href: "/admin-console/" },
                 ]}
               />
 
