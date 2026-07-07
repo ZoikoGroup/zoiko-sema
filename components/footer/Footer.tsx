@@ -255,7 +255,7 @@ export default function Footer() {
                 delay={0}
                 items={[
                   { label: "Overview", href: "/product/overview" },
-                  { label: "Messaging", href: "/product/messaging" },
+                  { label: "Messaging", href: "/messaging/" },
                   { label: "Audio Calls", href: "/audio-calls/" },
                   { label: "Video Meetings", href: "/video-meetings/" },
                   { label: "AI Meeting Summaries", href: "/product/ai-meetings" },
