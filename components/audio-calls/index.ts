@@ -1,0 +1,9 @@
+export { default as AudioCallsHeroSection } from "./AudioCallsHeroSection";
+export { default as AudioCallsWhyCallSection } from "./AudioCallsWhyCallSection";
+export { default as AudioCallsShowcaseSection } from "./AudioCallsShowcaseSection";
+export { default as AudioCallsCoreCallingSection } from "./AudioCallsCoreCallingSection";
+export { default as AudioCallsAIIntelligenceSection } from "./AudioCallsAIIntelligenceSection";
+export { default as AudioCallsAdminControlsSection } from "./AudioCallsAdminControlsSection";
+export { default as AudioCallsZoikoTimeSection } from "./AudioCallsZoikoTimeSection";
+export { default as AudioCallsUseCasesSection } from "./AudioCallsUseCasesSection";
+export { default as AudioCallsClosingCTASection } from "./AudioCallsClosingCTASection";

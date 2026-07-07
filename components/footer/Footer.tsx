@@ -256,10 +256,10 @@ export default function Footer() {
                 items={[
                   { label: "Overview", href: "/product/overview" },
                   { label: "Messaging", href: "/product/messaging" },
-                  { label: "Audio Calls", href: "/product/audio-calls" },
-                  { label: "Video Meetings", href: "/product/video-meetings" },
+                  { label: "Audio Calls", href: "/audio-calls/" },
+                  { label: "Video Meetings", href: "/video-meetings/" },
                   { label: "AI Meeting Summaries", href: "/product/ai-meetings" },
-                  { label: "Channels & Spaces", href: "/product/channels" },
+                  { label: "Channels & Spaces", href: "/channels-spaces/" },
                   { label: "Admin Console", href: "/product/admin-console" },
                 ]}
               />
