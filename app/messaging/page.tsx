@@ -5,7 +5,9 @@ import {
     MessagingStructuredCollaborationSection,
     MessagingAiAssistedSection,
     MessagingBusinessControlsSection,
-    MessagingZoikoTimeSection
+    MessagingZoikoTimeSection,
+    MessagingUseCasesSection,
+    MessagingClosingCTASection
  } from "@/components/messaging";
 
 export default function MessagingPage() {
@@ -18,6 +20,8 @@ export default function MessagingPage() {
       <MessagingAiAssistedSection />
       <MessagingBusinessControlsSection />
       <MessagingZoikoTimeSection />
+      <MessagingUseCasesSection />
+      <MessagingClosingCTASection />
     </main>
   );
 }

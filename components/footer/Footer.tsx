@@ -254,7 +254,7 @@ export default function Footer() {
                 visible={nav.visible}
                 delay={0}
                 items={[
-                  { label: "Overview", href: "/product/overview" },
+                  { label: "Overview", href: "/product-overview/" },
                   { label: "Messaging", href: "/messaging/" },
                   { label: "Audio Calls", href: "/audio-calls/" },
                   { label: "Video Meetings", href: "/video-meetings/" },

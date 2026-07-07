@@ -5,3 +5,5 @@ export { default as MessagingStructuredCollaborationSection } from "./MessagingS
 export { default as MessagingAiAssistedSection } from "./MessagingAiAssistedSection";
 export { default as MessagingBusinessControlsSection } from "./MessagingBusinessControlsSection";
 export { default as MessagingZoikoTimeSection } from "./MessagingZoikoTimeSection";
+export { default as MessagingUseCasesSection } from "./MessagingUseCasesSection";
+export { default as MessagingClosingCTASection } from "./MessagingClosingCTASection";
