@@ -197,7 +197,7 @@ export default function ProductCarouselHeroSection() {
          
         />
 
-        <div className="relative z-10 pt-20 sm:pt-24 md:pt-28 pb-10">
+        <div className="relative z-10 pt-20 sm:pt-20 md:pt-20 pb-20">
           {/* Hero content */}
           <div
             ref={contentRef}
