@@ -27,13 +27,13 @@ function useInView(threshold = 0.15) {
 
 // Replace each `src` with your actual image URL. `href` is where the card links to.
 const carouselItems = [
-  { id: 1, src: "/Home/MEETINGS.png", alt: "Meetings", href: "#" },
-  { id: 2, src: "/Home/MESSAGING.png", alt: "Messaging", href: "#" },
-  { id: 3, src: "/Home/AI-SUMMARIES.png", alt: "AI Summaries", href: "#" },
-  { id: 4, src: "/Home/SEMA-AGENT.png", alt: "Sema Agent", href: "#" },
-  { id: 5, src: "/Home/ZOIKOTIME.png", alt: "ZoikoTime", href: "#" },
-  { id: 6, src: "/Home/CALLS.png", alt: "Calls", href: "#" },
-  { id: 7, src: "/Home/CHANNELS.png", alt: "Channels", href: "#" },
+  { id: 1, src: "/Home/meeting.png", alt: "Meetings", href: "#" },
+  { id: 2, src: "/Home/Meeting-1.png", alt: "Messaging", href: "#" },
+  { id: 3, src: "/Home/Meeting-2.png", alt: "AI Summaries", href: "#" },
+  { id: 4, src: "/Home/Meeting-3.png", alt: "Sema Agent", href: "#" },
+  { id: 5, src: "/Home/Meeting-4.png", alt: "ZoikoTime", href: "#" },
+  { id: 6, src: "/Home/Meeting-5.png", alt: "Calls", href: "#" },
+  { id: 7, src: "/Home/Meeting-6.png", alt: "Channels", href: "#" },
 ];
 
 // Duplicated once so the marquee loop is seamless — never edit this directly,
@@ -139,7 +139,6 @@ export default function ProductCarouselHeroSection() {
         }
         .pch-card:hover {
           transform: translateY(-10px);
-          box-shadow: 0 24px 48px rgba(0,0,0,0.45);
           border-color: rgba(255,255,255,0.2);
         }
 
@@ -273,15 +272,15 @@ export default function ProductCarouselHeroSection() {
               onMouseEnter={() => setDotsPaused(true)}
               onMouseLeave={() => setDotsPaused(false)}
             >
-              <div className="pch-marquee-track gap-4 sm:gap-5 pl-6 sm:pl-10 md:pl-16 pt-4 pb-6">
+              <div className="pch-marquee-track gap-0 sm:gap-0 pl-6 sm:pl-10 md:pl-16 pt-4 pb-6">
                 {marqueeItems.map((item, i) => (
                   <a
                     key={`${item.id}-${i}`}
                     href={item.href}
                     className="flex-shrink-0"
-                    style={{ width: "min(78vw, 240px)" }}
+                    style={{ width: "min(100vw, 280px)" }}
                   >
-                    <div className="pch-card rounded-2xl overflow-hidden border border-white/10 shadow-[0_16px_36px_rgba(0,0,0,0.35)] bg-white/5">
+                    <div className="pch-card rounded-2xl overflow-hidden">
                       <img
                         src={item.src}
                         alt={item.alt}
