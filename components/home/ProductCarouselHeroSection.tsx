@@ -191,18 +191,15 @@ export default function ProductCarouselHeroSection() {
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div
-          className="absolute inset-0"
-         
-        />
+        <div className="absolute inset-0" />
 
-        <div className="relative z-10 pt-20 sm:pt-20 md:pt-20 pb-20">
+        <div className="relative z-10 pt-16 sm:pt-20 md:pt-20 pb-12 sm:pb-16 md:pb-20">
           {/* Hero content */}
           <div
             ref={contentRef}
-            className={`pch-hidden ${contentIn ? "pch-visible" : ""} mx-auto w-full max-w-4xl px-6 text-center`}
+            className={`pch-hidden ${contentIn ? "pch-visible" : ""} mx-auto w-full max-w-4xl px-4 sm:px-6 text-center`}
           >
-            <h1 className="text-[clamp(28px,5vw,52px)] font-extrabold leading-[1.15] tracking-tight text-white mb-5">
+            <h1 className="text-[clamp(26px,7vw,52px)] font-extrabold leading-[1.18] tracking-tight text-white mb-4 sm:mb-5">
               Governed communications that turn conversations{" "}
               <span
                 style={{
@@ -216,15 +213,15 @@ export default function ProductCarouselHeroSection() {
               </span>
             </h1>
 
-            <p className="mx-auto max-w-[620px] text-[15px] leading-[1.75] text-[#A9AFC9] mb-9">
+            <p className="mx-auto max-w-[92%] sm:max-w-[620px] text-[13.5px] sm:text-[15px] leading-[1.7] sm:leading-[1.75] text-[#A9AFC9] mb-7 sm:mb-9">
               One secure platform for meetings, messaging, calls, and agentic
               AI.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 mb-8 sm:mb-10 w-full sm:w-auto">
               <button
-                className="pch-btn-primary rounded-[10px] px-6 py-3 text-[14px] font-semibold text-white inline-flex items-center gap-2"
+                className="pch-btn-primary w-full sm:w-auto rounded-[10px] px-6 py-3 text-[13.5px] sm:text-[14px] font-semibold text-white inline-flex items-center justify-center gap-2"
                 style={{ background: "linear-gradient(90deg, #3457E8, #3457E8)" }}
               >
                 Explore products
@@ -234,11 +231,11 @@ export default function ProductCarouselHeroSection() {
                 </svg>
               </button>
 
-              <button className="pch-btn-secondary rounded-[10px] px-6 py-3 text-[14px] font-semibold text-gray-900 bg-white">
+              <button className="pch-btn-secondary w-full sm:w-auto rounded-[10px] px-6 py-3 text-[13.5px] sm:text-[14px] font-semibold text-gray-900 bg-white">
                 Find your plan
               </button>
 
-              <button className="pch-btn-ghost inline-flex items-center gap-2 text-[14px] font-semibold text-white/70 px-2 py-3">
+              <button className="pch-btn-ghost inline-flex items-center justify-center gap-2 text-[13.5px] sm:text-[14px] font-semibold text-white/70 px-2 py-3">
                 <span className="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center flex-shrink-0">
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
                     <polygon points="6 3 20 12 6 21 6 3" />
@@ -249,11 +246,11 @@ export default function ProductCarouselHeroSection() {
             </div>
 
             {/* Trust signals row */}
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-2 px-2">
               {trustSignals.map((t, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center gap-1.5 text-[12.5px] text-[#D6D9EC]"
+                  className="inline-flex items-center gap-1.5 text-[11.5px] sm:text-[12.5px] text-[#D6D9EC] whitespace-nowrap"
                 >
                   <span className="text-white/40">{t.icon}</span>
                   {t.label}
@@ -265,20 +262,19 @@ export default function ProductCarouselHeroSection() {
           {/* Carousel — continuous seamless marquee, no arrows, dots are decorative */}
           <div
             ref={carouselRef}
-            className={`pch-carousel-wrap ${carouselIn ? "pch-visible" : ""} mt-14 sm:mt-16`}
+            className={`pch-carousel-wrap ${carouselIn ? "pch-visible" : ""} mt-10 sm:mt-14 md:mt-16`}
           >
             <div
               className="pch-marquee-viewport"
               onMouseEnter={() => setDotsPaused(true)}
               onMouseLeave={() => setDotsPaused(false)}
             >
-              <div className="pch-marquee-track gap-0 sm:gap-0 pl-6 sm:pl-10 md:pl-16 pt-4 pb-6">
+              <div className="pch-marquee-track gap-0 pl-4 sm:pl-6 md:pl-10 lg:pl-16 pt-4 pb-6">
                 {marqueeItems.map((item, i) => (
                   <a
                     key={`${item.id}-${i}`}
                     href={item.href}
-                    className="flex-shrink-0"
-                    style={{ width: "min(100vw, 280px)" }}
+                    className="flex-shrink-0 w-[168px] xs:w-[190px] sm:w-[220px] md:w-[250px] lg:w-[280px]"
                   >
                     <div className="pch-card rounded-2xl overflow-hidden">
                       <img
@@ -294,7 +290,7 @@ export default function ProductCarouselHeroSection() {
             </div>
 
             {/* Dot indicator — decorative progress only, marquee never stops looping */}
-            <div className="flex items-center justify-center gap-2 mt-2">
+            <div className="flex items-center justify-center gap-2 mt-3 sm:mt-2">
               {carouselItems.map((_, i) => (
                 <span
                   key={i}
@@ -312,14 +308,14 @@ export default function ProductCarouselHeroSection() {
           </div>
 
           {/* Trust / compliance bar — pill shape, label | divider | colored badge row */}
-          <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 mt-10 sm:mt-40">
-            <div className="rounded-full border border-[#535353] bg-[#0D1130] px-6 sm:px-8 py-5 sm:py-4 flex flex-col md:flex-row items-center gap-6 md:gap-8">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 mt-10 sm:mt-16 md:mt-24 lg:mt-40">
+            <div className="rounded-[28px] sm:rounded-full border border-[#535353] bg-[#0D1130] px-5 sm:px-6 md:px-8 py-6 sm:py-5 md:py-4 flex flex-col md:flex-row items-center gap-5 sm:gap-6 md:gap-8">
               {/* Left label */}
               <div className="text-center md:text-left flex-shrink-0">
-                <p className="text-[14px] font-bold text-white mb-1 whitespace-nowrap">
+                <p className="text-[13.5px] sm:text-[14px] font-bold text-white mb-1">
                   Built for trust.
                 </p>
-                <p className="text-[12px] text-white/45 whitespace-nowrap">
+                <p className="text-[11px] sm:text-[12px] text-white/45 max-w-[280px] sm:max-w-none mx-auto md:mx-0">
                   Backed by enterprise-grade security, compliance, and data
                   residency.
                 </p>
@@ -329,15 +325,12 @@ export default function ProductCarouselHeroSection() {
               <div className="hidden md:block w-px h-10 bg-white/10 flex-shrink-0" />
 
               {/* Badges */}
-              <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 sm:gap-8">
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-5 gap-y-4 sm:gap-x-6 sm:gap-y-5 md:gap-8">
                 {complianceBadges.map((b, i) => (
-                  <div key={i} className="pch-badge flex items-center gap-2.5">
-                    <span
-                      className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
-                      
-                    >
+                  <div key={i} className="pch-badge flex items-center gap-2 sm:gap-2.5">
+                    <span className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center flex-shrink-0">
                       {b.iconUrl ? (
-                        <img src={b.iconUrl} alt={b.label} className="w-[34px] h-[34px]" />
+                        <img src={b.iconUrl} alt={b.label} className="w-[30px] h-[30px] sm:w-[34px] sm:h-[34px]" />
                       ) : (
                         <svg
                           width="15"
@@ -354,10 +347,10 @@ export default function ProductCarouselHeroSection() {
                       )}
                     </span>
                     <div className="text-left">
-                      <p className="text-[12.5px] font-semibold text-white leading-tight whitespace-nowrap">
+                      <p className="text-[11.5px] sm:text-[12.5px] font-semibold text-white leading-tight whitespace-nowrap">
                         {b.label}
                       </p>
-                      <p className="text-[10.5px] text-white/40 leading-tight whitespace-nowrap">
+                      <p className="text-[10px] sm:text-[10.5px] text-white/40 leading-tight whitespace-nowrap">
                         {b.sub}
                       </p>
                     </div>
