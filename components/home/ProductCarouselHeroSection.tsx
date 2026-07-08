@@ -27,7 +27,7 @@ function useInView(threshold = 0.15) {
 
 // Replace each `src` with your actual image URL. `href` is where the card links to.
 const carouselItems = [
-  { id: 1, src: "/Home/meeting1.png", alt: "Meetings", href: "#" },
+  { id: 1, src: "/Home/Meeting1.png", alt: "Meetings", href: "#" },
   { id: 2, src: "/Home/Meeting-1.png", alt: "Messaging", href: "#" },
   { id: 3, src: "/Home/Meeting-2.png", alt: "AI Summaries", href: "#" },
   { id: 4, src: "/Home/Meeting-3.png", alt: "Sema Agent", href: "#" },
