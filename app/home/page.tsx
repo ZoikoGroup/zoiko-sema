@@ -9,13 +9,15 @@ import {
   DesignedForTrustSection,
   StartGrowSection,
   PricingSection,
-  TestimonialCarouselSection
+  TestimonialCarouselSection,
+  ProductCarouselHeroSection
  } from "@/components/home";
 
 export default function HomePage() {
   return (
     <main className="min-h-screen">
       <div>
+        <ProductCarouselHeroSection />
         <HeroSection heroImageUrl="/Home/banner.webp" />
         <WorksForSection />
         <EveryConversationSection />
@@ -27,6 +29,7 @@ export default function HomePage() {
         <StartGrowSection />
         <PricingSection />
         <TestimonialCarouselSection />
+        
       </div>
     </main>
   );

@@ -1,5 +1,5 @@
 import { 
-  
+ 
   AboutHeroSection,
   AboutConversationsSection,
   AboutNotJustSection,
@@ -8,7 +8,8 @@ import {
   AboutCarriesMeaningSection,
   AboutCommitmentsSection,
   AboutTrustSection,
-  AboutCTASection
+  AboutCTASection,
+  
 
  } from "@/components/about";
 

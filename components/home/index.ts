@@ -9,3 +9,4 @@ export { default as DesignedForTrustSection } from "./DesignedForTrustSection";
 export { default as StartGrowSection } from "./StartGrowSection";
 export { default as PricingSection } from "./PricingSection";
 export { default as TestimonialCarouselSection } from "./TestimonialCarouselSection";
+export { default as ProductCarouselHeroSection } from "./ProductCarouselHeroSection";
