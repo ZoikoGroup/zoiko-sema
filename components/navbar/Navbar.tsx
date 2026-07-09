@@ -391,11 +391,11 @@ export default function Navbar() {
                 className="w-9 h-9 xl:w-10 xl:h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors duration-200"
                 style={{ backgroundColor: workspaceOpen ? "#EEF2FF" : "transparent" }}
               >
-                <div className="grid grid-cols-3 gap-[5px]">
+                <div className="grid grid-cols-3 gap-[6px]">
                   {Array.from({ length: 9 }).map((_, i) => (
                     <span
                       key={i}
-                      className="grid-btn-dot w-[7px] h-[7px] rounded-full"
+                      className="grid-btn-dot w-[8px] h-[8px] rounded-full"
                       style={{ backgroundColor: "var(--brand)" }}
                     />
                   ))}
