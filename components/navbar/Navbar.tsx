@@ -293,7 +293,7 @@ export default function Navbar() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
         {/* Full width, side padding as % of viewport instead of a max-width container */}
         <div className="w-full px-[4%] xl:px-[5%]">
-          <div className="h-16 sm:h-20 lg:h-[88px] flex items-center justify-between gap-3">
+          <div className="h-16 sm:h-20 lg:h-[95px] flex items-center justify-between gap-3">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <img src="/logo.png" alt="Logo" className="h-8 sm:h-9 lg:h-10 w-auto" />

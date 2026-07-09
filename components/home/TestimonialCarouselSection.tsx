@@ -16,28 +16,28 @@ const testimonials: Testimonial[] = [
       "The accuracy of Sema's transcripts is genuinely impressive and the ability to search every meeting we've ever had has changed how our directors work with their teams.",
     name: "Maya Calderón",
     role: "Head of Operations · Northbound Studio",
-    image: "/home/maya-calderon.jpg",
+    image: "/Home/maya-calderon.jpg",
   },
   {
     quote:
       "Sema replaced four separate tools overnight. Our team communication is faster, more secure, and the AI meeting summaries alone save us hours every week.",
     name: "James Whitfield",
     role: "CTO · Stratify Global",
-    image: "/home/james-whitfield.jpg",
+    image: "/Home/james-whitfield.jpg",
   },
   {
     quote:
       "Security was our biggest concern before adopting Sema. Their compliance logging and encrypted channels cleared our InfoSec review in days, not months.",
     name: "Priya Kapoor",
     role: "CISO · NovaBridge Health",
-    image: "/home/priya-kapoor.jpg",
+    image: "/Home/priya-kapoor.jpg",
   },
   {
     quote:
       "ZoikoTime integration is the feature that sold our leadership team. We finally have real visibility into how our remote staff actually collaborate.",
     name: "Daniel Osei",
     role: "VP People Ops · ClearPath Logistics",
-    image: "/home/daniel-osei.jpg",
+    image: "/Home/daniel-osei.jpg",
   },
 ];
 
@@ -321,8 +321,8 @@ export default function TestimonialCarouselSection() {
           >
             <div className="tc-video-frame relative w-full rounded-[20px] overflow-hidden shadow-xl">
               <img
-                src="/home/video-call-full.webp"
-                alt="Sema video call interface"
+                src="/Home/video-call-full.webp"
+                alt="Sema-video-call-interface"
                 className="w-full h-auto object-cover block"
               />
 
