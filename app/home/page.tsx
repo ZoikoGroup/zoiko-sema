@@ -1,5 +1,5 @@
 import { 
-  HeroSection, 
+  // HeroSection, 
   WorksForSection, 
   EveryConversationSection, 
   UnderstandsSection, 
@@ -18,7 +18,7 @@ export default function HomePage() {
     <main className="min-h-screen">
       <div>
         <ProductCarouselHeroSection />
-        <HeroSection heroImageUrl="/Home/banner.webp" />
+        {/* <HeroSection heroImageUrl="/Home/banner.webp" /> */}
         <WorksForSection />
         <EveryConversationSection />
         <UnderstandsSection />
