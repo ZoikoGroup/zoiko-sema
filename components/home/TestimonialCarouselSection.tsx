@@ -3,46 +3,53 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 
 interface Testimonial {
-  quote: string;
   name: string;
   role: string;
+  quote: string;
   image: string;
 }
 
-// ── Replace image URLs with your own — keep array length flexible ─────────
+// ── Replace image URLs with your own ─────────────────────────────
 const testimonials: Testimonial[] = [
   {
+    name: "Hannah Schmitt",
+    role: "COO, Clerks Ltd.",
     quote:
-      "The accuracy of Sema's transcripts is genuinely impressive and the ability to search every meeting we've ever had has changed how our directors work with their teams.",
-    name: "Maya Calderón",
-    role: "Head of Operations · Northbound Studio",
-    image: "/Home/maya-calderon.jpg",
+      "Zoiko Sema has brought real discipline to the way our teams communicate. Meetings no longer end with scattered notes, unclear ownership, or forgotten follow-ups. Sema gives us secure conversations, clear summaries, decisions, action items, and accountability in one workspace. It has made our daily operations faster, cleaner, and more dependable.",
+    image: "/Home/hannah-3.png",
   },
   {
+    name: "Hannah Schmitt",
+    role: "CEO, Global Leader",
     quote:
-      "Sema replaced four separate tools overnight. Our team communication is faster, more secure, and the AI meeting summaries alone save us hours every week.",
-    name: "James Whitfield",
-    role: "CTO · Stratify Global",
-    image: "/Home/james-whitfield.jpg",
+      "Zoiko Sema gives our leadership team the clarity every growing organization needs. It brings meetings, messaging, AI summaries, and governed follow-up into one platform that feels secure, modern, and business-ready. What impressed us most is that Sema does not simply capture conversations — it helps turn them into decisions, ownership, and measurable progress.",
+    image: "/Home/marcus-reyes.png",
   },
   {
+    name: "Hannah Schmitt",
+    role: "Lead Manager, Dasalt Ltd",
     quote:
-      "Security was our biggest concern before adopting Sema. Their compliance logging and encrypted channels cleared our InfoSec review in days, not months.",
-    name: "Priya Kapoor",
-    role: "CISO · NovaBridge Health",
-    image: "/Home/priya-kapoor.jpg",
+      "Sema has made team coordination much easier. We can meet, message, summarize, assign actions, and keep everyone aligned without moving between disconnected tools. The AI meeting summaries save time after every discussion, while the governance controls give our managers confidence that communication stays organized, protected, and accountable.",
+    image: "/Home/hannah-3.png",
   },
   {
+    name: "Marcus Reyes",
+    role: "Director of Ops, BrightPath",
     quote:
-      "ZoikoTime integration is the feature that sold our leadership team. We finally have real visibility into how our remote staff actually collaborate.",
-    name: "Daniel Osei",
-    role: "VP People Ops · ClearPath Logistics",
-    image: "/Home/daniel-osei.jpg",
+      "We evaluated four platforms before choosing Sema. None of the others combined real-time chat, structured meetings, and AI governance the way Sema does. Our compliance team signed off in under a week.",
+    image: "/Home/marcus-reyes.png",
+  },
+  {
+    name: "Elena Vos",
+    role: "Head of People, Northline",
+    quote:
+      "The ZoikoTime integration turned our messy hybrid schedule into something we can actually report on. Leadership finally trusts the data coming out of day-to-day team communication.",
+    image: "/Home/elena-vos.png",
   },
 ];
 
-// ── Intersection-observer hook ──────────────────────────────────────────
-function useInView(threshold = 0.12) {
+// ── Intersection-observer hook ────────────────────────────────────
+function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
   useEffect(() => {
@@ -63,333 +70,283 @@ function useInView(threshold = 0.12) {
   return { ref, inView };
 }
 
-export default function TestimonialCarouselSection() {
+export default function ClientTestimonialsCarouselSection() {
   const [active, setActive] = useState(0);
-  const [direction, setDirection] = useState<"next" | "prev">("next");
   const [paused, setPaused] = useState(false);
   const total = testimonials.length;
 
-  const { ref: ctaRef, inView: ctaIn } = useInView(0.25);
-  const { ref: imgRef, inView: imgIn } = useInView(0.1);
+  const { ref: sectionRef, inView } = useInView(0.15);
 
   const goTo = useCallback(
-    (idx: number, dir: "next" | "prev") => {
-      setDirection(dir);
+    (idx: number) => {
       setActive(((idx % total) + total) % total);
     },
     [total]
   );
 
-  const next = useCallback(() => goTo(active + 1, "next"), [active, goTo]);
-  const prev = useCallback(() => goTo(active - 1, "prev"), [active, goTo]);
+  const next = useCallback(() => goTo(active + 1), [active, goTo]);
+  const prev = useCallback(() => goTo(active - 1), [active, goTo]);
 
-  // ── Auto-rotate / loop carousel ──
+  // ── Infinite auto-loop ──
   useEffect(() => {
     if (paused) return;
     const id = setInterval(() => {
-      setDirection("next");
       setActive((a) => (a + 1) % total);
-    }, 5000);
+    }, 4500);
     return () => clearInterval(id);
   }, [paused, total]);
 
-  const current = testimonials[active];
+  const prevIdx = (active - 1 + total) % total;
+  const nextIdx = (active + 1) % total;
+
+  const prevItem = testimonials[prevIdx];
+  const activeItem = testimonials[active];
+  const nextItem = testimonials[nextIdx];
 
   return (
     <>
       <style>{`
-        @keyframes tcFadeUp {
+        @keyframes ctcFadeUp {
           from { opacity: 0; transform: translateY(28px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-        .tc-hidden  { opacity: 0; transform: translateY(28px); }
-        .tc-visible { animation: tcFadeUp .55s cubic-bezier(.22,1,.36,1) forwards; }
+        .ctc-hidden  { opacity: 0; transform: translateY(28px); }
+        .ctc-visible { animation: ctcFadeUp .65s cubic-bezier(.22,1,.36,1) forwards; }
 
-        /* ── carousel slide transitions ── */
-        @keyframes tcSlideInNext {
-          from { opacity: 0; transform: translateX(28px) scale(0.98); }
-          to   { opacity: 1; transform: translateX(0) scale(1); }
+        /* Center card entrance */
+        @keyframes ctcCenterIn {
+          from { opacity: 0; transform: translateY(10px) scale(0.94); }
+          to   { opacity: 1; transform: translateY(0) scale(1); }
         }
-        @keyframes tcSlideInPrev {
-          from { opacity: 0; transform: translateX(-28px) scale(0.98); }
-          to   { opacity: 1; transform: translateX(0) scale(1); }
-        }
-        .tc-slide-next { animation: tcSlideInNext .5s cubic-bezier(.22,1,.36,1) forwards; }
-        .tc-slide-prev { animation: tcSlideInPrev .5s cubic-bezier(.22,1,.36,1) forwards; }
+        .ctc-center-card { animation: ctcCenterIn .55s cubic-bezier(.22,1,.36,1) forwards; }
 
-        /* image cross-fade */
-        @keyframes tcImgFade {
-          from { opacity: 0; transform: scale(1.04); }
-          to   { opacity: 1; transform: scale(1); }
+        /* Side cards entrance */
+        @keyframes ctcSideInLeft {
+          from { opacity: 0; transform: translateX(20px) rotate(-6deg) scale(0.9); }
+          to   { opacity: .92; transform: translateX(0) rotate(-6deg) scale(1); }
         }
-        .tc-img-fade { animation: tcImgFade .6s ease forwards; }
+        @keyframes ctcSideInRight {
+          from { opacity: 0; transform: translateX(-20px) rotate(6deg) scale(0.9); }
+          to   { opacity: .92; transform: translateX(0) rotate(6deg) scale(1); }
+        }
+        .ctc-side-left  { animation: ctcSideInLeft .55s cubic-bezier(.22,1,.36,1) forwards; }
+        .ctc-side-right { animation: ctcSideInRight .55s cubic-bezier(.22,1,.36,1) forwards; }
 
-        /* quote mark pulse */
-        @keyframes tcQuotePulse {
+        /* Continuous subtle float on side cards for "alive" feel */
+        @keyframes ctcFloat {
+          0%, 100% { transform: translateY(0) rotate(-6deg); }
+          50%      { transform: translateY(-6px) rotate(-6deg); }
+        }
+        @keyframes ctcFloatRight {
+          0%, 100% { transform: translateY(0) rotate(6deg); }
+          50%      { transform: translateY(-6px) rotate(6deg); }
+        }
+        .ctc-float-left  { animation: ctcFloat 4.5s ease-in-out infinite; }
+        .ctc-float-right { animation: ctcFloatRight 4.5s ease-in-out infinite; }
+
+        /* card hover lift */
+        .ctc-card-wrap {
+          transition: transform .35s cubic-bezier(.22,1,.36,1);
+        }
+        .ctc-card-wrap:hover {
+          transform: translateY(-6px) scale(1.02);
+        }
+
+        /* quote mark */
+        @keyframes ctcQuotePulse {
           0%,100% { opacity: .9; }
-          50%     { opacity: .55; }
+          50%     { opacity: .45; }
         }
-        .tc-quote-mark { animation: tcQuotePulse 3s ease-in-out infinite; }
+        .ctc-quote-mark { animation: ctcQuotePulse 3s ease-in-out infinite; }
 
-        /* nav arrow buttons */
-        .tc-nav-btn {
-          transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+        /* avatar */
+        .ctc-avatar {
+          box-shadow: 0 8px 20px rgba(20,15,80,0.28);
         }
-        .tc-nav-btn:hover {
-          transform: translateY(-2px) scale(1.06);
-          box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+
+        /* nav arrows */
+        .ctc-nav-btn {
+          transition: transform .2s ease, background-color .2s ease;
         }
-        .tc-nav-btn:active { transform: scale(0.95); }
+        .ctc-nav-btn:hover {
+          transform: scale(1.15);
+          background-color: rgba(255,255,255,0.18);
+        }
+        .ctc-nav-btn:active { transform: scale(0.92); }
 
         /* dots */
-        .tc-dot {
+        .ctc-dot {
           transition: width .3s ease, background-color .3s ease, opacity .3s ease;
         }
 
-        /* CTA buttons */
-        .tc-btn {
-          position: relative; overflow: hidden;
-          transition: transform .22s cubic-bezier(.22,1,.36,1), box-shadow .22s ease, opacity .2s ease;
-        }
-        .tc-btn:hover { transform: translateY(-2px); opacity: .92; }
-        @keyframes tcShimmer {
-          from { transform: translateX(-120%); }
-          to   { transform: translateX(220%); }
-        }
-        .tc-btn::after {
-          content: "";
-          position: absolute; inset: 0;
-          background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.25) 50%, transparent 70%);
-          transform: translateX(-120%);
-        }
-        .tc-btn:hover::after { animation: tcShimmer .65s ease forwards; }
-
-        /* video mockup hover */
-        .tc-video-frame {
-          transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s ease;
-        }
-        .tc-video-frame:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 30px 60px rgba(15,15,40,0.18);
-        }
-        .tc-video-frame img { transition: transform .6s ease; }
-        .tc-video-frame:hover img { transform: scale(1.03); }
-
-        .tc-call-icon {
-          transition: transform .2s ease, background-color .2s ease;
-        }
-        .tc-call-icon:hover { transform: scale(1.1); }
-
         @media (prefers-reduced-motion: reduce) {
-          .tc-hidden { opacity: 1 !important; transform: none !important; }
-          .tc-visible { animation: none !important; opacity: 1 !important; }
-          .tc-slide-next, .tc-slide-prev, .tc-img-fade { animation: none !important; opacity: 1 !important; transform: none !important; }
-          .tc-quote-mark { animation: none !important; }
-          .tc-nav-btn:hover, .tc-btn:hover, .tc-video-frame:hover { transform: none; }
+          .ctc-hidden, .ctc-center-card, .ctc-side-left, .ctc-side-right {
+            opacity: 1 !important; transform: none !important; animation: none !important;
+          }
+          .ctc-float-left, .ctc-float-right, .ctc-quote-mark { animation: none !important; }
+          .ctc-card-wrap:hover, .ctc-nav-btn:hover { transform: none !important; }
         }
       `}</style>
 
       <section
-        aria-label="Customer testimonials"
-        style={{ backgroundColor: "#EAEEFC" }}
-        className="w-full py-20 md:py-24"
+        ref={sectionRef}
+        aria-label="Client testimonials"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        className={`ctc-hidden ${inView ? "ctc-visible" : ""} w-full bg-[#fff] py-16 sm:py-20`}
       >
-        <div className="mx-auto w-full max-w-6xl px-6 md:px-10 lg:px-16">
-
-          {/* ══════════ Testimonial Carousel ══════════ */}
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-10 ">
           <div
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
-            className="relative rounded-[20px] overflow-hidden grid grid-cols-1 sm:grid-cols-[260px_1fr] mb-20 shadow-sm"
-            style={{ background: "#A9C3FB" }}
+            className="relative rounded-[28px] px-6 sm:px-10 md:px-14 pt-10 pb-16 sm:pb-24 overflow-hidden"
+            style={{
+              background: "linear-gradient(135deg, #4B47E5 0%, #3730A3 60%, #2E2A6E 100%)",
+            }}
           >
-            {/* Left — rotating photo */}
-            <div className="relative h-[260px] sm:h-auto bg-white">
-              <img
-                key={`img-${active}`}
-                src={current.image}
-                alt={current.name}
-                className="tc-img-fade w-full h-full object-cover"
-              />
+            {/* Heading + nav arrows */}
+            <div className="relative flex items-center justify-center mb-3">
+              <button
+                onClick={prev}
+                aria-label="Previous testimonial"
+                className="ctc-nav-btn absolute left-0 sm:left-2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center text-white"
+              >
+                <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
+                  <path d="M9 2L4 7l5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+
+              <h2 className="text-[22px] sm:text-[28px] font-bold text-white text-center px-12">
+                What Our Clients Say About Us
+              </h2>
+
+              <button
+                onClick={next}
+                aria-label="Next testimonial"
+                className="ctc-nav-btn absolute right-0 sm:right-2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center text-white"
+              >
+                <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
+                  <path d="M5 2l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
             </div>
 
-            {/* Right — quote content */}
-            <div className="relative p-8 sm:p-10 flex flex-col justify-center min-h-[260px]">
-              <span
-                key={`quote-mark-${active}`}
-                aria-hidden="true"
-                className="tc-quote-mark text-[42px] leading-none font-serif text-white/70 mb-1"
-              >
-                &quot;
-              </span>
+            {/* Dots */}
+            <div className="flex items-center justify-center gap-2 mb-10 sm:mb-14">
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => goTo(idx)}
+                  aria-label={`Go to testimonial ${idx + 1}`}
+                  className="ctc-dot h-[7px] rounded-full"
+                  style={{
+                    width: idx === active ? "22px" : "7px",
+                    background: idx === active ? "#fff" : "rgba(255,255,255,0.35)",
+                  }}
+                />
+              ))}
+            </div>
 
-              <p
-                key={`quote-${active}`}
-                className={`text-[16px] sm:text-[17px] leading-relaxed text-[#15131F] mb-6 max-w-[460px] ${
-                  direction === "next" ? "tc-slide-next" : "tc-slide-prev"
-                }`}
-              >
-                {current.quote}
-              </p>
-
+            {/* Three-card carousel */}
+            <div className="relative flex items-center justify-center gap-4 sm:gap-6 min-h-[340px] sm:min-h-[380px]">
+              {/* Left (previous) card */}
               <div
-                key={`meta-${active}`}
-                className={direction === "next" ? "tc-slide-next" : "tc-slide-prev"}
+                key={`prev-${prevIdx}`}
+                className="ctc-side-left ctc-float-left ctc-card-wrap hidden md:block absolute left-0 sm:left-6 md:left-8 lg:left-16 w-[240px] cursor-pointer"
+                onClick={prev}
               >
-                <p className="text-[14.5px] font-bold text-[#15131F]">{current.name}</p>
-                <p className="text-[12.5px] text-[#3f3d56]/80">{current.role}</p>
+                <TestimonialCard item={prevItem} compact />
               </div>
 
-              {/* Nav arrows */}
-              <div className="absolute bottom-7 right-8 flex items-center gap-2">
-                <button
-                  onClick={prev}
-                  aria-label="Previous testimonial"
-                  className="tc-nav-btn w-9 h-9 rounded-full bg-white/70 flex items-center justify-center text-[#15131F]"
-                >
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M9 2L4 7l5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-                <button
-                  onClick={next}
-                  aria-label="Next testimonial"
-                  className="tc-nav-btn w-9 h-9 rounded-full bg-[#474787] flex items-center justify-center text-white"
-                >
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M5 2l5 5-5 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
+              {/* Center (active) card */}
+              <div
+                key={`active-${active}`}
+                className="ctc-center-card relative z-10 w-full max-w-[380px] sm:max-w-[420px]"
+              >
+                <TestimonialCard item={activeItem} large />
               </div>
 
-              {/* Dots */}
-              <div className="flex items-center gap-2 mt-7">
-                {testimonials.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => goTo(idx, idx > active ? "next" : "prev")}
-                    aria-label={`Go to testimonial ${idx + 1}`}
-                    className="tc-dot h-[6px] rounded-full"
-                    style={{
-                      width: idx === active ? "22px" : "8px",
-                      background: idx === active ? "#1E1A3C" : "rgba(30,26,60,0.25)",
-                    }}
-                  />
-                ))}
+              {/* Right (next) card */}
+              <div
+                key={`next-${nextIdx}`}
+                className="ctc-side-right ctc-float-right ctc-card-wrap hidden md:block absolute right-0 sm:right-6 md:right-8 lg:right-16 w-[240px] cursor-pointer"
+                onClick={next}
+              >
+                <TestimonialCard item={nextItem} compact />
               </div>
             </div>
           </div>
-
-          {/* ══════════ Heading + CTA ══════════ */}
-          <div
-            ref={ctaRef}
-            className={`tc-hidden ${ctaIn ? "tc-visible" : ""} text-center mb-14`}
-          >
-            <h2
-              className="font-bold leading-[1.15] tracking-tight text-[#15131F] mb-4"
-              style={{ fontSize: "clamp(24px,3.2vw,36px)" }}
-            >
-              Use Sema your way — as an individual, a team or a business.
-            </h2>
-            <p className="mx-auto max-w-[620px] text-[15px] leading-[1.75] text-[#5C5870] mb-7">
-              Start with secure conversations. Add intelligence as you grow. Connect
-              to ZoikoTime when communication needs to become verified workforce context.
-            </p>
-
-            <div className="flex flex-wrap justify-center items-center gap-3">
-              <a
-                href="/start-free/"
-                className="tc-btn inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[14.5px] font-semibold text-white"
-                style={{ background: "#474787" }}
-              >
-                Start free
-                <span aria-hidden="true">→</span>
-              </a>
-              <a
-                href="#explore-zoikotime"
-                className="tc-btn inline-flex items-center justify-center rounded-full px-7 py-3.5 text-[14.5px] font-semibold text-[#15131F] bg-white border border-gray-200"
-              >
-                Explore Sema + ZoikoTime
-              </a>
-            </div>
-          </div>
-
-          {/* ══════════ Full video-call mockup image ══════════ */}
-          <div
-            ref={imgRef}
-            className={`tc-hidden ${imgIn ? "tc-visible" : ""}`}
-          >
-            <div className="tc-video-frame relative w-full rounded-[20px] overflow-hidden shadow-xl">
-              <img
-                src="/Home/video-call-full.webp"
-                alt="Sema-video-call-interface"
-                className="w-full h-auto object-cover block"
-              />
-
-              {/* Bottom call-control bar overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-[#15131F] flex items-center justify-center gap-5 py-4">
-                {[
-                  {
-                    label: "Captions",
-                    icon: (
-                      <span className="text-[13px] font-bold leading-none">A↑</span>
-                    ),
-                  },
-                  {
-                    label: "Mute",
-                    icon: (
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
-                        <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-                        <line x1="12" y1="19" x2="12" y2="23" />
-                      </svg>
-                    ),
-                  },
-                  {
-                    label: "Speaker",
-                    icon: (
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
-                      </svg>
-                    ),
-                  },
-                  {
-                    label: "Camera",
-                    icon: (
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M23 7l-7 5 7 5V7z" />
-                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
-                      </svg>
-                    ),
-                  },
-                  {
-                    label: "End call",
-                    icon: (
-                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: "rotate(135deg)" }}>
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                      </svg>
-                    ),
-                    danger: true,
-                  },
-                ].map((btn, i) => (
-                  <button
-                    key={i}
-                    aria-label={btn.label}
-                    className="tc-call-icon w-10 h-10 rounded-full flex items-center justify-center text-white"
-                    style={{
-                      background: btn.danger ? "#1E5FE0" : "rgba(255,255,255,0.12)",
-                    }}
-                  >
-                    {btn.icon}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-
         </div>
       </section>
     </>
+  );
+}
+
+function TestimonialCard({
+  item,
+  large = false,
+  compact = false,
+}: {
+  item: Testimonial;
+  large?: boolean;
+  compact?: boolean;
+}) {
+  return (
+    <div className="relative">
+      {/* Shadow card behind for stacked-paper effect */}
+      <div
+        className="absolute inset-0 rounded-[28px] bg-[#2E2A6E]"
+        style={{ transform: "translate(6px, 6px) rotate(2deg)" }}
+      />
+
+      {/* Front card */}
+      <div
+        className="relative rounded-[28px] bg-white pt-12 pb-6 px-5 sm:px-7 text-center"
+        style={{
+          minHeight: large ? "320px" : "260px",
+        }}
+      >
+        {/* Avatar overlapping top */}
+        <img
+          src={item.image}
+          alt={item.name}
+          className="ctc-avatar absolute -top-8 left-1/2 -translate-x-1/2 rounded-full object-cover border-4 border-white"
+          style={{
+            width: large ? "72px" : "56px",
+            height: large ? "72px" : "56px",
+          }}
+        />
+
+        <h3
+          className={`font-bold text-[#15131F] mb-0.5 ${
+            large ? "text-[18px] sm:text-[19px]" : "text-[14.5px]"
+          }`}
+        >
+          {item.name}
+        </h3>
+        <p
+          className={`text-gray-500 mb-3 ${
+            large ? "text-[13px]" : "text-[11.5px]"
+          }`}
+        >
+          {item.role}
+        </p>
+
+        <span
+          aria-hidden="true"
+          className={`ctc-quote-mark block font-serif text-[#4B47E5] mb-1 ${
+            large ? "text-[30px]" : "text-[22px]"
+          }`}
+        >
+          &ldquo;
+        </span>
+
+        <p
+          className={`leading-[1.65] text-gray-600 ${
+            large ? "text-[13.5px] sm:text-[14px]" : "text-[11.5px]"
+          } ${compact ? "line-clamp-6" : ""}`}
+        >
+          {item.quote}
+        </p>
+      </div>
+    </div>
   );
 }

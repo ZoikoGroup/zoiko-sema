@@ -308,7 +308,7 @@ export default function ProductCarouselHeroSection() {
           </div>
 
           {/* Trust / compliance bar — pill shape, label | divider | colored badge row */}
-          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 mt-10 sm:mt-16 md:mt-24 lg:mt-40">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 md:px-8 mt-10 sm:mt-16 md:mt-24 lg:mt-20">
             <div className="rounded-[28px] sm:rounded-full border border-[#535353] bg-[#0D1130] px-5 sm:px-6 md:px-8 py-6 sm:py-5 md:py-4 flex flex-col md:flex-row items-center gap-5 sm:gap-6 md:gap-8">
               {/* Left label */}
               <div className="text-center md:text-left flex-shrink-0">

@@ -45,7 +45,7 @@ const plans: Plan[] = [
     popular: false,
   },
   {
-    tag: "★ POPULAR",
+    tag: "TEAM",
     name: "Team",
     desc: "For small teams and growing orgs.",
     features: [
@@ -94,7 +94,7 @@ const plans: Plan[] = [
   },
 ];
 
-// ── Intersection-observer hook (matches HeroSection style) ─────────────────
+// ── Intersection-observer hook ─────────────────────────────────
 function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -116,6 +116,8 @@ function useInView(threshold = 0.1) {
   return { ref, inView };
 }
 
+const BRAND = "#4F46E5";
+
 export default function PricingSection() {
   const { ref: headRef, inView: headIn } = useInView(0.25);
   const { ref: gridRef, inView: gridIn } = useInView(0.05);
@@ -127,7 +129,6 @@ export default function PricingSection() {
           from { opacity: 0; transform: translateY(28px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-
         .pr-hidden  { opacity: 0; transform: translateY(28px); }
         .pr-visible { animation: prFadeUp .55s cubic-bezier(.22,1,.36,1) forwards; }
 
@@ -144,32 +145,63 @@ export default function PricingSection() {
 
         /* card hover */
         .pr-card {
-          transition: transform .28s cubic-bezier(.22,1,.36,1),
-                      box-shadow .28s cubic-bezier(.22,1,.36,1),
-                      border-color .28s ease;
+          transition: transform .3s cubic-bezier(.22,1,.36,1),
+                      box-shadow .3s cubic-bezier(.22,1,.36,1),
+                      border-color .3s ease;
           will-change: transform;
         }
-        .pr-card:hover { transform: translateY(-6px); }
+        .pr-card:hover { transform: translateY(-7px); }
         .pr-card-plain:hover {
-          box-shadow: 0 18px 36px rgba(15,15,40,0.10);
-          border-color: rgba(71,71,135,0.25);
+          box-shadow: 0 20px 40px rgba(15,15,40,0.10);
+          border-color: rgba(71,71,135,0.35);
         }
         .pr-card-popular:hover {
-          box-shadow: 0 26px 52px rgba(71,71,135,0.40);
+          box-shadow: 0 26px 52px rgba(71,71,135,0.22);
         }
 
-        /* feature row check icon hover */
-        .pr-feature { transition: padding-left .18s ease; }
-        .pr-feature:hover { padding-left: 4px; }
+        /* popular badge pulse */
+        @keyframes prBadgePulse {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(71,71,135,0.35); }
+          50%      { box-shadow: 0 0 0 6px rgba(71,71,135,0); }
+        }
+        .pr-badge { animation: prBadgePulse 2.6s ease-in-out infinite; }
 
-        /* CTA button */
+        /* feature row hover */
+        .pr-feature { transition: transform .18s ease, color .18s ease; }
+        .pr-feature:hover { transform: translateX(3px); }
+        .pr-feature:hover .pr-check-icon { transform: scale(1.15); }
+        .pr-check-icon { transition: transform .18s ease; }
+
+        /* CTA buttons */
         .pr-btn {
           position: relative; overflow: hidden;
-          transition: transform .22s cubic-bezier(.22,1,.36,1), box-shadow .22s ease, opacity .2s ease;
+          transition: transform .22s cubic-bezier(.22,1,.36,1),
+                      box-shadow .22s ease,
+                      background-color .22s ease,
+                      color .22s ease;
         }
-        .pr-btn:hover { transform: translateY(-2px); opacity: .92; }
-        .pr-btn-dark:hover  { box-shadow: 0 12px 26px rgba(0,0,0,0.22); }
-        .pr-btn-white:hover { box-shadow: 0 12px 26px rgba(0,0,0,0.18); }
+        .pr-btn:hover { transform: translateY(-2px); }
+
+        .pr-btn-outline {
+          background: #fff;
+          color: ${BRAND};
+          border: 1.5px solid ${BRAND};
+        }
+        .pr-btn-outline:hover {
+          background: ${BRAND};
+          color: #fff;
+          box-shadow: 0 12px 26px rgba(71,71,135,0.28);
+        }
+
+        .pr-btn-filled {
+          background: ${BRAND};
+          color: #fff;
+          border: 1.5px solid ${BRAND};
+        }
+        .pr-btn-filled:hover {
+          box-shadow: 0 14px 30px rgba(71,71,135,0.38);
+          filter: brightness(1.08);
+        }
 
         @keyframes prShimmer {
           from { transform: translateX(-120%); }
@@ -178,7 +210,7 @@ export default function PricingSection() {
         .pr-btn::after {
           content: "";
           position: absolute; inset: 0;
-          background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.25) 50%, transparent 70%);
+          background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
           transform: translateX(-120%);
         }
         .pr-btn:hover::after { animation: prShimmer .65s ease forwards; }
@@ -188,12 +220,13 @@ export default function PricingSection() {
           .pr-visible { animation: none !important; opacity: 1 !important; }
           .pr-card:hover, .pr-btn:hover { transform: none; }
           .pr-btn::after { display: none; }
+          .pr-badge { animation: none; }
         }
       `}</style>
 
       <section
         aria-label="Pricing plans"
-        className="w-full bg-white py-20 md:py-24"
+        className="w-full bg-white pb-20 md:pb-24"
       >
         <div className="mx-auto w-full max-w-7xl px-6 md:px-10 lg:px-16">
 
@@ -206,7 +239,7 @@ export default function PricingSection() {
               className="font-bold leading-[1.15] tracking-tight text-[#15131F] mb-4"
               style={{ fontSize: "clamp(24px,3.2vw,36px)" }}
             >
-              Start free. Scale when communication needs structure.
+              Scale when communication needs structure
             </h2>
             <p className="mx-auto max-w-[640px] text-[15px] leading-[1.75] text-[#5C5870]">
               Free for individuals and small groups. Pro for power users. Team, Business
@@ -222,61 +255,61 @@ export default function PricingSection() {
             }`}
           >
             {plans.map((plan) => (
-              <div key={plan.name} className="pr-card-wrap h-full">
+              <div key={plan.name} className="pr-card-wrap h-full relative">
+                {/* Popular badge — overlaps top border */}
+                {plan.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+                    <span
+                      className="pr-badge inline-flex items-center gap-1 rounded-full text-white text-[10.5px] font-bold uppercase tracking-[0.08em] px-3.5 py-1.5"
+                      style={{ background: BRAND }}
+                    >
+                      ★ Popular
+                    </span>
+                  </div>
+                )}
+
                 <div
-                  className={`pr-card h-full rounded-2xl p-6 flex flex-col ${
-                    plan.popular
-                      ? "pr-card-popular text-white"
-                      : "pr-card-plain border border-gray-200 bg-white"
+                  className={`pr-card h-full rounded-2xl p-6 flex flex-col text-center bg-white ${
+                    plan.popular ? "pr-card-popular" : "pr-card-plain"
                   }`}
-                  style={
-                    plan.popular
-                      ? { background: "#474787" }
-                      : undefined
-                  }
+                  style={{
+                    border: plan.popular
+                      ? `2px solid ${BRAND}`
+                      : "1px solid #E5E7EB",
+                  }}
                 >
                   {/* Tag */}
-                  <span
-                    className="text-[10.5px] font-bold uppercase tracking-[0.12em] mb-3"
-                    style={{ color: plan.popular ? "#c7c9f2" : "#9CA3AF" }}
-                  >
+                  <span className="text-[10.5px] font-bold uppercase tracking-[0.12em] mb-3 text-gray-400">
                     {plan.tag}
                   </span>
 
                   {/* Plan name */}
-                  <h3
-                    className="text-[20px] font-bold leading-snug mb-2"
-                    style={{ color: plan.popular ? "#fff" : "#15131F" }}
-                  >
+                  <h3 className="text-[20px] font-bold leading-snug mb-2 text-[#15131F]">
                     {plan.name}
                   </h3>
 
                   {/* Description */}
-                  <p
-                    className="text-[12.5px] leading-relaxed mb-5"
-                    style={{ color: plan.popular ? "#cfd0f0" : "#6b7280" }}
-                  >
+                  <p className="text-[13px] leading-relaxed mb-5 text-gray-500">
                     {plan.desc}
                   </p>
 
-                  {/* Feature list — flex-1 pushes button down to align across all cards */}
-                  <ul className="flex-1 mb-6 space-y-[10px]">
+                  {/* Feature list */}
+                  <ul className="flex-1 mb-6 space-y-[10px] text-left inline-block ">
                     {plan.features.map((f) => (
                       <li
                         key={f}
-                        className="pr-feature flex items-start gap-2 text-[13px] leading-snug"
-                        style={{ color: plan.popular ? "#e3e4f8" : "#374151" }}
+                        className="pr-feature flex items-start gap-2 text-[11px] leading-snug p-0 text-gray-700"
                       >
                         <svg
                           width="14"
                           height="14"
                           viewBox="0 0 14 14"
                           fill="none"
-                          className="flex-shrink-0 mt-[2px]"
+                          className="pr-check-icon flex-shrink-0 mt-[2px]"
                         >
                           <path
                             d="M2.5 7.2l3 3 6-6.4"
-                            stroke={plan.popular ? "#a5b4fc" : "#474787"}
+                            stroke={BRAND}
                             strokeWidth="1.8"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -287,13 +320,12 @@ export default function PricingSection() {
                     ))}
                   </ul>
 
-                  {/* CTA — anchored at bottom, same line across all cards */}
+                  {/* CTA */}
                   <a
                     href={plan.href}
-                    className={`pr-btn mt-auto inline-flex items-center justify-center rounded-full px-5 py-3 text-[13.5px] font-semibold ${
-                      plan.popular ? "pr-btn-white bg-white text-[#15131F]" : "pr-btn-dark text-white"
+                    className={`pr-btn mt-auto inline-flex items-center justify-center rounded-[9px] px-5 py-3 text-[13.5px] font-semibold ${
+                      plan.popular ? "pr-btn-filled" : "pr-btn-outline"
                     }`}
-                    style={!plan.popular ? { background: "#15131F" } : undefined}
                   >
                     {plan.cta}
                   </a>

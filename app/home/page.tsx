@@ -1,16 +1,13 @@
 import { 
-  // HeroSection, 
+  ProductCarouselHeroSection,
   WorksForSection, 
-  EveryConversationSection, 
-  UnderstandsSection, 
-  ZoikoTimeSection, 
-  BuiltForSection,
-  ConversationsGridSection ,
-  DesignedForTrustSection,
-  StartGrowSection,
   PricingSection,
-  TestimonialCarouselSection,
-  ProductCarouselHeroSection
+  StatsSection,
+  FlexibleSolutionsSection,
+  EveryConversationInContextSection,
+  StartWithOneConversationSection,
+  BusinessAdoptionSection,
+  TestimonialCarouselSection, 
  } from "@/components/home";
 
 export default function HomePage() {
@@ -20,16 +17,13 @@ export default function HomePage() {
         <ProductCarouselHeroSection />
         {/* <HeroSection heroImageUrl="/Home/banner.webp" /> */}
         <WorksForSection />
-        <EveryConversationSection />
-        <UnderstandsSection />
-        <ZoikoTimeSection />
-        <BuiltForSection />
-        <ConversationsGridSection />
-        <DesignedForTrustSection />
-        <StartGrowSection />
         <PricingSection />
-        <TestimonialCarouselSection />
-        
+        <StatsSection />
+        <FlexibleSolutionsSection />
+        <EveryConversationInContextSection />
+        <StartWithOneConversationSection />
+        <BusinessAdoptionSection />
+        <TestimonialCarouselSection />        
       </div>
     </main>
   );

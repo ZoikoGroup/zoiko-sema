@@ -2,23 +2,66 @@
 
 import React, { useEffect, useState, useRef } from "react";
 
-const businessFeatures = [
-  { left: "Team messaging",        right: "Video meetings" },
-  { left: "AI summaries",          right: "Admin controls" },
-  { left: "Security policies",     right: "ZoikoTime route" },
-  { left: "Enterprise deployment", right: "Compliance exports" },
-];
+const GRADIENT = "linear-gradient(135deg, #4F46E5 0%, #2D2A7A 100%)";
 
-const teamsFeatures = [
-  { left: "Channels & spaces", right: "Group calls" },
-  { left: "Shared files",      right: "Action items" },
-  { left: "Project rooms",     right: "Team search" },
-];
-
-const individualFeatures = [
-  { left: "1:1 messaging", right: "Audio calls" },
-  { left: "Video calls",   right: "Voice notes" },
-  { left: "Group calls",   right: "Mobile-first" },
+const cards = [
+  {
+    key: "business",
+     restBg: "#ffffff",
+    hoverBg: GRADIENT,
+    restLabel: "#3B5FDD",
+    hoverLabel: "#c7c9ef",
+    restTitle: "#111827",
+    hoverTitle: "#ffffff",
+    restDesc: "#4b5563",
+    hoverDesc: "#c7caed",
+    restCta: "#3B5FDD",
+    hoverCta: "#ffffff",
+    label: "Primary · Business-First",
+    title: "Sema for Business",
+    desc: "For companies that need communication, accountability and operational clarity — across teams, departments, regions and roles.",
+    ctaLabel: "Explore Sema for Business",
+    href: "#business",
+    imageUrl: "/Home/Business.webp", // <-- paste your image URL here
+  },
+  {
+    key: "teams",
+    restBg: "#ffffff",
+    hoverBg: GRADIENT,
+    restLabel: "#3B5FDD",
+    hoverLabel: "#c7c9ef",
+    restTitle: "#111827",
+    hoverTitle: "#ffffff",
+    restDesc: "#4b5563",
+    hoverDesc: "#c7caed",
+    restCta: "#3B5FDD",
+    hoverCta: "#ffffff",
+    label: "Teams",
+    title: "Sema for Teams",
+    desc: "For small teams, departments, projects and professional groups who need one place to communicate and coordinate.",
+    ctaLabel: "Explore Teams",
+    href: "#teams",
+    imageUrl: "/Home/Teams.webp", // <-- paste your image URL here
+  },
+  {
+    key: "individuals",
+    restBg: "#ffffff",
+    hoverBg: GRADIENT,
+    restLabel: "#3B5FDD",
+    hoverLabel: "#c7c9ef",
+    restTitle: "#111827",
+    hoverTitle: "#ffffff",
+    restDesc: "#4b5563",
+    hoverDesc: "#c7caed",
+    restCta: "#3B5FDD",
+    hoverCta: "#ffffff",
+    label: "Individuals",
+    title: "Sema for You",
+    desc: "For people who want secure audio calls, video calls and intelligent conversation memory — without needing a business account.",
+    ctaLabel: "Use Sema for free",
+    href: "#individuals",
+    imageUrl: "/Home/Individuals.webp", // <-- paste your image URL here
+  },
 ];
 
 // ── Intersection observer hook ─────────────────────────────────────────────
@@ -58,50 +101,63 @@ export default function WorksForSection() {
         .wf-hidden  { opacity: 0; transform: translateY(36px); }
         .wf-visible { animation: wfFadeUp .65s cubic-bezier(.22,1,.36,1) forwards; }
 
-        /* ── card hover ── */
+        /* ── card lift + shadow on hover (identical on all 3 cards) ── */
         .wf-card {
-          transition: transform .28s cubic-bezier(.22,1,.36,1),
-                      box-shadow .28s cubic-bezier(.22,1,.36,1);
+          transition: transform .32s cubic-bezier(.22,1,.36,1),
+                      box-shadow .32s cubic-bezier(.22,1,.36,1);
           will-change: transform;
         }
         .wf-card:hover {
-          transform: translateY(-7px);
-          box-shadow: 0 24px 48px rgba(0,0,0,0.13);
+          transform: translateY(-8px);
+          box-shadow: 0 28px 54px rgba(15,15,40,0.18);
         }
 
-        /* ── shimmer CTA ── */
+        /* image zoom on card hover */
+        .wf-media { overflow: hidden; }
+        .wf-media img { transition: transform .55s cubic-bezier(.22,1,.36,1); }
+        .wf-card:hover .wf-media img { transform: scale(1.07); }
+
+        /* image loading skeleton (shows until imageUrl is set) */
         @keyframes wfShimmer {
-          from { transform: translateX(-120%); }
-          to   { transform: translateX(220%);  }
+          0%   { background-position: -400px 0; }
+          100% { background-position: 400px 0; }
         }
-        .wf-btn {
-          position: relative; overflow: hidden;
-          transition: opacity .2s ease, transform .2s ease;
+        .wf-skeleton {
+          background: linear-gradient(90deg, #eceef7 0%, #f6f7fc 50%, #eceef7 100%);
+          background-size: 400px 100%;
+          animation: wfShimmer 1.8s ease-in-out infinite;
         }
-        .wf-btn::after {
-          content: "";
-          position: absolute; inset: 0;
-          background: linear-gradient(
-            110deg,
-            transparent 25%,
-            rgba(255,255,255,0.22) 50%,
-            transparent 75%
-          );
-          transform: translateX(-120%);
-        }
-        .wf-btn:hover::after { animation: wfShimmer .7s ease forwards; }
-        .wf-btn:hover { transform: translateY(-1px); }
 
-        /* ── dot ── */
-        .wf-dot {
-          width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+        /* ── Bottom section: two stacked background layers crossfade on hover ── */
+        .wf-bottom { position: relative; isolation: isolate; }
+        .wf-bg-layer {
+          position: absolute;
+          inset: 0;
+          transition: opacity .45s ease;
         }
+        .wf-bg-rest { opacity: 1; z-index: 0; }
+        .wf-bg-hover { opacity: 0; z-index: 1; }
+        .wf-card:hover .wf-bg-rest { opacity: 0; }
+        .wf-card:hover .wf-bg-hover { opacity: 1; }
+
+        .wf-content { position: relative; z-index: 2; }
+
+        /* text color crossfade */
+        .wf-label, .wf-title, .wf-desc, .wf-cta {
+          transition: color .4s ease;
+        }
+
+        /* ── CTA arrow shift on hover ── */
+        .wf-cta { display: inline-flex; align-items: center; gap: 8px; transition: gap .22s ease, color .4s ease; }
+        .wf-cta:hover { gap: 10px; }
+        .wf-cta-arrow { transition: transform .22s ease; display: inline-block; }
+        .wf-cta:hover .wf-cta-arrow { transform: translateX(3px); }
 
         @media (prefers-reduced-motion: reduce) {
           .wf-hidden, .wf-visible { opacity:1 !important; transform:none !important; animation:none !important; }
-          .wf-card:hover { transform: none; }
-          .wf-btn:hover  { transform: none; }
-          .wf-btn::after { display: none; }
+          .wf-card:hover, .wf-card:hover .wf-media img { transform: none !important; }
+          .wf-skeleton { animation: none !important; }
+          .wf-bg-layer { transition: none !important; }
         }
       `}</style>
 
@@ -134,175 +190,119 @@ export default function WorksForSection() {
             ref={cardsRef}
             className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch"
           >
-
-            {/* ══ Card 1 — Business (purple/indigo) ══ */}
-            <div
-              className={`wf-card flex flex-col rounded-[20px] p-8 wf-hidden ${cardsInView ? "wf-visible" : ""}`}
-              style={{ background: "#474787", animationDelay: "0s" }}
-            >
-              {/* Label */}
-              <p
-                className="mb-3 text-[10.5px] font-semibold uppercase tracking-[0.16em]"
-                style={{ color: "#a5a8e0" }}
+            {cards.map((card, i) => (
+              <div
+                key={card.key}
+                className={`wf-card flex flex-col rounded-[20px] overflow-hidden wf-hidden ${
+                  cardsInView ? "wf-visible" : ""
+                }`}
+                style={{
+                  animationDelay: `${i * 0.12}s`,
+                  boxShadow: "0 8px 24px rgba(15,15,40,0.06)",
+                }}
               >
-                Primary · Business-First
-              </p>
+                {/* ── Image on top ── */}
+                <div className="wf-media relative w-full aspect-[4/3]">
+                  {card.imageUrl ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={card.imageUrl}
+                      alt={card.title}
+                      className="w-full h-full object-cover block"
+                    />
+                  ) : (
+                    <div className="wf-skeleton w-full h-full" />
+                  )}
+                </div>
 
-              {/* Title */}
-              <h3
-                className="font-bold leading-tight text-white mb-3"
-                style={{ fontSize: "clamp(22px,2.2vw,28px)" }}
-              >
-                Sema for Business
-              </h3>
+                {/* ── Bottom content — crossfading background layers ── */}
+                <div className="wf-bottom flex items-center flex-col flex-1 px-7 py-7 sm:px-8 sm:py-8">
+                  {/* rest-state background */}
+                  <div
+                    className="wf-bg-layer wf-bg-rest"
+                    style={{ background: card.restBg }}
+                  />
+                  {/* hover-state background */}
+                  <div
+                    className="wf-bg-layer wf-bg-hover"
+                    style={{ background: card.hoverBg }}
+                  />
 
-              {/* Body */}
-              <p className="text-[14px] leading-[1.72] mb-7" style={{ color: "#c7caed" }}>
-                For companies that need communication, accountability and operational
-                clarity — across teams, departments, regions and roles.
-              </p>
+                  {/* content sits above both layers */}
+                  <div className="wf-content flex flex-col flex-1">
+                    <p
+                      className="wf-label mb-3 text-[10.5px] font-semibold uppercase tracking-[0.16em]"
+                      style={
+                        {
+                          "--rest": card.restLabel,
+                          "--hover": card.hoverLabel,
+                          color: "var(--rest)",
+                        } as React.CSSProperties
+                      }
+                    >
+                      {card.label}
+                    </p>
 
-              {/* Features 2-col grid */}
-              <div className="grid grid-cols-2 gap-x-5 gap-y-[10px] mb-auto">
-                {businessFeatures.map((row, i) => (
-                  <React.Fragment key={i}>
-                    <div className="flex items-center gap-2">
-                      <span className="wf-dot" style={{ background: "#a5a8e0" }} />
-                      <span className="text-[13.5px] leading-snug" style={{ color: "#dde0f5" }}>
-                        {row.left}
+                    <h3
+                      className="wf-title font-bold leading-tight mb-3"
+                      style={
+                        {
+                          fontSize: "clamp(20px,2.1vw,26px)",
+                          "--rest": card.restTitle,
+                          "--hover": card.hoverTitle,
+                          color: "var(--rest)",
+                        } as React.CSSProperties
+                      }
+                    >
+                      {card.title}
+                    </h3>
+
+                    <p
+                      className="wf-desc text-[14px] leading-[1.72] mb-7"
+                      style={
+                        {
+                          "--rest": card.restDesc,
+                          "--hover": card.hoverDesc,
+                          color: "var(--rest)",
+                        } as React.CSSProperties
+                      }
+                    >
+                      {card.desc}
+                    </p>
+
+                    <a
+                      href={card.href}
+                      className="wf-cta mt-auto  text-[14.5px] font-semibold text-center"
+                      style={
+                        {
+                          "--rest": card.restCta,
+                          "--hover": card.hoverCta,
+                          color: "var(--rest)",
+                        } as React.CSSProperties
+                      }
+                    >
+                      {card.ctaLabel}
+                      <span aria-hidden="true" className="wf-cta-arrow">
+                        →
                       </span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="wf-dot" style={{ background: "#a5a8e0" }} />
-                      <span className="text-[13.5px] leading-snug" style={{ color: "#dde0f5" }}>
-                        {row.right}
-                      </span>
-                    </div>
-                  </React.Fragment>
-                ))}
+                    </a>
+                  </div>
+                </div>
               </div>
-
-              {/* CTA — white pill */}
-              <a
-                href="#business"
-                className="wf-btn mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[14.5px] font-semibold text-gray-900 bg-white"
-              >
-                Explore Sema for Business
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
-
-            {/* ══ Card 2 — Teams (blush/pink) ══ */}
-            <div
-              className={`wf-card flex flex-col rounded-[20px] p-8 wf-hidden ${cardsInView ? "wf-visible" : ""}`}
-              style={{ background: "#FBE6E6", animationDelay: "0.12s" }}
-            >
-              {/* Label */}
-              <p
-                className="mb-3 text-[10.5px] font-semibold uppercase tracking-[0.16em]"
-                style={{ color: "#b06060" }}
-              >
-                Teams
-              </p>
-
-              {/* Title */}
-              <h3
-                className="font-bold leading-tight text-gray-900 mb-3"
-                style={{ fontSize: "clamp(20px,2vw,28px)" }}
-              >
-                Sema for Teams
-              </h3>
-
-              {/* Body */}
-              <p className="text-[14px] leading-[1.72] text-gray-600 mb-7">
-                For small teams, departments, projects and professional groups who
-                need one place to communicate and coordinate.
-              </p>
-
-              {/* Features */}
-              <div className="grid grid-cols-2 gap-x-5 gap-y-[10px] mb-auto">
-                {teamsFeatures.map((row, i) => (
-                  <React.Fragment key={i}>
-                    <div className="flex items-center gap-2">
-                      <span className="wf-dot" style={{ background: "#2A6BE3" }} />
-                      <span className="text-[13px] leading-snug text-gray-700">{row.left}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="wf-dot" style={{ background: "#2A6BE3" }} />
-                      <span className="text-[13px] leading-snug text-gray-700">{row.right}</span>
-                    </div>
-                  </React.Fragment>
-                ))}
-              </div>
-
-              {/* CTA — dark pill */}
-              <a
-                href="#teams"
-                className="wf-btn mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[14.5px] font-semibold text-white"
-                style={{ background: "#1a1a2e" }}
-              >
-                Explore Teams
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
-
-            {/* ══ Card 3 — Individuals (blue) ══ */}
-            <div
-              className={`wf-card flex flex-col rounded-[20px] p-8 wf-hidden ${cardsInView ? "wf-visible" : ""}`}
-              style={{ background: "#C2D8FF", animationDelay: "0.24s" }}
-            >
-              {/* Label */}
-              <p
-                className="mb-3 text-[10.5px] font-semibold uppercase tracking-[0.16em]"
-                style={{ color: "#3a6ab0" }}
-              >
-                Individuals
-              </p>
-
-              {/* Title */}
-              <h3
-                className="font-bold leading-tight text-gray-900 mb-3"
-                style={{ fontSize: "clamp(20px,2vw,28px)" }}
-              >
-                Sema for You
-              </h3>
-
-              {/* Body */}
-              <p className="text-[14px] leading-[1.72] text-gray-700 mb-7">
-                For people who want secure audio calls, video calls and intelligent
-                conversation memory — without needing a business account.
-              </p>
-
-              {/* Features */}
-              <div className="grid grid-cols-2 gap-x-5 gap-y-[10px] mb-auto">
-                {individualFeatures.map((row, i) => (
-                  <React.Fragment key={i}>
-                    <div className="flex items-center gap-2">
-                      <span className="wf-dot" style={{ background: "#3a6ab0" }} />
-                      <span className="text-[13px] leading-snug text-gray-800">{row.left}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="wf-dot" style={{ background: "#3a6ab0" }} />
-                      <span className="text-[13px] leading-snug text-gray-800">{row.right}</span>
-                    </div>
-                  </React.Fragment>
-                ))}
-              </div>
-
-              {/* CTA — dark pill */}
-              <a
-                href="#individuals"
-                className="wf-btn mt-8 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[14.5px] font-semibold text-white"
-                style={{ background: "#1a1a2e" }}
-              >
-                Use Sema for free
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
-
+            ))}
           </div>
         </div>
       </section>
+
+      {/* Card-hover text-color swap — driven by the CSS vars set inline above */}
+      <style>{`
+        .wf-card:hover .wf-label,
+        .wf-card:hover .wf-title,
+        .wf-card:hover .wf-desc,
+        .wf-card:hover .wf-cta {
+          color: var(--hover) !important;
+        }
+      `}</style>
     </>
   );
 }
