@@ -632,7 +632,7 @@ export default function Navbar() {
               <Link
                 href="/contact-sales"
                 onClick={() => setWorkspaceOpen(false)}
-                className="flex-1 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-[13.5px] font-semibold text-white transition-colors hover:bg-brand-dark"
+                className="flex-1 inline-flex items-center justify-center gap-2 rounded-[8px] px-5 py-3 text-[13.5px] font-semibold text-white transition-colors hover:bg-brand-dark"
                 style={{ backgroundColor: "var(--brand)" }}
               >
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -644,7 +644,7 @@ export default function Navbar() {
               <Link
                 href="/product-overview"
                 onClick={() => setWorkspaceOpen(false)}
-                className="flex-1 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-[13.5px] font-semibold border transition-colors hover:bg-brand-light"
+                className="flex-1 inline-flex items-center justify-center gap-2 rounded-[8px] px-5 py-3 text-[13.5px] font-semibold border transition-colors hover:bg-brand-light"
                 style={{ borderColor: "var(--brand)", color: "var(--brand)" }}
               >
                 Explore Platform
