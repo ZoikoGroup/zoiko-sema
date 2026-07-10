@@ -271,7 +271,7 @@ export default function Footer() {
                 delay={80}
                 items={[
                   { label: "Business Communication", href: "/solutions/business-communication" },
-                  { label: "Team Collaboration", href: "/solutions/team-collaboration" },
+                  { label: "Team Collaboration", href: "/team-collaboration" },
                   { label: "Individual Productivity", href: "/solutions/productivity" },
                   { label: "Freelancer Workflows", href: "/solutions/freelancers" },
                   { label: "ZoikoTime Customers", href: "/solutions/zoikotime-customers" },
