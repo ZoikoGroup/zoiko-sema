@@ -27,7 +27,7 @@ function useInView(threshold = 0.15) {
 const BRAND = "#3457E8";
 
 // TODO: replace with your actual image path, e.g. "/images/regulated-workflows/hero.png"
-const HERO_IMAGE_SRC = "/Images/regulated-workflows-hero.webp";
+const HERO_IMAGE_SRC = "/Images/regulated-workflows.webp";
 
 export default function RegulatedWorkflowsHeroSection() {
   const { ref: badgeRef, inView: badgeIn } = useInView(0.3);

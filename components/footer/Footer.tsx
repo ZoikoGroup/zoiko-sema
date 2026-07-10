@@ -278,7 +278,7 @@ export default function Footer() {
                   { label: "Team Collaboration", href: "/team-collaboration" },
                   { label: "Individual Productivity", href: "/individual-productivity/" },
 
-                  { label: "Freelancer Workflows", href: "/solutions/freelancers" },
+                  { label: "Freelancer Workflows", href: "/freelancer-workflows" },
                   { label: "ZoikoTime Customers", href: "/solutions/zoikotime-customers" },
                   { label: "Enterprise Deployment", href: "/solutions/enterprise" },
                   { label: "Regulated Workflows", href: "/regulated-workflows/" },
