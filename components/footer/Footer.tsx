@@ -270,7 +270,7 @@ export default function Footer() {
                 visible={nav.visible}
                 delay={80}
                 items={[
-                  { label: "Business Communication", href: "/solutions/business-communication" },
+                  { label: "Business Communication", href: "/business-communication/" },
                   { label: "Team Collaboration", href: "/solutions/team-collaboration" },
                   { label: "Individual Productivity", href: "/individual-productivity/" },
                   { label: "Freelancer Workflows", href: "/solutions/freelancers" },
