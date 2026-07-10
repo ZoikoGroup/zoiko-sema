@@ -272,7 +272,7 @@ export default function Footer() {
                 items={[
                   { label: "Business Communication", href: "/solutions/business-communication" },
                   { label: "Team Collaboration", href: "/solutions/team-collaboration" },
-                  { label: "Individual Productivity", href: "/solutions/productivity" },
+                  { label: "Individual Productivity", href: "/individual-productivity/" },
                   { label: "Freelancer Workflows", href: "/solutions/freelancers" },
                   { label: "ZoikoTime Customers", href: "/solutions/zoikotime-customers" },
                   { label: "Enterprise Deployment", href: "/solutions/enterprise" },
