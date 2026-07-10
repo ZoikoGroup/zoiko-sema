@@ -193,13 +193,13 @@ export default function ProductCarouselHeroSection() {
         />
         <div className="absolute inset-0" />
 
-        <div className="relative z-10 pt-16 sm:pt-20 md:pt-20 pb-12 sm:pb-16 md:pb-20">
+        <div className="relative z-10 pt-16 sm:pt-20 md:pt-10 pb-12 sm:pb-16 md:pb-20">
           {/* Hero content */}
           <div
             ref={contentRef}
             className={`pch-hidden ${contentIn ? "pch-visible" : ""} mx-auto w-full max-w-4xl px-4 sm:px-6 text-center`}
           >
-            <h1 className="text-[clamp(26px,7vw,52px)] font-extrabold leading-[1.18] tracking-tight text-white mb-4 sm:mb-5">
+            <h1 className="text-[clamp(26px,7vw,42px)] font-extrabold leading-[1.18] tracking-tight text-white mb-4 sm:mb-5">
               Governed communications that turn conversations{" "}
               <span
                 style={{
@@ -246,7 +246,7 @@ export default function ProductCarouselHeroSection() {
             </div>
 
             {/* Trust signals row */}
-            <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-2 px-2">
+            {/* <div className="flex flex-wrap items-center justify-center gap-x-4 sm:gap-x-6 gap-y-2 px-2">
               {trustSignals.map((t, i) => (
                 <span
                   key={i}
@@ -256,13 +256,13 @@ export default function ProductCarouselHeroSection() {
                   {t.label}
                 </span>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Carousel — continuous seamless marquee, no arrows, dots are decorative */}
           <div
             ref={carouselRef}
-            className={`pch-carousel-wrap ${carouselIn ? "pch-visible" : ""} mt-10 sm:mt-14 md:mt-16`}
+            className={`pch-carousel-wrap ${carouselIn ? "pch-visible" : ""} mt-10 sm:mt-5 md:mt-5`}
           >
             <div
               className="pch-marquee-viewport"
