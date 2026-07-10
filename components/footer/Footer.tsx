@@ -292,7 +292,7 @@ export default function Footer() {
                 delay={160}
                 items={[
                   { label: "Secure Communication", href: "/use-cases/secure-communication" },
-                  { label: "Meeting to Summary", href: "/use-cases/meeting-summary" },
+                  { label: "Meeting to Summary", href: "/meeting-to-summary/" },
                   { label: "Client Call Follow-Up", href: "/use-cases/client-followup" },
                   { label: "Team Decision Tracking", href: "/use-cases/decision-tracking" },
                   { label: "Remote Coordination", href: "/use-cases/remote-coordination" },
