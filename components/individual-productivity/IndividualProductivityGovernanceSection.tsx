@@ -27,7 +27,7 @@ function useInView(threshold = 0.1) {
 const BRAND = "#3457E8";
 
 // TODO: replace with your actual image path, e.g. "/images/individual-productivity/governance.png"
-const SIDE_IMAGE_SRC = "/images/governance.webp";
+const SIDE_IMAGE_SRC = "/Images/governance.webp";
 
 const cards = [
   {

@@ -28,7 +28,7 @@ const BRAND = "#3457E8";
 const ACCENT = "#8FA3FF"; // lighter brand tint for the dark background
 
 // TODO: replace with your actual image path, e.g. "/images/individual-productivity/follow-through.png"
-const SIDE_IMAGE_SRC = "/images/follow-through.webp";
+const SIDE_IMAGE_SRC = "/Images/follow-through.webp";
 
 const cards = [
   {

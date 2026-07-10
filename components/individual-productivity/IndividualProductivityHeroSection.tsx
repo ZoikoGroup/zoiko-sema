@@ -26,7 +26,7 @@ function useInView(threshold = 0.15) {
 const BRAND = "#3457E8";
 
 // TODO: replace with your actual image path, e.g. "/images/individual-productivity/hero.png"
-const HERO_IMAGE_SRC = "/images/individual-productivity.webp";
+const HERO_IMAGE_SRC = "/Images/individual-productivity.webp";
 
 export default function IndividualProductivityHeroSection() {
   const { ref: badgeRef, inView: badgeIn } = useInView(0.3);
