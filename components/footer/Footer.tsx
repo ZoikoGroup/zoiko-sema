@@ -276,7 +276,7 @@ export default function Footer() {
 
                   { label: "Freelancer Workflows", href: "/solutions/freelancers" },
                   { label: "ZoikoTime Customers", href: "/solutions/zoikotime-customers" },
-                  { label: "Enterprise Deployment", href: "/solutions/enterprise" },
+                  { label: "Enterprise Deployment", href: "/enterprise" },
                   { label: "Regulated Workflows", href: "/solutions/regulated-workflows" },
                 ]}
               />
@@ -287,7 +287,7 @@ export default function Footer() {
                 visible={nav.visible}
                 delay={160}
                 items={[
-                  { label: "Secure Communication", href: "/use-cases/secure-communication" },
+                  { label: "Secure Communication", href: "/secure-communication" },
                   { label: "Meeting to Summary", href: "/use-cases/meeting-summary" },
                   { label: "Client Call Follow-Up", href: "/use-cases/client-followup" },
                   { label: "Team Decision Tracking", href: "/use-cases/decision-tracking" },

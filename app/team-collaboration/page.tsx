@@ -1,3 +1,6 @@
+
+
+
 import { CoreFeatures, FAQSection, GovernedCollaboration, ProductShowcase, ResultsMetrics, TeamCollaborationHero, TeamWayOfWorking, TestimonialMetrics } from "@/components/team-collaboration";
 import {WhyTeamCollaboration} from "@/components/team-collaboration";
 
