@@ -15,7 +15,6 @@ export default function HomePage() {
     <main className="min-h-screen">
       <div>
         <ProductCarouselHeroSection />
-        {/* <HeroSection heroImageUrl="/Home/banner.webp" /> */}
         <WorksForSection />
         <PricingSection />
         <StatsSection />

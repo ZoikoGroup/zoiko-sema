@@ -9,7 +9,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { SiThreads } from "react-icons/si";
+import { FaPinterest } from "react-icons/fa";
 
 /* ─────────────────────────────────────────────
    Types
@@ -201,34 +201,34 @@ export default function Footer() {
             <div className="flex justify-center gap-3 mt-8 flex-wrap">
               {[
                 {
-                  href: "https://facebook.com",
+                  href: "https://www.facebook.com/ZoikoSema/",
                   icon: <FaFacebookF size={14} />,
                   label: "Facebook",
                 },
                 {
-                  href: "https://x.com",
+                  href: "https://x.com/ZoikoSema",
                   icon: <FaXTwitter size={14} />,
                   label: "X / Twitter",
                 },
                 {
-                  href: "https://instagram.com",
+                  href: "https://www.instagram.com/zoikosema/",
                   icon: <FaInstagram size={14} />,
                   label: "Instagram",
                 },
                 {
-                  href: "https://linkedin.com",
+                  href: "https://www.linkedin.com/company/zoiko-sema",
                   icon: <FaLinkedinIn size={14} />,
                   label: "LinkedIn",
                 },
                 {
-                  href: "https://youtube.com",
+                  href: "https://www.youtube.com/@ZoikoSema",
                   icon: <FaYoutube size={14} />,
                   label: "YouTube",
                 },
                 {
-                  href: "https://threads.net",
-                  icon: <SiThreads size={14} />,
-                  label: "Threads",
+                  href: "https://www.pinterest.com/zoikosema/",
+                  icon: <FaPinterest size={14} />,
+                  label: "Pinterest.",
                 },
               ].map(({ href, icon, label }) => (
                 <a
@@ -279,7 +279,7 @@ export default function Footer() {
                   { label: "Individual Productivity", href: "/individual-productivity/" },
 
                   { label: "Freelancer Workflows", href: "/freelancer-workflows" },
-                  { label: "ZoikoTime Customers", href: "/solutions/zoikotime-customers" },
+                  { label: "ZoikoTime Customers", href: "/zoikotime-customers" },
                   { label: "Enterprise Deployment", href: "/solutions/enterprise" },
                   { label: "Regulated Workflows", href: "/regulated-workflows/" },
                 ]}

@@ -12,9 +12,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Zoiko Sema — Intelligent Communication",
+  title: "Zoiko Sema | AI Communication for Verified Work",
   description:
-    "Sema brings secure messaging, audio calls, video meetings, AI summaries and team collaboration into one intelligent communication platform.",
+    "Zoiko Sema turns conversations into accountable work with secure messaging, video meetings, AI summaries, and ZoikoTime workforce truth for serious teams.",
 };
 
 export default function RootLayout({

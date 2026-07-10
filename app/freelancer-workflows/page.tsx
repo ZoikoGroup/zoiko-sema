@@ -17,6 +17,7 @@ export default function FreelancerWorkflowsPage() {
     <main>
       <FreelancerHeroSection />
       <FreelancerBuiltForSection />
+      <FreelancerPricingSection />
       <FreelancerWhySection />
       <FreelancerShowcaseSection />
       <FreelancerCycleSection />
@@ -24,7 +25,7 @@ export default function FreelancerWorkflowsPage() {
       <FreelancerAISection />
       <FreelancerTrustSection />
       <FreelancerTestimonialSection />
-      <FreelancerPricingSection />
+ 
       <FreelancerClosingCTASection />
     </main>
   );
