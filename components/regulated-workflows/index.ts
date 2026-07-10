@@ -1,0 +1,13 @@
+export { default as RegulatedWorkflowsHeroSection } from "./RegulatedWorkflowsHeroSection";
+export { default as RegulatedWorkflowsIndustriesSection } from "./RegulatedWorkflowsIndustriesSection";
+export { default as RegulatedWorkflowsControlSection } from "./RegulatedWorkflowsControlSection";
+export { default as RegulatedWorkflowsWorkflowMapSection } from "./RegulatedWorkflowsWorkflowMapSection";
+export { default as RegulatedWorkflowsGovernedCollaborationSection } from "./RegulatedWorkflowsGovernedCollaborationSection";
+export { default as RegulatedWorkflowsPolicyAccessSection } from "./RegulatedWorkflowsPolicyAccessSection";
+export { default as RegulatedWorkflowsAuditTimelineSection } from "./RegulatedWorkflowsAuditTimelineSection";
+export { default as RegulatedWorkflowsAiGovernanceSection } from "./RegulatedWorkflowsAiGovernanceSection";
+export { default as RegulatedWorkflowsIntegrationsSection } from "./RegulatedWorkflowsIntegrationsSection";
+export { default as RegulatedWorkflowsTrustSecuritySection } from "./RegulatedWorkflowsTrustSecuritySection";
+export { default as RegulatedWorkflowsTestimonialSection } from "./RegulatedWorkflowsTestimonialSection";
+export { default as RegulatedWorkflowsFaqSection } from "./RegulatedWorkflowsFaqSection";
+export { default as RegulatedWorkflowsClosingCtaSection } from "./RegulatedWorkflowsClosingCtaSection";

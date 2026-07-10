@@ -9,7 +9,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { SiThreads } from "react-icons/si";
+import { FaPinterest } from "react-icons/fa";
 
 /* ─────────────────────────────────────────────
    Types
@@ -148,11 +148,15 @@ function Badge({
    Main Footer
 ───────────────────────────────────────────── */
 export default function Footer() {
-  const hero = useInView(0.1);
-  const nav = useInView(0.1);
-  const assurance = useInView(0.1);
-  const trust = useInView(0.1);
-  const bottom = useInView(0.1);
+  // Destructure ref + visible separately per section so refs are
+  // plain variables (ending in "Ref") rather than object property
+  // access inline in JSX — avoids the "Cannot access refs during
+  // render" lint error.
+  const { ref: heroRef, visible: heroVisible } = useInView(0.1);
+  const { ref: navRef, visible: navVisible } = useInView(0.1);
+  const { ref: assuranceRef, visible: assuranceVisible } = useInView(0.1);
+  const { ref: trustRef, visible: trustVisible } = useInView(0.1);
+  const { ref: bottomRef, visible: bottomVisible } = useInView(0.1);
 
   return (
     <>
@@ -173,10 +177,10 @@ export default function Footer() {
         {/* ── HERO SECTION ── */}
         <section className="max-w-7xl mx-auto px-6 py-16 text-center">
           <div
-            ref={hero.ref}
+            ref={heroRef}
             style={{
-              opacity: hero.visible ? 1 : 0,
-              transform: hero.visible ? "translateY(0)" : "translateY(32px)",
+              opacity: heroVisible ? 1 : 0,
+              transform: heroVisible ? "translateY(0)" : "translateY(32px)",
               transition: "opacity 0.7s ease, transform 0.7s ease",
             }}
           >
@@ -197,34 +201,34 @@ export default function Footer() {
             <div className="flex justify-center gap-3 mt-8 flex-wrap">
               {[
                 {
-                  href: "https://facebook.com",
+                  href: "https://www.facebook.com/ZoikoSema/",
                   icon: <FaFacebookF size={14} />,
                   label: "Facebook",
                 },
                 {
-                  href: "https://x.com",
+                  href: "https://x.com/ZoikoSema",
                   icon: <FaXTwitter size={14} />,
                   label: "X / Twitter",
                 },
                 {
-                  href: "https://instagram.com",
+                  href: "https://www.instagram.com/zoikosema/",
                   icon: <FaInstagram size={14} />,
                   label: "Instagram",
                 },
                 {
-                  href: "https://linkedin.com",
+                  href: "https://www.linkedin.com/company/zoiko-sema",
                   icon: <FaLinkedinIn size={14} />,
                   label: "LinkedIn",
                 },
                 {
-                  href: "https://youtube.com",
+                  href: "https://www.youtube.com/@ZoikoSema",
                   icon: <FaYoutube size={14} />,
                   label: "YouTube",
                 },
                 {
-                  href: "https://threads.net",
-                  icon: <SiThreads size={14} />,
-                  label: "Threads",
+                  href: "https://www.pinterest.com/zoikosema/",
+                  icon: <FaPinterest size={14} />,
+                  label: "Pinterest.",
                 },
               ].map(({ href, icon, label }) => (
                 <a
@@ -244,14 +248,14 @@ export default function Footer() {
 
         {/* ── PRODUCT & BUYER NAVIGATION ── */}
         <section className="max-w-7xl mx-auto px-6 border-t border-white/15 py-14">
-          <div ref={nav.ref}>
+          <div ref={navRef}>
             <SectionLabel label="Product & Buyer Navigation" />
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
               <FooterColumn
                 title="Product"
                 dotColor="bg-white"
-                visible={nav.visible}
+                visible={navVisible}
                 delay={0}
                 items={[
                   { label: "Overview", href: "/product-overview/" },
@@ -267,12 +271,12 @@ export default function Footer() {
               <FooterColumn
                 title="Solutions"
                 dotColor="bg-white"
-                visible={nav.visible}
+                visible={navVisible}
                 delay={80}
                 items={[
                   { label: "Business Communication", href: "/business-communication" },
                   { label: "Team Collaboration", href: "/team-collaboration" },
-                  { label: "Individual Productivity", href: "/solutions/productivity" },
+                  { label: "Individual Productivity", href: "/individual-productivity/" },
 
                   { label: "Freelancer Workflows", href: "/solutions/freelancers" },
                   { label: "ZoikoTime Customers", href: "/solutions/zoikotime-customers" },
@@ -284,7 +288,7 @@ export default function Footer() {
               <FooterColumn
                 title="Use Cases"
                 dotColor="bg-white"
-                visible={nav.visible}
+                visible={navVisible}
                 delay={160}
                 items={[
                   { label: "Secure Communication", href: "/secure-communication" },
@@ -303,7 +307,7 @@ export default function Footer() {
                 titleColor="text-cyan-300"
                 linkColor="text-cyan-300"
                 dotColor="bg-cyan-300"
-                visible={nav.visible}
+                visible={navVisible}
                 delay={240}
                 items={[
                   { label: "Sema + ZoikoTime", href: "/zoikotime" },
@@ -321,14 +325,14 @@ export default function Footer() {
 
         {/* ── ENTERPRISE ASSURANCE ── */}
         <section className="max-w-7xl mx-auto px-6 border-t border-white/15 py-14">
-          <div ref={assurance.ref}>
+          <div ref={assuranceRef}>
             <SectionLabel label="Enterprise Assurance" />
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
               <FooterColumn
                 title="Resources"
                 dotColor="bg-white"
-                visible={assurance.visible}
+                visible={assuranceVisible}
                 delay={0}
                 items={[
                   { label: "Blog", href: "/blog" },
@@ -344,7 +348,7 @@ export default function Footer() {
               <FooterColumn
                 title="Company"
                 dotColor="bg-white"
-                visible={assurance.visible}
+                visible={assuranceVisible}
                 delay={80}
                 items={[
                   { label: "About Sema", href: "/about/" },
@@ -360,7 +364,7 @@ export default function Footer() {
               <FooterColumn
                 title="Trust & Security"
                 dotColor="bg-white"
-                visible={assurance.visible}
+                visible={assuranceVisible}
                 delay={160}
                 items={[
                   { label: "Security Center", href: "/security" },
@@ -376,7 +380,7 @@ export default function Footer() {
               <FooterColumn
                 title="Legal"
                 dotColor="bg-white"
-                visible={assurance.visible}
+                visible={assuranceVisible}
                 delay={240}
                 items={[
                   { label: "Terms of Service", href: "/terms" },
@@ -395,10 +399,10 @@ export default function Footer() {
         {/* ── TRUST BADGES BLOCK ── */}
         <section className="max-w-7xl mx-auto px-6 border-t border-white/15 py-12">
           <div
-            ref={trust.ref}
+            ref={trustRef}
             style={{
-              opacity: trust.visible ? 1 : 0,
-              transform: trust.visible ? "translateY(0)" : "translateY(20px)",
+              opacity: trustVisible ? 1 : 0,
+              transform: trustVisible ? "translateY(0)" : "translateY(20px)",
               transition: "opacity 0.6s ease, transform 0.6s ease",
             }}
             className="text-center"
@@ -445,9 +449,9 @@ export default function Footer() {
         {/* ── BOTTOM BAR ── */}
         <section className="max-w-7xl mx-auto px-6 border-t border-white/15 py-8">
           <div
-            ref={bottom.ref}
+            ref={bottomRef}
             style={{
-              opacity: bottom.visible ? 1 : 0,
+              opacity: bottomVisible ? 1 : 0,
               transition: "opacity 0.6s ease 0.1s",
             }}
             className="text-center text-gray-300 text-[13px] leading-relaxed space-y-2"

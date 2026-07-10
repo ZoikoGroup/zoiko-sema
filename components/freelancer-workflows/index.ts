@@ -1,0 +1,11 @@
+export { default as FreelancerHeroSection } from "./FreelancerHeroSection";
+export { default as FreelancerBuiltForSection } from "./FreelancerBuiltForSection";
+export { default as FreelancerWhySection } from "./FreelancerWhySection";
+export { default as FreelancerShowcaseSection } from "./FreelancerShowcaseSection";
+export { default as FreelancerCycleSection } from "./FreelancerCycleSection";
+export { default as FreelancerBoardSection } from "./FreelancerBoardSection";
+export { default as FreelancerAISection } from "./FreelancerAISection";
+export { default as FreelancerTrustSection } from "./FreelancerTrustSection";
+export { default as FreelancerTestimonialSection } from "./FreelancerTestimonialSection";
+export { default as FreelancerPricingSection } from "./FreelancerPricingSection";
+export { default as FreelancerClosingCTASection } from "./FreelancerClosingCTASection";
