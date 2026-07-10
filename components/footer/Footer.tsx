@@ -281,7 +281,7 @@ export default function Footer() {
                   { label: "Freelancer Workflows", href: "/solutions/freelancers" },
                   { label: "ZoikoTime Customers", href: "/solutions/zoikotime-customers" },
                   { label: "Enterprise Deployment", href: "/solutions/enterprise" },
-                  { label: "Regulated Workflows", href: "/solutions/regulated-workflows" },
+                  { label: "Regulated Workflows", href: "/regulated-workflows/" },
                 ]}
               />
 
