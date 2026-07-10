@@ -1,0 +1,10 @@
+export { default as IndividualProductivityHeroSection } from "./IndividualProductivityHeroSection";
+export { default as IndividualProductivityWhySection } from "./IndividualProductivityWhySection";
+export { default as IndividualProductivityCapabilitiesSection } from "./IndividualProductivityCapabilitiesSection";
+export { default as IndividualProductivityFollowThroughSection } from "./IndividualProductivityFollowThroughSection";
+export { default as IndividualProductivityUseCasesSection } from "./IndividualProductivityUseCasesSection";
+export { default as IndividualProductivityGovernanceSection } from "./IndividualProductivityGovernanceSection";
+export { default as IndividualProductivityIntegrationsSection } from "./IndividualProductivityIntegrationsSection";
+export { default as IndividualProductivityTestimonialSection } from "./IndividualProductivityTestimonialSection";
+export { default as IndividualProductivityFAQSection } from "./IndividualProductivityFAQSection";
+export { default as IndividualProductivityCTASection } from "./IndividualProductivityCTASection";
