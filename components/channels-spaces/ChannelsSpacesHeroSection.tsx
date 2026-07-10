@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
+// Reusable scroll-in-view hook (same pattern as your other sections)
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -30,105 +31,123 @@ export default function ChannelsSpacesHeroSection() {
   const { ref: headRef, inView: headIn } = useInView(0.2);
   const { ref: subRef, inView: subIn } = useInView(0.2);
   const { ref: ctaRef, inView: ctaIn } = useInView(0.2);
-  const { ref: footRef, inView: footIn } = useInView(0.2);
+  const { ref: mockupRef, inView: mockupIn } = useInView(0.1);
 
   return (
     <>
       <style>{`
-        @keyframes csFadeUp {
+        @keyframes acFadeUp {
           from { opacity: 0; transform: translateY(28px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-        .cs-hidden  { opacity: 0; transform: translateY(28px); }
-        .cs-visible { animation: csFadeUp .7s cubic-bezier(.22,1,.36,1) forwards; }
+        .ac-hidden  { opacity: 0; transform: translateY(28px); }
+        .ac-visible { animation: acFadeUp .7s cubic-bezier(.22,1,.36,1) forwards; }
 
-        .cs-btn-primary {
+        /* Primary button hover */
+        .ac-btn-primary {
           transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
         }
-        .cs-btn-primary:hover {
+        .ac-btn-primary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 10px 24px color-mix(in srgb, var(--brand) 35%, transparent);
+          box-shadow: 0 10px 24px rgba(79,91,213,0.45);
         }
-        .cs-btn-primary:active { transform: translateY(0); }
+        .ac-btn-primary:active { transform: translateY(0); }
 
-        .cs-btn-secondary {
+        /* Secondary button hover */
+        .ac-btn-secondary {
           transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
         }
-        .cs-btn-secondary:hover {
+        .ac-btn-secondary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-          background-color: #f8f9ff;
+          box-shadow: 0 8px 20px rgba(0,0,0,0.18);
         }
-        .cs-btn-secondary:active { transform: translateY(0); }
+        .ac-btn-secondary:active { transform: translateY(0); }
+
+        /* Mockup image */
+        .ac-mockup {
+          transition: transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s ease;
+        }
+        .ac-mockup:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+        }
 
         @media (prefers-reduced-motion: reduce) {
-          .cs-hidden, .cs-visible { opacity: 1 !important; transform: none !important; animation: none !important; }
-          .cs-btn-primary:hover, .cs-btn-secondary:hover { transform: none !important; }
+          .ac-hidden, .ac-visible { opacity: 1 !important; transform: none !important; animation: none !important; }
+          .ac-btn-primary:hover, .ac-btn-secondary:hover, .ac-mockup:hover { transform: none !important; }
         }
       `}</style>
 
       <section
-        aria-label="Channels and spaces hero"
-        className="w-full py-24 md:py-32"
+        aria-label="Audio calls hero"
+        className="w-full py-24 md:py-15 bg-cover bg-center bg-no-repeat"
         style={{
-          background: "linear-gradient(180deg, #EEF1FF 0%, #F5F7FF 100%)",
+          // 👈 replace with your full-bleed dark background image
+          backgroundImage: "url('/Home/Container.webp')",
+          backgroundColor: "#14122B", // fallback while the image loads
         }}
       >
         <div className="mx-auto w-full max-w-4xl px-6 text-center">
           {/* Badge */}
           <div
             ref={badgeRef}
-            className={`cs-hidden ${badgeIn ? "cs-visible" : ""} inline-flex items-center gap-2 bg-white rounded-full px-4 py-1.5 mb-6 shadow-sm`}
+            className={`ac-hidden ${badgeIn ? "ac-visible" : ""} inline-flex items-center gap-2 bg-white rounded-full px-4 py-1.5 mb-6 shadow-sm`}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-brand" />
-            <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-brand">
-              Channels &amp; Spaces
+            <span className="w-1.5 h-1.5 rounded-full bg-[#4F5BD5]" />
+            <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#4F5BD5]">
+              CHANNELS & SPACES
             </span>
           </div>
 
           {/* Heading */}
           <h1
             ref={headRef}
-            className={`cs-hidden ${headIn ? "cs-visible" : ""} text-[clamp(30px,5vw,48px)] font-bold leading-[1.12] tracking-tight text-gray-900 mb-5`}
+            className={`ac-hidden ${headIn ? "ac-visible" : ""} text-[clamp(30px,5vw,48px)] font-bold leading-[1.12] tracking-tight text-white mb-5`}
             style={{ animationDelay: "0.08s" }}
           >
-            Organized conversations. Smarter collaboration.
+           Organized conversations. 
+Smarter collaboration.
           </h1>
 
           {/* Subtext */}
           <p
             ref={subRef}
-            className={`cs-hidden ${subIn ? "cs-visible" : ""} mx-auto max-w-[680px] text-[15px] leading-[1.75] text-gray-500 mb-9`}
+            className={`ac-hidden ${subIn ? "ac-visible" : ""} mx-auto max-w-[620px] text-[15px] leading-[1.75] text-gray-300 mb-9`}
             style={{ animationDelay: "0.16s" }}
           >
-            Create structured workspaces, spaces, channels, threads, shared
-            files, decisions, and AI-searchable context for teams that need
-            communication to stay clear, accountable, and governed.
+           Create structured workspaces, spaces, channels, threads,
+shared files, decisions, and AI-searchable context for teams that need communication to stay clear, accountable, and governed.
           </p>
 
           {/* CTAs */}
           <div
             ref={ctaRef}
-            className={`cs-hidden ${ctaIn ? "cs-visible" : ""} flex flex-col sm:flex-row items-center justify-center gap-3 mb-8`}
+            className={`ac-hidden ${ctaIn ? "ac-visible" : ""} flex flex-col sm:flex-row items-center justify-center gap-3 mb-14`}
             style={{ animationDelay: "0.24s" }}
           >
-            <button className="cs-btn-primary rounded-full px-7 py-3 text-[14px] font-semibold text-white bg-brand hover:bg-brand-dark">
+            <button
+              className="ac-btn-primary rounded-full px-7 py-3 text-[14px] font-semibold text-white"
+              style={{ backgroundColor: "#4F5BD5" }}
+            >
               Start free
             </button>
-            <button className="cs-btn-secondary rounded-full px-7 py-3 text-[14px] font-semibold text-gray-900 bg-white shadow-sm">
+            <button className="ac-btn-secondary rounded-full px-7 py-3 text-[14px] font-semibold text-gray-900 bg-white">
               Get a demo
             </button>
           </div>
+        </div>
 
-          {/* Footnote */}
-          <p
-            ref={footRef}
-            className={`cs-hidden ${footIn ? "cs-visible" : ""} text-[12.5px] text-gray-400`}
-            style={{ animationDelay: "0.32s" }}
-          >
-            Built for individuals, teams, businesses, and enterprise
-            workspaces.
-          </p>
+        {/* Voice call UI mockup — single image, not built from markup */}
+        <div
+          ref={mockupRef}
+          className={`ac-hidden ${mockupIn ? "ac-visible" : ""} mx-auto w-full max-w-3xl px-6`}
+          style={{ animationDelay: "0.3s" }}
+        >
+          <img
+            src="/Images/channels-and-spaces.webp" // 👈 replace with your call-UI mockup image
+            alt="Voice call interface showing participants, transcript, and call controls"
+            className="ac-mockup w-full h-auto rounded-2xl shadow-2xl"
+          />
         </div>
       </section>
     </>

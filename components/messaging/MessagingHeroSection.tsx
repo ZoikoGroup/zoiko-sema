@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
+// Reusable scroll-in-view hook (same pattern as your other sections)
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -28,87 +29,125 @@ function useInView(threshold = 0.15) {
 export default function MessagingHeroSection() {
   const { ref: badgeRef, inView: badgeIn } = useInView(0.3);
   const { ref: headRef, inView: headIn } = useInView(0.2);
-  const { ref: ctaRef, inView: ctaIn } = useInView(0.3);
+  const { ref: subRef, inView: subIn } = useInView(0.2);
+  const { ref: ctaRef, inView: ctaIn } = useInView(0.2);
+  const { ref: mockupRef, inView: mockupIn } = useInView(0.1);
 
   return (
     <>
       <style>{`
-        @keyframes mshFadeUp {
+        @keyframes acFadeUp {
           from { opacity: 0; transform: translateY(28px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-        .msh-hidden  { opacity: 0; transform: translateY(28px); }
-        .msh-visible { animation: mshFadeUp .65s cubic-bezier(.22,1,.36,1) forwards; }
+        .ac-hidden  { opacity: 0; transform: translateY(28px); }
+        .ac-visible { animation: acFadeUp .7s cubic-bezier(.22,1,.36,1) forwards; }
 
-        .msh-btn-primary {
-          transition: transform .25s ease, box-shadow .25s ease;
+        /* Primary button hover */
+        .ac-btn-primary {
+          transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
         }
-        .msh-btn-primary:hover {
+        .ac-btn-primary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 14px 28px rgba(59,71,222,0.28);
+          box-shadow: 0 10px 24px rgba(79,91,213,0.45);
         }
-        .msh-btn-outline {
-          transition: background-color .25s ease, border-color .25s ease;
+        .ac-btn-primary:active { transform: translateY(0); }
+
+        /* Secondary button hover */
+        .ac-btn-secondary {
+          transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
         }
-        .msh-btn-outline:hover {
-          background-color: #F7F8FC;
-          border-color: rgba(15,31,78,0.2);
+        .ac-btn-secondary:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+        }
+        .ac-btn-secondary:active { transform: translateY(0); }
+
+        /* Mockup image */
+        .ac-mockup {
+          transition: transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s ease;
+        }
+        .ac-mockup:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 30px 60px rgba(0,0,0,0.45);
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .msh-hidden, .msh-visible { opacity: 1 !important; transform: none !important; animation: none !important; }
-          .msh-btn-primary:hover, .msh-btn-outline:hover { transform: none !important; }
+          .ac-hidden, .ac-visible { opacity: 1 !important; transform: none !important; animation: none !important; }
+          .ac-btn-primary:hover, .ac-btn-secondary:hover, .ac-mockup:hover { transform: none !important; }
         }
       `}</style>
 
       <section
-        aria-label="Messaging hero"
-        className="w-full py-20 sm:py-24 md:py-28"
+        aria-label="Audio calls hero"
+        className="w-full py-24 md:py-15 bg-cover bg-center bg-no-repeat"
         style={{
-          background: "linear-gradient(180deg, #EEF1FB 0%, #F7F8FD 100%)",
+          // 👈 replace with your full-bleed dark background image
+          backgroundImage: "url('/Home/Container.webp')",
+          backgroundColor: "#14122B", // fallback while the image loads
         }}
       >
-        <div className="mx-auto w-full max-w-4xl px-5 sm:px-8 md:px-10 text-center">
+        <div className="mx-auto w-full max-w-4xl px-6 text-center">
           {/* Badge */}
           <div
             ref={badgeRef}
-            className={`msh-hidden ${badgeIn ? "msh-visible" : ""} flex justify-center mb-6`}
+            className={`ac-hidden ${badgeIn ? "ac-visible" : ""} inline-flex items-center gap-2 bg-white rounded-full px-4 py-1.5 mb-6 shadow-sm`}
           >
-            <div className="inline-flex items-center gap-2 rounded-full bg-white border border-gray-200 px-4 py-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand" />
-              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-brand">
-                Messaging
-              </span>
-            </div>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#4F5BD5]" />
+            <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#4F5BD5]">
+              MESSAGING
+            </span>
           </div>
 
-          {/* Heading + subheading */}
-          <div
+          {/* Heading */}
+          <h1
             ref={headRef}
-            className={`msh-hidden ${headIn ? "msh-visible" : ""}`}
+            className={`ac-hidden ${headIn ? "ac-visible" : ""} text-[clamp(30px,5vw,48px)] font-bold leading-[1.12] tracking-tight text-white mb-5`}
             style={{ animationDelay: "0.08s" }}
           >
-            <h1 className="text-[clamp(28px,5vw,44px)] font-bold leading-[1.15] tracking-tight text-gray-900 mb-5">
-              Messaging that turns conversations into action.
-            </h1>
-            <p className="text-[14px] sm:text-[15.5px] leading-[1.7] text-gray-500 max-w-[560px] mx-auto">
-              Zoiko Sema brings direct messages, group chats, channels, files, AI summaries, search, and business governance into one structured communication platform.
-            </p>
-          </div>
+           Messaging that turns
+conversations into action.
+          </h1>
+
+          {/* Subtext */}
+          <p
+            ref={subRef}
+            className={`ac-hidden ${subIn ? "ac-visible" : ""} mx-auto max-w-[620px] text-[15px] leading-[1.75] text-gray-300 mb-9`}
+            style={{ animationDelay: "0.16s" }}
+          >
+           Zoiko Sema brings direct messages, group chats, channels, files,
+AI summaries, search, and business governance into one structured communication platform.
+          </p>
 
           {/* CTAs */}
           <div
             ref={ctaRef}
-            className={`msh-hidden ${ctaIn ? "msh-visible" : ""} flex flex-wrap items-center justify-center gap-3 mt-9`}
-            style={{ animationDelay: "0.14s" }}
+            className={`ac-hidden ${ctaIn ? "ac-visible" : ""} flex flex-col sm:flex-row items-center justify-center gap-3 mb-14`}
+            style={{ animationDelay: "0.24s" }}
           >
-            <button className="msh-btn-primary rounded-full bg-[#3B47DE] text-white text-[14px] font-semibold px-7 py-3.5">
+            <button
+              className="ac-btn-primary rounded-full px-7 py-3 text-[14px] font-semibold text-white"
+              style={{ backgroundColor: "#4F5BD5" }}
+            >
               Start free
             </button>
-            <button className="msh-btn-outline rounded-full bg-white border border-gray-200 text-gray-900 text-[14px] font-semibold px-7 py-3.5">
+            <button className="ac-btn-secondary rounded-full px-7 py-3 text-[14px] font-semibold text-gray-900 bg-white">
               Get a demo
             </button>
           </div>
+        </div>
+
+        {/* Voice call UI mockup — single image, not built from markup */}
+        <div
+          ref={mockupRef}
+          className={`ac-hidden ${mockupIn ? "ac-visible" : ""} mx-auto w-full max-w-3xl px-6`}
+          style={{ animationDelay: "0.3s" }}
+        >
+          <img
+            src="/Images/message.webp" // 👈 replace with your call-UI mockup image
+            alt="Voice call interface showing participants, transcript, and call controls"
+            className="ac-mockup w-full h-auto rounded-2xl shadow-2xl"
+          />
         </div>
       </section>
     </>
