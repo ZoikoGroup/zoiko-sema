@@ -117,6 +117,7 @@ function useInView(threshold = 0.1) {
 }
 
 const BRAND = "#4F46E5";
+const HOVER_TEXT = "#503AD7";
 
 export default function PricingSection() {
   const { ref: headRef, inView: headIn } = useInView(0.25);
@@ -147,16 +148,34 @@ export default function PricingSection() {
         .pr-card {
           transition: transform .3s cubic-bezier(.22,1,.36,1),
                       box-shadow .3s cubic-bezier(.22,1,.36,1),
-                      border-color .3s ease;
+                      border-color .3s ease,
+                      background .35s ease;
           will-change: transform;
         }
         .pr-card:hover { transform: translateY(-7px); }
         .pr-card-plain:hover {
           box-shadow: 0 20px 40px rgba(15,15,40,0.10);
-          border-color: rgba(71,71,135,0.35);
         }
         .pr-card-popular:hover {
           box-shadow: 0 26px 52px rgba(71,71,135,0.22);
+        }
+
+        /* ── Gradient background + white text on card hover ── */
+        .pr-card-plain:hover,
+        .pr-card-popular:hover {
+          background: linear-gradient(135deg, #4F46E5 0%, #2D2A7A 100%) !important;
+          border-color: transparent !important;
+        }
+
+        .pr-card:hover .pr-plan-tag,
+        .pr-card:hover .pr-plan-name,
+        .pr-card:hover .pr-plan-desc,
+        .pr-card:hover .pr-feature {
+          color: #ffffff !important;
+        }
+
+        .pr-card:hover .pr-check-icon path {
+          stroke: #ffffff !important;
         }
 
         /* popular badge pulse */
@@ -171,6 +190,7 @@ export default function PricingSection() {
         .pr-feature:hover { transform: translateX(3px); }
         .pr-feature:hover .pr-check-icon { transform: scale(1.15); }
         .pr-check-icon { transition: transform .18s ease; }
+        .pr-check-icon path { transition: stroke .3s ease; }
 
         /* CTA buttons */
         .pr-btn {
@@ -178,7 +198,9 @@ export default function PricingSection() {
           transition: transform .22s cubic-bezier(.22,1,.36,1),
                       box-shadow .22s ease,
                       background-color .22s ease,
-                      color .22s ease;
+                      background .3s ease,
+                      color .22s ease,
+                      border-color .3s ease;
         }
         .pr-btn:hover { transform: translateY(-2px); }
 
@@ -201,6 +223,15 @@ export default function PricingSection() {
         .pr-btn-filled:hover {
           box-shadow: 0 14px 30px rgba(71,71,135,0.38);
           filter: brightness(1.08);
+        }
+
+        /* ── When the whole card is hovered, buttons flip to white bg / brand text ── */
+        .pr-card:hover .pr-btn-outline,
+        .pr-card:hover .pr-btn-filled {
+          background: #ffffff !important;
+          color: ${HOVER_TEXT} !important;
+          border-color: #ffffff !important;
+          filter: none;
         }
 
         @keyframes prShimmer {
@@ -279,17 +310,17 @@ export default function PricingSection() {
                   }}
                 >
                   {/* Tag */}
-                  <span className="text-[10.5px] font-bold uppercase tracking-[0.12em] mb-3 text-gray-400">
+                  <span className="pr-plan-tag text-[10.5px] font-bold uppercase tracking-[0.12em] mb-3 text-gray-400">
                     {plan.tag}
                   </span>
 
                   {/* Plan name */}
-                  <h3 className="text-[20px] font-bold leading-snug mb-2 text-[#15131F]">
+                  <h3 className="pr-plan-name text-[20px] font-bold leading-snug mb-2 text-[#15131F]">
                     {plan.name}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-[13px] leading-relaxed mb-5 text-gray-500">
+                  <p className="pr-plan-desc text-[13px] leading-relaxed mb-5 text-gray-500">
                     {plan.desc}
                   </p>
 
