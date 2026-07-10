@@ -31,7 +31,7 @@ export default function AudioCallsHeroSection() {
   const { ref: headRef, inView: headIn } = useInView(0.2);
   const { ref: subRef, inView: subIn } = useInView(0.2);
   const { ref: ctaRef, inView: ctaIn } = useInView(0.2);
-  const { ref: footRef, inView: footIn } = useInView(0.2);
+  const { ref: mockupRef, inView: mockupIn } = useInView(0.1);
 
   return (
     <>
@@ -49,7 +49,7 @@ export default function AudioCallsHeroSection() {
         }
         .ac-btn-primary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 10px 24px rgba(71,71,135,0.35);
+          box-shadow: 0 10px 24px rgba(79,91,213,0.45);
         }
         .ac-btn-primary:active { transform: translateY(0); }
 
@@ -59,22 +59,32 @@ export default function AudioCallsHeroSection() {
         }
         .ac-btn-secondary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-          background-color: #f8f9ff;
+          box-shadow: 0 8px 20px rgba(0,0,0,0.18);
         }
         .ac-btn-secondary:active { transform: translateY(0); }
 
+        /* Mockup image */
+        .ac-mockup {
+          transition: transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s ease;
+        }
+        .ac-mockup:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+        }
+
         @media (prefers-reduced-motion: reduce) {
           .ac-hidden, .ac-visible { opacity: 1 !important; transform: none !important; animation: none !important; }
-          .ac-btn-primary:hover, .ac-btn-secondary:hover { transform: none !important; }
+          .ac-btn-primary:hover, .ac-btn-secondary:hover, .ac-mockup:hover { transform: none !important; }
         }
       `}</style>
 
       <section
         aria-label="Audio calls hero"
-        className="w-full py-24 md:py-32"
+        className="w-full py-24 md:py-15 bg-cover bg-center bg-no-repeat"
         style={{
-          background: "linear-gradient(180deg, #F4F7FF 0%, #E7EDFE 100%)",
+          // 👈 replace with your full-bleed dark background image
+          backgroundImage: "url('/Home/Container.webp')",
+          backgroundColor: "#14122B", // fallback while the image loads
         }}
       >
         <div className="mx-auto w-full max-w-4xl px-6 text-center">
@@ -92,7 +102,7 @@ export default function AudioCallsHeroSection() {
           {/* Heading */}
           <h1
             ref={headRef}
-            className={`ac-hidden ${headIn ? "ac-visible" : ""} text-[clamp(30px,5vw,48px)] font-bold leading-[1.12] tracking-tight text-gray-900 mb-5`}
+            className={`ac-hidden ${headIn ? "ac-visible" : ""} text-[clamp(30px,5vw,48px)] font-bold leading-[1.12] tracking-tight text-white mb-5`}
             style={{ animationDelay: "0.08s" }}
           >
             Voice calls that move work forward.
@@ -101,7 +111,7 @@ export default function AudioCallsHeroSection() {
           {/* Subtext */}
           <p
             ref={subRef}
-            className={`ac-hidden ${subIn ? "ac-visible" : ""} mx-auto max-w-[620px] text-[15px] leading-[1.75] text-gray-500 mb-9`}
+            className={`ac-hidden ${subIn ? "ac-visible" : ""} mx-auto max-w-[620px] text-[15px] leading-[1.75] text-gray-300 mb-9`}
             style={{ animationDelay: "0.16s" }}
           >
             Start secure 1:1 and group audio calls from chats, channels, spaces,
@@ -112,7 +122,7 @@ export default function AudioCallsHeroSection() {
           {/* CTAs */}
           <div
             ref={ctaRef}
-            className={`ac-hidden ${ctaIn ? "ac-visible" : ""} flex flex-col sm:flex-row items-center justify-center gap-3 mb-8`}
+            className={`ac-hidden ${ctaIn ? "ac-visible" : ""} flex flex-col sm:flex-row items-center justify-center gap-3 mb-14`}
             style={{ animationDelay: "0.24s" }}
           >
             <button
@@ -121,20 +131,23 @@ export default function AudioCallsHeroSection() {
             >
               Start free
             </button>
-            <button className="ac-btn-secondary rounded-full px-7 py-3 text-[14px] font-semibold text-gray-900 bg-white shadow-sm">
+            <button className="ac-btn-secondary rounded-full px-7 py-3 text-[14px] font-semibold text-gray-900 bg-white">
               Get a demo
             </button>
           </div>
+        </div>
 
-          {/* Footnote */}
-          <p
-            ref={footRef}
-            className={`ac-hidden ${footIn ? "ac-visible" : ""} text-[12.5px] text-gray-400`}
-            style={{ animationDelay: "0.32s" }}
-          >
-            Built for fast conversations, clear decisions, and governed
-            communication across modern teams.
-          </p>
+        {/* Voice call UI mockup — single image, not built from markup */}
+        <div
+          ref={mockupRef}
+          className={`ac-hidden ${mockupIn ? "ac-visible" : ""} mx-auto w-full max-w-3xl px-6`}
+          style={{ animationDelay: "0.3s" }}
+        >
+          <img
+            src="/Images/Audio-Call.webp" // 👈 replace with your call-UI mockup image
+            alt="Voice call interface showing participants, transcript, and call controls"
+            className="ac-mockup w-full h-auto rounded-2xl shadow-2xl"
+          />
         </div>
       </section>
     </>
