@@ -274,14 +274,14 @@ export default function Footer() {
                 visible={navVisible}
                 delay={80}
                 items={[
-                  { label: "Business Communication", href: "/solutions/business-communication" },
+                  { label: "Business Communication", href: "/business-communication" },
                   { label: "Team Collaboration", href: "/team-collaboration" },
                   { label: "Individual Productivity", href: "/individual-productivity/" },
 
-                  { label: "Freelancer Workflows", href: "/freelancer-workflows" },
-                  { label: "ZoikoTime Customers", href: "/zoikotime-customers" },
-                  { label: "Enterprise Deployment", href: "/solutions/enterprise" },
-                  { label: "Regulated Workflows", href: "/regulated-workflows/" },
+                  { label: "Freelancer Workflows", href: "/solutions/freelancers" },
+                  { label: "ZoikoTime Customers", href: "/solutions/zoikotime-customers" },
+                  { label: "Enterprise Deployment", href: "/enterprise" },
+                  { label: "Regulated Workflows", href: "/solutions/regulated-workflows" },
                 ]}
               />
 
@@ -291,8 +291,8 @@ export default function Footer() {
                 visible={navVisible}
                 delay={160}
                 items={[
-                  { label: "Secure Communication", href: "/use-cases/secure-communication" },
-                  { label: "Meeting to Summary", href: "/meeting-to-summary/" },
+                  { label: "Secure Communication", href: "/secure-communication" },
+                  { label: "Meeting to Summary", href: "/use-cases/meeting-summary" },
                   { label: "Client Call Follow-Up", href: "/use-cases/client-followup" },
                   { label: "Team Decision Tracking", href: "/use-cases/decision-tracking" },
                   { label: "Remote Coordination", href: "/use-cases/remote-coordination" },
