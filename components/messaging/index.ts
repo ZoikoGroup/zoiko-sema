@@ -1,6 +1,6 @@
 export { default as MessagingHeroSection } from "./MessagingHeroSection";
-export { default as MessagingProblemSection } from "./MessagingProblemSection";
-export { default as MessagingShowcaseSection } from "./MessagingShowcaseSection";
+export { default as FeaturesShowcaseSection } from "./FeaturesShowcaseSection";
+export { default as ProductShowcaseSection } from "./ProductShowcaseSection";
 export { default as MessagingStructuredCollaborationSection } from "./MessagingStructuredCollaborationSection";
 export { default as MessagingAiAssistedSection } from "./MessagingAiAssistedSection";
 export { default as MessagingBusinessControlsSection } from "./MessagingBusinessControlsSection";

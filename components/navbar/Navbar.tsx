@@ -17,6 +17,7 @@ const menuItems: NavItem[] = [
       { label: "Audio Calls", href: "/audio-calls", desc: "Voice calls that stay connected to work" },
       { label: "Video Meetings", href: "/video-meetings", desc: "Meetings that drive decisions" },
       { label: "Channels & Spaces", href: "/product/channels", desc: "Organized conversations" },
+      {label: "Sema Notes",desc: "Capture, organise and share notes",href: "/sema-notes",}
     ],
   },
   {

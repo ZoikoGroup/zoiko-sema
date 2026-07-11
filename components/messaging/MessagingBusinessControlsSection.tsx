@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-function useInView(threshold = 0.15) {
+function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
 
@@ -25,159 +25,96 @@ function useInView(threshold = 0.15) {
   return { ref, inView };
 }
 
-const cards = [
+const controlsFeatures = [
   {
+    icon: "🔐",
     title: "Authentication",
-    desc: "Secure sign-in, SSO on eligible plans, MFA enforcement, and account recovery flows.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="5" y="11" width="14" height="10" rx="2" />
-        <path d="M8 11V7a4 4 0 0 1 8 0v4" />
-      </svg>
-    ),
+    description: "Secure sign-in, SSO on eligible plans, MFA enforcement, and account recovery flows.",
   },
   {
+    icon: "⚙️",
     title: "Access control",
-    desc: "Restrict conversations, files, channels, spaces, and exports by role and policy.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
+    description: "Restrict conversations, files, channels, spaces, and exports by role and policy.",
   },
   {
+    icon: "🏷️",
     title: "External badges",
-    desc: "Clearly label guests and external participants in conversations and member lists.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <line x1="2" y1="12" x2="22" y2="12" />
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-      </svg>
-    ),
+    description: "Clearly label guests and external participants in conversations and member lists.",
   },
   {
+    icon: "⚡",
     title: "Audit logs",
-    desc: "Track message deletion, role changes, exports, moderation actions, and AI usage.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 12h4l3 8 4-16 3 8h4" />
-      </svg>
-    ),
+    description: "Track message deletion, role changes, exports, moderation actions, and AI usage.",
   },
   {
+    icon: "🗂️",
     title: "Data protection",
-    desc: "Protect files, message history, AI outputs, and attachments with plan-appropriate controls.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
-      </svg>
-    ),
+    description: "Protect files, message history, AI outputs, and attachments with plan-appropriate controls.",
   },
   {
+    icon: "🕵️",
     title: "Privacy controls",
-    desc: "Configure read receipts, presence visibility, retention, AI access, and sharing policies.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0A1.65 1.65 0 0 0 10 3.09V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h0a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v0a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-      </svg>
-    ),
-  },
+    description: "Configure read receipts, presence visibility, retention, AI access, and sharing policies.",
+  }
 ];
 
-export default function MessagingBusinessControlsSection() {
-  const { ref: badgeRef, inView: badgeIn } = useInView(0.3);
-  const { ref: headRef, inView: headIn } = useInView(0.2);
-  const { ref: gridRef, inView: gridIn } = useInView(0.06);
+export default function BusinessControlsSection() {
+  const { ref: sectionRef, inView: sectionIn } = useInView(0.12);
 
   return (
     <>
       <style>{`
-        @keyframes mbcFadeUp {
+        @keyframes bcFadeUp {
           from { opacity: 0; transform: translateY(28px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-        .mbc-hidden  { opacity: 0; transform: translateY(28px); }
-        .mbc-visible { animation: mbcFadeUp .65s cubic-bezier(.22,1,.36,1) forwards; }
-
-        .mbc-card { opacity: 0; transform: translateY(24px); }
-        .mbc-grid.mbc-visible .mbc-card {
-          animation: mbcFadeUp .55s cubic-bezier(.22,1,.36,1) forwards;
-        }
-
-        .mbc-card-inner {
-          transition: transform .3s ease, border-color .3s ease, background-color .3s ease;
-        }
-        .mbc-card-inner:hover {
-          transform: translateY(-5px);
-          border-color: rgba(255,255,255,0.14);
-          background-color: rgba(255,255,255,0.05);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .mbc-hidden, .mbc-visible, .mbc-card { opacity: 1 !important; transform: none !important; animation: none !important; }
-          .mbc-card-inner:hover { transform: none !important; }
-        }
+        .bc-hidden  { opacity: 0; transform: translateY(28px); }
+        .bc-visible { animation: bcFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
       `}</style>
 
-      <section
-        aria-label="Business controls"
-        className="w-full py-16 sm:py-20 md:py-24"
-        style={{
-          background: "linear-gradient(180deg, #0D0B22 0%, #14112E 100%)",
-        }}
-      >
-        <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-10 lg:px-16">
-          {/* Badge */}
-          <div
-            ref={badgeRef}
-            className={`mbc-hidden ${badgeIn ? "mbc-visible" : ""} flex justify-center mb-6`}
-          >
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
-              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-white/70">
-                Business Controls
-              </span>
-            </div>
-          </div>
-
-          {/* Heading */}
-          <div
-            ref={headRef}
-            className={`mbc-hidden ${headIn ? "mbc-visible" : ""} text-center mb-10 sm:mb-14`}
-            style={{ animationDelay: "0.08s" }}
-          >
-            <h2 className="text-[clamp(24px,4.2vw,34px)] font-bold leading-[1.2] tracking-tight text-white max-w-[600px] mx-auto">
+      <section className="w-full bg-slate-900 py-16 sm:py-20 md:py-24 overflow-hidden">
+        <div
+          ref={sectionRef}
+          className={`mx-auto w-full max-w-6xl px-6 sm:px-8 md:px-10 bc-hidden ${
+            sectionIn ? "bc-visible" : ""
+          }`}
+        >
+          
+          {/* Header Title Information */}
+          <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-20">
+            <span className="block text-indigo-300 text-xs font-bold tracking-widest uppercase mb-3.5">
+              BUSINESS CONTROLS
+            </span>
+            <h2 className="text-[clamp(24px,4.5vw,36px)] font-extrabold text-white leading-[1.25] tracking-tight">
               Secure business messaging without unnecessary complexity.
             </h2>
           </div>
 
-          {/* Grid */}
-          <div
-            ref={gridRef}
-            className={`mbc-grid ${gridIn ? "mbc-visible" : ""} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5`}
-          >
-            {cards.map((c, i) => (
+          {/* Cards Flex Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+            {controlsFeatures.map((item, index) => (
               <div
-                key={i}
-                className="mbc-card"
-                style={{ animationDelay: `${0.04 + i * 0.06}s` }}
+                key={index}
+                className="w-full p-6 sm:p-7 bg-slate-900 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 group flex flex-col justify-start align-top"
               >
-                <div className="mbc-card-inner h-full rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 sm:p-7">
-                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-white/[0.07] text-white/80 mb-4">
-                    {c.icon}
-                  </span>
-                  <h3 className="text-[14.5px] sm:text-[15px] font-bold text-white mb-2">
-                    {c.title}
-                  </h3>
-                  <p className="text-[12.5px] sm:text-[13px] leading-[1.65] text-white/45">
-                    {c.desc}
-                  </p>
+                {/* Icon Wrapper Frame */}
+                <div className="w-10 h-10 bg-white/10 group-hover:bg-white/15 rounded-xl flex items-center justify-center transition-colors duration-200 mb-5 select-none text-lg">
+                  {item.icon}
                 </div>
+
+                {/* Card Title Content */}
+                <h3 className="text-sm sm:text-base font-bold text-white mb-2.5">
+                  {item.title}
+                </h3>
+
+                {/* Card Body Paragraph Description */}
+                <p className="text-slate-400 text-xs sm:text-[13px] font-normal leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
+
         </div>
       </section>
     </>
