@@ -43,23 +43,24 @@ export default function AudioCallsHeroSection() {
         .ac-hidden  { opacity: 0; transform: translateY(28px); }
         .ac-visible { animation: acFadeUp .7s cubic-bezier(.22,1,.36,1) forwards; }
 
-        /* Primary button hover */
+        /* Primary button hover — white pill, dark text */
         .ac-btn-primary {
           transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
         }
         .ac-btn-primary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 10px 24px rgba(79,91,213,0.45);
+          box-shadow: 0 10px 24px rgba(0,0,0,0.25);
         }
         .ac-btn-primary:active { transform: translateY(0); }
 
-        /* Secondary button hover */
+        /* Secondary button hover — outlined, transparent on dark bg */
         .ac-btn-secondary {
-          transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease;
+          transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, border-color .25s ease;
         }
         .ac-btn-secondary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+          background-color: rgba(255,255,255,0.08);
+          border-color: rgba(255,255,255,0.45);
         }
         .ac-btn-secondary:active { transform: translateY(0); }
 
@@ -83,18 +84,22 @@ export default function AudioCallsHeroSection() {
         className="w-full py-24 md:py-15 bg-cover bg-center bg-no-repeat"
         style={{
           // 👈 replace with your full-bleed dark background image
-          backgroundImage: "url('/Home/Container.webp')",
-          backgroundColor: "#14122B", // fallback while the image loads
+          backgroundImage: "url('/Images/Container.webp')",
+         // fallback while the image loads
         }}
       >
         <div className="mx-auto w-full max-w-4xl px-6 text-center">
-          {/* Badge */}
+          {/* Badge — dark pill, subtle border, small dot */}
           <div
             ref={badgeRef}
-            className={`ac-hidden ${badgeIn ? "ac-visible" : ""} inline-flex items-center gap-2 bg-white rounded-full px-4 py-1.5 mb-6 shadow-sm`}
+            className={`ac-hidden ${badgeIn ? "ac-visible" : ""} inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6`}
+            style={{
+              backgroundColor: "rgba(255,255,255,0.08)",
+              border: "1px solid rgba(255,255,255,0.18)",
+            }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#4F5BD5]" />
-            <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#4F5BD5]">
+            <span className="w-1.5 h-1.5 rounded-full bg-white" />
+            <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-white">
               Audio Calls
             </span>
           </div>
@@ -105,7 +110,7 @@ export default function AudioCallsHeroSection() {
             className={`ac-hidden ${headIn ? "ac-visible" : ""} text-[clamp(30px,5vw,48px)] font-bold leading-[1.12] tracking-tight text-white mb-5`}
             style={{ animationDelay: "0.08s" }}
           >
-            Voice calls that move work forward.
+            Voice calls that move work forward
           </h1>
 
           {/* Subtext */}
@@ -119,19 +124,24 @@ export default function AudioCallsHeroSection() {
             call history, and business-grade controls.
           </p>
 
-          {/* CTAs */}
+          {/* CTAs — white filled primary + outlined secondary */}
           <div
             ref={ctaRef}
             className={`ac-hidden ${ctaIn ? "ac-visible" : ""} flex flex-col sm:flex-row items-center justify-center gap-3 mb-14`}
             style={{ animationDelay: "0.24s" }}
           >
             <button
-              className="ac-btn-primary rounded-full px-7 py-3 text-[14px] font-semibold text-white"
-              style={{ backgroundColor: "#4F5BD5" }}
+              className="ac-btn-primary rounded-full px-7 py-3 text-[14px] font-semibold text-gray-900 bg-white"
             >
               Start free
             </button>
-            <button className="ac-btn-secondary rounded-full px-7 py-3 text-[14px] font-semibold text-gray-900 bg-white">
+            <button
+              className="ac-btn-secondary rounded-full px-7 py-3 text-[14px] font-semibold text-white"
+              style={{
+                backgroundColor: "transparent",
+                border: "1px solid rgba(255,255,255,0.3)",
+              }}
+            >
               Get a demo
             </button>
           </div>
@@ -144,9 +154,9 @@ export default function AudioCallsHeroSection() {
           style={{ animationDelay: "0.3s" }}
         >
           <img
-            src="/Images/Audio-Call.webp" // 👈 replace with your call-UI mockup image
+            src="/Images/AudioCall.webp" // 👈 replace with your call-UI mockup image
             alt="Voice call interface showing participants, transcript, and call controls"
-            className="ac-mockup w-full h-auto rounded-2xl shadow-2xl"
+            className="ac-mockup w-full h-auto rounded-2xl "
           />
         </div>
       </section>

@@ -29,6 +29,8 @@ const features = [
   {
     title: "1:1 and group calls",
     desc: "Start direct calls from profile cards, direct messages, contacts, and recent conversations, or bring a focused group together.",
+    iconBg: "#F1F2F6",
+    iconColor: "#1F2937",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
@@ -38,6 +40,8 @@ const features = [
   {
     title: "Channel & space calls",
     desc: "Start a call inside a channel or run persistent voice sessions for project spaces, client rooms, and operations.",
+    iconBg: "#EEF0FE",
+    iconColor: "#4F46E5",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <line x1="4" y1="9" x2="20" y2="9" />
@@ -50,6 +54,8 @@ const features = [
   {
     title: "Call handoff",
     desc: "Move calls between desktop, tablet, and mobile when authenticated, and switch devices without leaving the call.",
+    iconBg: "#E0E7FF",
+    iconColor: "#3457E8",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
@@ -61,6 +67,8 @@ const features = [
   {
     title: "Escalate to video",
     desc: "Convert an audio call to video the moment visual collaboration is needed.",
+    iconBg: "#14122B",
+    iconColor: "#FFFFFF",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="23 7 16 12 23 17 23 7" />
@@ -71,6 +79,8 @@ const features = [
   {
     title: "Call history",
     desc: "Track recent calls, participants, duration, source, summary status, and policy state.",
+    iconBg: "#F1F2F6",
+    iconColor: "#1F2937",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
@@ -81,6 +91,8 @@ const features = [
   {
     title: "Recording, where enabled",
     desc: "Enable recording only when plan, role, policy, and consent requirements are satisfied.",
+    iconBg: "#DBEAFE",
+    iconColor: "#2563EB",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="9" y="2" width="6" height="12" rx="3" />
@@ -107,49 +119,59 @@ export default function AudioCallsCoreCallingSection() {
         .cc-hidden  { opacity: 0; transform: translateY(28px); }
         .cc-visible { animation: ccFadeUp .65s cubic-bezier(.22,1,.36,1) forwards; }
 
-        .cc-card { opacity: 0; transform: translateY(24px); }
+        .cc-card { opacity: 0; transform: translateY(24px) scale(.98); }
         .cc-grid.cc-visible .cc-card {
           animation: ccFadeUp .55s cubic-bezier(.22,1,.36,1) forwards;
         }
 
         .cc-card-inner {
-          transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+          transition: transform .35s cubic-bezier(.22,1,.36,1),
+                      box-shadow .35s ease,
+                      border-color .35s ease;
         }
         .cc-card-inner:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 16px 32px color-mix(in srgb, var(--brand) 14%, transparent);
-          border-color: color-mix(in srgb, var(--brand) 28%, transparent);
+          transform: translateY(-6px);
+          box-shadow: 0 18px 36px rgba(79,70,229,0.14);
+          border-color: rgba(79,70,229,0.25);
         }
-        .cc-card-inner:hover .cc-icon {
-          transform: scale(1.1);
-          color: var(--brand);
+
+        .cc-icon-wrap {
+          transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease;
         }
-        .cc-icon {
-          transition: transform .3s ease, color .3s ease;
+        .cc-card-inner:hover .cc-icon-wrap {
+          transform: scale(1.1) rotate(-4deg);
+          box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+        }
+
+        .cc-card-inner:hover .cc-title {
+          color: #4F46E5;
+        }
+        .cc-title {
+          transition: color .3s ease;
         }
 
         @media (prefers-reduced-motion: reduce) {
           .cc-hidden, .cc-visible, .cc-card { opacity: 1 !important; transform: none !important; animation: none !important; }
-          .cc-card-inner:hover, .cc-card-inner:hover .cc-icon { transform: none !important; }
+          .cc-card-inner:hover, .cc-card-inner:hover .cc-icon-wrap { transform: none !important; }
         }
       `}</style>
 
       <section
         aria-label="Core calling features"
-        className="w-full bg-[#F4F7FF] py-16 sm:py-20 md:py-24"
+        className="w-full bg-[#F3F2FD] py-16 sm:py-20 md:py-24"
       >
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-10 lg:px-16">
-          {/* Badge */}
+          {/* Badge — plain uppercase label, no pill */}
           <div
             ref={badgeRef}
-            className={`cc-hidden ${badgeIn ? "cc-visible" : ""} flex justify-center mb-6`}
+            className={`cc-hidden ${badgeIn ? "cc-visible" : ""} text-center mb-3`}
           >
-            <div className="inline-flex items-center gap-2 rounded-full bg-white border border-gray-200 px-4 py-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand" />
-              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-brand">
-                Core Calling
-              </span>
-            </div>
+            <span
+              className="text-[12px] font-bold tracking-[0.1em] uppercase"
+              style={{ color: "#4F46E5" }}
+            >
+              Core Calling
+            </span>
           </div>
 
           {/* Heading */}
@@ -158,7 +180,7 @@ export default function AudioCallsCoreCallingSection() {
             className={`cc-hidden ${headIn ? "cc-visible" : ""} text-center mb-10 sm:mb-14`}
             style={{ animationDelay: "0.08s" }}
           >
-            <h2 className="text-[clamp(24px,4.2vw,36px)] font-bold leading-[1.15] tracking-tight text-gray-900">
+            <h2 className="text-[clamp(24px,4.2vw,36px)] font-extrabold leading-[1.15] tracking-tight text-gray-900">
               Everything a voice-first team needs.
             </h2>
           </div>
@@ -175,10 +197,13 @@ export default function AudioCallsCoreCallingSection() {
                 style={{ animationDelay: `${0.05 + i * 0.08}s` }}
               >
                 <div className="cc-card-inner h-full bg-white rounded-2xl border border-gray-100 p-6 sm:p-7 shadow-sm">
-                  <span className="cc-icon inline-flex text-brand mb-4">
+                  <span
+                    className="cc-icon-wrap inline-flex items-center justify-center w-11 h-11 rounded-xl mb-4"
+                    style={{ backgroundColor: f.iconBg, color: f.iconColor }}
+                  >
                     {f.icon}
                   </span>
-                  <h3 className="text-[15px] sm:text-[16px] font-bold text-gray-900 mb-2">
+                  <h3 className="cc-title text-[15px] sm:text-[16px] font-bold text-gray-900 mb-2">
                     {f.title}
                   </h3>
                   <p className="text-[13px] sm:text-[13.5px] leading-[1.7] text-gray-500">

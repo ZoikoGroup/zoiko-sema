@@ -32,8 +32,6 @@ const checklist = [
   "Ask Sema — ask questions about a call summary within permission boundaries",
 ];
 
-const tabs = ["Summary", "Decisions", "Action items"];
-
 export default function AudioCallsAIIntelligenceSection() {
   const { ref: leftRef, inView: leftIn } = useInView(0.15);
   const { ref: rightRef, inView: rightIn } = useInView(0.1);
@@ -46,7 +44,7 @@ export default function AudioCallsAIIntelligenceSection() {
           to   { opacity: 1; transform: translateY(0); }
         }
         @keyframes aiFadeUpR {
-          from { opacity: 0; transform: translateY(32px) scale(0.98); }
+          from { opacity: 0; transform: translateY(32px) scale(0.96); }
           to   { opacity: 1; transform: translateY(0) scale(1); }
         }
         .ai-hidden  { opacity: 0; transform: translateY(28px); }
@@ -57,19 +55,35 @@ export default function AudioCallsAIIntelligenceSection() {
           animation: aiFadeUp .5s cubic-bezier(.22,1,.36,1) forwards;
         }
 
-        .ai-frame-hidden { opacity: 0; transform: translateY(32px) scale(0.98); }
-        .ai-frame-visible { animation: aiFadeUpR .7s cubic-bezier(.22,1,.36,1) forwards; }
+        .ai-frame-hidden { opacity: 0; transform: translateY(32px) scale(0.96); }
+        .ai-frame-visible { animation: aiFadeUpR .75s cubic-bezier(.22,1,.36,1) forwards; }
 
-        .ai-frame { transition: box-shadow .35s ease; }
-        .ai-frame:hover { box-shadow: 0 30px 60px rgba(10,10,30,0.35); }
+        .ai-frame {
+          transition: transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease;
+        }
+        .ai-frame:hover {
+          transform: translateY(-6px) scale(1.015);
+          box-shadow: 0 34px 68px rgba(20,20,60,0.4);
+        }
+        .ai-frame img {
+          transition: transform .6s cubic-bezier(.22,1,.36,1);
+          display: block;
+        }
+        .ai-frame:hover img {
+          transform: scale(1.04);
+        }
 
-        .ai-tab { transition: transform .25s ease, background-color .25s ease; }
-        .ai-tab:hover { transform: translateY(-2px); }
+        .ai-check {
+          transition: transform .25s ease;
+        }
+        .ai-item:hover .ai-check {
+          transform: scale(1.15);
+        }
 
         @media (prefers-reduced-motion: reduce) {
           .ai-hidden, .ai-visible, .ai-item,
           .ai-frame-hidden, .ai-frame-visible { opacity: 1 !important; transform: none !important; animation: none !important; }
-          .ai-frame:hover, .ai-tab:hover { transform: none !important; }
+          .ai-frame:hover, .ai-frame:hover img, .ai-item:hover .ai-check { transform: none !important; }
         }
       `}</style>
 
@@ -81,12 +95,12 @@ export default function AudioCallsAIIntelligenceSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             {/* LEFT */}
             <div ref={leftRef} className={`ai-left ai-hidden ${leftIn ? "ai-visible" : ""}`}>
-              <div className="ai-item inline-flex items-center gap-2 rounded-full border border-gray-200 px-4 py-1.5 mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-brand" />
-                <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-brand">
-                  AI Call Intelligence
-                </span>
-              </div>
+              <p
+                className="ai-item text-[12px] font-bold tracking-[0.1em] uppercase mb-3"
+                style={{ color: "#4F46E5" }}
+              >
+                AI Call Intelligence
+              </p>
 
               <h2
                 className="ai-item text-[clamp(24px,3.6vw,34px)] font-bold leading-[1.2] tracking-tight text-gray-900 mb-5"
@@ -111,7 +125,10 @@ export default function AudioCallsAIIntelligenceSection() {
                     className="ai-item flex items-start gap-3"
                     style={{ animationDelay: `${0.2 + i * 0.08}s` }}
                   >
-                    <span className="flex-shrink-0 mt-0.5 text-brand font-bold text-[14px]">
+                    <span
+                      className="ai-check flex-shrink-0 mt-0.5 font-bold text-[14px]"
+                      style={{ color: "#16A34A" }}
+                    >
                       ✓
                     </span>
                     <span className="text-[13.5px] sm:text-[14px] leading-[1.7] text-gray-600">
@@ -122,48 +139,17 @@ export default function AudioCallsAIIntelligenceSection() {
               </ul>
             </div>
 
-            {/* RIGHT — dark mockup */}
+            {/* RIGHT — single mockup image */}
             <div
               ref={rightRef}
               className={`ai-frame ai-frame-hidden ${rightIn ? "ai-frame-visible" : ""} rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(10,10,30,0.25)]`}
-              style={{ backgroundColor: "#15132B", animationDelay: "0.1s" }}
+              style={{ animationDelay: "0.1s" }}
             >
-              {/* Top bar */}
-              <div className="flex items-center gap-1.5 px-5 py-3.5">
-                <span className="w-2 h-2 rounded-full bg-white/20" />
-                <span className="w-2 h-2 rounded-full bg-white/20" />
-                <span className="w-2 h-2 rounded-full bg-white/20" />
-              </div>
-
-              <div className="px-5 sm:px-7 pb-6 sm:pb-8">
-                {/* Tabs */}
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {tabs.map((tab, i) => (
-                    <span
-                      key={tab}
-                      className={`ai-tab rounded-full px-3.5 py-1.5 text-[12px] font-semibold ${
-                        i === 0 ? "bg-brand text-white" : "bg-white/10 text-white/70"
-                      }`}
-                    >
-                      {tab}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Summary box */}
-                <div className="rounded-xl bg-white/5 border border-white/10 px-5 py-4 mb-4">
-                  <p className="text-[13px] sm:text-[13.5px] leading-[1.7] text-white/85">
-                    Three decisions confirmed: launch Oct 14, hire two
-                    engineers, defer Phase 2 to Q4. One blocker on the design
-                    side.
-                  </p>
-                </div>
-
-                {/* Footer note */}
-                <p className="text-[11.5px] text-white/40">
-                  AI summary enabled for this call · Consent confirmed
-                </p>
-              </div>
+              <img
+                src="/Images/AudioCallsAIIntelligence.webp" // 👈 add the AI chip/circuit image URL here
+                alt="Abstract AI chip illustration representing AI call intelligence"
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </div>

@@ -29,64 +29,32 @@ const cards = [
   {
     title: "Connection status",
     desc: "See whether ZoikoTime is disconnected, available, pending setup, or active.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 9V5a2 2 0 0 0-2-2h-4M9 3H5a2 2 0 0 0-2 2v4m0 6v4a2 2 0 0 0 2 2h4m6 0h4a2 2 0 0 0 2-2v-4" />
-        <line x1="9" y1="9" x2="15" y2="15" />
-      </svg>
-    ),
+    emoji: "🔗",
   },
   {
     title: "Workspace mapping",
     desc: "Map calls from selected Sema workspaces to ZoikoTime teams, departments, or projects.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="7" height="7" rx="1" />
-        <rect x="14" y="3" width="7" height="7" rx="1" />
-        <rect x="3" y="14" width="7" height="7" rx="1" />
-        <rect x="14" y="14" width="7" height="7" rx="1" />
-      </svg>
-    ),
+    emoji: "🗺️",
   },
   {
     title: "Policy alignment",
     desc: "Align eligible calls with approved work sessions, attendance context, or operational workflows.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <polyline points="9 12 11 14 15 10" />
-      </svg>
-    ),
+    emoji: "✅",
   },
   {
     title: "Privacy modes",
     desc: "Apply jurisdiction-aware privacy controls and limit visible workforce-context signals.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
+    emoji: "🕵️",
   },
   {
     title: "Exception reporting",
     desc: "Flag policy gaps, unmapped workspaces, failed syncs, or missing consent settings.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <polyline points="12 6 12 12 16 14" />
-      </svg>
-    ),
+    emoji: "⚠️",
   },
   {
     title: "Verified call context",
     desc: "Show occurrence, time window, workspace, and policy state within governance rules.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="18" y1="20" x2="18" y2="10" />
-        <line x1="12" y1="20" x2="12" y2="4" />
-        <line x1="6" y1="20" x2="6" y2="14" />
-      </svg>
-    ),
+    emoji: "🔍",
   },
 ];
 
@@ -106,18 +74,28 @@ export default function AudioCallsZoikoTimeSection() {
         .zt-hidden  { opacity: 0; transform: translateY(28px); }
         .zt-visible { animation: ztFadeUp .65s cubic-bezier(.22,1,.36,1) forwards; }
 
-        .zt-card { opacity: 0; transform: translateY(24px); }
+        .zt-card { opacity: 0; transform: translateY(24px) scale(.98); }
         .zt-grid.zt-visible .zt-card {
           animation: ztFadeUp .55s cubic-bezier(.22,1,.36,1) forwards;
         }
 
         .zt-card-inner {
-          transition: transform .3s ease, box-shadow .3s ease, background-color .3s ease;
+          transition: transform .35s cubic-bezier(.22,1,.36,1),
+                      box-shadow .35s ease,
+                      background-color .35s ease;
         }
         .zt-card-inner:hover {
-          transform: translateY(-5px);
-          background-color: rgba(255,255,255,0.08);
-          box-shadow: 0 16px 32px rgba(0,0,0,0.2);
+          transform: translateY(-6px);
+          background-color: rgba(255,255,255,0.12);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        }
+
+        .zt-icon-box {
+          transition: transform .35s cubic-bezier(.22,1,.36,1), background-color .35s ease;
+        }
+        .zt-card-inner:hover .zt-icon-box {
+          transform: scale(1.12) rotate(-4deg);
+          background-color: rgba(255,255,255,0.28);
         }
 
         .zt-btn-primary { transition: transform .25s ease, box-shadow .25s ease; }
@@ -128,27 +106,25 @@ export default function AudioCallsZoikoTimeSection() {
 
         @media (prefers-reduced-motion: reduce) {
           .zt-hidden, .zt-visible, .zt-card { opacity: 1 !important; transform: none !important; animation: none !important; }
-          .zt-card-inner:hover, .zt-btn-primary:hover, .zt-btn-secondary:hover { transform: none !important; }
+          .zt-card-inner:hover, .zt-card-inner:hover .zt-icon-box,
+          .zt-btn-primary:hover, .zt-btn-secondary:hover { transform: none !important; }
         }
       `}</style>
 
       <section
         aria-label="ZoikoTime integration"
         className="w-full py-16 sm:py-20 md:py-24"
-        style={{ backgroundColor: "#4B4880" }}
+        style={{ backgroundColor: "#554fa9" }}
       >
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-10 lg:px-16">
-          {/* Badge */}
+          {/* Badge — plain uppercase label, no pill */}
           <div
             ref={badgeRef}
-            className={`zt-hidden ${badgeIn ? "zt-visible" : ""} flex justify-center mb-6`}
+            className={`zt-hidden ${badgeIn ? "zt-visible" : ""} text-center mb-3`}
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-white" />
-              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-white">
-                ZoikoTime Integration
-              </span>
-            </div>
+            <span className="text-[12px] font-bold tracking-[0.1em] uppercase text-white/80">
+              ZoikoTime Integration
+            </span>
           </div>
 
           {/* Heading + subtext */}
@@ -157,7 +133,7 @@ export default function AudioCallsZoikoTimeSection() {
             className={`zt-hidden ${headIn ? "zt-visible" : ""} text-center mb-10 sm:mb-14`}
             style={{ animationDelay: "0.08s" }}
           >
-            <h2 className="text-[clamp(22px,4vw,32px)] font-bold leading-[1.2] tracking-tight text-white max-w-[720px] mx-auto mb-4">
+            <h2 className="text-[clamp(22px,4vw,32px)] font-extrabold leading-[1.2] tracking-tight text-white max-w-[720px] mx-auto mb-4">
               Connect calls to workforce context when accountability matters.
             </h2>
             <p className="text-[14px] sm:text-[15px] leading-[1.75] text-white/70 max-w-[620px] mx-auto">
@@ -178,9 +154,9 @@ export default function AudioCallsZoikoTimeSection() {
                 className="zt-card"
                 style={{ animationDelay: `${0.05 + i * 0.08}s` }}
               >
-                <div className="zt-card-inner h-full rounded-2xl bg-white/10 p-6 sm:p-7">
-                  <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/15 text-white mb-4">
-                    {c.icon}
+                <div className="zt-card-inner h-full rounded-2xl bg-[#FFFFFF14] p-6 sm:p-7">
+                  <span className="zt-icon-box inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/15 text-[18px] mb-4">
+                    {c.emoji}
                   </span>
                   <h3 className="text-[15px] sm:text-[16px] font-bold text-white mb-2">
                     {c.title}

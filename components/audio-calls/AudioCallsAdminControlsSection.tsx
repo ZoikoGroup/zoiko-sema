@@ -29,61 +29,32 @@ const controls = [
   {
     title: "Call permissions",
     desc: "Control who can start, join, invite, transfer, record, summarize, or export calls.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
+    emoji: "🛡️",
   },
   {
     title: "External participant rules",
     desc: "Restrict guest calling, domain access, external invites, and external summary visibility.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <line x1="2" y1="12" x2="22" y2="12" />
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-      </svg>
-    ),
+    emoji: "🌐",
   },
   {
     title: "Recording permissions",
     desc: "Define who may record, when consent is required, and where recordings are stored.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-      </svg>
-    ),
+    emoji: "🔒",
   },
   {
     title: "AI summary controls",
     desc: "Set AI availability by plan, workspace, role, region, meeting type, and sensitivity level.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2a4 4 0 0 1 4 4v4a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z" />
-        <path d="M19 10v1a7 7 0 0 1-14 0v-1" />
-        <line x1="12" y1="18" x2="12" y2="22" />
-      </svg>
-    ),
+    emoji: "🤖",
   },
   {
     title: "Retention policies",
     desc: "Apply retention periods for call logs, summaries, transcripts, recordings, and audit events.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
-      </svg>
-    ),
+    emoji: "💾",
   },
   {
     title: "Audit logs",
     desc: "Record call policy changes, recording events, AI usage, external participants, and exports.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-      </svg>
-    ),
+    emoji: "📋",
   },
 ];
 
@@ -102,51 +73,59 @@ export default function AudioCallsAdminControlsSection() {
         .acd-hidden  { opacity: 0; transform: translateY(28px); }
         .acd-visible { animation: acdFadeUp .65s cubic-bezier(.22,1,.36,1) forwards; }
 
-        .acd-card { opacity: 0; transform: translateY(24px); }
+        .acd-card { opacity: 0; transform: translateY(24px) scale(.98); }
         .acd-grid.acd-visible .acd-card {
           animation: acdFadeUp .55s cubic-bezier(.22,1,.36,1) forwards;
         }
 
         .acd-card-inner {
-          transition: transform .3s ease, box-shadow .3s ease, background-color .3s ease, border-color .3s ease;
+          transition: transform .35s cubic-bezier(.22,1,.36,1),
+                      box-shadow .35s ease,
+                      background-color .35s ease,
+                      border-color .35s ease;
         }
         .acd-card-inner:hover {
-          transform: translateY(-5px);
-          background-color: rgba(255,255,255,0.05);
-          border-color: color-mix(in srgb, var(--brand) 45%, transparent);
-          box-shadow: 0 16px 32px rgba(0,0,0,0.35);
+          transform: translateY(-6px);
+          background-color: rgba(255,255,255,0.06);
+          border-color: rgba(124,124,255,0.4);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
+
         .acd-icon-box {
-          transition: background-color .3s ease, color .3s ease;
+          transition: transform .35s cubic-bezier(.22,1,.36,1), background-color .35s ease;
         }
         .acd-card-inner:hover .acd-icon-box {
-          background-color: var(--brand);
-          color: white;
+          transform: scale(1.12) rotate(-4deg);
+          background-color: rgba(255,255,255,0.14);
+        }
+
+        .acd-card-inner:hover .acd-title {
+          color: #A5A6FF;
+        }
+        .acd-title {
+          transition: color .3s ease;
         }
 
         @media (prefers-reduced-motion: reduce) {
           .acd-hidden, .acd-visible, .acd-card { opacity: 1 !important; transform: none !important; animation: none !important; }
-          .acd-card-inner:hover { transform: none !important; }
+          .acd-card-inner:hover, .acd-card-inner:hover .acd-icon-box { transform: none !important; }
         }
       `}</style>
 
       <section
         aria-label="Business and admin controls"
         className="w-full py-16 sm:py-20 md:py-24"
-        style={{ backgroundColor: "#1B1642" }}
+        style={{ backgroundColor: "#0B0F2D" }}
       >
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-10 lg:px-16">
-          {/* Badge */}
+          {/* Badge — plain uppercase label, no pill */}
           <div
             ref={badgeRef}
-            className={`acd-hidden ${badgeIn ? "acd-visible" : ""} flex justify-center mb-6`}
+            className={`acd-hidden ${badgeIn ? "acd-visible" : ""} text-center mb-3`}
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand" />
-              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-white/70">
-                Business &amp; Admin Controls
-              </span>
-            </div>
+            <span className="text-[12px] font-bold tracking-[0.1em] uppercase text-[#9FB0FF]">
+              Business &amp; Admin Controls
+            </span>
           </div>
 
           {/* Heading */}
@@ -155,7 +134,7 @@ export default function AudioCallsAdminControlsSection() {
             className={`acd-hidden ${headIn ? "acd-visible" : ""} text-center mb-10 sm:mb-14`}
             style={{ animationDelay: "0.08s" }}
           >
-            <h2 className="text-[clamp(24px,4.2vw,36px)] font-bold leading-[1.15] tracking-tight text-white">
+            <h2 className="text-[clamp(24px,4.2vw,36px)] font-extrabold leading-[1.15] tracking-tight text-white">
               Voice, governed like every other channel.
             </h2>
           </div>
@@ -171,11 +150,11 @@ export default function AudioCallsAdminControlsSection() {
                 className="acd-card"
                 style={{ animationDelay: `${0.05 + i * 0.08}s` }}
               >
-                <div className="acd-card-inner h-full rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-7">
-                  <span className="acd-icon-box inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 text-white/70 mb-4">
-                    {c.icon}
+                <div className="acd-card-inner h-full rounded-2xl border border-[#FFFFFF14] bg-[#12163A] p-6 sm:p-7">
+                  <span className="acd-icon-box inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 text-[18px] mb-4">
+                    {c.emoji}
                   </span>
-                  <h3 className="text-[15px] sm:text-[16px] font-bold text-white mb-2">
+                  <h3 className="acd-title text-[15px] sm:text-[16px] font-bold text-white mb-2">
                     {c.title}
                   </h3>
                   <p className="text-[13px] sm:text-[13.5px] leading-[1.7] text-white/50">

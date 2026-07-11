@@ -1,12 +1,11 @@
 import {
   AudioCallsHeroSection,
   AudioCallsWhyCallSection,
-  AudioCallsShowcaseSection,
   AudioCallsCoreCallingSection,
   AudioCallsAIIntelligenceSection,
   AudioCallsAdminControlsSection,
-  AudioCallsZoikoTimeSection,
   AudioCallsUseCasesSection,
+  AudioCallsZoikoTimeSection,
   AudioCallsClosingCTASection,
 } from "@/components/audio-calls";
 
@@ -15,12 +14,11 @@ export default function AudioCallsPage() {
     <main>
       <AudioCallsHeroSection />
       <AudioCallsWhyCallSection />
-      <AudioCallsShowcaseSection />
       <AudioCallsCoreCallingSection />
       <AudioCallsAIIntelligenceSection />
       <AudioCallsAdminControlsSection />
-      <AudioCallsZoikoTimeSection />
       <AudioCallsUseCasesSection />
+      <AudioCallsZoikoTimeSection />
       <AudioCallsClosingCTASection />
     </main>
   );

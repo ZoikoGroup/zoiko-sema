@@ -32,37 +32,67 @@ export default function AudioCallsClosingCTASection() {
     <>
       <style>{`
         @keyframes ctaFadeUp {
-          from { opacity: 0; transform: translateY(32px); }
-          to   { opacity: 1; transform: translateY(0); }
+          from { opacity: 0; transform: translateY(32px) scale(0.98); }
+          to   { opacity: 1; transform: translateY(0) scale(1); }
         }
-        .cta-hidden  { opacity: 0; transform: translateY(32px); }
-        .cta-visible { animation: ctaFadeUp .7s cubic-bezier(.22,1,.36,1) forwards; }
+        .cta-hidden  { opacity: 0; transform: translateY(32px) scale(0.98); }
+        .cta-visible { animation: ctaFadeUp .75s cubic-bezier(.22,1,.36,1) forwards; }
 
         .cta-item { opacity: 0; transform: translateY(16px); }
         .cta-card.cta-visible .cta-item {
           animation: ctaFadeUp .5s cubic-bezier(.22,1,.36,1) forwards;
         }
 
-        .cta-btn-primary { transition: transform .25s ease, box-shadow .25s ease; }
-        .cta-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.25); }
+        .cta-card {
+          transition: box-shadow .4s ease, transform .4s cubic-bezier(.22,1,.36,1);
+        }
+        .cta-card:hover {
+          box-shadow: 0 30px 60px rgba(52,87,232,0.28);
+        }
 
-        .cta-btn-outline { transition: transform .25s ease, background-color .25s ease; }
-        .cta-btn-outline:hover { transform: translateY(-2px); background-color: rgba(255,255,255,0.08); }
+        /* Primary — solid blue, matches screenshot */
+        .cta-btn-primary {
+          transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+        }
+        .cta-btn-primary:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 12px 26px rgba(52,87,232,0.45);
+          filter: brightness(1.08);
+        }
+        .cta-btn-primary:active { transform: translateY(0); }
+
+        /* Outline buttons */
+        .cta-btn-outline { transition: transform .25s ease, background-color .25s ease, border-color .25s ease; }
+        .cta-btn-outline:hover {
+          transform: translateY(-2px);
+          background-color: rgba(255,255,255,0.08);
+          border-color: rgba(255,255,255,0.45);
+        }
+        .cta-btn-outline:active { transform: translateY(0); }
 
         @media (prefers-reduced-motion: reduce) {
           .cta-hidden, .cta-visible, .cta-item { opacity: 1 !important; transform: none !important; animation: none !important; }
-          .cta-btn-primary:hover, .cta-btn-outline:hover { transform: none !important; }
+          .cta-card:hover, .cta-btn-primary:hover, .cta-btn-outline:hover { transform: none !important; }
         }
       `}</style>
 
       <section
         aria-label="Closing call to action"
-        className="w-full bg-white pb-16 sm:pb-20 md:pb-24 px-5 sm:px-8"
+        className="w-full bg-[#F3F2FD] pb-16 pt-16 sm:pb-20 md:pb-24 px-5 sm:px-8"
       >
         <div
           ref={cardRef}
           className={`cta-card cta-hidden ${cardIn ? "cta-visible" : ""} mx-auto w-full max-w-6xl rounded-3xl px-6 py-14 sm:px-12 sm:py-16 text-center`}
-          style={{ backgroundColor: "#151030" }}
+          style={{
+            // Layered background: two soft radial glows (blue + purple)
+            // over a diagonal dark-navy linear gradient base — matches
+            // the color palette from the Figma export (image 2).
+            background: `
+              radial-gradient(ellipse 60% 55% at 28% 18%, rgba(52,87,232,0.40) 0%, rgba(52,87,232,0) 70%),
+              radial-gradient(ellipse 55% 50% at 68% 12%, rgba(80,58,215,0.40) 0%, rgba(80,58,215,0) 70%),
+              linear-gradient(135deg, #07091F 0%, #0B0F2D 50%, #0E1238 100%)
+            `,
+          }}
         >
           <h2 className="cta-item text-[clamp(22px,4.2vw,34px)] font-bold leading-[1.2] tracking-tight text-white mb-5">
             Start the conversation without slowing the work.
@@ -82,7 +112,8 @@ export default function AudioCallsClosingCTASection() {
             style={{ animationDelay: "0.16s" }}
           >
             <button
-              className="cta-btn-primary rounded-full px-6 py-3 text-[14px] font-semibold text-gray-900 bg-white"
+              className="cta-btn-primary rounded-full px-6 py-3 text-[14px] font-semibold text-white"
+              style={{ backgroundColor: "#3457E8" }}
             >
               Start free
             </button>
