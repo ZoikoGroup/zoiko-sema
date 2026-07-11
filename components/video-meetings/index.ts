@@ -4,8 +4,7 @@ export { default as VideoMeetingsShowcaseSection } from "./VideoMeetingsShowcase
 export { default as VideoMeetingsCoreCapabilitiesSection } from "./VideoMeetingsCoreCapabilitiesSection";
 export { default as VideoMeetingsCollaborationSection } from "./VideoMeetingsCollaborationSection";
 export { default as VideoMeetingsAIIntelligenceSection } from "./VideoMeetingsAIIntelligenceSection";
-export { default as VideoMeetingsAdministrationSection } from "./VideoMeetingsAdministrationSection";
-export { default as VideoMeetingsSecuritySection } from "./VideoMeetingsSecuritySection";
-export { default as VideoMeetingsZoikoTimeSection } from "./VideoMeetingsZoikoTimeSection";
-export { default as VideoMeetingsUseCasesSection } from "./VideoMeetingsUseCasesSection";
-export { default as VideoMeetingsClosingCTASection } from "./VideoMeetingsClosingCTASection";
+export { default as UseCasesSection } from "./UseCasesSection";
+export { default as TestimonialSection} from "./TestimonialSection";
+export { default as PricingSection } from "./PricingSection";
+export { default as FAQSection } from "./FAQSection";

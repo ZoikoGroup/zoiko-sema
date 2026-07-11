@@ -29,14 +29,17 @@ const cards = [
   {
     title: "Less context loss",
     desc: "Keep meeting notes, files, chat, recordings, and decisions tied to the right workspace.",
+    icon:"📎"
   },
   {
     title: "Faster follow-through",
     desc: "Turn discussion into owners, next steps, reminders, and searchable meeting memory.",
+    icon:"⚡"
   },
   {
     title: "Stronger governance",
     desc: "Give administrators control over meeting policies, recording, retention, security, and AI usage.",
+    icon:"🛡️"
   },
 ];
 
@@ -78,7 +81,7 @@ export default function VideoMeetingsContinuitySection() {
         aria-label="Meeting continuity"
         className="w-full bg-white py-16 sm:py-20 md:py-24"
       >
-        <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-10 lg:px-16">
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8 md:px-10 lg:px-16">
           {/* Heading + subtext */}
           <div
             ref={headRef}
@@ -105,8 +108,14 @@ export default function VideoMeetingsContinuitySection() {
                 className="vc-card"
                 style={{ animationDelay: `${0.1 + i * 0.1}s` }}
               >
-                <div className="vc-card-inner h-full bg-white rounded-2xl border border-gray-100 px-5 py-6 sm:px-6 sm:py-7 shadow-sm">
-                  <h3 className="text-[14.5px] sm:text-[15px] font-bold text-gray-900 mb-2">
+                <div className="vc-card-inner h-full bg-violet-50 rounded-2xl border border-gray-100 px-5 py-6 sm:px-6 sm:py-7 shadow-sm">
+                  {/* To this: */}
+                <div className="flex size-11 items-center justify-center bg-blue-600/10 rounded-xl text-xl text-blue-600">
+                  <span role="img" aria-label={card.title}>
+                    {card.icon}
+                  </span>
+                </div>
+                  <h3 className="text-[14.5px] sm:text-[15px] font-bold text-gray-900 mb-2 mt-5">
                     {card.title}
                   </h3>
                   <p className="text-[13px] sm:text-[13.5px] leading-[1.7] text-gray-500">
