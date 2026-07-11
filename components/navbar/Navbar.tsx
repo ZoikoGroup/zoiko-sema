@@ -11,7 +11,7 @@ type NavItem = { title: string; url: string; children?: NavChild[] };
 const menuItems: NavItem[] = [
   {
     title: "Products",
-    url: "/product-overview",
+    url: "/products",
     children: [
       { label: "Messaging", href: "/messaging", desc: "Chat, channels, and team conversations" },
       { label: "Audio Calls", href: "/audio-calls", desc: "Voice calls that stay connected to work" },
