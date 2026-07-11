@@ -91,11 +91,11 @@ export default function VideoMeetingsHeroSection() {
           {/* Badge */}
           <div
             ref={badgeRef}
-            className={`ac-hidden ${badgeIn ? "ac-visible" : ""} inline-flex items-center gap-2 bg-white rounded-full px-4 py-1.5 mb-6 shadow-sm`}
+            className={`ac-hidden ${badgeIn ? "ac-visible" : ""} inline-flex items-center bg-white/5  outline outline-1 outline-offset-[-1px] outline-white/20 backdrop-blur-[5px] gap-2 rounded-full px-4 py-1.5 mb-6 shadow-sm`}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#4F5BD5]" />
-            <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-[#4F5BD5]">
-              VIDEO MEETINGS
+            <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-white">
+              ZOIKO SEMA MEETINGS
             </span>
           </div>
 
@@ -125,12 +125,12 @@ decisions with AI, and keep every follow-up connected to your Zoiko Sema workspa
             style={{ animationDelay: "0.24s" }}
           >
             <button
-              className="ac-btn-primary rounded-full px-7 py-3 text-[14px] font-semibold text-white"
-              style={{ backgroundColor: "#4F5BD5" }}
+              className="ac-btn-primary rounded-full px-15 py-3 text-[14px] font-semibold text-black"
+              style={{ backgroundColor:"white" }}
             >
-              Start free
+            Start free
             </button>
-            <button className="ac-btn-secondary rounded-full px-7 py-3 text-[14px] font-semibold text-gray-900 bg-white">
+            <button className="ac-btn-secondary rounded-full px-15 py-3 text-[14px] font-semibold text-white bg-white/5  outline outline-1 outline-offset-[-1px] outline-white/20">
               Get a demo
             </button>
           </div>
@@ -143,7 +143,7 @@ decisions with AI, and keep every follow-up connected to your Zoiko Sema workspa
           style={{ animationDelay: "0.3s" }}
         >
           <img
-            src="/Images/Video-Call.webp" // 👈 replace with your call-UI mockup image
+            src="/Images/Video call in progress.png" // 👈 replace with your call-UI mockup image
             alt="Voice call interface showing participants, transcript, and call controls"
             className="ac-mockup w-full h-auto rounded-2xl shadow-2xl"
           />

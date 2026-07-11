@@ -262,7 +262,7 @@ export default function Footer() {
                   { label: "Messaging", href: "/messaging/" },
                   { label: "Audio Calls", href: "/audio-calls/" },
                   { label: "Video Meetings", href: "/video-meetings/" },
-                  { label: "AI Meeting Summaries", href: "/product/ai-meetings" },
+                  { label: "AI Meeting Summaries", href: "/ai-meetings" },
                   { label: "Channels & Spaces", href: "/channels-spaces/" },
                   { label: "Admin Console", href: "/admin-console/" },
                 ]}

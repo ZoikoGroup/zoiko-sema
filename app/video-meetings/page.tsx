@@ -5,11 +5,10 @@ import {
   VideoMeetingsCoreCapabilitiesSection,
   VideoMeetingsCollaborationSection,
   VideoMeetingsAIIntelligenceSection,
-  VideoMeetingsAdministrationSection,
-  VideoMeetingsSecuritySection,
-  VideoMeetingsZoikoTimeSection,
-  VideoMeetingsUseCasesSection,
-  VideoMeetingsClosingCTASection,
+UseCasesSection,
+ TestimonialSection,
+ PricingSection,
+  FAQSection,
 } from "@/components/video-meetings";
 
 export default function VideoMeetingsPage() {
@@ -21,11 +20,10 @@ export default function VideoMeetingsPage() {
       <VideoMeetingsCoreCapabilitiesSection />
       <VideoMeetingsCollaborationSection />
       <VideoMeetingsAIIntelligenceSection />
-      <VideoMeetingsAdministrationSection />
-      <VideoMeetingsSecuritySection />
-      <VideoMeetingsZoikoTimeSection />
-      <VideoMeetingsUseCasesSection />
-      <VideoMeetingsClosingCTASection />
+      <UseCasesSection />
+      <TestimonialSection />
+      <PricingSection />
+      <FAQSection/>
     </main>
   );
 }

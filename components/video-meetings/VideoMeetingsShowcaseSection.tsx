@@ -25,157 +25,162 @@ function useInView(threshold = 0.15) {
   return { ref, inView };
 }
 
+// Structured data for tabs and dynamic content
+const FEATURES_DATA = [
+  {
+    id: "decisions",
+    tabLabel: "Get decisions captured",
+    title: "Decisions, captured automatically",
+    desc: "Meeting Intelligence turns discussion into a clear summary of decisions and owners — reviewed by the host before it's shared, at no extra cost on eligible plans.",
+    image: "/video-meeting/Feature preview.png",
+    link: "#"
+  },
+  {
+    id: "screens",
+    tabLabel: "Share multiple screens",
+    title: "Simultaneous sharing for better context",
+    desc: "Allow multiple participants to share their screens at the exact same time. Compare designs, analyze code, and debug issues collaboratively side-by-side without passing controls back and forth.",
+    image: "/video-meeting/Feature preview.png",
+    link: "#"
+  },
+  {
+    id: "organized",
+    tabLabel: "Stay organized",
+    title: "Everything in its right place",
+    desc: "Automate your pre- and post-meeting organization. Instantly attach recordings, generated action items, transcripts, and shared resources right back to your designated team channels.",
+    image: "/video-meeting/Feature preview.png",
+    link: "#"
+  },
+  {
+    id: "tools",
+    tabLabel: "Connect your tools",
+    title: "Deep ecosystem integrations",
+    desc: "Sync decisions seamlessly directly into Jira, Asana, Slack, and Notion. Keep your team's existing product workflows active without manual copy-pasting.",
+    image: "/video-meeting/Feature preview.png",
+    link: "#"
+  }
+];
+
 export default function VideoMeetingsShowcaseSection() {
-  const { ref: badgeRef, inView: badgeIn } = useInView(0.3);
-  const { ref: headRef, inView: headIn } = useInView(0.2);
-  const { ref: frameRef, inView: frameIn } = useInView(0.08);
+  const [activeTab, setActiveTab] = useState("decisions");
+  
+  const { ref: headerRef, inView: headerIn } = useInView(0.2);
+  const { ref: contentRef, inView: contentIn } = useInView(0.15);
+
+  const currentFeature = FEATURES_DATA.find((f) => f.id === activeTab) || FEATURES_DATA[0];
 
   return (
     <>
       <style>{`
-        @keyframes vsFadeUp {
-          from { opacity: 0; transform: translateY(32px); }
+        @keyframes vcFadeUp {
+          from { opacity: 0; transform: translateY(28px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-        .vs-hidden  { opacity: 0; transform: translateY(32px); }
-        .vs-visible { animation: vsFadeUp .7s cubic-bezier(.22,1,.36,1) forwards; }
+        .vc-hidden  { opacity: 0; transform: translateY(28px); }
+        .vc-visible { animation: vcFadeUp .65s cubic-bezier(.22,1,.36,1) forwards; }
 
-        .vs-subcard { opacity: 0; transform: translateY(18px); }
-        .vs-frame.vs-visible .vs-subcard {
-          animation: vsFadeUp .55s cubic-bezier(.22,1,.36,1) forwards;
+        /* Smooth crossfade modifier for content swapping */
+        @keyframes tabSwap {
+          from { opacity: 0; transform: translateY(12px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        .animate-tab-swap {
+          animation: tabSwap 0.4s cubic-bezier(.22,1,.36,1) forwards;
         }
 
-        .vs-frame {
-          transition: box-shadow .35s ease;
-        }
-        .vs-frame:hover {
-          box-shadow: 0 30px 60px rgba(15,15,40,0.12);
-        }
-
-        .vs-inner-card {
+        .vc-interactive-card {
           transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
         }
-        .vs-inner-card:hover {
+        .vc-interactive-card:hover {
           transform: translateY(-4px);
-          box-shadow: 0 14px 28px color-mix(in srgb, var(--brand) 14%, transparent);
-          border-color: color-mix(in srgb, var(--brand) 30%, transparent);
-        }
-
-        .vs-pill-tab {
-          transition: transform .25s ease, box-shadow .25s ease;
-        }
-        .vs-pill-tab:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+          box-shadow: 0 20px 40px color-mix(in srgb, var(--brand, #3457e8) 8%, transparent);
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .vs-hidden, .vs-visible, .vs-subcard { opacity: 1 !important; transform: none !important; animation: none !important; }
-          .vs-frame:hover, .vs-inner-card:hover, .vs-pill-tab:hover { transform: none !important; }
+          .vc-hidden, .vc-visible { opacity: 1 !important; transform: none !important; animation: none !important; }
+          .vc-interactive-card:hover { transform: none !important; }
+          .animate-tab-swap { animation: none !important; }
         }
       `}</style>
 
-      <section
-        aria-label="Video meetings product showcase"
-        className="w-full bg-white py-16 sm:py-20 md:py-24"
-      >
-        <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-10 lg:px-16">
-          {/* Badge */}
-          <div
-            ref={badgeRef}
-            className={`vs-hidden ${badgeIn ? "vs-visible" : ""} flex justify-center mb-6`}
+      <section className="w-full bg-white py-16 sm:py-20 md:py-24 overflow-hidden">
+        <div className="mx-auto w-full max-w-6xl px-5 sm:px-8 md:px-10 lg:px-16">
+          
+          {/* Header Section */}
+          <div 
+            ref={headerRef}
+            className={`vc-hidden ${headerIn ? "vc-visible" : ""} text-center max-w-2xl mx-auto mb-10 sm:mb-12`}
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-4 py-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand" />
-              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-brand">
-                Product Showcase
-              </span>
-            </div>
-          </div>
-
-          {/* Heading */}
-          <div
-            ref={headRef}
-            className={`vs-hidden ${headIn ? "vs-visible" : ""} text-center mb-10 sm:mb-14`}
-            style={{ animationDelay: "0.08s" }}
-          >
-            <h2 className="text-[clamp(24px,4.4vw,38px)] font-bold leading-[1.15] tracking-tight text-gray-900 max-w-[720px] mx-auto">
-              Fast Join. AI Decisions. Connected Workspace. Enterprise
-              Controls.
+            <span className="block text-blue-600 text-xs font-bold tracking-widest uppercase mb-3">
+              KEY FEATURES
+            </span>
+            <h2 className="text-[clamp(24px,4.5vw,36px)] font-extrabold leading-[1.15] text-slate-900">
+              Accomplish more with Zoiko Sema Meetings
             </h2>
           </div>
 
-          {/* Browser-style frame */}
+          {/* Interactive Tab Switchers */}
+          <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 max-w-4xl mx-auto mb-10 sm:mb-14">
+            {FEATURES_DATA.map((tab) => {
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-200 outline outline-1 outline-offset-[-1px] ${
+                    isActive
+                      ? "bg-slate-900 text-white outline-slate-900 shadow-md scale-[1.02]"
+                      : "bg-violet-50 text-gray-600 outline-violet-100 hover:bg-violet-100/70 hover:text-slate-900"
+                  }`}
+                >
+                  {tab.tabLabel}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Main Showcase Dashboard Display */}
           <div
-            ref={frameRef}
-            className={`vs-frame vs-hidden ${frameIn ? "vs-visible" : ""} rounded-2xl border border-gray-100 shadow-[0_20px_50px_rgba(15,15,40,0.08)] overflow-hidden`}
-            style={{ animationDelay: "0.15s" }}
+            ref={contentRef}
+            className={`vc-hidden ${contentIn ? "vc-visible" : ""} vc-interactive-card bg-violet-50 rounded-3xl border border-violet-100 p-6 sm:p-10 md:p-12`}
           >
-            {/* Top bar */}
-            <div className="flex items-center gap-1.5 px-5 py-3.5 border-b border-gray-100">
-              <span className="w-2 h-2 rounded-full bg-gray-200" />
-              <span className="w-2 h-2 rounded-full bg-gray-200" />
-              <span className="w-2 h-2 rounded-full bg-gray-200" />
-            </div>
-
-            {/* Content grid */}
-            <div className="p-5 sm:p-7 md:p-9 grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-              {/* Left column */}
-              <div
-                className="vs-subcard flex flex-col gap-4"
-                style={{ animationDelay: "0.25s" }}
-              >
-                <div className="vs-pill-tab self-start rounded-full border border-gray-200 px-4 py-2">
-                  <span className="text-[12.5px] font-semibold text-gray-900">
-                    Fast Join
-                  </span>
-                </div>
-
-                <div className="vs-inner-card rounded-2xl border border-gray-100 p-5 sm:p-6">
-                  <h3 className="text-[14.5px] sm:text-[15px] font-bold text-gray-900 mb-1.5">
-                    Q3 Launch Planning
-                  </h3>
-                  <p className="text-[13px] text-gray-500 mb-4">
-                    Growth Team → #launch-planning
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="rounded-full bg-emerald-50 px-3 py-1.5 text-[11.5px] font-medium text-emerald-700">
-                      Recording on
-                    </span>
-                    <span className="rounded-full border border-gray-200 px-3 py-1.5 text-[11.5px] font-medium text-gray-700">
-                      Guest lobby active
-                    </span>
-                  </div>
-                </div>
+            {/* Key attribute forces animation reset when switching tabs */}
+            <div 
+              key={activeTab} 
+              className="animate-tab-swap grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center"
+            >
+              {/* Feature Image Frame */}
+              <div className="md:col-span-5 flex justify-center">
+                <img
+                  className="w-full max-w-[489px] h-auto aspect-[489/300] object-cover rounded-2xl "
+                  src={currentFeature.image}
+                  alt={currentFeature.title}
+                />
               </div>
 
-              {/* Right column */}
-              <div
-                className="vs-subcard flex flex-col gap-4"
-                style={{ animationDelay: "0.35s" }}
-              >
-                <div className="vs-pill-tab self-start rounded-full border border-gray-200 px-4 py-2">
-                  <span className="text-[12.5px] font-semibold text-gray-900">
-                    AI Decisions
-                  </span>
-                </div>
-
-                <div className="vs-inner-card rounded-2xl border border-gray-100 p-5 sm:p-6 flex-1">
-                  <h3 className="text-[14.5px] sm:text-[15px] font-bold text-gray-900 mb-3">
-                    Summary · Decisions · Action items
-                  </h3>
-                  <div className="flex flex-col gap-2">
-                    <p className="text-[13px] leading-[1.7] text-gray-600">
-                      Decision: Launch confirmed for Oct 14.
-                    </p>
-                    <p className="text-[13px] leading-[1.7] text-gray-600">
-                      Action: Daniel — share recap in channel.
-                    </p>
-                  </div>
+              {/* Feature Copy details */}
+              <div className="md:col-span-7 flex flex-col justify-center text-left">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 mb-4 tracking-tight">
+                  {currentFeature.title}
+                </h3>
+                <p className="text-[15px] sm:text-base leading-relaxed text-slate-600 max-w-[520px] mb-6">
+                  {currentFeature.desc}
+                </p>
+                <div>
+                  <a
+                    href={currentFeature.link}
+                    className="inline-flex items-center text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors group"
+                  >
+                    Learn more{" "}
+                    <span className="inline-block transform translate-x-1 transition-transform group-hover:translate-x-2 ml-1">
+                      →
+                    </span>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </section>
     </>
