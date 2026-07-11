@@ -30,19 +30,39 @@ const tags = ["Virtual Meetings", "Live Chat", "AI Companion", "AI Summarise", "
 const points = [
   {
     label: "Support hybrid and remote work:",
-    text: "Keep global teams engaged with reliable video, chat, documents, and more.",
+    text: (
+      <>
+        Keep global teams engaged with reliable video, chat,<br className="hidden lg:block" />
+        documents, and more.
+      </>
+    ),
   },
   {
     label: "Seamless communication:",
-    text: "Save time and cut costs with Meetings, Phone, Chat, and more, in one platform.",
+    text: (
+      <>
+        Save time and cut costs with Meetings, Phone, Chat, and more, in<br className="hidden lg:block" />
+        one platform.
+      </>
+    ),
   },
   {
     label: "Keep workflows moving:",
-    text: "From brainstorms to documents, Sema helps teams cut friction and avoid deadends.",
+    text: (
+      <>
+        From brainstorms to documents, Sema helps teams cut friction and<br className="hidden lg:block" />
+        avoid deadends.
+      </>
+    ),
   },
   {
     label: "Do more with AI:",
-    text: "Built-in AI summarizes meetings and automates next steps, while SemaMate goes further and generates quality assets like decks and docs.",
+    text: (
+      <>
+        Built-in AI summarizes meetings and automates next steps, while<br className="hidden lg:block" />
+        SemaMate goes further and generates quality assets like decks and docs.
+      </>
+    ),
   },
 ];
 
@@ -108,35 +128,39 @@ export default function FlexibleSolutionsSection() {
               ref={textRef}
               className={`fss-hidden ${textIn ? "fss-visible" : ""} w-full`}
             >
-              <h2 className="text-[clamp(24px,4vw,32px)] font-bold leading-[1.2] tracking-tight text-gray-900 mb-4">
+              <h2 className="text-slate-900 text-[clamp(28px,3vw,36px)] xl:text-[40px] font-semibold leading-[1.2] mb-6 font-sans tracking-tight lg:whitespace-nowrap">
                 Flexible solutions for all your needs
               </h2>
 
-              <p className="text-[13.5px] sm:text-[14px] text-gray-500 mb-7">
+              <p className="flex flex-wrap text-slate-900 text-[14px] lg:text-[15px] font-medium leading-6 mb-8 gap-y-2 font-sans">
                 {tags.map((t, i) => (
                   <React.Fragment key={t}>
-                    {t}
-                    {i !== tags.length - 1 && <span className="mx-2 text-gray-300">|</span>}
+                    <span>{t}</span>
+                    {i !== tags.length - 1 && <span className="mx-2.5 text-gray-400 font-normal">|</span>}
                   </React.Fragment>
                 ))}
               </p>
 
-              <div className={`fss-points ${textIn ? "fss-visible" : ""} flex flex-col gap-4 mb-8`}>
+              <div className={`fss-points ${textIn ? "fss-visible" : ""} flex flex-col gap-5 mb-10 w-full max-w-[700px]`}>
                 {points.map((p, i) => (
-                  <p
+                  <div
                     key={p.label}
-                    className="fss-point text-[13.5px] sm:text-[14px] leading-[1.7] text-gray-600"
+                    className="fss-point"
                     style={{ animationDelay: `${0.1 + i * 0.08}s` }}
                   >
-                    <span className="font-bold text-gray-900">{p.label}</span>{" "}
-                    {p.text}
-                  </p>
+                    <span className="text-slate-900 text-[14px] lg:text-[15px] font-bold font-sans leading-relaxed mr-1.5">
+                      {p.label}
+                    </span>
+                    <span className="text-gray-500 text-[14px] lg:text-[15px] font-normal font-sans leading-relaxed">
+                      {p.text}
+                    </span>
+                  </div>
                 ))}
               </div>
 
               <a
                 href="#explore-products"
-                className="fss-btn inline-flex items-center justify-center rounded-lg bg-[#4B47E5] text-white text-[14px] font-semibold px-8 py-3.5 w-full sm:w-full"
+                className="fss-btn inline-flex items-center justify-center w-full max-w-[656px] h-12 bg-indigo-600 rounded-md text-white text-base font-bold font-['Inter']"
               >
                 Explore Products
               </a>

@@ -1,0 +1,11 @@
+export { ProjectCollabHeroSection } from './ProjectCollabHeroSection';
+export { TrustedBySection } from './TrustedBySection';
+export { WhyProjectCollabSection } from './WhyProjectCollabSection';
+export { ProductShowcaseSection } from './ProductShowcaseSection';
+export { WorkflowMapSection } from './WorkflowMapSection';
+export { ProjectPatternsSection } from './ProjectPatternsSection';
+export { GovernanceControlsSection } from './GovernanceControlsSection';
+export { IntegrationsEcosystemSection } from './IntegrationsEcosystemSection';
+export { TestimonialStatsSection } from './TestimonialStatsSection';
+export { FAQSection } from './FAQSection';
+export { CTASection } from './CTASection';
