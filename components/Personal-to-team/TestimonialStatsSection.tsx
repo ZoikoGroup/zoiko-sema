@@ -15,7 +15,7 @@ export function TestimonialStatsSection() {
           {/* Left Testimonial Card */}
           <div className="ptt-item flex-1 bg-gradient-to-br from-violet-600 to-indigo-800 rounded-3xl p-10 relative flex flex-col justify-start min-h-[288px]">
             <div>
-              <span className="text-white text-5xl font-extrabold opacity-50 absolute top-10 left-10 leading-10">"</span>
+              <span className="text-white text-5xl font-extrabold opacity-50 absolute top-10 left-10 leading-10">&quot;</span>
               <p className="text-white text-xl font-semibold leading-8 mt-[38.4px] relative z-10 max-w-full lg:whitespace-nowrap">
                 Zoiko Sema helped our team turn individual notes and<br/>follow-ups into shared action — without losing privacy or<br/>context.
               </p>
