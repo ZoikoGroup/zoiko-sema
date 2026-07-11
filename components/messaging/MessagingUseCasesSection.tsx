@@ -29,27 +29,27 @@ const useCases = [
   {
     title: "Founder-led teams",
     desc: "Fast decisions, direct context, lightweight structure, AI recaps.",
-    linkLabel: "Start free",
+    linkLabel: "Start free →",
   },
   {
     title: "Remote teams",
     desc: "Persistent channels, async updates, searchable history, meeting handoff.",
-    linkLabel: "Start free",
+    linkLabel: "Start free →",
   },
   {
     title: "Customer support",
-    desc: "Client spaces, escalation threads, files, audit trail, shared decisions.",
-    linkLabel: "Get a demo",
+    desc: "Client spaces, escalation threads, files, audit trail, shared docs.",
+    linkLabel: "Get a demo →",
   },
   {
     title: "Operations teams",
     desc: "Announcements, follow-up actions, workforce context, policy visibility.",
-    linkLabel: "Get a demo",
+    linkLabel: "Get a demo →",
   },
   {
     title: "Enterprise organizations",
     desc: "SSO, retention, compliance exports, role-based controls, ZoikoTime integration.",
-    linkLabel: "Talk to sales",
+    linkLabel: "Talk to sales →",
   },
 ];
 
@@ -78,16 +78,15 @@ export default function MessagingUseCasesSection() {
         }
         .muc-card-inner:hover {
           transform: translateY(-4px);
-          box-shadow: 0 14px 28px color-mix(in srgb, var(--brand) 12%, transparent);
-          border-color: color-mix(in srgb, var(--brand) 28%, transparent);
+          box-shadow: 0 14px 30px rgba(59, 130, 246, 0.08);
+          border-color: rgba(59, 130, 246, 0.3);
         }
 
         .muc-link {
-          transition: gap .2s ease, color .2s ease;
+          transition: transform .2s ease, color .2s ease;
         }
         .muc-link:hover {
-          gap: 8px;
-          color: var(--brand-dark);
+          transform: translateX(3px);
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -100,63 +99,71 @@ export default function MessagingUseCasesSection() {
         aria-label="Use cases"
         className="w-full bg-white py-16 sm:py-20 md:py-24"
       >
-        <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-10 lg:px-16">
-          {/* Badge */}
+        <div className="mx-auto w-full max-w-6xl px-6 sm:px-8 md:px-10">
+          
+          {/* Badge Label Block */}
           <div
             ref={badgeRef}
-            className={`muc-hidden ${badgeIn ? "muc-visible" : ""} flex justify-center mb-6`}
+            className={`muc-hidden ${badgeIn ? "muc-visible" : ""} flex justify-center mb-3.5`}
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-gray-200 px-4 py-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand" />
-              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-brand">
-                Use Cases
-              </span>
-            </div>
+            <span className="text-center text-blue-600 text-xs font-bold tracking-widest uppercase select-none">
+              USE CASES
+            </span>
           </div>
 
-          {/* Heading */}
+          {/* Core Feature Heading */}
           <div
             ref={headRef}
-            className={`muc-hidden ${headIn ? "muc-visible" : ""} text-center mb-10 sm:mb-12`}
+            className={`muc-hidden ${headIn ? "muc-visible" : ""} text-center mb-14 sm:mb-16`}
             style={{ animationDelay: "0.08s" }}
           >
-            <h2 className="text-[clamp(22px,4vw,32px)] font-bold leading-[1.2] tracking-tight text-gray-900">
+            <h2 className="text-[clamp(24px,4.5vw,32px)] font-extrabold leading-[1.25] tracking-tight text-slate-900 max-w-md mx-auto">
               Built for how teams actually communicate.
             </h2>
           </div>
 
-          {/* Flex-wrap grid: 3 per row on desktop, last row centers automatically */}
+          {/* 3x2 Grid Responsive Card Container */}
           <div
             ref={gridRef}
-            className={`muc-grid ${gridIn ? "muc-visible" : ""} flex flex-wrap justify-center gap-4 sm:gap-5`}
+            className={`muc-grid ${gridIn ? "muc-visible" : ""} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 sm:gap-6 w-full`}
           >
-            {useCases.map((u, i) => (
-              <div
-                key={i}
-                className="muc-card w-full sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]"
-                style={{ animationDelay: `${0.05 + i * 0.07}s` }}
-              >
-                <div className="muc-card-inner h-full bg-white rounded-2xl border border-gray-100 p-5 sm:p-6 shadow-sm flex flex-col">
-                  <h3 className="text-[14.5px] sm:text-[15px] font-bold text-gray-900 mb-2">
-                    {u.title}
-                  </h3>
-                  <p className="text-[13px] sm:text-[13.5px] leading-[1.7] text-gray-500 mb-4">
-                    {u.desc}
-                  </p>
-                  <a
-                    href="#"
-                    className="muc-link mt-auto inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand"
-                  >
-                    {u.linkLabel}
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </a>
+            {useCases.map((u, i) => {
+              // Base class settings
+              let cardClasses = "w-full min-h-[160px] muc-card lg:col-span-2";
+              
+              // Apply column-start only to the 4th element (index 3) to center the second row
+              if (i === 3) {
+                cardClasses += " lg:col-start-2";
+              }
+
+              return (
+                <div
+                  key={i}
+                  className={cardClasses}
+                  style={{ animationDelay: `${0.05 + i * 0.07}s` }}
+                >
+                  <div className="muc-card-inner h-full bg-white rounded-2xl border border-slate-200/90 p-6 shadow-sm flex flex-col justify-between items-start">
+                    <div className="w-full">
+                      <h3 className="text-sm font-bold text-slate-900 mb-2 select-none">
+                        {u.title}
+                      </h3>
+                      <p className="text-xs text-slate-600 font-normal leading-5 mb-5">
+                        {u.desc}
+                      </p>
+                    </div>
+                    
+                    <a
+                      href="#"
+                      className="muc-link inline-block text-blue-600 text-xs font-bold transition-colors duration-150 hover:text-blue-700"
+                    >
+                      {u.linkLabel}
+                    </a>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
+
         </div>
       </section>
     </>
