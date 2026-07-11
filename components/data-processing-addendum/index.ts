@@ -1,0 +1,2 @@
+export { default as DataProcessingAddendumHeroSection } from "./DataProcessingAddendumHeroSection";
+export { default as DataProcessingAddendumContentSection } from "./DataProcessingAddendumContentSection";

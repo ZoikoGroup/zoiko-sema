@@ -383,7 +383,7 @@ export default function Footer() {
                 visible={assuranceVisible}
                 delay={240}
                 items={[
-                  { label: "Terms of Service", href: "/terms" },
+                  { label: "Terms of Service", href: "/terms-of-service/" },
                   { label: "Privacy Notice", href: "/privacy-notice" },
                   { label: "Cookie Policy", href: "/cookie-policy" },
                   { label: "Acceptable Use Policy", href: "/acceptable-use-policy" },
