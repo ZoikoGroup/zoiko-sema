@@ -24,7 +24,7 @@ function useInView(threshold = 0.1) {
 const surfaces = [
   {
     title: "Messaging",
-    image: "MESSAGING_ICON_IMAGE_URL_HERE", // 👈 add image URL here
+    image: "/Images/image 14.png", // 👈 add image URL here
     features: [
       "1:1 & group chat",
       "Channels & spaces",
@@ -36,7 +36,7 @@ const surfaces = [
   },
   {
     title: "Audio calls",
-    image: "AUDIO_CALLS_ICON_IMAGE_URL_HERE", // 👈 add image URL here
+    image: "/Images/image 17.png", // 👈 add image URL here
     features: [
       "1:1 & group calls",
       "Call history",
@@ -48,7 +48,7 @@ const surfaces = [
   },
   {
     title: "Video meetings",
-    image: "VIDEO_MEETINGS_ICON_IMAGE_URL_HERE", // 👈 add image URL here
+    image: "/Images/image 18.png", // 👈 add image URL here
     features: [
       "Instant & scheduled meetings",
       "Screen sharing",
@@ -60,7 +60,7 @@ const surfaces = [
   },
   {
     title: "Channels & Spaces",
-    image: "CHANNELS_SPACES_ICON_IMAGE_URL_HERE", // 👈 add image URL here
+    image: "/Images/image 19.png", // 👈 add image URL here
     features: [
       "Team channels",
       "Project spaces",
@@ -159,7 +159,7 @@ export default function ProductPlatformSection() {
             ref={headRef}
             className={`pp-hidden ${headIn ? "pp-visible" : ""} text-center mb-12`}
           >
-            <h2 className="font-bold leading-[1.15] tracking-tight text-gray-900 mb-4" style={{ fontSize: "clamp(26px,3.6vw,35px)" }}>
+            <h2 className="font-extrabold leading-[1.15] tracking-tight text-gray-900 mb-4" style={{ fontSize: "clamp(26px,3.6vw,35px)" }}>
               Everything people need to communicate clearly.
             </h2>
             <p className="mx-auto max-w-[620px] text-[15px] leading-[1.8] text-gray-500">
@@ -200,7 +200,7 @@ export default function ProductPlatformSection() {
                 <div
                   className="pp-surface-card h-full flex flex-col rounded-3xl px-7 py-8 sm:px-9 sm:py-9"
                   style={{
-                    background: "linear-gradient(155deg, #6858DC 0%, #453494 100%)",
+                    background: "linear-gradient(155deg, #5952AC 0%, #4A4592 100%)",
                   }}
                 >
                   <h3 className="text-[19px] sm:text-[20px] font-bold text-white text-center mb-6">

@@ -1,7 +1,7 @@
 import { 
     MessagingHeroSection,
-    MessagingProblemSection,
-    MessagingShowcaseSection,
+    FeaturesShowcaseSection,
+    ProductShowcaseSection,
     MessagingStructuredCollaborationSection,
     MessagingAiAssistedSection,
     MessagingBusinessControlsSection,
@@ -14,8 +14,8 @@ export default function MessagingPage() {
   return (
     <main>
       <MessagingHeroSection />
-      <MessagingProblemSection />
-      <MessagingShowcaseSection />
+      <FeaturesShowcaseSection />
+      <ProductShowcaseSection />
       <MessagingStructuredCollaborationSection />
       <MessagingAiAssistedSection />
       <MessagingBusinessControlsSection />

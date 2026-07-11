@@ -3,9 +3,9 @@
 import React, { useEffect, useRef, useState } from "react";
 
 interface Plan {
-  tag: string;
   name: string;
-  desc: string;
+  price: string;
+  period?: string;
   features: string[];
   cta: string;
   href: string;
@@ -14,62 +14,56 @@ interface Plan {
 
 const plans: Plan[] = [
   {
-    tag: "FREE",
     name: "Personal",
-    desc: "For individuals and small groups.",
+    price: "Free",
     features: [
       "Messaging",
-      "Audio calls",
-      "Video calls",
-      "Basic groups",
-      "Limited AI summaries",
-      "Mobile + web access",
+      "Audio & video calls",
+      "Unlimited contacts",
+      "Personal use only",
     ],
     cta: "Start free",
     href: "/start-free/",
     popular: false,
   },
   {
-    tag: "PRO",
     name: "Pro",
-    desc: "For freelancers and power users.",
+    price: "$8",
+    period: "/mo",
     features: [
-      "Extended AI summaries",
-      "Larger group chats",
-      "More meeting history",
-      "Advanced search",
-      "Productivity features",
+      "Extended call history",
+      "Larger group calls",
+      "AI call summaries",
+      "Priority support",
     ],
     cta: "Upgrade to Pro",
     href: "#upgrade-pro",
     popular: false,
   },
   {
-    tag: "★ POPULAR",
     name: "Team",
-    desc: "For small teams and growing orgs.",
+    price: "$14",
+    period: "/mo",
     features: [
-      "Team workspaces",
       "Channels & spaces",
-      "Admin controls",
-      "Shared files",
-      "Team AI summaries",
-      "Basic governance",
+      "Shared context",
+      "AI meeting summaries",
+      "Admin basics",
+      "Priority support",
     ],
-    cta: "Start team plan",
+    cta: "Start free trial",
     href: "#start-team",
     popular: true,
   },
   {
-    tag: "BUSINESS",
     name: "Business",
-    desc: "For orgs needing stronger control.",
+    price: "$22",
+    period: "/mo",
     features: [
-      "Advanced administration",
+      "Admin console",
       "Security controls",
       "Retention policies",
-      "Compliance exports",
-      "Priority support",
+      "Audit logs",
       "ZoikoTime ready",
     ],
     cta: "Talk to sales",
@@ -77,16 +71,13 @@ const plans: Plan[] = [
     popular: false,
   },
   {
-    tag: "ENTERPRISE",
     name: "Enterprise",
-    desc: "For complex organizations.",
+    price: "Custom",
     features: [
-      "Custom deployment",
-      "Enterprise security",
-      "Advanced compliance",
+      "SSO & advanced identity",
+      "Full ZoikoTime integration",
+      "Compliance exports",
       "Dedicated support",
-      "Custom integrations",
-      "ZoikoTime design",
     ],
     cta: "Get a demo",
     href: "/get-a-demo/",
@@ -94,7 +85,7 @@ const plans: Plan[] = [
   },
 ];
 
-// ── Intersection-observer hook (matches HeroSection style) ─────────────────
+// ── Intersection-observer hook ─────────────────────────────
 function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -152,24 +143,29 @@ export default function ProductPricingSection() {
         .pr-card:hover { transform: translateY(-6px); }
         .pr-card-plain:hover {
           box-shadow: 0 18px 36px rgba(15,15,40,0.10);
-          border-color: rgba(71,71,135,0.25);
+          border-color: rgba(30,27,75,0.25);
         }
         .pr-card-popular:hover {
-          box-shadow: 0 26px 52px rgba(71,71,135,0.40);
+          box-shadow: 0 30px 60px rgba(15,15,40,0.5);
         }
 
-        /* feature row check icon hover */
+        /* feature row hover */
         .pr-feature { transition: padding-left .18s ease; }
         .pr-feature:hover { padding-left: 4px; }
 
         /* CTA button */
         .pr-btn {
           position: relative; overflow: hidden;
-          transition: transform .22s cubic-bezier(.22,1,.36,1), box-shadow .22s ease, opacity .2s ease;
+          transition: transform .22s cubic-bezier(.22,1,.36,1), box-shadow .22s ease;
         }
-        .pr-btn:hover { transform: translateY(-2px); opacity: .92; }
-        .pr-btn-dark:hover  { box-shadow: 0 12px 26px rgba(0,0,0,0.22); }
-        .pr-btn-white:hover { box-shadow: 0 12px 26px rgba(0,0,0,0.18); }
+        .pr-btn:hover { transform: translateY(-2px); }
+        .pr-btn-outline:hover {
+          background-color: #F9FAFB;
+          box-shadow: 0 10px 22px rgba(15,15,40,0.08);
+        }
+        .pr-btn-filled:hover {
+          box-shadow: 0 14px 30px rgba(71,71,222,0.4);
+        }
 
         @keyframes prShimmer {
           from { transform: translateX(-120%); }
@@ -178,7 +174,7 @@ export default function ProductPricingSection() {
         .pr-btn::after {
           content: "";
           position: absolute; inset: 0;
-          background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.25) 50%, transparent 70%);
+          background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
           transform: translateX(-120%);
         }
         .pr-btn:hover::after { animation: prShimmer .65s ease forwards; }
@@ -203,14 +199,13 @@ export default function ProductPricingSection() {
             className={`pr-hidden ${headIn ? "pr-visible" : ""} text-center mb-14`}
           >
             <h2
-              className="font-bold leading-[1.15] tracking-tight text-[#15131F] mb-4"
+              className="font-extrabold leading-[1.15] tracking-tight text-[#15131F] mb-4"
               style={{ fontSize: "clamp(24px,3.2vw,36px)" }}
             >
               Start free. Scale when communication needs structure.
             </h2>
-            <p className="mx-auto max-w-[640px] text-[15px] leading-[1.75] text-[#5C5870]">
-              Free for individuals and small groups. Pro for power users. Team, Business
-              and Enterprise plans for organizations that need governance.
+            <p className="mx-auto max-w-[680px] text-[15px] leading-[1.75] text-[#5C5870]">
+              Free for individuals and small groups. Pro for power users. Team and Business plans for organizations that need structure. Enterprise plans for organizations that need governance.
             </p>
           </div>
 
@@ -226,57 +221,59 @@ export default function ProductPricingSection() {
                 <div
                   className={`pr-card h-full rounded-2xl p-6 flex flex-col ${
                     plan.popular
-                      ? "pr-card-popular text-white"
+                      ? "pr-card-popular"
                       : "pr-card-plain border border-gray-200 bg-white"
                   }`}
                   style={
                     plan.popular
-                      ? { background: "#474787" }
+                      ? { background: "#0F0F2A" }
                       : undefined
                   }
                 >
-                  {/* Tag */}
-                  <span
-                    className="text-[10.5px] font-bold uppercase tracking-[0.12em] mb-3"
-                    style={{ color: plan.popular ? "#c7c9f2" : "#9CA3AF" }}
-                  >
-                    {plan.tag}
-                  </span>
-
                   {/* Plan name */}
-                  <h3
-                    className="text-[20px] font-bold leading-snug mb-2"
-                    style={{ color: plan.popular ? "#fff" : "#15131F" }}
+                  <span
+                    className="text-[13px] font-medium mb-2"
+                    style={{ color: plan.popular ? "#c7c9f2" : "#6b7280" }}
                   >
                     {plan.name}
-                  </h3>
+                  </span>
 
-                  {/* Description */}
-                  <p
-                    className="text-[12.5px] leading-relaxed mb-5"
-                    style={{ color: plan.popular ? "#cfd0f0" : "#6b7280" }}
-                  >
-                    {plan.desc}
-                  </p>
+                  {/* Price */}
+                  <div className="flex items-baseline gap-1 mb-5">
+                    <span
+                      className="text-[26px] font-bold leading-none"
+                      style={{ color: plan.popular ? "#fff" : "#15131F" }}
+                    >
+                      {plan.price}
+                    </span>
+                    {plan.period && (
+                      <span
+                        className="text-[13px]"
+                        style={{ color: plan.popular ? "#a5a7d9" : "#0B0F2D" }}
+                      >
+                        {plan.period}
+                      </span>
+                    )}
+                  </div>
 
                   {/* Feature list — flex-1 pushes button down to align across all cards */}
-                  <ul className="flex-1 mb-6 space-y-[10px]">
+                  <ul className="flex-1 mb-6 space-y-[9px]">
                     {plan.features.map((f) => (
                       <li
                         key={f}
-                        className="pr-feature flex items-start gap-2 text-[13px] leading-snug"
-                        style={{ color: plan.popular ? "#e3e4f8" : "#374151" }}
+                        className="pr-feature flex items-start gap-2 text-[12.5px] leading-snug"
+                        style={{ color: plan.popular ? "#d4d5f2" : "#4B5563" }}
                       >
                         <svg
-                          width="14"
-                          height="14"
+                          width="13"
+                          height="13"
                           viewBox="0 0 14 14"
                           fill="none"
                           className="flex-shrink-0 mt-[2px]"
                         >
                           <path
                             d="M2.5 7.2l3 3 6-6.4"
-                            stroke={plan.popular ? "#a5b4fc" : "#474787"}
+                            stroke={plan.popular ? "#8B8FE8" : "#9CA3AF"}
                             strokeWidth="1.8"
                             strokeLinecap="round"
                             strokeLinejoin="round"
@@ -290,10 +287,12 @@ export default function ProductPricingSection() {
                   {/* CTA — anchored at bottom, same line across all cards */}
                   <a
                     href={plan.href}
-                    className={`pr-btn mt-auto inline-flex items-center justify-center rounded-full px-5 py-3 text-[13.5px] font-semibold ${
-                      plan.popular ? "pr-btn-white bg-white text-[#15131F]" : "pr-btn-dark text-white"
+                    className={`pr-btn mt-auto inline-flex items-center justify-center rounded-full px-5 py-2.5 text-[13px] font-semibold ${
+                      plan.popular
+                        ? "pr-btn-filled text-white"
+                        : "pr-btn-outline text-[#0B0F2D] border border-[#0B0F2D] bg-white"
                     }`}
-                    style={!plan.popular ? { background: "#15131F" } : undefined}
+                    style={plan.popular ? { background: "#4B47DE" } : undefined}
                   >
                     {plan.cta}
                   </a>

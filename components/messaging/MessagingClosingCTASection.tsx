@@ -25,71 +25,68 @@ function useInView(threshold = 0.15) {
   return { ref, inView };
 }
 
-export default function MessagingClosingCTASection() {
-  const { ref: cardRef, inView: cardIn } = useInView(0.1);
+export default function FinalCTASection() {
+  const { ref: sectionRef, inView: sectionIn } = useInView(0.12);
 
   return (
     <>
       <style>{`
-        @keyframes mctaFadeUp {
+        @keyframes ctaFadeUp {
           from { opacity: 0; transform: translateY(32px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-        .mcta-hidden  { opacity: 0; transform: translateY(32px); }
-        .mcta-visible { animation: mctaFadeUp .7s cubic-bezier(.22,1,.36,1) forwards; }
-
-        .mcta-item { opacity: 0; transform: translateY(16px); }
-        .mcta-card.mcta-visible .mcta-item {
-          animation: mctaFadeUp .5s cubic-bezier(.22,1,.36,1) forwards;
-        }
-
-        .mcta-btn-primary { transition: transform .25s ease, box-shadow .25s ease; }
-        .mcta-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.25); }
-
-        .mcta-btn-outline { transition: transform .25s ease, background-color .25s ease; }
-        .mcta-btn-outline:hover { transform: translateY(-2px); background-color: rgba(255,255,255,0.08); }
-
-        @media (prefers-reduced-motion: reduce) {
-          .mcta-hidden, .mcta-visible, .mcta-item { opacity: 1 !important; transform: none !important; animation: none !important; }
-          .mcta-btn-primary:hover, .mcta-btn-outline:hover { transform: none !important; }
-        }
+        .cta-hidden  { opacity: 0; transform: translateY(32px); }
+        .cta-visible { animation: ctaFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
       `}</style>
 
-      <section
-        aria-label="Closing call to action"
-        className="w-full bg-white pb-16 sm:pb-20 md:pb-24 px-5 sm:px-8"
-      >
+      {/* Background Outer Wrapper Panel matching original Figma color block */}
+      <section className="w-full bg-violet-50 py-12 sm:py-16 md:py-20 overflow-hidden">
         <div
-          ref={cardRef}
-          className={`mcta-card mcta-hidden ${cardIn ? "mcta-visible" : ""} mx-auto w-full max-w-6xl rounded-3xl px-6 py-14 sm:px-12 sm:py-16 text-center`}
-          style={{ backgroundColor: "#15132B" }}
+          ref={sectionRef}
+          className={`mx-auto w-full max-w-6xl px-5 sm:px-8 md:px-10 cta-hidden ${
+            sectionIn ? "cta-visible" : ""
+          }`}
         >
-          <h2 className="mcta-item text-[clamp(22px,4.2vw,34px)] font-bold leading-[1.2] tracking-tight text-white mb-5">
-            Bring every conversation into one structured workspace.
-          </h2>
+          {/* Main Container Card Box Frame featuring rich inner ambient gradient */}
+          <div className="w-full bg-[#14122B] sm:rounded-[32px] px-6 py-12 sm:py-16 md:py-20 text-center shadow-xl relative border border-indigo-950">
+            
+            {/* Header Core Title Context */}
+            <h2 className="text-[clamp(24px,4.5vw,32px)] font-extrabold text-white leading-[1.25] tracking-tight max-w-3xl mx-auto mb-4 select-none">
+              Bring every conversation into one structured workspace.
+            </h2>
 
-          <p
-            className="mcta-item text-[14px] sm:text-[15px] leading-[1.75] text-white/60 max-w-[620px] mx-auto mb-9"
-            style={{ animationDelay: "0.08s" }}
-          >
-            Start with fast messaging for people and teams, then scale into
-            channels, AI summaries, admin controls, security policies, and
-            enterprise governance.
-          </p>
+            {/* Sub-paragraph Description Meta */}
+            <p className="text-white/70 text-sm font-normal leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10">
+              Start with fast messaging for people and teams, then scale into channels, AI 
+              summaries, admin controls, security policies, and enterprise governance.
+            </p>
 
-          <div
-            className="mcta-item flex flex-col sm:flex-row items-center justify-center gap-3"
-            style={{ animationDelay: "0.16s" }}
-          >
-            <button className="mcta-btn-primary rounded-full px-6 py-3 text-[14px] font-semibold text-gray-900 bg-white">
-              Start free
-            </button>
-            <button className="mcta-btn-outline rounded-full px-6 py-3 text-[14px] font-semibold text-white border border-white/25">
-              Get a demo
-            </button>
-            <button className="mcta-btn-outline rounded-full px-6 py-3 text-[14px] font-semibold text-white border border-white/25">
-              Explore channels and spaces
-            </button>
+            {/* Dynamic Buttons Multi-Row Trigger Elements */}
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3.5 sm:gap-4 max-w-2xl mx-auto">
+              
+              <a
+                href="#"
+                className="w-full sm:w-auto min-w-[128px] px-6 h-12 bg-white rounded-full text-slate-900 text-sm font-semibold inline-flex items-center justify-center shadow-sm hover:bg-slate-50 transition-colors duration-200"
+              >
+                Start free
+              </a>
+
+              <a
+                href="#"
+                className="w-full sm:w-auto min-w-[144px] px-6 h-12 rounded-full border border-white/30 text-white text-sm font-semibold inline-flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors duration-200"
+              >
+                Get a demo
+              </a>
+
+              <a
+                href="#"
+                className="w-full sm:w-auto px-6 h-12 rounded-full border border-white/30 text-white text-sm font-semibold inline-flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors duration-200"
+              >
+                Explore channels and spaces
+              </a>
+
+            </div>
+
           </div>
         </div>
       </section>

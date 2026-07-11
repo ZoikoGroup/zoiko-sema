@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-function useInView(threshold = 0.15) {
+function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
 
@@ -25,7 +25,7 @@ function useInView(threshold = 0.15) {
   return { ref, inView };
 }
 
-const rows = [
+const tableData = [
   {
     structure: "Direct Message",
     definition: "Private conversation between two users",
@@ -59,92 +59,75 @@ const rows = [
 ];
 
 export default function MessagingStructuredCollaborationSection() {
-  const { ref: badgeRef, inView: badgeIn } = useInView(0.3);
-  const { ref: headRef, inView: headIn } = useInView(0.2);
-  const { ref: tableRef, inView: tableIn } = useInView(0.08);
+  const { ref: sectionRef, inView: sectionIn } = useInView(0.15);
 
   return (
     <>
       <style>{`
-        @keyframes mscFadeUp {
+        @keyframes scFadeUp {
           from { opacity: 0; transform: translateY(28px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-        .msc-hidden  { opacity: 0; transform: translateY(28px); }
-        .msc-visible { animation: mscFadeUp .65s cubic-bezier(.22,1,.36,1) forwards; }
-
-        @media (prefers-reduced-motion: reduce) {
-          .msc-hidden, .msc-visible { opacity: 1 !important; transform: none !important; animation: none !important; }
-        }
+        .sc-hidden  { opacity: 0; transform: translateY(28px); }
+        .sc-visible { animation: scFadeUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
       `}</style>
 
-      <section
-        aria-label="Structured collaboration"
-        className="w-full bg-[#F4F7FF] py-16 sm:py-20 md:py-24"
-      >
-        <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-10 lg:px-16">
-          {/* Badge */}
-          <div
-            ref={badgeRef}
-            className={`msc-hidden ${badgeIn ? "msc-visible" : ""} flex justify-center mb-6`}
-          >
-            <div className="inline-flex items-center gap-2 rounded-full bg-white border border-gray-200 px-4 py-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand" />
-              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-brand">
-                Structured Collaboration
-              </span>
-            </div>
-          </div>
-
-          {/* Heading */}
-          <div
-            ref={headRef}
-            className={`msc-hidden ${headIn ? "msc-visible" : ""} text-center mb-10 sm:mb-14`}
-            style={{ animationDelay: "0.08s" }}
-          >
-            <h2 className="text-[clamp(24px,4.2vw,34px)] font-bold leading-[1.2] tracking-tight text-gray-900 max-w-[620px] mx-auto">
+      <section className="w-full bg-white py-16 sm:py-20 md:py-24 overflow-hidden">
+        <div
+          ref={sectionRef}
+          className={`mx-auto w-full max-w-6xl px-5 sm:px-8 md:px-10 sc-hidden ${
+            sectionIn ? "sc-visible" : ""
+          }`}
+        >
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <span className="block text-blue-600 text-xs font-bold tracking-widest uppercase mb-3">
+              STRUCTURED COLLABORATION
+            </span>
+            <h2 className="text-[clamp(24px,4.5vw,36px)] font-extrabold text-slate-900 leading-[1.25] tracking-tight">
               Organize conversations by team, project, department, client, or purpose.
             </h2>
           </div>
 
-          {/* Table */}
-          <div
-            ref={tableRef}
-            className={`msc-hidden ${tableIn ? "msc-visible" : ""} rounded-2xl border border-gray-100 bg-white overflow-hidden`}
-            style={{ animationDelay: "0.1s" }}
-          >
-            <div className="overflow-x-auto">
-              <table className="w-full min-w-[700px]">
+          {/* Table Container Matrix */}
+          <div className="w-full bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+            <div className="w-full overflow-x-auto scrollbar-thin">
+              <table className="w-full min-w-[800px] border-collapse text-left">
                 <thead>
-                  <tr className="border-b border-gray-100">
-                    <th className="text-left text-[11px] font-semibold tracking-[0.06em] uppercase text-gray-400 px-6 py-4 w-[24%]">
+                  <tr className="bg-gradient-to-r from-indigo-950 to-slate-900 border-b border-slate-200">
+                    <th className="w-[24%] px-6 py-4 text-white text-xs font-bold uppercase tracking-wide select-none">
                       Structure
                     </th>
-                    <th className="text-left text-[11px] font-semibold tracking-[0.06em] uppercase text-gray-400 px-6 py-4">
+                    <th className="w-[46%] px-6 py-4 text-white text-xs font-bold uppercase tracking-wide select-none">
                       Definition
                     </th>
-                    <th className="text-left text-[11px] font-semibold tracking-[0.06em] uppercase text-gray-400 px-6 py-4 w-[24%]">
+                    <th className="w-[30%] px-6 py-4 text-white text-xs font-bold uppercase tracking-wide select-none">
                       Example
                     </th>
                   </tr>
                 </thead>
-                <tbody>
-                  {rows.map((r, i) => (
-                    <tr
-                      key={i}
-                      className={i !== rows.length - 1 ? "border-b border-gray-100" : ""}
+                <tbody className="divide-y divide-slate-200/80">
+                  {tableData.map((row, idx) => (
+                    <tr 
+                      key={idx} 
+                      className="hover:bg-slate-50/70 transition-colors duration-150"
                     >
-                      <td className="px-6 py-4 text-[13.5px] font-semibold text-gray-900">
-                        {r.structure}
+                      <td className="px-6 py-4.5 text-slate-900 text-sm font-bold align-top leading-normal">
+                        {row.structure}
                       </td>
-                      <td className="px-6 py-4 text-[13.5px] text-gray-500">{r.definition}</td>
-                      <td className="px-6 py-4 text-[13.5px] text-gray-500">{r.example}</td>
+                      <td className="px-6 py-4.5 text-gray-700 text-sm font-normal align-top leading-relaxed">
+                        {row.definition}
+                      </td>
+                      <td className="px-6 py-4.5 text-gray-400 text-sm font-normal align-top leading-relaxed">
+                        {row.example}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
           </div>
+
         </div>
       </section>
     </>

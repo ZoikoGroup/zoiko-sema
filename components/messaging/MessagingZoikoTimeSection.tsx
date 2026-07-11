@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-function useInView(threshold = 0.15) {
+function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
 
@@ -25,147 +25,109 @@ function useInView(threshold = 0.15) {
   return { ref, inView };
 }
 
-const cards = [
-  {
-    title: "Workspace mapping",
-    desc: "Map spaces, teams, or departments to ZoikoTime organizational structures.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="7" height="7" rx="1" />
-        <rect x="14" y="3" width="7" height="7" rx="1" />
-        <rect x="3" y="14" width="7" height="7" rx="1" />
-        <rect x="14" y="14" width="7" height="7" rx="1" />
-      </svg>
-    ),
-  },
-  {
-    title: "Privacy mode",
-    desc: "Apply jurisdiction-aware privacy settings to workforce-context visibility.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Sync status",
-    desc: "Review sync status and policy alignment for connected workspaces.",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <polyline points="12 6 12 12 16 14" />
-      </svg>
-    ),
-  },
-];
-
-export default function MessagingZoikoTimeSection() {
-  const { ref: badgeRef, inView: badgeIn } = useInView(0.3);
-  const { ref: headRef, inView: headIn } = useInView(0.2);
-  const { ref: gridRef, inView: gridIn } = useInView(0.1);
-  const { ref: ctaRef, inView: ctaIn } = useInView(0.3);
+export default function ZoikoTimeIntegrationSection() {
+  const { ref: sectionRef, inView: sectionIn } = useInView(0.12);
 
   return (
     <>
       <style>{`
-        @keyframes mztFadeUp {
+        @keyframes ztFadeUp {
           from { opacity: 0; transform: translateY(28px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-        .mzt-hidden  { opacity: 0; transform: translateY(28px); }
-        .mzt-visible { animation: mztFadeUp .65s cubic-bezier(.22,1,.36,1) forwards; }
-
-        .mzt-card { opacity: 0; transform: translateY(24px); }
-        .mzt-grid.mzt-visible .mzt-card {
-          animation: mztFadeUp .55s cubic-bezier(.22,1,.36,1) forwards;
-        }
-
-        .mzt-cta {
-          transition: transform .25s ease, box-shadow .25s ease;
-        }
-        .mzt-cta:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 12px 24px rgba(0,0,0,0.18);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .mzt-hidden, .mzt-visible, .mzt-card { opacity: 1 !important; transform: none !important; animation: none !important; }
-          .mzt-cta:hover { transform: none !important; }
-        }
+        .zt-hidden  { opacity: 0; transform: translateY(28px); }
+        .zt-visible { animation: ztFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
       `}</style>
 
-      <section
-        aria-label="ZoikoTime integration"
-        className="w-full bg-[#4B4880] py-16 sm:py-20 md:py-24"
-      >
-        <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 md:px-10 lg:px-16">
-          {/* Badge */}
-          <div
-            ref={badgeRef}
-            className={`mzt-hidden ${badgeIn ? "mzt-visible" : ""} flex justify-center mb-6`}
-          >
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-white" />
-              <span className="text-[11px] font-semibold tracking-[0.08em] uppercase text-white/80">
-                ZoikoTime Integration
-              </span>
-            </div>
-          </div>
-
-          {/* Heading */}
-          <div
-            ref={headRef}
-            className={`mzt-hidden ${headIn ? "mzt-visible" : ""} text-center mb-5`}
-            style={{ animationDelay: "0.08s" }}
-          >
-            <h2 className="text-[clamp(22px,3.6vw,32px)] font-bold leading-[1.25] tracking-tight text-white max-w-[600px] mx-auto">
+      {/* Dark Slate background mimicking original Figma block structure colors */}
+      <section className="w-full bg-[#4B4880] py-12 sm:py-12 md:py-14 overflow-hidden text-white">
+        {/* Increased max-w-6xl to max-w-7xl to unlock a broader view container */}
+        <div
+          ref={sectionRef}
+          className={`mx-auto w-full max-w-6xl px-6 sm:px-8 md:px-10 zt-hidden ${
+            sectionIn ? "zt-visible" : ""
+          }`}
+        >
+          
+          {/* Header Block Info */}
+          <div className="text-center max-w-3xl mx-auto mb-14 lg:mb-16">
+            <span className="block text-indigo-300 text-xs font-bold tracking-widest uppercase mb-3">
+              ZOIKOTIME INTEGRATION
+            </span>
+            <h2 className="text-[clamp(24px,4.5vw,34px)] font-extrabold text-white leading-[1.25] tracking-tight mb-4">
               Connect messaging to workforce context when it matters.
             </h2>
+            <p className="text-slate-200/80 text-sm sm:text-base font-normal leading-relaxed max-w-2xl mx-auto">
+              Business plans can be ZoikoTime ready while Enterprise supports full integration — 
+              mapping spaces, teams, or departments to ZoikoTime organizational structures.
+            </p>
           </div>
 
-          {/* Subheading */}
-          <p
-            className={`mzt-hidden ${headIn ? "mzt-visible" : ""} text-center text-[14px] sm:text-[15px] leading-[1.7] text-white/60 max-w-[560px] mx-auto mb-10 sm:mb-14`}
-            style={{ animationDelay: "0.14s" }}
-          >
-            Business plans can be ZoikoTime-ready while Enterprise supports full integration — mapping spaces, teams, or departments to ZoikoTime organizational structures.
-          </p>
-
-          {/* Grid */}
-          <div
-            ref={gridRef}
-            className={`mzt-grid ${gridIn ? "mzt-visible" : ""} grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 mb-10 sm:mb-12`}
-          >
-            {cards.map((c, i) => (
-              <div
-                key={i}
-                className="mzt-card"
-                style={{ animationDelay: `${0.05 + i * 0.08}s` }}
-              >
-                <div className="h-full rounded-2xl border border-white/[0.12] bg-white/[0.06] p-6 sm:p-7">
-                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-white/10 text-white mb-4">
-                    {c.icon}
-                  </span>
-                  <h3 className="text-[14.5px] sm:text-[15.5px] font-bold text-white mb-2">
-                    {c.title}
-                  </h3>
-                  <p className="text-[13px] sm:text-[13.5px] leading-[1.7] text-white/55">
-                    {c.desc}
+          {/* Interactive Layout Content Grid */}
+          {/* Main adjustment: Shifted to a 12-column grid configuration favoring center-mass scaling */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-6 items-center w-full">
+            
+            {/* Left Side Feature Badges Stack (Shrunk column span from 4 to 3) */}
+            <div className="lg:col-span-3 flex flex-col gap-6 order-2 lg:order-1">
+              
+              {/* Card 1: Workspace mapping */}
+              <div className="w-full p-5 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-[4px] lg:-rotate-2 hover:rotate-0 transition-transform duration-300 flex gap-4 items-start">
+                <div className="w-11 h-11 shrink-0 bg-white/10 rounded-xl flex items-center justify-center select-none text-lg">
+                  🗺️
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-white mb-1">Workspace mapping</h3>
+                  <p className="text-white/70 text-xs font-normal leading-relaxed">
+                    Map spaces, teams, or departments to ZoikoTime organizational structures.
                   </p>
                 </div>
               </div>
-            ))}
-          </div>
 
-          {/* CTA */}
-          <div
-            ref={ctaRef}
-            className={`mzt-hidden ${ctaIn ? "mzt-visible" : ""} flex justify-center`}
-            style={{ animationDelay: "0.1s" }}
-          >
-            <button className="mzt-cta rounded-full bg-white text-[#3A3564] text-[14px] font-semibold px-7 py-3.5">
-              Explore channels and spaces
-            </button>
+              {/* Card 2: Sync status */}
+              <div className="w-full p-5 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-[4px] lg:rotate-2 hover:rotate-0 transition-transform duration-300 flex gap-4 items-start">
+                <div className="w-11 h-11 shrink-0 bg-white/10 rounded-xl flex items-center justify-center select-none text-lg">
+                  🔄
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-white mb-1">Sync status</h3>
+                  <p className="text-white/70 text-xs font-normal leading-relaxed">
+                    Review sync status and policy alignment for connected workspaces.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Center Graphic Showcase Display Frame (Expanded column span from 4 to 6) */}
+            <div className="lg:col-span-6 flex justify-center items-center order-1 lg:order-2 w-full">
+              {/* Removed restrictive max-w-[400px] and bumped to max-w-[580px] */}
+              <div className="relative w-full max-w-[580px] lg:max-w-none aspect-[4/3] rounded-2xl p-2 overflow-hidden">
+                <img
+                  className="w-full h-full object-contain object-center rounded-xl transform scale-105 transition-transform duration-300"
+                  src="/messaging/mobile message and email-01 1.png"
+                  alt="ZoikoTime organizational ecosystem matrix mapping context preview"
+                />
+              </div>
+            </div>
+
+            {/* Right Side Feature Badges Stack (Shrunk column span from 4 to 3) */}
+            <div className="lg:col-span-3 flex flex-col gap-6 order-3">
+              
+              {/* Card 3: Privacy mode */}
+              <div className="w-full p-5 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-[4px] lg:rotate-3 hover:rotate-0 transition-transform duration-300 flex gap-4 items-start">
+                <div className="w-11 h-11 shrink-0 bg-white/10 rounded-xl flex items-center justify-center select-none text-lg">
+                  🕵️
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-white mb-1">Privacy mode</h3>
+                  <p className="text-white/70 text-xs font-normal leading-relaxed">
+                    Apply jurisdiction-aware privacy settings to workforce-context visibility.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
           </div>
         </div>
       </section>

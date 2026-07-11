@@ -11,12 +11,13 @@ type NavItem = { title: string; url: string; children?: NavChild[] };
 const menuItems: NavItem[] = [
   {
     title: "Products",
-    url: "/product-overview",
+    url: "/products",
     children: [
       { label: "Messaging", href: "/messaging", desc: "Chat, channels, and team conversations" },
       { label: "Audio Calls", href: "/audio-calls", desc: "Voice calls that stay connected to work" },
       { label: "Video Meetings", href: "/video-meetings", desc: "Meetings that drive decisions" },
       { label: "Channels & Spaces", href: "/product/channels", desc: "Organized conversations" },
+      {label: "Sema Notes",desc: "Capture, organise and share notes",href: "/sema-notes",}
     ],
   },
   {
