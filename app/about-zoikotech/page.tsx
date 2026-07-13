@@ -3,7 +3,13 @@ import {
   WhatZoikoTechDoesSection,
   HowCompanyProductRelateSection,
   WhereEverythingConnectsSection,
-  HowZoikoTechWorksSection
+  HowZoikoTechWorksSection,
+  TrustGovernanceModelSection,
+  StakeholderRoutesSection,
+  CompanyTimelineSection,
+  Team,
+  EngageWithZoikoTechSection,
+  AboutZoikoTechFaqSection,
 } from "@/components/about-zoikotech";
 
 export default function AboutZoikoTechPage() {
@@ -11,9 +17,15 @@ export default function AboutZoikoTechPage() {
     <main>
       <ZoikoTechHeroSection />
       <WhatZoikoTechDoesSection />
-      <HowCompanyProductRelateSection/>
-      <WhereEverythingConnectsSection/>
-      <HowZoikoTechWorksSection/>
+      <HowCompanyProductRelateSection />
+      <WhereEverythingConnectsSection />
+      <HowZoikoTechWorksSection />
+      <TrustGovernanceModelSection />
+      <StakeholderRoutesSection />
+      <CompanyTimelineSection />
+      <Team />
+      <EngageWithZoikoTechSection />
+      <AboutZoikoTechFaqSection />
     </main>
   );
 }
