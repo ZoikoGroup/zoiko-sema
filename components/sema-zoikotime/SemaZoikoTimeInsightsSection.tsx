@@ -121,7 +121,7 @@ export default function SemaZoikoTimeInsightsSection() {
                 </div>
                 <h3 className="text-sm font-semibold text-gray-900">{title}</h3>
                 <p className="mt-2 text-[13px] italic leading-relaxed text-gray-500">
-                  "{quote}"
+                    &ldquo;{quote}&rdquo;
                 </p>
                 <span className="mt-4 inline-flex items-center rounded-full bg-[#F3F2FD] px-2.5 py-1 text-[10.5px] font-medium text-[#4F63F0]">
                   {tag}
