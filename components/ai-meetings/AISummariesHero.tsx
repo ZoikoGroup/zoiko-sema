@@ -1,99 +1,129 @@
-'use client';
+"use client"
+import React, { useEffect, useRef, useState } from 'react';
 
-import React from 'react';
+// --- CUSTOM INTERSECTION OBSERVER REVEAL HOOK ---
+function useScrollReveal() {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const elementRef = useRef<HTMLDivElement | null>(null);
 
-export default function AISummariesHero() {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsIntersecting(true);
+        }
+      },
+      { 
+        threshold: 0.05, 
+        rootMargin: '0px 0px -50px 0px' 
+      }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => {
+      if (elementRef.current) {
+        observer.unobserve(elementRef.current);
+      }
+    };
+  }, []);
+
+  return [elementRef, isIntersecting] as const;
+}
+
+export default function MeetingSummariesHero() {
+  const [heroRef, heroVisible] = useScrollReveal();
+
+  const tags = [
+    'Summary',
+    'Decisions',
+    'Owners',
+    'Next steps',
+    'Searchable',
+    'Policy aware'
+  ];
+
   return (
-    <>
-      {/* Injecting smooth CSS keyframe styles directly so you don't need external setup files */}
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes float-slow {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-        }
-        @keyframes reveal-up {
-          0% { opacity: 0; transform: translateY(20px); }
-          100% { opacity: 1; transform: translateY(0); }
-        }
-        .animate-float {
-          animation: float-slow 4s ease-in-out infinite;
-        }
-        .animate-reveal {
-          opacity: 0;
-          animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-      `}} />
+    <section
+      ref={heroRef}
+      className={`relative w-full md:py-12 flex items-center bg-gradient-to-br from-indigo-900 via-indigo-950 to-slate-950 dark:from-slate-900 dark:to-gray-950 text-white overflow-hidden py-10 px-6 sm:px-8 lg:px-12 transition-all duration-1000 ease-out transform ${
+        heroVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
+      }`}
+    >
+      {/* Absolute Decorative Ambient Glow Matrix */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(79,70,229,0.35),transparent_55%)] pointer-events-none" />
 
-      <section className="relative w-full bg-violet-50 dark:bg-slate-900/40 overflow-hidden py-14 sm:py-20 lg:py-0 lg:min-h-[597px] flex items-center font-sans antialiased">
-        <div className="relative z-10 max-w-[1248px] w-full mx-auto px-6 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+      <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+        
+        {/* Left Column: Context Content Engine */}
+        <div className="lg:col-span-7 space-y-8 text-left">
           
-          {/* Left Content Column */}
-          <div className="flex flex-col items-start gap-4 max-w-[562px]">
-            {/* Tag Reveal */}
-            <div className="animate-reveal flex items-center gap-2" style={{ animationDelay: '100ms' }}>
-              <img className="size-3.5" 
-              src="/ai-meetings/Frame (46).png"  />
-               
-              <span className="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">
-                AI Meeting Summaries
-              </span>
-            </div>
-
-            {/* Heading Reveal */}
-            <h1 className="animate-reveal text-4xl sm:text-5xl font-extrabold leading-[1.15] text-gray-900 dark:text-white tracking-tight" style={{ animationDelay: '250ms' }}>
-              Turn meetings into{' '}
-              <span className="inline-block transition-transform duration-300 hover:scale-[1.02] cursor-default" style={{ background: 'linear-gradient(90deg, #7c3aed, #4f46e5)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                clear summaries, decisions, and actions.
-              </span>
-            </h1>
-
-            {/* Paragraph Reveal */}
-            <p className="animate-reveal text-base text-gray-500 dark:text-gray-400 leading-7 max-w-[560px]" style={{ animationDelay: '400ms' }}>
-              Zoiko Sema helps teams capture what mattered, confirm next steps, and keep meeting knowledge connected to channels, tasks, files, and audit trails.
-            </p>
-
-            {/* CTAs with active scaling and hover lifting properties */}
-            <div className="animate-reveal flex flex-wrap items-center gap-3 pt-2" style={{ animationDelay: '550ms' }}>
-              <button 
-                className="px-6 py-3 rounded-full text-white text-sm font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 active:scale-95 shadow-[0px_12px_24px_-12px_rgba(60,60,120,0.6)] hover:shadow-[0px_18px_30px_-10px_rgba(60,60,120,0.8)]" 
-                style={{ background: '#4f46e5' }}
-              >
-                Get a demo
-              </button>
-              <button 
-                className="px-6 py-3 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-indigo-700 dark:text-indigo-400 text-sm font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 active:scale-95 hover:bg-gray-50 dark:hover:bg-slate-750 shadow-sm"
-              >
-                Talk to sales
-              </button>
-            </div>
-
-            {/* Subtext info reveal */}
-            <div className="animate-reveal flex items-center gap-2 pt-1.5 max-w-[520px]" style={{ animationDelay: '700ms' }}>
-              <svg className="size-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.4}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              </svg>
-              <p className="text-sm text-gray-500 dark:text-gray-400 leading-5">
-                AI-drafted, human-reviewed, and governed by workspace policies.
-              </p>
-            </div>
+          {/* Accent Header Tagline */}
+          <div className="flex items-center gap-2.5 group">
+            <span className="size-2 bg-indigo-400 rounded-full animate-pulse" />
+            <span className="text-xs font-bold tracking-widest text-indigo-300 uppercase font-sans">
+              AI Meeting Summaries
+            </span>
           </div>
 
-          {/* Right Preview Column (Continuous Floating + Micro Hover Translation) */}
-          <div className="w-full flex justify-center lg:justify-end">
-            <div className="animate-float w-full max-w-[603px] aspect-[603/453] rounded-[20px] overflow-hidden transition-all duration-500 transform hover:-translate-y-3 hover:scale-[1.02] shadow-[0_20px_50px_rgba(76,29,149,0.12)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.4)] hover:shadow-[0_30px_60px_rgba(76,29,149,0.22)]">
-              <img 
-                src="/ai-meetings/ai-meetinghero.png" 
-                alt="AI meeting summaries workspace preview" 
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
-              />
-            </div>
+          {/* Core Descriptive Messaging Block */}
+          <div className="space-y-4">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] font-sans">
+              AI meeting summaries <br className="hidden sm:inline"/>
+              that turn meetings into <br className="hidden sm:inline"/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-blue-200 to-white">
+                decisions.
+              </span>
+            </h1>
+            <p className="text-base sm:text-lg text-white/70 dark:text-gray-400 font-sans max-w-xl leading-relaxed">
+              Summarize meetings, capture decisions, identify owners, draft follow-ups, and keep every outcome searchable inside your Zoiko Sema workspace.
+            </p>
+          </div>
+
+          {/* Primary Action Engagement Matrix */}
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2">
+            <button className="px-7 py-3.5 bg-blue-600 hover:bg-blue-500 font-semibold rounded-full text-sm transition-all duration-300 hover:-translate-y-0.5 shadow-[0px_8px_24px_rgba(37,99,235,0.35)] focus:outline-none focus:ring-2 focus:ring-blue-400">
+              Start free
+            </button>
+            
+            <button className="px-7 py-3.5 bg-transparent hover:bg-white/5 font-semibold rounded-full text-sm transition-all duration-300 border border-white/20 dark:border-gray-800 hover:border-white/40 focus:outline-none">
+              Contact sales
+            </button>
+
+            <button className="group inline-flex items-center gap-2 text-sm font-semibold text-indigo-300 hover:text-indigo-200 transition-colors py-2 focus:outline-none">
+              <span>Watch 60-second demo</span>
+              <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </button>
+          </div>
+
+          {/* Micro pills feature cluster */}
+          <div className="flex flex-wrap gap-2.5 pt-4">
+            {tags.map((tag, idx) => (
+              <span
+                key={idx}
+                className="px-4 py-2 bg-white/5 hover:bg-white/10 dark:bg-gray-900/40 dark:hover:bg-gray-800/60 border border-white/10 dark:border-gray-850 text-white/90 dark:text-gray-300 text-xs font-semibold rounded-full backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 cursor-default select-none"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+        </div>
+
+        {/* Right Column: Media Frame Showcase */}
+        <div className="lg:col-span-5 w-full flex justify-center lg:justify-end">
+          <div className="relative w-full max-w-[540px] aspect-[540/458] rounded-2xl overflow-hidden shadow-[0px_30px_80px_rgba(0,0,0,0.5)] dark:shadow-black/70 border border-white/10 dark:border-gray-800 transition-transform duration-700 hover:scale-[1.02]">
+            <img
+              className="w-full h-full object-cover"
+              src="/ai-meetings/image 49 (1).png"
+              alt="Zoiko Sema workspace collaborative interface showcasing structural real-time AI context generated summaries panel dashboard"
+            />
           </div>
         </div>
 
-        {/* Ambient background decoration shapes */}
-        <div className="absolute -top-24 -right-24 size-[420px] rounded-full bg-violet-200/30 dark:bg-violet-900/10 blur-3xl pointer-events-none animate-pulse" style={{ animationDuration: '8s' }} />
-        <div className="absolute -bottom-24 -left-24 size-[380px] rounded-full bg-indigo-200/30 dark:bg-indigo-900/10 blur-3xl pointer-events-none animate-pulse" style={{ animationDuration: '11s' }} />
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
