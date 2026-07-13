@@ -1,32 +1,31 @@
-import { 
- 
+import {
   AboutHeroSection,
   AboutConversationsSection,
-  AboutNotJustSection,
-  AboutBuiltForBothSection,
-  AboutZoikoTimeSection,
-  AboutCarriesMeaningSection,
-  AboutCommitmentsSection,
-  AboutTrustSection,
-  AboutCTASection,
-  
-
- } from "@/components/about";
+  WhatSemaConnectsSection,
+  WhoSemaServesSection,
+  HowSemaWorksSection,
+  GovernedAiAdminControlSection,
+  CustomerOutcomesSection,
+  WhereSemaFitsSection,
+  TrustEnterpriseReadinessSection,
+  AboutZoikoSemaFaqSection,
+  SemaFinalCtaSection,
+} from "@/components/about";
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen">
-      <div>
-       <AboutHeroSection />
-       <AboutConversationsSection />
-       <AboutNotJustSection />
-       <AboutBuiltForBothSection />
-       <AboutZoikoTimeSection />
-       <AboutCarriesMeaningSection />
-       <AboutCommitmentsSection />
-       <AboutTrustSection />
-       <AboutCTASection />
-      </div>
+    <main>
+      <AboutHeroSection />
+      <AboutConversationsSection />
+      <WhatSemaConnectsSection />
+      <WhoSemaServesSection />
+      <HowSemaWorksSection />
+      <GovernedAiAdminControlSection />
+      <CustomerOutcomesSection />
+      <WhereSemaFitsSection />
+      <TrustEnterpriseReadinessSection />
+      <AboutZoikoSemaFaqSection />
+      <SemaFinalCtaSection />
     </main>
   );
 }
