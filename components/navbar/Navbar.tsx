@@ -365,7 +365,7 @@ export default function Navbar() {
             {/* Desktop right side */}
             <div className="hidden lg:flex items-center gap-2.5 xl:gap-3 flex-shrink-0">
               <Link
-                href="/login"
+                href="https://meet.zoikosema.com/login"
                 className="text-[13px] xl:text-[14px] font-semibold text-[#1A1D2E] hover:text-brand transition-colors whitespace-nowrap"
               >
                 Log in
@@ -521,7 +521,7 @@ export default function Navbar() {
                 <div className="my-3 h-px" style={{ background: "rgba(71,71,135,0.1)" }} />
 
                 <Link
-                  href="/login"
+                  href="https://meet.zoikosema.com/login"
                   onClick={() => setMobileMenu(false)}
                   className="flex items-center justify-center px-5 py-3 rounded-full font-semibold text-[#1A1D2E]"
                 >
