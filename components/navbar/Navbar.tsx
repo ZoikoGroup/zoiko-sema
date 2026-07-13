@@ -13,11 +13,18 @@ const menuItems: NavItem[] = [
     title: "Products",
     url: "/products",
     children: [
-      { label: "Messaging", href: "/messaging", desc: "Chat, channels, and team conversations" },
-      { label: "Audio Calls", href: "/audio-calls", desc: "Voice calls that stay connected to work" },
-      { label: "Video Meetings", href: "/video-meetings", desc: "Meetings that drive decisions" },
-      { label: "Channels & Spaces", href: "/product/channels", desc: "Organized conversations" },
-      {label: "Sema Notes",desc: "Capture, organise and share notes",href: "/sema-notes",}
+      { label: "Messaging", href: "/messaging", desc: "Secure team messaging with threads, reactions, and rich media." },
+      { label: "Audio Calls", href: "/audio-calls", desc: "Crystal-clear voice calls for one-to-one or group conversations." },
+      { label: "Video Meetings", href: "/video-meetings", desc: "HD video meetings with screen sharing, recording, and live captions." },
+      { label: "Sema Meet", href: "/sema-meet", desc: "Join, start, or schedule meetings with enterprise-grade controls." },
+      { label: "Channels & Spaces", href: "/product/channels", desc: "Organized team spaces for focused discussions and collaboration." },
+      { label: "Tasks & To-dos", href: "/tasks", desc: "Assign tasks, set due dates, and track progress in real time." },
+      { label: "Documents", href: "/documents", desc: "Create, store, and share documents with version history and permissions." },
+      { label: "Workflows", href: "/workflows", desc: "Automate approvals and processes across your team and tools." },
+      { label: "AI Meeting Summaries", href: "/ai-summaries", desc: "Automatic summaries, action items, and key decisions." },
+      { label: "AI Assistant", href: "/sema-ai", desc: "Your context-aware assistant across chats, meetings, and docs." },
+      { label: "Insights & Analytics", href: "/insights", desc: "Communication and collaboration insights to drive productivity." },
+      { label: "Confidential Mode", href: "/confidential-mode", desc: "Extra protection for sensitive conversations and shared content." },
     ],
   },
   {
@@ -58,6 +65,132 @@ const menuItems: NavItem[] = [
     ],
   },
 ];
+
+/* ---------------- Products mega menu data ---------------- */
+
+type ProductLink = {
+  title: string;
+  desc: string;
+  href: string;
+  badge?: string;
+  icon: React.ReactNode;
+};
+
+type ProductColumn = {
+  label: string;
+  items: ProductLink[];
+};
+
+const productIcon = (children: React.ReactNode) => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    {children}
+  </svg>
+);
+
+const productColumns: ProductColumn[] = [
+  {
+    label: "Communicate",
+    items: [
+      {
+        title: "Messaging",
+        desc: "Secure team messaging with threads, reactions, and rich media.",
+        href: "/messaging",
+        icon: productIcon(<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />),
+      },
+      {
+        title: "Audio Calls",
+        desc: "Crystal-clear voice calls for one-to-one or group conversations.",
+        href: "/audio-calls",
+        icon: productIcon(<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />),
+      },
+      {
+        title: "Video Meetings",
+        desc: "HD video meetings with screen sharing, recording, and live captions.",
+        href: "/video-meetings",
+        icon: productIcon(<><polygon points="23 7 16 12 23 17 23 7" /><rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></>),
+      },
+      {
+        title: "Sema Meet",
+        desc: "Join, start, or schedule meetings with enterprise-grade controls.",
+        href: "/sema-meet",
+        icon: productIcon(<><polygon points="23 7 16 12 23 17 23 7" /><rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></>),
+      },
+    ],
+  },
+  {
+    label: "Collaborate",
+    items: [
+      {
+        title: "Channels & Spaces",
+        desc: "Organized team spaces for focused discussions and collaboration.",
+        href: "/product/channels",
+        icon: productIcon(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
+      },
+      {
+        title: "Tasks & To-dos",
+        desc: "Assign tasks, set due dates, and track progress in real time.",
+        href: "/tasks",
+        icon: productIcon(<><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M8 12l2.5 2.5L16 9" /></>),
+      },
+      {
+        title: "Documents",
+        desc: "Create, store, and share documents with version history and permissions.",
+        href: "/documents",
+        icon: productIcon(<><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></>),
+      },
+      {
+        title: "Workflows",
+        desc: "Automate approvals and processes across your team and tools.",
+        href: "/workflows",
+        icon: productIcon(<><circle cx="6" cy="6" r="3" /><circle cx="6" cy="18" r="3" /><path d="M6 9v6" /><circle cx="18" cy="12" r="3" /><path d="M9 6h3a3 3 0 0 1 3 3" /><path d="M9 18h3a3 3 0 0 0 3-3" /></>),
+      },
+    ],
+  },
+  {
+    label: "Intelligence",
+    items: [
+      {
+        title: "AI Meeting Summaries",
+        desc: "Automatic summaries, action items, and key decisions.",
+        href: "/ai-summaries",
+        badge: "AI-POWERED",
+        icon: <span className="text-[11px] font-bold">A+</span>,
+      },
+      {
+        title: "AI Assistant",
+        desc: "Your context-aware assistant across chats, meetings, and docs.",
+        href: "/sema-ai",
+        badge: "AI-POWERED",
+        icon: productIcon(<path d="M12 2l1.8 5.6L19 9l-5.2 1.4L12 16l-1.8-5.6L5 9l5.2-1.4z" />),
+      },
+      {
+        title: "Insights & Analytics",
+        desc: "Communication and collaboration insights to drive productivity.",
+        href: "/insights",
+        icon: productIcon(<polyline points="3 17 9 11 13 15 21 7" />),
+      },
+      {
+        title: "Confidential Mode",
+        desc: "Extra protection for sensitive conversations and shared content.",
+        href: "/confidential-mode",
+        badge: "SECURE",
+        icon: productIcon(<><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></>),
+      },
+    ],
+  },
+];
+
+const productFeatured = {
+  eyebrow: "Featured",
+  title: "All-in-one team collaboration that just works.",
+  desc: "Messages, meetings, tasks, docs, and AI— together in one secure workspace.",
+  // TODO: swap in the real image URL/path here (e.g. "/Images/products-featured.webp")
+  image: "/Images/products-featured.png",
+  ctaText: "Explore all products",
+  ctaHref: "/products",
+  secondaryText: "See what's new",
+  secondaryHref: "/whats-new",
+};
 
 /* ---------------- Workspace grid popup data ---------------- */
 
@@ -337,26 +470,112 @@ export default function Navbar() {
                   </Link>
 
                   {item.children && openDropdown === item.title && (
-                    <div className="nav-dropdown absolute top-full left-0 pt-2 w-60 z-10">
-                      <div className="rounded-xl border border-gray-100 bg-white shadow-[0_16px_40px_rgba(15,15,40,0.12)] p-2">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.label}
-                            href={child.href}
-                            className="block rounded-lg px-3 py-2.5 hover:bg-brand-light transition-colors duration-150"
-                          >
-                            <p className="text-[13px] font-semibold text-gray-800">
-                              {child.label}
+                    item.title === "Products" ? (
+                      <div className="nav-dropdown absolute top-full -left-55 pt-2 z-20">
+                        <div className="w-[1300px] max-w-[95vw] rounded-2xl border border-gray-100 bg-white shadow-[0_24px_60px_rgba(15,15,40,0.16)] p-7">
+                          <div className="mb-6">
+                            <p className="text-[22px] font-bold text-gray-900">Products</p>
+                            <p className="text-[13px] text-gray-500 mt-1">
+                              Everything your team needs to communicate, collaborate, and get work done.
                             </p>
-                            {child.desc && (
-                              <p className="text-[11.5px] text-gray-500 mt-0.5">
-                                {child.desc}
+                          </div>
+
+                          <div className="grid grid-cols-[1fr_1fr_1fr_260px] gap-8">
+                            {productColumns.map((col) => (
+                              <div key={col.label}>
+                                <p className="text-[11px] font-bold tracking-wider text-brand uppercase mb-4">
+                                  {col.label}
+                                </p>
+                                <div className="flex flex-col gap-5">
+                                  {col.items.map((link) => (
+                                    <Link
+                                      key={link.title}
+                                      href={link.href}
+                                      onClick={() => setOpenDropdown(null)}
+                                      className="flex items-start gap-3 group"
+                                    >
+                                      <span className="w-8 h-8 rounded-lg bg-brand-light text-brand flex items-center justify-center flex-shrink-0">
+                                        {link.icon}
+                                      </span>
+                                      <span>
+                                        <span className="flex items-center gap-1.5 flex-wrap">
+                                          <span className="text-[13.5px] font-semibold text-gray-900 group-hover:text-brand transition-colors">
+                                            {link.title}
+                                          </span>
+                                          {link.badge && (
+                                            <span className="inline-flex items-center rounded-full bg-indigo-50 text-brand text-[9px] font-bold px-1.5 py-[3px] uppercase tracking-wide">
+                                              {link.badge}
+                                            </span>
+                                          )}
+                                        </span>
+                                        <span className="block text-[12px] text-gray-500 mt-1 leading-snug">
+                                          {link.desc}
+                                        </span>
+                                      </span>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+
+                            <div className="rounded-2xl bg-[#F4F6FE] border border-gray-100 p-5 flex flex-col">
+                              <span className="inline-flex items-center self-start rounded-full bg-white text-gray-500 text-[9px] font-bold px-2 py-1 uppercase tracking-wider border border-gray-100">
+                                {productFeatured.eyebrow}
+                              </span>
+                              <p className="text-[15px] font-bold text-gray-900 mt-3 leading-snug">
+                                {productFeatured.title}
                               </p>
-                            )}
-                          </Link>
-                        ))}
+                              <p className="text-[12px] text-gray-500 mt-2 leading-relaxed">
+                                {productFeatured.desc}
+                              </p>
+                              <div
+                                className="mt-4 rounded-xl overflow-hidden aspect-video bg-gray-900 bg-cover bg-center"
+                                style={{ backgroundImage: `url(${productFeatured.image})` }}
+                              />
+                              <Link
+                                href={productFeatured.ctaHref}
+                                onClick={() => setOpenDropdown(null)}
+                                className="mt-4 inline-flex items-center justify-center gap-2 rounded-lg bg-brand text-white text-[13px] font-semibold py-2.5 hover:bg-brand-dark transition-colors"
+                              >
+                                {productFeatured.ctaText}
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                                  <line x1="5" y1="12" x2="19" y2="12" />
+                                  <polyline points="12 5 19 12 12 19" />
+                                </svg>
+                              </Link>
+                              <Link
+                                href={productFeatured.secondaryHref}
+                                onClick={() => setOpenDropdown(null)}
+                                className="mt-2 text-center text-[12.5px] font-semibold text-brand hover:underline"
+                              >
+                                {productFeatured.secondaryText}
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
+                    ) : (
+                      <div className="nav-dropdown absolute top-full left-0 pt-2 w-60 z-10">
+                        <div className="rounded-xl border border-gray-100 bg-white shadow-[0_16px_40px_rgba(15,15,40,0.12)] p-2">
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.label}
+                              href={child.href}
+                              className="block rounded-lg px-3 py-2.5 hover:bg-brand-light transition-colors duration-150"
+                            >
+                              <p className="text-[13px] font-semibold text-gray-800">
+                                {child.label}
+                              </p>
+                              {child.desc && (
+                                <p className="text-[11.5px] text-gray-500 mt-0.5">
+                                  {child.desc}
+                                </p>
+                              )}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )
                   )}
                 </div>
               ))}

@@ -1,9 +1,10 @@
 export { default as ProductOverviewHeroSection } from "./ProductOverviewHeroSection";
 export { default as ProductOverviewModulesSection } from "./ProductOverviewModulesSection";
-export { default as ProductOverviewPhilosophySection } from "./ProductOverviewPhilosophySection";
-export { default as ProductOverviewBenefitsSection } from "./ProductOverviewBenefitsSection";
-export { default as ProductOverviewUnifiedUISection } from "./ProductOverviewUnifiedUISection";
-export { default as ProductOverviewZoikoTimeSection } from "./ProductOverviewZoikoTimeSection";
-export { default as ProductOverviewTrustSection } from "./ProductOverviewTrustSection";
-export { default as ProductOverviewNextStepsSection } from "./ProductOverviewNextStepsSection";
-export { default as ProductOverviewClosingCTASection } from "./ProductOverviewClosingCTASection";
+export { default as ProductOverviewWorkflowSection } from "./ProductOverviewWorkflowSection";
+export { default as ProductOverviewCommunicationCoreSection } from "./ProductOverviewCommunicationCoreSection";
+export { default as ProductOverviewIntelligenceLayerSection } from "./ProductOverviewIntelligenceLayerSection";
+export { default as ProductOverviewPlanCoordinateSection } from "./ProductOverviewPlanCoordinateSection";
+export { default as ProductOverviewZoikoTimeBridgeSection } from "./ProductOverviewZoikoTimeBridgeSection";
+export { default as ProductOverviewAudiencePathsSection } from "./ProductOverviewAudiencePathsSection";
+export { default as ProductOverviewFaqSection } from "./ProductOverviewFaqSection";
+export { default as ProductOverviewGetStartedSection } from "./ProductOverviewGetStartedSection";

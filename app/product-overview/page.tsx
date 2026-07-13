@@ -1,13 +1,14 @@
 import {
   ProductOverviewHeroSection,
   ProductOverviewModulesSection,
-  ProductOverviewPhilosophySection,
-  ProductOverviewBenefitsSection,
-  ProductOverviewUnifiedUISection,
-  ProductOverviewZoikoTimeSection,
-  ProductOverviewTrustSection,
-  ProductOverviewNextStepsSection,
-  ProductOverviewClosingCTASection,
+  ProductOverviewWorkflowSection,
+  ProductOverviewCommunicationCoreSection,
+  ProductOverviewIntelligenceLayerSection,
+  ProductOverviewPlanCoordinateSection,
+  ProductOverviewZoikoTimeBridgeSection,
+  ProductOverviewAudiencePathsSection,
+  ProductOverviewFaqSection,
+  ProductOverviewGetStartedSection,
 } from "@/components/product-overview";
 
 export default function ProductOverviewPage() {
@@ -15,13 +16,14 @@ export default function ProductOverviewPage() {
     <main>
       <ProductOverviewHeroSection />
       <ProductOverviewModulesSection />
-      <ProductOverviewPhilosophySection />
-      <ProductOverviewBenefitsSection />
-      <ProductOverviewUnifiedUISection />
-      <ProductOverviewZoikoTimeSection />
-      <ProductOverviewTrustSection />
-      <ProductOverviewNextStepsSection />
-      <ProductOverviewClosingCTASection />
+      <ProductOverviewWorkflowSection />
+      <ProductOverviewCommunicationCoreSection />
+      <ProductOverviewIntelligenceLayerSection />
+      <ProductOverviewPlanCoordinateSection />
+      <ProductOverviewZoikoTimeBridgeSection />
+      <ProductOverviewAudiencePathsSection />
+      <ProductOverviewFaqSection />
+      <ProductOverviewGetStartedSection />
     </main>
   );
 }
