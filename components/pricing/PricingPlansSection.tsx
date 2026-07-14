@@ -1,126 +1,78 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
-
-/* ── Currency config — base prices defined in USD, converted on the fly ── */
-interface Currency {
-  code: string;
-  symbol: string;
-  label: string;
-  rate: number; // relative to USD
-}
-
-const currencies: Currency[] = [
-  { code: "USD", symbol: "$", label: "USD ($)", rate: 1 },
-  { code: "EUR", symbol: "€", label: "EUR (€)", rate: 0.92 },
-  { code: "GBP", symbol: "£", label: "GBP (£)", rate: 0.78 },
-  { code: "INR", symbol: "₹", label: "INR (₹)", rate: 83.2 },
-  { code: "AUD", symbol: "A$", label: "AUD (A$)", rate: 1.52 },
-];
 
 interface Plan {
   name: string;
   desc: string;
   badge?: string;
-  subNote?: string;
-  monthlyUsd: number; // 0 = free / custom handled separately
-  features: { label: string; bold?: boolean }[];
+  annualUsd: number; // displayed /mo price when billed annually; 0 = free / custom handled separately
+  features: string[];
   cta: string;
   href: string;
   popular?: boolean;
   isFree?: boolean;
   isEnterprise?: boolean;
+  fineMonthly: string;
+  fineAnnual: string;
 }
 
 const plans: Plan[] = [
   {
     name: "Free",
-    desc: "For individuals exploring Sema for personal use.",
-    monthlyUsd: 0,
+    desc: "For individuals getting started",
+    annualUsd: 0,
     isFree: true,
-    features: [
-      { label: "Messaging and direct calls" },
-      { label: "Audio & video with limits" },
-      { label: "Limited AI meeting summaries" },
-      { label: "Personal workspace" },
-      { label: "Mobile and desktop apps" },
-      { label: "Help center support" },
-    ],
+    features: ["Meetings, messaging & calls", "Mail & calendar", "Basic AI summaries"],
     cta: "Start free",
     href: "/start-free/",
+    fineMonthly: "No credit card required",
+    fineAnnual: "No credit card required",
   },
   {
     name: "Pro",
-    desc: "For freelancers, consultants, and independent professionals.",
-    monthlyUsd: 6,
-    features: [
-      { label: "Everything in Free, plus", bold: true },
-      { label: "Higher meeting limits" },
-      { label: "Full AI meeting summaries" },
-      { label: "Action items & decisions" },
-      { label: "Project organization" },
-      { label: "Calendar integrations" },
-      { label: "Email support" },
-    ],
+    desc: "For freelancers & professionals",
+    badge: "MOST POPULAR",
+    annualUsd: 14,
+    popular: true,
+    features: ["Everything in Free", "Full AI Meeting Summaries", "Sema Notes & Search"],
     cta: "Start with Pro",
     href: "#start-pro",
+    fineMonthly: "Billed monthly",
+    fineAnnual: "Billed annually or monthly",
   },
   {
     name: "Business",
-    desc: "For teams that need shared communication and AI coordination.",
-    badge: "MOST POPULAR",
-    subNote: "3-seat minimum",
-    monthlyUsd: 10,
-    popular: true,
-    features: [
-      { label: "Everything in Pro, plus", bold: true },
-      { label: "Team workspaces & channels" },
-      { label: "Admin console" },
-      { label: "Team AI summaries" },
-      { label: "Permissions & policies" },
-      { label: "Standard integrations" },
-      { label: "Priority support" },
-    ],
+    desc: "For teams needing governance",
+    annualUsd: 24,
+    features: ["Everything in Pro", "Admin Console & policies", "Confidential Mode"],
     cta: "Talk to sales",
     href: "#talk-sales",
+    fineMonthly: "3-seat minimum",
+    fineAnnual: "3-seat minimum",
   },
   {
     name: "Enterprise",
-    desc: "For organizations with scale, security, compliance, or ZoikoTime requirements.",
-    monthlyUsd: 0,
+    desc: "For scaled, regulated deployment",
+    annualUsd: 0,
     isEnterprise: true,
-    features: [
-      { label: "Everything in Business, plus", bold: true },
-      { label: "SSO / SAML & SCIM" },
-      { label: "Custom retention" },
-      { label: "Compliance configuration" },
-      { label: "ZoikoTime integration design" },
-      { label: "Dedicated onboarding" },
-      { label: "99.9% SLA" },
-    ],
+    features: ["SSO / SAML / SCIM", "Custom retention & compliance", "ZoikoTime integration"],
     cta: "Get a demo",
     href: "/get-a-demo/",
+    fineMonthly: "Custom pricing & onboarding",
+    fineAnnual: "Custom pricing & onboarding",
   },
 ];
 
-function formatPrice(amountUsd: number, currency: Currency): string {
-  const converted = amountUsd * currency.rate;
-  if (currency.code === "INR") {
-    return `${currency.symbol}${Math.round(converted)}`;
-  }
-  // round to nearest integer for clean display, but keep 1 decimal if needed
-  const rounded = Math.round(converted * 100) / 100;
+function formatPrice(amount: number): string {
+  const rounded = Math.round(amount * 100) / 100;
   const isWhole = rounded % 1 === 0;
-  return `${currency.symbol}${isWhole ? rounded.toFixed(0) : rounded.toFixed(2)}`;
+  return `$${isWhole ? rounded.toFixed(0) : rounded.toFixed(2)}`;
 }
 
 export default function PricingPlansSection() {
   const [billing, setBilling] = useState<"monthly" | "annual">("annual");
-  const [currencyCode, setCurrencyCode] = useState("USD");
-  const [currencyOpen, setCurrencyOpen] = useState(false);
-
-  const currency = currencies.find((c) => c.code === currencyCode) ?? currencies[0];
 
   return (
     <>
@@ -137,64 +89,30 @@ export default function PricingPlansSection() {
         .pps-controls-enter { animation: ppsFadeUp 0.5s cubic-bezier(.22,1,.36,1) both; }
         .pps-card-enter { animation: ppsFadeUp 0.55s cubic-bezier(.22,1,.36,1) both; }
 
-        /* currency dropdown */
-        .pps-currency-trigger {
-          transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+        .pps-currency-label {
+          color: #A9B2DE;
+          flex-shrink: 0;
         }
-        .pps-currency-trigger:hover {
-          border-color: #474787;
-          background-color: #fafaff;
-        }
-        .pps-currency-trigger:focus-visible {
-          outline: 2px solid #474787;
-          outline-offset: 1px;
-        }
-        .pps-chevron { transition: transform .25s cubic-bezier(.22,1,.36,1); }
-        .pps-chevron.is-open { transform: rotate(180deg); }
 
-        .pps-dropdown {
-          animation: ppsDropdownOpen .18s cubic-bezier(.22,1,.36,1) both;
-          transform-origin: top;
-        }
-        @keyframes ppsDropdownOpen {
-          from { opacity: 0; transform: scaleY(0.92) translateY(-4px); }
-          to   { opacity: 1; transform: scaleY(1) translateY(0); }
-        }
-        .pps-dropdown-item { transition: background-color .15s ease, padding-left .15s ease; }
-        .pps-dropdown-item:hover { background-color: #F4F6FE; padding-left: 18px; }
-
-        /* billing toggle pill */
-        .pps-toggle-track {
-          position: relative;
-          background: #EEF0FB;
-          border-radius: 9999px;
-          padding: 4px;
-          display: inline-flex;
-        }
-        .pps-toggle-thumb {
-          position: absolute;
-          top: 4px;
-          bottom: 4px;
-          border-radius: 9999px;
-          background: #474787;
-          transition: transform .3s cubic-bezier(.22,1,.36,1), width .3s cubic-bezier(.22,1,.36,1);
-          z-index: 0;
+        /* billing toggle — plain text, selected option gets a white pill */
+        .pps-toggle-row {
+          flex-shrink: 0;
         }
         .pps-toggle-btn {
-          position: relative;
-          z-index: 1;
-          padding: 7px 18px;
-          font-size: 13.5px;
+          padding: 7px 16px;
+          font-size: 13px;
           font-weight: 600;
           border-radius: 9999px;
-          transition: color .25s ease;
+          transition: color .2s ease, background-color .2s ease;
           cursor: pointer;
           background: transparent;
           border: none;
+          white-space: nowrap;
+          color: #A9B2DE;
         }
-
-        .pps-save-badge {
-          animation: ppsFadeUp 0.5s cubic-bezier(.22,1,.36,1) both;
+        .pps-toggle-btn.is-selected {
+          background: #fff;
+          color: #15131F;
         }
 
         /* price number swap animation */
@@ -208,14 +126,11 @@ export default function PricingPlansSection() {
         }
         .pps-card:hover {
           transform: translateY(-6px);
-          box-shadow: 0 18px 36px rgba(71,71,135,0.12);
+          box-shadow: 0 18px 36px rgba(15,17,40,0.14);
         }
         .pps-card-popular:hover {
-          box-shadow: 0 22px 44px rgba(71,71,135,0.28);
+          box-shadow: 0 22px 44px rgba(59,91,255,0.22);
         }
-
-        .pps-feature { transition: padding-left .18s ease; }
-        .pps-feature:hover { padding-left: 4px; }
 
         /* CTA buttons */
         .pps-btn {
@@ -223,99 +138,36 @@ export default function PricingPlansSection() {
           transition: transform .22s cubic-bezier(.22,1,.36,1), box-shadow .22s ease, opacity .2s ease;
         }
         .pps-btn:hover { transform: translateY(-2px); opacity: .92; }
-        @keyframes ppsShimmer {
-          from { transform: translateX(-120%); }
-          to   { transform: translateX(220%); }
+
+        .pps-compare-link {
+          transition: gap .2s ease, color .2s ease;
         }
-        .pps-btn::after {
-          content: "";
-          position: absolute; inset: 0;
-          background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.25) 50%, transparent 70%);
-          transform: translateX(-120%);
-        }
-        .pps-btn:hover::after { animation: ppsShimmer .65s ease forwards; }
+        .pps-compare-link:hover { gap: 10px; color: #2440D6; }
 
         @media (prefers-reduced-motion: reduce) {
-          .pps-controls-enter, .pps-card-enter, .pps-price-value, .pps-save-badge {
+          .pps-controls-enter, .pps-card-enter, .pps-price-value {
             animation: none !important; opacity: 1 !important; transform: none !important;
           }
           .pps-card:hover, .pps-btn:hover { transform: none; }
         }
       `}</style>
 
-      <section
-        aria-label="Pricing plans"
-        className="w-full bg-white pb-12 md:pb-16"
-      >
-        <div className="mx-auto w-full max-w-7xl px-6 py-20 md:px-10 lg:px-16">
-
+      <section aria-label="Pricing plans" className="relative w-full bg-[#F5F7FC] pb-16 md:pb-20">
+        <div
+          className="relative mx-auto w-full max-w-7xl px-6 md:px-10 lg:px-16 -mt-[76px]"
+        >
           {/* ── Controls row: currency + billing toggle ── */}
-          <div className="pps-controls-enter relative flex flex-wrap items-center justify-center gap-5 mb-10" style={{ zIndex: 30 }}>
+          <div className="pps-controls-enter relative flex flex-wrap items-center justify-center gap-2 mb-6">
+            <span className="pps-currency-label px-2 text-[13px] font-semibold">
+              USD $
+            </span>
 
-            {/* Currency dropdown */}
-            <div className="relative" style={{ zIndex: 40 }}>
-              <button
-                type="button"
-                onClick={() => setCurrencyOpen((o) => !o)}
-                className="pps-currency-trigger flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3.5 py-2 text-[13.5px] font-medium text-[#15131F]"
-                aria-haspopup="listbox"
-                aria-expanded={currencyOpen}
-              >
-                <span className="text-gray-400 text-[12px]">Currency</span>
-                <span className="font-semibold">{currency.label}</span>
-                <svg
-                  className={`pps-chevron ${currencyOpen ? "is-open" : ""}`}
-                  width="11" height="11" viewBox="0 0 11 11" fill="none"
-                >
-                  <path d="M2 4l3.5 3.5L9 4" stroke="#6b7280" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-
-              {currencyOpen && (
-                <div
-                  className="pps-dropdown absolute left-0 top-[calc(100%+6px)] w-44 rounded-xl border border-gray-100 bg-white shadow-xl overflow-hidden"
-                  style={{ zIndex: 50 }}
-                  role="listbox"
-                >
-                  {currencies.map((c) => (
-                    <button
-                      key={c.code}
-                      role="option"
-                      aria-selected={c.code === currencyCode}
-                      onClick={() => {
-                        setCurrencyCode(c.code);
-                        setCurrencyOpen(false);
-                      }}
-                      className="pps-dropdown-item w-full text-left px-4 py-2.5 text-[13.5px] text-[#15131F] flex items-center justify-between"
-                    >
-                      {c.label}
-                      {c.code === currencyCode && (
-                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                          <path d="M2 6.5l2.5 2.5L10 3" stroke="#474787" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      )}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Monthly / Annual toggle */}
-            <div className="pps-toggle-track" role="tablist" aria-label="Billing period">
-              <span
-                className="pps-toggle-thumb"
-                style={{
-                  left: billing === "monthly" ? "4px" : "calc(50% + 2px)",
-                  width: "calc(50% - 6px)",
-                }}
-                aria-hidden="true"
-              />
+            <div className="pps-toggle-row flex items-center gap-1" role="tablist" aria-label="Billing period">
               <button
                 role="tab"
                 aria-selected={billing === "monthly"}
                 onClick={() => setBilling("monthly")}
-                className="pps-toggle-btn"
-                style={{ color: billing === "monthly" ? "#fff" : "#5C5870" }}
+                className={`pps-toggle-btn ${billing === "monthly" ? "is-selected" : ""}`}
               >
                 Monthly
               </button>
@@ -323,32 +175,18 @@ export default function PricingPlansSection() {
                 role="tab"
                 aria-selected={billing === "annual"}
                 onClick={() => setBilling("annual")}
-                className="pps-toggle-btn"
-                style={{ color: billing === "annual" ? "#fff" : "#5C5870" }}
+                className={`pps-toggle-btn ${billing === "annual" ? "is-selected" : ""}`}
               >
-                Annual
+                Annual · save 20%
               </button>
             </div>
-
-            {/* Save badge */}
-            {billing === "annual" && (
-              <span
-                key="save-badge"
-                className="pps-save-badge inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-[#474787]"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#474787]" />
-                Save with annual billing
-              </span>
-            )}
           </div>
 
           {/* ── 4-card pricing grid ── */}
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch" style={{ zIndex: 1 }}>
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
             {plans.map((plan, i) => {
-              const monthlyPrice = formatPrice(plan.monthlyUsd, currency);
-              const annualMonthlyEquivalent = plan.monthlyUsd * 0.83; // ~17% off when billed annually
-              const annualPrice = formatPrice(annualMonthlyEquivalent, currency);
-              const annualYearTotal = formatPrice(annualMonthlyEquivalent * 12, currency);
+              const monthlyUsd = plan.annualUsd / 0.8; // undiscounted monthly rate
+              const price = billing === "monthly" ? monthlyUsd : plan.annualUsd;
 
               return (
                 <div
@@ -362,15 +200,18 @@ export default function PricingPlansSection() {
                     }`}
                     style={{
                       background: "#fff",
-                      borderColor: plan.popular ? "#474787" : undefined,
+                      borderColor: plan.popular ? "#3B5BFF" : undefined,
                       borderWidth: plan.popular ? "2px" : undefined,
+                      boxShadow: plan.popular
+                        ? "0 18px 40px rgba(59,91,255,0.16)"
+                        : "0 1px 2px rgba(15,17,40,0.04)",
                     }}
                   >
                     {/* Popular badge */}
                     {plan.badge && (
                       <span
                         className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white"
-                        style={{ background: "#474787" }}
+                        style={{ background: "#3B5BFF" }}
                       >
                         {plan.badge}
                       </span>
@@ -382,80 +223,78 @@ export default function PricingPlansSection() {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-[12.5px] leading-relaxed text-[#6b7280] mb-4">
+                    <p className="text-[12.5px] leading-relaxed text-[#6b7280] mb-5">
                       {plan.desc}
                     </p>
-
-                    {/* Sub note (e.g. 3-seat minimum) */}
-                    {plan.subNote && (
-                      <p className="text-[11.5px] font-semibold text-[#474787] mb-4 text-center bg-[#EEF0FB] rounded-md py-1.5">
-                        {plan.subNote}
-                      </p>
-                    )}
-
-                    {/* Feature list */}
-                    <ul className="space-y-[9px] mb-6 flex-1">
-                      {plan.features.map((f) => (
-                        <li key={f.label} className="pps-feature flex items-start gap-2 text-[12.5px] leading-snug">
-                          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 mt-[2px]">
-                            <path d="M2.5 7.2l3 3 6-6.4" stroke="#474787" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                          <span
-                            className={f.bold ? "font-bold text-[#15131F]" : "text-[#3f3d56]"}
-                          >
-                            {f.label}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
 
                     {/* Price block */}
                     <div className="mb-5">
                       {plan.isFree ? (
-                        <>
-                          <p key={`free-${currencyCode}`} className="pps-price-value text-[30px] font-extrabold text-[#15131F] leading-none">
-                            {formatPrice(0, currency)}
-                          </p>
-                          <p className="text-[12px] text-[#9CA3AF] mt-1">forever</p>
-                          <p className="text-[11px] text-[#9CA3AF] mt-0.5">No charge · No credit card required</p>
-                        </>
+                        <p className="text-[30px] font-extrabold text-[#15131F] leading-none">
+                          {formatPrice(0)}
+                          <span className="text-[13px] font-medium text-[#9CA3AF]"> /forever</span>
+                        </p>
                       ) : plan.isEnterprise ? (
-                        <>
-                          <p className="text-[24px] font-extrabold text-[#15131F] leading-none">Custom</p>
-                          <p className="text-[12px] text-[#9CA3AF] mt-1">Tailored to your organization</p>
-                        </>
+                        <p className="text-[30px] font-extrabold text-[#15131F] leading-none">
+                          Custom
+                        </p>
                       ) : (
-                        <>
-                          <p key={`${plan.name}-${billing}-${currencyCode}`} className="pps-price-value text-[30px] font-extrabold text-[#15131F] leading-none">
-                            {billing === "monthly" ? monthlyPrice : annualPrice}
-                            <span className="text-[13px] font-medium text-[#9CA3AF]"> /user/month</span>
-                          </p>
-                          <p className="text-[12px] text-[#9CA3AF] mt-1">
-                            {billing === "annual"
-                              ? `billed annually as ${annualYearTotal}/user/year`
-                              : "billed monthly"}
-                          </p>
-                        </>
+                        <p
+                          key={`${plan.name}-${billing}`}
+                          className="pps-price-value text-[30px] font-extrabold text-[#15131F] leading-none"
+                        >
+                          {formatPrice(price)}
+                          <span className="text-[13px] font-medium text-[#9CA3AF]"> /user/mo</span>
+                        </p>
                       )}
                     </div>
+
+                    {/* Feature list */}
+                    <ul className="space-y-[10px] mb-6 flex-1">
+                      {plan.features.map((f) => (
+                        <li key={f} className="flex items-start gap-2 text-[13px] leading-snug">
+                          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" className="flex-shrink-0 mt-[3px]">
+                            <path d="M2.5 7.2l3 3 6-6.4" stroke="#3B5BFF" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          <span className="text-[#3f3d56]">{f}</span>
+                        </li>
+                      ))}
+                    </ul>
 
                     {/* CTA */}
                     <Link
                       href={plan.href}
                       className="pps-btn inline-flex items-center justify-center rounded-full px-5 py-3 text-[13.5px] font-semibold w-full"
                       style={{
-                        background: plan.popular ? "#474787" : "#15131F",
-                        color: "#fff",
+                        background: plan.popular ? "#3B5BFF" : "#fff",
+                        color: plan.popular ? "#fff" : "#15131F",
+                        border: plan.popular ? "none" : "1px solid #E5E7EB",
                       }}
                     >
                       {plan.cta}
                     </Link>
+
+                    <p className="mt-3 text-center text-[11px] text-[#9CA3AF]">
+                      {billing === "annual" ? plan.fineAnnual : plan.fineMonthly}
+                    </p>
                   </div>
                 </div>
               );
             })}
           </div>
 
+          {/* Compare plans link */}
+          <div className="mt-10 text-center">
+            <a
+              href="#comparison"
+              className="pps-compare-link inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#3B5BFF]"
+            >
+              Compare plans in detail
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          </div>
         </div>
       </section>
     </>

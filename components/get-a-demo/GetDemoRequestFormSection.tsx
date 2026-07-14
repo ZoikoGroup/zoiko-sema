@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 
 // TODO: replace with the final banner photo URL.
-const FORM_BANNER_IMAGE_URL = "/Images/Decorative Image for Form Context.png";
+const FORM_BANNER_IMAGE_URL = "/Images/Decorative-Image-for-Form-Context.png";
 
 interface FormData {
   firstName: string;
