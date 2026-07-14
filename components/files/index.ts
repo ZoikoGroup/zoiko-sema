@@ -1,0 +1,10 @@
+export { default as FilesHeroSection } from "./FilesHeroSection";
+export { default as FileFirstSystemSection } from "./FileFirstSystemSection";
+export { default as ContextAwareApproachSection } from "./ContextAwareApproachSection";
+export { default as FileLifecycleSection } from "./FileLifecycleSection";
+export { default as MailCalendarContinuitySection } from "./MailCalendarContinuitySection";
+export { default as SearchAiMemorySection } from "./SearchAiMemorySection";
+export { default as GovernanceSecurityControlsSection } from "./GovernanceSecurityControlsSection";
+export { default as FilesScaleSection } from "./FilesScaleSection";
+export { default as SemaFilesFaqSection } from "./SemaFilesFaqSection";
+export { default as FilesFinalCtaSection } from "./FilesFinalCtaSection";
