@@ -4,7 +4,7 @@ import { FileText, LayoutGrid, Code2, EyeOff, Star, Clock, LucideIcon } from "lu
 import { useInView } from "./useInView";
 
 // TODO: replace with your actual evidence pack image path, e.g. "/Images/compliance-audit-export.webp"
-const EXPORT_IMAGE_SRC = "/Images/compliance-audit-export.webp";
+const EXPORT_IMAGE_SRC = "/Images/compliance-audit-export.png";
 
 interface ExportCard {
   icon: LucideIcon;
