@@ -1,0 +1,11 @@
+export { default as Hero } from "./Hero";
+export { default as AccessibilityStatementSection } from "./AccessibilityStatementSection";
+export { default as AccessibilityCoverageMapSection } from "./AccessibilityCoverageMapSection";
+export { default as ConformanceProductCoverageSection } from "./ConformanceProductCoverageSection";
+export { default as HowWeVerifyAccessibilitySection } from "./HowWeVerifyAccessibilitySection";
+export { default as KnownLimitationsSection } from "./KnownLimitationsSection";
+export { default as BarrierReportingFlowSection } from "./BarrierReportingFlowSection";
+export { default as ReportABarrierSection } from "./ReportABarrierSection";
+export { default as ConnectedResourcesSection } from "./ConnectedResourcesSection";
+export { default as CtaSection } from "./CtaSection";
+export { default as FaqSection } from "./FaqSection";
