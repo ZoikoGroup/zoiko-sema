@@ -1,5 +1,9 @@
 "use client"
+
+import { useRouter } from "next/navigation";
+
 export default function SemaFinalCtaSection() {
+  const router = useRouter();
   return (
     <section className="bg-[#0B1330] px-6 py-20 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-2xl text-center">
@@ -12,7 +16,8 @@ export default function SemaFinalCtaSection() {
         </p>
 
         <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-          <button className="rounded-full bg-[#4F63F0] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#3E51DE]">
+          <button onClick={()=>router.push("/products")}
+          className="rounded-full cursor-pointer bg-[#4F63F0] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#3E51DE]">
             Explore Product
           </button>
           <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0B1330] transition hover:bg-gray-100">
