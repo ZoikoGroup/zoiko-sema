@@ -2,6 +2,9 @@
 
 import React, { useState, useRef, useEffect } from "react";
 
+// TODO: replace with the final FAQ banner photo URL.
+const FAQ_BANNER_IMAGE_URL = "/Images/GetDemoFAQSection.tsx.png";
+
 interface FaqItem {
   q: string;
   a: React.ReactNode;
@@ -19,17 +22,7 @@ const faqs: FaqItem[] = [
     ),
   },
   {
-    q: "Will pricing be discussed during the demo?",
-    a: (
-      <>
-        Yes, if you'd like. We'll walk through the plan that best fits your team
-        size and use case, including Business and Enterprise pricing and any
-        ZoikoTime integration costs where relevant.
-      </>
-    ),
-  },
-  {
-    q: "How long does a typical demo take?",
+    q: "How long is a typical demo?",
     a: (
       <>
         Most demos run 20–30 minutes, depending on how many use cases you want
@@ -39,21 +32,21 @@ const faqs: FaqItem[] = [
     ),
   },
   {
-    q: "Who from Sema will I be speaking with?",
+    q: "Can the demo include a security or compliance review?",
     a: (
       <>
-        A member of our solutions team will follow up directly. For larger
-        organizations or ZoikoTime integration requests, a specialist with the
-        relevant technical background joins the call.
+        Yes. For teams with security, compliance, or procurement requirements,
+        we can bring in a specialist to walk through data handling, access
+        controls, and the ZoikoTime integration model.
       </>
     ),
   },
   {
-    q: "Is my information kept confidential?",
+    q: "Is a demo confidential?",
     a: (
       <>
         Yes. Information submitted through this form is used only to route and
-        prepare your demo request, and is handled in line with Sema's privacy
+        prepare your demo request, and is handled in line with Sema&apos;s privacy
         and data policies.
       </>
     ),
@@ -61,7 +54,7 @@ const faqs: FaqItem[] = [
 ];
 
 export default function GetDemoFAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <>
@@ -78,10 +71,6 @@ export default function GetDemoFAQSection() {
           from { opacity: 0; transform: translateY(-6px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-        @keyframes gdfRipple {
-          from { transform: scale(0.6); opacity: 0.35; }
-          to   { transform: scale(1.6); opacity: 0; }
-        }
 
         .gdf-heading-enter { animation: gdfFadeUp 0.55s cubic-bezier(.22,1,.36,1) both; }
         .gdf-row-enter { animation: gdfRowFadeUp 0.5s cubic-bezier(.22,1,.36,1) both; }
@@ -89,90 +78,55 @@ export default function GetDemoFAQSection() {
         /* row container */
         .gdf-row {
           background: #fff;
-          border-radius: 16px;
-          box-shadow: 0 1px 2px rgba(15,15,40,0.04);
-          transition: background-color .25s ease, box-shadow .25s ease;
+          border: 1px solid #e5e7eb;
+          border-radius: 12px;
+          transition: border-color .22s ease, box-shadow .22s ease;
         }
         .gdf-row:hover {
-          box-shadow: 0 8px 20px rgba(71,71,135,0.10);
+          border-color: #c7cbe8;
+          box-shadow: 0 6px 18px rgba(71,71,135,0.08);
         }
 
-        /* question button — hover / focus / active states */
+        /* question button */
         .gdf-trigger {
           width: 100%;
           display: flex;
-          align-items: flex-start;
+          align-items: center;
           justify-content: space-between;
           gap: 16px;
           text-align: left;
-          padding: 22px 22px;
+          padding: 18px 22px;
           background: transparent;
           border: none;
           cursor: pointer;
-          border-radius: 16px;
-          position: relative;
-          overflow: hidden;
-          transition: padding-left .2s ease;
+          border-radius: 12px;
         }
-        .gdf-trigger:hover { padding-left: 26px; }
         .gdf-trigger:focus-visible {
-          outline: 2px solid #474787;
+          outline: 2px solid #6366f1;
           outline-offset: 2px;
-        }
-        .gdf-trigger:active .gdf-toggle-circle {
-          transform: scale(0.88);
-        }
-
-        /* ripple effect on click */
-        .gdf-trigger .gdf-ripple {
-          position: absolute;
-          inset: 0;
-          border-radius: 16px;
-          background: radial-gradient(circle, rgba(71,71,135,0.12) 0%, transparent 70%);
-          opacity: 0;
-          pointer-events: none;
-        }
-        .gdf-trigger:active .gdf-ripple {
-          animation: gdfRipple 0.5s ease-out;
         }
 
         .gdf-question {
-          font-size: 15.5px;
+          font-size: 14.5px;
           font-weight: 700;
-          color: #15131F;
-          transition: color .2s ease;
+          color: #111827;
         }
-        .gdf-trigger:hover .gdf-question { color: #474787; }
 
-        /* toggle circle (the +/x button) */
-        .gdf-toggle-circle {
+        /* toggle +/x */
+        .gdf-toggle {
           flex-shrink: 0;
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
+          width: 18px;
+          height: 18px;
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #EAF6F2;
-          color: #474787;
-          margin-top: 1px;
-          transition: background-color .25s ease, color .25s ease, transform .2s ease, box-shadow .25s ease;
-        }
-        .gdf-trigger:hover .gdf-toggle-circle {
-          background: #474787;
-          color: #fff;
-          transform: scale(1.08);
-          box-shadow: 0 6px 14px rgba(71,71,135,0.3);
-        }
-        .gdf-toggle-circle.is-open {
-          background: #474787;
-          color: #fff;
+          color: #4b5563;
         }
         .gdf-toggle-icon {
-          transition: transform .35s cubic-bezier(.22,1,.36,1);
+          transition: transform .3s cubic-bezier(.22,1,.36,1);
           transform: rotate(0deg);
         }
-        .gdf-toggle-circle.is-open .gdf-toggle-icon {
+        .gdf-toggle.is-open .gdf-toggle-icon {
           transform: rotate(45deg);
         }
 
@@ -189,30 +143,46 @@ export default function GetDemoFAQSection() {
           .gdf-heading-enter, .gdf-row-enter, .gdf-answer-inner {
             animation: none !important; opacity: 1 !important; transform: none !important;
           }
-          .gdf-trigger:active .gdf-ripple { animation: none !important; }
-          .gdf-toggle-circle, .gdf-toggle-icon { transition: none !important; }
+          .gdf-toggle-icon { transition: none !important; }
         }
       `}</style>
 
       <section
-        aria-label="Designed for secure, responsible communication"
-        style={{ backgroundColor: "#EAEEFC" }}
+        aria-label="Questions about the demo"
+        style={{ backgroundColor: "#F8FAFC" }}
         className="w-full py-16 md:py-20"
       >
         <div className="mx-auto w-full max-w-3xl px-6 md:px-10">
 
           {/* ── Heading ── */}
-          <div className="gdf-heading-enter text-center mb-10">
+          <div className="gdf-heading-enter text-center mb-8">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] mb-3" style={{ color: "#6366f1" }}>
+              FAQ
+            </p>
             <h2
-              className="font-bold leading-[1.2] tracking-tight text-[#15131F]"
-              style={{ fontSize: "24px" }}
+              className="font-bold leading-[1.2] tracking-tight text-gray-900"
+              style={{ fontSize: "26px" }}
             >
-              Designed for secure, responsible communication.
+              Questions about the demo
             </h2>
           </div>
 
+          {/* ── Banner image ── */}
+          <div className="gdf-heading-enter rounded-2xl overflow-hidden mb-10" style={{ animationDelay: "0.1s" }}>
+            {FAQ_BANNER_IMAGE_URL ? (
+              <img src={FAQ_BANNER_IMAGE_URL} alt="" className="w-full h-auto block" style={{ maxHeight: 200, objectFit: "cover" }} />
+            ) : (
+              <div
+                className="w-full flex items-center justify-center text-[13px] text-gray-400"
+                style={{ height: 160, background: "linear-gradient(135deg, #e5e7eb, #f3f4f6)" }}
+              >
+                Add FAQ_BANNER_IMAGE_URL to display the banner image
+              </div>
+            )}
+          </div>
+
           {/* ── FAQ list ── */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             {faqs.map((item, i) => {
               const isOpen = openIndex === i;
               return (
@@ -266,19 +236,18 @@ function FaqRow({
         onClick={onToggle}
         aria-expanded={isOpen}
       >
-        <span className="gdf-ripple" aria-hidden="true" />
         <span className="gdf-question">{item.q}</span>
-        <span className={`gdf-toggle-circle ${isOpen ? "is-open" : ""}`} aria-hidden="true">
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" className="gdf-toggle-icon">
-            <path d="M6.5 1v11M1 6.5h11" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        <span className={`gdf-toggle ${isOpen ? "is-open" : ""}`} aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="gdf-toggle-icon">
+            <path d="M7 1v12M1 7h12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
           </svg>
         </span>
       </button>
 
       <div className="gdf-answer-wrap" style={{ maxHeight }}>
         {isOpen && (
-          <div ref={innerRef} className="gdf-answer-inner px-[22px] pb-6">
-            <p className="text-[13.5px] leading-[1.75] text-[#5C5870]">
+          <div ref={innerRef} className="gdf-answer-inner px-[22px] pb-5">
+            <p className="text-[13.5px] leading-[1.75] text-gray-500">
               {item.a}
             </p>
           </div>
@@ -286,10 +255,10 @@ function FaqRow({
         {!isOpen && (
           <div
             ref={innerRef}
-            className="px-[22px] pb-6"
+            className="px-[22px] pb-5"
             style={{ position: "absolute", visibility: "hidden", height: 0, overflow: "hidden" }}
           >
-            <p className="text-[13.5px] leading-[1.75] text-[#5C5870]">{item.a}</p>
+            <p className="text-[13.5px] leading-[1.75] text-gray-500">{item.a}</p>
           </div>
         )}
       </div>
