@@ -29,7 +29,7 @@ export default function PricingHeroSection() {
 
       <section
         aria-label="Plans for individuals, teams, and enterprises"
-        className="relative w-full overflow-hidden pt-20 pb-[110px] md:pt-24"
+        className="relative z-2 w-full overflow-hidden pt-20 pb-[150px] md:pt-24"
         style={{
           background:
             "linear-gradient(120deg, rgba(255,255,255,0.05) 0%, transparent 35%), linear-gradient(135deg, #232C5C 0%, #1B2246 55%, #141A38 100%)",

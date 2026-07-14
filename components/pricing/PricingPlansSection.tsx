@@ -154,7 +154,7 @@ export default function PricingPlansSection() {
 
       <section aria-label="Pricing plans" className="relative w-full bg-[#F5F7FC] pb-16 md:pb-20">
         <div
-          className="relative mx-auto w-full max-w-7xl px-6 md:px-10 lg:px-16 -mt-[76px]"
+          className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-10 lg:px-16 -mt-[100px]"
         >
           {/* ── Controls row: currency + billing toggle ── */}
           <div className="pps-controls-enter relative flex flex-wrap items-center justify-center gap-2 mb-6">
