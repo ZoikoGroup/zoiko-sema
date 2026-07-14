@@ -44,7 +44,7 @@ const cards: AudienceCard[] = [
 
 export default function AccessibilityStatementSection() {
   return (
-    <section className="bg-[#fbfafd] px-6 py-16 sm:px-10 lg:px-16">
+    <section id="statement" className="bg-[#fbfafd] px-6 py-16 sm:px-10 lg:px-16">
       <style>{`
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(14px); }
