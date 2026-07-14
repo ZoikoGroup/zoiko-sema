@@ -3,39 +3,52 @@
 import Link from "next/link";
 
 /**
- * FinalCTASection
- * Closing CTA band — solid indigo background, centered heading + copy,
- * white pill primary button and outlined ghost secondary button.
+ * PricingFinalCTASection
+ * Closing CTA band — full-bleed meeting-room photo with a dark overlay,
+ * centered eyebrow/heading/copy, and two CTAs.
  */
 
 export default function PricingFinalCTASection() {
   return (
-    <section className="bg-[#474889] px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-xl text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          Still deciding?
-        </h2>
+    <section
+      className="relative w-full overflow-hidden bg-cover bg-center px-4 py-20 sm:px-6 lg:px-8"
+      style={{ backgroundImage: "url('/Images/sales-meeting.webp')" }}
+    >
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(8,10,26,0.88) 0%, rgba(8,10,26,0.82) 55%, rgba(8,10,26,0.92) 100%)",
+        }}
+      />
 
-        <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-indigo-100">
-          Tell us about your team and we will help you choose. 30 minutes, real
-          human, no pressure.
+      <div className="relative mx-auto max-w-xl text-center">
+        <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#8FA6FF]">
+          Get started
         </p>
 
-        <div className="mt-7 flex flex-col items-center gap-3">
-          {/* Get a Demo Button */}
-          <Link
-            href="/get-a-demo/"
-            className="w-full max-w-sm rounded-full bg-white px-6 py-3.5 text-center text-sm font-semibold text-[#2A2657] shadow-sm transition-all duration-200 hover:bg-slate-100 hover:shadow-md active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4B4789]"
-          >
-            Get a demo
-          </Link>
+        <h2 className="mt-4 text-[28px] font-bold leading-tight tracking-tight text-white sm:text-[36px]">
+          Find the plan that fits how your team works.
+        </h2>
 
-          {/* Start Free Button */}
+        <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-[#C7CCE8]">
+          Start free today, or talk to sales about Business and Enterprise
+          deployment.
+        </p>
+
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             href="/start-free/"
-            className="w-full max-w-sm rounded-full border border-white/40 px-6 py-3.5 text-center text-sm font-semibold text-white transition-all duration-200 hover:border-white/70 hover:bg-white/10 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#4B4789]"
+            className="w-full max-w-xs rounded-full bg-[#3B5BFF] px-6 py-3.5 text-center text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-[#2E4BE0] hover:shadow-md active:scale-[0.98] sm:w-auto"
           >
             Start free
+          </Link>
+
+          <Link
+            href="/get-a-demo/"
+            className="w-full max-w-xs rounded-full border border-white/30 bg-white/5 px-6 py-3.5 text-center text-sm font-semibold text-white transition-all duration-200 hover:border-white/60 hover:bg-white/10 active:scale-[0.98] sm:w-auto"
+          >
+            Get a demo
           </Link>
         </div>
       </div>
