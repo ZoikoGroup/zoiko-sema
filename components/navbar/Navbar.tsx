@@ -31,7 +31,7 @@ const menuItems: NavItem[] = [
     title: "Solutions",
     url: "/solutions",
     children: [
-      { label: "Enterprise Teams", href: "/solutions/enterprise-teams", desc: "Scale communication, streamline workflows, and keep everyone aligned." },
+      { label: "Enterprise Teams", href: "/enterprise", desc: "Scale communication, streamline workflows, and keep everyone aligned." },
       { label: "Department Solutions", href: "/solutions/departments", desc: "Tailored for IT, HR, Finance, Sales, and Operations teams." },
       { label: "Hybrid & Remote Teams", href: "/solutions/hybrid-remote", desc: "Empower distributed teams with secure, inclusive collaboration." },
       { label: "Financial Services", href: "/solutions/financial-services", desc: "Secure communication and compliance for regulated institutions." },
@@ -229,7 +229,7 @@ const solutionColumns: SolutionColumn[] = [
       {
         title: "Enterprise Teams",
         desc: "Scale communication, streamline workflows, and keep everyone aligned.",
-        href: "/solutions/enterprise-teams",
+        href: "/enterprise",
         icon: solutionIcon(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
       },
       {
