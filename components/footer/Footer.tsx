@@ -279,7 +279,7 @@ export default function Footer() {
                   { label: "Individual Productivity", href: "/individual-productivity/" },
 
                   { label: "Freelancer Workflows", href: "/freelancer-workflows/" },
-                  { label: "ZoikoTime Customers", href: "/solutions/zoikotime-customers" },
+                  { label: "ZoikoTime Customers", href: "/zoikotime-customers" },
                   { label: "Enterprise Deployment", href: "/enterprise" },
                   { label: "Regulated Workflows", href: "/regulated-workflows" },
                 ]}
@@ -294,10 +294,10 @@ export default function Footer() {
                   { label: "Secure Communication", href: "/secure-communication" },
                   { label: "Meeting to Summary", href: "/meeting-to-summary/" },
                   { label: "Client Call Follow-Up", href: "/use-cases/client-followup" },
-                  { label: "Team Decision Tracking", href: "/use-cases/decision-tracking" },
-                  { label: "Remote Coordination", href: "/use-cases/remote-coordination" },
-                  { label: "Project Collaboration", href: "/use-cases/project-collaboration" },
-                  { label: "Personal-to-Team", href: "/use-cases/personal-to-team" },
+                  { label: "Team Decision Tracking", href: "/team-decision-tracking" },
+                  { label: "Remote Coordination", href: "/remote-coordination" },
+                  { label: "Project Collaboration", href: "/project-collaboration" },
+                  { label: "Personal-to-Team", href: "/Personal-to-team" },
                 ]}
               />
 
@@ -311,12 +311,12 @@ export default function Footer() {
                 delay={240}
                 items={[
                   { label: "Sema + ZoikoTime", href: "/zoikotime" },
-                  { label: "Workforce Truth", href: "/workforce-truth" },
-                  { label: "Meeting-to-Work", href: "/zoikotime/meeting-to-work" },
-                  { label: "Verified Collaboration", href: "/zoikotime/verified-collaboration" },
-                  { label: "Compliance & Audit", href: "/zoikotime/compliance" },
-                  { label: "Productivity Intelligence", href: "/productivity-intelligence" },
-                  { label: "Request Demo", href: "/demo", badge: "Enterprise" },
+                  { label: "Workforce Truth", href: "/zoikotime/workforce-truth" },
+                  { label: "Meeting-to-Work", href: "/meeting-to-work" },
+                  { label: "Verified Collaboration", href: "/verified-collaboration" },
+                  { label: "Compliance & Audit", href: "/compliance-audit" },
+                  { label: "Productivity Intelligence", href: "/zoikotime/productivity" },
+                  { label: "Request Demo", href: "/get-a-demo", badge: "Enterprise" },
                 ]}
               />
             </div>
@@ -352,7 +352,7 @@ export default function Footer() {
                 delay={80}
                 items={[
                   { label: "About Sema", href: "/about/" },
-                  { label: "About Zoiko Tech", href: "/about/zoiko-tech" },
+                  { label: "About Zoiko Tech", href: "/about-zoikotech" },
                   { label: "Careers", href: "/careers" },
                   { label: "Partners", href: "/partners" },
                   { label: "Press", href: "/press" },
@@ -367,10 +367,10 @@ export default function Footer() {
                 visible={assuranceVisible}
                 delay={160}
                 items={[
-                  { label: "Security Center", href: "/security" },
-                  { label: "Responsible AI", href: "/responsible-ai" },
+                  { label: "Security Center", href: "/security-center" },
+                  { label: "Responsible AI", href: "/responsive-ai" },
                   { label: "Privacy & Data", href: "/privacy" },
-                  { label: "Compliance", href: "/compliance" },
+                  { label: "Compliance", href: "/compliance-audit" },
                   { label: "Subprocessors", href: "/subprocessors" },
                   { label: "Accessibility", href: "/accessibility" },
                   { label: "Report a Concern", href: "/report-concern" },
