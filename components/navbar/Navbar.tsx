@@ -46,28 +46,66 @@ const menuItems: NavItem[] = [
     title: "Use Cases",
     url: "/use-cases",
     children: [
-      { label: "Founder-led teams", href: "/use-cases/founders" },
-      { label: "Remote teams", href: "/use-cases/remote" },
-      { label: "Customer support", href: "/use-cases/support" },
+      { label: "Team Collaboration", href: "/use-cases/team-collaboration", desc: "Keep teams connected, aligned, and productive in one place." },
+      { label: "Project Management", href: "/use-cases/project-management", desc: "Plan, manage tasks, share updates, and deliver projects on time." },
+      { label: "Customer Support", href: "/use-cases/customer-support", desc: "Resolve issues faster and deliver exceptional customer experiences." },
+      { label: "Education", href: "/use-cases/education", desc: "Enable engaging learning, discussions, and collaboration for students and educators." },
+      { label: "Security & Compliance", href: "/use-cases/security-compliance", desc: "Communicate securely with Confidential Mode and policy controls." },
+      { label: "Marketing", href: "/use-cases/marketing", desc: "Launch campaigns, align teams, and move faster from idea to impact." },
+      { label: "Remote & Hybrid Work", href: "/use-cases/remote-hybrid-work", desc: "Empower distributed teams with secure, inclusive communication." },
+      { label: "Healthcare", href: "/use-cases/healthcare", desc: "Improve care team communication and protect patient data." },
+      { label: "Government", href: "/use-cases/government", desc: "Meet compliance standards and enhance public sector collaboration." },
+      { label: "Retail & eCommerce", href: "/use-cases/retail-ecommerce", desc: "Connect teams across stores, warehouses, and HQ to serve customers better." },
+      { label: "Sales & Enablement", href: "/use-cases/sales-enablement", desc: "Share content, track conversations, and close deals faster." },
+      { label: "Travel & Hospitality", href: "/use-cases/travel-hospitality", desc: "Coordinate teams and deliver seamless guest experiences." },
     ],
   },
-  { title: "ZoikoTime", url: "/zoikotime" },
+  {
+    title: "ZoikoTime",
+    url: "/zoikotime",
+    children: [
+      { label: "Overview", href: "/zoikotime/overview", desc: "See how ZoikoTime works and the value it delivers." },
+      { label: "Workforce Overview", href: "/zoikotime/workforce-overview", desc: "Real-time visibility into activity, status, and performance." },
+      { label: "Performance Analytics", href: "/zoikotime/performance-analytics", desc: "Insights and reports that help you drive productivity and outcomes." },
+      { label: "Compliance & Audit", href: "/zoikotime/compliance-audit", desc: "Audit trails, data retention, and policy compliance made simple." },
+      { label: "Time Tracking", href: "/zoikotime/time-tracking", desc: "Automatic time tracking with smart classification and accuracy." },
+      { label: "Break Management", href: "/zoikotime/break-management", desc: "Define breaks, enforce policies, and maintain healthy work habits." },
+      { label: "Alerts & Notifications", href: "/zoikotime/alerts-notifications", desc: "Custom alerts for inactivity, overtime, breaks, and policy events." },
+      { label: "Policies & Rules", href: "/zoikotime/policies-rules", desc: "Configure workforce policies, thresholds, and working schedules." },
+      { label: "Teams & Groups", href: "/zoikotime/teams-groups", desc: "Organize teams, set managers, and control access." },
+      { label: "Privacy & Data Protection", href: "/zoikotime/privacy-data-protection", desc: "Privacy-first design with role-based access and data protection." },
+      { label: "Integrations", href: "/zoikotime/integrations", desc: "Connect ZoikoTime with Zoiko One, Zoiko Sema, and other tools." },
+      { label: "Settings", href: "/zoikotime/settings", desc: "General settings, billing, usage, and account preferences." },
+    ],
+  },
   { title: "Pricing", url: "/pricing" },
   {
     title: "Resources",
     url: "/resources",
     children: [
-      { label: "Blog", href: "/resources/blog" },
-      { label: "Help Center", href: "/resources/help" },
-      { label: "Documentation", href: "/resources/docs" },
+      { label: "Blog", href: "/resources/blog", desc: "Insights, updates, and best practices from the Zoiko Sema team." },
+      { label: "Guides & Tutorials", href: "/resources/guides", desc: "Step-by-step guides to help your team succeed." },
+      { label: "Webinars & Events", href: "/resources/webinars", desc: "Live sessions, recordings, and on-demand content." },
+      { label: "White Papers", href: "/resources/white-papers", desc: "In-depth research and industry reports." },
+      { label: "Help Center", href: "/resources/help", desc: "Get answers to common questions and issues." },
+      { label: "Community", href: "/resources/community", desc: "Connect with other Sema users and experts." },
+      { label: "API & Developer Docs", href: "/resources/docs", desc: "Integrate Sema with your tools and workflows." },
+      { label: "Status & Uptime", href: "/resources/status", desc: "Real-time system status and performance." },
+      { label: "About Zoiko Sema", href: "/about", desc: "Our mission, vision, and the Zoiko Group." },
+      { label: "Newsroom", href: "/newsroom", desc: "Press releases, media kit, and announcements." },
+      { label: "Careers", href: "/careers", desc: "Join us and help build the future." },
+      { label: "Partners", href: "/partners", desc: "Work with Zoiko Sema as a partner." },
     ],
   },
   {
     title: "Sema Meet",
     url: "/sema-meet",
     children: [
-      { label: "Overview", href: "/sema-meet" },
-      { label: "Download", href: "/sema-meet/download" },
+      { label: "Join a Meeting", href: "/sema-meet/join", desc: "Enter a meeting link, code, or invite to join instantly." },
+      { label: "Start a Meeting", href: "/sema-meet/start", desc: "Launch an instant meeting from your workspace." },
+      { label: "Schedule a Meeting", href: "/sema-meet/schedule", desc: "Create a meeting with calendar, guests, and policy controls." },
+      { label: "Download Apps", href: "/sema-meet/download", desc: "Get Sema for desktop, iOS, and Android." },
+      { label: "Sema Meet Overview", href: "/sema-meet", desc: "Learn how Sema meetings work." },
     ],
   },
 ];
@@ -308,6 +346,415 @@ const solutionsFeatured = {
   ctaHref: "/solutions",
   secondaryText: "Talk to our experts",
   secondaryHref: "/contact-sales",
+};
+
+/* ---------------- Use Cases mega menu data ---------------- */
+
+type UseCaseLink = {
+  title: string;
+  desc: string;
+  href: string;
+  icon: React.ReactNode;
+};
+
+const caseIcon = (children: React.ReactNode) => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    {children}
+  </svg>
+);
+
+const useCasesLeftColumn: UseCaseLink[] = [
+  {
+    title: "Team Collaboration",
+    desc: "Keep teams connected, aligned, and productive in one place.",
+    href: "/use-cases/team-collaboration",
+    icon: caseIcon(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
+  },
+  {
+    title: "Project Management",
+    desc: "Plan, manage tasks, share updates, and deliver projects on time.",
+    href: "/use-cases/project-management",
+    icon: caseIcon(<><path d="M20 7h-3a2 2 0 0 1-2-2V2" /><path d="M9 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z" /></>),
+  },
+  {
+    title: "Customer Support",
+    desc: "Resolve issues faster and deliver exceptional customer experiences.",
+    href: "/use-cases/customer-support",
+    icon: caseIcon(<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />),
+  },
+  {
+    title: "Education",
+    desc: "Enable engaging learning, discussions, and collaboration for students and educators.",
+    href: "/use-cases/education",
+    icon: caseIcon(<><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></>),
+  },
+  {
+    title: "Security & Compliance",
+    desc: "Communicate securely with Confidential Mode and policy controls.",
+    href: "/use-cases/security-compliance",
+    icon: caseIcon(<><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" /></>),
+  },
+  {
+    title: "Marketing",
+    desc: "Launch campaigns, align teams, and move faster from idea to impact.",
+    href: "/use-cases/marketing",
+    icon: caseIcon(<><path d="M3 11l18-5v12L3 14v-3z" /><path d="M11.6 16.8a2 2 0 0 1-3.2 2.4L6 15" /></>),
+  },
+];
+
+const useCasesRightColumn: UseCaseLink[] = [
+  {
+    title: "Remote & Hybrid Work",
+    desc: "Empower distributed teams with secure, inclusive communication.",
+    href: "/use-cases/remote-hybrid-work",
+    icon: caseIcon(<><path d="M5 12.55a11 11 0 0 1 14.08 0" /><path d="M1.42 9a16 16 0 0 1 21.16 0" /><path d="M8.53 16.11a6 6 0 0 1 6.95 0" /><line x1="12" y1="20" x2="12.01" y2="20" /></>),
+  },
+  {
+    title: "Healthcare",
+    desc: "Improve care team communication and protect patient data.",
+    href: "/use-cases/healthcare",
+    icon: caseIcon(<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />),
+  },
+  {
+    title: "Government",
+    desc: "Meet compliance standards and enhance public sector collaboration.",
+    href: "/use-cases/government",
+    icon: caseIcon(<><line x1="3" y1="22" x2="21" y2="22" /><line x1="6" y1="18" x2="6" y2="11" /><line x1="10" y1="18" x2="10" y2="11" /><line x1="14" y1="18" x2="14" y2="11" /><line x1="18" y1="18" x2="18" y2="11" /><polygon points="12 2 21 8 3 8" /></>),
+  },
+  {
+    title: "Retail & eCommerce",
+    desc: "Connect teams across stores, warehouses, and HQ to serve customers better.",
+    href: "/use-cases/retail-ecommerce",
+    icon: caseIcon(<><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" /></>),
+  },
+  {
+    title: "Sales & Enablement",
+    desc: "Share content, track conversations, and close deals faster.",
+    href: "/use-cases/sales-enablement",
+    icon: caseIcon(<><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" /><line x1="4" y1="22" x2="4" y2="15" /></>),
+  },
+  {
+    title: "Travel & Hospitality",
+    desc: "Coordinate teams and deliver seamless guest experiences.",
+    href: "/use-cases/travel-hospitality",
+    icon: caseIcon(<><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></>),
+  },
+];
+
+const useCasesFeatured = {
+  eyebrow: "Featured use case",
+  title: "Built for the way your teams work.",
+  desc: "Zoiko Sema adapts to your workflows so you can communicate, collaborate, and get more done—securely.",
+  // TODO: swap in the real image URL/path here (e.g. "/Images/use-cases-featured.webp")
+  image: "/Images/products-featured.png",
+  ctaText: "Explore all use cases",
+  ctaHref: "/use-cases",
+  secondaryText: "See customer stories",
+  secondaryHref: "/case-studies",
+};
+
+/* ---------------- Resources mega menu data ---------------- */
+
+type ResourceLink = {
+  title: string;
+  desc: string;
+  href: string;
+  icon: React.ReactNode;
+  badge?: string;
+  badgeTone?: "new" | "popular";
+};
+
+type ResourceColumn = {
+  label: string;
+  items: ResourceLink[];
+};
+
+const resourceIcon = (children: React.ReactNode) => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    {children}
+  </svg>
+);
+
+const resourceColumns: ResourceColumn[] = [
+  {
+    label: "Learn",
+    items: [
+      {
+        title: "Blog",
+        desc: "Insights, updates, and best practices from the Zoiko Sema team.",
+        href: "/resources/blog",
+        icon: resourceIcon(<><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="8" y1="13" x2="16" y2="13" /><line x1="8" y1="17" x2="13" y2="17" /></>),
+      },
+      {
+        title: "Guides & Tutorials",
+        desc: "Step-by-step guides to help your team succeed.",
+        href: "/resources/guides",
+        icon: resourceIcon(<><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></>),
+      },
+      {
+        title: "Webinars & Events",
+        desc: "Live sessions, recordings, and on-demand content.",
+        href: "/resources/webinars",
+        icon: resourceIcon(<><circle cx="12" cy="12" r="10" /><polygon points="10 8 16 12 10 16 10 8" /></>),
+      },
+      {
+        title: "White Papers",
+        desc: "In-depth research and industry reports.",
+        href: "/resources/white-papers",
+        icon: resourceIcon(<><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></>),
+      },
+    ],
+  },
+  {
+    label: "Tools & Support",
+    items: [
+      {
+        title: "Help Center",
+        desc: "Get answers to common questions and issues.",
+        href: "/resources/help",
+        icon: resourceIcon(<><circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" /></>),
+      },
+      {
+        title: "Community",
+        desc: "Connect with other Sema users and experts.",
+        href: "/resources/community",
+        badge: "NEW",
+        badgeTone: "new",
+        icon: resourceIcon(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
+      },
+      {
+        title: "API & Developer Docs",
+        desc: "Integrate Sema with your tools and workflows.",
+        href: "/resources/docs",
+        icon: resourceIcon(<><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></>),
+      },
+      {
+        title: "Status & Uptime",
+        desc: "Real-time system status and performance.",
+        href: "/resources/status",
+        icon: resourceIcon(<polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />),
+      },
+    ],
+  },
+  {
+    label: "Company",
+    items: [
+      {
+        title: "About Zoiko Sema",
+        desc: "Our mission, vision, and the Zoiko Group.",
+        href: "/about",
+        icon: resourceIcon(<><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></>),
+      },
+      {
+        title: "Newsroom",
+        desc: "Press releases, media kit, and announcements.",
+        href: "/newsroom",
+        icon: resourceIcon(<><rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></>),
+      },
+      {
+        title: "Careers",
+        desc: "Join us and help build the future.",
+        href: "/careers",
+        icon: resourceIcon(<><rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /><line x1="2" y1="13" x2="22" y2="13" /></>),
+      },
+      {
+        title: "Partners",
+        desc: "Work with Zoiko Sema as a partner.",
+        href: "/partners",
+        badge: "POPULAR",
+        badgeTone: "popular",
+        icon: resourceIcon(<><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></>),
+      },
+    ],
+  },
+];
+
+const resourcesFeatured = {
+  eyebrow: "Resource highlight",
+  title: "Everything you need to succeed with Sema.",
+  desc: "Explore curated resources, expert insights, and practical tools for your team.",
+  // TODO: swap in the real image URL/path here (e.g. "/Images/resources-featured.webp")
+  image: "/Images/products-featured.png",
+  ctaText: "Explore all resources",
+  ctaHref: "/resources",
+  secondaryText: "Download resource library",
+  secondaryHref: "/resources/downloads",
+};
+
+/* ---------------- ZoikoTime mega menu data ---------------- */
+
+type ZoikoTimeLink = {
+  title: string;
+  desc: string;
+  href: string;
+  icon: React.ReactNode;
+};
+
+const zoikoTimeIcon = (children: React.ReactNode) => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    {children}
+  </svg>
+);
+
+const zoikoTimeColumns: ZoikoTimeLink[][] = [
+  [
+    {
+      title: "Overview",
+      desc: "See how ZoikoTime works and the value it delivers.",
+      href: "/zoikotime/overview",
+      icon: zoikoTimeIcon(<><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></>),
+    },
+    {
+      title: "Workforce Overview",
+      desc: "Real-time visibility into activity, status, and performance.",
+      href: "/zoikotime/workforce-overview",
+      icon: zoikoTimeIcon(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
+    },
+    {
+      title: "Performance Analytics",
+      desc: "Insights and reports that help you drive productivity and outcomes.",
+      href: "/zoikotime/performance-analytics",
+      icon: zoikoTimeIcon(<polyline points="3 17 9 11 13 15 21 7" />),
+    },
+    {
+      title: "Compliance & Audit",
+      desc: "Audit trails, data retention, and policy compliance made simple.",
+      href: "/zoikotime/compliance-audit",
+      icon: zoikoTimeIcon(<><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" /></>),
+    },
+  ],
+  [
+    {
+      title: "Time Tracking",
+      desc: "Automatic time tracking with smart classification and accuracy.",
+      href: "/zoikotime/time-tracking",
+      icon: zoikoTimeIcon(<><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></>),
+    },
+    {
+      title: "Break Management",
+      desc: "Define breaks, enforce policies, and maintain healthy work habits.",
+      href: "/zoikotime/break-management",
+      icon: zoikoTimeIcon(<><path d="M18 8h1a4 4 0 0 1 0 8h-1" /><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z" /><line x1="6" y1="2" x2="6" y2="4" /><line x1="10" y1="2" x2="10" y2="4" /><line x1="14" y1="2" x2="14" y2="4" /></>),
+    },
+    {
+      title: "Alerts & Notifications",
+      desc: "Custom alerts for inactivity, overtime, breaks, and policy events.",
+      href: "/zoikotime/alerts-notifications",
+      icon: zoikoTimeIcon(<><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></>),
+    },
+    {
+      title: "Policies & Rules",
+      desc: "Configure workforce policies, thresholds, and working schedules.",
+      href: "/zoikotime/policies-rules",
+      icon: zoikoTimeIcon(<><line x1="4" y1="21" x2="4" y2="14" /><line x1="4" y1="10" x2="4" y2="3" /><line x1="12" y1="21" x2="12" y2="12" /><line x1="12" y1="8" x2="12" y2="3" /><line x1="20" y1="21" x2="20" y2="16" /><line x1="20" y1="12" x2="20" y2="3" /><line x1="1" y1="14" x2="7" y2="14" /><line x1="9" y1="8" x2="15" y2="8" /><line x1="17" y1="16" x2="23" y2="16" /></>),
+    },
+  ],
+  [
+    {
+      title: "Teams & Groups",
+      desc: "Organize teams, set managers, and control access.",
+      href: "/zoikotime/teams-groups",
+      icon: zoikoTimeIcon(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
+    },
+    {
+      title: "Privacy & Data Protection",
+      desc: "Privacy-first design with role-based access and data protection.",
+      href: "/zoikotime/privacy-data-protection",
+      icon: zoikoTimeIcon(<><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></>),
+    },
+    {
+      title: "Integrations",
+      desc: "Connect ZoikoTime with Zoiko One, Zoiko Sema, and other tools.",
+      href: "/zoikotime/integrations",
+      icon: zoikoTimeIcon(<><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></>),
+    },
+    {
+      title: "Settings",
+      desc: "General settings, billing, usage, and account preferences.",
+      href: "/zoikotime/settings",
+      icon: zoikoTimeIcon(<><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" /></>),
+    },
+  ],
+];
+
+const zoikoTimeFeatured = {
+  eyebrow: "Platform highlight",
+  title: "Intelligent monitoring. Human trust.",
+  desc: "ZoikoTime helps you protect your people, improve performance, and build a culture of accountability.",
+  ctaText: "Open ZoikoTime Dashboard",
+  ctaHref: "/zoikotime",
+  secondaryText: "See how it works",
+  secondaryHref: "/zoikotime/how-it-works",
+};
+
+const zoikoTimeStats: { label: string; value: string; sub: string; subClass: string }[] = [
+  { label: "Active Now", value: "312", sub: "92% of team", subClass: "text-brand" },
+  { label: "Productive", value: "78%", sub: "+8% vs yesterday", subClass: "text-emerald-600" },
+  { label: "On Break", value: "24", sub: "7% of team", subClass: "text-gray-400" },
+];
+
+const zoikoTimeTeams: { name: string; pct: number; color: string }[] = [
+  { name: "Engineering", pct: 92, color: "#22C55E" },
+  { name: "Product", pct: 87, color: "#6366F1" },
+  { name: "Customer Success", pct: 81, color: "#93C5FD" },
+];
+
+/* ---------------- Sema Meet mega menu data ---------------- */
+
+type SemaMeetLink = {
+  title: string;
+  desc: string;
+  href: string;
+  icon: React.ReactNode;
+};
+
+const semaMeetIcon = (children: React.ReactNode) => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    {children}
+  </svg>
+);
+
+const semaMeetLinks: SemaMeetLink[] = [
+  {
+    title: "Join a Meeting",
+    desc: "Enter a meeting link, code, or invite to join instantly.",
+    href: "/sema-meet/join",
+    icon: semaMeetIcon(<><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" /><polyline points="10 17 15 12 10 7" /><line x1="15" y1="12" x2="3" y2="12" /></>),
+  },
+  {
+    title: "Start a Meeting",
+    desc: "Launch an instant meeting from your workspace.",
+    href: "/sema-meet/start",
+    icon: semaMeetIcon(<><circle cx="12" cy="12" r="10" /><polygon points="10 8 16 12 10 16 10 8" /></>),
+  },
+  {
+    title: "Schedule a Meeting",
+    desc: "Create a meeting with calendar, guests, and policy controls.",
+    href: "/sema-meet/schedule",
+    icon: semaMeetIcon(<><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></>),
+  },
+  {
+    title: "Download Apps",
+    desc: "Get Sema for desktop, iOS, and Android.",
+    href: "/sema-meet/download",
+    icon: semaMeetIcon(<><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></>),
+  },
+];
+
+const semaMeetOverview = {
+  title: "Sema Meet Overview",
+  desc: "Learn how Sema meetings work.",
+  href: "/sema-meet",
+};
+
+const semaMeetFeatured = {
+  eyebrow: "Meet better, together",
+  title: "Secure meetings. Smarter collaboration.",
+  desc: "HD video, clear audio, AI summaries, and enterprise-grade security—built for modern teams.",
+  // TODO: swap in the real image URL/path here (e.g. "/Images/sema-meet-featured.webp")
+  image: "/Images/products-featured.png",
+  ctaText: "Open Sema Meet",
+  ctaHref: "/sema-meet",
 };
 
 /* ---------------- Workspace grid popup data ---------------- */
@@ -753,6 +1200,394 @@ export default function Navbar() {
                                 {solutionsFeatured.secondaryText}
                               </Link>
                             </div>
+                          </div>
+                        </div>
+                      </div>
+                    ) : item.title === "Use Cases" ? (
+                      <div className="nav-dropdown fixed left-1/2 -translate-x-1/2 top-[65px] pt-2 z-20">
+                        <div className="w-[1300px] max-w-[95vw] rounded-2xl border border-gray-100 bg-white shadow-[0_24px_60px_rgba(15,15,40,0.16)] p-7">
+                          <div className="mb-6">
+                            <p className="text-[22px] font-bold text-gray-900">Use Cases</p>
+                            <p className="text-[13px] text-gray-500 mt-1">
+                              Real-world ways teams and organizations use Zoiko Sema to communicate and get work done.
+                            </p>
+                          </div>
+
+                          <div className="grid grid-cols-[1fr_1fr_320px] gap-8">
+                            {[useCasesLeftColumn, useCasesRightColumn].map((column, ci) => (
+                              <div key={ci} className="flex flex-col gap-5">
+                                {column.map((link) => (
+                                  <Link
+                                    key={link.title}
+                                    href={link.href}
+                                    onClick={() => setOpenDropdown(null)}
+                                    className="flex items-start gap-3 group"
+                                  >
+                                    <span className="w-8 h-8 rounded-lg bg-brand-light text-brand flex items-center justify-center flex-shrink-0">
+                                      {link.icon}
+                                    </span>
+                                    <span>
+                                      <span className="text-[13.5px] font-semibold text-gray-900 group-hover:text-brand transition-colors">
+                                        {link.title}
+                                      </span>
+                                      <span className="block text-[12px] text-gray-500 mt-1 leading-snug">
+                                        {link.desc} <span className="text-gray-400">→</span>
+                                      </span>
+                                    </span>
+                                  </Link>
+                                ))}
+                              </div>
+                            ))}
+
+                            <div className="rounded-2xl bg-[#F4F6FE] border border-gray-100 p-5 flex flex-col">
+                              <span className="inline-flex items-center self-start rounded-full bg-brand text-white text-[9px] font-bold px-2 py-1 uppercase tracking-wider">
+                                {useCasesFeatured.eyebrow}
+                              </span>
+                              <p className="text-[15px] font-bold text-gray-900 mt-3 leading-snug">
+                                {useCasesFeatured.title}
+                              </p>
+                              <p className="text-[12px] text-gray-500 mt-2 leading-relaxed">
+                                {useCasesFeatured.desc}
+                              </p>
+                              <div
+                                className="mt-4 rounded-xl overflow-hidden aspect-video bg-gray-900 bg-cover bg-center"
+                                style={{ backgroundImage: `url(${useCasesFeatured.image})` }}
+                              />
+                              <Link
+                                href={useCasesFeatured.ctaHref}
+                                onClick={() => setOpenDropdown(null)}
+                                className="mt-4 inline-flex items-center justify-center gap-2 rounded-lg bg-brand text-white text-[13px] font-semibold py-2.5 hover:bg-brand-dark transition-colors"
+                              >
+                                {useCasesFeatured.ctaText}
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                                  <line x1="5" y1="12" x2="19" y2="12" />
+                                  <polyline points="12 5 19 12 12 19" />
+                                </svg>
+                              </Link>
+                              <Link
+                                href={useCasesFeatured.secondaryHref}
+                                onClick={() => setOpenDropdown(null)}
+                                className="mt-2 text-center text-[12.5px] font-semibold text-brand hover:underline"
+                              >
+                                {useCasesFeatured.secondaryText}
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ) : item.title === "Resources" ? (
+                      <div className="nav-dropdown fixed left-1/2 -translate-x-1/2 top-[65px] pt-2 z-20">
+                        <div className="w-[1300px] max-w-[95vw] rounded-2xl border border-gray-100 bg-white shadow-[0_24px_60px_rgba(15,15,40,0.16)] p-7">
+                          <div className="mb-6 flex items-start gap-3">
+                            <span className="w-10 h-10 rounded-xl bg-brand-light text-brand flex items-center justify-center flex-shrink-0">
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                              </svg>
+                            </span>
+                            <div>
+                              <p className="text-[22px] font-bold text-gray-900">Resources</p>
+                              <p className="text-[13px] text-gray-500 mt-1">
+                                Guides, tools, and insights to help you get the most out of Zoiko Sema.
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="grid grid-cols-[1fr_1fr_1fr_320px] gap-8">
+                            {resourceColumns.map((col) => (
+                              <div key={col.label}>
+                                <p className="text-[11px] font-bold tracking-wider text-brand uppercase mb-4">
+                                  {col.label}
+                                </p>
+                                <div className="flex flex-col gap-4">
+                                  {col.items.map((link) => (
+                                    <Link
+                                      key={link.title}
+                                      href={link.href}
+                                      onClick={() => setOpenDropdown(null)}
+                                      className="flex items-start justify-between gap-2 group"
+                                    >
+                                      <span className="flex items-start gap-2.5">
+                                        <span className="text-brand mt-0.5 flex-shrink-0">{link.icon}</span>
+                                        <span>
+                                          <span className="flex items-center gap-1.5 flex-wrap">
+                                            <span className="text-[13.5px] font-semibold text-gray-900 group-hover:text-brand transition-colors">
+                                              {link.title}
+                                            </span>
+                                            {link.badge && (
+                                              <span
+                                                className={`inline-flex items-center rounded-full text-[9px] font-bold px-1.5 py-[3px] uppercase tracking-wide ${
+                                                  link.badgeTone === "new"
+                                                    ? "bg-emerald-50 text-emerald-600"
+                                                    : "bg-indigo-50 text-brand"
+                                                }`}
+                                              >
+                                                {link.badge}
+                                              </span>
+                                            )}
+                                          </span>
+                                          <span className="block text-[12px] text-gray-500 mt-1 leading-snug">
+                                            {link.desc}
+                                          </span>
+                                        </span>
+                                      </span>
+                                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-300 mt-1 flex-shrink-0">
+                                        <polyline points="9 18 15 12 9 6" />
+                                      </svg>
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+
+                            <div className="rounded-2xl bg-[#F4F6FE] border border-gray-100 p-5 flex flex-col">
+                              <span className="inline-flex items-center self-start rounded-full bg-indigo-50 text-brand text-[9px] font-bold px-2 py-1 uppercase tracking-wider">
+                                {resourcesFeatured.eyebrow}
+                              </span>
+                              <p className="text-[15px] font-bold text-gray-900 mt-3 leading-snug">
+                                {resourcesFeatured.title}
+                              </p>
+                              <p className="text-[12px] text-gray-500 mt-2 leading-relaxed">
+                                {resourcesFeatured.desc}
+                              </p>
+                              <div
+                                className="mt-4 rounded-xl overflow-hidden aspect-video bg-gray-900 bg-cover bg-center"
+                                style={{ backgroundImage: `url(${resourcesFeatured.image})` }}
+                              />
+                              <Link
+                                href={resourcesFeatured.ctaHref}
+                                onClick={() => setOpenDropdown(null)}
+                                className="mt-4 inline-flex items-center justify-center gap-2 rounded-lg bg-brand text-white text-[13px] font-semibold py-2.5 hover:bg-brand-dark transition-colors"
+                              >
+                                {resourcesFeatured.ctaText}
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                                  <line x1="5" y1="12" x2="19" y2="12" />
+                                  <polyline points="12 5 19 12 12 19" />
+                                </svg>
+                              </Link>
+                              <Link
+                                href={resourcesFeatured.secondaryHref}
+                                onClick={() => setOpenDropdown(null)}
+                                className="mt-2 inline-flex items-center justify-center gap-1.5 text-center text-[12.5px] font-semibold text-brand hover:underline"
+                              >
+                                {resourcesFeatured.secondaryText}
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                                  <line x1="12" y1="5" x2="12" y2="19" />
+                                  <polyline points="19 12 12 19 5 12" />
+                                </svg>
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ) : item.title === "ZoikoTime" ? (
+                      <div className="nav-dropdown fixed left-1/2 -translate-x-1/2 top-[65px] pt-2 z-20">
+                        <div className="w-[1300px] max-w-[95vw] rounded-2xl bg-[#F3F4F8] p-3 shadow-[0_24px_60px_rgba(15,15,40,0.16)] flex gap-3 items-stretch">
+                          {/* Left card */}
+                          <div className="flex-1 rounded-2xl border border-gray-100 bg-white p-7">
+                            <div className="mb-6 flex items-start gap-3">
+                              <span className="w-12 h-12 rounded-full bg-brand-light text-brand flex items-center justify-center flex-shrink-0">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                                  <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+                                </svg>
+                              </span>
+                              <div>
+                                <p className="text-[22px] font-bold text-gray-900">ZoikoTime</p>
+                                <p className="text-[13px] text-gray-500 mt-1">
+                                  Workforce assurance and performance intelligence for modern teams.
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="grid grid-cols-3 gap-x-10 gap-y-7">
+                              {zoikoTimeColumns.map((column, ci) => (
+                                <div key={ci} className="flex flex-col gap-7">
+                                  {column.map((link) => (
+                                    <Link
+                                      key={link.title}
+                                      href={link.href}
+                                      onClick={() => setOpenDropdown(null)}
+                                      className="flex items-start gap-3 group"
+                                    >
+                                      <span className="text-brand mt-0.5 flex-shrink-0">{link.icon}</span>
+                                      <span>
+                                        <span className="block text-[13.5px] font-semibold text-gray-900 group-hover:text-brand transition-colors">
+                                          {link.title}
+                                        </span>
+                                        <span className="block text-[12px] text-gray-500 mt-1 leading-snug">
+                                          {link.desc} <span className="text-gray-400">→</span>
+                                        </span>
+                                      </span>
+                                    </Link>
+                                  ))}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Right card */}
+                          <div className="w-[340px] flex-shrink-0 rounded-2xl border border-gray-100 bg-white p-6 flex flex-col">
+                            <span className="inline-flex items-center self-start rounded-full bg-brand text-white text-[9px] font-bold px-2 py-1 uppercase tracking-wider">
+                              {zoikoTimeFeatured.eyebrow}
+                            </span>
+                            <p className="text-[17px] font-bold text-gray-900 mt-3 leading-snug">
+                              {zoikoTimeFeatured.title}
+                            </p>
+                            <p className="text-[12px] text-gray-500 mt-2 leading-relaxed">
+                              {zoikoTimeFeatured.desc}
+                            </p>
+
+                            {/* Mini dashboard mock */}
+                            <div className="mt-4 rounded-xl border border-gray-100 p-4">
+                              <div className="flex items-center justify-between mb-3.5">
+                                <p className="text-[10.5px] font-bold text-gray-900 uppercase tracking-wide">
+                                  Workforce Overview
+                                </p>
+                                <p className="text-[10px] text-gray-400 whitespace-nowrap">Live • Updated just now</p>
+                              </div>
+
+                              <div className="grid grid-cols-3 gap-2 mb-4">
+                                {zoikoTimeStats.map((stat) => (
+                                  <div key={stat.label}>
+                                    <p className="text-[9px] text-gray-400 uppercase tracking-wide mb-1 leading-tight">
+                                      {stat.label}
+                                    </p>
+                                    <p className="text-[17px] font-bold text-gray-900 leading-tight">{stat.value}</p>
+                                    <p className={`text-[9.5px] mt-0.5 ${stat.subClass}`}>{stat.sub}</p>
+                                  </div>
+                                ))}
+                              </div>
+
+                              <p className="text-[10.5px] font-semibold text-gray-700 mb-2">Top Teams</p>
+                              <div className="flex flex-col gap-2">
+                                {zoikoTimeTeams.map((team) => (
+                                  <div key={team.name} className="flex items-center gap-2">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400 flex-shrink-0">
+                                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" />
+                                    </svg>
+                                    <span className="text-[10.5px] text-gray-600 w-[84px] flex-shrink-0 truncate">
+                                      {team.name}
+                                    </span>
+                                    <span className="flex-1 h-1.5 rounded-full bg-gray-100 overflow-hidden">
+                                      <span
+                                        className="block h-full rounded-full"
+                                        style={{ width: `${team.pct}%`, backgroundColor: team.color }}
+                                      />
+                                    </span>
+                                    <span className="text-[10.5px] font-semibold text-gray-700 w-8 flex-shrink-0 text-right">
+                                      {team.pct}%
+                                    </span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+
+                            <Link
+                              href={zoikoTimeFeatured.ctaHref}
+                              onClick={() => setOpenDropdown(null)}
+                              className="mt-4 inline-flex items-center justify-center gap-2 rounded-lg bg-brand text-white text-[13px] font-semibold py-2.5 hover:bg-brand-dark transition-colors"
+                            >
+                              {zoikoTimeFeatured.ctaText}
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                              </svg>
+                            </Link>
+                            <Link
+                              href={zoikoTimeFeatured.secondaryHref}
+                              onClick={() => setOpenDropdown(null)}
+                              className="mt-2 text-center text-[12.5px] font-semibold text-brand hover:underline"
+                            >
+                              {zoikoTimeFeatured.secondaryText}
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    ) : item.title === "Sema Meet" ? (
+                      <div className="nav-dropdown fixed left-1/2 -translate-x-1/2 top-[65px] pt-2 z-20">
+                        <div className="w-[970px] max-w-[95vw] rounded-2xl border border-gray-100 bg-white shadow-[0_24px_60px_rgba(15,15,40,0.16)] p-6 flex gap-6">
+                          <div className="flex-1 pr-6">
+                            <div className="mb-6 flex items-start gap-3">
+                              <span className="w-10 h-10 rounded-xl bg-brand-light text-brand flex items-center justify-center flex-shrink-0">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                                  <polygon points="23 7 16 12 23 17 23 7" /><rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                                </svg>
+                              </span>
+                              <div>
+                                <p className="text-[20px] font-bold text-gray-900">Sema Meet</p>
+                                <p className="text-[13px] text-gray-500 mt-1">
+                                  Join, start, schedule, or download Sema for secure meetings.
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-x-8 gap-y-6">
+                              {semaMeetLinks.map((link) => (
+                                <Link
+                                  key={link.title}
+                                  href={link.href}
+                                  onClick={() => setOpenDropdown(null)}
+                                  className="flex items-start gap-3 group"
+                                >
+                                  <span className="w-9 h-9 rounded-xl bg-brand-light text-brand flex items-center justify-center flex-shrink-0">
+                                    {link.icon}
+                                  </span>
+                                  <span>
+                                    <span className="block text-[14px] font-semibold text-gray-900 group-hover:text-brand transition-colors">
+                                      {link.title}
+                                    </span>
+                                    <span className="block text-[12px] text-gray-500 mt-1 leading-snug">
+                                      {link.desc}
+                                    </span>
+                                  </span>
+                                </Link>
+                              ))}
+                            </div>
+
+                            <Link
+                              href={semaMeetOverview.href}
+                              onClick={() => setOpenDropdown(null)}
+                              className="mt-6 flex items-center justify-between rounded-xl bg-brand-light px-5 py-3.5 group"
+                            >
+                              <span>
+                                <span className="block text-[14.5px] font-bold text-gray-900">
+                                  {semaMeetOverview.title}
+                                </span>
+                                <span className="block text-[12px] text-gray-500 mt-0.5">
+                                  {semaMeetOverview.desc}
+                                </span>
+                              </span>
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="text-brand flex-shrink-0 transition-transform group-hover:translate-x-1">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                              </svg>
+                            </Link>
+                          </div>
+
+                          <div className="w-[300px] flex-shrink-0 border-l border-gray-100 pl-6 flex flex-col">
+                            <span className="inline-flex items-center self-start rounded-full bg-blue-600 text-white text-[9px] font-bold px-2 py-1 uppercase tracking-wider">
+                              {semaMeetFeatured.eyebrow}
+                            </span>
+                            <p className="text-[19px] font-bold text-gray-900 mt-3 leading-snug">
+                              {semaMeetFeatured.title}
+                            </p>
+                            <p className="text-[12.5px] text-gray-500 mt-2 leading-relaxed">
+                              {semaMeetFeatured.desc}
+                            </p>
+                            <div
+                              className="mt-4 rounded-xl overflow-hidden aspect-video bg-gray-900 bg-cover bg-center"
+                              style={{ backgroundImage: `url(${semaMeetFeatured.image})` }}
+                            />
+                            <Link
+                              href={semaMeetFeatured.ctaHref}
+                              onClick={() => setOpenDropdown(null)}
+                              className="mt-4 inline-flex items-center justify-center gap-2 rounded-lg bg-brand text-white text-[13.5px] font-semibold py-3 hover:bg-brand-dark transition-colors"
+                            >
+                              {semaMeetFeatured.ctaText}
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                              </svg>
+                            </Link>
                           </div>
                         </div>
                       </div>
