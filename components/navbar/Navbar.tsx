@@ -17,7 +17,7 @@ const menuItems: NavItem[] = [
       { label: "Messaging", href: "/messaging", desc: "Secure team messaging with threads, reactions, and rich media." },
       { label: "Audio Calls", href: "/audio-calls", desc: "Crystal-clear voice calls for one-to-one or group conversations." },
       { label: "Sema Meet", href: "/sema-meet", desc: "Join, start, or schedule meetings with enterprise-grade controls." },
-      { label: "Channels & Spaces", href: "/product/channels", desc: "Organized team spaces for focused discussions and collaboration." },
+      { label: "Channels & Spaces", href: "/channels-spaces", desc: "Organized team spaces for focused discussions and collaboration." },
       { label: "Tasks & To-dos", href: "/tasks", desc: "Assign tasks, set due dates, and track progress in real time." },
       { label: "Documents", href: "/documents", desc: "Create, store, and share documents with version history and permissions." },
       { label: "Workflows", href: "/workflows", desc: "Automate approvals and processes across your team and tools." },
@@ -31,9 +31,9 @@ const menuItems: NavItem[] = [
     title: "Solutions",
     url: "/solutions",
     children: [
-      { label: "For Individuals", href: "/solutions/individuals" },
-      { label: "For Teams", href: "/solutions/teams" },
-      { label: "For Enterprises", href: "/solutions/enterprise" },
+      { label: "For Individuals", href: "/individual-productivity" },
+      { label: "For Teams", href: "/team-collaboration" },
+      { label: "For Enterprises", href: "/enterprise" },
     ],
   },
   {
@@ -41,7 +41,7 @@ const menuItems: NavItem[] = [
     url: "/use-cases",
     children: [
       { label: "Founder-led teams", href: "/use-cases/founders" },
-      { label: "Remote teams", href: "/use-cases/remote" },
+      { label: "Remote teams", href: "/remote-coordination" },
       { label: "Customer support", href: "/use-cases/support" },
     ],
   },
@@ -123,7 +123,7 @@ const productColumns: ProductColumn[] = [
       {
         title: "Channels & Spaces",
         desc: "Organized team spaces for focused discussions and collaboration.",
-        href: "/product/channels",
+        href: "/channels-spaces",
         icon: productIcon(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
       },
       {
@@ -152,7 +152,7 @@ const productColumns: ProductColumn[] = [
       {
         title: "AI Meeting Summaries",
         desc: "Automatic summaries, action items, and key decisions.",
-        href: "/ai-summaries",
+        href: "/ai-meetings",
         badge: "AI-POWERED",
         icon: <span className="text-[11px] font-bold">A+</span>,
       },
@@ -256,7 +256,7 @@ const workspaceGroups: WorkspaceGroup[] = [
       {
         title: "AI Meeting Summaries",
         desc: "Instant summaries, decisions, insights",
-        href: "/ai-summaries",
+        href: "/ai-meetings",
         iconBg: "bg-brand-light text-brand",
         icon: iconWrap(<><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></>),
       },
