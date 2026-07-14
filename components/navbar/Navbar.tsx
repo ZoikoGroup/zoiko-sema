@@ -31,9 +31,15 @@ const menuItems: NavItem[] = [
     title: "Solutions",
     url: "/solutions",
     children: [
-      { label: "For Individuals", href: "/solutions/individuals" },
-      { label: "For Teams", href: "/solutions/teams" },
-      { label: "For Enterprises", href: "/solutions/enterprise" },
+      { label: "Enterprise Teams", href: "/solutions/enterprise-teams", desc: "Scale communication, streamline workflows, and keep everyone aligned." },
+      { label: "Department Solutions", href: "/solutions/departments", desc: "Tailored for IT, HR, Finance, Sales, and Operations teams." },
+      { label: "Hybrid & Remote Teams", href: "/solutions/hybrid-remote", desc: "Empower distributed teams with secure, inclusive collaboration." },
+      { label: "Financial Services", href: "/solutions/financial-services", desc: "Secure communication and compliance for regulated institutions." },
+      { label: "Healthcare", href: "/solutions/healthcare", desc: "Protect patient data and improve care team collaboration." },
+      { label: "Government", href: "/solutions/government", desc: "Meet compliance standards and support public sector work securely." },
+      { label: "Security & Compliance", href: "/solutions/security-compliance", desc: "Enterprise-grade security, data protection, and regulatory compliance." },
+      { label: "Productivity & Efficiency", href: "/solutions/productivity", desc: "Reduce manual work and boost team productivity with AI." },
+      { label: "Integration & Scalability", href: "/solutions/integration-scalability", desc: "Connect with the tools you use and scale with confidence." },
     ],
   },
   {
@@ -190,6 +196,118 @@ const productFeatured = {
   ctaHref: "/products",
   secondaryText: "See what's new",
   secondaryHref: "/whats-new",
+};
+
+/* ---------------- Solutions mega menu data ---------------- */
+
+type SolutionLink = {
+  title: string;
+  desc: string;
+  href: string;
+  icon: React.ReactNode;
+};
+
+type SolutionColumn = {
+  label: string;
+  items: SolutionLink[];
+  footerText: string;
+  footerHref: string;
+};
+
+const solutionIcon = (children: React.ReactNode) => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    {children}
+  </svg>
+);
+
+const solutionColumns: SolutionColumn[] = [
+  {
+    label: "By Team",
+    footerText: "Explore team solutions",
+    footerHref: "/solutions/teams",
+    items: [
+      {
+        title: "Enterprise Teams",
+        desc: "Scale communication, streamline workflows, and keep everyone aligned.",
+        href: "/solutions/enterprise-teams",
+        icon: solutionIcon(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
+      },
+      {
+        title: "Department Solutions",
+        desc: "Tailored for IT, HR, Finance, Sales, and Operations teams.",
+        href: "/solutions/departments",
+        icon: solutionIcon(<><rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></>),
+      },
+      {
+        title: "Hybrid & Remote Teams",
+        desc: "Empower distributed teams with secure, inclusive collaboration.",
+        href: "/solutions/hybrid-remote",
+        icon: solutionIcon(<><path d="M5 12.55a11 11 0 0 1 14.08 0" /><path d="M1.42 9a16 16 0 0 1 21.16 0" /><path d="M8.53 16.11a6 6 0 0 1 6.95 0" /><line x1="12" y1="20" x2="12.01" y2="20" /></>),
+      },
+    ],
+  },
+  {
+    label: "By Industry",
+    footerText: "Explore industry solutions",
+    footerHref: "/solutions/industries",
+    items: [
+      {
+        title: "Financial Services",
+        desc: "Secure communication and compliance for regulated institutions.",
+        href: "/solutions/financial-services",
+        icon: solutionIcon(<><line x1="12" y1="20" x2="12" y2="10" /><line x1="18" y1="20" x2="18" y2="4" /><line x1="6" y1="20" x2="6" y2="16" /></>),
+      },
+      {
+        title: "Healthcare",
+        desc: "Protect patient data and improve care team collaboration.",
+        href: "/solutions/healthcare",
+        icon: solutionIcon(<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />),
+      },
+      {
+        title: "Government",
+        desc: "Meet compliance standards and support public sector work securely.",
+        href: "/solutions/government",
+        icon: solutionIcon(<><line x1="3" y1="22" x2="21" y2="22" /><line x1="6" y1="18" x2="6" y2="11" /><line x1="10" y1="18" x2="10" y2="11" /><line x1="14" y1="18" x2="14" y2="11" /><line x1="18" y1="18" x2="18" y2="11" /><polygon points="12 2 21 8 3 8" /></>),
+      },
+    ],
+  },
+  {
+    label: "By Business Need",
+    footerText: "Explore by business need",
+    footerHref: "/solutions/business-need",
+    items: [
+      {
+        title: "Security & Compliance",
+        desc: "Enterprise-grade security, data protection, and regulatory compliance.",
+        href: "/solutions/security-compliance",
+        icon: solutionIcon(<><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /><polyline points="9 15 11 17 15 13" /></>),
+      },
+      {
+        title: "Productivity & Efficiency",
+        desc: "Reduce manual work and boost team productivity with AI.",
+        href: "/solutions/productivity",
+        icon: solutionIcon(<><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></>),
+      },
+      {
+        title: "Integration & Scalability",
+        desc: "Connect with the tools you use and scale with confidence.",
+        href: "/solutions/integration-scalability",
+        icon: solutionIcon(<polyline points="3 17 9 11 13 15 21 7" />),
+      },
+    ],
+  },
+];
+
+const solutionsFeatured = {
+  eyebrow: "Featured",
+  title: "Secure communication that scales with your business.",
+  desc: "Zoiko Sema helps teams communicate confidently, collaborate intelligently, and stay compliant every step of the way.",
+  // TODO: swap in the real image URL/path here (e.g. "/Images/solutions-featured.webp")
+  image: "/Images/products-featured.png",
+  ctaText: "Explore all solutions",
+  ctaHref: "/solutions",
+  secondaryText: "Talk to our experts",
+  secondaryHref: "/contact-sales",
 };
 
 /* ---------------- Workspace grid popup data ---------------- */
@@ -549,6 +667,90 @@ export default function Navbar() {
                                 className="mt-2 text-center text-[12.5px] font-semibold text-brand hover:underline"
                               >
                                 {productFeatured.secondaryText}
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ) : item.title === "Solutions" ? (
+                      <div className="nav-dropdown fixed left-1/2 -translate-x-1/2 top-[65px] pt-2 z-20">
+                        <div className="w-[1300px] max-w-[95vw] rounded-2xl border border-gray-100 bg-white shadow-[0_24px_60px_rgba(15,15,40,0.16)] p-7">
+                          <div className="mb-6">
+                            <p className="text-[22px] font-bold text-gray-900">Solutions</p>
+                            <p className="text-[13px] text-gray-500 mt-1">
+                              Purpose-built solutions for secure communication and intelligent collaboration.
+                            </p>
+                          </div>
+
+                          <div className="grid grid-cols-[1fr_1fr_1fr_320px] gap-8">
+                            {solutionColumns.map((col) => (
+                              <div key={col.label} className="flex flex-col">
+                                <p className="text-[11px] font-bold tracking-wider text-brand uppercase mb-4">
+                                  {col.label}
+                                </p>
+                                <div className="flex flex-col gap-5">
+                                  {col.items.map((link) => (
+                                    <Link
+                                      key={link.title}
+                                      href={link.href}
+                                      onClick={() => setOpenDropdown(null)}
+                                      className="flex items-start gap-3 group"
+                                    >
+                                      <span className="w-8 h-8 rounded-lg bg-brand-light text-brand flex items-center justify-center flex-shrink-0">
+                                        {link.icon}
+                                      </span>
+                                      <span>
+                                        <span className="text-[13.5px] font-semibold text-gray-900 group-hover:text-brand transition-colors">
+                                          {link.title}
+                                        </span>
+                                        <span className="block text-[12px] text-gray-500 mt-1 leading-snug">
+                                          {link.desc}
+                                        </span>
+                                      </span>
+                                    </Link>
+                                  ))}
+                                </div>
+                                <Link
+                                  href={col.footerHref}
+                                  onClick={() => setOpenDropdown(null)}
+                                  className="mt-5 text-[12.5px] font-semibold text-brand hover:underline"
+                                >
+                                  {col.footerText} →
+                                </Link>
+                              </div>
+                            ))}
+
+                            <div className="rounded-2xl bg-[#F4F6FE] border border-gray-100 p-5 flex flex-col">
+                              <span className="inline-flex items-center self-start rounded-full bg-white text-gray-500 text-[9px] font-bold px-2 py-1 uppercase tracking-wider border border-gray-100">
+                                {solutionsFeatured.eyebrow}
+                              </span>
+                              <p className="text-[15px] font-bold text-gray-900 mt-3 leading-snug">
+                                {solutionsFeatured.title}
+                              </p>
+                              <p className="text-[12px] text-gray-500 mt-2 leading-relaxed">
+                                {solutionsFeatured.desc}
+                              </p>
+                              <div
+                                className="mt-4 rounded-xl overflow-hidden aspect-video bg-gray-900 bg-cover bg-center"
+                                style={{ backgroundImage: `url(${solutionsFeatured.image})` }}
+                              />
+                              <Link
+                                href={solutionsFeatured.ctaHref}
+                                onClick={() => setOpenDropdown(null)}
+                                className="mt-4 inline-flex items-center justify-center gap-2 rounded-lg bg-brand text-white text-[13px] font-semibold py-2.5 hover:bg-brand-dark transition-colors"
+                              >
+                                {solutionsFeatured.ctaText}
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                                  <line x1="5" y1="12" x2="19" y2="12" />
+                                  <polyline points="12 5 19 12 12 19" />
+                                </svg>
+                              </Link>
+                              <Link
+                                href={solutionsFeatured.secondaryHref}
+                                onClick={() => setOpenDropdown(null)}
+                                className="mt-2 text-center text-[12.5px] font-semibold text-brand hover:underline"
+                              >
+                                {solutionsFeatured.secondaryText}
                               </Link>
                             </div>
                           </div>
