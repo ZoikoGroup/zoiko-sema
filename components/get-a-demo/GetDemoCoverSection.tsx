@@ -2,6 +2,9 @@
 
 import React, { useEffect, useState, useRef } from "react";
 
+// TODO: replace with the final decorative banner image URL.
+const COVER_BANNER_IMAGE_URL = "/Images/Coverage-Image-Placeholder-Replacement.png";
+
 function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -26,7 +29,7 @@ const cards = [
       </svg>
     ),
     title: "Sema for your workflow",
-    desc: "See how Sema supports your real communication patterns — messaging, meetings, channels, follow-ups, and collaboration.",
+    desc: "Meetings, messaging, calls, mail, calendar, files, and AI — mapped to how your team works today.",
   },
   {
     icon: (
@@ -35,8 +38,8 @@ const cards = [
         <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
       </svg>
     ),
-    title: "How it fits with your current tools",
-    desc: "If you use Slack, Teams, Zoom, Google Meet, or WhatsApp Business today, we'll explain where Sema complements, consolidates, or replaces existing workflows.",
+    title: "Fit against current tools",
+    desc: "See how Sema compares to what you use now, and what would change.",
   },
   {
     icon: (
@@ -44,8 +47,8 @@ const cards = [
         <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
       </svg>
     ),
-    title: "ZoikoTime, where relevant",
-    desc: "If workforce truth, productivity intelligence, or meeting-to-work context matters to your organization, we can include the Sema + ZoikoTime pathway.",
+    title: "ZoikoTime walkthrough",
+    desc: "If relevant, see the governed integration model and what it does and doesn't dispose.",
   },
 ];
 
@@ -81,7 +84,7 @@ export default function GetDemoCoverSection() {
 
       <section
         aria-label="What the demo covers"
-        className="w-full bg-white py-16 md:py-20"
+        className="w-full bg-[#F8FAFC] py-16 md:py-20"
       >
         <div className="mx-auto w-full max-w-7xl px-6 md:px-10 lg:px-16">
 
@@ -91,8 +94,22 @@ export default function GetDemoCoverSection() {
               What the Demo Covers
             </p>
             <h2 className="font-bold leading-[1.1] tracking-tight text-gray-900" style={{ fontSize:"35px" }}>
-              A focused walkthrough, tailored to your needs.
+              Sema for your workflow — not a generic tour.
             </h2>
+          </div>
+
+          {/* ── Banner image ── */}
+          <div className={`gdc-hidden ${headIn ? "gdc-visible" : ""} rounded-2xl overflow-hidden mb-10`} >
+            {COVER_BANNER_IMAGE_URL ? (
+              <img src={COVER_BANNER_IMAGE_URL} alt="" className="w-full h-auto block" style={{ maxHeight: 360, objectFit: "cover" }} />
+            ) : (
+              <div
+                className="w-full flex items-center justify-center text-[13px] text-gray-400"
+                style={{ height: 280, background: "linear-gradient(135deg, #EEF2FF, #E0E7FF)" }}
+              >
+                Add COVER_BANNER_IMAGE_URL to display the banner image
+              </div>
+            )}
           </div>
 
           {/* ── 3 cards ── */}
