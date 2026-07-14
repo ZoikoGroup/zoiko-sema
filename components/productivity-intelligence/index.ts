@@ -1,0 +1,13 @@
+export { default as ProductivityHeroSection } from "./ProductivityHeroSection";
+export { default as ProductivityInsightsSection } from "./ProductivityInsightsSection";
+export { default as ProductivityFlowSection } from "./ProductivityFlowSection";
+export {default as ProductivityModuleSection} from "./ProductivityModulesSection";
+export { default as ExecutiveDashboardSection } from "./ExecutiveDashboardSection";
+export { default as ReviewGovernanceSection } from "./ReviewGovernanceSection";
+export { default as PrivacyPositioningSection } from "./PrivacyPositioningSection";
+export { default as EnterpriseUseCasesSection } from "./EnterpriseUseCasesSection";
+export { default as IntegrationsSection } from "./IntegrationsSection";
+export { default as PermissionsTableSection } from "./PermissionsTableSection";
+export { default as GovernanceResourcesSection } from "./GovernanceResourcesSection";
+export { default as ProductivityDemoSection } from "./ProductivityDemoSection";
+export { default as ProductivityFaqSection } from "./ProductivityFaqSection";
