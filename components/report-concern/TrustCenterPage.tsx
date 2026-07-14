@@ -65,7 +65,7 @@ export default function TrustCenterPage() {
 
           <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 transition-all duration-1000 delay-200 transform ${sec2Visible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'}`}>
             {[
-              { title: "Active security risk", desc: "Choose the Security route and flag it urgent. Do not disclose the issue publicly before it is reviewed.", img: "/report-concern/image 134@3x.png" },
+              { title: "Active security risk", desc: "Choose the Security route and flag it urgent. Do not disclose the issue publicly before it is reviewed.", img: "/report-concern/image 134.png" },
               { title: "Account safety", desc: "If your account may be compromised, report it here and contact your workspace admin to limit access.", img: "/report-concern/image 135.png" },
               { title: "Immediate danger", desc: "If anyone is in immediate physical danger, contact your local emergency services first, then report here.", img: "/report-concern/image 136.png" }
             ].map((card, i) => (
@@ -98,16 +98,20 @@ export default function TrustCenterPage() {
 
           <div className={`w-full bg-white dark:bg-gray-800/40 border border-violet-100 dark:border-gray-800/60 rounded-2xl divide-y divide-violet-100 dark:divide-gray-800 shadow-sm transition-all duration-1000 delay-200 transform ${sec3Visible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'}`}>
             {[
-              { title: "Security Center", desc: "Vulnerability reporting, security review, and account protection.", label: "Visit Security Center", icon: <Shield className="w-5 h-5 text-violet-600 dark:text-violet-400" /> },
-              { title: "Responsible AI", desc: "AI output, misuse, summary accuracy, and governance concerns.", label: "Responsible AI", icon: <Brain className="w-5 h-5 text-violet-600 dark:text-violet-400" /> },
-              { title: "Privacy & Data", desc: "Data requests, privacy concerns, and workspace data handling.", label: "Privacy & Data", icon: <Eye className="w-5 h-5 text-violet-600 dark:text-violet-400" /> },
-              { title: "Compliance", desc: "Enterprise assurance, control review, and compliance questions.", label: "Compliance", icon: <CheckCircle2 className="w-5 h-5 text-violet-600 dark:text-violet-400" /> },
-              { title: "Subprocessors", desc: "Vendor and subprocessor questions and update notifications.", label: "Subprocessors", icon: <Users className="w-5 h-5 text-violet-600 dark:text-violet-400" /> },
-              { title: "Accessibility", desc: "Accessibility statement, barrier reporting, and support routes.", label: "Accessibility", icon: <Accessibility className="w-5 h-5 text-violet-600 dark:text-violet-400" /> }
+              { title: "Security Center", desc: "Vulnerability reporting, security review, and account protection.", label: "Visit Security Center", icon:"/report-concern/SVG (6).png" },
+              { title: "Responsible AI", desc: "AI output, misuse, summary accuracy, and governance concerns.", label: "Responsible AI", icon:"/report-concern/Vector.png" },
+              { title: "Privacy & Data", desc: "Data requests, privacy concerns, and workspace data handling.", label: "Privacy & Data", icon:"/report-concern/SVG (7).png" },
+              { title: "Compliance", desc: "Enterprise assurance, control review, and compliance questions.", label: "Compliance", icon:"/report-concern/SVG (8).png" },
+              { title: "Subprocessors", desc: "Vendor and subprocessor questions and update notifications.", label: "Subprocessors", icon:"/report-concern/SVG (9).png" },
+              { title: "Accessibility", desc: "Accessibility statement, barrier reporting, and support routes.", label: "Accessibility", icon:"/report-concern/SVG (10).png" }
             ].map((res, i) => (
               <div key={i} className="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group hover:bg-violet-50/30 dark:hover:bg-gray-800/60 transition-colors duration-200 cursor-pointer">
                 <div className="flex items-start sm:items-center gap-4">
-                  <div className="p-2.5 bg-violet-100 dark:bg-violet-950/60 rounded-xl shrink-0">{res.icon}</div>
+                  <div className="p-2.5 bg-violet-100 dark:bg-violet-950/60 rounded-xl shrink-0"><img 
+                      className="w-6 h-6 object-contain" 
+                      src={res.icon} 
+                      alt={`${res.title} icon`} 
+                    />    </div>
                   <div>
                     <h3 className="text-base font-bold text-slate-900 dark:text-white  ">{res.title}</h3>
                     <p className="text-xs text-gray-600 dark:text-gray-400 mt-1   max-w-xl">{res.desc}</p>

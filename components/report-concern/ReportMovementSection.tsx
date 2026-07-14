@@ -125,15 +125,39 @@ export default function ReportMovementSection() {
 
         {/* --- SYSTEM OVERVIEW HERO IMAGE CONTAINER --- */}
         <div 
-          className={`w-full aspect-[12/4] sm:aspect-[16/5] md:aspect-[21/6] relative bg-slate-900 dark:bg-black/30 rounded-[20px] overflow-hidden border border-transparent dark:border-gray-800 shadow-xl transition-all duration-1000 delay-300 transform ${
+          className={`w-full aspect-[12/4] sm:aspect-[16/5] md:aspect-[21/6] relative  rounded-[20px] overflow-hidden  shadow-xl transition-all duration-1000 delay-300 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'
           }`}
         >
-          <img 
-            className="w-full h-full object-cover opacity-90 transition-transform duration-700 hover:scale-[1.02]" 
-            src= "/report-concern/image 133.png" 
+            <div className='flex flex-col-3 gap-5 bg-slate-500'>
+                <img 
+            className=" object-cover opacity-90 transition-transform duration-700 hover:scale-[1.02]" 
+            src= "/report-concern/1.png" 
             alt="System data path visualization" 
           />
+           <img 
+            className=" object-cover opacity-90 transition-transform duration-700 hover:scale-[1.02]" 
+            src= "/report-concern/2.png" 
+            alt="System data path visualization" 
+          />
+          <img 
+            className=" object-cover opacity-90 transition-transform duration-700 hover:scale-[1.02]" 
+            src= "/report-concern/3.png" 
+            alt="System data path visualization" 
+          />
+          <img 
+            className=" object-cover opacity-90 transition-transform duration-700 hover:scale-[1.02]" 
+            src= "/report-concern/5.png" 
+            alt="System data path visualization" 
+          />
+          <img 
+            className=" object-cover opacity-90 transition-transform duration-700 hover:scale-[1.02]" 
+            src= "/report-concern/6.png" 
+            alt="System data path visualization" 
+          />
+          
+            </div>
+          
         </div>
 
       </div>
