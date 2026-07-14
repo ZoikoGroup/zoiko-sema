@@ -13,9 +13,9 @@ const menuItems: NavItem[] = [
     title: "Products",
     url: "/products",
     children: [
+      { label: "Video Meetings", href: "/video-meetings", desc: "HD video meetings with screen sharing, recording, and live captions." },
       { label: "Messaging", href: "/messaging", desc: "Secure team messaging with threads, reactions, and rich media." },
       { label: "Audio Calls", href: "/audio-calls", desc: "Crystal-clear voice calls for one-to-one or group conversations." },
-      { label: "Video Meetings", href: "/video-meetings", desc: "HD video meetings with screen sharing, recording, and live captions." },
       { label: "Sema Meet", href: "/sema-meet", desc: "Join, start, or schedule meetings with enterprise-grade controls." },
       { label: "Channels & Spaces", href: "/product/channels", desc: "Organized team spaces for focused discussions and collaboration." },
       { label: "Tasks & To-dos", href: "/tasks", desc: "Assign tasks, set due dates, and track progress in real time." },
@@ -92,6 +92,12 @@ const productColumns: ProductColumn[] = [
     label: "Communicate",
     items: [
       {
+        title: "Video Meetings",
+        desc: "HD video meetings with screen sharing, recording, and live captions.",
+        href: "/video-meetings",
+        icon: productIcon(<><polygon points="23 7 16 12 23 17 23 7" /><rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></>),
+      },
+      {
         title: "Messaging",
         desc: "Secure team messaging with threads, reactions, and rich media.",
         href: "/messaging",
@@ -102,12 +108,6 @@ const productColumns: ProductColumn[] = [
         desc: "Crystal-clear voice calls for one-to-one or group conversations.",
         href: "/audio-calls",
         icon: productIcon(<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />),
-      },
-      {
-        title: "Video Meetings",
-        desc: "HD video meetings with screen sharing, recording, and live captions.",
-        href: "/video-meetings",
-        icon: productIcon(<><polygon points="23 7 16 12 23 17 23 7" /><rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></>),
       },
       {
         title: "Sema Meet",
