@@ -21,7 +21,7 @@ const menuItems: NavItem[] = [
       { label: "Tasks & To-dos", href: "/tasks", desc: "Assign tasks, set due dates, and track progress in real time." },
       { label: "Documents", href: "/documents", desc: "Create, store, and share documents with version history and permissions." },
       { label: "Workflows", href: "/workflows", desc: "Automate approvals and processes across your team and tools." },
-      { label: "AI Meeting Summaries", href: "/ai-summaries", desc: "Automatic summaries, action items, and key decisions." },
+      { label: "AI Meeting Summaries", href: "/ai-meetings", desc: "Automatic summaries, action items, and key decisions." },
       { label: "AI Assistant", href: "/sema-ai", desc: "Your context-aware assistant across chats, meetings, and docs." },
       { label: "Insights & Analytics", href: "/insights", desc: "Communication and collaboration insights to drive productivity." },
       { label: "Confidential Mode", href: "/confidential-mode", desc: "Extra protection for sensitive conversations and shared content." },
@@ -38,7 +38,7 @@ const menuItems: NavItem[] = [
       { label: "Healthcare", href: "/solutions/healthcare", desc: "Protect patient data and improve care team collaboration." },
       { label: "Government", href: "/solutions/government", desc: "Meet compliance standards and support public sector work securely." },
       { label: "Security & Compliance", href: "/solutions/security-compliance", desc: "Enterprise-grade security, data protection, and regulatory compliance." },
-      { label: "Productivity & Efficiency", href: "/solutions/productivity", desc: "Reduce manual work and boost team productivity with AI." },
+      { label: "Productivity & Efficiency", href: "/individual-productivity", desc: "Reduce manual work and boost team productivity with AI." },
       { label: "Integration & Scalability", href: "/solutions/integration-scalability", desc: "Connect with the tools you use and scale with confidence." },
     ],
   },
@@ -47,7 +47,7 @@ const menuItems: NavItem[] = [
     url: "/use-cases",
     children: [
       { label: "Team Collaboration", href: "/use-cases/team-collaboration", desc: "Keep teams connected, aligned, and productive in one place." },
-      { label: "Project Management", href: "/use-cases/project-management", desc: "Plan, manage tasks, share updates, and deliver projects on time." },
+      { label: "Project Management", href: "/project-collaboration", desc: "Plan, manage tasks, share updates, and deliver projects on time." },
       { label: "Customer Support", href: "/use-cases/customer-support", desc: "Resolve issues faster and deliver exceptional customer experiences." },
       { label: "Education", href: "/use-cases/education", desc: "Enable engaging learning, discussions, and collaboration for students and educators." },
       { label: "Security & Compliance", href: "/use-cases/security-compliance", desc: "Communicate securely with Confidential Mode and policy controls." },
@@ -65,9 +65,9 @@ const menuItems: NavItem[] = [
     url: "/zoikotime",
     children: [
       { label: "Overview", href: "/zoikotime/overview", desc: "See how ZoikoTime works and the value it delivers." },
-      { label: "Workforce Overview", href: "/zoikotime/workforce-overview", desc: "Real-time visibility into activity, status, and performance." },
+      { label: "Workforce Overview", href: "/workforce-truth", desc: "Real-time visibility into activity, status, and performance." },
       { label: "Performance Analytics", href: "/zoikotime/performance-analytics", desc: "Insights and reports that help you drive productivity and outcomes." },
-      { label: "Compliance & Audit", href: "/zoikotime/compliance-audit", desc: "Audit trails, data retention, and policy compliance made simple." },
+      { label: "Compliance & Audit", href: "/compliance-audit", desc: "Audit trails, data retention, and policy compliance made simple." },
       { label: "Time Tracking", href: "/zoikotime/time-tracking", desc: "Automatic time tracking with smart classification and accuracy." },
       { label: "Break Management", href: "/zoikotime/break-management", desc: "Define breaks, enforce policies, and maintain healthy work habits." },
       { label: "Alerts & Notifications", href: "/zoikotime/alerts-notifications", desc: "Custom alerts for inactivity, overtime, breaks, and policy events." },
@@ -83,11 +83,11 @@ const menuItems: NavItem[] = [
     title: "Resources",
     url: "/resources",
     children: [
-      { label: "Blog", href: "/resources/blog", desc: "Insights, updates, and best practices from the Zoiko Sema team." },
+      { label: "Blog", href: "/blog", desc: "Insights, updates, and best practices from the Zoiko Sema team." },
       { label: "Guides & Tutorials", href: "/resources/guides", desc: "Step-by-step guides to help your team succeed." },
       { label: "Webinars & Events", href: "/resources/webinars", desc: "Live sessions, recordings, and on-demand content." },
       { label: "White Papers", href: "/resources/white-papers", desc: "In-depth research and industry reports." },
-      { label: "Help Center", href: "/resources/help", desc: "Get answers to common questions and issues." },
+      { label: "Help Center", href: "/help-center", desc: "Get answers to common questions and issues." },
       { label: "Community", href: "/resources/community", desc: "Connect with other Sema users and experts." },
       { label: "API & Developer Docs", href: "/resources/docs", desc: "Integrate Sema with your tools and workflows." },
       { label: "Status & Uptime", href: "/resources/status", desc: "Real-time system status and performance." },
@@ -373,7 +373,7 @@ const useCasesLeftColumn: UseCaseLink[] = [
   {
     title: "Project Management",
     desc: "Plan, manage tasks, share updates, and deliver projects on time.",
-    href: "/use-cases/project-management",
+    href: "/project-collaboration",
     icon: caseIcon(<><path d="M20 7h-3a2 2 0 0 1-2-2V2" /><path d="M9 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z" /></>),
   },
   {
@@ -482,7 +482,7 @@ const resourceColumns: ResourceColumn[] = [
       {
         title: "Blog",
         desc: "Insights, updates, and best practices from the Zoiko Sema team.",
-        href: "/resources/blog",
+        href: "/blog",
         icon: resourceIcon(<><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><line x1="8" y1="13" x2="16" y2="13" /><line x1="8" y1="17" x2="13" y2="17" /></>),
       },
       {
@@ -511,7 +511,7 @@ const resourceColumns: ResourceColumn[] = [
       {
         title: "Help Center",
         desc: "Get answers to common questions and issues.",
-        href: "/resources/help",
+        href: "/help-center",
         icon: resourceIcon(<><circle cx="12" cy="12" r="10" /><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><line x1="12" y1="17" x2="12.01" y2="17" /></>),
       },
       {
@@ -607,7 +607,7 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Workforce Overview",
       desc: "Real-time visibility into activity, status, and performance.",
-      href: "/zoikotime/workforce-overview",
+      href: "/zoikotime/workforce-truth",
       icon: zoikoTimeIcon(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
     },
     {
@@ -619,7 +619,7 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Compliance & Audit",
       desc: "Audit trails, data retention, and policy compliance made simple.",
-      href: "/zoikotime/compliance-audit",
+      href: "/compliance-audit",
       icon: zoikoTimeIcon(<><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" /></>),
     },
   ],

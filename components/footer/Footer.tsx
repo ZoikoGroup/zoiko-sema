@@ -310,12 +310,12 @@ export default function Footer() {
                 visible={navVisible}
                 delay={240}
                 items={[
-                  { label: "Sema + ZoikoTime", href: "/zoikotime" },
+                  { label: "Sema + ZoikoTime", href: "/sema-zoikotime" },
                   { label: "Workforce Truth", href: "/zoikotime/workforce-truth" },
                   { label: "Meeting-to-Work", href: "/meeting-to-work" },
                   { label: "Verified Collaboration", href: "/verified-collaboration" },
                   { label: "Compliance & Audit", href: "/compliance-audit" },
-                  { label: "Productivity Intelligence", href: "/zoikotime/productivity" },
+                  { label: "Productivity Intelligence", href: "/productivity-intelligence" },
                   { label: "Request Demo", href: "/get-a-demo", badge: "Enterprise" },
                 ]}
               />
@@ -339,7 +339,7 @@ export default function Footer() {
                   { label: "Help Center", href: "/help-center" },
                   { label: "Customer Stories", href: "/customer-stories" },
                   { label: "Product Updates", href: "/product-updates" },
-                  { label: "Developer Docs", href: "/docs" },
+                  { label: "Developer Docs", href: "/developer-docs" },
                   { label: "System Status", href: "/status" },
                   { label: "Trust Center", href: "/trust-center" },
                 ]}
