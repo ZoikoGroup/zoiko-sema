@@ -1,0 +1,9 @@
+export { default as TasksHeroSection } from "./TasksHeroSection";
+export { default as TasksBenefitsSection } from "./TasksBenefitsSection";
+export { default as TasksRecordsSection } from "./TasksRecordsSection";
+export { default as TasksShowcaseSection } from "./TasksShowcaseSection";
+export { default as TasksWorkflowSection } from "./TasksWorkflowSection";
+export { default as TasksSurfaceSection } from "./TasksSurfaceSection";
+export { default as TasksPlansSection } from "./TasksPlansSection";
+export { default as TasksFaqSection } from "./TasksFaqSection";
+export { default as TasksCtaSection } from "./TasksCtaSection";
