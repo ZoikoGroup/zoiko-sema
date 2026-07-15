@@ -1,0 +1,9 @@
+export { default as CareersHeroSection } from './CareersHeroSection';
+export { default as WhyZoikoSection } from './WhyZoikoSection';
+export { default as WorkAreasSection } from './Workareassection';
+export { default as OpenRolesSection } from './OpenRolesSection';
+export { default as OperatingPrinciplesSection } from './OperatingPrinciplesSection';
+export { default as HiringProcessSection } from './HiringProcessSection';
+export { default as BenefitsSupportSection } from './BenefitsSupportSection';
+export { default as TalentCommunitySection } from './TalentCommunitySection';
+export { default as CandidateFaqSection } from './Candidatefaqsection';
