@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface ResourceCard {
   dotColor: string;
@@ -8,6 +9,7 @@ interface ResourceCard {
   description: string;
   action: string;
   actionColor: string;
+  link: string;
 }
 
 const leftCards: ResourceCard[] = [
@@ -17,6 +19,7 @@ const leftCards: ResourceCard[] = [
     description: "Evidence library, review paths, and VPAT / ACR requests.",
     action: "View Compliance",
     actionColor: "text-[#4F63F0] hover:text-[#3E51DE]",
+    link: "/compliance",
   },
   {
     dotColor: "bg-green-500",
@@ -24,6 +27,7 @@ const leftCards: ResourceCard[] = [
     description: "Security safeguards, access controls, and review.",
     action: "Visit Security Center",
     actionColor: "text-[#4F63F0] hover:text-[#3E51DE]",
+    link: "/security-center",
   },
 ];
 
@@ -34,6 +38,7 @@ const rightCards: ResourceCard[] = [
     description: "Data practices, controls, and request routes.",
     action: "View Privacy & Data",
     actionColor: "text-[#4F63F0] hover:text-[#3E51DE]",
+    link: "/privacy",
   },
   {
     dotColor: "bg-red-500",
@@ -41,10 +46,12 @@ const rightCards: ResourceCard[] = [
     description: "Raise a security, privacy, or misuse concern.",
     action: "Report a Concern",
     actionColor: "text-red-500 hover:text-red-600",
+    link: "/report-concern",
   },
 ];
 
 export default function ConnectedResourcesSection() {
+  const router = useRouter();
   return (
     <section className="bg-[#F3F1FA] px-6 py-16 sm:px-10 lg:px-16">
       <style>{`
@@ -81,7 +88,10 @@ export default function ConnectedResourcesSection() {
           {/* Left */}
           <div className="grid gap-5">
             {leftCards.map(
-              ({ dotColor, title, description, action, actionColor }, i) => (
+              (
+                { dotColor, title, description, action, actionColor, link },
+                i,
+              ) => (
                 <div
                   key={title}
                   className="fade-in-item flex flex-col justify-between rounded-3xl border border-gray-200 bg-white p-6 shadow-sm"
@@ -106,7 +116,8 @@ export default function ConnectedResourcesSection() {
                   </div>
 
                   <button
-                    className={`mt-6 text-left text-sm font-semibold ${actionColor}`}
+                    onClick={() => router.push(link)}
+                    className={`mt-6 text-left cursor-pointer text-sm font-semibold ${actionColor}`}
                   >
                     {action}
                   </button>
@@ -130,7 +141,7 @@ export default function ConnectedResourcesSection() {
           {/* Right */}
           <div className="grid gap-5">
             {rightCards.map(
-              ({ dotColor, title, description, action, actionColor }, i) => (
+              ({ dotColor, title, description, action, actionColor,link }, i) => (
                 <div
                   key={title}
                   className="fade-in-item flex flex-col justify-between rounded-3xl border border-gray-200 bg-white p-6 shadow-sm"
@@ -155,7 +166,8 @@ export default function ConnectedResourcesSection() {
                   </div>
 
                   <button
-                    className={`mt-6 text-left text-sm font-semibold ${actionColor}`}
+                    onClick={() => router.push(link)}
+                    className={`mt-6 cursor-pointer text-left text-sm font-semibold ${actionColor}`}
                   >
                     {action}
                   </button>

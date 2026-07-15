@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 function useInView(threshold = 0.15) {
@@ -59,6 +60,7 @@ const useCases = [
 export default function AudioCallsUseCasesSection() {
   const { ref: leftRef, inView: leftIn } = useInView(0.15);
   const { ref: imgRef, inView: imgIn } = useInView(0.1);
+  const router = useRouter();
 
   return (
     <>

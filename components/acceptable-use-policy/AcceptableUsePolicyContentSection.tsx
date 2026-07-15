@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 const BRAND = "#3457E8";
@@ -72,7 +73,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Report suspected vulnerabilities responsibly.",
       linkText: "View Security Policy",
-      linkHref: "#",
+      linkHref: "/security-policy",
     },
   },
   {
@@ -85,7 +86,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Full AI governance rules are documented separately.",
       linkText: "Read AI Use Policy",
-      linkHref: "#",
+      linkHref: "/ai-use-poilicy",
     },
   },
   {
@@ -106,7 +107,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Review API scopes and governance rules.",
       linkText: "Open Developer Docs",
-      linkHref: "#",
+      linkHref: "/developer-docs",
     },
   },
   {
@@ -118,7 +119,7 @@ const sections: Section[] = [
     ],
     infoBox: {
       linkText: "Report Abuse — routes to the Trust & Safety reporting form.",
-      linkHref: "#",
+      linkHref: "/report-abuse",
       fullLink: true,
     },
   },
@@ -192,6 +193,8 @@ export default function AcceptableUsePolicyContentSection() {
       isClickScrolling.current = false;
     }, 700);
   };
+
+  const router = useRouter();
 
   return (
     <>
@@ -324,7 +327,8 @@ export default function AcceptableUsePolicyContentSection() {
                   data handling requirements can work with our sales and
                   legal teams on additional terms.
                 </p>
-                <button className="aupc-cta-btn bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3">
+                <button onClick={()=>router.push('/contact')}
+                className="aupc-cta-btn bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3">
                   Contact Sales
                 </button>
               </div>

@@ -47,7 +47,7 @@ const cards: Card[] = [
     title: "System reliability",
     description: "Current service availability and incident transparency.",
     action: "View System Status",
-    link:"/system-status"
+    link:"/status"
   },
   {
     icon: LayoutGrid,

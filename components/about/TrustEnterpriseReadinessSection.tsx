@@ -46,7 +46,7 @@ const cards: TrustCard[] = [
     title: "System reliability",
     description: "System status and product updates for ongoing confidence.",
     action: "View System Status",
-    link:"/system-status"
+    link:"/status"
   },
   {
     icon: Building2,
