@@ -1,4 +1,5 @@
 "use client"
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 
 // --- CUSTOM INTERSECTION OBSERVER HOOK FOR FLOATING REVEAL EFFECTS ---
@@ -60,6 +61,7 @@ export default function ZoikoSemaPlatformTour() {
   const [sec3Ref, sec3Visible] = useScrollReveal();
   const [sec4Ref, sec4Visible] = useScrollReveal();
   const [sec5Ref, sec5Visible] = useScrollReveal();
+  const router = useRouter();
 
   const useCasePaths = [
     { title: 'Leadership meetings', desc: 'Decisions, risks, executive follow-ups, and accountable owners.', link: 'Explore Business' },
@@ -296,7 +298,8 @@ export default function ZoikoSemaPlatformTour() {
             <button className="w-full sm:w-auto px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
               Start free
             </button>
-            <button className="w-full sm:w-auto px-8 py-3.5 border border-white/30 hover:border-white/60 hover:bg-white/5 text-white font-semibold text-sm rounded-full transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
+            <button onClick={()=>router.push('/contact')}
+            className="w-full sm:w-auto px-8 py-3.5 cursor-pointer border border-white/30 hover:border-white/60 hover:bg-white/5 text-white font-semibold text-sm rounded-full transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
               Contact sales
             </button>
           </div>

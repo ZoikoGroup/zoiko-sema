@@ -1,4 +1,5 @@
 "use client"
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 
 // --- CUSTOM INTERSECTION OBSERVER REVEAL HOOK ---
@@ -35,6 +36,7 @@ function useScrollReveal() {
 
 export default function MeetingSummariesHero() {
   const [heroRef, heroVisible] = useScrollReveal();
+  const router = useRouter();
 
   const tags = [
     'Summary',
@@ -88,7 +90,8 @@ export default function MeetingSummariesHero() {
               Start free
             </button>
             
-            <button className="px-7 py-3.5 bg-transparent hover:bg-white/5 font-semibold rounded-full text-sm transition-all duration-300 border border-white/20 dark:border-gray-800 hover:border-white/40 focus:outline-none">
+            <button onClick={()=>router.push('/contact')}
+            className="px-7 py-3.5 bg-transparent hover:bg-white/5 font-semibold rounded-full text-sm transition-all duration-300 border border-white/20 dark:border-gray-800 hover:border-white/40 focus:outline-none">
               Contact sales
             </button>
 

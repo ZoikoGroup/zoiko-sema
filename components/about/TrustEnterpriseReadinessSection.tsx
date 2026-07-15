@@ -9,12 +9,14 @@ import {
   ArrowRight,
   LucideIcon,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface TrustCard {
   icon: LucideIcon;
   title: string;
   description: string;
   action: string;
+  link:string;
 }
 
 const cards: TrustCard[] = [
@@ -23,40 +25,47 @@ const cards: TrustCard[] = [
     title: "Security",
     description: "Security practices and controls for protecting work communication.",
     action: "Visit Trust Center",
+    link:"/trust-center"
   },
   {
     icon: Lock,
     title: "Privacy",
     description: "Privacy notice and data processing terms for teams and enterprises.",
     action: "Read Privacy Notice",
+    link:"/privacy-notice"
   },
   {
     icon: Sparkles,
     title: "AI governance",
     description: "How AI is used, reviewed, and controlled across the workplace.",
     action: "Read AI Use Policy",
+    link:"/ai-use-policy"
   },
   {
     icon: Activity,
     title: "System reliability",
     description: "System status and product updates for ongoing confidence.",
     action: "View System Status",
+    link:"/system-status"
   },
   {
     icon: Building2,
     title: "Enterprise deployment",
     description: "Deployment, identity, and admin controls for larger organizations.",
     action: "Explore Enterprise Deployment",
+    link:"/enterprise-deployment"
   },
   {
     icon: Headphones,
     title: "Support",
     description: "Help Center and contact routes when teams need assistance.",
     action: "Get Help",
+    link:"/get-help"
   },
 ];
 
 export default function TrustEnterpriseReadinessSection() {
+  const router = useRouter();
   return (
     <section className="bg-[#F3F2FD] px-6 py-16 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl text-center">
@@ -72,7 +81,7 @@ export default function TrustEnterpriseReadinessSection() {
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-5 text-left sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map(({ icon: Icon, title, description, action }) => (
+          {cards.map(({ icon: Icon, title, description, action,link }) => (
             <div
               key={title}
               className="rounded-2xl bg-white p-6 shadow-sm"
@@ -84,7 +93,8 @@ export default function TrustEnterpriseReadinessSection() {
               <p className="mt-2 text-sm leading-relaxed text-gray-500">
                 {description}
               </p>
-              <button className="mt-4 flex items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]">
+              <button onClick={()=>router.push(link)}
+              className="mt-4 flex cursor-pointer items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]">
                 {action}
                 <ArrowRight size={12} />
               </button>

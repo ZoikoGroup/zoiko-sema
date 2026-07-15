@@ -9,12 +9,14 @@ import {
   LucideIcon,
   ArrowRight
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface Card {
   icon: LucideIcon;
   title: string;
   description: string;
   action: string;
+  link:string;
 }
 
 const cards: Card[] = [
@@ -24,40 +26,47 @@ const cards: Card[] = [
     description:
       "Security as an operating priority — documented in the Trust Center rather than claimed on this page.",
     action: "Security Policy",
+    link:"/security-policy"
   },
   {
     icon: Lock,
     title: "Privacy",
     description: "Privacy notice, DPA, cookie policy, and privacy requests.",
     action: "Privacy Notice / DPA",
+    link:"/privacy-notice"
   },
   {
     icon: Sparkles,
     title: "AI governance",
     description: "AI features are governed, reviewable, and admin-controlled.",
     action: "AI Use Policy",
+    link:"/ai-use-policy"
   },
   {
     icon: Activity,
     title: "System reliability",
     description: "Current service availability and incident transparency.",
     action: "View System Status",
+    link:"/system-status"
   },
   {
     icon: LayoutGrid,
     title: "Admin governance",
     description: "Workspace-owner and admin control philosophy.",
     action: "Admin Console",
+    link:"/admin-console"
   },
   {
     icon: Bell,
     title: "Support",
     description: "How customers get help, from Help Center to Contact.",
     action: "Help Center / Contact",
+    link:"/help-center"
   },
 ];
 
 export default function TrustGovernanceModelSection() {
+  const router = useRouter();
   return (
     <section className="bg-[#0B1330] px-6 py-16 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl text-center">
@@ -73,7 +82,7 @@ export default function TrustGovernanceModelSection() {
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-5 text-left sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map(({ icon: Icon, title, description, action }) => (
+          {cards.map(({ icon: Icon, title, description, action,link }) => (
             <div
               key={title}
               className="rounded-xl border border-white/10 bg-white/5 p-6"
@@ -85,7 +94,8 @@ export default function TrustGovernanceModelSection() {
               <p className="mt-2 text-[13px] leading-relaxed text-[#9AA4BD]">
                 {description}
               </p>
-              <button className="mt-4 flex items-center gap-1 text-xs font-semibold text-[#7C93FF] hover:text-white">
+              <button onClick={()=>router.push(link)}
+              className="mt-4 cursor-pointer flex items-center gap-1 text-xs font-semibold text-[#7C93FF] hover:text-white">
                 {action}
                 <ArrowRight size={12} />
               </button>

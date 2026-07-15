@@ -11,6 +11,7 @@ import {
   ArrowRight,
   LucideIcon,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface EcosystemCard {
   icon: LucideIcon;
@@ -20,6 +21,7 @@ interface EcosystemCard {
   featured?: boolean;
   iconBg: string;
   iconColor: string;
+  link:string;
 }
 
 const cards: EcosystemCard[] = [
@@ -32,6 +34,7 @@ const cards: EcosystemCard[] = [
     featured: true,
     iconBg: "bg-white/10",
     iconColor: "text-white",
+    link:"/"
   },
   {
     icon: Clock,
@@ -41,6 +44,7 @@ const cards: EcosystemCard[] = [
     action: "Learn about ZoikoTime",
     iconBg: "bg-linear-to-r from-[#22C3B6] to-[#0FA9A0]",
     iconColor: "text-white",
+    link:"/about-zoikotime"
   },
   {
     icon: ShieldCheck,
@@ -50,6 +54,7 @@ const cards: EcosystemCard[] = [
     action: "Visit Trust Center",
     iconBg: "bg-linear-to-r from-[#5B52EA] to-[#3D33C9]",
     iconColor: "text-white",
+    link:"/trust-center"
   },
   {
     icon: Code2,
@@ -59,6 +64,7 @@ const cards: EcosystemCard[] = [
     action: "View Developer Docs",
     iconBg: "bg-linear-to-r from-[#4A7CFF] to-[#2A5BDB]",
     iconColor: "text-white",
+    link:"/developer-docs"
   },
   {
     icon: Handshake,
@@ -68,6 +74,7 @@ const cards: EcosystemCard[] = [
     action: "Explore Partners",
     iconBg: "bg-linear-to-r from-[#8B83F2] to-[#5B52EA]",
     iconColor: "text-white",
+    link:"/partners"
   },
   {
     icon: Briefcase,
@@ -77,6 +84,7 @@ const cards: EcosystemCard[] = [
     action: "View Careers",
     iconBg: "bg-linear-to-r from-[#1FAF6B] to-[#0E7A4A]",
     iconColor: "text-white",
+    link:"/careers"
   },
   {
     icon: Newspaper,
@@ -86,6 +94,7 @@ const cards: EcosystemCard[] = [
     action: "Contact Press",
     iconBg: "bg-linear-to-r from-[#C98A1A] to-[#9A6A12]",
     iconColor: "text-white",
+    link:"/press"
   },
   {
     icon: Mail,
@@ -95,10 +104,12 @@ const cards: EcosystemCard[] = [
     action: "Contact Team",
     iconBg: "bg-linear-to-r from-[#3A4A6B] to-[#1F2A44]",
     iconColor: "text-white",
+    link:"/contact"
   },
 ];
 
 export default function WhereEverythingConnectsSection() {
+  const router = useRouter();
   return (
     <section className="bg-white px-6 py-16 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl text-center">
@@ -114,7 +125,7 @@ export default function WhereEverythingConnectsSection() {
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-5 text-left sm:grid-cols-2 lg:grid-cols-4">
-          {cards.map(({ icon: Icon, title, description, action, featured, iconBg, iconColor }) => (
+          {cards.map(({ icon: Icon, title, description, action, featured, iconBg, iconColor,link }) => (
             <div
               key={title}
               className={
@@ -132,8 +143,8 @@ export default function WhereEverythingConnectsSection() {
               <p className={`mt-2 text-xs leading-relaxed ${featured ? "text-[#AEB7CC]" : "text-gray-500"}`}>
                 {description}
               </p>
-              <button
-                className={`mt-4 flex items-center gap-1 text-xs font-semibold ${
+              <button onClick={()=>router.push(link)}
+                className={`mt-4 flex items-center cursor-pointer gap-1 text-xs font-semibold ${
                   featured ? "text-[#7C93FF] hover:text-white" : "text-[#4F63F0] hover:text-[#3E51DE]"
                 }`}
               >
