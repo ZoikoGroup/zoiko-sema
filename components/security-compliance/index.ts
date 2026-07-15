@@ -1,0 +1,10 @@
+export { default as SecurityComplianceHero } from "./SecurityComplianceHero";
+export { default as SolvedAtScale } from "./SolvedAtScale";
+export { default as SecurityControlCenter } from "./SecurityControlCenter";
+export { default as IdentityAccessManagement } from "./IdentityAccessManagement";
+export { default as DataProtectionPrivacy } from "./DataProtectionPrivacy";
+export { default as IntelligentAiGovernance } from "./IntelligentAiGovernance";
+export { default as AuditCompliance } from "./AuditCompliance";
+export { default as OperationalTrust } from "./OperationalTrust";
+export { default as BuiltForIndustry } from "./BuiltForIndustry";
+export { default as SecurityFaq } from "./SecurityFaq";
