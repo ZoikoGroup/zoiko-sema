@@ -1,0 +1,10 @@
+export { default as DocumentsHeroSection } from "./DocumentsHeroSection";
+export { default as WhyDocumentsFailSection } from "./WhyDocumentsFailSection";
+export { default as ProductShowcaseSection } from "./ProductShowcaseSection";
+export { default as AiAssistedAuthoringSection } from "./AiAssistedAuthoringSection";
+export { default as TemplatesUseCasesSection } from "./TemplatesUseCasesSection";
+export { default as PermissionsAccessSection } from "./PermissionsAccessSection";
+export { default as ConnectedWorkSection } from "./ConnectedWorkSection";
+export { default as PlansPricingSection } from "./PlansPricingSection";
+export { default as DocumentsFaqSection } from "./DocumentsFaqSection";
+export { default as DocumentsFinalCtaSection } from "./DocumentsFinalCtaSection";
