@@ -494,11 +494,11 @@ export function SignupSection() {
                 />
                 <span>
                   I agree to the{" "}
-                  <a href="#" className="font-semibold text-[#4F5BD5] hover:underline dark:text-[#8C95F2]">
+                  <a href="privacy-notice" className="font-semibold text-[#4F5BD5] hover:underline dark:text-[#8C95F2]">
                     Privacy Policy
                   </a>{" "}
                   and{" "}
-                  <a href="#" className="font-semibold text-[#4F5BD5] hover:underline dark:text-[#8C95F2]">
+                  <a href="terms-of-service" className="font-semibold text-[#4F5BD5] hover:underline dark:text-[#8C95F2]">
                     Terms of Service
                   </a>
                   .

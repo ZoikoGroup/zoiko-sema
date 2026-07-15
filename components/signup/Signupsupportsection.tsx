@@ -112,7 +112,7 @@ export function SignupSupportSection() {
         aria-label="Trust, FAQ, and invite your team"
         className="w-full bg-white py-16 dark:bg-[#0D0B24] sm:py-20"
       >
-        <div className="mx-auto w-full max-w-7xl px-6 sm:px-8">
+        <div className="mx-auto w-full max-w-7xl px-5 sm:px-8">
           {/* Stats */}
           <div
             ref={statsRef}
@@ -130,7 +130,7 @@ export function SignupSupportSection() {
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </span>
                   <div>
-                    <p className="text-[18px] font-bold leading-tight text-gray-900 dark:text-white">
+                    <p className="text-[16px] md:text-[18px] font-bold leading-tight text-gray-900 dark:text-white">
                       {stat.value}
                     </p>
                     <p className="text-[12px] leading-tight text-gray-500 dark:text-gray-400">
@@ -200,7 +200,7 @@ export function SignupSupportSection() {
             >
               Still have questions? Visit our{" "}
               <a
-                href="#"
+                href="help-center"
                 className="inline-flex items-center gap-1 font-semibold text-[#4F5BD5] hover:underline dark:text-[#8C95F2]"
               >
                 Help Center

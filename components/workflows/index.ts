@@ -1,0 +1,10 @@
+export { default as WorkflowsHeroSection } from "./Workflowsherosection";
+export { default as WorkflowAutomationSection } from "./WorkflowAutomationSection";
+export { default as TemplateGallerySection } from "./TemplateGallerySection";
+export { default as WorkflowBuilderSection } from "./Workflowbuildersection";
+export { default as WorkflowProcessSection } from "./WorkflowProcessSection";
+export { default as ApprovalsSection } from "./Approvalssection";
+export { default as IntegrationsApisSection } from "./IntegrationsApisSection";
+export { default as GovernanceConsoleSection } from "./GovernanceConsoleSection";
+export { default as WorkflowsFaqSection } from "./Workflowsfaqsection";
+export { default as WorkflowsCtaSection } from "./Workflowsctasection";
