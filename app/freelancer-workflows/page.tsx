@@ -1,3 +1,10 @@
+import { Metadata } from "next";
+export const metadata = {
+  title: "Freelancer Workflow Software | Zoiko Sema",
+  description:
+    "Streamline your freelance business with Zoiko Sema freelancer workflow software. Manage tasks, clients, projects, and workflows with intelligent AI tools.",
+}
+
 import {
   FreelancerHeroSection,
   FreelancerBuiltForSection,

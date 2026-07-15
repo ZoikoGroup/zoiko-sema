@@ -1,3 +1,9 @@
+import { Metadata } from "next";
+export const metadata = {
+  title: "AI Meeting Summary Software | Zoiko Sema",
+  description:
+    "Create an accurate Meeting Summary with Zoiko Sema. AI captures discussions, decisions, action items, and key notes to help teams stay productive & aligned.",
+}
 import {
   MeetingSummaryHeroSection,
   MeetingSummaryWhySection,

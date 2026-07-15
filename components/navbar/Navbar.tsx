@@ -73,7 +73,7 @@ const menuItems: NavItem[] = [
       { label: "Alerts & Notifications", href: "/zoikotime/alerts-notifications", desc: "Custom alerts for inactivity, overtime, breaks, and policy events." },
       { label: "Policies & Rules", href: "/zoikotime/policies-rules", desc: "Configure workforce policies, thresholds, and working schedules." },
       { label: "Teams & Groups", href: "/zoikotime/teams-groups", desc: "Organize teams, set managers, and control access." },
-      { label: "Privacy & Data Protection", href: "/zoikotime/privacy-data-protection", desc: "Privacy-first design with role-based access and data protection." },
+      { label: "Privacy & Data Protection", href: "/privacy", desc: "Privacy-first design with role-based access and data protection." },
       { label: "Integrations", href: "/zoikotime/integrations", desc: "Connect ZoikoTime with Zoiko One, Zoiko Sema, and other tools." },
       { label: "Settings", href: "/zoikotime/settings", desc: "General settings, billing, usage, and account preferences." },
     ],
@@ -90,7 +90,7 @@ const menuItems: NavItem[] = [
       { label: "Help Center", href: "/help-center", desc: "Get answers to common questions and issues." },
       { label: "Community", href: "/resources/community", desc: "Connect with other Sema users and experts." },
       { label: "API & Developer Docs", href: "/resources/docs", desc: "Integrate Sema with your tools and workflows." },
-      { label: "Status & Uptime", href: "/resources/status", desc: "Real-time system status and performance." },
+      { label: "Status & Uptime", href: "/status", desc: "Real-time system status and performance." },
       { label: "About Zoiko Sema", href: "/about", desc: "Our mission, vision, and the Zoiko Group." },
       { label: "Newsroom", href: "/newsroom", desc: "Press releases, media kit, and announcements." },
       { label: "Careers", href: "/careers", desc: "Join us and help build the future." },
@@ -531,7 +531,7 @@ const resourceColumns: ResourceColumn[] = [
       {
         title: "Status & Uptime",
         desc: "Real-time system status and performance.",
-        href: "/resources/status",
+        href: "/status",
         icon: resourceIcon(<polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />),
       },
     ],
@@ -659,7 +659,7 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Privacy & Data Protection",
       desc: "Privacy-first design with role-based access and data protection.",
-      href: "/zoikotime/privacy-data-protection",
+      href: "/privacy",
       icon: zoikoTimeIcon(<><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></>),
     },
     {
