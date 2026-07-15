@@ -1,5 +1,9 @@
 "use client"
+
+import { useRouter } from "next/navigation";
+
 export default function ZoikoTechHeroSection() {
+  const router = useRouter();
   return (
     <section className="bg-[#0B1330] px-6 py-16 sm:px-10 lg:px-16">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 lg:grid-cols-2">
@@ -18,10 +22,12 @@ export default function ZoikoTechHeroSection() {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <button className="rounded-xl bg-[#4F63F0] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#3E51DE]">
+            <button onClick={()=>router.push("/")}
+             className="rounded-xl bg-[#4F63F0] cursor-pointer px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#3E51DE]">
               Explore Zoiko Sema
             </button>
-            <button className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0B1330] transition hover:bg-gray-100">
+            <button onClick={()=>router.push("/contact")}
+            className="rounded-xl bg-white px-6 py-3 text-sm cursor-pointer font-semibold text-[#0B1330] transition hover:bg-gray-100">
               Contact Team
             </button>
           </div>

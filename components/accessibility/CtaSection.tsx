@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 // --- CUSTOM SCROLL-REVEAL REUSABLE HOOK ---
@@ -30,6 +31,7 @@ function useScrollReveal() {
 
 export default function CtaSection() {
   const [ctaRef, ctaVisible] = useScrollReveal();
+  const router = useRouter();
 
   return (
     <div className="w-full bg-slate-50 transition-colors duration-300">
@@ -57,7 +59,10 @@ export default function CtaSection() {
           <div
             className={`mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto transition-all duration-1000 delay-400 transform ${ctaVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"}`}
           >
-            <button className="w-full sm:w-auto px-6 py-3 bg-white hover:bg-slate-50 text-indigo-800 font-sans text-sm font-bold rounded-full shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+            <button
+              onClick={() => router.push("/report-concern")}
+              className="w-full sm:w-auto px-6 cursor-pointer py-3 bg-white hover:bg-slate-50 text-indigo-800 font-sans text-sm font-bold rounded-full shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+            >
               Report a barrier
             </button>
 
@@ -65,7 +70,10 @@ export default function CtaSection() {
               Request VPAT / ACR
             </button>
 
-            <button className="w-full sm:w-auto px-4 py-2 text-white hover:text-purple-200 font-sans text-sm font-bold border-b border-white/40 hover:border-white transition-all duration-200">
+            <button
+              onClick={() => router.push("/contact")}
+              className="w-full cursor-pointer sm:w-auto px-4 py-2 text-white hover:text-purple-200 font-sans text-sm font-bold border-b border-white/40 hover:border-white transition-all duration-200"
+            >
               Contact sales
             </button>
           </div>

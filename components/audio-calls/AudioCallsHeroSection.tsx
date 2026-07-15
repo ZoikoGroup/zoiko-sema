@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 // Reusable scroll-in-view hook (same pattern as your other sections)
@@ -32,6 +33,7 @@ export default function AudioCallsHeroSection() {
   const { ref: subRef, inView: subIn } = useInView(0.2);
   const { ref: ctaRef, inView: ctaIn } = useInView(0.2);
   const { ref: mockupRef, inView: mockupIn } = useInView(0.1);
+  const router= useRouter();
 
   return (
     <>
@@ -136,11 +138,12 @@ export default function AudioCallsHeroSection() {
               Start free
             </button>
             <button
-              className="ac-btn-secondary rounded-full px-7 py-3 text-[14px] font-semibold text-white"
+              className="ac-btn-secondary cursor-pointer rounded-full px-7 py-3 text-[14px] font-semibold text-white"
               style={{
                 backgroundColor: "transparent",
                 border: "1px solid rgba(255,255,255,0.3)",
               }}
+              onClick={()=>router.push('get-a-demo')}
             >
               Get a demo
             </button>

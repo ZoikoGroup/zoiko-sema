@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 function useInView(threshold = 0.15) {
@@ -29,6 +30,7 @@ export default function AdminConsoleHeroSection() {
   const { ref: badgeRef, inView: badgeIn } = useInView(0.3);
   const { ref: headRef, inView: headIn } = useInView(0.2);
   const { ref: ctaRef, inView: ctaIn } = useInView(0.3);
+  const router = useRouter();
 
   return (
     <>
@@ -102,10 +104,11 @@ export default function AdminConsoleHeroSection() {
             className={`ach-hidden ${ctaIn ? "ach-visible" : ""} flex flex-wrap items-center justify-center gap-3 mt-9`}
             style={{ animationDelay: "0.14s" }}
           >
-            <button className="ach-btn-primary rounded-full bg-[#3B47DE] text-white text-[14px] font-semibold px-7 py-3.5">
+            <button onClick={()=>router.push('get-a-demo')}
+            className="ach-btn-primary cursor-pointer rounded-full bg-[#3B47DE] text-white text-[14px] font-semibold px-7 py-3.5">
               Get a demo
             </button>
-            <button className="ach-btn-outline rounded-full bg-white border border-gray-200 text-gray-900 text-[14px] font-semibold px-7 py-3.5">
+            <button className="ach-btn-outline cursor-pointer rounded-full bg-white border border-gray-200 text-gray-900 text-[14px] font-semibold px-7 py-3.5">
               Talk to sales
             </button>
           </div>
