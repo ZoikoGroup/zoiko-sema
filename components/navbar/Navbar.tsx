@@ -53,7 +53,7 @@ const menuItems: NavItem[] = [
       { label: "Security & Compliance", href: "/use-cases/security-compliance", desc: "Communicate securely with Confidential Mode and policy controls." },
       { label: "Marketing", href: "/use-cases/marketing", desc: "Launch campaigns, align teams, and move faster from idea to impact." },
       { label: "Remote & Hybrid Work", href: "/use-cases/remote-hybrid-work", desc: "Empower distributed teams with secure, inclusive communication." },
-      { label: "Healthcare", href: "/use-cases/healthcare", desc: "Improve care team communication and protect patient data." },
+      { label: "Healthcare", href: "/use-case-healthcare", desc: "Improve care team communication and protect patient data." },
       { label: "Government", href: "/use-cases/government", desc: "Meet compliance standards and enhance public sector collaboration." },
       { label: "Retail & eCommerce", href: "/use-cases/retail-ecommerce", desc: "Connect teams across stores, warehouses, and HQ to serve customers better." },
       { label: "Sales & Enablement", href: "/use-cases/sales-enablement", desc: "Share content, track conversations, and close deals faster." },
@@ -412,7 +412,7 @@ const useCasesRightColumn: UseCaseLink[] = [
   {
     title: "Healthcare",
     desc: "Improve care team communication and protect patient data.",
-    href: "/use-cases/healthcare",
+    href: "/use-case-healthcare",
     icon: caseIcon(<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />),
   },
   {
