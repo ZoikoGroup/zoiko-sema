@@ -23,7 +23,7 @@ const menuItems: NavItem[] = [
       { label: "Workflows", href: "/workflows", desc: "Automate approvals and processes across your team and tools." },
       { label: "AI Meeting Summaries", href: "/ai-meetings", desc: "Automatic summaries, action items, and key decisions." },
       { label: "AI Assistant", href: "/sema-ai", desc: "Your context-aware assistant across chats, meetings, and docs." },
-      { label: "Insights & Analytics", href: "/insights", desc: "Communication and collaboration insights to drive productivity." },
+      { label: "Insights & Analytics", href: "/insights-anayltics", desc: "Communication and collaboration insights to drive productivity." },
       { label: "Confidential Mode", href: "/confidential-mode", desc: "Extra protection for sensitive conversations and shared content." },
     ],
   },
@@ -34,12 +34,12 @@ const menuItems: NavItem[] = [
       { label: "Enterprise Teams", href: "/enterprise", desc: "Scale communication, streamline workflows, and keep everyone aligned." },
       { label: "Department Solutions", href: "/solutions/departments", desc: "Tailored for IT, HR, Finance, Sales, and Operations teams." },
       { label: "Hybrid & Remote Teams", href: "/solutions/hybrid-remote", desc: "Empower distributed teams with secure, inclusive collaboration." },
-      { label: "Financial Services", href: "/solutions/financial-services", desc: "Secure communication and compliance for regulated institutions." },
+      { label: "Financial Services", href: "/financial-services", desc: "Secure communication and compliance for regulated institutions." },
       { label: "Healthcare", href: "/solutions/healthcare", desc: "Protect patient data and improve care team collaboration." },
       { label: "Government", href: "/solutions/government", desc: "Meet compliance standards and support public sector work securely." },
       { label: "Security & Compliance", href: "/solutions/security-compliance", desc: "Enterprise-grade security, data protection, and regulatory compliance." },
       { label: "Productivity & Efficiency", href: "/individual-productivity", desc: "Reduce manual work and boost team productivity with AI." },
-      { label: "Integration & Scalability", href: "/solutions/integration-scalability", desc: "Connect with the tools you use and scale with confidence." },
+      { label: "Integration & Scalability", href: "/integration-scalability", desc: "Connect with the tools you use and scale with confidence." },
     ],
   },
   {
@@ -89,7 +89,7 @@ const menuItems: NavItem[] = [
       { label: "White Papers", href: "/resources/white-papers", desc: "In-depth research and industry reports." },
       { label: "Help Center", href: "/help-center", desc: "Get answers to common questions and issues." },
       { label: "Community", href: "/resources/community", desc: "Connect with other Sema users and experts." },
-      { label: "API & Developer Docs", href: "/resources/docs", desc: "Integrate Sema with your tools and workflows." },
+      { label: "API & Developer Docs", href: "/developer-docs", desc: "Integrate Sema with your tools and workflows." },
       { label: "Status & Uptime", href: "/status", desc: "Real-time system status and performance." },
       { label: "About Zoiko Sema", href: "/about", desc: "Our mission, vision, and the Zoiko Group." },
       { label: "Newsroom", href: "/newsroom", desc: "Press releases, media kit, and announcements." },
@@ -210,7 +210,7 @@ const productColumns: ProductColumn[] = [
       {
         title: "Insights & Analytics",
         desc: "Communication and collaboration insights to drive productivity.",
-        href: "/insights",
+        href: "/insights-anayltics",
         icon: productIcon(<polyline points="3 17 9 11 13 15 21 7" />),
       },
       {
@@ -292,7 +292,7 @@ const solutionColumns: SolutionColumn[] = [
       {
         title: "Financial Services",
         desc: "Secure communication and compliance for regulated institutions.",
-        href: "/solutions/financial-services",
+        href: "/financial-services",
         icon: solutionIcon(<><line x1="12" y1="20" x2="12" y2="10" /><line x1="18" y1="20" x2="18" y2="4" /><line x1="6" y1="20" x2="6" y2="16" /></>),
       },
       {
@@ -329,7 +329,7 @@ const solutionColumns: SolutionColumn[] = [
       {
         title: "Integration & Scalability",
         desc: "Connect with the tools you use and scale with confidence.",
-        href: "/solutions/integration-scalability",
+        href: "/integration-scalability",
         icon: solutionIcon(<polyline points="3 17 9 11 13 15 21 7" />),
       },
     ],
@@ -525,7 +525,7 @@ const resourceColumns: ResourceColumn[] = [
       {
         title: "API & Developer Docs",
         desc: "Integrate Sema with your tools and workflows.",
-        href: "/resources/docs",
+        href: "/developer-docs",
         icon: resourceIcon(<><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></>),
       },
       {
@@ -607,7 +607,7 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Workforce Overview",
       desc: "Real-time visibility into activity, status, and performance.",
-      href: "/zoikotime/workforce-truth",
+      href: "/workforce-truth",
       icon: zoikoTimeIcon(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
     },
     {

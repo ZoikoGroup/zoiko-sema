@@ -21,7 +21,7 @@ const cards = [
     title: "Sema for Business",
     desc: "For companies that need communication, accountability and operational clarity — across teams, departments, regions and roles.",
     ctaLabel: "Explore Sema for Business",
-    href: "#business",
+    href: "/pricing",
     imageUrl: "/Home/Business.webp", // <-- paste your image URL here
   },
   {
@@ -59,7 +59,7 @@ const cards = [
     title: "Sema for You",
     desc: "For people who want secure audio calls, video calls and intelligent conversation memory — without needing a business account.",
     ctaLabel: "Use Sema for free",
-    href: "#individuals",
+    href: "/start-free",
     imageUrl: "/Home/Individuals.webp", // <-- paste your image URL here
   },
 ];

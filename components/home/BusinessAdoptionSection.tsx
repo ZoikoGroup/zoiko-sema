@@ -142,7 +142,7 @@ export default function BusinessAdoptionSection() {
                 </ol>
 <a
                 
-                  href="#business-demo"
+                  href="/get-a-demo"
                   className="bas-btn inline-flex items-center justify-center rounded-full text-[#fff] bg-[#4F46E5] text-[14px] font-semibold px-7 py-3.5"
                 >
                   Get a business demo
