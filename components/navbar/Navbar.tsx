@@ -23,7 +23,7 @@ const menuItems: NavItem[] = [
       { label: "Workflows", href: "/workflows", desc: "Automate approvals and processes across your team and tools." },
       { label: "AI Meeting Summaries", href: "/ai-meetings", desc: "Automatic summaries, action items, and key decisions." },
       { label: "AI Assistant", href: "/sema-ai", desc: "Your context-aware assistant across chats, meetings, and docs." },
-      { label: "Insights & Analytics", href: "/insights", desc: "Communication and collaboration insights to drive productivity." },
+      { label: "Insights & Analytics", href: "/insights-anayltics", desc: "Communication and collaboration insights to drive productivity." },
       { label: "Confidential Mode", href: "/confidential-mode", desc: "Extra protection for sensitive conversations and shared content." },
     ],
   },
@@ -37,9 +37,9 @@ const menuItems: NavItem[] = [
       { label: "Financial Services", href: "/financial-services", desc: "Secure communication and compliance for regulated institutions." },
       { label: "Healthcare", href: "/healthcare", desc: "Protect patient data and improve care team collaboration." },
       { label: "Government", href: "/solutions/government", desc: "Meet compliance standards and support public sector work securely." },
-      { label: "Security & Compliance", href: "/solutions/security-compliance", desc: "Enterprise-grade security, data protection, and regulatory compliance." },
+      { label: "Security & Compliance", href: "/security-compliance", desc: "Enterprise-grade security, data protection, and regulatory compliance." },
       { label: "Productivity & Efficiency", href: "/individual-productivity", desc: "Reduce manual work and boost team productivity with AI." },
-      { label: "Integration & Scalability", href: "/solutions/integration-scalability", desc: "Connect with the tools you use and scale with confidence." },
+      { label: "Integration & Scalability", href: "/integration-scalability", desc: "Connect with the tools you use and scale with confidence." },
     ],
   },
   {
@@ -48,12 +48,12 @@ const menuItems: NavItem[] = [
     children: [
       { label: "Team Collaboration", href: "/use-cases/team-collaboration", desc: "Keep teams connected, aligned, and productive in one place." },
       { label: "Project Management", href: "/project-collaboration", desc: "Plan, manage tasks, share updates, and deliver projects on time." },
-      { label: "Customer Support", href: "/use-cases/customer-support", desc: "Resolve issues faster and deliver exceptional customer experiences." },
+      { label: "Customer Support", href: "/customer-support", desc: "Resolve issues faster and deliver exceptional customer experiences." },
       { label: "Education", href: "/use-cases/education", desc: "Enable engaging learning, discussions, and collaboration for students and educators." },
       { label: "Security & Compliance", href: "/security-compliance", desc: "Communicate securely with Confidential Mode and policy controls." },
       { label: "Marketing", href: "/use-cases/marketing", desc: "Launch campaigns, align teams, and move faster from idea to impact." },
       { label: "Remote & Hybrid Work", href: "/use-cases/remote-hybrid-work", desc: "Empower distributed teams with secure, inclusive communication." },
-      { label: "Healthcare", href: "/healthcare", desc: "Improve care team communication and protect patient data." },
+      { label: "Healthcare", href: "/use-case-healthcare", desc: "Improve care team communication and protect patient data." },
       { label: "Government", href: "/use-cases/government", desc: "Meet compliance standards and enhance public sector collaboration." },
       { label: "Retail & eCommerce", href: "/use-cases/retail-ecommerce", desc: "Connect teams across stores, warehouses, and HQ to serve customers better." },
       { label: "Sales & Enablement", href: "/use-cases/sales-enablement", desc: "Share content, track conversations, and close deals faster." },
@@ -89,7 +89,7 @@ const menuItems: NavItem[] = [
       { label: "White Papers", href: "/resources/white-papers", desc: "In-depth research and industry reports." },
       { label: "Help Center", href: "/help-center", desc: "Get answers to common questions and issues." },
       { label: "Community", href: "/resources/community", desc: "Connect with other Sema users and experts." },
-      { label: "API & Developer Docs", href: "/resources/docs", desc: "Integrate Sema with your tools and workflows." },
+      { label: "API & Developer Docs", href: "/developer-docs", desc: "Integrate Sema with your tools and workflows." },
       { label: "Status & Uptime", href: "/status", desc: "Real-time system status and performance." },
       { label: "About Zoiko Sema", href: "/about", desc: "Our mission, vision, and the Zoiko Group." },
       { label: "Newsroom", href: "/newsroom", desc: "Press releases, media kit, and announcements." },
@@ -104,8 +104,8 @@ const menuItems: NavItem[] = [
       { label: "Join a Meeting", href: "/join-a-meeting", desc: "Enter a meeting link, code, or invite to join instantly." },
       { label: "Start a Meeting", href: "/sema-meet/start", desc: "Launch an instant meeting from your workspace." },
       { label: "Schedule a Meeting", href: "/sema-meet/schedule", desc: "Create a meeting with calendar, guests, and policy controls." },
-      { label: "Download Apps", href: "/sema-meet/download", desc: "Get Sema for desktop, iOS, and Android." },
-      { label: "Sema Meet Overview", href: "/sema-meet", desc: "Learn how Sema meetings work." },
+      { label: "Download Apps", href: "/download", desc: "Get Sema for desktop, iOS, and Android." },
+      { label: "Sema Meet Overview", href: "/sema-meet-overview", desc: "Learn how Sema meetings work." },
     ],
   },
 ];
@@ -210,7 +210,7 @@ const productColumns: ProductColumn[] = [
       {
         title: "Insights & Analytics",
         desc: "Communication and collaboration insights to drive productivity.",
-        href: "/insights",
+        href: "/insights-anayltics",
         icon: productIcon(<polyline points="3 17 9 11 13 15 21 7" />),
       },
       {
@@ -292,7 +292,7 @@ const solutionColumns: SolutionColumn[] = [
       {
         title: "Financial Services",
         desc: "Secure communication and compliance for regulated institutions.",
-        href: "/solutions/financial-services",
+        href: "/financial-services",
         icon: solutionIcon(<><line x1="12" y1="20" x2="12" y2="10" /><line x1="18" y1="20" x2="18" y2="4" /><line x1="6" y1="20" x2="6" y2="16" /></>),
       },
       {
@@ -317,7 +317,7 @@ const solutionColumns: SolutionColumn[] = [
       {
         title: "Security & Compliance",
         desc: "Enterprise-grade security, data protection, and regulatory compliance.",
-        href: "/solutions/security-compliance",
+        href: "/security-compliance",
         icon: solutionIcon(<><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /><polyline points="9 15 11 17 15 13" /></>),
       },
       {
@@ -329,7 +329,7 @@ const solutionColumns: SolutionColumn[] = [
       {
         title: "Integration & Scalability",
         desc: "Connect with the tools you use and scale with confidence.",
-        href: "/solutions/integration-scalability",
+        href: "/integration-scalability",
         icon: solutionIcon(<polyline points="3 17 9 11 13 15 21 7" />),
       },
     ],
@@ -373,13 +373,13 @@ const useCasesLeftColumn: UseCaseLink[] = [
   {
     title: "Project Management",
     desc: "Plan, manage tasks, share updates, and deliver projects on time.",
-    href: "/project-collaboration",
+    href: "/project-management",
     icon: caseIcon(<><path d="M20 7h-3a2 2 0 0 1-2-2V2" /><path d="M9 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z" /></>),
   },
   {
     title: "Customer Support",
     desc: "Resolve issues faster and deliver exceptional customer experiences.",
-    href: "/use-cases/customer-support",
+    href: "/customer-support",
     icon: caseIcon(<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />),
   },
   {
@@ -412,7 +412,7 @@ const useCasesRightColumn: UseCaseLink[] = [
   {
     title: "Healthcare",
     desc: "Improve care team communication and protect patient data.",
-    href: "/use-cases/healthcare",
+    href: "/use-case-healthcare",
     icon: caseIcon(<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />),
   },
   {
@@ -525,7 +525,7 @@ const resourceColumns: ResourceColumn[] = [
       {
         title: "API & Developer Docs",
         desc: "Integrate Sema with your tools and workflows.",
-        href: "/resources/docs",
+        href: "/developer-docs",
         icon: resourceIcon(<><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></>),
       },
       {
@@ -607,7 +607,7 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Workforce Overview",
       desc: "Real-time visibility into activity, status, and performance.",
-      href: "/zoikotime/workforce-truth",
+      href: "/workforce-truth",
       icon: zoikoTimeIcon(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
     },
     {
@@ -736,7 +736,7 @@ const semaMeetLinks: SemaMeetLink[] = [
   {
     title: "Download Apps",
     desc: "Get Sema for desktop, iOS, and Android.",
-    href: "/sema-meet/download",
+    href: "/download",
     icon: semaMeetIcon(<><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></>),
   },
 ];
@@ -744,7 +744,7 @@ const semaMeetLinks: SemaMeetLink[] = [
 const semaMeetOverview = {
   title: "Sema Meet Overview",
   desc: "Learn how Sema meetings work.",
-  href: "/sema-meet",
+  href: "/sema-meet-overview",
 };
 
 const semaMeetFeatured = {

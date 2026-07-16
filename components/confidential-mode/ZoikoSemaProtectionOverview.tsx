@@ -1,4 +1,5 @@
 "use client"
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 
 // --- CUSTOM INTERSECTION OBSERVER HOOK FOR FLOATING REVEAL EFFECTS ---
@@ -36,17 +37,20 @@ export default function ZoikoSemaProtectionOverview() {
     {
       title: 'Encrypted internal meetings',
       desc: 'Protect sensitive meeting content with a clear Confidential Mode state visible before and during the meeting.',
-      linkText: 'Explore meetings'
+      linkText: 'Explore meetings',
+      link:"/meeting-to-summary"
     },
     {
       title: 'Protected internal messaging',
       desc: 'Use secure conversations for sensitive internal topics where content handling must be stricter.',
-      linkText: 'Explore messaging'
+      linkText: 'Explore messaging',
+      link:"/messaging"
     },
     {
       title: 'Clear workspace policy',
       desc: 'Let admins define where Confidential Mode is available, required, or restricted.',
-      linkText: 'Explore Admin Console'
+      linkText: 'Explore Admin Console',
+      link:"/admin-console"
     }
   ];
 
@@ -74,6 +78,7 @@ export default function ZoikoSemaProtectionOverview() {
     }
   ];
 
+  const router = useRouter();
   return (
     <div className="w-full min-h-screen bg-white dark:bg-gray-950 text-slate-900 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden selection:bg-blue-500/20">
 
@@ -123,7 +128,7 @@ export default function ZoikoSemaProtectionOverview() {
                     {card.desc}
                   </p>
                 </div>
-                <div className="flex items-center gap-1.5 text-sm font-semibold text-blue-600 dark:text-blue-400 group-hover:gap-2.5 transition-all duration-200">
+                <div onClick={()=>router.push(card.link)} className="flex cursor-pointer items-center gap-1.5 text-sm font-semibold text-blue-600 dark:text-blue-400 group-hover:gap-2.5 transition-all duration-200">
                   <span>{card.linkText}</span>
                   <span className="font-bold">→</span>
                 </div>
@@ -192,7 +197,7 @@ export default function ZoikoSemaProtectionOverview() {
 
           {/* Compare Redirect Hub Node */}
           <div className={`pt-4 flex items-center justify-center transition-all duration-1000 delay-300 transform ${changesVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="flex items-center gap-1.5 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors cursor-pointer group font-sans">
+            <div onClick={()=>router.push('/confidential-mode')} className="flex items-center gap-1.5 text-sm font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors cursor-pointer group font-sans">
               <span>Compare normal mode and Confidential Mode</span>
               <span className="font-bold group-hover:translate-x-1 transition-transform">→</span>
             </div>

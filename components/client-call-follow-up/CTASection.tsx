@@ -21,7 +21,7 @@ export const CTASection = () => {
           <Link href="/get-a-demo" className="px-8 py-3.5 bg-blue-600 hover:bg-blue-700 transition-colors rounded-full flex justify-center items-center shadow-lg shadow-blue-900/50">
             <span className={`${plusJakartaSans.className} text-white text-sm font-semibold`}>Get a demo</span>
           </Link>
-          <Link href="/contact-sales" className="px-8 py-3.5 bg-white hover:bg-slate-50 transition-colors rounded-full flex justify-center items-center text-slate-900">
+          <Link href="/contact" className="px-8 py-3.5 bg-white hover:bg-slate-50 transition-colors rounded-full flex justify-center items-center text-slate-900">
             <span className={`${plusJakartaSans.className} text-sm font-semibold`}>Talk to sales</span>
           </Link>
         </div>

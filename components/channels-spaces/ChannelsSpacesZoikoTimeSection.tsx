@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 function useInView(threshold = 0.15) {
@@ -64,6 +65,7 @@ export default function ChannelsSpacesZoikoTimeSection() {
   const { ref: headRef, inView: headIn } = useInView(0.2);
   const { ref: gridRef, inView: gridIn } = useInView(0.1);
   const { ref: ctaRef, inView: ctaIn } = useInView(0.3);
+  const router = useRouter();
 
   return (
     <>
@@ -163,7 +165,7 @@ export default function ChannelsSpacesZoikoTimeSection() {
             className={`cszs-hidden ${ctaIn ? "cszs-visible" : ""} flex justify-center`}
             style={{ animationDelay: "0.1s" }}
           >
-            <button className="cszs-cta rounded-full bg-white text-[#3A3564] text-[14px] font-semibold px-7 py-3.5">
+            <button onClick={()=>router.push('/sema-zoikotime')} className="cszs-cta cursor-pointer rounded-full bg-white text-[#3A3564] text-[14px] font-semibold px-7 py-3.5">
               Explore Sema + ZoikoTime
             </button>
           </div>

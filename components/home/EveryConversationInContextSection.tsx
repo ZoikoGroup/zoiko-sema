@@ -197,7 +197,7 @@ export default function EveryConversationInContextSection() {
                     {c.desc}
                   </p>
                   <a
-                    href="#learn-more"
+                    href="/about"
                     className="ecic-link inline-flex items-center gap-1.5 text-[13px] font-semibold mt-auto"
                     style={{ color: "#4B47E5" }}
                   >

@@ -36,25 +36,25 @@ const cards = [
     label: "Team Meetings",
     desc: "Schedule recurring team rituals with summaries and follow-up.",
     linkLabel: "Explore Meetings",
-    href: "/sema/meetings",
+    href: "/meeting-to-summary",
   },
   {
     label: "Client Consultations",
     desc: "Create events from mail threads and keep client context attached.",
     linkLabel: "Explore Mail",
-    href: "/sema/mail",
+    href: "/sema-mail",
   },
   {
     label: "Remote Coordination",
     desc: "Find usable times across time zones and distributed teams.",
     linkLabel: "Explore Solutions",
-    href: "/sema/solutions",
+    href: "/solutions",
   },
   {
     label: "Executive Reviews",
     desc: "Prepare agendas, documents, attendees, and decisions in one event page.",
     linkLabel: "Contact Sales",
-    href: "/sema/contact-sales",
+    href: "/contact",
   },
   {
     label: "Regulated Meetings",
@@ -66,7 +66,7 @@ const cards = [
     label: "ZoikoTime Customers",
     desc: "Connect approved meeting context to verified work signals.",
     linkLabel: "Request Integration Demo",
-    href: "/zoikotime/request-demo",
+    href: "/get-a-demo",
   },
 ];
 

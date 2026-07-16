@@ -27,7 +27,7 @@ const cards: TrustCard[] = [
     title: "Security Center",
     description: "Security posture and enterprise security review routes.",
     action: "Visit Security Center",
-    href: "/security-policy",
+    href: "/security-center",
   },
   {
     icon: Star,
@@ -48,7 +48,7 @@ const cards: TrustCard[] = [
     title: "Compliance",
     description: "Broader trust and control evidence.",
     action: "View Compliance",
-    href: "/data-processing-addendum",
+    href: "/comliance",
   },
   {
     icon: Monitor,
@@ -76,7 +76,7 @@ const cards: TrustCard[] = [
     title: "Report a Concern",
     description: "Route concerns about security, privacy, abuse, AI, or accessibility.",
     action: "Report a Concern",
-    href: "/contact",
+    href: "/report-concern",
   },
 ];
 
