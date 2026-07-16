@@ -1,4 +1,5 @@
 "use client"
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 
 // --- CUSTOM INTERSECTION OBSERVER HOOK FOR FLOATING REVEAL EFFECTS ---
@@ -38,6 +39,7 @@ export default function ZoikoSemaDisclosureAndCommunication() {
     { title: 'Recording unavailable', desc: 'Visible before entry as well.' },
     { title: 'Persistent indicator', desc: 'A compact Confidential Mode badge stays visible in-meeting.' }
   ];
+  const router = useRouter();
 
   return (
     <div className="w-full min-h-screen bg-white dark:bg-gray-950 text-slate-900 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden selection:bg-blue-500/20">
@@ -155,10 +157,10 @@ export default function ZoikoSemaDisclosureAndCommunication() {
 
               {/* Action Trigger Buttons Container */}
               <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-2">
-                <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 text-center">
+                <button onClick={()=>router.push('/meeting-to-work')} className="px-6 py-3 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-full shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 text-center">
                   Start a confidential meeting
                 </button>
-                <button className="px-6 py-3 border border-white/30 hover:border-white/60 hover:bg-white/5 text-white font-semibold text-xs rounded-full transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 text-center">
+                <button onClick={()=>router.push('/messaging')} className="px-6 py-3 cursor-pointer border border-white/30 hover:border-white/60 hover:bg-white/5 text-white font-semibold text-xs rounded-full transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 text-center">
                   Explore protected messaging
                 </button>
               </div>

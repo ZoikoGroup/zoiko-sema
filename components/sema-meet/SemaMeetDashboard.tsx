@@ -426,7 +426,7 @@ export default function SemaMeetDashboard() {
         {/* -------------------------------------------------------------- */}
         {/* Right rail                                                     */}
         {/* -------------------------------------------------------------- */}
-        <aside className="hidden w-[340px] bg-[#F3F2FD] shrink-0 flex-col gap-5 px-6 py-8 xl:flex">
+        <aside className="hidden w-[300px] bg-[#F3F2FD] shrink-0 flex-col gap-5 px-6 py-8 xl:flex">
           <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <h4 className="text-[15px] font-bold text-slate-900">Readiness</h4>
             <div className="mt-1 divide-y divide-slate-100">

@@ -1,4 +1,5 @@
 "use client"
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 
 // --- CUSTOM INTERSECTION OBSERVER HOOK FOR FLOATING REVEAL EFFECTS ---
@@ -31,32 +32,38 @@ function useScrollReveal() {
 export default function ZoikoSemaAdminAndTrust() {
   const [adminRef, adminVisible] = useScrollReveal();
   const [trustRef, trustVisible] = useScrollReveal();
+  const router = useRouter();
 
   const policyRows = [
     {
       title: 'Availability rules',
       desc: 'Allow or require Confidential Mode for selected meeting types or workspaces.',
       actionText: 'Explore Admin Console',
+      link:"/admin-console"
     },
     {
       title: 'Feature restrictions',
       desc: 'Disable AI summaries, live transcription, recording, and content indexing while active.',
       actionText: 'Request security review',
+      link:"/security-review"
     },
     {
       title: 'Guest rules',
       desc: 'Apply guest rules and waiting room requirements.',
       actionText: 'Explore Admin Console',
+      link:"/admin-console"
     },
     {
       title: 'Audit-safe events',
       desc: 'Record policy events without storing protected conversation content.',
       actionText: 'View Trust Center',
+      link:"/trust-center"
     },
     {
       title: 'Role-based access',
       desc: 'Role-based access and settings history for administrators.',
       actionText: 'Request security review',
+      link:"/security-review"
     }
   ];
 
@@ -123,7 +130,7 @@ export default function ZoikoSemaAdminAndTrust() {
                   </p>
                 </div>
                 <div className="md:w-1/4 flex md:justify-end">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 group-hover:gap-2.5 transition-all duration-200 cursor-pointer">
+                  <div onClick={()=>router.push(row.link)} className="flex cursor-pointer items-center gap-1.5 text-xs font-bold text-blue-600 dark:text-blue-400 group-hover:gap-2.5 transition-all duration-200 cursor-pointer">
                     <span>{row.actionText}</span>
                     <span>→</span>
                   </div>
