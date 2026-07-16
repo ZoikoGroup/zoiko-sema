@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 function useInView(threshold = 0.15) {
@@ -220,6 +220,7 @@ export default function ProductCarouselHeroSection() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 mb-8 sm:mb-10 w-full sm:w-auto">
+              <a href="/products" >
               <button
                 className="pch-btn-primary w-full sm:w-auto rounded-[10px] px-6 py-3 text-[13.5px] sm:text-[14px] font-semibold text-white inline-flex items-center justify-center gap-2"
                 style={{ background: "linear-gradient(90deg, #3457E8, #3457E8)" }}
@@ -229,11 +230,11 @@ export default function ProductCarouselHeroSection() {
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
-              </button>
-
+              </button></a>
+                <a href="/pricing">
               <button className="pch-btn-secondary w-full sm:w-auto rounded-[10px] px-6 py-3 text-[13.5px] sm:text-[14px] font-semibold text-gray-900 bg-white">
                 Find your plan
-              </button>
+              </button></a>
 
               <button className="pch-btn-ghost inline-flex items-center justify-center gap-2 text-[13.5px] sm:text-[14px] font-semibold text-white/70 px-2 py-3">
                 <span className="w-7 h-7 rounded-full border border-white/30 flex items-center justify-center flex-shrink-0">

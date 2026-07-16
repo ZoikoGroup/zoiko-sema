@@ -160,7 +160,7 @@ export default function StartWithOneConversationSection() {
                   </ol>
                   <a
                   
-                    href="#start-free"
+                    href="/start-free"
                     className="swoc-btn flex items-center justify-center rounded-full text-white text-[14px] font-semibold px-8 py-3.5 w-full"
                     style={{ background: "#4B47E5" }}
                   >

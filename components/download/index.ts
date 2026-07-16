@@ -1,0 +1,5 @@
+export {default as DownloadSection} from "./DownloadSection"
+export {default as SmartPlatformDetection} from "./SmartPlatformDetection"
+export {default as PlatformDistribution} from "./PlatformDistribution"
+export {default as InstallationDashboardPage} from "./InstallationDashboardPage"
+export {default as AnalyticsAndSupportPage} from "./AnalyticsAndSupportPage"

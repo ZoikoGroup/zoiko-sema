@@ -159,7 +159,7 @@ export default function FlexibleSolutionsSection() {
               </div>
 
               <a
-                href="#explore-products"
+                href="/products"
                 className="fss-btn inline-flex items-center justify-center w-full max-w-[656px] h-12 bg-indigo-600 rounded-md text-white text-base font-bold font-['Inter']"
               >
                 Explore Products
