@@ -111,13 +111,13 @@ export default function CalendarGetStartedSection() {
           >
             <div className="flex flex-wrap items-center justify-center gap-3 mb-5">
               <a
-                href="/calendar/start-free"
+                href="/start-free"
                 className="cgs-btn-primary inline-flex items-center justify-center rounded-full bg-[#4B47E5] text-white text-[13.5px] font-semibold px-6 py-3"
               >
                 Start free
               </a>
               <a
-                href="/calendar/contact-sales"
+                href="/contact-sales"
                 className="cgs-btn-outline inline-flex items-center justify-center rounded-full bg-transparent text-white text-[13.5px] font-semibold px-6 py-3 border border-white/25"
               >
                 Contact sales
@@ -125,7 +125,7 @@ export default function CalendarGetStartedSection() {
             </div>
 
             <a
-              href="/calendar/schedule-meeting"
+              href="/meeting-to-work"
               className="cgs-link inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#8B8FE0]"
             >
               Schedule a meeting

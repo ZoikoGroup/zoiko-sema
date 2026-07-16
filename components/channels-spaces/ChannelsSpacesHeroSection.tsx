@@ -128,13 +128,13 @@ shared files, decisions, and AI-searchable context for teams that need communica
             style={{ animationDelay: "0.24s" }}
           >
             <button onClick={()=>router.push('/start-free')}
-              className="ac-btn-primary rounded-full px-7 py-3 text-[14px] font-semibold text-white"
+              className="ac-btn-primary cursor-pointer rounded-full px-7 py-3 text-[14px] font-semibold text-white"
               style={{ backgroundColor: "#4F5BD5" }}
             >
               Start free
             </button>
             <button onClick={()=>router.push('/get-a-demo')}
-            className="ac-btn-secondary rounded-full px-7 py-3 text-[14px] font-semibold text-gray-900 bg-white">
+            className="ac-btn-secondary cursor-pointer rounded-full px-7 py-3 text-[14px] font-semibold text-gray-900 bg-white">
               Get a demo
             </button>
           </div>

@@ -2,6 +2,7 @@
 
 import { Check, Shield } from "lucide-react";
 import { useInView } from "./useInView";
+import { useRouter } from "next/navigation";
 
 // TODO: replace with your actual hero image path, e.g. "/Images/compliance-audit-hero.webp"
 const HERO_IMAGE_SRC = "/Images/compliance-audit-hero.webp";
@@ -11,6 +12,7 @@ const badges = ["Source-linked", "Reviewed", "Permissioned", "Export-ready"];
 export default function ComplianceAuditHeroSection() {
   const { ref: copyRef, inView: copyIn } = useInView(0.2);
   const { ref: imgRef, inView: imgIn } = useInView(0.1);
+  const router = useRouter();
 
   return (
     <>
@@ -82,10 +84,12 @@ export default function ComplianceAuditHeroSection() {
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
-              <button className="ca-btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white">
+              <button onClick={()=>router.push("/get-a-demo")}
+              className="ca-btn-primary cursor-pointer rounded-xl px-6 py-3 text-sm font-semibold text-white">
                 Request Demo
               </button>
-              <button className="ca-btn-secondary rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0B1330]">
+              <button onClick={()=>router.push('/workflows')}
+              className="ca-btn-secondary rounded-xl cursor-pointer bg-white px-6 py-3 text-sm font-semibold text-[#0B1330]">
                 View Audit Workflow
               </button>
             </div>

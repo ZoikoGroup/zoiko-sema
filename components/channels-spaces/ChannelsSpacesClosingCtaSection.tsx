@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 function useInView(threshold = 0.15) {
@@ -27,6 +28,7 @@ function useInView(threshold = 0.15) {
 
 export default function ChannelsSpacesClosingCtaSection() {
   const { ref: cardRef, inView: cardIn } = useInView(0.15);
+  const router = useRouter();
 
   return (
     <>
@@ -76,13 +78,13 @@ export default function ChannelsSpacesClosingCtaSection() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3">
-              <button className="cscc-btn-primary rounded-full bg-white text-[#0F0F2A] text-[14px] font-semibold px-6 py-3">
+              <button onClick={()=>router.push('/start-free')} className="cscc-btn-primary cursor-pointer rounded-full bg-white text-[#0F0F2A] text-[14px] font-semibold px-6 py-3">
                 Start free
               </button>
-              <button className="cscc-btn-outline rounded-full border border-white/20 text-white text-[14px] font-semibold px-6 py-3">
+              <button onClick={()=>router.push('/get-a-demo')} className="cscc-btn-outline cursor-pointer rounded-full border border-white/20 text-white text-[14px] font-semibold px-6 py-3">
                 Get a demo
               </button>
-              <button className="cscc-btn-outline rounded-full border border-white/20 text-white text-[14px] font-semibold px-6 py-3">
+              <button onClick={()=>router.push('/zoikotime-integration')} className="cscc-btn-outline cursor-pointer rounded-full border border-white/20 text-white text-[14px] font-semibold px-6 py-3">
                 Explore ZoikoTime integration
               </button>
             </div>
