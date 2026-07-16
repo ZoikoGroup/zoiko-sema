@@ -48,7 +48,7 @@ const menuItems: NavItem[] = [
     children: [
       { label: "Team Collaboration", href: "/use-cases/team-collaboration", desc: "Keep teams connected, aligned, and productive in one place." },
       { label: "Project Management", href: "/project-collaboration", desc: "Plan, manage tasks, share updates, and deliver projects on time." },
-      { label: "Customer Support", href: "/use-cases/customer-support", desc: "Resolve issues faster and deliver exceptional customer experiences." },
+      { label: "Customer Support", href: "/customer-support", desc: "Resolve issues faster and deliver exceptional customer experiences." },
       { label: "Education", href: "/use-cases/education", desc: "Enable engaging learning, discussions, and collaboration for students and educators." },
       { label: "Security & Compliance", href: "/use-cases/security-compliance", desc: "Communicate securely with Confidential Mode and policy controls." },
       { label: "Marketing", href: "/use-cases/marketing", desc: "Launch campaigns, align teams, and move faster from idea to impact." },
@@ -104,8 +104,8 @@ const menuItems: NavItem[] = [
       { label: "Join a Meeting", href: "/sema-meet/join", desc: "Enter a meeting link, code, or invite to join instantly." },
       { label: "Start a Meeting", href: "/sema-meet/start", desc: "Launch an instant meeting from your workspace." },
       { label: "Schedule a Meeting", href: "/sema-meet/schedule", desc: "Create a meeting with calendar, guests, and policy controls." },
-      { label: "Download Apps", href: "/sema-meet/download", desc: "Get Sema for desktop, iOS, and Android." },
-      { label: "Sema Meet Overview", href: "/sema-meet", desc: "Learn how Sema meetings work." },
+      { label: "Download Apps", href: "/download", desc: "Get Sema for desktop, iOS, and Android." },
+      { label: "Sema Meet Overview", href: "/sema-meet-overview", desc: "Learn how Sema meetings work." },
     ],
   },
 ];
@@ -379,7 +379,7 @@ const useCasesLeftColumn: UseCaseLink[] = [
   {
     title: "Customer Support",
     desc: "Resolve issues faster and deliver exceptional customer experiences.",
-    href: "/use-cases/customer-support",
+    href: "/customer-support",
     icon: caseIcon(<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />),
   },
   {
@@ -736,7 +736,7 @@ const semaMeetLinks: SemaMeetLink[] = [
   {
     title: "Download Apps",
     desc: "Get Sema for desktop, iOS, and Android.",
-    href: "/sema-meet/download",
+    href: "/download",
     icon: semaMeetIcon(<><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></>),
   },
 ];
@@ -744,7 +744,7 @@ const semaMeetLinks: SemaMeetLink[] = [
 const semaMeetOverview = {
   title: "Sema Meet Overview",
   desc: "Learn how Sema meetings work.",
-  href: "/sema-meet",
+  href: "/sema-meet-overview",
 };
 
 const semaMeetFeatured = {
