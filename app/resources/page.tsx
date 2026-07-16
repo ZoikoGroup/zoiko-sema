@@ -1,3 +1,10 @@
+import { Metadata } from "next";
+export const metadata = {
+  title: "Zoiko Sema Resources | AI Communication Guides",
+  description:
+    "Discover Zoiko Sema AI communication guides with practical resources on meeting intelligence, decision capture, workflows, and accountable collaboration.",
+};
+
 import { 
     
     ResourcesHeroSection,

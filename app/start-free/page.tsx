@@ -1,3 +1,11 @@
+import { Metadata } from "next";
+export const metadata = {
+  title: "Zoiko Sema Start Free | AI Communication Platform",
+  description:
+    "Create a free Zoiko Sema workspace for secure messaging, AI-powered meetings, calls, and collaboration. Start in 90 seconds with no credit card.",
+};
+
+
 import { 
     StartFreeHeroSection, 
     StartFreeTrustSection, 

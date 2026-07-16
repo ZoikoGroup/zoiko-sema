@@ -1,3 +1,10 @@
+import { Metadata } from "next";
+export const metadata = {
+  title: "Zoiko Sema Use Cases | AI Communication Workflows",
+  description:
+    "Zoiko Sema AI communication workflows help teams convert meetings, client calls, and discussions into structured actions, insights, and business context.",
+};
+
 import { 
     UseCasesHeroSection,
     UseCasesWorkflowSection,

@@ -339,7 +339,7 @@ export default function Footer() {
                   { label: "Help Center", href: "/help-center" },
                   { label: "Customer Stories", href: "/customer-stories" },
                   { label: "Product Updates", href: "/product-updates" },
-                  { label: "Developer Docs", href: "/docs" },
+                  { label: "Developer Docs", href: "/developer-docs" },
                   { label: "System Status", href: "/status" },
                   { label: "Trust Center", href: "/trust-center" },
                 ]}
