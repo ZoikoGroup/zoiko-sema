@@ -1,0 +1,10 @@
+export { default as TeamCollabHero } from "./TeamCollabHero";
+export { default as WhyCollaboration } from "./WhyCollaboration";
+export { default as TeamToWorkLifecycle } from "./TeamToWorkLifecycle";
+export { default as CoreCapabilities } from "./CoreCapabilities";
+export { default as UseCasePatterns } from "./UseCasePatterns";
+export { default as GovernanceSecurity } from "./GovernanceSecurity";
+export { default as RolesPermissions } from "./RolesPermissions";
+export { default as IntegrationsStack } from "./IntegrationsStack";
+export { default as QuestionsAnswered } from "./QuestionsAnswered";
+export { default as FinalCTA } from "./FinalCTA";
