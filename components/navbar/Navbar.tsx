@@ -37,7 +37,7 @@ const menuItems: NavItem[] = [
       { label: "Financial Services", href: "/financial-services", desc: "Secure communication and compliance for regulated institutions." },
       { label: "Healthcare", href: "/solutions/healthcare", desc: "Protect patient data and improve care team collaboration." },
       { label: "Government", href: "/solutions/government", desc: "Meet compliance standards and support public sector work securely." },
-      { label: "Security & Compliance", href: "/solutions/security-compliance", desc: "Enterprise-grade security, data protection, and regulatory compliance." },
+      { label: "Security & Compliance", href: "/security-compliance", desc: "Enterprise-grade security, data protection, and regulatory compliance." },
       { label: "Productivity & Efficiency", href: "/individual-productivity", desc: "Reduce manual work and boost team productivity with AI." },
       { label: "Integration & Scalability", href: "/integration-scalability", desc: "Connect with the tools you use and scale with confidence." },
     ],
@@ -317,7 +317,7 @@ const solutionColumns: SolutionColumn[] = [
       {
         title: "Security & Compliance",
         desc: "Enterprise-grade security, data protection, and regulatory compliance.",
-        href: "/solutions/security-compliance",
+        href: "/security-compliance",
         icon: solutionIcon(<><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /><polyline points="9 15 11 17 15 13" /></>),
       },
       {
@@ -373,7 +373,7 @@ const useCasesLeftColumn: UseCaseLink[] = [
   {
     title: "Project Management",
     desc: "Plan, manage tasks, share updates, and deliver projects on time.",
-    href: "/project-collaboration",
+    href: "/project-management",
     icon: caseIcon(<><path d="M20 7h-3a2 2 0 0 1-2-2V2" /><path d="M9 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z" /></>),
   },
   {
