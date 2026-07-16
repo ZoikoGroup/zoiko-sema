@@ -1,0 +1,12 @@
+export { default as HealthcareHeroSection } from "./Healthcareherosection";
+export { default as HealthcareTeamsSection } from "./Healthcareteamssection";
+export { default as HealthcareShowcaseSection } from "./Healthcareshowcasesection";
+export { default as HealthcareWorkflowsSection } from "./Healthcareworkflowssection";
+export { default as HealthcareAccessSection } from "./Healthcareaccesssection";
+export { default as HealthcareAiGovernanceSection } from "./Healthcareaigovernancesection";
+export { default as HealthcareIntegrationsSection } from "./Healthcareintegrationssection";
+export { default as HealthcareReportingSection } from "./Healthcarereportingsection";
+export { default as HealthcarePermissionsSection } from "./Healthcarepermissionssection";
+export { default as HealthcareTrustSection } from "./HealthcareTrustSection";
+export { default as HealthcareFaqSection } from "./Healthcarefaqsection";
+export { default as HealthcareCTASection } from "./HealthcareCTASection";
