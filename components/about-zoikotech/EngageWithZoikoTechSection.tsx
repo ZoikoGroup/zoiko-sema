@@ -7,6 +7,7 @@ import {
   ArrowRight,
   LucideIcon,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface EngageCard {
   icon: LucideIcon;
@@ -15,6 +16,7 @@ interface EngageCard {
   badge: string;
   action: string;
   bg: string;
+  link:string;
 }
 
 const cards: EngageCard[] = [
@@ -25,6 +27,7 @@ const cards: EngageCard[] = [
     badge: "Hiring status shown on Careers",
     action: "View openings",
     bg: "bg-gradient-to-r from-[#4F46E5] to-[#4338CA]",
+    link:"/view-openings"
   },
   {
     icon: Code2,
@@ -33,6 +36,7 @@ const cards: EngageCard[] = [
     badge: "Developer Docs available",
     action: "Partner inquiry",
     bg: "bg-gradient-to-r from-[#0FA9A0] to-[#0B7A73]",
+    link:"/partners"
   },
   {
     icon: FileText,
@@ -41,6 +45,7 @@ const cards: EngageCard[] = [
     badge: "Media kit on request",
     action: "Press contact",
     bg: "bg-gradient-to-r from-[#5A3FE0] to-[#4B3FD6]",
+    link:"/press"
   },
   {
     icon: MessageCircle,
@@ -49,10 +54,12 @@ const cards: EngageCard[] = [
     badge: "Response route on submit",
     action: "Contact Team",
     bg: "bg-gradient-to-r from-[#1C2246] to-[#111746]",
+    link:"/contact"
   },
 ];
 
 export default function EngageWithZoikoTechSection() {
+  const router = useRouter();
   return (
     <section className="bg-[#F0EFFB] px-6 py-16 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl text-center">
@@ -67,7 +74,7 @@ export default function EngageWithZoikoTechSection() {
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-5 text-left sm:grid-cols-2 lg:grid-cols-4">
-          {cards.map(({ icon: Icon, title, description, badge, action, bg }) => (
+          {cards.map(({ icon: Icon, title, description, badge, action, bg,link }) => (
             <div key={title} className={`flex flex-col rounded-2xl justify-center ${bg} p-6`}>
               <span className="mb-4 flex h-9 w-9 items-center justify-center rounded-lg bg-white/15 text-white">
                 <Icon size={16} strokeWidth={2} />
@@ -81,7 +88,8 @@ export default function EngageWithZoikoTechSection() {
                 {badge}
               </span>
 
-              <button className="mt-4 flex items-center gap-1 text-xs font-semibold text-white hover:text-white/80">
+              <button onClick={()=>router.push(link)}
+              className="mt-4 flex cursor-pointer items-center gap-1 text-xs font-semibold text-white hover:text-white/80">
                 {action}
                 <ArrowRight size={12} />
               </button>

@@ -9,6 +9,7 @@ import {
   ArrowRight,
   LucideIcon,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface Pillar {
   icon: LucideIcon;
@@ -19,6 +20,7 @@ interface Pillar {
   leftDot: string;
   rightColor: string;
   action: string;
+  link:string;
 }
 
 const pillars: Pillar[] = [
@@ -32,6 +34,7 @@ const pillars: Pillar[] = [
     leftDot: "bg-pink-400",
     rightColor: "text-[#6C63FF]",
     action: "Explore Messaging",
+    link:"/messaging",
   },
   {
     icon: Phone,
@@ -43,6 +46,7 @@ const pillars: Pillar[] = [
     leftDot: "bg-green-400",
     rightColor: "text-green-600",
     action: "Explore Audio Calls",
+    link:"/audio-calls",
   },
   {
     icon: Video,
@@ -54,6 +58,7 @@ const pillars: Pillar[] = [
     leftDot: "bg-[#6C63FF]",
     rightColor: "text-orange-500",
     action: "Explore Video Meetings",
+    link:"/video-meetings",
   },
   {
     icon: Sparkles,
@@ -65,6 +70,7 @@ const pillars: Pillar[] = [
     leftDot: "bg-[#6C63FF]",
     rightColor: "text-orange-500",
     action: "Explore AI Summaries",
+    link:"/ai-summaries",
   },
   {
     icon: LayoutGrid,
@@ -76,6 +82,7 @@ const pillars: Pillar[] = [
     leftDot: "bg-[#6C63FF]",
     rightColor: "text-[#6C63FF]",
     action: "Explore Channels & Spaces",
+    link:"/channels-spaces",
   },
   {
     icon: ShieldCheck,
@@ -87,10 +94,12 @@ const pillars: Pillar[] = [
     leftDot: "bg-green-400",
     rightColor: "text-green-600",
     action: "Explore Admin Console",
+    link:"admin-console",
   },
 ];
 
 export default function WhatSemaConnectsSection() {
+  const router = useRouter();
   return (
     <section className="bg-white px-6 py-16 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl">
@@ -118,6 +127,7 @@ export default function WhatSemaConnectsSection() {
               leftDot,
               rightColor,
               action,
+              link
             }) => (
               <div
                 key={title}
@@ -151,7 +161,8 @@ export default function WhatSemaConnectsSection() {
                 </div>
 
                 {/* CTA */}
-                <button className="flex items-center gap-2 pt-6 text-sm font-semibold text-[#5B5AF7] transition hover:gap-3">
+                <button onClick={()=>router.push(link)}
+                className="flex cursor-pointer items-center gap-2 pt-6 text-sm font-semibold text-[#5B5AF7] transition hover:gap-3">
                   {action}
                   <ArrowRight size={15} />
                 </button>

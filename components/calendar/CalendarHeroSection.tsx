@@ -124,13 +124,13 @@ export default function CalendarHeroSection() {
                 style={{ animationDelay: "0.18s" }}
               >
                 <a
-                  href="/calendar/start-free"
+                  href="/start-free"
                   className="chs-btn-primary inline-flex items-center justify-center rounded-full bg-[#4B47E5] text-white text-[13.5px] font-semibold px-6 py-3"
                 >
                   Start free
                 </a>
                 <a
-                  href="/calendar/contact-sales"
+                  href="/contact"
                   className="chs-btn-outline inline-flex items-center justify-center rounded-full bg-transparent text-white text-[13.5px] font-semibold px-6 py-3 border border-white/25"
                 >
                   Contact sales

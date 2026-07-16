@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 // Reusable scroll-in-view hook (same pattern as your other sections)
@@ -32,6 +33,7 @@ export default function ChannelsSpacesHeroSection() {
   const { ref: subRef, inView: subIn } = useInView(0.2);
   const { ref: ctaRef, inView: ctaIn } = useInView(0.2);
   const { ref: mockupRef, inView: mockupIn } = useInView(0.1);
+  const router = useRouter();
 
   return (
     <>
@@ -125,13 +127,14 @@ shared files, decisions, and AI-searchable context for teams that need communica
             className={`ac-hidden ${ctaIn ? "ac-visible" : ""} flex flex-col sm:flex-row items-center justify-center gap-3 mb-14`}
             style={{ animationDelay: "0.24s" }}
           >
-            <button
+            <button onClick={()=>router.push('/start-free')}
               className="ac-btn-primary rounded-full px-7 py-3 text-[14px] font-semibold text-white"
               style={{ backgroundColor: "#4F5BD5" }}
             >
               Start free
             </button>
-            <button className="ac-btn-secondary rounded-full px-7 py-3 text-[14px] font-semibold text-gray-900 bg-white">
+            <button onClick={()=>router.push('/get-a-demo')}
+            className="ac-btn-secondary rounded-full px-7 py-3 text-[14px] font-semibold text-gray-900 bg-white">
               Get a demo
             </button>
           </div>

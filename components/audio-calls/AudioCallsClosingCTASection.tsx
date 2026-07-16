@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 function useInView(threshold = 0.15) {
@@ -27,6 +28,7 @@ function useInView(threshold = 0.15) {
 
 export default function AudioCallsClosingCTASection() {
   const { ref: cardRef, inView: cardIn } = useInView(0.1);
+  const router = useRouter();
 
   return (
     <>
@@ -111,16 +113,18 @@ export default function AudioCallsClosingCTASection() {
             className="cta-item flex flex-col sm:flex-row items-center justify-center gap-3 mb-7"
             style={{ animationDelay: "0.16s" }}
           >
-            <button
+            <button onClick={()=>router.push("/start-free")}
               className="cta-btn-primary rounded-full px-6 py-3 text-[14px] font-semibold text-white"
               style={{ backgroundColor: "#3457E8" }}
             >
               Start free
             </button>
-            <button className="cta-btn-outline rounded-full px-6 py-3 text-[14px] font-semibold text-white border border-white/25">
+            <button onClick={()=>router.push("/get-a-demo")}
+            className="cta-btn-outline rounded-full px-6 py-3 text-[14px] font-semibold text-white border border-white/25">
               Get a demo
             </button>
-            <button className="cta-btn-outline rounded-full px-6 py-3 text-[14px] font-semibold text-white border border-white/25">
+            <button onClick={()=>router.push("/zoikotime-integration")}
+             className="cta-btn-outline rounded-full px-6 py-3 text-[14px] font-semibold text-white border border-white/25">
               Explore ZoikoTime integration
             </button>
           </div>
