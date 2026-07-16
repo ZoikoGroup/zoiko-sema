@@ -57,7 +57,7 @@ const plans: Plan[] = [
       "Basic governance",
     ],
     cta: "Start team plan",
-    href: "#start-team",
+    href: "/pricing",
     popular: true,
   },
   {
@@ -73,7 +73,7 @@ const plans: Plan[] = [
       "ZoikoTime ready",
     ],
     cta: "Talk to sales",
-    href: "#talk-sales",
+    href: "/contact",
     popular: false,
   },
   {

@@ -293,7 +293,7 @@ export default function Footer() {
                 items={[
                   { label: "Secure Communication", href: "/secure-communication" },
                   { label: "Meeting to Summary", href: "/meeting-to-summary/" },
-                  { label: "Client Call Follow-Up", href: "/use-cases/client-followup" },
+                  { label: "Client Call Follow-Up", href: "/client-call-follow-up" },
                   { label: "Team Decision Tracking", href: "/team-decision-tracking" },
                   { label: "Remote Coordination", href: "/remote-coordination" },
                   { label: "Project Collaboration", href: "/project-collaboration" },
