@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi";
 
 function useInView(threshold = 0.15) {
@@ -36,6 +37,7 @@ const USE_CASES = [
     description:
       "Spot repeated blockers, decision delays, and handoff gaps across teams.",
     action: "Request operations demo",
+    href: "#",
   },
   {
     label: "PROJECT LEADER",
@@ -43,6 +45,7 @@ const USE_CASES = [
     description:
       "Understand project health from meetings, commitments, decisions, and action ownership.",
     action: "See project flow",
+    href: "#",
   },
   {
     label: "CLIENT SERVICES LEADER",
@@ -50,6 +53,7 @@ const USE_CASES = [
     description:
       "Connect client meetings to follow-ups, owners, and delivery signals.",
     action: "View client workflow",
+    href: "#",
   },
   {
     label: "COMPLIANCE TEAM",
@@ -57,6 +61,7 @@ const USE_CASES = [
     description:
       "Keep insights reviewable, exportable, and source-linked for audit readiness.",
     action: "View compliance workflow",
+    href: "regulated-workflows",
   },
   {
     label: "PEOPLE / WORKPLACE LEADER",
@@ -64,6 +69,7 @@ const USE_CASES = [
     description:
       "Identify collaboration friction and meeting-load patterns at an aggregate level.",
     action: "Explore team patterns",
+    href: "#",
   },
   {
     label: "EXECUTIVE SPONSOR",
@@ -71,6 +77,7 @@ const USE_CASES = [
     description:
       "Generate reviewed insight packs from verified work signals.",
     action: "Request executive demo",
+    href: "#",
   },
 ];
 
@@ -193,6 +200,7 @@ export default function EnterpriseUseCasesSection() {
                   {item.description}
                 </p>
 
+                <Link href={item.href}>
                 <button
                   type="button"
                   className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#4F5BD5] dark:text-[#7C86F0]"
@@ -200,6 +208,7 @@ export default function EnterpriseUseCasesSection() {
                   {item.action}
                   <FiArrowRight className="eu-arrow h-4 w-4" />
                 </button>
+                </Link>
               </div>
             ))}
           </div>

@@ -402,7 +402,7 @@ export function LoginSection() {
                         {/* Footer */}
                         <p className="mt-7 text-center text-[13px] text-gray-500 dark:text-gray-400">
                             Don&rsquo;t have an account?{" "}
-                            <Link href="/start-free" >
+                            <Link href="/signup" >
                                 <button
                                     type="button"
                                     className="font-semibold text-[#4F5BD5] hover:underline dark:text-[#8C95F2]"

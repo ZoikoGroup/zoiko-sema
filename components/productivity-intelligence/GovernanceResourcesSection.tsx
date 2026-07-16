@@ -13,6 +13,7 @@ import {
   FiArrowRight,
 } from "react-icons/fi";
 import type { IconType } from "react-icons";
+import Link from "next/link";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -45,6 +46,7 @@ type Resource = {
   title: string;
   description: string;
   action: string;
+  href: string;
 };
 
 const RESOURCES: Resource[] = [
@@ -54,6 +56,7 @@ const RESOURCES: Resource[] = [
     description:
       "Data categories, privacy requests, and data handling.",
     action: "View Privacy & Data",
+    href: "privacy-notice",
   },
   {
     icon: FiThumbsUp,
@@ -61,6 +64,7 @@ const RESOURCES: Resource[] = [
     description:
       "AI summary, action-item, and decision capture governance.",
     action: "Read Responsible AI",
+    href: "responsive-ai",
   },
   {
     icon: FiShield,
@@ -68,6 +72,7 @@ const RESOURCES: Resource[] = [
     description:
       "Security posture and enterprise review routes.",
     action: "Visit Security Center",
+    href: "security-center",
   },
   {
     icon: FiCheckSquare,
@@ -75,6 +80,7 @@ const RESOURCES: Resource[] = [
     description:
       "Broader trust and control evidence.",
     action: "View Compliance",
+    href: "compliance",
   },
   {
     icon: FiMonitor,
@@ -82,6 +88,7 @@ const RESOURCES: Resource[] = [
     description:
       "Supports procurement and data-processing review.",
     action: "View Subprocessors",
+    href: "subprocessors",
   },
   {
     icon: FiEye,
@@ -89,6 +96,7 @@ const RESOURCES: Resource[] = [
     description:
       "Accessible meeting and work-record workflows.",
     action: "View Accessibility",
+    href: "accessibility",
   },
   {
     icon: FiAlertCircle,
@@ -96,6 +104,7 @@ const RESOURCES: Resource[] = [
     description:
       "Routes concerns about security, privacy, abuse, AI, or accessibility.",
     action: "Report a Concern",
+    href: "report-concern",
   },
   {
     icon: FiFileText,
@@ -103,6 +112,7 @@ const RESOURCES: Resource[] = [
     description:
       "Supports enterprise contract and privacy review.",
     action: "View DPA",
+    href: "data-processing-addendum",
   },
 ];
 
@@ -247,7 +257,7 @@ export default function GovernanceResourcesSection() {
                   <p className="mt-3 flex-1 text-[14px] leading-7 text-gray-500 dark:text-gray-400">
                     {item.description}
                   </p>
-
+                  <Link href={item.href}>
                   <button
                     type="button"
                     className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#4F5BD5] dark:text-[#8A94F8]"
@@ -255,6 +265,7 @@ export default function GovernanceResourcesSection() {
                     {item.action}
                     <FiArrowRight className="gr-arrow h-4 w-4" />
                   </button>
+                  </Link>
                 </div>
               );
             })}
