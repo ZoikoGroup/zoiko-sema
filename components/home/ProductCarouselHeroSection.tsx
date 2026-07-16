@@ -28,12 +28,12 @@ function useInView(threshold = 0.15) {
 // Replace each `src` with your actual image URL. `href` is where the card links to.
 const carouselItems = [
   { id: 1, src: "/Home/Meeting1.png", alt: "Meetings", href: "#" },
-  { id: 2, src: "/Home/Meeting-1.png", alt: "Messaging", href: "#" },
-  { id: 3, src: "/Home/Meeting-2.png", alt: "AI Summaries", href: "#" },
+  { id: 2, src: "/Home/Meeting-1.png", alt: "Messaging", href: "/messaging" },
+  { id: 3, src: "/Home/Meeting-2.png", alt: "AI Summaries", href: "/ai-meetings" },
   { id: 4, src: "/Home/Meeting-3.png", alt: "Sema Agent", href: "#" },
-  { id: 5, src: "/Home/Meeting-4.png", alt: "ZoikoTime", href: "#" },
-  { id: 6, src: "/Home/Meeting-5.png", alt: "Calls", href: "#" },
-  { id: 7, src: "/Home/Meeting-6.png", alt: "Channels", href: "#" },
+  { id: 5, src: "/Home/Meeting-4.png", alt: "ZoikoTime", href: "https://zoikotime.com/" },
+  { id: 6, src: "/Home/Meeting-5.png", alt: "Calls", href: "/audio-calls" },
+  { id: 7, src: "/Home/Meeting-6.png", alt: "Channels", href: "/channels-spaces" },
 ];
 
 // Duplicated once so the marquee loop is seamless — never edit this directly,
