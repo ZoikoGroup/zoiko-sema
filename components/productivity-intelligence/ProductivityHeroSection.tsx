@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 function useInView(threshold = 0.15) {
@@ -191,13 +192,16 @@ export default function ProductivityHeroSection() {
                 buttonIn ? "pi-visible" : ""
               } mt-9 flex flex-col gap-3 sm:flex-row`}
             >
+              <Link href="/get-a-demo">
               <button className="pi-btn-primary rounded-full bg-[#4F5BD5] px-8 py-3 text-sm font-semibold text-white">
                 Request Demo
               </button>
-
+              </Link>
+              <Link href="#">
               <button className="pi-btn-secondary rounded-full bg-white px-8 py-3 text-sm font-semibold text-gray-900">
                 View Governance
               </button>
+              </Link>
             </div>
           </div>
 

@@ -310,8 +310,8 @@ export default function Footer() {
                 visible={navVisible}
                 delay={240}
                 items={[
-                  { label: "Sema + ZoikoTime", href: "/sema-zoikotime" },
-                  { label: "Workforce Truth", href: "/zoikotime/workforce-truth" },
+                  { label: "Sema + ZoikoTime", href: "/zoikotime" },
+                  { label: "Workforce Truth", href: "/workforce-truth" },
                   { label: "Meeting-to-Work", href: "/meeting-to-work" },
                   { label: "Verified Collaboration", href: "/verified-collaboration" },
                   { label: "Compliance & Audit", href: "/compliance-audit" },

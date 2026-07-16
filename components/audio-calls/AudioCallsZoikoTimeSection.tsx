@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 function useInView(threshold = 0.15) {
@@ -63,6 +64,7 @@ export default function AudioCallsZoikoTimeSection() {
   const { ref: headRef, inView: headIn } = useInView(0.2);
   const { ref: gridRef, inView: gridIn } = useInView(0.08);
   const { ref: ctaRef, inView: ctaIn } = useInView(0.2);
+  const router = useRouter();
 
   return (
     <>
@@ -174,10 +176,12 @@ export default function AudioCallsZoikoTimeSection() {
             ref={ctaRef}
             className={`zt-hidden ${ctaIn ? "zt-visible" : ""} flex flex-col sm:flex-row items-center justify-center gap-3`}
           >
-            <button className="zt-btn-primary rounded-full px-6 py-3 text-[14px] font-semibold text-gray-900 bg-white">
+            <button onClick={()=>router.push('/zoikotime-integration')}
+            className="zt-btn-primary rounded-full px-6 py-3 text-[14px] font-semibold text-gray-900 bg-white">
               Explore ZoikoTime integration
             </button>
-            <button className="zt-btn-secondary rounded-full px-6 py-3 text-[14px] font-semibold text-white border border-white/25">
+            <button onClick={()=>router.push('/talk-to-sales')}
+            className="zt-btn-secondary rounded-full px-6 py-3 text-[14px] font-semibold text-white border border-white/25">
               Talk to sales
             </button>
           </div>

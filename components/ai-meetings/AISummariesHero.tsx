@@ -1,4 +1,5 @@
 "use client"
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 
 // --- CUSTOM INTERSECTION OBSERVER REVEAL HOOK ---
@@ -35,6 +36,7 @@ function useScrollReveal() {
 
 export default function MeetingSummariesHero() {
   const [heroRef, heroVisible] = useScrollReveal();
+  const router = useRouter();
 
   const tags = [
     'Summary',
@@ -84,11 +86,12 @@ export default function MeetingSummariesHero() {
 
           {/* Primary Action Engagement Matrix */}
           <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2">
-            <button className="px-7 py-3.5 bg-blue-600 hover:bg-blue-500 font-semibold rounded-full text-sm transition-all duration-300 hover:-translate-y-0.5 shadow-[0px_8px_24px_rgba(37,99,235,0.35)] focus:outline-none focus:ring-2 focus:ring-blue-400">
+            <button onClick={()=>router.push('/start-free')} className="px-7 py-3.5 bg-blue-600 hover:bg-blue-500 font-semibold rounded-full text-sm transition-all duration-300 hover:-translate-y-0.5 shadow-[0px_8px_24px_rgba(37,99,235,0.35)] focus:outline-none focus:ring-2 focus:ring-blue-400">
               Start free
             </button>
             
-            <button className="px-7 py-3.5 bg-transparent hover:bg-white/5 font-semibold rounded-full text-sm transition-all duration-300 border border-white/20 dark:border-gray-800 hover:border-white/40 focus:outline-none">
+            <button onClick={()=>router.push('/contact')}
+            className="px-7 py-3.5 bg-transparent hover:bg-white/5 font-semibold rounded-full text-sm transition-all duration-300 border border-white/20 dark:border-gray-800 hover:border-white/40 focus:outline-none">
               Contact sales
             </button>
 

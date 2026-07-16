@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 function useInView(threshold = 0.15) {
@@ -96,6 +97,7 @@ export default function AdminConsoleZoikoTimeSection() {
   const { ref: headRef, inView: headIn } = useInView(0.2);
   const { ref: gridRef, inView: gridIn } = useInView(0.06);
   const { ref: ctaRef, inView: ctaIn } = useInView(0.3);
+  const router = useRouter();
 
   return (
     <>
@@ -202,10 +204,10 @@ export default function AdminConsoleZoikoTimeSection() {
             className={`aczt-hidden ${ctaIn ? "aczt-visible" : ""} flex flex-wrap items-center justify-center gap-3`}
             style={{ animationDelay: "0.1s" }}
           >
-            <button className="aczt-btn-primary rounded-full bg-white text-[#3A3564] text-[14px] font-semibold px-7 py-3.5">
+            <button onClick={()=>router.push('/sema-zoikotime')} className="aczt-btn-primary rounded-full bg-white text-[#3A3564] text-[14px] font-semibold px-7 py-3.5">
               Explore Sema + ZoikoTime
             </button>
-            <button className="aczt-btn-outline rounded-full border border-white/25 text-white text-[14px] font-semibold px-7 py-3.5">
+            <button onClick={()=>router.push('/integration-demo')} className="aczt-btn-outline rounded-full border border-white/25 text-white text-[14px] font-semibold px-7 py-3.5">
               Request an integration demo
             </button>
           </div>

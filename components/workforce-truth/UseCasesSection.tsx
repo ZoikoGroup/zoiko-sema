@@ -62,7 +62,7 @@ const USE_CASES: UseCase[] = [
     description:
       "Turn meeting content into summaries, decisions, questions, risks, and tasks.",
     linkLabel: "View Meeting to Summary",
-    href: "#",
+    href: "meeting-to-summary",
   },
   {
     icon: FiCheckSquare,
@@ -70,7 +70,7 @@ const USE_CASES: UseCase[] = [
     title: "Team Decision Tracking",
     description: "Link decisions to owners, changes, and evidence trails.",
     linkLabel: "View Decision Tracking",
-    href: "#",
+    href: "team-decision-tracking",
   },
   {
     icon: FiGlobe,
@@ -79,7 +79,7 @@ const USE_CASES: UseCase[] = [
     description:
       "Help distributed teams see what changed and what needs action — without more meetings.",
     linkLabel: "View Remote Coordination",
-    href: "#",
+    href: "remote-coordination",
   },
   {
     icon: FiMenu,
@@ -88,7 +88,7 @@ const USE_CASES: UseCase[] = [
     description:
       "Connect meetings, spaces, files, tasks, and approvals in one evidence chain.",
     linkLabel: "View Project Collaboration",
-    href: "#",
+    href: "project-collaboration",
   },
   {
     icon: FiShield,
@@ -97,7 +97,7 @@ const USE_CASES: UseCase[] = [
     description:
       "Support reviewable, permissioned, audit-ready collaboration records.",
     linkLabel: "View Regulated Workflows",
-    href: "#",
+    href: "regulated-workflows",
   },
 ];
 
