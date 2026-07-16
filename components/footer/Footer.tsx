@@ -311,11 +311,11 @@ export default function Footer() {
                 delay={240}
                 items={[
                   { label: "Sema + ZoikoTime", href: "/zoikotime" },
-                  { label: "Workforce Truth", href: "/zoikotime/workforce-truth" },
+                  { label: "Workforce Truth", href: "/workforce-truth" },
                   { label: "Meeting-to-Work", href: "/meeting-to-work" },
                   { label: "Verified Collaboration", href: "/verified-collaboration" },
                   { label: "Compliance & Audit", href: "/compliance-audit" },
-                  { label: "Productivity Intelligence", href: "/zoikotime/productivity" },
+                  { label: "Productivity Intelligence", href: "/productivity-intelligence" },
                   { label: "Request Demo", href: "/get-a-demo", badge: "Enterprise" },
                 ]}
               />

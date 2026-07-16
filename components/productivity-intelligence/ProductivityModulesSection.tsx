@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import {
   FiAperture,
   FiCheckCircle,
@@ -45,6 +46,7 @@ type Module = {
   description: string;
   action: string;
   iconBg: string;
+  href: string;
 };
 
 const MODULES: Module[] = [
@@ -56,6 +58,7 @@ const MODULES: Module[] = [
       "Meetings, summaries, action items, decisions, channels, projects, ZoikoTime records, and integrations.",
     action: "View signal map",
     iconBg: "bg-[#4F5BD5]",
+    href: "#",
   },
   {
     icon: FiCheckCircle,
@@ -65,6 +68,7 @@ const MODULES: Module[] = [
       "Owned actions, due dates, blocked status, unresolved decisions, and review status.",
     action: "Explore follow-through",
     iconBg: "bg-[#17A673]",
+    href: "#",
   },
   {
     icon: FiUsers,
@@ -74,6 +78,7 @@ const MODULES: Module[] = [
       "Aggregate handoffs, meetings, spaces, response friction, and cross-team dependency patterns.",
     action: "View patterns",
     iconBg: "bg-[#5B5CE6]",
+    href: "#",
   },
   {
     icon: FiAlertTriangle,
@@ -83,6 +88,7 @@ const MODULES: Module[] = [
       "Recurring blockers, waiting states, missing owners, delayed approvals, and system handoffs.",
     action: "Find blockers",
     iconBg: "bg-[#C48911]",
+    href: "#",
   },
   {
     icon: FiCheckSquare,
@@ -92,6 +98,7 @@ const MODULES: Module[] = [
       "Human approval before CRM sync, reports, HR review, audit exports, or executive packs.",
     action: "View governance",
     iconBg: "bg-[#0F9D91]",
+    href: "#",
   },
   {
     icon: FiFileText,
@@ -101,6 +108,7 @@ const MODULES: Module[] = [
       "PDF/CSV/API export states, permissions, retention, audit log, and watermark where required.",
     action: "Request demo",
     iconBg: "bg-[#4F46E5]",
+    href: "#",
   },
 ];
 
@@ -251,7 +259,7 @@ export default function ProductivityModulesSection() {
                   <p className="mt-5 text-[14px] leading-7 text-gray-500 dark:text-gray-400">
                     {module.description}
                   </p>
-
+                  <Link href={module.href}>
                   <button
                     type="button"
                     className="pm-link mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#4F5BD5] dark:text-[#7C86F0]"
@@ -259,6 +267,7 @@ export default function ProductivityModulesSection() {
                     {module.action}
                     <FiArrowRight className="h-4 w-4" />
                   </button>
+                  </Link>
                 </div>
               );
             })}
