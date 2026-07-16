@@ -373,7 +373,7 @@ const useCasesLeftColumn: UseCaseLink[] = [
   {
     title: "Project Management",
     desc: "Plan, manage tasks, share updates, and deliver projects on time.",
-    href: "/project-collaboration",
+    href: "/project-management",
     icon: caseIcon(<><path d="M20 7h-3a2 2 0 0 1-2-2V2" /><path d="M9 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z" /></>),
   },
   {
