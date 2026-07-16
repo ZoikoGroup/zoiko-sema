@@ -2,23 +2,23 @@ export function HelpCenterSupportPhilosophySection() {
   const steps = [
     {
       title: "Search",
-      icon: <img src="/help/icon-search.svg" alt="Search" />
+      icon: <img src="/help/icon-wrench.svg" alt="Search" className="w-8 h-8" />
     },
     {
       title: "Suggested Articles",
-      icon: <img src="/help/icon-document.svg" alt="Suggested Articles" />
+      icon: <img src="/help/icon-document.svg" alt="Suggested Articles" className="w-8 h-8" />
     },
     {
       title: "Troubleshooting",
-      icon: <img src="/help/icon-wrench.svg" alt="Troubleshooting" />
+      icon: <img src="/help/icon-search.svg" alt="Troubleshooting" className="w-8 h-8" />
     },
     {
       title: "Create Ticket",
-      icon: <img src="/help/icon-ticket.svg" alt="Create Ticket" />
+      icon: <img src="/help/icon-ticket.svg" alt="Create Ticket" className="w-8 h-8" />
     },
     {
       title: "Track Status",
-      icon: <img src="/help/icon-track.svg" alt="Track Status" />
+      icon: <img src="/help/icon-track.svg" alt="Track Status" className="w-8 h-8" />
     }
   ];
 
@@ -42,9 +42,7 @@ export function HelpCenterSupportPhilosophySection() {
             {steps.map((step, idx) => (
               <div key={idx} className="flex flex-col items-center">
                 <div className="w-[88px] h-[88px] mb-4 bg-white rounded-full flex items-center justify-center shadow-[0px_8px_24px_-8px_rgba(0,0,0,0.12)] relative z-10">
-                  <div className="w-6 h-6 flex justify-center items-center">
-                    {step.icon}
-                  </div>
+                  {step.icon}
                 </div>
                 <h4 className="text-zinc-900 text-sm font-medium font-['Inter'] text-center">
                   {step.title}

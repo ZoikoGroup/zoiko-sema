@@ -1,0 +1,11 @@
+export { default as HeroSection } from "./HeroSection";
+export { default as WhatItReportsSection } from "./WhatItReportsSection";
+export { default as ProductProofSection } from "./ProductProofSection";
+export { default as MetricMethodologySection } from "./MetricMethodologySection";
+export { default as InsightTaxonomySection } from "./InsightTaxonomySection";
+export { default as MeetingToWorkSection } from "./MeetingToWorkSection";
+export { default as ReportsViewsAlertsSection } from "./ReportsViewsAlertsSection";
+export { default as ZoikoTimeContextSection } from "./ZoikoTimeContextSection";
+export { default as RolesPlansSection } from "./RolesPlansSection";
+export { default as PrivacyTrustSection } from "./PrivacyTrustSection";
+export { default as FAQSection } from "./FAQSection";
