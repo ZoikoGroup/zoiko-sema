@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 function useInView(threshold = 0.15) {
@@ -27,6 +28,7 @@ function useInView(threshold = 0.15) {
 
 export default function AdminConsoleClosingCtaSection() {
   const { ref: cardRef, inView: cardIn } = useInView(0.15);
+  const router = useRouter();
 
   return (
     <>
@@ -76,13 +78,16 @@ export default function AdminConsoleClosingCtaSection() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
-              <button className="accs-btn-primary rounded-full bg-white text-[#0F0F2A] text-[14px] font-semibold px-6 py-3">
+              <button onClick={()=>router.push("/get-a-demo")}
+               className="accs-btn-primary rounded-full bg-white text-[#0F0F2A] text-[14px] font-semibold px-6 py-3">
                 Get a demo
               </button>
-              <button className="accs-btn-outline rounded-full border border-white/20 text-white text-[14px] font-semibold px-6 py-3">
+              <button onClick={()=>router.push("/talk-to-sales")}
+               className="accs-btn-outline rounded-full border border-white/20 text-white text-[14px] font-semibold px-6 py-3">
                 Talk to sales
               </button>
-              <button className="accs-btn-outline rounded-full border border-white/20 text-white text-[14px] font-semibold px-6 py-3">
+              <button onClick={()=>router.push("/zoikotime-integration")}
+              className="accs-btn-outline rounded-full border border-white/20 text-white text-[14px] font-semibold px-6 py-3">
                 Explore ZoikoTime integration
               </button>
             </div>

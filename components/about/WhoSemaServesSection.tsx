@@ -9,12 +9,14 @@ import {
   ArrowRight,
   LucideIcon,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface Audience {
   icon: LucideIcon;
   title: string;
   description: string;
   action: string;
+  link:string;
 }
 
 const audiences: Audience[] = [
@@ -24,6 +26,7 @@ const audiences: Audience[] = [
     description:
       "Keep everyday communication organized and actionable with messaging, meetings, summaries, spaces, and follow-ups.",
     action: "View Business Communication",
+    link:"/business-communication"
   },
   {
     icon: FolderKanban,
@@ -31,6 +34,7 @@ const audiences: Audience[] = [
     description:
       "Track work across meetings, decisions, files, and timelines in dedicated project spaces.",
     action: "View Project Collaboration",
+    link:"/project-collaboration"
   },
   {
     icon: Globe,
@@ -38,6 +42,7 @@ const audiences: Audience[] = [
     description:
       "Coordinate across time zones with meeting summaries, channels, spaces, and async updates.",
     action: "View Remote Coordination",
+    link:"/remote-coordination"
   },
   {
     icon: UserRound,
@@ -45,6 +50,7 @@ const audiences: Audience[] = [
     description:
       "Manage client work, follow-ups, and deliverables with client spaces and follow-up controls.",
     action: "View Freelancer Workflow",
+    link:"/freelancer-workflow"
   },
   {
     icon: Settings,
@@ -52,6 +58,7 @@ const audiences: Audience[] = [
     description:
       "Manage users, roles, access, security, IT settings, and integrations from the Admin Console.",
     action: "View Admin Console",
+    link:"/admin-console"
   },
   {
     icon: ShieldCheck,
@@ -59,10 +66,12 @@ const audiences: Audience[] = [
     description:
       "Keep communication moderated and governed with enterprise trails, retention, and audit records.",
     action: "View Regulated Workflow",
+    link:"/regulated-workflow"
   },
 ];
 
 export default function WhoSemaServesSection() {
+  const router = useRouter();
   return (
     <section className="bg-[#F3F2FD] px-6 py-16 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl text-center">
@@ -78,7 +87,7 @@ export default function WhoSemaServesSection() {
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-5 text-left sm:grid-cols-2 lg:grid-cols-3">
-          {audiences.map(({ icon: Icon, title, description, action }) => (
+          {audiences.map(({ icon: Icon, title, description, action,link }) => (
             <div
               key={title}
               className="flex flex-col justify-between rounded-2xl bg-white p-6 shadow-sm"
@@ -90,7 +99,8 @@ export default function WhoSemaServesSection() {
               <p className="mt-2 text-[13.5px] leading-relaxed text-[#5B627E]">
                 {description}
               </p>
-              <button className="mt-5 flex items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]">
+              <button onClick={()=>router.push(link)}
+              className="mt-5 flex cursor-pointer items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]">
                 {action}
                 <ArrowRight size={12} />
               </button>

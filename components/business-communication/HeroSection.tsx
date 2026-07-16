@@ -1,5 +1,6 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState, useRef } from 'react';
 
 // ── Intersection observer hook for scroll-triggered activation ──
@@ -60,6 +61,7 @@ function CountUp({ target, duration = 2000, suffix = "" }: { target: number; dur
 
 export default function HeroSection() {
   const { ref: heroRef, inView: heroInView } = useInView(0.1);
+  const router = useRouter();
 
   return (
     <>
@@ -132,12 +134,14 @@ export default function HeroSection() {
               }`}
               style={{ animationDelay: "0.35s" }}
             >
-              <button className="group relative px-7 py-3.5 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-bold text-base rounded-full shadow-[0px_10px_24px_-8px_rgba(79,70,229,0.50)] transition-all duration-200 hover:-translate-y-0.5 flex items-center gap-2">
+              <button onClick={()=>router.push('/get-a-demo')}
+              className="group relative px-7 py-3.5 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-bold text-base rounded-full shadow-[0px_10px_24px_-8px_rgba(79,70,229,0.50)] transition-all duration-200 hover:-translate-y-0.5 flex items-center gap-2">
                 <span>Get a demo</span>
                 
               </button>
 
-              <button className="px-7 py-3.5 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-bold text-base rounded-full border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-200 hover:border-slate-300 dark:hover:border-slate-700 hover:-translate-y-0.5">
+              <button onClick={()=>router.push('/start-free')}
+              className="px-7 py-3.5 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-bold text-base rounded-full border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-200 hover:border-slate-300 dark:hover:border-slate-700 hover:-translate-y-0.5">
                 Start free
               </button>
             </div>

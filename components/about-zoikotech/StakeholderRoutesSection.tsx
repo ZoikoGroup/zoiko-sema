@@ -8,6 +8,7 @@ import {
   Bell,
   LucideIcon,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface RouteCard {
   icon: LucideIcon;
@@ -15,6 +16,8 @@ interface RouteCard {
   description: string;
   primaryAction: string;
   secondaryAction: string;
+  link:string;
+  linksec:string;
 }
 
 const routes: RouteCard[] = [
@@ -25,6 +28,8 @@ const routes: RouteCard[] = [
       "Understand Zoiko Sema, trust routes, and enterprise deployment paths.",
     primaryAction: "Explore Sema",
     secondaryAction: "Contact Sales",
+    link:"/",
+    linksec:"/contact"
   },
   {
     icon: LayoutGrid,
@@ -33,6 +38,8 @@ const routes: RouteCard[] = [
       "Review admin controls, security policies, and status resources.",
     primaryAction: "Admin Console",
     secondaryAction: "Trust Center",
+    link:"/admin-console",
+    linksec:"/trust-center"
   },
   {
     icon: Code2,
@@ -41,6 +48,8 @@ const routes: RouteCard[] = [
       "Explore partner, integration, or ecosystem collaboration routes.",
     primaryAction: "Partners",
     secondaryAction: "Developer Docs",
+    link:"/partners",
+    linksec:"/developer-docs"
   },
   {
     icon: FileText,
@@ -49,6 +58,8 @@ const routes: RouteCard[] = [
       "Access approved company story and the press inquiry route.",
     primaryAction: "Press",
     secondaryAction: "Contact",
+    link:"/press",
+    linksec:"/contact"
   },
   {
     icon: GraduationCap,
@@ -57,6 +68,8 @@ const routes: RouteCard[] = [
       "Learn how to join the teams building communication and collaboration products.",
     primaryAction: "Careers",
     secondaryAction: "About Sema",
+    link:"/careers",
+    linksec:"/about"
   },
   {
     icon: Bell,
@@ -65,10 +78,13 @@ const routes: RouteCard[] = [
       "Find help, system status, or a contact route quickly.",
     primaryAction: "Help Center",
     secondaryAction: "System Status",
+    link:"/help-center",
+    linksec:"/system-status"
   },
 ];
 
 export default function StakeholderRoutesSection() {
+  const router = useRouter();
   return (
     <section className="bg-white px-6 py-16 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl text-center">
@@ -84,7 +100,7 @@ export default function StakeholderRoutesSection() {
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-5 text-left sm:grid-cols-2 lg:grid-cols-3">
-          {routes.map(({ icon: Icon, title, description, primaryAction, secondaryAction }) => (
+          {routes.map(({ icon: Icon, title, description, primaryAction, secondaryAction,link,linksec }) => (
             <div
               key={title}
               className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
@@ -97,10 +113,12 @@ export default function StakeholderRoutesSection() {
                 {description}
               </p>
               <div className="mt-4 flex flex-wrap items-center gap-2">
-                <button className="rounded-lg bg-[#4F46E5] px-3.5 py-2 text-xs font-semibold text-white transition hover:bg-[#3E51DE]">
+                <button onClick={()=>router.push(link)}
+                className="rounded-lg bg-[#4F46E5] cursor-pointer px-3.5 py-2 text-xs font-semibold text-white transition hover:bg-[#3E51DE]">
                   {primaryAction}
                 </button>
-                <button className="rounded-lg border border-gray-200 px-3.5 py-2 text-xs font-semibold text-gray-700 transition hover:bg-gray-50">
+                <button onClick={()=>router.push(linksec)}
+                 className="rounded-lg cursor-pointer border border-gray-200 px-3.5 py-2 text-xs font-semibold text-gray-700 transition hover:bg-gray-50">
                   {secondaryAction}
                 </button>
               </div>

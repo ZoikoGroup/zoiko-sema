@@ -1,0 +1,9 @@
+export { default as Hero } from "./Hero";
+export { default as Integrations } from "./Integrations";
+export { default as Lifecycle } from "./Lifecycle";
+export { default as IntegrationHub } from "./IntegrationHub";
+export { default as PlatformCards } from "./PlatformCards";
+export { default as InfiniteScale } from "./InfiniteScale";
+export { default as Observability } from "./Observability";
+export { default as DeveloperExperience } from "./DeveloperExperience";
+export { default as FAQ } from "./FAQ";

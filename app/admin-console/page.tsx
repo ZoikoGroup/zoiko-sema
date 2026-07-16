@@ -1,3 +1,9 @@
+import { Metadata } from "next";
+export const metadata = {
+  title: "Smart Enterprise Admin Console | Zoiko Sema",
+  description:
+    "Manage your organization with Zoiko Sema enterprise admin console. Control users, permissions, workspaces, and settings from one centralized platform.",
+};
 import { 
     AdminConsoleCapabilitiesSection,
     AdminConsoleHeroSection,

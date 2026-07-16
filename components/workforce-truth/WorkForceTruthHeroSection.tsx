@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 // Reusable scroll-in-view hook (same pattern as the other sections)
@@ -146,18 +147,23 @@ export function WorkforceTruthHeroSection() {
               className={`zt-hidden ${ctaIn ? "zt-visible" : ""} flex flex-col items-stretch gap-3 sm:flex-row sm:items-center`}
               style={{ animationDelay: "0.24s" }}
             >
+              <Link href="/get-a-demo">
+              
               <button
                 type="button"
                 className="zt-btn-primary rounded-full bg-[#4F5BD5] px-8 py-3 text-[14px] font-semibold text-white"
               >
                 Request Demo
               </button>
+              </Link>
+              <Link href="#">
               <button
                 type="button"
                 className="zt-btn-secondary rounded-full border border-white/25 bg-white/[0.04] px-8 py-3 text-[14px] font-semibold text-white backdrop-blur-[4px]"
               >
                 Press Contact
               </button>
+              </Link>
             </div>
           </div>
 

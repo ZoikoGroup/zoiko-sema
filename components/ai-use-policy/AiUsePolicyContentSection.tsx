@@ -1,10 +1,16 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 const BRAND = "#3457E8";
 
-type InfoBox = { text?: string; linkText?: string; linkHref?: string; fullLink?: boolean };
+type InfoBox = {
+  text?: string;
+  linkText?: string;
+  linkHref?: string;
+  fullLink?: boolean;
+};
 
 type Section = {
   id: string;
@@ -76,7 +82,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Configure AI availability at the workspace level.",
       linkText: "View AI Controls",
-      linkHref: "#",
+      linkHref: "/ai-controls",
     },
   },
   {
@@ -89,7 +95,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Review how AI-related data is protected.",
       linkText: "Read Privacy Notice",
-      linkHref: "#",
+      linkHref: "/privacy-notice",
     },
   },
   {
@@ -124,8 +130,9 @@ const sections: Section[] = [
       "If an AI output appears inaccurate, inappropriate, or misused, please report it so our AI governance team can investigate.",
     ],
     infoBox: {
-      linkText: "Report AI Concern — routes to the AI governance reporting form.",
-      linkHref: "#",
+      linkText:
+        "Report AI Concern — routes to the AI governance reporting form.",
+      linkHref: "/report-concern",
       fullLink: true,
     },
   },
@@ -162,7 +169,7 @@ export default function AiUsePolicyContentSection() {
           }
         });
       },
-      { rootMargin: "-15% 0px -70% 0px", threshold: 0 }
+      { rootMargin: "-15% 0px -70% 0px", threshold: 0 },
     );
 
     Object.values(sectionRefs.current).forEach((el) => {
@@ -184,6 +191,7 @@ export default function AiUsePolicyContentSection() {
     }, 700);
   };
 
+  const router = useRouter();
   return (
     <>
       <style>{`
@@ -199,10 +207,12 @@ export default function AiUsePolicyContentSection() {
         }
       `}</style>
 
-      <section aria-label="AI Use Policy content" className="w-full bg-white py-16 md:py-20">
+      <section
+        aria-label="AI Use Policy content"
+        className="w-full bg-white py-16 md:py-20"
+      >
         <div className="mx-auto w-full max-w-7xl px-6 md:px-10 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-12 lg:gap-16">
-
             {/* Sidebar TOC */}
             <aside className="hidden lg:block">
               <div className="sticky top-10">
@@ -252,7 +262,10 @@ export default function AiUsePolicyContentSection() {
                     </h2>
 
                     {s.paragraphs.map((p, pi) => (
-                      <p key={pi} className="text-[14px] leading-relaxed text-gray-500 mb-3 max-w-[720px]">
+                      <p
+                        key={pi}
+                        className="text-[14px] leading-relaxed text-gray-500 mb-3 max-w-[720px]"
+                      >
                         {p}
                       </p>
                     ))}
@@ -262,7 +275,9 @@ export default function AiUsePolicyContentSection() {
                         className="mt-4 rounded-xl px-5 py-4 flex flex-wrap items-center justify-between gap-3"
                         style={{ background: "#EEF0FC" }}
                       >
-                        <span className="text-[13px] text-gray-600">{s.infoBox.text}</span>
+                        <span className="text-[13px] text-gray-600">
+                          {s.infoBox.text}
+                        </span>
                         {s.infoBox.linkText && (
                           <a
                             href={s.infoBox.linkHref}
@@ -287,29 +302,39 @@ export default function AiUsePolicyContentSection() {
                     )}
                   </div>
 
-                  {i < sections.length - 1 && <div className="border-t border-gray-100" />}
+                  {i < sections.length - 1 && (
+                    <div className="border-t border-gray-100" />
+                  )}
                 </div>
               ))}
 
               {/* Closing enterprise CTA */}
               <div
                 className="mt-10 rounded-2xl px-8 py-10 text-center"
-                style={{ background: "linear-gradient(135deg, #4A46C4 0%, #33305C 100%)" }}
+                style={{
+                  background:
+                    "linear-gradient(135deg, #4A46C4 0%, #33305C 100%)",
+                }}
               >
                 <h3 className="text-[17px] font-bold text-white mb-3">
                   Need enterprise AI governance documentation?
                 </h3>
-                <p className="text-[13.5px] leading-relaxed max-w-[560px] mx-auto mb-6" style={{ color: "#C7C9E8" }}>
+                <p
+                  className="text-[13.5px] leading-relaxed max-w-[560px] mx-auto mb-6"
+                  style={{ color: "#C7C9E8" }}
+                >
                   Enterprise and regulated customers can request detailed AI
-                  governance documentation, review retention configurations,
-                  or discuss sensitive workspace controls with our team.
+                  governance documentation, review retention configurations, or
+                  discuss sensitive workspace controls with our team.
                 </p>
-                <button className="aiuc-cta-btn bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3">
+                <button
+                  onClick={() => router.push("/contact")}
+                  className="aiuc-cta-btn bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3"
+                >
                   Contact Sales
                 </button>
               </div>
             </div>
-
           </div>
         </div>
       </section>

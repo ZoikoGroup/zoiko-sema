@@ -7,6 +7,7 @@ import React, { useEffect, useRef, useState } from "react";
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const el = ref.current;
@@ -132,7 +133,8 @@ export default function AudioCallsHeroSection() {
             className={`ac-hidden ${ctaIn ? "ac-visible" : ""} flex flex-col sm:flex-row items-center justify-center gap-3 mb-14`}
             style={{ animationDelay: "0.24s" }}
           >
-            <button
+            <button 
+            onClick={()=>router.push('/start-free')}
               className="ac-btn-primary rounded-full px-7 py-3 text-[14px] font-semibold text-gray-900 bg-white"
             >
               Start free

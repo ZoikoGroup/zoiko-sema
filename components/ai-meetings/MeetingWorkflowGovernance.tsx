@@ -1,4 +1,5 @@
 "use client"
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 
 // --- CUSTOM INTERSECTION OBSERVER HOOK FOR FLOATING REVEAL EFFECTS ---
@@ -34,11 +35,11 @@ export default function ZoikoSemaPlatformTour() {
   const [govRef, govVisible] = useScrollReveal();
 
   const integrationApps = [
-    { name: 'Mail', desc: 'Send a clean follow-up email after the meeting.', linkText: 'Draft follow-up' },
-    { name: 'Calendar', desc: 'Attach summary to the meeting event and next meeting.', linkText: 'Attach to event' },
-    { name: 'Files', desc: 'Save the approved summary as a shared document or PDF.', linkText: 'Save summary' },
-    { name: 'Search', desc: 'Find outcomes later by decision, person, date, topic, or client.', linkText: 'Search records' },
-    { name: 'ZoikoTime', desc: 'Connect approved outcomes to work context where policy allows.', linkText: 'Explore bridge' },
+    { name: 'Mail', desc: 'Send a clean follow-up email after the meeting.', linkText: 'Draft follow-up',href:"/follow-up" },
+    { name: 'Calendar', desc: 'Attach summary to the meeting event and next meeting.', linkText: 'Attach to event',href:"/attach-to-event" },
+    { name: 'Files', desc: 'Save the approved summary as a shared document or PDF.', linkText: 'Save summary',href:"/save-summary" },
+    { name: 'Search', desc: 'Find outcomes later by decision, person, date, topic, or client.', linkText: 'Search records',href:"/search-records" },
+    { name: 'ZoikoTime', desc: 'Connect approved outcomes to work context where policy allows.', linkText: 'Explore bridge',href:"/explore-bridge" },
   ];
 
   const policyRows = [
@@ -73,6 +74,7 @@ export default function ZoikoSemaPlatformTour() {
       color: 'bg-orange-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300'
     }
   ];
+  const router = useRouter();
 
   return (
     <div className="w-full min-h-screen bg-white dark:bg-gray-950 text-slate-900 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden">
@@ -175,7 +177,7 @@ export default function ZoikoSemaPlatformTour() {
             {integrationApps.map((app, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-gray-900 border border-slate-200/70 dark:border-gray-850 p-5 rounded-2xl shadow-[0px_2px_8px_rgba(18,19,43,0.01)] flex flex-col justify-between space-y-4 group transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md hover:border-blue-500/30 dark:hover:border-blue-400/30"
+                className="bg-white dark:bg-gray-900 border border-slate-200/70 dark:border-gray-850 p-5 rounded-2xl shadow-[0px_2px_8px_rgba(18,19,43,0.01)] flex flex-col justify-between space-y-4 group transition-all duration-300 hover:shadow-md hover:border-blue-500/30 dark:hover:border-blue-400/30"
               >
                 <div className="space-y-2">
                   <h4 className="text-sm font-bold text-slate-900 dark:text-white font-sans group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
@@ -185,7 +187,7 @@ export default function ZoikoSemaPlatformTour() {
                     {app.desc}
                   </p>
                 </div>
-                <div className="flex items-center gap-1 text-xs font-semibold text-blue-600 dark:text-blue-400 group-hover:gap-2 transition-all">
+                <div onClick={()=>router.push(app.href)} className="flex cursor-pointer items-center gap-1 text-xs font-semibold text-blue-600 dark:text-blue-400 group-hover:gap-2 transition-all">
                   <span>{app.linkText}</span>
                   <span className="font-bold">→</span>
                 </div>

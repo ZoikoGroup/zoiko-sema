@@ -1,3 +1,11 @@
+import { Metadata } from "next";
+export const metadata = {
+  title:"Zoiko Sema | Intelligent Communication Platform",
+description:
+"Bring conversations, meetings, decisions, and actions together with Zoiko Sema intelligent communication platform for modern teams and organizations."
+}
+
+
 import {
   ProductOverviewHeroSection,
   ProductOverviewModulesSection,
