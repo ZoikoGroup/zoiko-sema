@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
+import Link from "next/link";
 
 function useInView(threshold = 0.15) {
     const ref = useRef<HTMLDivElement>(null);
@@ -36,36 +37,42 @@ const SCENARIOS = [
         title:
             "Restricted room, decision pins, board files, and owned follow-ups.",
         action: "Get a demo",
+        link: "/get-a-demo",
     },
     {
         category: "Client & Partner Work",
         title:
             "Scoped guest room, meeting notes, restricted files, and expiry.",
         action: "Talk to sales",
+        link: "/contact-sales",
     },
     {
         category: "Legal & Contract Review",
         title:
             "Redlines, approvals, decision record, legal hold, and evidence export.",
         action: "Explore regulated workflows",
+        link: "/regulated-workflows",
     },
     {
         category: "HR & People Operations",
         title:
             "Private interviews, employee matters, and sensitive-space AI restrictions.",
         action: "View Trust Center",
+        link: "/trust-center",
     },
     {
         category: "Finance & Procurement",
         title:
             "Budget, vendor, and approval workflows with separation of duties.",
         action: "Get a demo",
+        link: "/get-a-demo",
     },
     {
         category: "Regulated Operations",
         title:
             "Policy-first workspace with approvals, retention, and legal hold.",
         action: "Explore regulated workflows",
+        link: "/regulated-workflows",
     },
 ];
 
@@ -235,7 +242,7 @@ export default function SecureScenariosSection() {
                                 <p className="mt-5 min-h-[72px] text-[15px] leading-7 text-[#172046] dark:text-white">
                                     {item.title}
                                 </p>
-
+                            <Link href={item.link}>
                                 <button
                                     type="button"
                                     className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#4F5BD5] dark:text-[#8A94F8]"
@@ -244,6 +251,7 @@ export default function SecureScenariosSection() {
 
                                     <FiArrowRight className="ss-arrow h-4 w-4" />
                                 </button>
+                            </Link>
                             </div>
                         ))}
                     </div>

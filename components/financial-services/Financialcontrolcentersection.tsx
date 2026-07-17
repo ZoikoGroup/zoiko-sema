@@ -117,7 +117,7 @@ export function FinancialControlCenterSection() {
           >
             {/* 👇 replace src with your Figma export (PNG in /public/images/) */}
             <img
-              src="/images/financial-control-center.png"
+              src="/financial-services/financial-control-center.jpg"
               alt="Zoiko Sema advisor workspace dashboard shown on a monitor, unifying communication feeds and review queues"
               loading="lazy"
               className="fcc-image w-full rounded-2xl shadow-2xl"
