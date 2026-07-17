@@ -23,7 +23,7 @@ const menuItems: NavItem[] = [
       { label: "Workflows", href: "/workflows", desc: "Automate approvals and processes across your team and tools." },
       { label: "AI Meeting Summaries", href: "/ai-meetings", desc: "Automatic summaries, action items, and key decisions." },
       { label: "AI Assistant", href: "/sema-ai", desc: "Your context-aware assistant across chats, meetings, and docs." },
-      { label: "Insights & Analytics", href: "/insights-anayltics", desc: "Communication and collaboration insights to drive productivity." },
+      { label: "Insights & Analytics", href: "/insights-analytics", desc: "Communication and collaboration insights to drive productivity." },
       { label: "Confidential Mode", href: "/confidential-mode", desc: "Extra protection for sensitive conversations and shared content." },
     ],
   },
@@ -32,11 +32,11 @@ const menuItems: NavItem[] = [
     url: "/solutions",
     children: [
       { label: "Enterprise Teams", href: "/enterprise", desc: "Scale communication, streamline workflows, and keep everyone aligned." },
-      { label: "Department Solutions", href: "/solutions/departments", desc: "Tailored for IT, HR, Finance, Sales, and Operations teams." },
+      { label: "Department Solutions", href: "/department-solutions", desc: "Tailored for IT, HR, Finance, Sales, and Operations teams." },
       { label: "Hybrid & Remote Teams", href: "/solutions/hybrid-remote", desc: "Empower distributed teams with secure, inclusive collaboration." },
       { label: "Financial Services", href: "/financial-services", desc: "Secure communication and compliance for regulated institutions." },
       { label: "Healthcare", href: "/healthcare", desc: "Protect patient data and improve care team collaboration." },
-      { label: "Government", href: "/solutions/government", desc: "Meet compliance standards and support public sector work securely." },
+      { label: "Government", href: "/government", desc: "Meet compliance standards and support public sector work securely." },
       { label: "Security & Compliance", href: "/security-compliance", desc: "Enterprise-grade security, data protection, and regulatory compliance." },
       { label: "Productivity & Efficiency", href: "/individual-productivity", desc: "Reduce manual work and boost team productivity with AI." },
       { label: "Integration & Scalability", href: "/integration-scalability", desc: "Connect with the tools you use and scale with confidence." },
@@ -49,13 +49,13 @@ const menuItems: NavItem[] = [
       { label: "Team Collaboration", href: "/use-cases/team-collaboration", desc: "Keep teams connected, aligned, and productive in one place." },
       { label: "Project Management", href: "/project-collaboration", desc: "Plan, manage tasks, share updates, and deliver projects on time." },
       { label: "Customer Support", href: "/customer-support", desc: "Resolve issues faster and deliver exceptional customer experiences." },
-      { label: "Education", href: "/use-cases/education", desc: "Enable engaging learning, discussions, and collaboration for students and educators." },
+      { label: "Education", href: "/education", desc: "Enable engaging learning, discussions, and collaboration for students and educators." },
       { label: "Security & Compliance", href: "/security-compliance", desc: "Communicate securely with Confidential Mode and policy controls." },
-      { label: "Marketing", href: "/use-cases/marketing", desc: "Launch campaigns, align teams, and move faster from idea to impact." },
+      { label: "Marketing", href: "/marketing", desc: "Launch campaigns, align teams, and move faster from idea to impact." },
       { label: "Remote & Hybrid Work", href: "/use-cases/remote-hybrid-work", desc: "Empower distributed teams with secure, inclusive communication." },
       { label: "Healthcare", href: "/use-case-healthcare", desc: "Improve care team communication and protect patient data." },
       { label: "Government", href: "/use-cases/government", desc: "Meet compliance standards and enhance public sector collaboration." },
-      { label: "Retail & eCommerce", href: "/use-cases/retail-ecommerce", desc: "Connect teams across stores, warehouses, and HQ to serve customers better." },
+      { label: "Retail & eCommerce", href: "/retail-ecommerce", desc: "Connect teams across stores, warehouses, and HQ to serve customers better." },
       { label: "Sales & Enablement", href: "/use-cases/sales-enablement", desc: "Share content, track conversations, and close deals faster." },
       { label: "Travel & Hospitality", href: "/use-cases/travel-hospitality", desc: "Coordinate teams and deliver seamless guest experiences." },
     ],
@@ -210,7 +210,7 @@ const productColumns: ProductColumn[] = [
       {
         title: "Insights & Analytics",
         desc: "Communication and collaboration insights to drive productivity.",
-        href: "/insights-anayltics",
+        href: "/insights-analytics",
         icon: productIcon(<polyline points="3 17 9 11 13 15 21 7" />),
       },
       {
@@ -273,7 +273,7 @@ const solutionColumns: SolutionColumn[] = [
       {
         title: "Department Solutions",
         desc: "Tailored for IT, HR, Finance, Sales, and Operations teams.",
-        href: "/solutions/departments",
+        href: "/department-solutions",
         icon: solutionIcon(<><rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></>),
       },
       {
@@ -298,13 +298,13 @@ const solutionColumns: SolutionColumn[] = [
       {
         title: "Healthcare",
         desc: "Protect patient data and improve care team collaboration.",
-        href: "/solutions/healthcare",
+        href: "/healthcare",
         icon: solutionIcon(<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />),
       },
       {
         title: "Government",
         desc: "Meet compliance standards and support public sector work securely.",
-        href: "/solutions/government",
+        href: "/government",
         icon: solutionIcon(<><line x1="3" y1="22" x2="21" y2="22" /><line x1="6" y1="18" x2="6" y2="11" /><line x1="10" y1="18" x2="10" y2="11" /><line x1="14" y1="18" x2="14" y2="11" /><line x1="18" y1="18" x2="18" y2="11" /><polygon points="12 2 21 8 3 8" /></>),
       },
     ],
@@ -323,7 +323,7 @@ const solutionColumns: SolutionColumn[] = [
       {
         title: "Productivity & Efficiency",
         desc: "Reduce manual work and boost team productivity with AI.",
-        href: "/solutions/productivity",
+        href: "/productivity-intelligence",
         icon: solutionIcon(<><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></>),
       },
       {
@@ -385,7 +385,7 @@ const useCasesLeftColumn: UseCaseLink[] = [
   {
     title: "Education",
     desc: "Enable engaging learning, discussions, and collaboration for students and educators.",
-    href: "/use-cases/education",
+    href: "/education",
     icon: caseIcon(<><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></>),
   },
   {
@@ -397,7 +397,7 @@ const useCasesLeftColumn: UseCaseLink[] = [
   {
     title: "Marketing",
     desc: "Launch campaigns, align teams, and move faster from idea to impact.",
-    href: "/use-cases/marketing",
+    href: "/marketing",
     icon: caseIcon(<><path d="M3 11l18-5v12L3 14v-3z" /><path d="M11.6 16.8a2 2 0 0 1-3.2 2.4L6 15" /></>),
   },
 ];
@@ -424,7 +424,7 @@ const useCasesRightColumn: UseCaseLink[] = [
   {
     title: "Retail & eCommerce",
     desc: "Connect teams across stores, warehouses, and HQ to serve customers better.",
-    href: "/use-cases/retail-ecommerce",
+    href: "/retail-ecommerce",
     icon: caseIcon(<><circle cx="9" cy="21" r="1" /><circle cx="20" cy="21" r="1" /><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" /></>),
   },
   {
