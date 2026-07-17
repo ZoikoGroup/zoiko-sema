@@ -65,9 +65,9 @@ const menuItems: NavItem[] = [
     url: "/zoikotime",
     children: [
       { label: "Overview", href: "/zoikotime/overview", desc: "See how ZoikoTime works and the value it delivers." },
-      { label: "Workforce Overview", href: "/workforce-truth", desc: "Real-time visibility into activity, status, and performance." },
+      { label: "Workforce Overview", href: "/zoikotime/workforce-overview", desc: "Real-time visibility into activity, status, and performance." },
       { label: "Performance Analytics", href: "/zoikotime/performance-analytics", desc: "Insights and reports that help you drive productivity and outcomes." },
-      { label: "Compliance & Audit", href: "/compliance-audit", desc: "Audit trails, data retention, and policy compliance made simple." },
+      { label: "Compliance & Audit", href: "/zoikotime/compliance-audit", desc: "Audit trails, data retention, and policy compliance made simple." },
       { label: "Time Tracking", href: "/zoikotime/time-tracking", desc: "Automatic time tracking with smart classification and accuracy." },
       { label: "Break Management", href: "/zoikotime/break-management", desc: "Define breaks, enforce policies, and maintain healthy work habits." },
       { label: "Alerts & Notifications", href: "/zoikotime/alerts-notifications", desc: "Custom alerts for inactivity, overtime, breaks, and policy events." },
@@ -607,7 +607,7 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Workforce Overview",
       desc: "Real-time visibility into activity, status, and performance.",
-      href: "/workforce-truth",
+      href: "/zoikotime/workforce-overview",
       icon: zoikoTimeIcon(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
     },
     {
@@ -619,7 +619,7 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Compliance & Audit",
       desc: "Audit trails, data retention, and policy compliance made simple.",
-      href: "/compliance-audit",
+      href: "/zoikotime/compliance-audit",
       icon: zoikoTimeIcon(<><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" /></>),
     },
   ],
