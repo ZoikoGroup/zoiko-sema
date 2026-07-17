@@ -31,7 +31,7 @@ export default function TheRemoteHub() {
       <section className="bg-[#0B1030] px-6 py-20 sm:px-10 lg:px-16">
         <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-2">
           <div className="fade-up">
-            <h2 className="text-3xl font-bold text-white md:text-[38px]">
+            <h2 className="text-3xl font-bold text-white md:text-[37px]">
               The Remote Hub
             </h2>
 
