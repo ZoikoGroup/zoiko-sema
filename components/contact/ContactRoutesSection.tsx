@@ -30,7 +30,7 @@ const routes = [
     title: "Sales & demo",
     desc: "Talk to us about plans, pricing, demos, enterprise setup, and rollout.",
     linkLabel: "Contact Sales",
-    href: "/contact/sales",
+    href: "/contact-sales",
     iconBg: "bg-[#4B47E5]",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -44,7 +44,7 @@ const routes = [
     title: "Customer support",
     desc: "Get help with product issues, account questions, workspace settings, and troubleshooting.",
     linkLabel: "Get Support",
-    href: "/contact/support",
+    href: "/contact-support",
     iconBg: "bg-emerald-600",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -57,7 +57,7 @@ const routes = [
     title: "Partnerships",
     desc: "Explore channel, integration, implementation, or ecosystem partnerships.",
     linkLabel: "Partner Inquiry",
-    href: "/contact/partnerships",
+    href: "/partners",
     iconBg: "bg-amber-600",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -70,7 +70,7 @@ const routes = [
     title: "Press",
     desc: "Request media contact, brand assets, company facts, or interview support.",
     linkLabel: "Press Contact",
-    href: "/contact/press",
+    href: "/press",
     iconBg: "bg-[#6C63F5]",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -85,7 +85,7 @@ const routes = [
     title: "Security",
     desc: "Report security concerns or request a security review route.",
     linkLabel: "Report Concern",
-    href: "/contact/security",
+    href: "/report-concern",
     iconBg: "bg-indigo-600",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

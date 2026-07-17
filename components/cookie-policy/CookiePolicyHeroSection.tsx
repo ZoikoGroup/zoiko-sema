@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 /** Same scroll-reveal hook used across the other pages. */
@@ -35,6 +36,7 @@ export default function CookiePolicyHeroSection() {
   const { ref: headingRef, inView: headingIn } = useInView(0.3);
   const { ref: copyRef, inView: copyIn } = useInView(0.3);
   const { ref: ctaRef, inView: ctaIn } = useInView(0.3);
+  const router = useRouter();
 
   return (
     <>
@@ -122,10 +124,10 @@ export default function CookiePolicyHeroSection() {
             className={`cps-hidden ${ctaIn ? "cps-visible" : ""} flex flex-wrap items-center justify-center gap-3`}
             style={{ animationDelay: "0.15s" }}
           >
-            <button className="cps-btn-primary text-white text-[14px] font-semibold rounded-full px-7 py-3">
+            <button onClick={()=>router.push('/pricing')} className="cps-btn-primary cursor-pointer text-white text-[14px] font-semibold rounded-full px-7 py-3">
               View Pricing
             </button>
-            <button className="cps-btn-secondary bg-white text-gray-900 text-[14px] font-semibold rounded-full px-7 py-3">
+            <button onClick={()=>router.push('/contact')} className="cps-btn-secondary bg-white text-gray-900 text-[14px] cursor-pointer font-semibold rounded-full px-7 py-3">
               Contact Us
             </button>
           </div>

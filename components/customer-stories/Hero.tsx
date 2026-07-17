@@ -1,4 +1,9 @@
+"use client"
+
+import { useRouter } from "next/navigation";
+
 export default function BlogPage() {
+  const router = useRouter();
   return (
     <>
       <style>{`
@@ -54,11 +59,11 @@ export default function BlogPage() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <button className="rounded-full bg-[#4F63F0] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#4055e7]">
+              <button onClick={()=>router.push('/get-a-demo')} className="rounded-full cursor-pointer bg-[#4F63F0] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#4055e7]">
                 Get Demo
               </button>
 
-              <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0B1330] transition hover:bg-gray-100">
+              <button onClick={()=>router.push('/case-studies')} className="rounded-full cursor-pointer bg-white px-6 py-3 text-sm font-semibold text-[#0B1330] transition hover:bg-gray-100">
                 Read Customer Stories
               </button>
             </div>
