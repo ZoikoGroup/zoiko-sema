@@ -1,0 +1,12 @@
+export { default as SecureCommunicationHeroSection } from "./SecureCommunicationHeroSection";
+export { default as WhySecureCommunicationSection } from "./WhySecureCommunicationSection";
+export { default as SecureWorkspaceSection } from "./SecureWorkspaceSection";
+export { default as ConfidentialModeSection } from "./ConfidentialModeSection";
+export { default as GuestGovernanceSection } from "./GuestGovernanceSection";
+export { default as MeetingSecuritySection } from "./MeetingSecuritySection";
+export { default as AIGovernanceSection } from "./AIGovernanceSection";
+export { default as DecisionsEvidenceSection } from "./DecisionsEvidenceSection";
+export { default as SecureScenariosSection } from "./SecureScenariosSection";
+export { default as AdministrationPlansSection } from "./AdministrationPlansSection";
+export { default as SecureCommunicationFaqSection } from "./SecureCommunicationFaqSection";
+export { default as SecureCommunicationCTASection } from "./SecureCommunicationCTASection";
