@@ -92,7 +92,7 @@ export default function RoleSpecificViews() {
                 <div className="h-1" style={{ backgroundColor: role.color }} />
 
                 <div className="p-5">
-                  <h3 className="text-[15px] font-semibold text-[#1F2937]">
+                  <h3 className="text-[14px] font-semibold text-[#1F2937]">
                     {role.title}
                   </h3>
 
