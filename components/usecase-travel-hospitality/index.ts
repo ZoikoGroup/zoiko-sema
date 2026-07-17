@@ -1,0 +1,11 @@
+export { default as TravelHospitalityHeroSection } from "./Travelhospitalityherosection";
+export { default as TravelStatsSection } from "./Travelstatssection";
+export { default as TravelCoordinationBreaksSection } from "./Travelcoordinationbreakssection";
+export { default as TravelHandoffWorkflowSection } from "./Travelhandoffworkflowsection";
+export { default as TravelGuestServiceSection } from "./Travelguestservicesection";
+export { default as TravelEventOperationsSection } from "./Traveleventoperationssection";
+export { default as CoordinationRoomSection } from "./CoordinationRoomSection";
+export { default as GovernanceTrustSection } from "./GovernanceTrustSection";
+export { default as IntegrationsSection } from "./IntegrationsSection";
+export { default as TravelHospitalityFaqSection } from "./TravelHospitalityFaqSection";
+export { default as TravelHospitalityCTASection } from "./TravelHospitalityCTASection";

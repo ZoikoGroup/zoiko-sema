@@ -57,7 +57,7 @@ const menuItems: NavItem[] = [
       { label: "Government", href: "/use-cases/government", desc: "Meet compliance standards and enhance public sector collaboration." },
       { label: "Retail & eCommerce", href: "/retail-ecommerce", desc: "Connect teams across stores, warehouses, and HQ to serve customers better." },
       { label: "Sales & Enablement", href: "/use-cases/sales-enablement", desc: "Share content, track conversations, and close deals faster." },
-      { label: "Travel & Hospitality", href: "/use-cases/travel-hospitality", desc: "Coordinate teams and deliver seamless guest experiences." },
+      { label: "Travel & Hospitality", href: "/usecase-travel-hospitality", desc: "Coordinate teams and deliver seamless guest experiences." },
     ],
   },
   {
@@ -66,7 +66,7 @@ const menuItems: NavItem[] = [
     children: [
       { label: "Overview", href: "/zoikotime/overview", desc: "See how ZoikoTime works and the value it delivers." },
       { label: "Workforce Overview", href: "/workforce-truth", desc: "Real-time visibility into activity, status, and performance." },
-      { label: "Performance Analytics", href: "/zoikotime/performance-analytics", desc: "Insights and reports that help you drive productivity and outcomes." },
+      { label: "Performance Analytics", href: "/zoikotime-performance-analytics", desc: "Insights and reports that help you drive productivity and outcomes." },
       { label: "Compliance & Audit", href: "/compliance-audit", desc: "Audit trails, data retention, and policy compliance made simple." },
       { label: "Time Tracking", href: "/zoikotime/time-tracking", desc: "Automatic time tracking with smart classification and accuracy." },
       { label: "Break Management", href: "/zoikotime/break-management", desc: "Define breaks, enforce policies, and maintain healthy work habits." },
@@ -74,7 +74,7 @@ const menuItems: NavItem[] = [
       { label: "Policies & Rules", href: "/zoikotime/policies-rules", desc: "Configure workforce policies, thresholds, and working schedules." },
       { label: "Teams & Groups", href: "/zoikotime/teams-groups", desc: "Organize teams, set managers, and control access." },
       { label: "Privacy & Data Protection", href: "/privacy", desc: "Privacy-first design with role-based access and data protection." },
-      { label: "Integrations", href: "/zoikotime/integrations", desc: "Connect ZoikoTime with Zoiko One, Zoiko Sema, and other tools." },
+      { label: "Integrations", href: "/zoikotime-integrations", desc: "Connect ZoikoTime with Zoiko One, Zoiko Sema, and other tools." },
       { label: "Settings", href: "/zoikotime/settings", desc: "General settings, billing, usage, and account preferences." },
     ],
   },
