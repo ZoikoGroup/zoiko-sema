@@ -436,7 +436,7 @@ const useCasesRightColumn: UseCaseLink[] = [
   {
     title: "Travel & Hospitality",
     desc: "Coordinate teams and deliver seamless guest experiences.",
-    href: "/use-cases/travel-hospitality",
+    href: "/usecase-travel-hospitality",
     icon: caseIcon(<><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></>),
   },
 ];
@@ -613,7 +613,7 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Performance Analytics",
       desc: "Insights and reports that help you drive productivity and outcomes.",
-      href: "/zoikotime/performance-analytics",
+      href: "/zoikotime-performance-analytics",
       icon: zoikoTimeIcon(<polyline points="3 17 9 11 13 15 21 7" />),
     },
     {
@@ -665,7 +665,7 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Integrations",
       desc: "Connect ZoikoTime with Zoiko One, Zoiko Sema, and other tools.",
-      href: "/zoikotime/integrations",
+      href: "/zoikotime-integrations",
       icon: zoikoTimeIcon(<><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></>),
     },
     {
