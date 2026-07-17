@@ -1,0 +1,11 @@
+export { default as Hero } from "./Hero";
+export { default as WhyItMatters } from "./WhyItMatters";
+export { default as TwoBuildingBlocksSection } from "./TwoBuildingBlocksSection";
+export { default as HierarchyPrecedenceSection } from "./HierarchyPrecedenceSection";
+export { default as CommandCenterSection } from "./CommandCenterSection";
+export { default as BuildSimulateSection } from "./BuildSimulateSection";
+export { default as ApprovePublishSection } from "./ApprovePublishSection";
+export { default as WorkerTransparency } from "./WorkerTransparency";
+export { default as IntegrationsSection } from "./IntegrationsSection";
+export { default as FaqSection } from "./FaqSection";
+export { default as GetStartedSection } from "./GetStartedSection";
