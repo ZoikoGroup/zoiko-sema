@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 const BRAND = "#3457E8";
@@ -222,6 +223,7 @@ export default function CookiePolicyContentSection() {
   const [activeId, setActiveId] = useState(sections[0].id);
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const isClickScrolling = useRef(false);
+  const router = useRouter();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -436,7 +438,7 @@ export default function CookiePolicyContentSection() {
                   additional detail on cookie providers, data flows, and
                   consent handling through our Trust Center or legal team.
                 </p>
-                <button className="cpc-cta-btn bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3">
+                <button onClick={()=>router.push('/contact-sales')} className="cpc-cta-btn cursor-pointer bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3">
                   Contact Sales
                 </button>
               </div>

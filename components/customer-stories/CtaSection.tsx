@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 
 // --- CUSTOM SCROLL-REVEAL REUSABLE HOOK ---
@@ -30,6 +31,7 @@ function useScrollReveal() {
 
 export default function CtaSection() {
   const [ctaRef, ctaVisible] = useScrollReveal();
+  const router = useRouter();
 
   return (
     <div className="w-full bg-slate-50 dark:bg-gray-950 transition-colors duration-300">
@@ -57,14 +59,19 @@ export default function CtaSection() {
           <div
             className={`mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto transition-all duration-1000 delay-400 transform ${ctaVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"}`}
           >
-            <button className="w-full sm:w-auto px-16 py-6 rounded-xl bg-white hover:bg-slate-50 text-[#0058BE] font-sans text-sm font-bold shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+            <button
+              onClick={() => router.push("/get-a-demo")}
+              className="w-full cursor-pointer sm:w-auto px-16 py-6 rounded-xl bg-white hover:bg-slate-50 text-[#0058BE] font-sans text-sm font-bold shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+            >
               Get a Demo
             </button>
 
-            <button className="w-full sm:w-auto px-16 py-6 rounded-xl border border-[#FFFFFF66] text-white font-sans text-sm font-bold hover:border-white/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+            <button
+              onClick={() => router.push("/ai-use-policy")}
+              className="w-full cursor-pointer sm:w-auto px-16 py-6 rounded-xl border border-[#FFFFFF66] text-white font-sans text-sm font-bold hover:border-white/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+            >
               Read AI Use Policy
             </button>
-
           </div>
         </div>
       </section>
