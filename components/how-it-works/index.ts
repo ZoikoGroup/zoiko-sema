@@ -1,0 +1,13 @@
+export { default as VerificationHero } from "./VerificationHero";
+export { default as PlatformLifecycle } from "./PlatformLifecycle";
+export { default as GuidedDemoShell } from "./GuidedDemoShell";
+export { default as PolicySetup } from "./PolicySetup";
+export { default as ViolationReview } from "./ViolationReview";
+export { default as AppendOnlyCorrections } from "./AppendOnlyCorrections";
+export { default as RolePaths } from "./RolePaths";
+export { default as WorkerTransparency } from "./WorkerTransparency";
+export { default as GovernanceAndAI } from "./GovernanceAndAI";
+export { default as EndToEndIntegrations } from "./EndToEndIntegrations";
+export { default as ChooseNextStep } from "./ChooseNextStep";
+export { default as HowItWorksFaq } from "./HowItWorksFaq";
+export { default as FinalJourneyFooter } from "./FinalJourneyFooter";

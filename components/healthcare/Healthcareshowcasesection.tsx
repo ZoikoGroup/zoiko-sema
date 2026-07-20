@@ -142,7 +142,7 @@ export function HealthcareShowcaseSection() {
                 Get a demo
               </button>
               </Link>
-              <Link href="#">
+              <Link href="/admin-console">
               <button
                 type="button"
                 className="hs-link inline-flex items-center justify-center gap-1.5 px-2 py-3 text-[14px] font-semibold text-[#2F6BEB] dark:text-[#6B8AF5]"
