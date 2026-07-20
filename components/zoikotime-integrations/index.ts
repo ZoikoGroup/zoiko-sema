@@ -1,0 +1,12 @@
+export { default as IntegrationsHeroSection } from "./IntegrationsHeroSection";
+export { default as OutcomeStripSection } from "./OutcomeStripSection";
+export { default as ConnectorCatalogSection } from "./Connectorcatalogsection";
+export { default as IntegrationControlCenterSection } from "./IntegrationControlCenterSection";
+export { default as IdentityWorkforceSection } from "./Identityworkforcesection";
+export { default as PayrollFinanceSection } from "./PayrollFinanceSection";
+export { default as ApisWebhooksSection } from "./Apiswebhookssection";
+export { default as SecurityPrivacySection } from "./SecurityPrivacySection";
+export { default as ReliabilitySection } from "./Reliabilitysection";
+export { default as ImplementationSection } from "./ImplementationSection";
+export { default as IntegrationsFaqSection } from "./Integrationsfaqsection";
+export { default as IntegrationsCtaSection } from "./Integrationsctasection";
