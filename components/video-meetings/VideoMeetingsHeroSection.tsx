@@ -124,15 +124,17 @@ decisions with AI, and keep every follow-up connected to your Zoiko Sema workspa
             className={`ac-hidden ${ctaIn ? "ac-visible" : ""} flex flex-col sm:flex-row items-center justify-center gap-3 mb-14`}
             style={{ animationDelay: "0.24s" }}
           >
+            <a href="/start-free">
             <button
               className="ac-btn-primary rounded-full px-15 py-3 text-[14px] font-semibold text-black"
               style={{ backgroundColor:"white" }}
             >
             Start free
-            </button>
+            </button></a>
+            <a href="/get-a-demo">
             <button className="ac-btn-secondary rounded-full px-15 py-3 text-[14px] font-semibold text-white bg-white/5  outline outline-1 outline-offset-[-1px] outline-white/20">
               Get a demo
-            </button>
+            </button></a>
           </div>
         </div>
 

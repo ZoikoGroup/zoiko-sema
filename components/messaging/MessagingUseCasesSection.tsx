@@ -29,26 +29,31 @@ const useCases = [
   {
     title: "Founder-led teams",
     desc: "Fast decisions, direct context, lightweight structure, AI recaps.",
+    link:"/start-free",
     linkLabel: "Start free →",
   },
   {
     title: "Remote teams",
     desc: "Persistent channels, async updates, searchable history, meeting handoff.",
+    link:"/start-free",
     linkLabel: "Start free →",
   },
   {
     title: "Customer support",
     desc: "Client spaces, escalation threads, files, audit trail, shared docs.",
+    link:"/get-a-demo",
     linkLabel: "Get a demo →",
   },
   {
     title: "Operations teams",
     desc: "Announcements, follow-up actions, workforce context, policy visibility.",
+    link:"/get-a-demo",
     linkLabel: "Get a demo →",
   },
   {
     title: "Enterprise organizations",
     desc: "SSO, retention, compliance exports, role-based controls, ZoikoTime integration.",
+    link:"/contact",
     linkLabel: "Talk to sales →",
   },
 ];
@@ -153,7 +158,7 @@ export default function MessagingUseCasesSection() {
                     </div>
                     
                     <a
-                      href="#"
+                      href={u.link}
                       className="muc-link inline-block text-blue-600 text-xs font-bold transition-colors duration-150 hover:text-blue-700"
                     >
                       {u.linkLabel}

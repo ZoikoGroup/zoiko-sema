@@ -180,7 +180,7 @@ export default function AudioCallsZoikoTimeSection() {
             className="zt-btn-primary rounded-full px-6 py-3 text-[14px] font-semibold text-gray-900 bg-white">
               Explore ZoikoTime integration
             </button>
-            <button onClick={()=>router.push('/talk-to-sales')}
+            <button onClick={()=>router.push('/contact')}
             className="zt-btn-secondary rounded-full px-6 py-3 text-[14px] font-semibold text-white border border-white/25">
               Talk to sales
             </button>

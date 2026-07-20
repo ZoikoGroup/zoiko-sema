@@ -33,7 +33,7 @@ const FEATURES_DATA = [
     title: "Decisions, captured automatically",
     desc: "Meeting Intelligence turns discussion into a clear summary of decisions and owners — reviewed by the host before it's shared, at no extra cost on eligible plans.",
     image: "/video-meeting/Feature preview.png",
-    link: "#"
+    link: "/about"
   },
   {
     id: "screens",
@@ -41,7 +41,7 @@ const FEATURES_DATA = [
     title: "Simultaneous sharing for better context",
     desc: "Allow multiple participants to share their screens at the exact same time. Compare designs, analyze code, and debug issues collaboratively side-by-side without passing controls back and forth.",
     image: "/video-meeting/Feature preview.png",
-    link: "#"
+    link: "/about"
   },
   {
     id: "organized",
@@ -49,7 +49,7 @@ const FEATURES_DATA = [
     title: "Everything in its right place",
     desc: "Automate your pre- and post-meeting organization. Instantly attach recordings, generated action items, transcripts, and shared resources right back to your designated team channels.",
     image: "/video-meeting/Feature preview.png",
-    link: "#"
+    link: "/about"
   },
   {
     id: "tools",
@@ -57,7 +57,7 @@ const FEATURES_DATA = [
     title: "Deep ecosystem integrations",
     desc: "Sync decisions seamlessly directly into Jira, Asana, Slack, and Notion. Keep your team's existing product workflows active without manual copy-pasting.",
     image: "/video-meeting/Feature preview.png",
-    link: "#"
+    link: "/about"
   }
 ];
 

@@ -10,6 +10,7 @@ interface Plan {
   features: string[];
   action: string;
   featured?: boolean;
+  link:string
 }
 
 const plans: Plan[] = [
@@ -26,6 +27,7 @@ const plans: Plan[] = [
       "Standard export",
     ],
     action: "Start free",
+    link:"/start-free",
   },
   {
     eyebrow: "Team",
@@ -44,6 +46,7 @@ const plans: Plan[] = [
     ],
     action: "Start free",
     featured: true,
+    link:"/start-free",
   },
   {
     eyebrow: "Business",
@@ -61,6 +64,7 @@ const plans: Plan[] = [
       "Audit log access",
     ],
     action: "Start free",
+    link:"/start-free",
   },
   {
     eyebrow: "Enterprise",
@@ -77,6 +81,7 @@ const plans: Plan[] = [
       "Dedicated support",
     ],
     action: "Talk to sales",
+    link:"/contact",
   },
 ];
 
@@ -111,7 +116,7 @@ export default function PlansPricingSection() {
         <div className="mt-12 grid grid-cols-1 gap-5 text-left sm:grid-cols-2 lg:grid-cols-4">
           {plans.map(
             (
-              { eyebrow, price, priceSuffix, name, description, features, action, featured },
+              { eyebrow, price, priceSuffix, name, description, features, action, featured,link },
               i
             ) => (
               <div
@@ -176,7 +181,7 @@ export default function PlansPricingSection() {
                     </li>
                   ))}
                 </ul>
-
+                  <a href={link}>
                 <button
                   className={`mt-7 h-11 w-full rounded-xl text-sm font-semibold transition ${
                     featured
@@ -185,7 +190,7 @@ export default function PlansPricingSection() {
                   }`}
                 >
                   {action}
-                </button>
+                </button></a>
               </div>
             )
           )}

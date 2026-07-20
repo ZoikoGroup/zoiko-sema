@@ -38,7 +38,7 @@ const solutions = [
     title: "ZoikoTime Customers",
     desc: "Existing ZoikoTime customers connecting communication to workforce truth.",
     cta: "View ZoikoTime",
-    href: "/solutions/zoikotime-customers",
+    href: "/zoikotime-customers",
   },
 ];
 

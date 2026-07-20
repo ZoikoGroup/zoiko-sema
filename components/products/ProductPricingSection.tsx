@@ -67,7 +67,7 @@ const plans: Plan[] = [
       "ZoikoTime ready",
     ],
     cta: "Talk to sales",
-    href: "#talk-sales",
+    href: "/contact",
     popular: false,
   },
   {

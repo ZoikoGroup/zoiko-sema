@@ -65,21 +65,21 @@ export default function FinalCTASection() {
             <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3.5 sm:gap-4 max-w-2xl mx-auto">
               
               <a
-                href="#"
+                href="/start-free"
                 className="w-full sm:w-auto min-w-[128px] px-6 h-12 bg-white rounded-full text-slate-900 text-sm font-semibold inline-flex items-center justify-center shadow-sm hover:bg-slate-50 transition-colors duration-200"
               >
                 Start free
               </a>
 
               <a
-                href="#"
+                href="/get-a-demo"
                 className="w-full sm:w-auto min-w-[144px] px-6 h-12 rounded-full border border-white/30 text-white text-sm font-semibold inline-flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors duration-200"
               >
                 Get a demo
               </a>
 
               <a
-                href="#"
+                href="/channels-spaces"
                 className="w-full sm:w-auto px-6 h-12 rounded-full border border-white/30 text-white text-sm font-semibold inline-flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors duration-200"
               >
                 Explore channels and spaces

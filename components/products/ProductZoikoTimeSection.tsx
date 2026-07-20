@@ -252,7 +252,7 @@ export default function AboutZoikoTimeSection() {
             style={{ animationDelay: "0.1s" }}
           >
             <a
-              href="#explore"
+              href="/sema-zoikotime"
               className="azt-btn-p inline-flex items-center justify-center rounded-full px-7 py-3.5 text-[14px] font-semibold"
               style={{ background: "#fff", color: "#1E1B4B" }}
             >

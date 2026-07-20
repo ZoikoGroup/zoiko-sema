@@ -60,16 +60,18 @@ export default function PlatformHeroSection() {
 
           {/* Action Call to Actions */}
           <div className="w-full sm:w-[548px] pt-1 inline-flex flex-col sm:flex-row justify-start items-start gap-3">
+            <a href="/start-free">
             <button className="w-full sm:w-auto px-7 py-3.5 bg-blue-600 hover:bg-blue-700 active:scale-98 transition-all rounded-full shadow-[0px_10px_24px_0px_rgba(52,87,232,0.30)] flex flex-col justify-center items-center cursor-pointer">
               <span className="text-center text-white text-sm font-bold   leading-5">
                 Start free
               </span>
-            </button>
+            </button></a>
+            <a href="/get-a-demo">
             <button className="w-full sm:w-auto px-7 py-3.5 bg-white/10 hover:bg-white/15 active:scale-98 transition-all rounded-full outline outline-[1.27px] outline-offset-[-1.27px] outline-white/20 flex flex-col justify-center items-center cursor-pointer">
               <span className="text-center text-white text-sm font-semibold   leading-5">
                 Get a demo
               </span>
-            </button>
+            </button></a>
           </div>
 
           {/* Text Navigation Anchor Link */}
