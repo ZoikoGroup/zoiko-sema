@@ -50,31 +50,31 @@ export default function SecurityFaq() {
       `}</style>
 
       <section className="bg-white px-6 py-20 sm:px-10 lg:px-16">
-        <div className="mx-auto max-w-3xl">
-          <div className="fade-up text-center">
-            <h2 className="text-3xl font-bold text-[#1F2937] md:text-[38px]">
+        <div className="mx-auto max-w-[800px] flex flex-col justify-start items-center gap-16">
+          <div className="fade-up w-full text-center">
+            <h2 className="text-4xl font-extrabold text-zinc-900 font-['Hanken_Grotesk'] md:text-[40px]">
               Frequently Asked Questions
             </h2>
           </div>
 
-          <div className="mt-12 space-y-5">
+          <div className="w-full flex flex-col justify-start items-start gap-6">
             {faqs.map((faq, index) => (
               <div
                 key={faq.question}
-                className="fade-up overflow-hidden rounded-2xl border border-[#E8EAF4] bg-white"
+                className="fade-up w-full rounded-xl bg-white/70 outline outline-1 outline-offset-[-1px] outline-neutral-300/30 backdrop-blur-[6px] overflow-hidden transition duration-300 hover:shadow-md"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <button
                   onClick={() => setOpen(open === index ? -1 : index)}
-                  className="flex w-full items-center justify-between gap-4 px-6 py-6 text-left"
+                  className="flex w-full items-center justify-between gap-4 p-6 text-left"
                 >
-                  <span className="text-[15px] font-semibold text-[#202533]">
+                  <span className="text-base font-bold text-zinc-900 font-['Hanken_Grotesk'] leading-6">
                     {faq.question}
                   </span>
 
                   <ChevronDown
                     size={20}
-                    className={`shrink-0 transition-transform duration-300 ${
+                    className={`shrink-0 text-zinc-900 transition-transform duration-300 ${
                       open === index ? "rotate-180" : ""
                     }`}
                   />
@@ -86,7 +86,7 @@ export default function SecurityFaq() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-6 pb-7 text-[15px] leading-7 text-[#6B7280]">
+                    <p className="px-6 pb-6 text-base font-normal text-zinc-700 font-['Inter'] leading-6">
                       {faq.answer}
                     </p>
                   </div>

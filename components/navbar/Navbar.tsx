@@ -84,7 +84,7 @@ const menuItems: NavItem[] = [
     url: "/resources",
     children: [
       { label: "Blog", href: "/blog", desc: "Insights, updates, and best practices from the Zoiko Sema team." },
-      { label: "Guides & Tutorials", href: "/resources/guides", desc: "Step-by-step guides to help your team succeed." },
+      { label: "Guides & Tutorials", href: "/guides-and-tutorials", desc: "Step-by-step guides to help your team succeed." },
       { label: "Webinars & Events", href: "/webinars", desc: "Live sessions, recordings, and on-demand content." },
       { label: "White Papers", href: "/resources/white-papers", desc: "In-depth research and industry reports." },
       { label: "Help Center", href: "/help-center", desc: "Get answers to common questions and issues." },
@@ -488,7 +488,7 @@ const resourceColumns: ResourceColumn[] = [
       {
         title: "Guides & Tutorials",
         desc: "Step-by-step guides to help your team succeed.",
-        href: "/resources/guides",
+        href: "/guides-and-tutorials",
         icon: resourceIcon(<><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></>),
       },
       {
@@ -1315,11 +1315,10 @@ export default function Navbar() {
                                             </span>
                                             {link.badge && (
                                               <span
-                                                className={`inline-flex items-center rounded-full text-[9px] font-bold px-1.5 py-[3px] uppercase tracking-wide ${
-                                                  link.badgeTone === "new"
+                                                className={`inline-flex items-center rounded-full text-[9px] font-bold px-1.5 py-[3px] uppercase tracking-wide ${link.badgeTone === "new"
                                                     ? "bg-emerald-50 text-emerald-600"
                                                     : "bg-indigo-50 text-brand"
-                                                }`}
+                                                  }`}
                                               >
                                                 {link.badge}
                                               </span>
@@ -1828,9 +1827,9 @@ export default function Navbar() {
             <div className="flex items-center justify-between px-5 sm:px-6 py-4 sm:py-5 border-b border-gray-100">
               <div className="flex items-center gap-2.5">
                 {/* Logo */}
-            <Link href="/" className="flex-shrink-0">
-              <img src="/logo.png" alt="Logo" className="h-8 sm:h-9 lg:h-10 w-auto" />
-            </Link>
+                <Link href="/" className="flex-shrink-0">
+                  <img src="/logo.png" alt="Logo" className="h-8 sm:h-9 lg:h-10 w-auto" />
+                </Link>
               </div>
               <button
                 onClick={() => setWorkspaceOpen(false)}

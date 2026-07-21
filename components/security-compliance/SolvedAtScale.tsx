@@ -66,25 +66,31 @@ export default function SolvedAtScale() {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 md:grid-cols-6 lg:grid-cols-6">
             {items.map((item, index) => {
               const Icon = item.icon;
 
               return (
                 <div
                   key={item.title}
-                  className="fade-up rounded-2xl border border-[#ECECF4] bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-lg"
+                  className={`fade-up relative bg-white/70 backdrop-blur-[6px] rounded-xl outline outline-1 outline-offset-[-1px] outline-slate-200/50 p-10 shadow-[0px_10px_15px_-3px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-2 hover:shadow-lg flex flex-col justify-start items-start gap-2 ${
+                    index < 3 ? "md:col-span-3 lg:col-span-2" : "md:col-span-3 lg:col-span-3"
+                  }`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <Icon className="text-[#4F63F0]" size={26} strokeWidth={2} />
+                  <Icon className="text-blue-600" size={24} strokeWidth={2} />
 
-                  <h3 className="mt-5 text-lg font-semibold text-[#1F2937]">
-                    {item.title}
-                  </h3>
+                  <div className="pt-4 flex flex-col justify-start items-start w-full">
+                    <h3 className="text-base font-bold font-['Hanken_Grotesk'] leading-6 text-zinc-900">
+                      {item.title}
+                    </h3>
+                  </div>
 
-                  <p className="mt-3 text-[15px] leading-7 text-[#6B7280]">
-                    {item.description}
-                  </p>
+                  <div className="flex flex-col justify-start items-start w-full">
+                    <p className="text-sm font-normal font-['Inter'] leading-6 text-zinc-700">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
               );
             })}
