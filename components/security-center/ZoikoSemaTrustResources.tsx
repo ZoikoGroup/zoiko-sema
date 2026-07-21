@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react';
-
+import Link from 'next/link';
 // --- CUSTOM INTERSECTION OBSERVER HOOK FOR FLOATING REVEAL EFFECTS ---
 function useScrollReveal() {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -38,7 +38,8 @@ export default function ZoikoSemaTrustResources() {
       desc: 'Understand product security posture, safeguards, and review pathways.',
       action: 'Security overview',
       bgClass: 'bg-sky-100 text-blue-500 dark:bg-sky-500/10 dark:text-sky-400',
-      accentText: 'text-blue-500 dark:text-blue-400'
+      accentText: 'text-blue-500 dark:text-blue-400',
+      link: '/security-center'
     },
     {
       code: 'AI',
@@ -46,7 +47,8 @@ export default function ZoikoSemaTrustResources() {
       desc: 'AI use, governance, human review, meeting summaries, and admin controls.',
       action: 'View Responsible AI',
       bgClass: 'bg-green-100 text-teal-600 dark:bg-teal-500/10 dark:text-teal-400',
-      accentText: 'text-teal-600 dark:text-teal-400'
+      accentText: 'text-teal-600 dark:text-teal-400',
+      link: '/responsive-ai'
     },
     {
       code: 'PD',
@@ -54,7 +56,8 @@ export default function ZoikoSemaTrustResources() {
       desc: 'Data handling, DPA, retention, requests, and privacy controls.',
       action: 'View Privacy & Data',
       bgClass: 'bg-violet-100 text-violet-600 dark:bg-violet-500/10 dark:text-violet-400',
-      accentText: 'text-violet-600 dark:text-violet-400'
+      accentText: 'text-violet-600 dark:text-violet-400',
+      link: '/privacy'
     },
     {
       code: 'CO',
@@ -62,7 +65,8 @@ export default function ZoikoSemaTrustResources() {
       desc: 'Review-ready compliance material and procurement routing.',
       action: 'View Compliance',
       bgClass: 'bg-green-100 text-green-500 dark:bg-green-500/10 dark:text-green-400',
-      accentText: 'text-green-500 dark:text-green-400'
+      accentText: 'text-green-500 dark:text-green-400',
+      link: '/compliance'
     },
     {
       code: 'SP',
@@ -70,7 +74,8 @@ export default function ZoikoSemaTrustResources() {
       desc: 'Vendor and subprocessor categories, notices, and updates.',
       action: 'View Subprocessors',
       bgClass: 'bg-orange-100 text-amber-500 dark:bg-amber-500/10 dark:text-amber-400',
-      accentText: 'text-amber-500 dark:text-amber-400'
+      accentText: 'text-amber-500 dark:text-amber-400',
+      link: '/subprocessors'
     },
     {
       code: 'AX',
@@ -78,7 +83,8 @@ export default function ZoikoSemaTrustResources() {
       desc: 'Accessibility commitment and a route to report barriers.',
       action: 'View Accessibility',
       bgClass: 'bg-slate-200 text-slate-900 dark:bg-gray-800 dark:text-gray-300',
-      accentText: 'text-slate-900 dark:text-gray-300'
+      accentText: 'text-slate-900 dark:text-gray-300',
+      link: '/accessibility'
     },
     {
       code: 'RC',
@@ -86,7 +92,8 @@ export default function ZoikoSemaTrustResources() {
       desc: 'Report security, privacy, AI, abuse, or accessibility concerns.',
       action: 'Report a concern',
       bgClass: 'bg-pink-100 text-red-500 dark:bg-red-500/10 dark:text-red-400',
-      accentText: 'text-red-500 dark:text-red-400'
+      accentText: 'text-red-500 dark:text-red-400',
+      link: '/report-concern'
     }
   ];
 
@@ -138,10 +145,10 @@ export default function ZoikoSemaTrustResources() {
               </div>
 
               {/* Action Trigger Link Line */}
-              <div className={`inline-flex items-center gap-1.5 text-xs font-bold font-sans ${topic.accentText} cursor-pointer group-hover:gap-2.5 transition-all duration-250`}>
+              <Link href={topic.link} className={`inline-flex items-center gap-1.5 text-xs font-bold font-sans ${topic.accentText} cursor-pointer group-hover:gap-2.5 transition-all duration-250`}>
                 <span>{topic.action}</span>
                 <span className="text-sm font-normal transform translate-y-[-0.5px]">→</span>
-              </div>
+              </Link>
             </div>
           ))}
         </div>

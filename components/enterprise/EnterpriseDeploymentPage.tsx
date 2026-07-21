@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 
 // ── Intersection observer hook for scroll-triggered activation ──
 function useInView(threshold = 0.15) {
@@ -560,15 +561,15 @@ function FinalCTA() {
           Build a rollout plan for identity, security, migration, governance, integrations, adoption, and support.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2 w-full sm:w-auto">
-          <button className="ed-btn bg-white text-indigo-800 text-base font-bold px-7 py-3.5 rounded-full w-full sm:w-auto">
+          <Link href="/get-a-demo" className="ed-btn bg-white text-indigo-800 text-base font-bold px-7 py-3.5 rounded-full w-full sm:w-auto inline-flex items-center justify-center">
             Get a demo
-          </button>
-          <button className="ed-btn bg-white/10 border border-white/40 text-white text-base font-bold px-7 py-3.5 rounded-full w-full sm:w-auto">
+          </Link>
+          <Link href="/contact-sales" className="ed-btn bg-white/10 border border-white/40 text-white text-base font-bold px-7 py-3.5 rounded-full w-full sm:w-auto inline-flex items-center justify-center">
             Talk to sales
-          </button>
-          <a href="#request-plan" className="text-white text-base font-bold border-b border-white/50 pb-1 pt-2 sm:pt-0">
+          </Link>
+          <Link href="/deploymentplan" className="text-white text-base font-bold border-b border-white/50 pb-1 pt-2 sm:pt-0">
             Request deployment plan
-          </a>
+          </Link>
         </div>
         <p className="text-sm text-violet-200 pt-4 max-w-[700px]">
           Built for enterprise communication teams that need rollout confidence, governance, and measurable adoption.

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { useInView } from "@/components/Personal-to-team/useInView";
 
 export function CTASection() {
@@ -21,15 +22,15 @@ export function CTASection() {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
-          <button className="px-8 py-3.5 bg-white text-indigo-800 rounded-full font-bold text-base hover:bg-slate-50 hover:scale-105 transition-all shadow-sm">
+          <Link href="/get-a-demo" className="px-8 py-3.5 bg-white text-indigo-800 rounded-full font-bold text-base hover:bg-slate-50 hover:scale-105 transition-all shadow-sm inline-flex items-center justify-center">
             Get a demo
-          </button>
-          <button className="px-8 py-3.5 bg-white/10 text-white rounded-full outline outline-1 outline-white/30 font-bold text-base hover:bg-white/20 transition-all">
+          </Link>
+          <Link href="/start-free" className="px-8 py-3.5 bg-white/10 text-white rounded-full outline outline-1 outline-white/30 font-bold text-base hover:bg-white/20 transition-all inline-flex items-center justify-center">
             Start free
-          </button>
-          <button className="px-8 py-3.5 text-white font-bold text-base hover:text-violet-200 transition-colors">
+          </Link>
+          <Link href="/contact-sales" className="px-8 py-3.5 text-white font-bold text-base hover:text-violet-200 transition-colors inline-flex items-center justify-center">
             Talk to sales
-          </button>
+          </Link>
         </div>
 
         <p className="text-violet-300 text-xs font-normal font-['Inter']">

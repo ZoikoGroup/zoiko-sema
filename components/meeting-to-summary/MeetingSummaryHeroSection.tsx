@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -115,15 +116,19 @@ export default function MeetingSummaryHeroSection() {
                 className={`mts-hidden ${leftIn ? "mts-visible" : ""} flex flex-wrap items-center gap-4 mb-6`}
                 style={{ animationDelay: "220ms" }}
               >
-                <button
-                  className="mts-btn-primary rounded-full px-6 py-3 text-[14.5px] font-semibold text-white"
+                <Link
+                  href="/get-a-demo"
+                  className="mts-btn-primary rounded-full px-6 py-3 text-[14.5px] font-semibold text-white inline-flex items-center justify-center"
                   style={{ background: "#4F46E5" }}
                 >
                   Get a demo
-                </button>
-                <button className="mts-btn-secondary rounded-full px-6 py-3 text-[14.5px] font-semibold text-gray-900 bg-white">
+                </Link>
+                <Link 
+                  href="/contact-sales"
+                  className="mts-btn-secondary rounded-full px-6 py-3 text-[14.5px] font-semibold text-gray-900 bg-white inline-flex items-center justify-center"
+                >
                   Talk to sales
-                </button>
+                </Link>
               </div>
 
               <div className={`mts-hidden ${leftIn ? "mts-visible" : ""}`} style={{ animationDelay: "290ms" }}>

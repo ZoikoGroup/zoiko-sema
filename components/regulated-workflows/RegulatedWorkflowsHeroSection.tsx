@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 /** Same scroll-reveal hook used across the other pages. */
 function useInView(threshold = 0.15) {
@@ -134,12 +135,12 @@ export default function RegulatedWorkflowsHeroSection() {
                 className={`rws-hidden ${ctaIn ? "rws-visible" : ""} flex flex-wrap items-center gap-3 mb-8`}
                 style={{ animationDelay: "0.15s" }}
               >
-                <button className="rws-btn-primary text-white text-[14px] font-semibold rounded-full px-6 py-3">
+                <Link href="/get-a-demo" className="rws-btn-primary text-white text-[14px] font-semibold rounded-full px-6 py-3 inline-flex items-center justify-center">
                   Get a demo
-                </button>
-                <button className="rws-btn-secondary bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3 border border-gray-200">
+                </Link>
+                <Link href="/contact-sales" className="rws-btn-secondary bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3 border border-gray-200 inline-flex items-center justify-center">
                   Talk to sales
-                </button>
+                </Link>
               </div>
 
               {/* Footnote */}

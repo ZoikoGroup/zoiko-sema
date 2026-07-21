@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { useInView } from "@/components/Personal-to-team/useInView";
 
 export function ProjectCollabHeroSection() {
@@ -37,12 +38,12 @@ export function ProjectCollabHeroSection() {
 
           <div className="flex flex-col justify-start items-start gap-8 w-96">
             <div className="inline-flex justify-start items-center gap-3.5">
-              <button className="w-36 h-12 bg-blue-600 rounded-full shadow-[0px_10px_24px_-8px_rgba(52,87,232,0.50)] flex items-center justify-center text-white text-base font-bold font-['Inter'] transition-transform hover:scale-105">
+              <Link href="/get-a-demo" className="w-36 h-12 bg-blue-600 rounded-full shadow-[0px_10px_24px_-8px_rgba(52,87,232,0.50)] flex items-center justify-center text-white text-base font-bold font-['Inter'] transition-transform hover:scale-105">
                 Get a demo
-              </button>
-              <button className="w-32 h-12 bg-white rounded-full outline outline-1 outline-offset-[-1px] outline-zinc-200 flex items-center justify-center text-slate-900 text-base font-bold font-['Inter'] transition-transform hover:scale-105">
+              </Link>
+              <Link href="/start-free" className="w-32 h-12 bg-white rounded-full outline outline-1 outline-offset-[-1px] outline-zinc-200 flex items-center justify-center text-slate-900 text-base font-bold font-['Inter'] transition-transform hover:scale-105">
                 Start free
-              </button>
+              </Link>
             </div>
 
             <div className="self-stretch flex flex-col justify-start items-start gap-4">

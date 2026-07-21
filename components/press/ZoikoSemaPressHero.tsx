@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from "react";
-
+import Link from "next/link";
 // Hook to trigger scroll entry animations
 function useElementOnScreen(options: IntersectionObserverInit) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -54,38 +54,38 @@ export default function ZoikoSemaPressHero() {
 
           {/* Call to Actions */}
           <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
-            <a 
-              href="#" 
+            <Link 
+              href="#media" 
               className="w-full sm:w-auto px-6 py-3 text-center bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-full shadow-[0px_12px_24px_-12px_rgba(60,60,120,0.6)] hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
             >
               Download Media Kit
-            </a>
+            </Link>
             
-            <a 
-              href="#" 
+            <Link 
+              href="#contact" 
               className="w-full sm:w-auto px-6 py-3 text-center border border-slate-700 dark:border-gray-800 text-white hover:bg-white/5 text-sm font-semibold rounded-full transition-all duration-300 hover:-translate-y-0.5"
             >
               Press Contact
-            </a>
+            </Link>
           </div>
 
           {/* Tag Pill Links Row */}
           <div className="flex flex-wrap gap-2 pt-4 w-full max-w-lg">
             {[
-              "Latest news", 
-              "Company facts", 
-              "Media kit", 
-              "Leadership", 
-              "Brand assets", 
-              "Press contact"
+              { label: "Latest news", id: "#news" }, 
+              { label: "Company facts", id: "#facts" }, 
+              { label: "Media kit", id: "#media" }, 
+              { label: "Leadership", id: "#leadership" }, 
+              { label: "Brand assets", id: "#assets" }, 
+              { label: "Press contact", id: "#contact" }
             ].map((tag, idx) => (
-              <a 
+              <Link 
                 key={idx}
-                href="#"
+                href={tag.id}
                 className="px-3.5 py-1.5 text-xs font-semibold text-slate-300 dark:text-gray-300 bg-white/5 dark:bg-gray-900 border border-white/10 dark:border-gray-800 rounded-full hover:bg-white/10 dark:hover:bg-gray-800 hover:text-white transition-all duration-200"
               >
-                {tag}
-              </a>
+                {tag.label}
+              </Link>
             ))}
           </div>
 

@@ -58,6 +58,7 @@ export default function CurrentIncidents() {
 
   return (
     <section 
+      id="incidents"
       ref={sectionRef}
       className="w-full py-20 px-4 sm:px-6 lg:px-16 bg-slate-100 dark:bg-gray-900 text-slate-900 dark:text-white transition-colors duration-305 font-sans overflow-hidden"
     >

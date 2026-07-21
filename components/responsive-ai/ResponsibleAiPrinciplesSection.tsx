@@ -60,7 +60,7 @@ const principles: Principle[] = [
 
 export default function ResponsibleAiPrinciplesSection() {
   return (
-    <section className="bg-[#fbfafd] px-6 py-16 sm:px-10 lg:px-16">
+    <section id="principles" className="bg-[#fbfafd] px-6 py-16 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <div>

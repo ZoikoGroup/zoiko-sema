@@ -1,6 +1,7 @@
 "use client";
 
 import { useInView } from "./useInView";
+import Link from "next/link";
 
 // TODO: replace with your actual hero image path, e.g. "/Images/meeting-to-work-hero.webp"
 const HERO_IMAGE_SRC = "/Images/meeting-to-work-hero.webp";
@@ -70,12 +71,12 @@ export default function MeetingToWorkHeroSection() {
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
-              <button className="mtw-btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white">
+              <Link href="/pricing" className="mtw-btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white inline-block">
                 Start Free Trial
-              </button>
-              <button className="mtw-btn-secondary rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0B1330]">
+              </Link>
+              <Link href="/get-a-demo" className="mtw-btn-secondary rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0B1330] inline-block">
                 View Demo
-              </button>
+              </Link>
             </div>
           </div>
 

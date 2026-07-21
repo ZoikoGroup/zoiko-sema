@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -95,24 +96,24 @@ export default function RegulatedWorkflowsClosingCtaSection() {
             className={`rcc-hidden ${inView ? "rcc-visible" : ""} flex flex-wrap items-center justify-center gap-3`}
             style={{ animationDelay: "0.14s" }}
           >
-            <a
-              href="#get-a-demo"
+            <Link
+              href="/get-a-demo"
               className="rcc-btn-white inline-flex items-center justify-center rounded-full bg-white text-[#3A2FB8] text-[14px] font-semibold px-7 py-3.5"
             >
               Get a demo
-            </a>
-            <a
-              href="#talk-sales"
+            </Link>
+            <Link
+              href="/contact-sales"
               className="rcc-btn-outline inline-flex items-center justify-center rounded-full border border-white/30 text-white text-[14px] font-semibold px-7 py-3.5"
             >
               Talk to sales
-            </a>
-            <a
-              href="#explore-security"
+            </Link>
+            <Link
+              href="/security-compliance"
               className="rcc-btn-text inline-flex items-center justify-center text-white text-[14px] font-semibold underline underline-offset-4 decoration-white/40 px-2"
             >
               Explore security &amp; compliance
-            </a>
+            </Link>
           </div>
         </div>
       </section>

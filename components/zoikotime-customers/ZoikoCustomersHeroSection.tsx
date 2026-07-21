@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -124,15 +125,16 @@ export default function ZoikoCustomersHeroSection() {
                 className={`ztc-hidden ${leftIn ? "ztc-visible" : ""} flex flex-wrap items-center gap-4 mb-8`}
                 style={{ animationDelay: "220ms" }}
               >
-                <button
-                  className="ztc-btn-primary rounded-full px-6 py-3 text-[14.5px] font-semibold text-white"
+                <Link
+                  href="/get-a-demo"
+                  className="ztc-btn-primary rounded-full px-6 py-3 text-[14.5px] font-semibold text-white inline-flex items-center justify-center"
                   style={{ background: "#4F46E5" }}
                 >
                   Get a demo
-                </button>
-                <button className="ztc-btn-secondary rounded-full px-6 py-3 text-[14.5px] font-semibold text-gray-900 bg-white">
+                </Link>
+                <Link href="/contact-sales" className="ztc-btn-secondary rounded-full px-6 py-3 text-[14.5px] font-semibold text-gray-900 bg-white inline-flex items-center justify-center">
                   Talk to sales
-                </button>
+                </Link>
               </div>
 
               <div className="flex flex-col gap-2.5 mb-6">

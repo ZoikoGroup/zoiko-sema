@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ResponsibleAiHeroSection() {
   return (
     <section className="bg-[#12163A] px-6 py-16 sm:px-10 lg:px-16">
@@ -17,12 +19,12 @@ export default function ResponsibleAiHeroSection() {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0B1330] transition hover:bg-gray-100">
+            <Link href="#principles" className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0B1330] transition hover:bg-gray-100">
               Read principles
-            </button>
-            <button className="rounded-full bg-[#4F63F0] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#3E51DE]">
+            </Link>
+            <Link href="#controls" className="inline-flex items-center justify-center rounded-full bg-[#4F63F0] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#3E51DE]">
               View AI controls
-            </button>
+            </Link>
           </div>
         </div>
 

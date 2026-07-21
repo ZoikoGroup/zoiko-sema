@@ -1,6 +1,7 @@
 "use client";
 
 import { useInView } from "./useInView";
+import Link from "next/link";
 
 // TODO: replace with your actual hero image path, e.g. "/Images/verified-collaboration-hero.webp"
 const HERO_IMAGE_SRC = "/Images/verified-collaboration-hero.webp";
@@ -70,12 +71,12 @@ export default function VerifiedCollaborationHeroSection() {
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
-              <button className="vc-btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white">
+              <Link href="/get-a-demo" className="vc-btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white inline-block">
                 Request Demo
-              </button>
-              <button className="vc-btn-secondary rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0B1330]">
+              </Link>
+              <Link href="#how-it-works" className="vc-btn-secondary rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0B1330] inline-block">
                 See How It Works
-              </button>
+              </Link>
             </div>
           </div>
 

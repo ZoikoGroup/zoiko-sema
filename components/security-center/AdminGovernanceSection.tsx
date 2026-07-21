@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react';
-
+import Link from 'next/link';
 // --- CUSTOM SCROLL-REVEAL REUSABLE HOOK ---
 function useScrollReveal() {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -36,43 +36,50 @@ export default function AdminGovernanceSection() {
       title: 'Identity & access',
       desc: 'Manage users, SSO/MFA where supported, session and device controls, guest access.',
       badge: 'Plan & role based',
-      actionText: 'View Admin Console'
+      actionText: 'View Admin Console',
+      link: '/admin-console'
     },
     {
       title: 'Roles & permissions',
       desc: 'Assign least-privilege roles and review workspace access.',
       badge: 'Admin/owner',
-      actionText: 'View Roles'
+      actionText: 'View Roles',
+      link: '/policies-rules'
     },
     {
       title: 'Retention & exports',
       desc: 'Configure retention, export, and deletion policies where supported.',
       badge: 'Business / Enterprise',
-      actionText: 'View Data Controls'
+      actionText: 'View Data Controls',
+      link: '/privacy-data-protection'
     },
     {
       title: 'AI governance',
       desc: 'Enable/disable AI features, sensitive-workspace rules, and summary sharing.',
       badge: 'Feature based',
-      actionText: 'View Responsible AI'
+      actionText: 'View Responsible AI',
+      link: '/responsive-ai'
     },
     {
       title: 'Audit & monitoring',
       desc: 'Review security events, admin actions, and policy events where supported.',
       badge: 'Advanced plans',
-      actionText: 'View Audit Logs'
+      actionText: 'View Audit Logs',
+      link: '/compliance-audit'
     },
     {
       title: 'Integrations',
       desc: 'Review connected apps, API/webhook access, credentials, and third-party permissions.',
       badge: 'Admin/owner',
-      actionText: 'View Integrations'
+      actionText: 'View Integrations',
+      link: '/integration-scalability'
     },
     {
       title: 'Concern response',
       desc: 'Route and resolve reported concerns with security/legal/support ownership.',
       badge: 'Internal triage',
-      actionText: 'Report a concern'
+      actionText: 'Report a concern',
+      link: '/report-concern'
     }
   ];
 
@@ -104,9 +111,9 @@ export default function AdminGovernanceSection() {
             </p>
 
             <div className="pt-2">
-              <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 font-sans text-sm font-bold rounded-full transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg shadow-blue-600/20">
+              <Link href="/admin-console" className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 font-sans text-sm font-bold rounded-full transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg shadow-blue-600/20">
                 View Admin Console
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -144,9 +151,9 @@ export default function AdminGovernanceSection() {
                   {item.badge}
                 </span>
                 
-                <button className="px-4 py-2 bg-violet-600/30 group-hover:bg-violet-600 font-sans text-xs font-bold text-violet-300 group-hover:text-white rounded-full border border-violet-500/20 group-hover:border-transparent transition-all duration-200">
+                <Link href={item.link} className="inline-flex items-center justify-center px-4 py-2 bg-violet-600/30 group-hover:bg-violet-600 font-sans text-xs font-bold text-violet-300 group-hover:text-white rounded-full border border-violet-500/20 group-hover:border-transparent transition-all duration-200">
                   {item.actionText}
-                </button>
+                </Link>
               </div>
             </div>
           ))}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useInView } from "./useInView";
-
+import Link from "next/link";
 // TODO: replace with your actual hero image path, e.g. "/zoiko-group/hero.png"
 const HERO_IMAGE_SRC = "/Images/zoiko-group-hero.webp";
 
@@ -70,12 +70,12 @@ export default function ZoikoGroupHeroSection() {
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
-              <button className="zg-btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white">
+              <Link href="/products" className="zg-btn-primary inline-flex items-center justify-center rounded-xl px-6 py-3 text-sm font-semibold text-white">
                 Explore Zoiko Sema
-              </button>
-              <button className="zg-btn-secondary rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0B1330]">
+              </Link>
+              <Link href="/contact" className="zg-btn-secondary inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0B1330]">
                 Contact Zoiko
-              </button>
+              </Link>
             </div>
 
             <p className="mt-6 max-w-md text-xs leading-relaxed text-[#7C879E]">
