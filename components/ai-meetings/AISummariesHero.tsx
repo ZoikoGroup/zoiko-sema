@@ -90,7 +90,7 @@ export default function MeetingSummariesHero() {
               Start free
             </button>
             
-            <button onClick={()=>router.push('/contact')}
+            <button onClick={()=>router.push('/contact-sales')}
             className="px-7 py-3.5 bg-transparent hover:bg-white/5 font-semibold rounded-full text-sm transition-all duration-300 border border-white/20 dark:border-gray-800 hover:border-white/40 focus:outline-none">
               Contact sales
             </button>

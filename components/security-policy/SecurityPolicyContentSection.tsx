@@ -41,7 +41,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Configure identity and access settings.",
       linkText: "View Admin Console",
-      linkHref: "#",
+      linkHref: "/admin-console",
     },
   },
   {
@@ -62,7 +62,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Review data processing and protection terms.",
       linkText: "View DPA",
-      linkHref: "#",
+      linkHref: "/data-processing-addendum",
     },
   },
   {
@@ -75,7 +75,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Review AI-specific governance rules.",
       linkText: "Read AI Use Policy",
-      linkHref: "#",
+      linkHref: "/ai-use-policy",
     },
   },
   {
@@ -88,7 +88,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Review API authentication and scopes.",
       linkText: "Open Developer Docs",
-      linkHref: "#",
+      linkHref: "/developer-docs",
     },
   },
   {
@@ -109,7 +109,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Check current incidents and history.",
       linkText: "View System Status",
-      linkHref: "#",
+      linkHref: "/status",
     },
   },
   {
@@ -121,7 +121,7 @@ const sections: Section[] = [
     ],
     infoBox: {
       linkText: "Report a Vulnerability — routes to our responsible disclosure process.",
-      linkHref: "#",
+      linkHref: "/report-concern",
       fullLink: true,
     },
   },
@@ -135,7 +135,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Request detailed security materials.",
       linkText: "Visit Trust Center",
-      linkHref: "#",
+      linkHref: "/trust-center",
     },
   },
   {
@@ -313,9 +313,9 @@ export default function SecurityPolicyContentSection() {
                   security packet, review our Trust Center documentation, or
                   execute a Data Processing Addendum.
                 </p>
-                <button className="secc-cta-btn bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3">
+                <a href="/contact-sales" className="secc-cta-btn inline-flex items-center justify-center bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3">
                   Contact Sales
-                </button>
+                </a>
               </div>
             </div>
 

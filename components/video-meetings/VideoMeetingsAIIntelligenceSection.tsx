@@ -69,13 +69,14 @@ export default function VideoMeetingsAIIntelligenceSection() {
               {/* Action Buttons Frame */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 w-full sm:w-auto">
                 
+                
                 <button className="bb-btn-transition w-full sm:w-auto px-7 py-3.5 bg-white text-slate-950 font-semibold rounded-full text-base hover:bg-slate-100 hover:scale-[1.02] active:scale-[0.99] shadow-md">
                   Explore Zoiko Workspace
                 </button>
-                
+                <a href="/pricing">
                 <button className="bb-btn-transition w-full sm:w-auto px-7 py-3.5 bg-transparent text-white font-semibold rounded-full text-base border border-white/20 hover:border-white/40 hover:bg-white/5 hover:scale-[1.02] active:scale-[0.99]">
                   Compare plans
-                </button>
+                </button></a>
                 
               </div>
 

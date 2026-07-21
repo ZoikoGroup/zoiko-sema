@@ -82,7 +82,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Request the current subprocessor list.",
       linkText: "View Subprocessors",
-      linkHref: "#",
+      linkHref: "/subprocessors",
     },
   },
   {
@@ -94,8 +94,8 @@ const sections: Section[] = [
     ],
     infoBox: {
       text: "Review our security program in detail.",
-      linkText: "Visit Trust Center",
-      linkHref: "#",
+      linkText: "Read Security Policy",
+      linkHref: "/security-policy",
     },
   },
   {
@@ -147,7 +147,7 @@ const sections: Section[] = [
     ],
     infoBox: {
       linkText: "Request DPA Review — routes to the legal review and e-signature workflow.",
-      linkHref: "#",
+      linkHref: "/contact-sales",
       fullLink: true,
     },
   },
@@ -338,9 +338,9 @@ export default function DataProcessingAddendumContentSection() {
                 <p className="text-[13.5px] leading-relaxed max-w-[560px] mx-auto mb-6" style={{ color: "#C7C9E8" }}>
                   Business and enterprise customers can request DPA execution, review subprocessor lists, or discuss data residency and security requirements with our legal and sales teams.
                 </p>
-                <button className="dpc-cta-btn bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3">
+                <a href="/contact-sales" className="dpc-cta-btn inline-flex items-center justify-center bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3">
                   Contact Sales
-                </button>
+                </a>
               </div>
             </div>
 

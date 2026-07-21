@@ -31,13 +31,13 @@ const paths = [
     label: "Individuals",
     desc: "Start with secure calls, messages, meetings, notes, mail, calendar, and personal productivity.",
     linkLabel: "Start Free",
-    href: "/signup",
+    href: "/start-free",
   },
   {
     label: "Teams",
     desc: "Bring group conversations, meetings, files, decisions, and follow-ups into one workspace.",
     linkLabel: "Explore Teams",
-    href: "/teams",
+    href: "/pricing",
   },
   {
     label: "Businesses",

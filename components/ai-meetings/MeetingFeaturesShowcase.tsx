@@ -74,11 +74,13 @@ export default function ZoikoSemaPlatformTour() {
       title: "Leadership meetings",
       desc: "Decisions, risks, executive follow-ups, and accountable owners.",
       link: "Explore Business",
+      href: "/pricing",
     },
     {
       title: "Client calls",
       desc: "Client recap, commitments, objections, and follow-up email draft.",
       link: "Explore Client Calls",
+      href: "/client-call-follow-up",
     },
     {
       title: "Project standups",
@@ -89,6 +91,7 @@ export default function ZoikoSemaPlatformTour() {
       title: "Sales handoffs",
       desc: "Customer context, open questions, and next action.",
       link: "Explore Follow-Ups",
+      href: "/client-call-follow-up",
     },
     {
       title: "Remote teams",
@@ -99,7 +102,8 @@ export default function ZoikoSemaPlatformTour() {
       title: "Regulated teams",
       desc: "Policy-aware summaries, retention, and controlled sharing.",
       link: "Contact Sales",
-    },
+      href: "/contact-sales",
+    } ,
   ];
 
   const comparisonData = [
@@ -257,7 +261,8 @@ export default function ZoikoSemaPlatformTour() {
                   </p>
                 </div>
                 <div className="flex items-center gap-1.5 text-sm font-semibold text-blue-600 dark:text-blue-400 group-hover:gap-2.5 transition-all duration-200">
-                  <span>{path.link}</span>
+                  <a href={path.href}>
+                  <span>{path.link}</span></a>
                   <span className="font-bold">→</span>
                 </div>
               </div>

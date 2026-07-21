@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 /* ── Reveal: bottom-to-top fade-in on scroll, staggered by delay prop ── */
@@ -126,17 +127,19 @@ export default function FreelancerHeroSection() {
 
               <Reveal delay={240}>
                 <div className="flex flex-wrap items-center gap-4 mb-5">
-                  <button
-                    className="fw-btn-primary rounded-full px-6 py-3 text-[14.5px] font-semibold text-white"
+                  <Link
+                    href="/get-a-demo"
+                    className="fw-btn-primary inline-flex items-center justify-center rounded-full px-6 py-3 text-[14.5px] font-semibold text-white"
                     style={{ background: "#3457E8" }}
                   >
                     Get a demo
-                  </button>
-                  <button
-                    className="fw-btn-secondary rounded-full px-6 py-3 text-[14.5px] font-semibold text-gray-900 bg-white border border-gray-300"
+                  </Link>
+                  <Link
+                    href="/start-free"
+                    className="fw-btn-secondary inline-flex items-center justify-center rounded-full px-6 py-3 text-[14.5px] font-semibold text-gray-900 bg-white border border-gray-300"
                   >
                     Start free
-                  </button>
+                  </Link>
                 </div>
               </Reveal>
 

@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
+import Link from "next/link";
 import { 
   Shield, 
   Brain, 
@@ -98,14 +99,14 @@ export default function TrustCenterPage() {
 
           <div className={`w-full bg-white dark:bg-gray-800/40 border border-violet-100 dark:border-gray-800/60 rounded-2xl divide-y divide-violet-100 dark:divide-gray-800 shadow-sm transition-all duration-1000 delay-200 transform ${sec3Visible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'}`}>
             {[
-              { title: "Security Center", desc: "Vulnerability reporting, security review, and account protection.", label: "Visit Security Center", icon:"/report-concern/SVG (6).png" },
-              { title: "Responsible AI", desc: "AI output, misuse, summary accuracy, and governance concerns.", label: "Responsible AI", icon:"/report-concern/Vector.png" },
-              { title: "Privacy & Data", desc: "Data requests, privacy concerns, and workspace data handling.", label: "Privacy & Data", icon:"/report-concern/SVG (7).png" },
-              { title: "Compliance", desc: "Enterprise assurance, control review, and compliance questions.", label: "Compliance", icon:"/report-concern/SVG (8).png" },
-              { title: "Subprocessors", desc: "Vendor and subprocessor questions and update notifications.", label: "Subprocessors", icon:"/report-concern/SVG (9).png" },
-              { title: "Accessibility", desc: "Accessibility statement, barrier reporting, and support routes.", label: "Accessibility", icon:"/report-concern/SVG (10).png" }
+              { title: "Security Center", desc: "Vulnerability reporting, security review, and account protection.", label: "Visit Security Center", icon:"/report-concern/SVG (6).png", href: "/security-center" },
+              { title: "Responsible AI", desc: "AI output, misuse, summary accuracy, and governance concerns.", label: "Responsible AI", icon:"/report-concern/Vector.png", href: "/responsive-ai" },
+              { title: "Privacy & Data", desc: "Data requests, privacy concerns, and workspace data handling.", label: "Privacy & Data", icon:"/report-concern/SVG (7).png", href: "/privacy" },
+              { title: "Compliance", desc: "Enterprise assurance, control review, and compliance questions.", label: "Compliance", icon:"/report-concern/SVG (8).png", href: "/compliance" },
+              { title: "Subprocessors", desc: "Vendor and subprocessor questions and update notifications.", label: "Subprocessors", icon:"/report-concern/SVG (9).png", href: "/subprocessors" },
+              { title: "Accessibility", desc: "Accessibility statement, barrier reporting, and support routes.", label: "Accessibility", icon:"/report-concern/SVG (10).png", href: "/accessibility" }
             ].map((res, i) => (
-              <div key={i} className="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group hover:bg-violet-50/30 dark:hover:bg-gray-800/60 transition-colors duration-200 cursor-pointer">
+              <Link key={i} href={res.href} className="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group hover:bg-violet-50/30 dark:hover:bg-gray-800/60 transition-colors duration-200 cursor-pointer">
                 <div className="flex items-start sm:items-center gap-4">
                   <div className="p-2.5 bg-violet-100 dark:bg-violet-950/60 rounded-xl shrink-0"><img 
                       className="w-6 h-6 object-contain" 
@@ -121,7 +122,7 @@ export default function TrustCenterPage() {
                   <span>{res.label}</span>
                   <ArrowRight className="w-4 h-4 stroke-[2.5px]" />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -138,9 +139,9 @@ export default function TrustCenterPage() {
           <h2 className="text-3xl sm:text-4xl font-bold   tracking-tight leading-tight">Need help choosing the right concern<br className="hidden sm:inline" /> route?</h2>
           <p className="text-purple-200 text-sm sm:text-base   max-w-2xl leading-relaxed">Start a protected concern report, visit the Security Center, review Privacy & Data resources, or contact support if your issue is urgent or account-related.</p>
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 w-full sm:w-auto">
-            <button className="w-full sm:w-auto px-8 py-3.5 bg-white text-violet-600 font-bold   text-sm rounded-full shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all">Report a Concern</button>
+            <a href="#report-concern" className="w-full sm:w-auto px-8 py-3.5 bg-white text-violet-600 font-bold text-sm rounded-full shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all inline-flex items-center justify-center">Report a Concern</a>
             <button className="w-full sm:w-auto px-8 py-3.5 bg-white/20 border border-white/30 text-white font-semibold   text-sm rounded-full hover:bg-white/30 transition-all">Get Support</button>
-            <button className="w-full sm:w-auto px-8 py-3.5 bg-white/20 border border-white/30 text-white font-semibold   text-sm rounded-full hover:bg-white/30 transition-all">Visit Security Center</button>
+            <Link href="/security-center" className="w-full sm:w-auto px-8 py-3.5 bg-white/20 border border-white/30 text-white font-semibold text-sm rounded-full hover:bg-white/30 transition-all inline-flex items-center justify-center">Visit Security Center</Link>
           </div>
         </div>
       </section>

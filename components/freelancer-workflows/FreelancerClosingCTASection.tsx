@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 function useInView(threshold = 0.2) {
@@ -81,15 +82,16 @@ export default function FreelancerClosingCTASection() {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <button
-                className="fwcc-btn-primary rounded-full px-7 py-3.5 text-[14.5px] font-semibold text-white"
+              <Link
+                href="/get-a-demo"
+                className="fwcc-btn-primary inline-flex items-center justify-center rounded-full px-7 py-3.5 text-[14.5px] font-semibold text-white"
                 style={{ background: "#4F46E5" }}
               >
                 Get a demo
-              </button>
-              <button className="fwcc-btn-secondary rounded-full px-7 py-3.5 text-[14.5px] font-semibold text-gray-900 bg-white">
+              </Link>
+              <Link href="/start-free" className="fwcc-btn-secondary inline-flex items-center justify-center rounded-full px-7 py-3.5 text-[14.5px] font-semibold text-gray-900 bg-white">
                 Start free
-              </button>
+              </Link>
             </div>
           </div>
         </div>

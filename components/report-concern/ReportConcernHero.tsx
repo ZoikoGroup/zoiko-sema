@@ -71,12 +71,12 @@ export default function ReportConcernHero() {
             >
               Report a Concern
             </button>
-            <button 
-              type="button"
-              className="w-full sm:w-auto text-center bg-blue-600 hover:bg-blue-500 text-white text-base font-semibold px-8 py-3.5 rounded-full transition-all duration-300 shadow-md hover:shadow-blue-500/20 hover:-translate-y-0.5 active:translate-y-0"
+            <a
+              href="/contact"
+              className="w-full sm:w-auto text-center bg-blue-600 hover:bg-blue-500 text-white text-base font-semibold px-8 py-3.5 rounded-full transition-all duration-300 shadow-md hover:shadow-blue-500/20 hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center justify-center"
             >
               Get Support
-            </button>
+            </a>
           </div>
         </div>
 

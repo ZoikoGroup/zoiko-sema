@@ -137,19 +137,21 @@ export default function ProductOverviewHeroSection() {
               ref={ctaRef}
               className={`po-hidden ${ctaIn ? "po-visible" : ""} mb-10 flex flex-col sm:flex-row items-start sm:items-center gap-3`}
               style={{ animationDelay: "0.24s" }}
-            >
+            > 
+              <a href="/start-free">
               <button
                 className="po-btn-primary rounded-full px-7 py-3 text-[14px] font-semibold text-white"
                 style={{ backgroundColor: "#4F5BFF" }}
               >
                 Start free
-              </button>
+              </button></a>
+              <a href="/contact-sales">
               <button
                 className="po-btn-secondary rounded-full border px-7 py-3 text-[14px] font-semibold text-white"
                 style={{ borderColor: "rgba(255,255,255,0.22)" }}
               >
                 Contact sales
-              </button>
+              </button></a>
             </div>
 
             {/* Feature pills */}

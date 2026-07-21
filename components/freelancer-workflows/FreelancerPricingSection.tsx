@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 function useInView(threshold = 0.1) {
@@ -33,6 +34,7 @@ type Plan = {
   period?: string;
   features: Feature[];
   cta: string;
+  href: string;
   popular?: boolean;
 };
 
@@ -51,6 +53,7 @@ const plans: Plan[] = [
       { label: "Advanced permissions", included: false },
     ],
     cta: "Start free",
+    href: "/start-free",
   },
   {
     tag: "PRO FREELANCER",
@@ -66,6 +69,7 @@ const plans: Plan[] = [
       { label: "Optional custom branding", included: true },
     ],
     cta: "Start free",
+    href: "/start-free",
     popular: true,
   },
   {
@@ -82,6 +86,7 @@ const plans: Plan[] = [
       { label: "Team notes & visibility", included: true },
     ],
     cta: "Get a demo",
+    href: "/get-a-demo",
   },
   {
     tag: "ENTERPRISE",
@@ -96,6 +101,7 @@ const plans: Plan[] = [
       { label: "Dedicated onboarding", included: true },
     ],
     cta: "Talk to sales",
+    href: "/contact",
   },
 ];
 
@@ -164,11 +170,10 @@ function PlanCard({ plan, active, delay }: { plan: Plan; active: boolean; delay:
         ))}
       </ul>
 
-      <button
-        className={`fwp-btn w-full rounded-full py-3 text-[14px] font-semibold ${
-          plan.popular
-            ? "text-white"
-            : "border border-gray-300 text-gray-900"
+      <Link
+        href={plan.href}
+        className={`fwp-btn inline-flex w-full items-center justify-center rounded-full py-3 text-[14px] font-semibold ${
+          plan.popular ? "text-white" : "border border-gray-300 text-gray-900"
         }`}
         style={
           plan.popular
@@ -177,7 +182,7 @@ function PlanCard({ plan, active, delay }: { plan: Plan; active: boolean; delay:
         }
       >
         {plan.cta}
-      </button>
+      </Link>
     </div>
   );
 }

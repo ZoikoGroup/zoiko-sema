@@ -84,10 +84,12 @@ export default function ComplianceAuditHeroSection() {
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
-              <button onClick={()=>router.push("/get-a-demo")}
-              className="ca-btn-primary cursor-pointer rounded-xl px-6 py-3 text-sm font-semibold text-white">
+              <a
+                href="#request-demo"
+                className="ca-btn-primary cursor-pointer rounded-xl px-6 py-3 text-sm font-semibold text-white inline-flex items-center justify-center"
+              >
                 Request Demo
-              </button>
+              </a>
               <button onClick={()=>router.push('/workflows')}
               className="ca-btn-secondary rounded-xl cursor-pointer bg-white px-6 py-3 text-sm font-semibold text-[#0B1330]">
                 View Audit Workflow

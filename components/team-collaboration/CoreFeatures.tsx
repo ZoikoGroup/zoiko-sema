@@ -1,11 +1,13 @@
 'use client';
 
+import Link from 'next/link';
 import React, { useEffect, useState, useRef } from 'react';
 
 interface FeatureCardProps {
   title: string;
   description: string;
   actionText: string;
+  href?: string;
   icon: React.ReactNode;
   restBg: string;
   hoverBg: string;
@@ -91,6 +93,7 @@ export default function CoreFeatures() {
       title: 'Channels and spaces',
       description: 'Create structured spaces for teams, projects, departments, clients, and topics.',
       actionText: 'Open spaces',
+      href: '/channels-spaces',
       restBg: "#ffffff",
       hoverBg: GRADIENT,
       restLabel: "#4F46E5",
@@ -109,6 +112,7 @@ export default function CoreFeatures() {
       title: 'Files and decisions',
       description: 'Share files, capture decisions, and keep important context attached to the team conversation.',
       actionText: 'Open files',
+      href: '/files',
       restBg: "#ffffff",
       hoverBg: GRADIENT,
       restLabel: "#4F46E5",
@@ -127,6 +131,7 @@ export default function CoreFeatures() {
       title: 'Tasks and follow-ups',
       description: 'Turn messages and meetings into owned next steps with due dates and status.',
       actionText: 'Open tasks',
+      href: '/tasks',
       restBg: "#ffffff",
       hoverBg: GRADIENT,
       restLabel: "#4F46E5",
@@ -145,6 +150,7 @@ export default function CoreFeatures() {
       title: 'AI-assisted summaries',
       description: 'Summarize meetings, extract action items, and keep follow-up visible with admin-controlled AI.',
       actionText: 'Open AI detail',
+      href: '/ai-meetings',
       restBg: "#ffffff",
       hoverBg: GRADIENT,
       restLabel: "#4F46E5",
@@ -287,23 +293,44 @@ export default function CoreFeatures() {
                   </div>
 
                   {/* Interactive Action Link */}
-                  <div 
-                    className="cf-cta pt-6 flex items-center gap-1.5 text-sm font-semibold cursor-pointer"
-                    style={{ '--rest': feature.restCta, '--hover': feature.hoverCta } as React.CSSProperties}
-                  >
-                    <span className="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-current group-hover:after:w-full after:transition-all after:duration-300">
-                      {feature.actionText}
-                    </span>
-                    <svg 
-                      className="size-3.5 cf-cta-arrow" 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
-                      stroke="currentColor" 
-                      strokeWidth={2.5}
+                  {feature.href ? (
+                    <Link
+                      href={feature.href}
+                      className="cf-cta pt-6 flex items-center gap-1.5 text-sm font-semibold cursor-pointer"
+                      style={{ '--rest': feature.restCta, '--hover': feature.hoverCta } as React.CSSProperties}
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
+                      <span className="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-current group-hover:after:w-full after:transition-all after:duration-300">
+                        {feature.actionText}
+                      </span>
+                      <svg
+                        className="size-3.5 cf-cta-arrow"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2.5}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                  ) : (
+                    <div
+                      className="cf-cta pt-6 flex items-center gap-1.5 text-sm font-semibold cursor-pointer"
+                      style={{ '--rest': feature.restCta, '--hover': feature.hoverCta } as React.CSSProperties}
+                    >
+                      <span className="relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-current group-hover:after:w-full after:transition-all after:duration-300">
+                        {feature.actionText}
+                      </span>
+                      <svg
+                        className="size-3.5 cf-cta-arrow"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2.5}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  )}
                 </div>
 
               </div>

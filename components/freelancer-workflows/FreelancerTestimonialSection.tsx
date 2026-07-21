@@ -135,7 +135,7 @@ export default function FreelancerTestimonialSection() {
               <div className="fwts-avatar-wrap flex items-center gap-3">
                 <div className="fwts-avatar w-11 h-11 rounded-full overflow-hidden flex-shrink-0 bg-white/20">
                   <img
-                    src="" /* 👈 add avatar image URL here */
+                    src="/Images/div.png" /* 👈 add avatar image URL here */
                     alt="Maya Ellison"
                     className="w-full h-full object-cover"
                   />

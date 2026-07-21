@@ -108,7 +108,8 @@ export default function AdminConsoleHeroSection() {
             className="ach-btn-primary cursor-pointer rounded-full bg-[#3B47DE] text-white text-[14px] font-semibold px-7 py-3.5">
               Get a demo
             </button>
-            <button className="ach-btn-outline cursor-pointer rounded-full bg-white border border-gray-200 text-gray-900 text-[14px] font-semibold px-7 py-3.5">
+            <button onClick={()=>router.push('contact')}
+             className="ach-btn-outline cursor-pointer rounded-full bg-white border border-gray-200 text-gray-900 text-[14px] font-semibold px-7 py-3.5">
               Talk to sales
             </button>
           </div>

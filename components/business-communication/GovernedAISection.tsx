@@ -124,11 +124,12 @@ export default function GovernedAISection() {
             footerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
+          <a href="/ai-meetings">
           <button className="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white text-sm font-bold rounded-full transition-all duration-200 shadow-sm shadow-blue-200 active:scale-95 transform hover:-translate-y-0.5">
             View AI summaries
-          </button>
+          </button></a>
           <a
-            href="#"
+            href="/contact"
             className="text-blue-600 hover:text-blue-700 text-sm font-bold transition-all duration-200 text-center whitespace-nowrap transform active:scale-95 hover:translate-x-0.5"
           >
             Talk to sales for AI governance

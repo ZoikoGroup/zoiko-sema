@@ -75,9 +75,10 @@ export default function ZoikoSemaProductSuite() {
                 ))}
               </ul>
             </div>
+            <a href="/start-free">
             <button className="w-full mt-8 py-3 bg-violet-100 hover:bg-violet-200 text-violet-600 dark:bg-violet-950/40 dark:hover:bg-violet-900/60 dark:text-violet-400 font-bold text-sm rounded-[46px] transition-all duration-200 active:scale-98">
               Start free
-            </button>
+            </button></a>
           </div>
 
           {/* Card 2: Business Teams (Featured Dark Theme) */}
@@ -98,9 +99,10 @@ export default function ZoikoSemaProductSuite() {
                 ))}
               </ul>
             </div>
+            <a href='/get-a-demo'>
             <button className="w-full mt-8 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm rounded-[46px] transition-all duration-200 shadow-lg shadow-blue-600/20 active:scale-98">
               Get a demo
-            </button>
+            </button></a>
           </div>
 
           {/* Card 3: Enterprise Organizations */}
@@ -121,9 +123,10 @@ export default function ZoikoSemaProductSuite() {
                 ))}
               </ul>
             </div>
+            <a href='/contact'>
             <button className="w-full mt-8 py-3 bg-violet-100 hover:bg-violet-200 text-violet-600 dark:bg-violet-950/40 dark:hover:bg-violet-900/60 dark:text-violet-400 font-bold text-sm rounded-[46px] transition-all duration-200 active:scale-98">
               Talk to sales
-            </button>
+            </button></a>
           </div>
 
         </div>
@@ -169,12 +172,14 @@ export default function ZoikoSemaProductSuite() {
 
           {/* Action Links */}
           <div className={`flex flex-wrap items-center justify-center gap-8 pt-4 transition-all duration-500 delay-300 ${featureInView ? 'opacity-100' : 'opacity-0'}`}>
+            <a href="/contact">
             <button className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-[62px] shadow-lg shadow-blue-600/10 transition-all duration-200 active:scale-95">
               Talk to sales
-            </button>
+            </button></a>
+            <a href="/get-a-demo">
             <button className="text-white hover:text-slate-200 text-sm font-bold border-b border-white/40 pb-1 transition-colors duration-200">
               Get a demo
-            </button>
+            </button></a>
           </div>
 
         </div>
@@ -200,15 +205,18 @@ export default function ZoikoSemaProductSuite() {
 
           {/* Interaction Button Cluster */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-4">
+            <a href="/get-a-demo">
             <button className="w-full sm:w-auto px-8 py-3.5 bg-white text-indigo-900 hover:bg-slate-100 text-base font-bold rounded-[50px] transition-all duration-200 active:scale-95 shadow-md">
               Get a demo
-            </button>
+            </button></a>
+            <a href="/start-free">
             <button className="w-full sm:w-auto px-8 py-3.5 bg-white/10 hover:bg-white/20 text-white text-base font-bold rounded-[50px] border border-white/30 transition-all duration-200 active:scale-95 backdrop-blur-sm">
               Start free
-            </button>
+            </button></a>
+            <a href="/contact">            
             <button className="w-full sm:w-auto py-2 sm:py-0 text-white hover:text-slate-200 text-base font-bold border-b border-white/40 transition-colors duration-200">
               Talk to sales
-            </button>
+            </button></a>
           </div>
 
         </div>
