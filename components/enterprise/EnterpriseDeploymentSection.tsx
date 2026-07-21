@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
+import Link from 'next/link';
 
 function useElementInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
@@ -82,12 +83,12 @@ export default function EnterpriseDeploymentSection() {
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
-            <button className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm rounded-full shadow-[0px_10px_24px_-8px_rgba(52,87,232,0.5)] transition-all duration-200 transform active:scale-95">
+            <Link href="/get-a-demo" className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm rounded-full shadow-[0px_10px_24px_-8px_rgba(52,87,232,0.5)] transition-all duration-200 transform active:scale-95 inline-flex items-center justify-center">
               Get a demo
-            </button>
-            <button className="px-6 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 font-bold text-sm rounded-full hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all duration-200 transform active:scale-95">
+            </Link>
+            <Link href="/contact-sales" className="px-6 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 font-bold text-sm rounded-full hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-all duration-200 transform active:scale-95 inline-flex items-center justify-center">
               Talk to sales
-            </button>
+            </Link>
           </div>
 
           <p className="text-slate-400 dark:text-slate-500 text-xs sm:text-sm max-w-sm leading-relaxed pt-2">

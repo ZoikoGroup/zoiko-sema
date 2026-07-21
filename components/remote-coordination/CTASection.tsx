@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { useInView } from "@/components/Personal-to-team/useInView";
 
 export function CTASection() {
@@ -22,15 +23,15 @@ export function CTASection() {
         </p>
         
         <div className="flex flex-wrap items-center justify-center gap-[21.3px] mt-[35.25px]">
-          <button className="w-36 h-12 bg-white text-indigo-800 rounded-full flex items-center justify-center text-base font-bold font-['Inter'] hover:bg-slate-50 hover:scale-105 transition-all">
+          <Link href="/get-a-demo" className="w-36 h-12 bg-white text-indigo-800 rounded-full flex items-center justify-center text-base font-bold font-['Inter'] hover:bg-slate-50 hover:scale-105 transition-all">
             Get a demo
-          </button>
-          <button className="w-32 h-12 bg-white/10 outline outline-1 outline-white/40 text-white rounded-full flex items-center justify-center text-base font-bold font-['Inter'] hover:bg-white/20 hover:scale-105 transition-all">
+          </Link>
+          <Link href="/start-free" className="w-32 h-12 bg-white/10 outline outline-1 outline-white/40 text-white rounded-full flex items-center justify-center text-base font-bold font-['Inter'] hover:bg-white/20 hover:scale-105 transition-all">
             Start free
-          </button>
-          <a href="#" className="w-24 h-12 flex items-center justify-center border-b-[0.80px] border-white/50 text-white text-base font-bold font-['Inter'] hover:border-white transition-colors ml-4">
+          </Link>
+          <Link href="/contact-sales" className="w-32 h-12 flex items-center justify-center border-b-[0.80px] border-white/50 text-white text-base font-bold font-['Inter'] hover:border-white transition-colors ml-4 text-center">
             Talk to sales
-          </a>
+          </Link>
         </div>
 
         <p className="text-violet-200 text-sm font-normal font-['Inter'] mt-[26.8px]">

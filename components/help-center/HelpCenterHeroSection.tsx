@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function HelpCenterHeroSection() {
   return (
     <div className="w-full bg-slate-900 flex justify-center py-16 lg:py-24 overflow-hidden relative">
@@ -24,22 +26,22 @@ export function HelpCenterHeroSection() {
           </div>
           
           <div className="w-full max-w-[400px] flex flex-col sm:flex-row justify-start items-center gap-3">
-            <a 
-              href="#contact" 
+            <Link 
+              href="/contact-sales" 
               className="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-700 transition-colors rounded-full flex justify-center items-center shadow-[0px_12px_24px_-12px_rgba(60,60,120,0.60)]"
             >
               <span className="text-white text-sm font-semibold font-['Plus_Jakarta_Sans']">
                 Contact
               </span>
-            </a>
-            <a 
-              href="#resources" 
+            </Link>
+            <Link 
+              href="/resources" 
               className="w-full sm:w-auto px-6 py-3 bg-white hover:bg-gray-50 transition-colors rounded-full flex justify-center items-center border border-gray-200"
             >
               <span className="text-slate-900 text-sm font-semibold font-['Plus_Jakarta_Sans']">
                 Explore All Resources
               </span>
-            </a>
+            </Link>
           </div>
         </div>
         

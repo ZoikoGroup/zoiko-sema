@@ -147,22 +147,17 @@ export function WorkforceTruthHeroSection() {
               className={`zt-hidden ${ctaIn ? "zt-visible" : ""} flex flex-col items-stretch gap-3 sm:flex-row sm:items-center`}
               style={{ animationDelay: "0.24s" }}
             >
-              <Link href="/get-a-demo">
-              
-              <button
-                type="button"
-                className="zt-btn-primary rounded-full bg-[#4F5BD5] px-8 py-3 text-[14px] font-semibold text-white"
+              <Link
+                href="/get-a-demo"
+                className="zt-btn-primary inline-flex items-center justify-center rounded-full bg-[#4F5BD5] px-8 py-3 text-[14px] font-semibold text-white"
               >
                 Request Demo
-              </button>
               </Link>
-              <Link href="#">
-              <button
-                type="button"
-                className="zt-btn-secondary rounded-full border border-white/25 bg-white/[0.04] px-8 py-3 text-[14px] font-semibold text-white backdrop-blur-[4px]"
+              <Link
+                href="/contact"
+                className="zt-btn-secondary inline-flex items-center justify-center rounded-full border border-white/25 bg-white/[0.04] px-8 py-3 text-[14px] font-semibold text-white backdrop-blur-[4px]"
               >
                 Press Contact
-              </button>
               </Link>
             </div>
           </div>

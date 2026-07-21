@@ -14,14 +14,14 @@ import {
 } from "lucide-react";
 
 const flow = [
-  { label: "Verification", icon: ScanFace },
-  { label: "Access Control", icon: Lock },
-  { label: "Protection", icon: ShieldCheck },
-  { label: "Meeting Sec", icon: Video },
-  { label: "AI Governance", icon: BrainCircuit },
-  { label: "Policy", icon: FileText },
-  { label: "Audit", icon: History },
-  { label: "Monitoring", icon: LineChart },
+  { label: "Verification", icon: "/security-and-compliance/verification.svg" },
+  { label: "Access Control", icon: "/security-and-compliance/access-control.svg" },
+  { label: "Protection", icon: "/security-and-compliance/protection.svg" },
+  { label: "Meeting Sec", icon: "/security-and-compliance/meeting-sec.svg" },
+  { label: "AI Governance", icon: "/security-and-compliance/ai-governance.svg" },
+  { label: "Policy", icon: "/security-and-compliance/policy.svg" },
+  { label: "Audit", icon: "/security-and-compliance/audit.svg" },
+  { label: "Monitoring", icon: "/security-and-compliance/monitoring.svg" },
 ];
 
 const stats = [
@@ -62,40 +62,48 @@ export default function SecurityControlCenter() {
 
       <section className="bg-white px-6 py-20 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-6xl">
-          <div className="relative grid grid-cols-4 gap-y-10 md:grid-cols-8">
-            <div className="absolute left-[6%] right-[6%] top-[26px] hidden h-px bg-[#E5E7EB] md:block" />
+          <div className="relative w-full inline-flex justify-center items-start gap-6 overflow-hidden pb-10">
+            <div className="absolute left-0 right-0 top-[23px] h-0.5 bg-gradient-to-r from-sky-700/0 via-sky-700/20 to-sky-700/0 hidden md:block" />
 
             {flow.map((step, index) => {
-              const Icon = step.icon;
-
               return (
                 <div
                   key={step.label}
-                  className="fade-up relative flex flex-col items-center text-center"
+                  className="fade-up flex-1 self-stretch inline-flex flex-col justify-start items-center gap-4 z-10"
                   style={{ animationDelay: `${index * 0.06}s` }}
                 >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[#E5E7EB] bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
-                    <Icon size={20} className="text-[#4B5563]" strokeWidth={1.75} />
+                  <div className="size-12 bg-zinc-200/50 rounded-full inline-flex justify-center items-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
+                    <div className="inline-flex flex-col justify-start items-center">
+                      <img src={step.icon} alt={step.label} className="size-5 object-contain" />
+                    </div>
                   </div>
 
-                  <span className="mt-3 text-[11px] font-semibold uppercase tracking-wide text-[#6B7280]">
-                    {step.label}
-                  </span>
+                  <div className="self-stretch flex flex-col justify-start items-center">
+                    <div className="text-center justify-center text-zinc-700 text-xs font-normal font-['Hanken_Grotesk'] uppercase leading-4 tracking-wide">
+                      {step.label}
+                    </div>
+                  </div>
                 </div>
               );
             })}
           </div>
 
           <div
-            className="fade-up mt-16 rounded-2xl bg-[#11163C] p-8"
+            className="fade-up relative mt-16 rounded-2xl bg-slate-900 p-16 overflow-hidden flex flex-col justify-start items-start gap-16"
             style={{ animationDelay: ".2s" }}
           >
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <div>
-                <h3 className="text-xl font-semibold text-white">
+            {/* Background blur effects from Figma */}
+            <div className="absolute inset-0 opacity-20 pointer-events-none">
+                <div className="absolute w-[600px] h-[600px] left-[60%] top-[-10%] bg-sky-700 rounded-full blur-3xl" />
+                <div className="absolute w-96 h-96 left-[-5%] top-[5%] bg-black rounded-full blur-[50px]" />
+            </div>
+
+            <div className="relative z-10 w-full flex flex-wrap items-end justify-between gap-4">
+              <div className="flex flex-col gap-2">
+                <h3 className="text-base font-normal font-['Hanken_Grotesk'] leading-6 text-white">
                   Security Control Center
                 </h3>
-                <p className="mt-1.5 text-sm text-[#9AA3C0]">
+                <p className="text-base font-normal font-['Inter'] leading-6 text-slate-500">
                   Unified visibility into every layer of enterprise risk.
                 </p>
               </div>
@@ -103,24 +111,26 @@ export default function SecurityControlCenter() {
               <button
                 onClick={handleSync}
                 disabled={syncing}
-                className="flex items-center gap-2 rounded-full bg-[#4F63F0] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#4053E6] disabled:opacity-70"
+                className="flex items-center justify-center gap-2 rounded-lg bg-sky-700 px-10 py-2 text-base font-normal font-['Hanken_Grotesk'] leading-6 text-white transition hover:bg-sky-600 disabled:opacity-70"
               >
                 <RefreshCcw
-                  size={15}
+                  size={16}
                   className={syncing ? "animate-spin" : ""}
                 />
                 {syncing ? "Syncing…" : "Sync Now"}
               </button>
             </div>
 
-            <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            <div className="relative z-10 w-full grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="rounded-xl bg-white/5 p-5 transition duration-300 hover:bg-white/10"
+                  className="flex flex-col gap-2 rounded-xl bg-slate-50/5 p-6 outline outline-1 outline-offset-[-1px] outline-white/10 backdrop-blur-[6px] transition duration-300 hover:bg-white/10"
                 >
-                  <p className="text-xs text-[#9AA3C0]">{stat.label}</p>
-                  <p className={`mt-2 text-2xl font-bold ${stat.color}`}>
+                  <p className="text-base font-normal font-['Inter'] leading-6 text-slate-500">
+                    {stat.label}
+                  </p>
+                  <p className={`text-3xl font-bold font-['Inter'] leading-[48px] ${stat.color === 'text-red-400' ? 'text-red-500' : stat.color}`}>
                     {stat.value}
                   </p>
                 </div>

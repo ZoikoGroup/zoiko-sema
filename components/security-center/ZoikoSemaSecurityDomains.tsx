@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react';
-
+import Link from 'next/link';
 // --- CUSTOM INTERSECTION OBSERVER HOOK FOR FLOATING REVEAL EFFECTS ---
 function useScrollReveal() {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -37,42 +37,48 @@ export default function ZoikoSemaSecurityDomains() {
       title: 'Account & identity',
       desc: 'Sign-in, account protection, SSO/MFA where supported, sessions, and admin-owned identity configuration.',
       action: 'Admin Console',
-      image: '/security-center/image 90.png'
+      image: '/security-center/image 90.png',
+      link: '/admin-console'
     },
     {
       code: 'MC',
       title: 'Messaging & channels',
       desc: 'Private and shared spaces, user roles, message access, and guest boundaries.',
       action: 'Channels & Spaces',
-      image: '/security-center/image 91.png'
+      image: '/security-center/image 91.png',
+      link: '/channels-spaces'
     },
     {
       code: 'VM',
       title: 'Video meetings',
       desc: 'Meeting access, participants, recordings, captions, host controls, and external guests.',
       action: 'Video Meetings',
-      image: '/security-center/image 92.png'
+      image: '/security-center/image 92.png',
+      link: '/video-meetings'
     },
     {
       code: 'AS',
       title: 'AI summaries',
       desc: 'Human review, output handling, summary sharing, and sensitive-workspace controls.',
       action: 'Responsible AI',
-      image: '/security-center/image 93.png'
+      image: '/security-center/image 93.png',
+      link: '/responsive-ai'
     },
     {
       code: 'AC',
       title: 'Admin console',
       desc: 'Roles, policies, audit, retention, integrations, access review, and workspace configuration.',
       action: 'Admin Console',
-      image: '/security-center/image 94.png'
+      image: '/security-center/image 94.png',
+      link: '/admin-console'
     },
     {
       code: 'IN',
       title: 'Integrations & APIs',
       desc: 'Customer-directed integrations, OAuth/API credentials,and third-party terms.',
       action: 'Developer Docs ',
-      image: '/security-center/image 95.png'
+      image: '/security-center/image 95.png',
+      link: '/developer-docs'
     }
   ];
 
@@ -135,10 +141,10 @@ export default function ZoikoSemaSecurityDomains() {
                 </div>
 
                 {/* Micro Action Interactive Dynamic Inline Trigger Link */}
-                <div className="inline-flex items-center gap-1 text-xs font-bold font-sans text-violet-600 dark:text-violet-400 cursor-pointer group-hover:gap-2 transition-all duration-200">
+                <Link href={domain.link} className="inline-flex items-center gap-1 text-xs font-bold font-sans text-violet-600 dark:text-violet-400 cursor-pointer group-hover:gap-2 transition-all duration-200">
                   <span>{domain.action}</span>
                   <span className="text-sm font-normal transform translate-y-[-0.5px]">→</span>
-                </div>
+                </Link>
               </div>
             </div>
           ))}

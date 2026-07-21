@@ -1,7 +1,10 @@
+import Link from "next/link";
+
 interface TrustCard {
   title: string;
   description: string;
   action: string;
+  link: string;
 }
 
 const cards: TrustCard[] = [
@@ -9,49 +12,55 @@ const cards: TrustCard[] = [
     title: "Privacy Notice",
     description: "Data categories, privacy choices, and request routes.",
     action: "View Privacy & Data →",
+    link: "/privacy-notice"
   },
   {
     title: "Data Processing Addendum",
     description:
       "Supports enterprise privacy and legal review of customer data processing.",
     action: "View DPA →",
+    link: "/data-processing-addendum"
   },
   {
     title: "Security Policy",
     description:
       "Security safeguards, access controls, and enterprise security review.",
     action: "Visit Security Center →",
+    link: "/security-center"
   },
   {
     title: "Subprocessors",
     description:
       "Approved subprocessors categories and the applicable service provider list.",
     action: "View Subprocessors →",
+    link: "/subprocessors"
   },
   {
     title: "Compliance",
     description:
       "Compliance posture, assurance documents, and enterprise review path.",
     action: "View Compliance →",
+    link: "/compliance"
   },
   {
     title: "AI Use Policy",
     description:
       "Responsible AI usage restrictions, outputs, sharing, and reporting.",
     action: "Read AI Use Policy →",
+    link: "/ai-use-policy"
   },
 ];
 
-function TrustCard({ title, description, action }: TrustCard) {
+function TrustCard({ title, description, action, link }: TrustCard) {
   return (
     <div className="rounded-xl border border-[#E6E7F2] bg-white p-5 transition-shadow duration-300 hover:shadow-md">
       <h3 className="text-[17px] font-bold text-[#111827]">{title}</h3>
 
       <p className="mt-3 text-[15px] max-w-75 leading-6 text-[#6B7280]">{description}</p>
 
-      <button className="mt-5 text-[13px] font-bold text-[#4F46E5] transition-colors hover:text-[#4338CA]">
+      <Link href={link} className="inline-block mt-5 text-[13px] font-bold text-[#4F46E5] transition-colors hover:text-[#4338CA]">
         {action}
-      </button>
+      </Link>
     </div>
   );
 }

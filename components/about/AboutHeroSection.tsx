@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function AboutHeroSection() {
   const router = useRouter();
@@ -23,13 +24,12 @@ export default function AboutHeroSection() {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <button onClick={()=>router.push('/products')}
-            className="rounded-xl cursor-pointer bg-[#4F63F0] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#3E51DE]">
+            <Link href="/products" className="inline-flex rounded-xl cursor-pointer bg-[#4F63F0] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#3E51DE]">
               Explore Product
-            </button>
-            <button className="rounded-xl cursor-pointer bg-white px-6 py-3 text-sm font-semibold text-[#0B1330] transition hover:bg-gray-100">
+            </Link>
+            <Link href="/contact-sales" className="inline-flex rounded-xl cursor-pointer bg-white px-6 py-3 text-sm font-semibold text-[#0B1330] transition hover:bg-gray-100">
               Talk to sales
-            </button>
+            </Link>
           </div>
 
           <p className="mt-6 max-w-md text-xs leading-relaxed text-[#7C879E]">

@@ -1,13 +1,14 @@
 'use client';
 
 import { type ReactNode, useEffect, useRef, useState } from 'react';
-import Image from 'next/image'; 
+import Link from 'next/link';
+import Image from 'next/image';
 import {
   ChevronDown,
   ChevronUp,
 } from 'lucide-react';
 
-type LinkItem = { title: string; description: string; color: string; action: string };
+type LinkItem = { title: string; description: string; color: string; action: string; link: string };
 
 const navigation = [
   ['at-a-glance', 'At a glance'],
@@ -23,12 +24,12 @@ const navigation = [
 ];
 
 const overviewCards = [
-  ['TR', 'Transparency', 'We explain what data is handled and why, then route deeper terms to the Privacy Notice.', 'View Privacy Notice', 'bg-violet-600', 'bg-violet-100/60', 'text-violet-600'],
-  ['CC', 'Customer control', 'Workspace owners and admins configure access, sharing, retention, and exports where supported.', 'View Admin Console', 'bg-blue-500', 'bg-sky-100/60', 'text-blue-500'],
-  ['AI', 'AI & meeting data', 'AI summaries, transcripts, and meeting data connect to Responsible AI governance.', 'Read AI Use Policy', 'bg-teal-600', 'bg-emerald-100/60', 'text-teal-600'],
-  ['RR', 'Request routes', 'Submit access, correction, deletion, or export requests through the right workflow.', 'Submit a request', 'bg-green-500', 'bg-green-100/60', 'text-green-500'],
-  ['SP', 'Subprocessors', 'A category overview plus the authoritative list and change-notification process.', 'View Subprocessors', 'bg-amber-500', 'bg-amber-100/60', 'text-amber-500'],
-  ['EN', 'Enterprise review', 'DPA, Security Policy, and Compliance materials connected for procurement and legal.', 'View DPA', 'bg-slate-900', 'bg-slate-200', 'text-slate-900'],
+  ['TR', 'Transparency', 'We explain what data is handled and why, then route deeper terms to the Privacy Notice.', 'View Privacy Notice', 'bg-violet-600', 'bg-violet-100/60', 'text-violet-600', '/privacy-notice'],
+  ['CC', 'Customer control', 'Workspace owners and admins configure access, sharing, retention, and exports where supported.', 'View Admin Console', 'bg-blue-500', 'bg-sky-100/60', 'text-blue-500', '/admin-console'],
+  ['AI', 'AI & meeting data', 'AI summaries, transcripts, and meeting data connect to Responsible AI governance.', 'Read AI Use Policy', 'bg-teal-600', 'bg-emerald-100/60', 'text-teal-600', '/ai-use-policy'],
+  ['RR', 'Request routes', 'Submit access, correction, deletion, or export requests through the right workflow.', 'Submit a request', 'bg-green-500', 'bg-green-100/60', 'text-green-500', '#requests'],
+  ['SP', 'Subprocessors', 'A category overview plus the authoritative list and change-notification process.', 'View Subprocessors', 'bg-amber-500', 'bg-amber-100/60', 'text-amber-500', '/subprocessors'],
+  ['EN', 'Enterprise review', 'DPA, Security Policy, and Compliance materials connected for procurement and legal.', 'View DPA', 'bg-slate-900', 'bg-slate-200', 'text-slate-900', '/data-processing-addendum'],
 ];
 
 const purposesLeft = [
@@ -44,12 +45,12 @@ const purposesRight = [
 ];
 
 const dataRows = [
-  ['AI meeting summaries', 'Summaries, highlights, and decisions generated from meetings where enabled by admins.', 'AI Use Policy'],
-  ['Transcripts & captions', 'Meeting captions and transcripts where the feature is turned on and supported.', 'AI Use Policy'],
-  ['Recordings', 'Meeting recordings governed by admin settings, retention, and sharing controls.', 'Admin Console'],
-  ['Channels & spaces', 'Messages, threads, and shared files within workspace channels and spaces.', 'Privacy Notice'],
-  ['Exports & reports', 'Customer-initiated exports of communication and meeting records where supported.', 'Admin Console'],
-  ['Developer / API', 'Data exchanged through API workflows and integrations admins enable.', 'Developer Docs'],
+  ['AI meeting summaries', 'Summaries, highlights, and decisions generated from meetings where enabled by admins.', 'AI Use Policy', '/ai-use-policy'],
+  ['Transcripts & captions', 'Meeting captions and transcripts where the feature is turned on and supported.', 'AI Use Policy', '/ai-use-policy'],
+  ['Recordings', 'Meeting recordings governed by admin settings, retention, and sharing controls.', 'Admin Console', '/admin-console'],
+  ['Channels & spaces', 'Messages, threads, and shared files within workspace channels and spaces.', 'Privacy Notice', '/privacy-notice'],
+  ['Exports & reports', 'Customer-initiated exports of communication and meeting records where supported.', 'Admin Console', '/admin-console'],
+  ['Developer / API', 'Data exchanged through API workflows and integrations admins enable.', 'Developer Docs', '/developer-docs'],
 ];
 
 const subprocessorCategories = [
@@ -60,25 +61,25 @@ const subprocessorCategories = [
 ];
 
 const relatedLinks: LinkItem[] = [
-  { title: 'Security Center', description: 'Security safeguards, access controls, and enterprise security review.', color: '#3b82f6', action: 'Visit Security Center' },
-  { title: 'Responsible AI', description: 'How AI features are governed, reviewed, and kept transparent.', color: '#0d9488', action: 'View Responsible AI' },
-  { title: 'Compliance', description: 'Compliance posture, assurance documents, and review paths.', color: '#10b981', action: 'View Compliance' },
-  { title: 'Data Processing Addendum', description: 'Supports enterprise privacy and legal review of data processing.', color: '#7c3aed', action: 'View DPA' },
-  { title: 'Accessibility', description: 'Accessibility commitments and barrier-reporting routes.', color: '#334155', action: 'View Accessibility' },
-  { title: 'Report a Concern', description: 'Raise a privacy, security, or misuse concern to the right team.', color: '#f43f5e', action: 'Report a Concern' },
+  { title: 'Security Center', description: 'Security safeguards, access controls, and enterprise security review.', color: '#3b82f6', action: 'Visit Security Center', link: '/security-center' },
+  { title: 'Responsible AI', description: 'How AI features are governed, reviewed, and kept transparent.', color: '#0d9488', action: 'View Responsible AI', link: '/responsive-ai' },
+  { title: 'Compliance', description: 'Compliance posture, assurance documents, and review paths.', color: '#10b981', action: 'View Compliance', link: '/compliance' },
+  { title: 'Data Processing Addendum', description: 'Supports enterprise privacy and legal review of data processing.', color: '#7c3aed', action: 'View DPA', link: '/data-processing-addendum' },
+  { title: 'Accessibility', description: 'Accessibility commitments and barrier-reporting routes.', color: '#334155', action: 'View Accessibility', link: '/accessibility' },
+  { title: 'Report a Concern', description: 'Raise a privacy, security, or misuse concern to the right team.', color: '#f43f5e', action: 'Report a Concern', link: '/report-concern' },
 ];
 
 const faqsList = [
-  {question:'What is the Privacy & Data page?', answer:'It is a practical privacy hub that summarizes how Zoiko Sema handles data — categories, purposes,admin controls, AI and meeting data, retention, subprocessors, and request routes — and links to approved legal documents like the Privacy Notice and DPA.'},
-  {question:'What data does Zoiko Sema handle?', answer:'The data depends on the products and settings your workspace uses, including account, communication, and meeting information.'},
-  {question:'Who controls data in my workspace?', answer:'Workspace owners and administrators manage the controls available through their plan and assigned role.'},
-  {question:'How do I submit a privacy request?', answer:'Use the request form above and provide enough details for the privacy team to route the request correctly.'},
-  {question:'What do enterprise reviewers need?', answer:'The DPA, Security Center, Compliance materials, and Subprocessor list provide the relevant review paths.'}
+  { question: 'What is the Privacy & Data page?', answer: 'It is a practical privacy hub that summarizes how Zoiko Sema handles data — categories, purposes,admin controls, AI and meeting data, retention, subprocessors, and request routes — and links to approved legal documents like the Privacy Notice and DPA.' },
+  { question: 'What data does Zoiko Sema handle?', answer: 'The data depends on the products and settings your workspace uses, including account, communication, and meeting information.' },
+  { question: 'Who controls data in my workspace?', answer: 'Workspace owners and administrators manage the controls available through their plan and assigned role.' },
+  { question: 'How do I submit a privacy request?', answer: 'Use the request form above and provide enough details for the privacy team to route the request correctly.' },
+  { question: 'What do enterprise reviewers need?', answer: 'The DPA, Security Center, Compliance materials, and Subprocessor list provide the relevant review paths.' }
 ];
 
 export default function PrivacyPage() {
   const [activeRequest, setActiveRequest] = useState('access');
-    const [sectionRef, isVisible] = useScrollReveal();
+  const [sectionRef, isVisible] = useScrollReveal();
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -101,30 +102,30 @@ export default function PrivacyPage() {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
   function useScrollReveal() {
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const elementRef = useRef<HTMLDivElement | null>(null);
+    const [isIntersecting, setIsIntersecting] = useState(false);
+    const elementRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsIntersecting(true);
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsIntersecting(true);
+          }
+        },
+        {
+          threshold: 0.05,
+          rootMargin: '0px 0px -50px 0px'
         }
-      },
-      { 
-        threshold: 0.05,
-        rootMargin: '0px 0px -50px 0px'
-      }
-    );
+      );
 
-    if (elementRef.current) observer.observe(elementRef.current);
-    return () => {
-      if (elementRef.current) observer.unobserve(elementRef.current);
-    };
-  }, []);
+      if (elementRef.current) observer.observe(elementRef.current);
+      return () => {
+        if (elementRef.current) observer.unobserve(elementRef.current);
+      };
+    }, []);
 
-  return [elementRef, isIntersecting] as const;
-}
+    return [elementRef, isIntersecting] as const;
+  }
 
   return (
     <main className="relative w-full overflow-hidden bg-gray-50 text-slate-900 sans-serif">
@@ -153,7 +154,7 @@ export default function PrivacyPage() {
 
       {/* 2-Column Main Section Grid */}
       <div className="mx-auto grid grid-cols-1 lg:grid-cols-[20rem_minmax(0,1fr)] pt-0 pb-0  lg:pt-0 items-stretch">
-        
+
         {/* Sidebar Track: Keeps the blue column filled completely to the bottom of the section */}
         <aside className="hidden lg:block bg-[#10183d] text-white rounded-l-2xl relative">
           <div className="sticky top-24 p-6 py-8 flex flex-col gap-4">
@@ -161,7 +162,11 @@ export default function PrivacyPage() {
             <ul className="flex flex-col gap-1">
               {navigation.map(([id, label]) => (
                 <li key={id} className={`border-l-2 transition-all ${activeSection === id ? 'border-violet-400 bg-white/10' : 'border-transparent'}`}>
-                  <button onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })} className="w-full px-4 py-2 text-left text-sm font-semibold text-white/90 hover:text-white transition">
+                  <button onClick={(e) => {
+                    e.preventDefault();
+                    setActiveSection(id);
+                    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+                  }} className="w-full text-left block px-4 py-2 text-sm font-semibold text-white/90 hover:text-white transition">
                     {label}
                   </button>
                 </li>
@@ -172,7 +177,7 @@ export default function PrivacyPage() {
 
         {/* Primary Content Stream Panel */}
         <div className="min-w-0 space-y-24 lg:space-y-32 bg-white p-8 rounded-r-2xl border-y border-r border-slate-100">
-          
+
           {/* Section: At A Glance */}
           <section id="at-a-glance" data-section className="scroll-mt-24">
             <div className="max-w-2xl flex flex-col gap-3">
@@ -183,14 +188,14 @@ export default function PrivacyPage() {
               </p>
             </div>
             <div className="mt-9 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-              {overviewCards.map(([badge, title, description, link, badgeColor, surface, linkColor], index) => (
+              {overviewCards.map(([badge, title, description, link, badgeColor, surface, linkColor, linkUrl], index) => (
                 <Reveal key={title} delay={index * 80} className={`${surface} flex min-h-[220px] flex-col justify-between rounded-2xl p-6 shadow-sm border border-black/5`}>
                   <div>
                     <span className={`${badgeColor} mb-5 flex h-11 w-11 items-center justify-center rounded-full text-sm font-bold text-white`}>{badge}</span>
                     <h3 className="text-base font-bold text-slate-900">{title}</h3>
                     <p className="mt-2 text-xs font-normal leading-5 text-slate-600">{description}</p>
                   </div>
-                  <a href="#" className={`mt-5 inline-flex items-center gap-1 text-xs font-bold ${linkColor}`}>{link}<span> →</span></a>
+                  <Link href={linkUrl} className={`mt-5 inline-flex items-center gap-1 text-xs font-bold ${linkColor}`}>{link}<span> →</span></Link>
                 </Reveal>
               ))}
             </div>
@@ -198,74 +203,74 @@ export default function PrivacyPage() {
 
           {/* Section: Data Categories */}
           {/* Section: Data Categories */}
-<section id="data-categories" data-section className="scroll-mt-24">
-  <div className="max-w-[730px] flex flex-col gap-3">
-    <p className="text-xs font-bold uppercase text-violet-600 tracking-wide">DATA CATEGORIES</p>
-    <h2 className="text-3xl font-bold font-sora text-slate-900">The data surfaces that matter for Zoiko Sema.</h2>
-    <p className="text-base font-normal text-slate-600 leading-6">
-      Product-specific data categories — not a generic list. Final definitions live in the <br /> Privacy Notice.
-    </p>
-  </div>
+          <section id="data-categories" data-section className="scroll-mt-24">
+            <div className="max-w-[730px] flex flex-col gap-3">
+              <p className="text-xs font-bold uppercase text-violet-600 tracking-wide">DATA CATEGORIES</p>
+              <h2 className="text-3xl font-bold font-sora text-slate-900">The data surfaces that matter for Zoiko Sema.</h2>
+              <p className="text-base font-normal text-slate-600 leading-6">
+                Product-specific data categories — not a generic list. Final definitions live in the <br /> Privacy Notice.
+              </p>
+            </div>
 
-  <Reveal className="mt-7 grid grid-cols-1 md:grid-cols-[469.7px_1fr] bg-violet-100 border border-violet-100 rounded-2xl overflow-hidden shadow-sm max-w-[942px]">
-    {/* Left Column: Data Items */}
-    <div className="flex flex-col gap-[1px] bg-violet-100">
-      {[
-        {
-          code: 'AC',
-          title: 'Account data',
-          description: 'Name, email, role, and profile details used to create and manage accounts.',
-          bgIcon: 'bg-sky-100',
-          textColor: 'text-blue-500'
-        },
-        {
-          code: 'CM',
-          title: 'Communication data',
-          description: 'Messages, threads, channels, files, and shared content within workspaces.',
-          bgIcon: 'bg-green-100',
-          textColor: 'text-teal-600'
-        },
-        {
-          code: 'AI',
-          title: 'AI-generated data',
-          description: 'Summaries, action items, and decisions produced by AI features where enabled.',
-          bgIcon: 'bg-orange-100',
-          textColor: 'text-amber-500'
-        },
-        {
-          code: 'US',
-          title: 'Usage data',
-          description: 'Product interaction, diagnostics, and performance signals to run the service.',
-          bgIcon: 'bg-sky-100',
-          textColor: 'text-blue-500'
-        }
-      ].map(({ code, title, description, bgIcon, textColor }) => (
-        <div key={title} className="flex gap-4 p-6 bg-white h-28 items-start">
-          <div className={`w-7 h-7 shrink-0 rounded-lg flex items-center justify-center font-sora font-bold text-xs ${bgIcon} ${textColor}`}>
-            {code}
-          </div>
-          <div>
-            <h3 className="font-bold font-sora text-slate-900 text-base">{title}</h3>
-            <p className="mt-1 text-xs font-normal leading-5 text-gray-500 whitespace-pre-line">
-              {description}
-            </p>
-          </div>
-        </div>
-      ))}
-    </div>
+            <Reveal className="mt-7 grid grid-cols-1 md:grid-cols-[469.7px_1fr] bg-violet-100 border border-violet-100 rounded-2xl overflow-hidden shadow-sm max-w-[942px]">
+              {/* Left Column: Data Items */}
+              <div className="flex flex-col gap-[1px] bg-violet-100">
+                {[
+                  {
+                    code: 'AC',
+                    title: 'Account data',
+                    description: 'Name, email, role, and profile details used to create and manage accounts.',
+                    bgIcon: 'bg-sky-100',
+                    textColor: 'text-blue-500'
+                  },
+                  {
+                    code: 'CM',
+                    title: 'Communication data',
+                    description: 'Messages, threads, channels, files, and shared content within workspaces.',
+                    bgIcon: 'bg-green-100',
+                    textColor: 'text-teal-600'
+                  },
+                  {
+                    code: 'AI',
+                    title: 'AI-generated data',
+                    description: 'Summaries, action items, and decisions produced by AI features where enabled.',
+                    bgIcon: 'bg-orange-100',
+                    textColor: 'text-amber-500'
+                  },
+                  {
+                    code: 'US',
+                    title: 'Usage data',
+                    description: 'Product interaction, diagnostics, and performance signals to run the service.',
+                    bgIcon: 'bg-sky-100',
+                    textColor: 'text-blue-500'
+                  }
+                ].map(({ code, title, description, bgIcon, textColor }) => (
+                  <div key={title} className="flex gap-4 p-6 bg-white h-28 items-start">
+                    <div className={`w-7 h-7 shrink-0 rounded-lg flex items-center justify-center font-sora font-bold text-xs ${bgIcon} ${textColor}`}>
+                      {code}
+                    </div>
+                    <div>
+                      <h3 className="font-bold font-sora text-slate-900 text-base">{title}</h3>
+                      <p className="mt-1 text-xs font-normal leading-5 text-gray-500 whitespace-pre-line">
+                        {description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
-    {/* Right Column: Dynamic Image Visual */}
-    <div className="relative min-h-[18rem] md:h-full w-full">
-      <Image 
-        src="/privacy/image 105.png" 
-        alt="Zoiko Sema data surfaces visual" 
-        width={598} 
-        height={435} 
-        className="w-full h-full object-cover"
-      />
-    </div>
-  </Reveal>
-</section>
+              {/* Right Column: Dynamic Image Visual */}
+              <div className="relative min-h-[18rem] md:h-full w-full">
+                <Image
+                  src="/privacy/image 105.png"
+                  alt="Zoiko Sema data surfaces visual"
+                  width={598}
+                  height={435}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </Reveal>
+          </section>
 
           {/* Section: Processing Purposes */}
           <section id="purposes" data-section className="scroll-mt-24">
@@ -336,280 +341,309 @@ export default function PrivacyPage() {
               <p className="text-base font-normal text-slate-600 leading-6">AI summaries, meetings, captions, recordings, channels, and exports each connect to governance. Responsible AI details live in the AI Use Policy.</p>
             </div>
             <div className="mt-8 border border-violet-100 bg-white rounded-2xl overflow-hidden shadow-sm divide-y divide-slate-100">
-              {dataRows.map(([title, description, actionText], index) => (
+              {dataRows.map(([title, description, actionText, link], index) => (
                 <Reveal key={title} delay={index * 65} className="grid gap-4 p-6 sm:grid-cols-[14rem_minmax(0,1fr)_10rem] sm:items-center">
                   <h3 className="font-bold text-sm text-slate-900">{title}</h3>
                   <p className="text-sm font-normal text-gray-500 leading-5">{description}</p>
                   <div className="sm:text-right">
-                    <a href="#" className="inline-flex items-center gap-1 text-xs font-bold text-violet-700">
+                    <Link href={link} className="inline-flex items-center gap-1 text-xs font-bold text-violet-700 hover:text-violet-900 transition-colors">
                       {actionText} <span>→</span>
-                    </a>
+                    </Link>
                   </div>
                 </Reveal>
               ))}
             </div>
           </section>
 
-         
 
-         {/* Section: Data Retention Lifecycle */}
-<section id="lifecycle" data-section className="scroll-mt-24">
-  <div className="max-w-[1122px] bg-indigo-50/50 p-10 rounded-2xl overflow-hidden">
-    <div className="max-w-[942px] mx-auto flex flex-col gap-7">
-      
-      {/* Header */}
-      <div className="max-w-[471px] flex flex-col gap-3">
-        <p className="text-xs font-bold uppercase text-violet-600 tracking-wide font-sans">
-          RETENTION, DELETION & EXPORT
-        </p>
-        <h2 className="text-3xl font-bold font-sora text-slate-900">
-          The data lifecycle at a glance.
-        </h2>
-      </div>
 
-      {/* Main Content Area */}
-      <div className="flex flex-col lg:flex-row gap-2 items-start">
-        
-        {/* Step Indicator & Content List Combo */}
-        <div className="flex-1 flex gap-5">
-          
-          {/* Vertical Timeline Track */}
-          <div className="hidden sm:flex flex-col items-center py-4">
-            <div className="w-12 h-12 shrink-0 rounded-full bg-blue-500 flex items-center justify-center font-sora font-bold text-white text-base">
-              1
-            </div>
-            <div className="w-0.5 h-16 bg-slate-200"></div>
-            <div className="w-12 h-12 shrink-0 rounded-full bg-violet-600 flex items-center justify-center font-sora font-bold text-white text-base">
-              2
-            </div>
-            <div className="w-0.5 h-20 bg-slate-200"></div>
-            <div className="w-12 h-12 shrink-0 rounded-full bg-teal-600 flex items-center justify-center font-sora font-bold text-white text-base">
-              3
-            </div>
-            <div className="w-0.5 h-16 bg-slate-200"></div>
-            <div className="w-12 h-12 shrink-0 rounded-full bg-green-500 flex items-center justify-center font-sora font-bold text-white text-base">
-              4
-            </div>
-          </div>
+          {/* Section: Data Retention Lifecycle */}
+          <section id="lifecycle" data-section className="scroll-mt-24">
+            <div className="max-w-[1122px] bg-indigo-50/50 p-10 rounded-2xl overflow-hidden">
+              <div className="max-w-[942px] mx-auto flex flex-col gap-7">
 
-          {/* Steps Content Cards Column */}
-          <div className="flex-1 flex flex-col gap-4">
-            {[
-              {
-                title: 'Collect',
-                desc: 'Data is created through accounts, communication, meetings, and AI features.',
-                hasBadge: false,
-              },
-              {
-                title: 'Retain',
-                desc: 'Retention follows customer-configured settings where supported by plan.',
-                hasBadge: false,
-              },
-              {
-                title: 'Delete',
-                desc: 'Data is deleted per settings, request routes, or contractual terms.',
-                hasBadge: false,
-              },
-              {
-                title: 'Export',
-                desc: 'Customers can export records where supported for portability and review.',
-                hasBadge: true,
-              },
-            ].map((step, idx) => (
-              <div 
-                key={step.title} 
-                className="relative bg-white rounded-2xl border border-violet-100 p-5 min-h-[5rem] flex flex-col justify-center"
-              >
-                {/* Mobile step badges */}
-                <div className="sm:hidden mb-1 font-bold text-xs text-violet-500">
-                  STEP 0{idx + 1}
+                {/* Header */}
+                <div className="max-w-[471px] flex flex-col gap-3">
+                  <p className="text-xs font-bold uppercase text-violet-600 tracking-wide font-sans">
+                    RETENTION, DELETION & EXPORT
+                  </p>
+                  <h2 className="text-3xl font-bold font-sora text-slate-900">
+                    The data lifecycle at a glance.
+                  </h2>
                 </div>
-                
-                <div className="flex items-center justify-between gap-4">
-                  <h3 className="font-bold font-sora text-slate-900 text-base">
-                    {step.title}
-                  </h3>
-                  {step.hasBadge && (
-                    <span className="bg-green-100 text-teal-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                      On request
-                    </span>
-                  )}
+
+                {/* Main Content Area */}
+                <div className="flex flex-col lg:flex-row gap-2 items-start">
+
+                  {/* Step Indicator & Content List Combo */}
+                  <div className="flex-1 flex gap-5">
+
+                    {/* Vertical Timeline Track */}
+                    <div className="hidden sm:flex flex-col items-center py-4">
+                      <div className="w-12 h-12 shrink-0 rounded-full bg-blue-500 flex items-center justify-center font-sora font-bold text-white text-base">
+                        1
+                      </div>
+                      <div className="w-0.5 h-16 bg-slate-200"></div>
+                      <div className="w-12 h-12 shrink-0 rounded-full bg-violet-600 flex items-center justify-center font-sora font-bold text-white text-base">
+                        2
+                      </div>
+                      <div className="w-0.5 h-20 bg-slate-200"></div>
+                      <div className="w-12 h-12 shrink-0 rounded-full bg-teal-600 flex items-center justify-center font-sora font-bold text-white text-base">
+                        3
+                      </div>
+                      <div className="w-0.5 h-16 bg-slate-200"></div>
+                      <div className="w-12 h-12 shrink-0 rounded-full bg-green-500 flex items-center justify-center font-sora font-bold text-white text-base">
+                        4
+                      </div>
+                    </div>
+
+                    {/* Steps Content Cards Column */}
+                    <div className="flex-1 flex flex-col gap-4">
+                      {[
+                        {
+                          title: 'Collect',
+                          desc: 'Data is created through accounts, communication, meetings, and AI features.',
+                          hasBadge: false,
+                        },
+                        {
+                          title: 'Retain',
+                          desc: 'Retention follows customer-configured settings where supported by plan.',
+                          hasBadge: false,
+                        },
+                        {
+                          title: 'Delete',
+                          desc: 'Data is deleted per settings, request routes, or contractual terms.',
+                          hasBadge: false,
+                        },
+                        {
+                          title: 'Export',
+                          desc: 'Customers can export records where supported for portability and review.',
+                          hasBadge: true,
+                        },
+                      ].map((step, idx) => (
+                        <div
+                          key={step.title}
+                          className="relative bg-white rounded-2xl border border-violet-100 p-5 min-h-[5rem] flex flex-col justify-center"
+                        >
+                          {/* Mobile step badges */}
+                          <div className="sm:hidden mb-1 font-bold text-xs text-violet-500">
+                            STEP 0{idx + 1}
+                          </div>
+
+                          <div className="flex items-center justify-between gap-4">
+                            <h3 className="font-bold font-sora text-slate-900 text-base">
+                              {step.title}
+                            </h3>
+                            {step.hasBadge && (
+                              <span className="bg-green-100 text-teal-600 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                On request
+                              </span>
+                            )}
+                          </div>
+
+                          <p className="mt-2 text-gray-500 text-sm font-normal font-sans leading-5">
+                            {step.desc}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+
+                  </div>
+
+                  {/* Right Dynamic Image Visual */}
+                  <div className="w-full lg:w-100 h-120 shrink-0 relative bg-slate-900 rounded-2xl overflow-hidden self-stretch lg:self-auto">
+                    <Image
+                      src="/privacy/Paragraph+Background.png"
+                      alt="Zoiko Sema workspace illustration"
+                      width={414}
+                      height={551}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
                 </div>
-                
-                <p className="mt-2 text-gray-500 text-sm font-normal font-sans leading-5">
-                  {step.desc}
-                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          </section>
 
-        </div>
-
-        {/* Right Dynamic Image Visual */}
-        <div className="w-full lg:w-100 h-120 shrink-0 relative bg-slate-900 rounded-2xl overflow-hidden self-stretch lg:self-auto">
-          <Image 
-            src="/privacy/Paragraph+Background.png" 
-            alt="Zoiko Sema workspace illustration" 
-            width={414} 
-            height={551} 
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-          {/* Section: Privacy Requests Form */}
-         {/* Section: Privacy Requests Form */}
-<section id="requests" data-section className="scroll-mt-24">
-  <div className="max-w-[941px] flex flex-col gap-5">
-    
-    {/* Header */}
-    <div className="flex flex-col gap-3">
-      <p className="text-xs font-bold uppercase text-violet-600 tracking-wide font-sans">
-        PRIVACY REQUESTS
-      </p>
-      <h2 className="text-3xl font-bold font-sora text-slate-900">
-        Submit a privacy request.
-      </h2>
-      <p className="text-base font-normal text-slate-600 leading-6 font-sans">
-        Choose a request type — the form adapts routing guidance and confirmation. This is a<br className="hidden md:inline" /> design prototype; live submissions route to the approved privacy workflow.
-      </p>
-    </div>
-
-    {/* Form & Sidebar Grid */}
-    <div className="grid grid-cols-1 lg:grid-cols-[530px_1fr] gap-4 items-start">
-      
-      {/* Interactive Form Card */}
-      <div className="bg-white rounded-2xl border border-violet-100 p-7 shadow-[0px_24px_50px_-34px_rgba(20,22,60,0.22)]">
-        
-        {/* Request Type Buttons */}
-        <div className="mb-6">
-          <span className="block text-slate-400 text-xs font-bold uppercase tracking-wide mb-3 font-sans">
-            Request type
-          </span>
-          <div className="flex flex-wrap gap-2.5">
-            {[
-              { id: 'access', label: 'Access my data' },
-              { id: 'delete', label: 'Delete my data' },
-              { id: 'export', label: 'Export my data' },
-              { id: 'question', label: 'Ask a privacy question' }
-            ].map((type) => {
-              const isActive = activeRequest === type.id;
-              return (
-                <button
-                  key={type.id}
-                  type="button"
-                  onClick={() => setActiveRequest(type.id)}
-                  className={`px-4 py-2 h-9 rounded-[999px] text-sm font-bold font-sans border transition-all duration-150 ${
-                    isActive
-                      ? 'bg-violet-600 text-white border-violet-600'
-                      : 'bg-white text-slate-600 border-slate-200 hover:border-slate-300'
-                  }`}
-                >
-                  {type.label}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Dynamic Context Notice Banner */}
-        <div className="flex gap-3 bg-purple-50 border border-violet-100 rounded-xl p-4 mb-6 items-start">
-          <span className="mt-2 w-2 h-2 shrink-0 rounded-sm bg-violet-600" />
-          <p className="text-gray-500 text-xs font-normal font-sans leading-5">
-            {activeRequest === 'access' && 'Access requests confirm your identity and route to the privacy team for a copy of applicable data.'}
-            {activeRequest === 'delete' && 'Deletion requests route to our data deletion pipeline. Note that certain workspace records may be managed by your administrator.'}
-            {activeRequest === 'export' && 'Export requests generate portable archives of your data. Large workspaces may take some time to compile.'}
-            {activeRequest === 'question' && 'Have a generic question about our data protection policies? Our privacy officer will respond within 3 business days.'}
-          </p>
-        </div>
-
-        {/* Input: Work Email */}
-        <div className="mb-6">
-          <label htmlFor="email" className="block text-slate-600 text-xs font-bold mb-2 font-sans">
-            Work email
-          </label>
-          <input
-            id="email"
-            type="email"
-            placeholder="you@company.com"
-            className="w-full h-11 px-4 rounded-[10px] border border-slate-200 outline-none text-sm text-slate-900 placeholder-neutral-500 focus:border-violet-600 font-sans"
-          />
-        </div>
-
-        {/* Input: Details */}
-        <div className="mb-6">
-          <label htmlFor="details" className="block text-slate-600 text-xs font-bold mb-2 font-sans">
-            Details
-          </label>
-          <textarea
-            id="details"
-            rows={4}
-            placeholder={
-              activeRequest === 'access' ? 'Which data would you like to access? Include workspace or account context.' :
-              activeRequest === 'delete' ? 'Please specify the account details or workspace data you want deleted.' :
-              activeRequest === 'export' ? 'Describe the specific data parameters or timeframes you would like exported.' :
-              'What questions do you have about how Zoiko Sema processes your data?'
-            }
-            className="w-full p-4 rounded-[10px] border border-slate-200 outline-none text-sm text-slate-900 placeholder-neutral-500 focus:border-violet-600 resize-none leading-5 font-sans"
-          />
-        </div>
-
-        {/* Submit Button */}
-        <button className="w-full h-12 bg-violet-600 hover:bg-violet-700 transition text-white text-base font-bold rounded-[999px] font-sans mb-6">
-          Submit privacy request
-        </button>
-
-        {/* Notice Disclaimer */}
-        <p className="text-center text-slate-400 text-xs font-normal font-sans leading-4 max-w-[454px] mx-auto">
-          By submitting you agree this prototype does not process real personal data. See the<br />Privacy Notice for live request handling.
-        </p>
-      </div>
-
-      {/* Sidebar Area */}
-      <div className="flex flex-col gap-4 w-full max-w-[384px]">
-        
-        {/* Sidebar Image */}
-        <div className="w-full h-64 bg-slate-900 rounded-2xl overflow-hidden relative">
-          <Image 
-            src="/privacy/Paragraph+Background (1).png" 
-            alt="Security support asset" 
-            width={395} 
-            height={395} 
-            className="w-full h-full object-cover" 
-          />
-        </div>
-
-        {/* Guidelines / Alternative routes */}
-        <div className="flex flex-col gap-3">
-          {[
-            { title: 'Account changes', text: 'Update profile or settings in your workspace.' },
-            { title: 'Workspace / admin', text: 'Contact your workspace owner or admin.' },
-            { title: 'Security concern', text: 'Use Security Center / Report a Concern.' },
-            { title: 'Enterprise review', text: 'Contact Sales or the Trust Center.' }
-          ].map((card) => (
-            <div 
-              key={card.title} 
-              className="bg-white rounded-2xl border border-violet-100 px-5 flex flex-col justify-center h-20"
-            >
-              <h4 className="text-slate-900 text-sm font-bold font-sans">
-                {card.title}
-              </h4>
-              <p className="text-slate-400 text-xs font-normal font-sans mt-1">
-                {card.text}
+          {/* Section: Subprocessors */}
+          <section id="subprocessors" data-section className="scroll-mt-24">
+            <div className="max-w-[730px] flex flex-col gap-3">
+              <p className="text-xs font-bold uppercase text-violet-600 tracking-wide">SUBPROCESSORS</p>
+              <h2 className="text-3xl font-bold font-sora text-slate-900">Approved data subprocessors.</h2>
+              <p className="text-base font-normal text-slate-600 leading-6">
+                Zoiko Sema uses trusted infrastructure and service providers to deliver our platform.
               </p>
             </div>
-          ))}
-        </div>
+            <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {subprocessorCategories.map((category, index) => (
+                <Reveal key={category.title} delay={index * 50} className="border border-violet-100 bg-white rounded-2xl p-6 shadow-sm flex items-start gap-4">
+                  <div className={`w-10 h-10 shrink-0 rounded-lg flex items-center justify-center font-sora font-bold text-[10px] text-white ${category.color}`}>
+                    {category.prefix}
+                  </div>
+                  <div>
+                    <h3 className="font-bold font-sora text-slate-900 text-sm">{category.title}</h3>
+                    <p className="mt-1 text-xs font-normal leading-5 text-gray-500">
+                      {category.desc}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+            <div className="mt-6">
+              <a href="/subprocessors" className="inline-flex items-center gap-2 bg-slate-900 px-6 py-3.5 text-sm font-bold text-white transition rounded-full hover:bg-slate-800">
+                View full subprocessor list
+              </a>
+            </div>
+          </section>
 
-      </div>
+          {/* Section: Privacy Requests Form */}
+          <section id="requests" data-section className="scroll-mt-24">
+            <div className="max-w-[941px] flex flex-col gap-5">
 
-    </div>
-  </div>
-</section>
+              {/* Header */}
+              <div className="flex flex-col gap-3">
+                <p className="text-xs font-bold uppercase text-violet-600 tracking-wide font-sans">
+                  PRIVACY REQUESTS
+                </p>
+                <h2 className="text-3xl font-bold font-sora text-slate-900">
+                  Submit a privacy request.
+                </h2>
+                <p className="text-base font-normal text-slate-600 leading-6 font-sans">
+                  Choose a request type — the form adapts routing guidance and confirmation. This is a<br className="hidden md:inline" /> design prototype; live submissions route to the approved privacy workflow.
+                </p>
+              </div>
+
+              {/* Form & Sidebar Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-[530px_1fr] gap-4 items-start">
+
+                {/* Interactive Form Card */}
+                <div className="bg-white rounded-2xl border border-violet-100 p-7 shadow-[0px_24px_50px_-34px_rgba(20,22,60,0.22)]">
+
+                  {/* Request Type Buttons */}
+                  <div className="mb-6">
+                    <span className="block text-slate-400 text-xs font-bold uppercase tracking-wide mb-3 font-sans">
+                      Request type
+                    </span>
+                    <div className="flex flex-wrap gap-2.5">
+                      {[
+                        { id: 'access', label: 'Access my data' },
+                        { id: 'delete', label: 'Delete my data' },
+                        { id: 'export', label: 'Export my data' },
+                        { id: 'question', label: 'Ask a privacy question' }
+                      ].map((type) => {
+                        const isActive = activeRequest === type.id;
+                        return (
+                          <button
+                            key={type.id}
+                            type="button"
+                            onClick={() => setActiveRequest(type.id)}
+                            className={`px-4 py-2 h-9 rounded-[999px] text-sm font-bold font-sans border transition-all duration-150 ${isActive
+                                ? 'bg-violet-600 text-white border-violet-600'
+                                : 'bg-white text-slate-600 border-slate-200 hover:border-slate-300'
+                              }`}
+                          >
+                            {type.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Dynamic Context Notice Banner */}
+                  <div className="flex gap-3 bg-purple-50 border border-violet-100 rounded-xl p-4 mb-6 items-start">
+                    <span className="mt-2 w-2 h-2 shrink-0 rounded-sm bg-violet-600" />
+                    <p className="text-gray-500 text-xs font-normal font-sans leading-5">
+                      {activeRequest === 'access' && 'Access requests confirm your identity and route to the privacy team for a copy of applicable data.'}
+                      {activeRequest === 'delete' && 'Deletion requests route to our data deletion pipeline. Note that certain workspace records may be managed by your administrator.'}
+                      {activeRequest === 'export' && 'Export requests generate portable archives of your data. Large workspaces may take some time to compile.'}
+                      {activeRequest === 'question' && 'Have a generic question about our data protection policies? Our privacy officer will respond within 3 business days.'}
+                    </p>
+                  </div>
+
+                  {/* Input: Work Email */}
+                  <div className="mb-6">
+                    <label htmlFor="email" className="block text-slate-600 text-xs font-bold mb-2 font-sans">
+                      Work email
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      placeholder="you@company.com"
+                      className="w-full h-11 px-4 rounded-[10px] border border-slate-200 outline-none text-sm text-slate-900 placeholder-neutral-500 focus:border-violet-600 font-sans"
+                    />
+                  </div>
+
+                  {/* Input: Details */}
+                  <div className="mb-6">
+                    <label htmlFor="details" className="block text-slate-600 text-xs font-bold mb-2 font-sans">
+                      Details
+                    </label>
+                    <textarea
+                      id="details"
+                      rows={4}
+                      placeholder={
+                        activeRequest === 'access' ? 'Which data would you like to access? Include workspace or account context.' :
+                          activeRequest === 'delete' ? 'Please specify the account details or workspace data you want deleted.' :
+                            activeRequest === 'export' ? 'Describe the specific data parameters or timeframes you would like exported.' :
+                              'What questions do you have about how Zoiko Sema processes your data?'
+                      }
+                      className="w-full p-4 rounded-[10px] border border-slate-200 outline-none text-sm text-slate-900 placeholder-neutral-500 focus:border-violet-600 resize-none leading-5 font-sans"
+                    />
+                  </div>
+
+                  {/* Submit Button */}
+                  <button className="w-full h-12 bg-violet-600 hover:bg-violet-700 transition text-white text-base font-bold rounded-[999px] font-sans mb-6">
+                    Submit privacy request
+                  </button>
+
+                  {/* Notice Disclaimer */}
+                  <p className="text-center text-slate-400 text-xs font-normal font-sans leading-4 max-w-[454px] mx-auto">
+                    By submitting you agree this prototype does not process real personal data. See the<br />Privacy Notice for live request handling.
+                  </p>
+                </div>
+
+                {/* Sidebar Area */}
+                <div className="flex flex-col gap-4 w-full max-w-[384px]">
+
+                  {/* Sidebar Image */}
+                  <div className="w-full h-64 bg-slate-900 rounded-2xl overflow-hidden relative">
+                    <Image
+                      src="/privacy/Paragraph+Background (1).png"
+                      alt="Security support asset"
+                      width={395}
+                      height={395}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  {/* Guidelines / Alternative routes */}
+                  <div className="flex flex-col gap-3">
+                    {[
+                      { title: 'Account changes', text: 'Update profile or settings in your workspace.' },
+                      { title: 'Workspace / admin', text: 'Contact your workspace owner or admin.' },
+                      { title: 'Security concern', text: 'Use Security Center / Report a Concern.' },
+                      { title: 'Enterprise review', text: 'Contact Sales or the Trust Center.' }
+                    ].map((card) => (
+                      <div
+                        key={card.title}
+                        className="bg-white rounded-2xl border border-violet-100 px-5 flex flex-col justify-center h-20"
+                      >
+                        <h4 className="text-slate-900 text-sm font-bold font-sans">
+                          {card.title}
+                        </h4>
+                        <p className="text-slate-400 text-xs font-normal font-sans mt-1">
+                          {card.text}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </section>
 
           {/* Section: Connected Trust Links */}
           <section id="related-links" data-section className="scroll-mt-24 pb-4">
@@ -626,9 +660,9 @@ export default function PrivacyPage() {
                     <p className="mt-1 text-xs text-gray-500 font-normal leading-5">{item.description}</p>
                   </div>
                   <div>
-                    <a href="#" className="inline-flex items-center gap-1 text-xs font-bold text-violet-600">
+                    <Link href={item.link} className="inline-flex items-center gap-1 text-xs font-bold text-violet-600 hover:text-violet-800 transition-colors">
                       {item.action} <span>→</span>
-                    </a>
+                    </Link>
                   </div>
                 </Reveal>
               ))}
@@ -657,42 +691,41 @@ export default function PrivacyPage() {
           </div>
           <div className="divide-y divide-slate-200 border-y border-slate-200">
             {faqsList.map((item, index) => {
-            const isOpen = openIndex === index;
-            return (
-              <div
-                key={index}
-                className="w-full py-4 transition-all duration-200"
-              >
-                {/* Trigger Button */}
-                <button
-                  onClick={() => toggleAccordion(index)}
-                  className="w-full flex items-center justify-between text-left gap-4 py-2 group focus:outline-none"
-                >
-                  <span className="text-base font-bold font-sans tracking-tight text-slate-900 dark:text-slate-100 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors duration-200">
-                    {item.question}
-                  </span>
-                  
-                  {/* Plus / Minus Indicator */}
-                  <span className={`text-xl font-medium font-sans text-violet-600 dark:text-violet-400 select-none shrink-0 transition-transform duration-300 transform ${isOpen ? 'rotate-45' : 'rotate-0'}`}>
-                    +
-                  </span>
-                </button>
-
-                {/* Collapsible Content Wrapper */}
+              const isOpen = openIndex === index;
+              return (
                 <div
-                  className={`grid transition-all duration-300 ease-in-out text-sm text-gray-500 dark:text-gray-400 font-sans leading-relaxed ${
-                    isOpen ? 'grid-rows-[1fr] opacity-100 mt-2' : 'grid-rows-[0fr] opacity-0'
-                  }`}
+                  key={index}
+                  className="w-full py-4 transition-all duration-200"
                 >
-                  <div className="overflow-hidden">
-                    <p className="pb-2 max-w-[90%]">
-                      {item.answer}
-                    </p>
+                  {/* Trigger Button */}
+                  <button
+                    onClick={() => toggleAccordion(index)}
+                    className="w-full flex items-center justify-between text-left gap-4 py-2 group focus:outline-none"
+                  >
+                    <span className="text-base font-bold font-sans tracking-tight text-slate-900 dark:text-slate-100 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors duration-200">
+                      {item.question}
+                    </span>
+
+                    {/* Plus / Minus Indicator */}
+                    <span className={`text-xl font-medium font-sans text-violet-600 dark:text-violet-400 select-none shrink-0 transition-transform duration-300 transform ${isOpen ? 'rotate-45' : 'rotate-0'}`}>
+                      +
+                    </span>
+                  </button>
+
+                  {/* Collapsible Content Wrapper */}
+                  <div
+                    className={`grid transition-all duration-300 ease-in-out text-sm text-gray-500 dark:text-gray-400 font-sans leading-relaxed ${isOpen ? 'grid-rows-[1fr] opacity-100 mt-2' : 'grid-rows-[0fr] opacity-0'
+                      }`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="pb-2 max-w-[90%]">
+                        {item.answer}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
           </div>
         </section>
       </div>

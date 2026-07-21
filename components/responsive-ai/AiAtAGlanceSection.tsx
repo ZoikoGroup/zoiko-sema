@@ -1,6 +1,6 @@
 "use client"
 import { ArrowRight } from "lucide-react";
-
+import Link from "next/link";
 interface GlanceCard {
   badge: string;
   badgeBg: string;
@@ -8,6 +8,7 @@ interface GlanceCard {
   title: string;
   description: string;
   action: string;
+  link: string;
 }
 
 const cards: GlanceCard[] = [
@@ -19,6 +20,7 @@ const cards: GlanceCard[] = [
     description:
       "AI can summarize, organize, and draft — review accuracy, context, ownership, and sensitivity before relying or sharing.",
     action: "Jump to human review",
+    link: "#principles"
   },
   {
     badge: "AG",
@@ -28,6 +30,7 @@ const cards: GlanceCard[] = [
     description:
       "Owners and admins configure availability, permissions, sensitive-space rules, retention, and sharing where supported.",
     action: "View Admin Console",
+    link: "/admin-console"
   },
   {
     badge: "DP",
@@ -37,6 +40,7 @@ const cards: GlanceCard[] = [
     description:
       "AI-related data handling connects to the Privacy Notice, DPA, Security Policy, and subprocessor list.",
     action: "View Privacy & Data",
+    link: "/privacy-data-protection"
   },
   {
     badge: "SB",
@@ -46,6 +50,7 @@ const cards: GlanceCard[] = [
     description:
       "AI features should not be used for policy-violating, harmful, deceptive, or unauthorized activity.",
     action: "Read AI Use Policy",
+    link: "/ai-use-policy"
   },
 ];
 
@@ -66,7 +71,7 @@ export default function AiAtAGlanceSection() {
 
         <div className="mt-10 grid grid-cols-1 items-stretch gap-6 lg:grid-cols-[67%_33%]">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {cards.map(({ badge, badgeBg, badgeColor, title, description, action }) => (
+            {cards.map(({ badge, badgeBg, badgeColor, title, description, action, link }) => (
               <div
                 key={title}
                 className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
@@ -80,10 +85,10 @@ export default function AiAtAGlanceSection() {
                 <p className="mt-1.5 text-xs leading-relaxed text-gray-500">
                   {description}
                 </p>
-                <button className={`mt-3 flex items-center gap-1 text-xs font-semibold ${badgeColor} hover:text-[#3E51DE]`}>
+                <Link href={link} className={`mt-3 flex items-center gap-1 text-xs font-semibold ${badgeColor} hover:text-[#3E51DE]`}>
                   {action}
                   <ArrowRight size={12} />
-                </button>
+                </Link>
               </div>
             ))}
           </div>

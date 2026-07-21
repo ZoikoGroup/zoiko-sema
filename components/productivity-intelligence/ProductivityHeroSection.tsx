@@ -192,15 +192,11 @@ export default function ProductivityHeroSection() {
                 buttonIn ? "pi-visible" : ""
               } mt-9 flex flex-col gap-3 sm:flex-row`}
             >
-              <Link href="/get-a-demo">
-              <button className="pi-btn-primary rounded-full bg-[#4F5BD5] px-8 py-3 text-sm font-semibold text-white">
+              <Link href="/get-a-demo" className="pi-btn-primary rounded-full bg-[#4F5BD5] px-8 py-3 text-sm font-semibold text-white inline-flex items-center justify-center">
                 Request Demo
-              </button>
               </Link>
-              <Link href="#">
-              <button className="pi-btn-secondary rounded-full bg-white px-8 py-3 text-sm font-semibold text-gray-900">
+              <Link href="/security-compliance" className="pi-btn-secondary rounded-full bg-white px-8 py-3 text-sm font-semibold text-gray-900 inline-flex items-center justify-center">
                 View Governance
-              </button>
               </Link>
             </div>
           </div>
