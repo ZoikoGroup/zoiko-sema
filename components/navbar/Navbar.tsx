@@ -33,7 +33,7 @@ const menuItems: NavItem[] = [
     children: [
       { label: "Enterprise Teams", href: "/enterprise", desc: "Scale communication, streamline workflows, and keep everyone aligned." },
       { label: "Department Solutions", href: "/department-solutions", desc: "Tailored for IT, HR, Finance, Sales, and Operations teams." },
-      { label: "Hybrid & Remote Teams", href: "/solutions/hybrid-remote", desc: "Empower distributed teams with secure, inclusive collaboration." },
+      { label: "Hybrid & Remote Teams", href: "/solution-hybrid-remote", desc: "Empower distributed teams with secure, inclusive collaboration." },
       { label: "Financial Services", href: "/financial-services", desc: "Secure communication and compliance for regulated institutions." },
       { label: "Healthcare", href: "/healthcare", desc: "Protect patient data and improve care team collaboration." },
       { label: "Government", href: "/government", desc: "Meet compliance standards and support public sector work securely." },
@@ -75,7 +75,7 @@ const menuItems: NavItem[] = [
       { label: "Teams & Groups", href: "/zoikotime/teams-groups", desc: "Organize teams, set managers, and control access." },
       { label: "Privacy & Data Protection", href: "/privacy", desc: "Privacy-first design with role-based access and data protection." },
       { label: "Integrations", href: "/zoikotime-integrations", desc: "Connect ZoikoTime with Zoiko One, Zoiko Sema, and other tools." },
-      { label: "Settings", href: "/zoikotime/settings", desc: "General settings, billing, usage, and account preferences." },
+      { label: "Settings", href: "/settings", desc: "General settings, billing, usage, and account preferences." },
     ],
   },
   { title: "Pricing", url: "/pricing" },
@@ -85,10 +85,10 @@ const menuItems: NavItem[] = [
     children: [
       { label: "Blog", href: "/blog", desc: "Insights, updates, and best practices from the Zoiko Sema team." },
       { label: "Guides & Tutorials", href: "/resources/guides", desc: "Step-by-step guides to help your team succeed." },
-      { label: "Webinars & Events", href: "/resources/webinars", desc: "Live sessions, recordings, and on-demand content." },
+      { label: "Webinars & Events", href: "/webinars", desc: "Live sessions, recordings, and on-demand content." },
       { label: "White Papers", href: "/resources/white-papers", desc: "In-depth research and industry reports." },
       { label: "Help Center", href: "/help-center", desc: "Get answers to common questions and issues." },
-      { label: "Community", href: "/resources/community", desc: "Connect with other Sema users and experts." },
+      { label: "Community", href: "/community", desc: "Connect with other Sema users and experts." },
       { label: "API & Developer Docs", href: "/developer-docs", desc: "Integrate Sema with your tools and workflows." },
       { label: "Status & Uptime", href: "/status", desc: "Real-time system status and performance." },
       { label: "About Zoiko Sema", href: "/about", desc: "Our mission, vision, and the Zoiko Group." },
@@ -279,7 +279,7 @@ const solutionColumns: SolutionColumn[] = [
       {
         title: "Hybrid & Remote Teams",
         desc: "Empower distributed teams with secure, inclusive collaboration.",
-        href: "/solutions/hybrid-remote",
+        href: "/solutions-hybrid-remote",
         icon: solutionIcon(<><path d="M5 12.55a11 11 0 0 1 14.08 0" /><path d="M1.42 9a16 16 0 0 1 21.16 0" /><path d="M8.53 16.11a6 6 0 0 1 6.95 0" /><line x1="12" y1="20" x2="12.01" y2="20" /></>),
       },
     ],
@@ -450,7 +450,7 @@ const useCasesFeatured = {
   ctaText: "Explore all use cases",
   ctaHref: "/use-cases",
   secondaryText: "See customer stories",
-  secondaryHref: "/case-studies",
+  secondaryHref: "/customer-stories",
 };
 
 /* ---------------- Resources mega menu data ---------------- */
@@ -494,7 +494,7 @@ const resourceColumns: ResourceColumn[] = [
       {
         title: "Webinars & Events",
         desc: "Live sessions, recordings, and on-demand content.",
-        href: "/resources/webinars",
+        href: "/webinars",
         icon: resourceIcon(<><circle cx="12" cy="12" r="10" /><polygon points="10 8 16 12 10 16 10 8" /></>),
       },
       {
@@ -517,7 +517,7 @@ const resourceColumns: ResourceColumn[] = [
       {
         title: "Community",
         desc: "Connect with other Sema users and experts.",
-        href: "/resources/community",
+        href: "/community",
         badge: "NEW",
         badgeTone: "new",
         icon: resourceIcon(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
@@ -671,7 +671,7 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Settings",
       desc: "General settings, billing, usage, and account preferences.",
-      href: "/zoikotime/settings",
+      href: "/settings",
       icon: zoikoTimeIcon(<><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" /></>),
     },
   ],

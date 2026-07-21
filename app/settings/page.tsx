@@ -1,25 +1,11 @@
-import {
-  Hero,
-  OrganizationIdentity,
-  Graph,
-  HighRiskWorkflow,
-  RegionalNotificationPolicies,
-  ComprehensiveGovernance,
-  PersonalPreferences,
-  SettingsFAQ,
-} from "@/components/settings";
+import { CorporateGovernancePortal, EnterpriseControlCenter ,WorkspaceSettingsPortal} from "@/components/settings";
 
-export default function SettingPage() {
-  return (
-    <main>
-      <Hero />
-      <OrganizationIdentity />
-      <Graph />
-      <HighRiskWorkflow />
-      <RegionalNotificationPolicies />
-      <ComprehensiveGovernance />
-      <PersonalPreferences />
-      <SettingsFAQ />
-    </main>
-  );
+export default function page(){
+    return (
+        <main>
+            <EnterpriseControlCenter/>
+            <CorporateGovernancePortal/>
+            <WorkspaceSettingsPortal/>
+        </main>
+    )
 }

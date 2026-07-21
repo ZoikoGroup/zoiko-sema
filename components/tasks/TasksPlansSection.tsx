@@ -15,6 +15,7 @@ const PLANS = [
       "List view"
     ],
     cta: "Start Free",
+    link:"/start-free",
     popular: false,
     featured: false
   },
@@ -29,6 +30,7 @@ const PLANS = [
       "Limited AI suggestions"
     ],
     cta: "Start Free",
+    link:"/start-free",
     popular: false,
     featured: false
   },
@@ -44,6 +46,7 @@ const PLANS = [
       "Basic admin & audit"
     ],
     cta: "Explore Teams",
+    link:"/teams",
     popular: true,
     featured: true
   },
@@ -59,6 +62,7 @@ const PLANS = [
       "Guest & role policies"
     ],
     cta: "Get a demo",
+    link:"/get-a-demo",
     popular: false,
     featured: false
   }
@@ -150,13 +154,14 @@ export default function PricingPlans() {
 
               {/* Action Button Segment */}
               <div className="pt-6 mt-auto">
+                <a href={plan.link}>
                 <button className={`w-full py-2.5 rounded-xl text-xs font-bold transition-all duration-300 border active:scale-95 ${
                   plan.featured
                     ? 'bg-blue-600 border-blue-600 text-white hover:bg-blue-700 shadow-md shadow-blue-600/10'
                     : 'bg-blue-600/5 dark:bg-blue-600/10 border-blue-600/20 dark:border-blue-500/20 text-blue-600 dark:text-blue-400 hover:bg-blue-600/10 dark:hover:bg-blue-600/20'
                 }`}>
                   {plan.cta}
-                </button>
+                </button></a>
               </div>
             </div>
           ))}

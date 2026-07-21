@@ -107,13 +107,15 @@ export default function DocumentsHeroSection() {
               className="fade-in-item mt-8 flex flex-wrap items-center gap-3"
               style={{ animationDelay: "240ms" }}
             >
+              <a href="/start-free">
               <button className="flex items-center gap-2 rounded-full bg-[#4F63F0] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#3E51DE]">
                 Start free
                 <ArrowRight size={16} />
-              </button>
+              </button></a>
+              <a href="/get-a-demo">
               <button className="rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-[#11163C] transition hover:bg-gray-100">
                 Get a demo
-              </button>
+              </button></a>
             </div>
 
             <p

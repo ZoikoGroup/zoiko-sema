@@ -70,12 +70,14 @@ export default function MessagingHeroSection() {
 
           {/* Call-to-Actions */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 max-w-md mx-auto sm:max-w-none">
+            <a href="/start-free">
             <button className="w-full sm:w-auto px-8 py-3.5 bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white font-semibold rounded-full text-base transition-all shadow-[0px_10px_30px_-8px_rgba(52,87,232,0.55)]">
               Start free
-            </button>
+            </button></a>
+            <a href="/get-a-demo">
             <button className="w-full sm:w-auto px-8 py-3.5 bg-transparent hover:bg-white/10 active:scale-[0.98] text-white font-semibold rounded-full text-base border border-white/30 transition-all">
               Get a demo
-            </button>
+            </button></a>
           </div>
 
           {/* Fully Coded App Interface Container */}

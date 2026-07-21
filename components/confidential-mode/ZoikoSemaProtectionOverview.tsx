@@ -108,7 +108,7 @@ export default function ZoikoSemaProtectionOverview() {
           <div className={`w-full max-w-[1136px] mx-auto aspect-[1136/384] bg-slate-50 dark:bg-gray-900 rounded-2xl shadow-sm border border-slate-200/60 dark:border-gray-800 overflow-hidden transition-all duration-1000 delay-150 transform ${protectVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'} hover:scale-[1.002]`}>
             <img 
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.01]" 
-              src="/confidentail/image 79@2x.png" 
+              src="/confidentail/image 79.png" 
               alt="Security operations schematic displaying configuration layout maps" 
             />
           </div>

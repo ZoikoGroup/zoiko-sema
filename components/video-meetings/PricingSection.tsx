@@ -32,6 +32,7 @@ const plans = [
     period: "",
     subtext: "Try for free",
     buttonText: "Sign up free",
+    link:"/signup",
     isPopular: false,
     features: [
       "40-minute group meetings",
@@ -47,6 +48,7 @@ const plans = [
     period: "/mo",
     subtext: "Billed annually",
     buttonText: "Buy now",
+    link:"/buy-now",
     isPopular: true,
     features: [
       "All of Basic, plus:",
@@ -63,6 +65,7 @@ const plans = [
     period: "/mo",
     subtext: "Billed annually · 250+ users",
     buttonText: "Buy now",
+    link:"/buy-now",
     isPopular: false,
     features: [
       "All of Pro, plus:",
@@ -165,13 +168,15 @@ export default function PricingSection() {
                   {/* CTA Action Button */}
                   <div className="mb-8">
                     {plan.isPopular ? (
+                      <a href={plan.link}>
                       <button className="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full text-base transition-all duration-200 shadow-[0px_10px_30px_-8px_rgba(52,87,232,0.55)] active:scale-[0.98]">
                         {plan.buttonText}
-                      </button>
+                      </button></a>
                     ) : (
+                      <a href={plan.link}>
                       <button className="w-full py-3.5 bg-transparent hover:bg-slate-900 hover:text-white text-slate-900 font-semibold rounded-full text-base border border-slate-900 transition-all duration-200 active:scale-[0.98]">
                         {plan.buttonText}
-                      </button>
+                      </button></a>
                     )}
                   </div>
 
