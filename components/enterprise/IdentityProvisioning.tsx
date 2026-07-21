@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
-
+import Link from 'next/link';
 // Lightweight hook for triggering staggered entry animations on scroll
 function useElementInView(threshold = 0.05) {
   const ref = useRef<HTMLDivElement>(null);
@@ -88,12 +88,12 @@ export default function IdentityProvisioning() {
               Set up SSO, SCIM provisioning, domain verification, group mapping, and break-glass admin access with clear connection states for IT and security reviewers.
             </p>
             <div className="flex flex-wrap items-center gap-4 pt-2">
-              <button className="px-6 py-2.5 bg-blue-600 text-white rounded-full text-xs font-bold tracking-tight shadow-md transition-all duration-200 hover:bg-blue-700 hover:shadow-blue-500/20 hover:-translate-y-0.5 active:translate-y-0">
+              <Link href="/contact-sales" className="px-6 py-2.5 bg-blue-600 text-white rounded-full text-xs font-bold tracking-tight shadow-md transition-all duration-200 hover:bg-blue-700 hover:shadow-blue-500/20 hover:-translate-y-0.5 active:translate-y-0">
                 Talk to sales
-              </button>
-              <button className="px-5 py-2.5 bg-transparent text-violet-600 dark:text-violet-400 font-bold text-xs transition-colors hover:text-violet-700">
+              </Link>
+              <Link href="/admin-console" className="px-5 py-2.5 bg-transparent text-violet-600 dark:text-violet-400 font-bold text-xs transition-colors hover:text-violet-700 inline-flex items-center">
                 See identity setup →
-              </button>
+              </Link>
             </div>
           </div>
 

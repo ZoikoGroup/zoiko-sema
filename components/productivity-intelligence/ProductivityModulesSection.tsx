@@ -58,7 +58,7 @@ const MODULES: Module[] = [
       "Meetings, summaries, action items, decisions, channels, projects, ZoikoTime records, and integrations.",
     action: "View signal map",
     iconBg: "bg-[#4F5BD5]",
-    href: "#",
+    href: "/insights-analytics",
   },
   {
     icon: FiCheckCircle,
@@ -68,7 +68,7 @@ const MODULES: Module[] = [
       "Owned actions, due dates, blocked status, unresolved decisions, and review status.",
     action: "Explore follow-through",
     iconBg: "bg-[#17A673]",
-    href: "#",
+    href: "/team-decision-tracking",
   },
   {
     icon: FiUsers,
@@ -78,7 +78,7 @@ const MODULES: Module[] = [
       "Aggregate handoffs, meetings, spaces, response friction, and cross-team dependency patterns.",
     action: "View patterns",
     iconBg: "bg-[#5B5CE6]",
-    href: "#",
+    href: "/insights-analytics",
   },
   {
     icon: FiAlertTriangle,
@@ -88,7 +88,7 @@ const MODULES: Module[] = [
       "Recurring blockers, waiting states, missing owners, delayed approvals, and system handoffs.",
     action: "Find blockers",
     iconBg: "bg-[#C48911]",
-    href: "#",
+    href: "/break-management",
   },
   {
     icon: FiCheckSquare,
@@ -98,7 +98,7 @@ const MODULES: Module[] = [
       "Human approval before CRM sync, reports, HR review, audit exports, or executive packs.",
     action: "View governance",
     iconBg: "bg-[#0F9D91]",
-    href: "#",
+    href: "/regulated-workflows",
   },
   {
     icon: FiFileText,
@@ -108,7 +108,7 @@ const MODULES: Module[] = [
       "PDF/CSV/API export states, permissions, retention, audit log, and watermark where required.",
     action: "Request demo",
     iconBg: "bg-[#4F46E5]",
-    href: "#",
+    href: "/get-a-demo",
   },
 ];
 

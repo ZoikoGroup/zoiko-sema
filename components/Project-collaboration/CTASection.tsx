@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 export function CTASection() {
   return (
     <section className="w-full bg-[#6C4FE0] py-24 lg:py-32 font-sans antialiased">
@@ -14,15 +14,15 @@ export function CTASection() {
         </p>
         
         <div className="flex items-center gap-4 mt-8">
-          <button className="px-6 py-3 bg-white text-[#6C4FE0] rounded-full font-bold text-sm hover:scale-105 transition-transform">
+          <Link href="/get-a-demo" className="px-6 py-3 bg-white text-[#6C4FE0] rounded-full font-bold text-sm hover:scale-105 transition-transform inline-flex items-center justify-center">
             Get a demo
-          </button>
-          <button className="px-6 py-3 bg-white/10 text-white border border-white/20 rounded-full font-bold text-sm hover:bg-white/20 transition-all">
+          </Link>
+          <Link href="/start-free" className="px-6 py-3 bg-white/10 text-white border border-white/20 rounded-full font-bold text-sm hover:bg-white/20 transition-all inline-flex items-center justify-center">
             Start free
-          </button>
-          <a href="#" className="text-white text-sm font-bold ml-2 underline underline-offset-4 decoration-white/50 hover:decoration-white transition-colors">
+          </Link>
+          <Link href="/contact-sales" className="text-white text-sm font-bold ml-2 underline underline-offset-4 decoration-white/50 hover:decoration-white transition-colors">
             Talk to sales
-          </a>
+          </Link>
         </div>
 
         <p className="text-violet-300/80 text-xs font-normal font-['Inter'] mt-8">

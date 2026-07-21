@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { useInView } from "./useInView";
 
 export function PersonalToTeamHeroSection() {
@@ -33,12 +34,12 @@ export function PersonalToTeamHeroSection() {
           </p>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
-            <button className="ptt-btn px-6 py-3 rounded-full text-white text-base font-bold shadow-[0px_10px_24px_-8px_rgba(52,87,232,0.50)]" style={{ background: '#2563EB' }}>
+            <Link href="/get-a-demo" className="ptt-btn px-6 py-3 rounded-full text-white text-base font-bold shadow-[0px_10px_24px_-8px_rgba(52,87,232,0.50)] flex items-center justify-center" style={{ background: '#2563EB' }}>
               Get a demo
-            </button>
-            <button className="ptt-btn px-6 py-3 rounded-full bg-white border border-zinc-200 text-slate-900 text-base font-bold">
+            </Link>
+            <Link href="/start-free" className="ptt-btn px-6 py-3 rounded-full bg-white border border-zinc-200 text-slate-900 text-base font-bold flex items-center justify-center">
               Start free
-            </button>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 pt-2">
