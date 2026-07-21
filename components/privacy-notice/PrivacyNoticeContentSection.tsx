@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 const BRAND = "#3457E8";
@@ -58,7 +59,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Full AI governance details are documented separately.",
       linkText: "Read AI Use Policy",
-      linkHref: "#",
+      linkHref: "/ai-use-policy",
     },
   },
   {
@@ -71,7 +72,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Admin-level configuration is managed centrally.",
       linkText: "View Admin Console",
-      linkHref: "#",
+      linkHref: "/admin-console",
     },
   },
   {
@@ -84,7 +85,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Manage your cookie preferences at any time.",
       linkText: "Read Cookie Policy",
-      linkHref: "#",
+      linkHref: "/cookie-policy",
     },
   },
   {
@@ -113,7 +114,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Review our security program and controls.",
       linkText: "Read Security Policy",
-      linkHref: "#",
+      linkHref: "/security-policy",
     },
   },
   {
@@ -312,14 +313,14 @@ export default function PrivacyNoticeContentSection() {
                       >
                         <span className="text-[13px] text-gray-600">{s.infoBox.text}</span>
                         {s.infoBox.linkText && (
-                          <a
-                            href={s.infoBox.linkHref}
+                          <Link
+                            href={s.infoBox.linkHref ?? "#"}
                             className="pnc-infobox-link inline-flex items-center gap-1 text-[13px] font-semibold flex-shrink-0"
                             style={{ color: BRAND }}
                           >
                             {s.infoBox.linkText}
                             <span className="pnc-arrow">→</span>
-                          </a>
+                          </Link>
                         )}
                       </div>
                     )}
@@ -343,9 +344,9 @@ export default function PrivacyNoticeContentSection() {
                   speak with our legal and sales teams about specific privacy
                   requirements.
                 </p>
-                <button className="pnc-cta-btn bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3">
+                <Link href="/contact-sales" className="pnc-cta-btn inline-flex items-center justify-center bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3">
                   Contact Sales
-                </button>
+                </Link>
               </div>
             </div>
 

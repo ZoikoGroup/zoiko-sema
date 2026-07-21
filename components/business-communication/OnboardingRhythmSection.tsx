@@ -117,10 +117,10 @@ export default function OnboardingRhythmSection() {
           <button className="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold text-sm rounded-[52px] shadow-sm transition-all duration-200 transform active:scale-95 whitespace-nowrap">
             Get onboarding guidance
           </button>
-          
+          <a href="/start-free">
           <button className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-bold text-sm tracking-wide transition-colors duration-200 transform active:scale-95 px-4 py-2">
             Start free
-          </button>
+          </button></a>
         </div>
 
       </div>

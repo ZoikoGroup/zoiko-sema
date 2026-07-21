@@ -147,7 +147,7 @@ export default function PrivacyPage() {
           </Reveal>
           <Reveal delay={120} className="relative mx-auto w-full">
             <div className="absolute -inset-8 bg-violet-400/15 blur-2xl" />
-            <Image src="/privacy&data/image 104.png" alt="Professional reviewing privacy and data controls" width={707} height={540} priority className="rounded-xl relative aspect-[1.12]   shadow-2xl shadow-black/30" />
+            <Image src="/privacy/image 104.png" alt="Professional reviewing privacy and data controls" width={707} height={540} priority className="rounded-xl relative aspect-[1.12]   shadow-2xl shadow-black/30" />
           </Reveal>
         </div>
       </section>
@@ -262,7 +262,7 @@ export default function PrivacyPage() {
               {/* Right Column: Dynamic Image Visual */}
               <div className="relative min-h-[18rem] md:h-full w-full">
                 <Image
-                  src="/privacy&data/image 105.png"
+                  src="/privacy/image 105.png"
                   alt="Zoiko Sema data surfaces visual"
                   width={598}
                   height={435}
@@ -325,7 +325,7 @@ export default function PrivacyPage() {
             <p className="mt-4 max-w-2xl text-base font-normal text-slate-300 leading-6">Zoiko Sema provides controls — workspace owners and admins are responsible for access, sharing, retention, exports, guest access, integrations, and AI settings where supported by plan and role.</p>
             <Reveal className="mt-9 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-1.5">
               <div className="relative h-72 w-full bg-slate-800 rounded-xl overflow-hidden">
-                <img className="w-full h-full object-cover" src="/privacy&data/image 106.png" alt="Admin Dashboard Controls Structure Overview" />
+                <img className="w-full h-full object-cover" src="/privacy/Paragraph+Overlay+Border.png" alt="Admin Dashboard Controls Structure Overview" />
               </div>
             </Reveal>
             <div className="mt-8">
@@ -453,7 +453,7 @@ export default function PrivacyPage() {
                   {/* Right Dynamic Image Visual */}
                   <div className="w-full lg:w-100 h-120 shrink-0 relative bg-slate-900 rounded-2xl overflow-hidden self-stretch lg:self-auto">
                     <Image
-                      src="/privacy&data/image 107.png"
+                      src="/privacy/Paragraph+Background.png"
                       alt="Zoiko Sema workspace illustration"
                       width={414}
                       height={551}
@@ -609,7 +609,7 @@ export default function PrivacyPage() {
                   {/* Sidebar Image */}
                   <div className="w-full h-64 bg-slate-900 rounded-2xl overflow-hidden relative">
                     <Image
-                      src="/privacy&data/image 108.png"
+                      src="/privacy/Paragraph+Background (1).png"
                       alt="Security support asset"
                       width={395}
                       height={395}

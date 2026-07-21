@@ -244,12 +244,14 @@ export default function ProductShowcase() {
             footerInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
+          <a href="/products">
           <button className="px-6 py-3 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 active:scale-95 text-white font-bold text-sm rounded-full transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-blue-600/20 hover:shadow-blue-600/30">
             View product tour
-          </button>
+          </button></a>
+          <a href="/get-a-demo">
           <button className="px-3 py-2 text-white font-bold text-sm border-b-2 border-white/10 hover:border-white transition-all duration-200 transform active:scale-95">
             Get a demo
-          </button>
+          </button></a>
         </div>
 
       </div>

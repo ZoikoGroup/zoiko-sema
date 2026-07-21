@@ -62,9 +62,10 @@ export default function ZoikoTimeIntegration() {
 
           {/* Interactive CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 pt-4">
+            <a href="/zoikotime-integrations">
             <button className="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold text-sm rounded-[43px] transition-all duration-200 shadow-md transform active:scale-95 whitespace-nowrap">
               Explore ZoikoTime integration
-            </button>
+            </button></a>
             <button className="px-1 py-2 text-white font-bold text-sm border-b border-white/40 hover:border-white transition-colors duration-200 whitespace-nowrap transform active:scale-95">
               Talk to enterprise sales
             </button>

@@ -112,15 +112,21 @@ export default function TeamCollaborationHero() {
             <div className="pt-2 flex flex-wrap gap-4 items-center">
 
               {/* Primary Action Button */}
-              <button className="relative px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-semibold text-base shadow-[0px_10px_24px_-10px_rgba(79,70,229,0.75)] hover:shadow-[0px_10px_28px_-6px_rgba(79,70,229,0.9)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 group cursor-pointer">
+              <a
+                href="/get-a-demo"
+                className="relative px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-semibold text-base shadow-[0px_10px_24px_-10px_rgba(79,70,229,0.75)] hover:shadow-[0px_10px_28px_-6px_rgba(79,70,229,0.9)] transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2 group cursor-pointer"
+              >
                 <span>Get a demo</span>
                 <span className="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
-              </button>
+              </a>
 
               {/* Secondary Option Action */}
-              <button className="px-6 py-3.5 bg-white/5 hover:bg-white/10 rounded-xl font-semibold text-base border border-white/20 hover:border-white/40 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer">
+              <a
+                href="/start"
+                className="px-6 py-3.5 bg-white/5 hover:bg-white/10 rounded-xl font-semibold text-base border border-white/20 hover:border-white/40 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              >
                 Start free
-              </button>
+              </a>
 
               {/* Inline Text Link Integration CTA */}
               <button className="flex items-center gap-2 px-3 py-2 text-slate-300 hover:text-white font-semibold text-base group transition-colors duration-200 cursor-pointer">

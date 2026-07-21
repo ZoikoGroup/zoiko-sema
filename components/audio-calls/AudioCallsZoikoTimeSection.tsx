@@ -176,7 +176,8 @@ export default function AudioCallsZoikoTimeSection() {
             ref={ctaRef}
             className={`zt-hidden ${ctaIn ? "zt-visible" : ""} flex flex-col sm:flex-row items-center justify-center gap-3`}
           >
-            <button onClick={()=>router.push('/zoikotime-integration')}
+            
+            <button onClick={()=>router.push('/zoikotime-integrations')}
             className="zt-btn-primary rounded-full px-6 py-3 text-[14px] font-semibold text-gray-900 bg-white">
               Explore ZoikoTime integration
             </button>

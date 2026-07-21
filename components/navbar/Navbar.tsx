@@ -46,17 +46,17 @@ const menuItems: NavItem[] = [
     title: "Use Cases",
     url: "/use-cases",
     children: [
-      { label: "Team Collaboration", href: "/use-cases/team-collaboration", desc: "Keep teams connected, aligned, and productive in one place." },
+      { label: "Team Collaboration", href: "/team-collaboration", desc: "Keep teams connected, aligned, and productive in one place." },
       { label: "Project Management", href: "/project-collaboration", desc: "Plan, manage tasks, share updates, and deliver projects on time." },
       { label: "Customer Support", href: "/customer-support", desc: "Resolve issues faster and deliver exceptional customer experiences." },
       { label: "Education", href: "/education", desc: "Enable engaging learning, discussions, and collaboration for students and educators." },
-      { label: "Security & Compliance", href: "/security-compliance", desc: "Communicate securely with Confidential Mode and policy controls." },
+      { label: "Security & Compliance", href: "/zoikosema-secure-communication", desc: "Communicate securely with Confidential Mode and policy controls." },
       { label: "Marketing", href: "/marketing", desc: "Launch campaigns, align teams, and move faster from idea to impact." },
       { label: "Remote & Hybrid Work", href: "/use-cases/remote-hybrid-work", desc: "Empower distributed teams with secure, inclusive communication." },
       { label: "Healthcare", href: "/use-case-healthcare", desc: "Improve care team communication and protect patient data." },
-      { label: "Government", href: "/use-cases/government", desc: "Meet compliance standards and enhance public sector collaboration." },
+      { label: "Government", href: "/government-use-case", desc: "Meet compliance standards and enhance public sector collaboration." },
       { label: "Retail & eCommerce", href: "/retail-ecommerce", desc: "Connect teams across stores, warehouses, and HQ to serve customers better." },
-      { label: "Sales & Enablement", href: "/use-cases/sales-enablement", desc: "Share content, track conversations, and close deals faster." },
+      { label: "Sales & Enablement", href: "/use-case-sales-enablement", desc: "Share content, track conversations, and close deals faster." },
       { label: "Travel & Hospitality", href: "/usecase-travel-hospitality", desc: "Coordinate teams and deliver seamless guest experiences." },
     ],
   },
@@ -64,15 +64,15 @@ const menuItems: NavItem[] = [
     title: "ZoikoTime",
     url: "/zoikotime",
     children: [
-      { label: "Overview", href: "/zoikotime/overview", desc: "See how ZoikoTime works and the value it delivers." },
+      { label: "Overview", href: "/product-overview", desc: "See how ZoikoTime works and the value it delivers." },
       { label: "Workforce Overview", href: "/workforce-truth", desc: "Real-time visibility into activity, status, and performance." },
       { label: "Performance Analytics", href: "/zoikotime-performance-analytics", desc: "Insights and reports that help you drive productivity and outcomes." },
       { label: "Compliance & Audit", href: "/compliance-audit", desc: "Audit trails, data retention, and policy compliance made simple." },
-      { label: "Time Tracking", href: "/zoikotime/time-tracking", desc: "Automatic time tracking with smart classification and accuracy." },
-      { label: "Break Management", href: "/zoikotime/break-management", desc: "Define breaks, enforce policies, and maintain healthy work habits." },
-      { label: "Alerts & Notifications", href: "/zoikotime/alerts-notifications", desc: "Custom alerts for inactivity, overtime, breaks, and policy events." },
-      { label: "Policies & Rules", href: "/zoikotime/policies-rules", desc: "Configure workforce policies, thresholds, and working schedules." },
-      { label: "Teams & Groups", href: "/zoikotime/teams-groups", desc: "Organize teams, set managers, and control access." },
+      { label: "Time Tracking", href: "/zoikotime-time-tracking", desc: "Automatic time tracking with smart classification and accuracy." },
+      { label: "Break Management", href: "/break-management", desc: "Define breaks, enforce policies, and maintain healthy work habits." },
+      { label: "Alerts & Notifications", href: "/alerts-notifications", desc: "Custom alerts for inactivity, overtime, breaks, and policy events." },
+      { label: "Policies & Rules", href: "/policies-rules", desc: "Configure workforce policies, thresholds, and working schedules." },
+      { label: "Teams & Groups", href: "/teams-and-groups", desc: "Organize teams, set managers, and control access." },
       { label: "Privacy & Data Protection", href: "/privacy", desc: "Privacy-first design with role-based access and data protection." },
       { label: "Integrations", href: "/zoikotime-integrations", desc: "Connect ZoikoTime with Zoiko One, Zoiko Sema, and other tools." },
       { label: "Settings", href: "/settings", desc: "General settings, billing, usage, and account preferences." },
@@ -248,8 +248,7 @@ type SolutionLink = {
 type SolutionColumn = {
   label: string;
   items: SolutionLink[];
-  footerText: string;
-  footerHref: string;
+  
 };
 
 const solutionIcon = (children: React.ReactNode) => (
@@ -261,8 +260,7 @@ const solutionIcon = (children: React.ReactNode) => (
 const solutionColumns: SolutionColumn[] = [
   {
     label: "By Team",
-    footerText: "Explore team solutions",
-    footerHref: "/solutions/teams",
+   
     items: [
       {
         title: "Enterprise Teams",
@@ -286,8 +284,7 @@ const solutionColumns: SolutionColumn[] = [
   },
   {
     label: "By Industry",
-    footerText: "Explore industry solutions",
-    footerHref: "/solutions/industries",
+   
     items: [
       {
         title: "Financial Services",
@@ -311,8 +308,7 @@ const solutionColumns: SolutionColumn[] = [
   },
   {
     label: "By Business Need",
-    footerText: "Explore by business need",
-    footerHref: "/solutions/business-need",
+  
     items: [
       {
         title: "Security & Compliance",
@@ -391,7 +387,7 @@ const useCasesLeftColumn: UseCaseLink[] = [
   {
     title: "Security & Compliance",
     desc: "Communicate securely with Confidential Mode and policy controls.",
-    href: "/use-cases/security-compliance",
+    href: "/zoikosema-secure-communication",
     icon: caseIcon(<><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" /></>),
   },
   {
@@ -601,13 +597,13 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Overview",
       desc: "See how ZoikoTime works and the value it delivers.",
-      href: "/zoikotime/overview",
+      href: "/product-overview",
       icon: zoikoTimeIcon(<><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></>),
     },
     {
       title: "Workforce Overview",
       desc: "Real-time visibility into activity, status, and performance.",
-      href: "/zoikotime/workforce-overview",
+      href: "/zoikotime-workforce-overview",
       icon: zoikoTimeIcon(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
     },
     {
@@ -619,7 +615,7 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Compliance & Audit",
       desc: "Audit trails, data retention, and policy compliance made simple.",
-      href: "/zoikotime/compliance-audit",
+      href: "/compliance-audit",
       icon: zoikoTimeIcon(<><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" /></>),
     },
   ],
@@ -627,25 +623,25 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Time Tracking",
       desc: "Automatic time tracking with smart classification and accuracy.",
-      href: "/zoikotime/time-tracking",
+      href: "/zoikotime-time-tracking",
       icon: zoikoTimeIcon(<><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></>),
     },
     {
       title: "Break Management",
       desc: "Define breaks, enforce policies, and maintain healthy work habits.",
-      href: "/zoikotime/break-management",
+      href: "/break-management",
       icon: zoikoTimeIcon(<><path d="M18 8h1a4 4 0 0 1 0 8h-1" /><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z" /><line x1="6" y1="2" x2="6" y2="4" /><line x1="10" y1="2" x2="10" y2="4" /><line x1="14" y1="2" x2="14" y2="4" /></>),
     },
     {
       title: "Alerts & Notifications",
       desc: "Custom alerts for inactivity, overtime, breaks, and policy events.",
-      href: "/zoikotime/alerts-notifications",
+      href: "/alerts-notifications",
       icon: zoikoTimeIcon(<><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></>),
     },
     {
       title: "Policies & Rules",
       desc: "Configure workforce policies, thresholds, and working schedules.",
-      href: "/zoikotime/policies-rules",
+      href: "/policies-rules",
       icon: zoikoTimeIcon(<><line x1="4" y1="21" x2="4" y2="14" /><line x1="4" y1="10" x2="4" y2="3" /><line x1="12" y1="21" x2="12" y2="12" /><line x1="12" y1="8" x2="12" y2="3" /><line x1="20" y1="21" x2="20" y2="16" /><line x1="20" y1="12" x2="20" y2="3" /><line x1="1" y1="14" x2="7" y2="14" /><line x1="9" y1="8" x2="15" y2="8" /><line x1="17" y1="16" x2="23" y2="16" /></>),
     },
   ],
@@ -653,7 +649,7 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Teams & Groups",
       desc: "Organize teams, set managers, and control access.",
-      href: "/zoikotime/teams-groups",
+      href: "/teams-and-groups",
       icon: zoikoTimeIcon(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
     },
     {
@@ -684,7 +680,7 @@ const zoikoTimeFeatured = {
   ctaText: "Open ZoikoTime Dashboard",
   ctaHref: "/zoikotime",
   secondaryText: "See how it works",
-  secondaryHref: "/zoikotime/how-it-works",
+  secondaryHref: "/how-it-works",
 };
 
 const zoikoTimeStats: { label: string; value: string; sub: string; subClass: string }[] = [
@@ -730,7 +726,7 @@ const semaMeetLinks: SemaMeetLink[] = [
   {
     title: "Schedule a Meeting",
     desc: "Create a meeting with calendar, guests, and policy controls.",
-    href: "/sema-meet/schedule",
+    href: "/schedule-a-meet",
     icon: semaMeetIcon(<><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></>),
   },
   {
@@ -868,21 +864,21 @@ const workspaceGroups: WorkspaceGroup[] = [
       {
         title: "ZoikoTime",
         desc: "Workforce assurance and time intelligence",
-        href: "/zoikotime",
+        href: "https://zoikotime.com/",
         iconBg: "bg-emerald-50 text-emerald-600",
         icon: <span className="text-[11px] font-bold">Zt</span>,
       },
       {
         title: "Integrations",
         desc: "Connect your favourite tools and apps",
-        href: "/integrations",
+        href: "/integration-scalability",
         iconBg: "bg-brand-light text-brand",
         icon: iconWrap(<><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" /></>),
       },
       {
         title: "API & Developers",
         desc: "Build, extend and integrate with Sema",
-        href: "/developers",
+        href: "/developer-docs",
         iconBg: "bg-brand-light text-brand",
         icon: iconWrap(<polyline points="16 18 22 12 16 6 8 6 2 12 8 18 16 18" />),
       },
@@ -1157,13 +1153,7 @@ export default function Navbar() {
                                     </Link>
                                   ))}
                                 </div>
-                                <Link
-                                  href={col.footerHref}
-                                  onClick={() => setOpenDropdown(null)}
-                                  className="mt-5 text-[12.5px] font-semibold text-brand hover:underline"
-                                >
-                                  {col.footerText} →
-                                </Link>
+                               
                               </div>
                             ))}
 
@@ -1620,7 +1610,7 @@ export default function Navbar() {
             {/* Desktop right side */}
             <div className="hidden lg:flex items-center gap-2.5 xl:gap-3 flex-shrink-0">
               <Link
-                href="https://meet.zoikosema.com/login"
+                href="/login"
                 className="text-[13px] xl:text-[14px] font-semibold text-[#1A1D2E] hover:text-brand transition-colors whitespace-nowrap"
               >
                 Log in
@@ -1776,7 +1766,7 @@ export default function Navbar() {
                 <div className="my-3 h-px" style={{ background: "rgba(71,71,135,0.1)" }} />
 
                 <Link
-                  href="https://meet.zoikosema.com/login"
+                  href="/login"
                   onClick={() => setMobileMenu(false)}
                   className="flex items-center justify-center px-5 py-3 rounded-full font-semibold text-[#1A1D2E]"
                 >

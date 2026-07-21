@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 const BRAND = "#3457E8";
@@ -50,7 +51,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Workspace configuration connects directly to admin tooling.",
       linkText: "View Admin Console",
-      linkHref: "#",
+      linkHref: "/admin-console",
     },
   },
   {
@@ -63,7 +64,7 @@ const sections: Section[] = [
     infoBox: {
       text: "See current plans and enterprise contract options.",
       linkText: "View Pricing",
-      linkHref: "#",
+      linkHref: "/pricing",
     },
   },
   {
@@ -84,7 +85,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Review the full policy governing AI feature use.",
       linkText: "Read AI Use Policy",
-      linkHref: "#",
+      linkHref: "/ai-use-policy",
     },
   },
   {
@@ -97,7 +98,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Prohibited conduct and enforcement details are defined separately.",
       linkText: "Read Acceptable Use Policy",
-      linkHref: "#",
+      linkHref: "/acceptable-use-policy",
     },
   },
   {
@@ -110,7 +111,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Security and privacy documentation is available for review.",
       linkText: "Visit Trust Center",
-      linkHref: "#",
+      linkHref: "/trust-center",
     },
   },
   {
@@ -131,7 +132,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Check live availability and incident history.",
       linkText: "View System Status",
-      linkHref: "#",
+      linkHref: "/status",
     },
   },
   {
@@ -324,15 +325,15 @@ export default function TermsOfServiceContentSection() {
                         style={{ background: "#EEF0FC" }}
                       >
                         <span className="text-[13px] text-gray-600">{s.infoBox.text}</span>
-                        {s.infoBox.linkText && (
-                          <a
-                            href={s.infoBox.linkHref}
+                {s.infoBox.linkText && (
+                          <Link
+                            href={s.infoBox.linkHref ?? "#"}
                             className="tosc-infobox-link inline-flex items-center gap-1 text-[13px] font-semibold flex-shrink-0"
                             style={{ color: BRAND }}
                           >
                             {s.infoBox.linkText}
                             <span className="tosc-arrow">→</span>
-                          </a>
+                          </Link>
                         )}
                       </div>
                     )}
@@ -356,9 +357,9 @@ export default function TermsOfServiceContentSection() {
                   implementation terms may be handled through the enterprise
                   sales and legal review process.
                 </p>
-                <button className="tosc-cta-btn bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3">
+                <Link href="/contact-sales" className="tosc-cta-btn inline-flex items-center justify-center bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3">
                   Contact Sales
-                </button>
+                </Link>
               </div>
             </div>
 

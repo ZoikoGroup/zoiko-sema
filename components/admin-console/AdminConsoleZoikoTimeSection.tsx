@@ -207,7 +207,7 @@ export default function AdminConsoleZoikoTimeSection() {
             <button onClick={()=>router.push('/sema-zoikotime')} className="aczt-btn-primary rounded-full bg-white text-[#3A3564] text-[14px] font-semibold px-7 py-3.5">
               Explore Sema + ZoikoTime
             </button>
-            <button onClick={()=>router.push('/integration-demo')} className="aczt-btn-outline rounded-full border border-white/25 text-white text-[14px] font-semibold px-7 py-3.5">
+            <button onClick={()=>router.push('/zoikotime-integrations')} className="aczt-btn-outline rounded-full border border-white/25 text-white text-[14px] font-semibold px-7 py-3.5">
               Request an integration demo
             </button>
           </div>

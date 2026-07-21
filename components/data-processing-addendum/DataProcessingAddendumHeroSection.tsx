@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 /** Same scroll-reveal hook used across the other pages. */
@@ -121,12 +122,12 @@ and enterprise customers using Zoiko Sema.
             className={`cps-hidden ${ctaIn ? "cps-visible" : ""} flex flex-wrap items-center justify-center gap-3`}
             style={{ animationDelay: "0.15s" }}
           >
-            <button className="cps-btn-primary text-white text-[14px] font-semibold rounded-full px-7 py-3">
+            <Link href="/pricing" className="cps-btn-primary inline-flex items-center justify-center text-white text-[14px] font-semibold rounded-full px-7 py-3">
               View Pricing
-            </button>
-            <button className="cps-btn-secondary bg-white text-gray-900 text-[14px] font-semibold rounded-full px-7 py-3">
+            </Link>
+            <Link href="/contact" className="cps-btn-secondary inline-flex items-center justify-center bg-white text-gray-900 text-[14px] font-semibold rounded-full px-7 py-3">
               Contact Us
-            </button>
+            </Link>
           </div>
 
         </div>

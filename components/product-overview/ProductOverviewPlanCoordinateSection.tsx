@@ -37,7 +37,7 @@ const items = [
     title: "Mail",
     desc: "Business email connected to your conversations and workspace context.",
     linkLabel: "Explore Mail",
-    href: "/mail",
+    href: "/sema-mail",
   },
   {
     title: "Files",

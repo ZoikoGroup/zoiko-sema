@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 /** Same scroll-reveal hook used across every section on this page. */
@@ -95,12 +96,12 @@ export default function IndividualProductivityCTASection() {
             className={`ipc-cta-hidden ${ctaIn ? "ipc-cta-visible" : ""} flex flex-wrap items-center justify-center gap-3`}
             style={{ animationDelay: "0.16s" }}
           >
-            <button className="ipc-cta-btn-primary text-white text-[14px] font-semibold rounded-full px-6 py-3">
+            <Link href="/get-a-demo" className="ipc-cta-btn-primary inline-flex items-center justify-center text-white text-[14px] font-semibold rounded-full px-6 py-3">
               Get a demo
-            </button>
-            <button className="ipc-cta-btn-secondary bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3">
+            </Link>
+            <Link href="/start-free" className="ipc-cta-btn-secondary inline-flex items-center justify-center bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3">
               Start free
-            </button>
+            </Link>
           </div>
         </div>
       </section>

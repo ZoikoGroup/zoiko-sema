@@ -82,11 +82,11 @@ export default function AdminConsoleClosingCtaSection() {
                className="accs-btn-primary rounded-full bg-white text-[#0F0F2A] text-[14px] font-semibold px-6 py-3">
                 Get a demo
               </button>
-              <button onClick={()=>router.push("/talk-to-sales")}
+              <button onClick={()=>router.push("/contact")}
                className="accs-btn-outline rounded-full border border-white/20 text-white text-[14px] font-semibold px-6 py-3">
                 Talk to sales
               </button>
-              <button onClick={()=>router.push("/zoikotime-integration")}
+              <button onClick={()=>router.push("/zoikotime-integrations")}
               className="accs-btn-outline rounded-full border border-white/20 text-white text-[14px] font-semibold px-6 py-3">
                 Explore ZoikoTime integration
               </button>

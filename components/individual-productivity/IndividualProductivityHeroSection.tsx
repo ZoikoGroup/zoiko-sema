@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 function useInView(threshold = 0.15) {
@@ -138,12 +139,12 @@ export default function IndividualProductivityHeroSection() {
                 className={`ips-hidden ${ctaIn ? "ips-visible" : ""} flex flex-wrap items-center gap-3 mb-8`}
                 style={{ animationDelay: "0.15s" }}
               >
-                <button className="ips-btn-primary text-white text-[14px] font-semibold rounded-full px-6 py-3">
+                <Link href="/get-a-demo" className="ips-btn-primary inline-flex items-center justify-center text-white text-[14px] font-semibold rounded-full px-6 py-3">
                   Get a demo
-                </button>
-                <button className="ips-btn-secondary bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3 border border-gray-200">
+                </Link>
+                <Link href="/start-free" className="ips-btn-secondary inline-flex items-center justify-center bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3 border border-gray-200">
                   Start free
-                </button>
+                </Link>
               </div>
 
               {/* Footnote */}

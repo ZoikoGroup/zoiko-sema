@@ -80,12 +80,14 @@ export default function CommunicationHealthSection() {
 
           {/* Interactive Actions (Responsive Layout Stack) */}
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="/get-a-demo">
             <button className="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold text-sm rounded-full transition-all duration-200 shadow-md shadow-blue-600/10 active:scale-95 transform hover:-translate-y-0.5">
               Get a demo
-            </button>
+            </button></a>
+            <a href="/report-concern">
             <button className="w-full sm:w-auto px-5 py-3 text-blue-600 dark:text-blue-400 font-bold text-sm bg-transparent border border-transparent hover:border-slate-200 dark:hover:border-slate-800 rounded-full transition-all duration-200 active:scale-95 transform">
               See reporting
-            </button>
+            </button></a>
           </div>
         </div>
 

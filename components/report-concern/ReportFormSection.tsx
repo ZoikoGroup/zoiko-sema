@@ -69,6 +69,7 @@ export default function ReportFormSection() {
 
   return (
     <section
+      id="report-concern"
       ref={sectionRef}
       className="w-full py-10 lg:py-10 bg-white dark:bg-gray-900 text-slate-900 dark:text-white transition-colors duration-300 overflow-hidden"
     >

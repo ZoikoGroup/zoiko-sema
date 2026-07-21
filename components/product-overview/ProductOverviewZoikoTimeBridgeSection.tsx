@@ -132,7 +132,7 @@ export default function ProductOverviewZoikoTimeBridgeSection() {
             style={{ animationDelay: "0.26s" }}
           >
             <a
-              href="/zoikotime"
+              href="/sema-zoikotime"
               className="poztb-link inline-flex items-center gap-1.5 text-[14px] font-semibold text-brand"
             >
               Explore Sema + ZoikoTime

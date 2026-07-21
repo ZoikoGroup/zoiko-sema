@@ -123,7 +123,7 @@ export default function AudioCallsClosingCTASection() {
             className="cta-btn-outline rounded-full px-6 py-3 text-[14px] font-semibold text-white border border-white/25">
               Get a demo
             </button>
-            <button onClick={()=>router.push("/zoikotime-integration")}
+            <button onClick={()=>router.push("/zoikotime-integrations")}
              className="cta-btn-outline rounded-full px-6 py-3 text-[14px] font-semibold text-white border border-white/25">
               Explore ZoikoTime integration
             </button>

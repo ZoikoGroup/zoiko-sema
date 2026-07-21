@@ -148,7 +148,7 @@ export default function ProductOverviewCommunicationCoreSection() {
             style={{ animationDelay: "0.22s" }}
           >
             <a
-              href="/product/communication"
+              href="/products"
               className="pocc-link inline-flex items-center gap-1.5 text-[14px] font-semibold text-brand"
             >
               Explore communication products
