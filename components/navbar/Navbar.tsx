@@ -248,8 +248,7 @@ type SolutionLink = {
 type SolutionColumn = {
   label: string;
   items: SolutionLink[];
-  footerText: string;
-  footerHref: string;
+  
 };
 
 const solutionIcon = (children: React.ReactNode) => (
@@ -261,8 +260,7 @@ const solutionIcon = (children: React.ReactNode) => (
 const solutionColumns: SolutionColumn[] = [
   {
     label: "By Team",
-    footerText: "Explore team solutions",
-    footerHref: "/solutions/teams",
+   
     items: [
       {
         title: "Enterprise Teams",
@@ -286,8 +284,7 @@ const solutionColumns: SolutionColumn[] = [
   },
   {
     label: "By Industry",
-    footerText: "Explore industry solutions",
-    footerHref: "/solutions/industries",
+   
     items: [
       {
         title: "Financial Services",
@@ -311,8 +308,7 @@ const solutionColumns: SolutionColumn[] = [
   },
   {
     label: "By Business Need",
-    footerText: "Explore by business need",
-    footerHref: "/solutions/business-need",
+  
     items: [
       {
         title: "Security & Compliance",
@@ -1157,13 +1153,7 @@ export default function Navbar() {
                                     </Link>
                                   ))}
                                 </div>
-                                <Link
-                                  href={col.footerHref}
-                                  onClick={() => setOpenDropdown(null)}
-                                  className="mt-5 text-[12.5px] font-semibold text-brand hover:underline"
-                                >
-                                  {col.footerText} →
-                                </Link>
+                               
                               </div>
                             ))}
 
