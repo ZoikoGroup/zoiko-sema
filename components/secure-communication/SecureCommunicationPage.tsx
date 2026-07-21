@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -115,12 +116,12 @@ function Hero() {
           </p>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
-            <button className="sc-btn px-6 py-3 rounded-full text-white text-sm font-semibold shadow-[0px_12px_24px_-12px_rgba(60,60,120,0.6)]" style={{ background: '#4f46e5' }}>
+            <Link href="/get-a-demo" className="sc-btn px-6 py-3 rounded-full text-white text-sm font-semibold shadow-[0px_12px_24px_-12px_rgba(60,60,120,0.6)] inline-flex items-center justify-center" style={{ background: '#4f46e5' }}>
               Get a demo
-            </button>
-            <button className="sc-btn px-6 py-3 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-indigo-700 dark:text-indigo-400 text-sm font-semibold">
+            </Link>
+            <Link href="/contact-sales" className="sc-btn px-6 py-3 rounded-full bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 text-indigo-700 dark:text-indigo-400 text-sm font-semibold inline-flex items-center justify-center">
               Talk to sales
-            </button>
+            </Link>
           </div>
 
           <p className="text-sm text-gray-500 dark:text-gray-400 leading-5 pt-1.5 max-w-[520px]">
@@ -650,12 +651,12 @@ function FinalCTA() {
           See how Zoiko Sema gives teams governed spaces for sensitive conversations, meetings, files, AI summaries, decisions, and audit-ready evidence.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
-          <button className="sc-btn px-6 py-3 rounded-full text-white text-sm font-semibold shadow-[0px_12px_24px_-12px_rgba(60,60,120,0.6)]" style={{ background: '#4f46e5' }}>
+          <Link href="/get-a-demo" className="sc-btn px-6 py-3 rounded-full text-white text-sm font-semibold shadow-[0px_12px_24px_-12px_rgba(60,60,120,0.6)] inline-flex items-center justify-center" style={{ background: '#4f46e5' }}>
             Get a demo
-          </button>
-          <button className="sc-btn px-6 py-3 rounded-full bg-white border border-gray-200 text-indigo-700 text-sm font-semibold">
+          </Link>
+          <Link href="/contact-sales" className="sc-btn px-6 py-3 rounded-full bg-white border border-gray-200 text-indigo-700 text-sm font-semibold inline-flex items-center justify-center">
             Talk to sales
-          </button>
+          </Link>
         </div>
       </div>
     </section>

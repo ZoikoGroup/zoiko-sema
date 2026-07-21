@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-
+import Link from "next/link";
 // --- CUSTOM SCROLL-REVEAL REUSABLE HOOK ---
 function useScrollReveal() {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -59,17 +59,17 @@ export default function CtaSection() {
           <div
             className={`mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full sm:w-auto transition-all duration-1000 delay-400 transform ${ctaVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"}`}
           >
-            <button className="w-full sm:w-auto px-6 py-3 bg-white hover:bg-slate-50 text-indigo-800 font-sans text-sm font-bold rounded-full shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+            <Link href="/trust-center" className="inline-flex justify-center items-center w-full sm:w-auto px-6 py-3 bg-white hover:bg-slate-50 text-indigo-800 font-sans text-sm font-bold rounded-full shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
               Visit Trust Center
-            </button>
+            </Link>
 
-            <button className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-sans text-sm font-bold rounded-full border border-white/30 hover:border-white/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+            <Link href="/ai-use-policy" className="inline-flex justify-center items-center w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-sans text-sm font-bold rounded-full border border-white/30 hover:border-white/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
               Read AI Use Policy
-            </button>
+            </Link>
 
-            <button className="w-full sm:w-auto px-4 py-2 text-white hover:text-purple-200 font-sans text-sm font-bold border-b border-white/40 hover:border-white transition-all duration-200">
+            <Link href="/contact-sales" className="inline-flex justify-center items-center w-full sm:w-auto px-4 py-2 text-white hover:text-purple-200 font-sans text-sm font-bold border-b border-white/40 hover:border-white transition-all duration-200">
               Contact sales
-            </button>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useInView } from "./useInView";
+import Link from "next/link";
 
 // TODO: replace with your actual hero image path, e.g. "/Images/trust-center-hero.webp"
 const HERO_IMAGE_SRC = "/Images/trust-hero.webp";
@@ -72,12 +73,12 @@ export default function TrustCenterHeroSection() {
             </p>
 
             <div className="mt-7 flex flex-wrap items-center gap-3">
-              <button className="tc-btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white">
+              <Link href="#security-review" className="tc-btn-primary rounded-xl px-6 py-3 text-sm font-semibold text-white inline-block">
                 Request trust documents
-              </button>
-              <button className="tc-btn-secondary rounded-xl border border-white/15 px-6 py-3 text-sm font-semibold text-white">
+              </Link>
+              <Link href="#security-overview" className="tc-btn-secondary rounded-xl border border-white/15 px-6 py-3 text-sm font-semibold text-white inline-block">
                 View security overview
-              </button>
+              </Link>
             </div>
           </div>
 

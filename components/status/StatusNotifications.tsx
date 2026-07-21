@@ -24,7 +24,7 @@ export default function StatusNotifications() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-20 px-4 sm:px-6 lg:px-16 bg-slate-900 text-white overflow-hidden">
+    <section id="subscribe" ref={sectionRef} className="w-full py-20 px-4 sm:px-6 lg:px-16 bg-slate-900 text-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Headings */}
         <div className={`text-center space-y-3 mb-16 transition-all duration-1000 transform ${revealed ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>

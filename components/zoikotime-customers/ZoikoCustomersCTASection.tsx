@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 /** Same scroll-reveal hook used across every section on this page. */
 function useInView(threshold = 0.2) {
@@ -94,12 +95,12 @@ export default function ZoikoCustomersCTASection() {
             className={`zccta-hidden ${ctaIn ? "zccta-visible" : ""} flex flex-wrap items-center justify-center gap-3`}
             style={{ animationDelay: "0.16s" }}
           >
-            <button className="zccta-btn-primary text-white text-[14px] font-semibold rounded-full px-6 py-3">
+            <Link href="/get-a-demo" className="zccta-btn-primary text-white text-[14px] font-semibold rounded-full px-6 py-3 inline-flex items-center justify-center">
               Get a demo
-            </button>
-            <button className="zccta-btn-secondary bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3">
+            </Link>
+            <Link href="/contact-sales" className="zccta-btn-secondary bg-white text-gray-900 text-[14px] font-semibold rounded-full px-6 py-3 inline-flex items-center justify-center">
               Talk to sales
-            </button>
+            </Link>
           </div>
         </div>
       </section>

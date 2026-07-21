@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
 import { Bell, ArrowRight, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 
 // --- SHARED HIGH-PERFORMANCE SCROLL REVEAL HOOK ---
 function useScrollReveal() {
@@ -66,22 +67,22 @@ export default function SystemStatusHero() {
 
           {/* Call To Actions */}
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-2 w-full sm:w-auto">
-            <button className="group w-full sm:w-auto px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold font-sans text-sm rounded-full shadow-[0px_8px_24px_-8px_rgba(108,79,224,0.58)] transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5">
+            <Link href="#subscribe" className="group w-full sm:w-auto px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-bold font-sans text-sm rounded-full shadow-[0px_8px_24px_-8px_rgba(108,79,224,0.58)] transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5">
               <Bell className="w-4 h-4 group-hover:rotate-12 transition-transform" />
               <span>Subscribe to updates</span>
-            </button>
-            <button className="group w-full sm:w-auto px-6 py-3.5 bg-white hover:bg-slate-100 text-slate-900 font-bold font-sans text-sm rounded-full transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5">
+            </Link>
+            <Link href="#incidents" className="group w-full sm:w-auto px-6 py-3.5 bg-white hover:bg-slate-100 text-slate-900 font-bold font-sans text-sm rounded-full transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5">
               <span>View latest incidents</span>
               <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </button>
+            </Link>
           </div>
 
           {/* Subtext Link */}
           <p className="text-sm text-slate-400 mt-4 leading-relaxed font-sans max-w-xl">
             Clear incident communication for messaging, meetings, AI summaries, admin services, integrations, and ZoikoTime-connected workflows.{' '}
-            <a href="#" className="text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center gap-1 transition-colors group">
+            <Link href="/customer-support" className="text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center gap-1 transition-colors group">
               Contact support <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </p>
         </div>
 

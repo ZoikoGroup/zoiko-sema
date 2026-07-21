@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 
 function useInView(threshold = 0.15) {
@@ -93,14 +94,14 @@ export default function MeetingSummaryGovernanceSection() {
                 action is recorded.
               </p>
 
-              <button
-                type="button"
-                className="msg-cta inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-[14px] font-semibold text-white"
+              <Link
+                href="/security-compliance"
+                className="msg-cta inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-[14px] font-semibold text-white"
                 style={{ backgroundColor: "#4F46E5" }}
               >
                 See how summary controls work
                 <ArrowRight size={16} />
-              </button>
+              </Link>
             </div>
 
             {/* RIGHT — Image */}

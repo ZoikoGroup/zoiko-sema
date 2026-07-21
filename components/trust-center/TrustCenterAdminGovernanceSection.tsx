@@ -1,6 +1,7 @@
 "use client";
 
 import { useInView } from "./useInView";
+import Link from "next/link";
 
 // TODO: replace with your actual image path, e.g. "/Images/trust-center-admin-governance.webp"
 const ADMIN_IMAGE_SRC = "/Images/Admin-Governance.webp";
@@ -26,28 +27,28 @@ const rows: GovernanceRow[] = [
     scope: "Plan & role based",
     description: "Assign admin, workspace, and member roles; control scope and visibility by role.",
     action: "View Roles",
-    href: "/admin-console",
+    href: "/policies-rules",
   },
   {
     title: "Retention & audit",
     scope: "Plan & role based",
     description: "Set message, file, meeting, and AI summary retention. Review admin and export audit events.",
     action: "Retention Settings",
-    href: "/admin-console",
+    href: "/privacy-data-protection",
   },
   {
     title: "AI governance",
     scope: "Admin-controlled",
     description: "Control which workspaces use AI features, exclusions, and summary access rules.",
     action: "AI Governance",
-    href: "/ai-use-policy",
+    href: "/responsive-ai",
   },
   {
     title: "Integrations & webhooks",
     scope: "Admin-controlled",
     description: "Approve OAuth scopes, manage API keys, review webhook access, and revoke tokens.",
     action: "Developer Docs",
-    href: "/admin-console",
+    href: "/developer-docs",
   },
 ];
 
@@ -122,9 +123,9 @@ export default function TrustCenterAdminGovernanceSection() {
               plan and role.
             </p>
 
-            <button className="tc-admin-btn mt-6 rounded-xl px-6 py-3 text-sm font-semibold text-white">
+            <Link href="/admin-console" className="tc-admin-btn mt-6 inline-flex rounded-xl px-6 py-3 text-sm font-semibold text-white">
               View Admin Console
-            </button>
+            </Link>
 
             <div className="tc-admin-img-wrap mt-8 overflow-hidden rounded-2xl">
               <img
@@ -154,12 +155,12 @@ export default function TrustCenterAdminGovernanceSection() {
                     {description}
                   </p>
                 </div>
-                <a
+                <Link
                   href={href}
                   className="tc-admin-row-btn shrink-0 rounded-full bg-[#4F63F0] px-4 py-2 text-[11.5px] font-semibold text-white"
                 >
                   {action}
-                </a>
+                </Link>
               </div>
             ))}
           </div>

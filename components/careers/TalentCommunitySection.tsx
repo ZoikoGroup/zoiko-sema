@@ -116,7 +116,7 @@ export default function TalentCommunitySection() {
         }
       `}</style>
 
-            <section className="overflow-hidden bg-[#4F46E5] py-10 dark:bg-[#0D0B24] sm:py-14">
+            <section id="community" className="overflow-hidden bg-[#4F46E5] py-10 dark:bg-[#0D0B24] sm:py-14">
 
                 <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-14 px-6 sm:px-8 lg:grid-cols-2">
 

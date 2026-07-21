@@ -65,7 +65,7 @@ export default function TrustCenterOverviewSection() {
         }
       `}</style>
 
-      <section className="bg-[#F3F1FA] px-6 py-16 sm:px-10 lg:px-16">
+      <section id="security-overview" className="bg-[#F3F1FA] px-6 py-16 sm:px-10 lg:px-16">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 lg:grid-cols-2">
           <div ref={copyRef} className={`tc-overview-hidden ${copyIn ? "tc-overview-visible" : ""}`}>
             <p className="mb-3 text-xs font-semibold uppercase tracking-[2px] text-[#4F63F0]">

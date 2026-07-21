@@ -330,7 +330,7 @@ export default function OpenRolesSection() {
         }
       `}</style>
 
-      <section className="bg-[#F8F8FD] py-20 dark:bg-[#0D0B24] sm:py-24">
+      <section id="roles" className="bg-[#F8F8FD] py-20 dark:bg-[#0D0B24] sm:py-24">
 
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
 

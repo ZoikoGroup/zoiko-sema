@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { useInView } from "@/components/Personal-to-team/useInView";
 
 export function TeamDecisionTrackingHeroSection() {
@@ -30,12 +31,12 @@ export function TeamDecisionTrackingHeroSection() {
           </p>
           
           <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
-            <button className="px-8 py-3.5 bg-blue-600 text-white rounded-full font-bold text-base hover:bg-blue-700 hover:scale-105 transition-all shadow-sm">
+            <Link href="/get-a-demo" className="px-8 py-3.5 bg-blue-600 text-white rounded-full font-bold text-base hover:bg-blue-700 hover:scale-105 transition-all shadow-sm inline-flex items-center justify-center">
               Get a demo
-            </button>
-            <button className="px-8 py-3.5 bg-white text-slate-900 rounded-full font-bold text-base hover:bg-slate-50 hover:scale-105 transition-all shadow-sm">
+            </Link>
+            <Link href="/start-free" className="px-8 py-3.5 bg-white text-slate-900 rounded-full font-bold text-base hover:bg-slate-50 hover:scale-105 transition-all shadow-sm inline-flex items-center justify-center">
               Start free
-            </button>
+            </Link>
           </div>
         </div>
 

@@ -297,7 +297,7 @@ export default function Footer() {
                   { label: "Team Decision Tracking", href: "/team-decision-tracking" },
                   { label: "Remote Coordination", href: "/remote-coordination" },
                   { label: "Project Collaboration", href: "/project-collaboration" },
-                  { label: "Personal-to-Team", href: "/Personal-to-team" },
+                  { label: "Personal-to-Team", href: "/personal-to-team" },
                 ]}
               />
 

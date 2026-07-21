@@ -20,9 +20,9 @@ export default function SemaFinalCtaSection() {
           className="rounded-full cursor-pointer bg-[#4F63F0] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#3E51DE]">
             Explore Product
           </button>
-          <button onClick={()=>router.push('/talk-to-sales')}
+          <button onClick={()=>router.push('/contact-sales')}
           className="rounded-full cursor-pointer bg-white px-6 py-3 text-sm font-semibold text-[#0B1330] transition hover:bg-gray-100">
-            Talk to sales
+            Contact sales
           </button>
         </div>
       </div>

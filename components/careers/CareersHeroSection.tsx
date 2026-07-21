@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -210,13 +211,13 @@ export default function CareersHeroSection() {
                 buttonIn ? "careers-visible" : ""
               } mt-9 flex flex-col gap-3 sm:flex-row`}
             >
-              <button className="careers-btn-primary rounded-full bg-[#4F5BD5] px-8 py-3 text-sm font-semibold text-white">
+              <Link href="#roles" className="inline-flex items-center justify-center careers-btn-primary rounded-full bg-[#4F5BD5] px-8 py-3 text-sm font-semibold text-white">
                 View Open Roles
-              </button>
+              </Link>
 
-              <button className="careers-btn-secondary rounded-full bg-white px-8 py-3 text-sm font-semibold text-[#172046]">
+              <Link href="#community" className="inline-flex items-center justify-center careers-btn-secondary rounded-full bg-white px-8 py-3 text-sm font-semibold text-[#172046]">
                 Join Talent Community
-              </button>
+              </Link>
             </div>
 
             <p

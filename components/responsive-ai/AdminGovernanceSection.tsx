@@ -21,7 +21,7 @@ const cards: GovernanceCard[] = [
 
 export default function AdminGovernanceSection() {
   return (
-    <section className="bg-[#0B1033] px-6 py-24 lg:px-20">
+    <section id="controls" className="bg-[#0B1033] px-6 py-24 lg:px-20">
       <div className="mx-auto max-w-6xl">
         <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#5868FF]">
           Admin Governance & Controls

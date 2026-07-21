@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react';
-
+import Link from "next/link";
 // --- CUSTOM INTERSECTION OBSERVER HOOK FOR FLOATING REVEAL EFFECTS ---
 function useScrollReveal() {
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -65,12 +65,12 @@ export default function ZoikoSemaSecurityCenterHero() {
 
           {/* Active Core Navigation Trigger Actions Container */}
           <div className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 transition-all duration-1000 delay-300 transform ${heroVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-            <button className="px-8 h-12 bg-white hover:bg-slate-100 active:scale-98 text-slate-900 font-bold text-sm rounded-full font-sans transition-all shadow-[0px_10px_24px_-10px_rgba(20,22,43,0.60)] transform hover:-translate-y-0.5">
+            <Link href="#overview" className="inline-flex items-center justify-center px-8 h-12 bg-white hover:bg-slate-100 active:scale-98 text-slate-900 font-bold text-sm rounded-full font-sans transition-all shadow-[0px_10px_24px_-10px_rgba(20,22,43,0.60)] transform hover:-translate-y-0.5">
               Review security
-            </button>
-            <button className="px-8 h-12 bg-blue-600 hover:bg-blue-500 active:scale-98 text-white font-bold text-sm rounded-full font-sans transition-all shadow-[0px_10px_24px_-8px_rgba(108,79,224,0.50)] transform hover:-translate-y-0.5">
+            </Link>
+            <Link href="#review" className="inline-flex items-center justify-center px-8 h-12 bg-blue-600 hover:bg-blue-500 active:scale-98 text-white font-bold text-sm rounded-full font-sans transition-all shadow-[0px_10px_24px_-8px_rgba(108,79,224,0.50)] transform hover:-translate-y-0.5">
               Request security review
-            </button>
+            </Link>
           </div>
 
         </div>

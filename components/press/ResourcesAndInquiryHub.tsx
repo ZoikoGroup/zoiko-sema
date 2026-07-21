@@ -106,6 +106,7 @@ export default function ResourcesAndInquiryHub() {
       {/* SECTION 2: MEDIA INQUIRY FORM              */}
       {/* ========================================== */}
       <section 
+        id="contact"
         ref={inquiryRef}
         className={`w-full bg-violet-50/40 dark:bg-gray-900/40 py-16 transition-colors duration-300 transform transition-all duration-1000 ease-out ${
           inquiryVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0'

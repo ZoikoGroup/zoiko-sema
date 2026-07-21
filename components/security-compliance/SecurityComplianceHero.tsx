@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SecurityComplianceHero() {
   return (
     <>
@@ -45,19 +47,19 @@ export default function SecurityComplianceHero() {
             </div>
 
             <div className="pt-3 inline-flex justify-start items-start gap-3 flex-wrap">
-              <a
-                href="/start-free"
+              <Link
+                href="/pricing"
                 className="px-6 py-3 bg-blue-600 rounded-full text-white text-sm font-bold font-['Plus_Jakarta_Sans'] leading-5 transition hover:bg-blue-500 shadow-md"
               >
                 Start free
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/get-a-demo"
                 className="px-6 py-3 bg-white rounded-full text-slate-900 text-sm font-bold font-['Plus_Jakarta_Sans'] leading-5 transition hover:bg-slate-100 shadow-md"
               >
                 Get a demo
-              </a>
+              </Link>
             </div>
           </div>
 

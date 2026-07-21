@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function DocsHero() {
   return (
     <>
@@ -39,13 +41,13 @@ export default function DocsHero() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <button className="rounded-full bg-[#4F63F0] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#4053E6]">
+              <Link href="#docs" className="inline-flex items-center justify-center rounded-full bg-[#4F63F0] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#4053E6]">
                 View Docs
-              </button>
+              </Link>
 
-              <button className="rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#11163C] transition hover:bg-gray-100">
+              <Link href="#quickstart" className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#11163C] transition hover:bg-gray-100">
                 Quickstart
-              </button>
+              </Link>
             </div>
           </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { useInView } from "@/components/Personal-to-team/useInView";
 
 export function RemoteCoordinationHeroSection() {
@@ -31,15 +32,15 @@ export function RemoteCoordinationHeroSection() {
           </p>
           
           <div className="flex flex-wrap items-center gap-4 mb-10">
-            <button className="px-8 py-3.5 bg-blue-600 text-white rounded-full font-bold text-base shadow-[0px_10px_24px_-8px_rgba(37,99,235,0.50)] hover:scale-105 transition-transform">
+            <Link href="/get-a-demo" className="px-8 py-3.5 bg-blue-600 text-white rounded-full font-bold text-base shadow-[0px_10px_24px_-8px_rgba(37,99,235,0.50)] hover:scale-105 transition-transform inline-flex items-center justify-center">
               Get a demo
-            </button>
-            <button className="px-8 py-3.5 bg-white text-slate-900 border border-slate-200 rounded-full font-bold text-base hover:bg-slate-50 hover:scale-105 transition-all shadow-sm">
+            </Link>
+            <Link href="/start-free" className="px-8 py-3.5 bg-white text-slate-900 border border-slate-200 rounded-full font-bold text-base hover:bg-slate-50 hover:scale-105 transition-all shadow-sm inline-flex items-center justify-center">
               Start free
-            </button>
-            <a href="#" className="text-violet-600 text-base font-bold underline underline-offset-4 decoration-violet-200 hover:decoration-violet-600 transition-colors ml-2">
+            </Link>
+            <Link href="/contact-sales" className="text-violet-600 text-base font-bold underline underline-offset-4 decoration-violet-200 hover:decoration-violet-600 transition-colors ml-2">
               Talk to sales
-            </a>
+            </Link>
           </div>
 
           <div className="flex flex-wrap gap-x-8 gap-y-4">

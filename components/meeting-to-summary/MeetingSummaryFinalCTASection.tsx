@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 function useInView(threshold = 0.2) {
   const ref = useRef<HTMLDivElement>(null);
@@ -93,19 +94,19 @@ export default function MeetingSummaryFinalCTASection() {
             className={`msfc-item ${inView ? "active" : ""} flex flex-col sm:flex-row items-center justify-center gap-3`}
             style={{ animationDelay: "0.2s" }}
           >
-            <button
-              type="button"
-              className="msfc-btn-primary rounded-full px-7 py-3 text-[14px] font-semibold text-white"
+            <Link
+              href="/get-a-demo"
+              className="msfc-btn-primary rounded-full px-7 py-3 text-[14px] font-semibold text-white inline-flex items-center justify-center"
               style={{ backgroundColor: "#4F46E5" }}
             >
               Get a demo
-            </button>
-            <button
-              type="button"
-              className="msfc-btn-secondary rounded-full px-7 py-3 text-[14px] font-semibold text-gray-900 bg-white"
+            </Link>
+            <Link
+              href="/contact-sales"
+              className="msfc-btn-secondary rounded-full px-7 py-3 text-[14px] font-semibold text-gray-900 bg-white inline-flex items-center justify-center"
             >
               Talk to sales
-            </button>
+            </Link>
           </div>
 
         </div>
