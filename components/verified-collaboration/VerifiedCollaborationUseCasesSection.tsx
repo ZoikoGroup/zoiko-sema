@@ -1,6 +1,7 @@
 "use client";
 
 import { Phone, List, Globe, BarChart3, Shield, LayoutGrid, LucideIcon } from "lucide-react";
+import Link from "next/link";
 import { useInView } from "./useInView";
 
 interface UseCase {
@@ -19,7 +20,7 @@ const useCases: UseCase[] = [
     title: "Client service teams",
     description: "Turn client calls into reviewed commitments, owners, and follow-up records.",
     action: "Client Call Follow-Up",
-    href: "/audio-calls",
+    href: "/client-call-follow-up",
     iconBg: "bg-indigo-100",
     iconColor: "text-indigo-600",
   },
@@ -46,7 +47,7 @@ const useCases: UseCase[] = [
     title: "Leadership operations",
     description: "See approved collaboration outcomes without chasing every participant.",
     action: "Productivity Intelligence",
-    href: "/zoikotime-customers",
+    href: "/productivity-intelligence",
     iconBg: "bg-indigo-100",
     iconColor: "text-indigo-600",
   },
@@ -55,7 +56,7 @@ const useCases: UseCase[] = [
     title: "Regulated workflows",
     description: "Keep source-linked, reviewed decisions and actions where auditability matters.",
     action: "Compliance & Audit",
-    href: "/regulated-workflows",
+    href: "/compliance",
     iconBg: "bg-amber-100",
     iconColor: "text-amber-600",
   },
@@ -141,13 +142,13 @@ export default function VerifiedCollaborationUseCasesSection() {
                 <p className="mt-2 text-[13px] leading-relaxed text-[#5B627E]">
                   {description}
                 </p>
-                <a
+                <Link
                   href={href}
                   className="vc-uc-link mt-4 flex items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]"
                 >
                   {action}
                   <span className="vc-arrow">→</span>
-                </a>
+                </Link>
               </div>
             ))}
           </div>

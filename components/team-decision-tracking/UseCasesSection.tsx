@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { useInView } from "@/components/Personal-to-team/useInView";
 
 export function UseCasesSection() {
@@ -11,6 +12,7 @@ export function UseCasesSection() {
       title: "Leadership teams",
       desc: "Track strategic decisions, ownership, rationale, and follow-up commitments.",
       linkText: "Get a leadership demo \u2192",
+      link: "/get-a-demo",
       icon: "\u25C6", // ◆
       iconBg: "bg-violet-100",
       iconColor: "text-violet-600"
@@ -19,6 +21,7 @@ export function UseCasesSection() {
       title: "Project teams",
       desc: "Keep scope, priority, dependency, and launch decisions connected to project work.",
       linkText: "View project flow \u2192",
+      link: "/project-collaboration",
       icon: "\u25A4", // ▥ - visually similar to horizontal stripes block
       iconBg: "bg-sky-100",
       iconColor: "text-sky-700"
@@ -27,6 +30,7 @@ export function UseCasesSection() {
       title: "Client teams",
       desc: "Capture client approvals, commitments, next steps, and evidence after calls.",
       linkText: "Explore client follow-up \u2192",
+      link: "/client-call-follow-up",
       icon: "\u260F", // ☏
       iconBg: "bg-emerald-50",
       iconColor: "text-green-600"
@@ -35,6 +39,7 @@ export function UseCasesSection() {
       title: "Remote teams",
       desc: "Prevent decisions from getting lost across time zones and async updates.",
       linkText: "See remote workflow \u2192",
+      link: "/remote-coordination",
       icon: "\u21C4", // ⇄
       iconBg: "bg-yellow-50",
       iconColor: "text-yellow-600"
@@ -43,6 +48,7 @@ export function UseCasesSection() {
       title: "Operations teams",
       desc: "Create clear operational decision records linked to owners and dates.",
       linkText: "Talk to sales \u2192",
+      link: "/contact-sales",
       icon: "\u2699", // ⚙
       iconBg: "bg-violet-100",
       iconColor: "text-indigo-800"
@@ -51,6 +57,7 @@ export function UseCasesSection() {
       title: "Regulated teams",
       desc: "Support audit-ready decision trails with permissions, retention, and export controls.",
       linkText: "Explore regulated workflows \u2192",
+      link: "/regulated-workflows",
       icon: "\u2696", // ⚖
       iconBg: "bg-pink-100",
       iconColor: "text-pink-500"
@@ -90,9 +97,9 @@ export function UseCasesSection() {
                   {useCase.desc}
                 </p>
                 
-                <div className="text-violet-600 text-xs font-bold font-['Inter'] hover:text-violet-700 transition-colors cursor-pointer w-fit">
+                <Link href={useCase.link} className="text-violet-600 text-xs font-bold font-['Inter'] hover:text-violet-700 transition-colors cursor-pointer w-fit">
                   {useCase.linkText}
-                </div>
+                </Link>
               </div>
             </div>
           ))}

@@ -1,6 +1,7 @@
 "use client";
 
 import { Star, LayoutGrid, Lock, FileCheck, Clock, Eye, LucideIcon } from "lucide-react";
+import Link from "next/link";
 import { useInView } from "./useInView";
 
 interface GovernanceCard {
@@ -17,7 +18,7 @@ const cards: GovernanceCard[] = [
     title: "Human review",
     description: "AI or system-generated signals require review before finalization.",
     action: "Responsible AI",
-    href: "/ai-use-policy",
+    href: "/responsive-ai",
   },
   {
     icon: LayoutGrid,
@@ -31,28 +32,28 @@ const cards: GovernanceCard[] = [
     title: "Sensitive spaces",
     description: "AI, sync, or verification can be restricted in sensitive workflows.",
     action: "Security Center",
-    href: "/security-policy",
+    href: "/security-center",
   },
   {
     icon: FileCheck,
     title: "Audit timeline",
     description: "Records show source, reviewer, timestamp, status changes, and sync destination.",
     action: "Compliance & Audit",
-    href: "/data-processing-addendum",
+    href: "/compliance",
   },
   {
     icon: Clock,
     title: "Retention",
     description: "Records follow workspace retention, legal, and plan settings.",
     action: "Privacy & Data / DPA",
-    href: "/privacy-notice",
+    href: "/data-processing-addendum",
   },
   {
     icon: Eye,
     title: "Transparency",
     description: "Users can see what is being captured, reviewed, and synced — and why.",
     action: "Trust & Security",
-    href: "/security-policy",
+    href: "/trust-center",
   },
 ];
 
@@ -126,13 +127,13 @@ export default function VerifiedCollaborationGovernanceSection() {
                 <p className="mt-2 text-[13px] leading-relaxed text-[#5B627E]">
                   {description}
                 </p>
-                <a
+                <Link
                   href={href}
                   className="vc-gov-link mt-4 flex items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]"
                 >
                   {action}
                   <span className="vc-arrow">→</span>
-                </a>
+                </Link>
               </div>
             ))}
           </div>

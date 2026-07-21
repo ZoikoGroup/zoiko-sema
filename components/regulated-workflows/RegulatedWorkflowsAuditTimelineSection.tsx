@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-
+import Link from "next/link";
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -160,19 +160,19 @@ export default function RegulatedWorkflowsAuditTimelineSection() {
               </p>
 
               <div className="flex flex-wrap items-center gap-6">
-                <a
-                  href="#get-a-demo"
+                <Link
+                  href="/get-a-demo"
                   className="rats-btn-primary inline-flex items-center justify-center rounded-full text-white text-[14px] font-semibold px-7 py-3.5"
                   style={{ background: BRAND }}
                 >
                   Get a demo
-                </a>
-                <a
-                  href="#explore-security"
+                </Link>
+                <Link
+                  href="/security-compliance"
                   className="rats-btn-text text-white text-[14px] font-semibold underline underline-offset-4 decoration-white/40"
                 >
                   Explore security &amp; compliance
-                </a>
+                </Link>
               </div>
             </div>
 

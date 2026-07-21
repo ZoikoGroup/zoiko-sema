@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { useInView } from "./useInView";
 
 export function CTASection() {
@@ -19,17 +20,17 @@ export function CTASection() {
         </p>
         
         <div className="ptt-item flex flex-col sm:flex-row items-center gap-3.5 mb-14">
-          <button className="w-36 h-12 bg-white rounded-full flex items-center justify-center text-indigo-800 text-base font-bold hover:bg-slate-50 transition-colors">
+          <Link href="/get-a-demo" className="w-36 h-12 bg-white rounded-full flex items-center justify-center text-indigo-800 text-base font-bold hover:bg-slate-50 transition-colors">
             Get a demo
-          </button>
+          </Link>
           
-          <button className="w-32 h-12 bg-white/10 rounded-full outline outline-1 outline-offset-[-1px] outline-white/40 flex items-center justify-center text-white text-base font-bold hover:bg-white/20 transition-colors">
+          <Link href="/start-free" className="w-32 h-12 bg-white/10 rounded-full outline outline-1 outline-offset-[-1px] outline-white/40 flex items-center justify-center text-white text-base font-bold hover:bg-white/20 transition-colors">
             Start free
-          </button>
+          </Link>
           
-          <button className="w-32 h-12 border-b-[0.8px] border-white/50 flex items-center justify-center text-white text-base font-bold hover:border-white transition-colors">
+          <Link href="/contact-sales" className="w-32 h-12 border-b-[0.8px] border-white/50 flex items-center justify-center text-white text-base font-bold hover:border-white transition-colors">
             Talk to sales
-          </button>
+          </Link>
         </div>
         
         <p className="ptt-item text-violet-200 text-sm font-normal">
