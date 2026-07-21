@@ -1,0 +1,50 @@
+import React from 'react';
+
+const BrowseByProduct = () => {
+    const products = [
+        { title: 'Meetings', icon: 'icon-29.svg' },
+        { title: 'Workspace', icon: 'icon-42.svg' },
+        { title: 'AI', icon: 'icon-41.svg' },
+        { title: 'Administration', icon: 'icon-44.svg' },
+        { title: 'Security', icon: 'icon-34.svg' },
+        { title: 'Integrations', icon: 'icon-45.svg' },
+        { title: 'Analytics', icon: 'icon-38.svg' }
+    ];
+
+    return (
+        <div className="w-full bg-violet-50 pt-20 pb-12 px-4 md:px-8 lg:px-10 flex justify-center">
+            <div className="w-full max-w-7xl flex flex-col justify-start items-start gap-12">
+                <div className="w-full flex justify-between items-end">
+                    <div className="flex flex-col justify-start items-start gap-2">
+                        <div className="flex flex-col justify-start items-start">
+                            <h2 className="justify-center text-sky-950 text-3xl font-semibold font-['Hanken_Grotesk'] leading-10">Browse by Product</h2>
+                        </div>
+                        <div className="flex flex-col justify-start items-start">
+                            <p className="justify-center text-zinc-700 text-base font-normal font-['Hanken_Grotesk'] leading-6">Find specialized guides for every part of the Zoiko Sema ecosystem.</p>
+                        </div>
+                    </div>
+                    <div className="flex justify-start items-center gap-1 cursor-pointer hover:opacity-80">
+                        <div className="justify-center text-indigo-700 text-sm font-medium font-['Hanken_Grotesk'] leading-5 tracking-tight">View All</div>
+                        <div className="flex flex-col justify-start items-start">
+                            <img src="/guides-and-Tutorials/icon-27.svg" alt="View All" className="w-4 h-4 object-contain" />
+                        </div>
+                    </div>
+                </div>
+                <div className="self-stretch flex justify-start items-stretch gap-4 overflow-x-auto pb-4">
+                    {products.map((product, index) => (
+                        <div key={index} className="flex-1 min-w-[150px] p-8 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-300 hover:shadow-md transition-shadow cursor-pointer flex flex-col justify-center items-center gap-4">
+                            <div className="flex flex-col justify-start items-center">
+                                <img src={`/guides-and-Tutorials/${product.icon}`} alt={product.title} className="w-8 h-8 object-contain" />
+                            </div>
+                            <div className="flex flex-col justify-start items-center px-2">
+                                <div className="text-center justify-center text-slate-900 text-[15px] font-medium font-['Hanken_Grotesk'] leading-5 tracking-tight">{product.title}</div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default BrowseByProduct;
