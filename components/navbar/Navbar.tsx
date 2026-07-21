@@ -50,7 +50,7 @@ const menuItems: NavItem[] = [
       { label: "Project Management", href: "/project-collaboration", desc: "Plan, manage tasks, share updates, and deliver projects on time." },
       { label: "Customer Support", href: "/customer-support", desc: "Resolve issues faster and deliver exceptional customer experiences." },
       { label: "Education", href: "/education", desc: "Enable engaging learning, discussions, and collaboration for students and educators." },
-      { label: "Security & Compliance", href: "/security-compliance", desc: "Communicate securely with Confidential Mode and policy controls." },
+      { label: "Security & Compliance", href: "/zoikosema-secure-communication", desc: "Communicate securely with Confidential Mode and policy controls." },
       { label: "Marketing", href: "/marketing", desc: "Launch campaigns, align teams, and move faster from idea to impact." },
       { label: "Remote & Hybrid Work", href: "/use-cases/remote-hybrid-work", desc: "Empower distributed teams with secure, inclusive communication." },
       { label: "Healthcare", href: "/use-case-healthcare", desc: "Improve care team communication and protect patient data." },
@@ -391,7 +391,7 @@ const useCasesLeftColumn: UseCaseLink[] = [
   {
     title: "Security & Compliance",
     desc: "Communicate securely with Confidential Mode and policy controls.",
-    href: "/use-cases/security-compliance",
+    href: "/zoikosema-secure-communication",
     icon: caseIcon(<><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><polyline points="9 12 11 14 15 10" /></>),
   },
   {
