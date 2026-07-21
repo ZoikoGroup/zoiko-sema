@@ -103,7 +103,7 @@ export default function StatusModel() {
             </div>
 
             <div
-              className="fade-up overflow-hidden lg:sticky lg:top-24"
+              className="fade-up overflow-hidden   lg:sticky lg:top-24"
               style={{ animationDelay: ".2s" }}
             >
               <img
