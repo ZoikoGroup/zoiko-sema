@@ -23,7 +23,7 @@ export function ConnectedArchitectureSection() {
             inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
           }`}
         >
-          <h2 className="text-zinc-900 text-3xl font-semibold font-['Hanken_Grotesk'] leading-10">
+          <h2 className="text-zinc-900 text-3xl font-semibold font-sans leading-10">
             A truly connected architecture
           </h2>
 
@@ -38,10 +38,10 @@ export function ConnectedArchitectureSection() {
           <div className="pt-6 flex items-start gap-6">
             {stats.map((stat) => (
               <div key={stat.label} className="flex-1 flex flex-col gap-1">
-                <span className="text-sky-700 text-2xl font-semibold font-['Hanken_Grotesk'] leading-8">
+                <span className="text-sky-700 text-2xl font-semibold font-sans leading-8">
                   {stat.value}
                 </span>
-                <span className="text-zinc-700 text-xs font-medium font-['Hanken_Grotesk'] uppercase leading-4">
+                <span className="text-zinc-700 text-xs font-medium font-sans uppercase leading-4">
                   {stat.label}
                 </span>
               </div>

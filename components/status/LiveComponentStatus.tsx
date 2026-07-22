@@ -145,6 +145,7 @@ export default function LiveComponentStatus() {
 
   return (
     <section
+      id="api-status"
       ref={ref}
       className="w-full py-20 bg-indigo-50/40 dark:bg-gray-950 transition-colors duration-300"
     >

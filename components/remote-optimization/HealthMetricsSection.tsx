@@ -38,7 +38,7 @@ export function HealthMetricsSection() {
           className={`flex flex-col items-center transition-all duration-700 transform ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
         >
-          <h2 className="text-center text-zinc-900 text-3xl font-semibold font-['Hanken_Grotesk'] leading-10">
+          <h2 className="text-center text-zinc-900 text-3xl font-semibold font-sans leading-10">
             Quantifiable Health Metrics
           </h2>
           <p className="text-center text-zinc-700 text-base font-normal font-['Inter'] leading-6 mt-2">
@@ -70,7 +70,7 @@ export function HealthMetricsSection() {
                 style={{ transitionDelay: `${300 + i * 150}ms` }}
               >
                 <h3
-                  className={`${metric.titleColor} text-sm font-semibold font-['Hanken_Grotesk'] leading-5 tracking-wide`}
+                  className={`${metric.titleColor} text-sm font-semibold font-sans leading-5 tracking-wide`}
                 >
                   {metric.title}
                 </h3>

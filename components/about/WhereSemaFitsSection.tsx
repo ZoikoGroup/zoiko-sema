@@ -1,6 +1,5 @@
-"use client"
+"use client";
 import { ArrowRight } from "lucide-react";
-import { useRouter } from "next/navigation";
 
 interface EcosystemCard {
   logo: string;
@@ -44,7 +43,6 @@ const rightCards: EcosystemCard[] = [
 ];
 
 export default function WhereSemaFitsSection() {
-  const router = useRouter();
   return (
     <section className="bg-[#FFFFFF] px-6 py-16 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl text-center">
@@ -70,11 +68,15 @@ export default function WhereSemaFitsSection() {
                 <p className="mt-2 text-xs leading-relaxed text-gray-500">
                   {description}
                 </p>
-                <button onClick={() => router.push(link)}
-                className="mt-3 flex cursor-pointer items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]">
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex cursor-pointer items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]"
+                >
                   {action}
                   <ArrowRight size={12} />
-                </button>
+                </a>
               </div>
             ))}
           </div>
@@ -93,15 +95,19 @@ export default function WhereSemaFitsSection() {
                 key={logo}
                 className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
               >
-               <img src={logo} alt="logo" />
+                <img src={logo} alt="logo" />
                 <p className="mt-2 text-xs leading-relaxed text-gray-500">
                   {description}
                 </p>
-                <button onClick={() => router.push(link)}
-                className="mt-3 flex cursor-pointer items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]">
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex cursor-pointer items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]"
+                >
                   {action}
                   <ArrowRight size={12} />
-                </button>
+                </a>
               </div>
             ))}
           </div>

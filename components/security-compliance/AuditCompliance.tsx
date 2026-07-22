@@ -25,7 +25,7 @@ export default function AuditCompliance() {
         <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-2">
           <div className="fade-up flex flex-col justify-start items-start gap-6">
             <div className="flex flex-col justify-start items-start">
-              <h2 className="text-4xl font-extrabold text-zinc-900 font-['Hanken_Grotesk'] md:text-[40px]">
+              <h2 className="text-4xl font-extrabold text-zinc-900 font-sans md:text-[40px]">
                 Audit &amp; Compliance
               </h2>
             </div>

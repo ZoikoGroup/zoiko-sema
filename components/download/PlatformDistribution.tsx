@@ -175,7 +175,7 @@ export default function PlatformDistribution() {
                   {/* Dynamic Technical Specs Meta Matrix */}
                   <div className="pt-6 border-t border-slate-100 dark:border-slate-900 space-y-2.5">
                     {platform.specs.map((spec, specIdx) => (
-                      <div key={specIdx} className="w-full flex items-start justify-between text-sm font-['Hanken_Grotesk']">
+                      <div key={specIdx} className="w-full flex items-start justify-between text-sm font-sans">
                         <span className="text-zinc-500 dark:text-gray-400 font-normal">
                           {spec.label}
                         </span>

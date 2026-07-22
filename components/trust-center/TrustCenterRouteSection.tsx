@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useInView } from "./useInView";
 
 // TODO: replace with your actual image path, e.g. "/Images/trust-center-route.webp"
@@ -36,7 +37,7 @@ const cards: RouteCard[] = [
     title: "System Status",
     description: "Check real-time service health, incidents, and planned maintenance.",
     action: "View System Status",
-    href: "/system-status",
+    href: "/status",
     linkColor: "text-emerald-600",
   },
   {
@@ -44,7 +45,7 @@ const cards: RouteCard[] = [
     title: "Developer Docs",
     description: "API reference, OAuth setup, webhook events, and integration governance.",
     action: "View developer docs",
-    href: "/admin-console",
+    href: "/developer-docs",
     linkColor: "text-amber-600",
   },
   {
@@ -52,7 +53,7 @@ const cards: RouteCard[] = [
     title: "Enterprise review",
     description: "Sales-assisted procurement review, custom questionnaire, and security meeting.",
     action: "Contact sales",
-    href: "/contact",
+    href: "/contact-sales",
     linkColor: "text-emerald-600",
   },
   {
@@ -60,7 +61,7 @@ const cards: RouteCard[] = [
     title: "Help Center",
     description: "Self-serve answers for admin, user, and integration questions.",
     action: "Visit Help Center",
-    href: "/resources",
+    href: "/help-center",
     linkColor: "text-gray-700",
   },
 ];
@@ -138,13 +139,13 @@ export default function TrustCenterRouteSection() {
                 <span className={`mb-3 inline-block h-2.5 w-2.5 rounded-full ${dotColor}`} />
                 <h3 className="text-sm font-semibold text-gray-900">{title}</h3>
                 <p className="mt-2 text-[13px] leading-relaxed text-gray-500">{description}</p>
-                <a
+                <Link
                   href={href}
                   className={`tc-route-link mt-4 flex items-center gap-1 text-xs font-semibold ${linkColor}`}
                 >
                   {action}
                   <span className="tc-arrow">→</span>
-                </a>
+                </Link>
               </div>
             ))}
           </div>

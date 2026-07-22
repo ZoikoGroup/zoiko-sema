@@ -52,7 +52,7 @@ export default function AuthGovernance() {
         }
       `}</style>
 
-      <section className="bg-white px-6 py-20 sm:px-10 lg:px-16">
+      <section id="auth" className="bg-white px-6 py-20 sm:px-10 lg:px-16">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[2fr_0.95fr]">
           {/* Left Card */}
           <div className="fade-up rounded-3xl border border-[#E8EAF4] bg-white p-8 shadow-sm">

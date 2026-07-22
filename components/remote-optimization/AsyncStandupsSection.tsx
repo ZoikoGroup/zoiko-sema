@@ -36,7 +36,7 @@ export function AsyncStandupsSection() {
             inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
           }`}
         >
-          <h2 className="text-zinc-900 text-3xl font-semibold font-['Hanken_Grotesk'] leading-10">
+          <h2 className="text-zinc-900 text-3xl font-semibold font-sans leading-10">
             Async Standups for Velocity
           </h2>
 

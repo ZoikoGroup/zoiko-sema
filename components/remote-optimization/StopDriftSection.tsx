@@ -35,7 +35,7 @@ export function StopDriftSection() {
           className={`flex flex-col items-center gap-4 transition-all duration-700 transform ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
         >
-          <h2 className="text-center text-zinc-900 text-3xl font-semibold font-['Hanken_Grotesk'] leading-10">
+          <h2 className="text-center text-zinc-900 text-3xl font-semibold font-sans leading-10">
             Stop the distributed drift
           </h2>
           <div className="max-w-[672px]">
@@ -70,7 +70,7 @@ export function StopDriftSection() {
 
               {/* Card Content */}
               <div className="flex flex-col gap-2">
-                <h3 className="text-zinc-900 text-2xl font-semibold font-['Hanken_Grotesk'] leading-8">
+                <h3 className="text-zinc-900 text-2xl font-semibold font-sans leading-8">
                   {card.title}
                 </h3>
                 <p className="text-zinc-700 text-sm font-normal font-['Inter'] leading-5">

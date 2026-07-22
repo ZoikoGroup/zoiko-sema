@@ -73,7 +73,7 @@ export default function ApiFamilies() {
         }
       `}</style>
 
-      <section className="bg-[#F6F5FE] px-6 py-20 sm:px-10 lg:px-16">
+      <section id="api-families" className="bg-[#F6F5FE] px-6 py-20 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-6xl">
           <div className="fade-up text-center">
             <h2 className="text-4xl font-bold text-[#1F2937]">

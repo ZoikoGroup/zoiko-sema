@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from 'react';
-import { AlertTriangle, HelpCircle, ShieldAlert, Code, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 const PATHS = [
   {
-    icon:"/status/Icon.png",
+    icon: "/status/Icon.png",
     bgIcon: 'bg-yellow-50 dark:bg-yellow-950/40 text-yellow-600 dark:text-yellow-400',
     tag: 'If you see',
     title: 'Active incident affecting your component',
@@ -36,7 +36,7 @@ const PATHS = [
     color: 'text-violet-600 dark:text-violet-400'
   },
   {
-    icon:"/status/Icon (3).png",
+    icon: "/status/Icon (3).png",
     bgIcon: 'bg-emerald-50 dark:bg-emerald-950/40 text-green-600 dark:text-green-400',
     tag: 'If you see',
     title: 'Developer seeing API degradation',
@@ -71,7 +71,6 @@ export default function SupportRouting() {
         {/* Custom Card Track Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {PATHS.map((path, idx) => {
-            const Icon = path.icon;
             return (
               <div 
                 key={idx}
@@ -82,7 +81,7 @@ export default function SupportRouting() {
               >
                 <div>
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${path.bgIcon}`}>
-                    <img className="w-5 h-5" src={path.icon} />
+                    <img className="w-5 h-5" src={path.icon} alt={path.title} />
                   </div>
                   <span className="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-tight block mb-1">
                     {path.tag}

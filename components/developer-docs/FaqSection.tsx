@@ -49,7 +49,7 @@ export default function FaqSection() {
         }
       `}</style>
 
-      <section className="bg-white px-6 py-20 sm:px-10 lg:px-16">
+      <section id="faq" className="bg-white px-6 py-20 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-6xl">
           <div className="fade-up text-center">
             <h2 className="text-3xl font-semibold text-[#202533] md:text-[32px]">

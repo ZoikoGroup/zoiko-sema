@@ -13,16 +13,12 @@ const BrowseByRole = () => {
   ];
 
   return (
-    <div className="w-full bg-violet-50 pt-12 pb-20 px-4 md:px-8 lg:px-10 flex justify-center">
-      <div className="w-full max-w-7xl flex flex-col justify-start items-start gap-12">
+    <div className="w-full bg-violet-50/50 pt-12 pb-20 px-4 md:px-8 lg:px-10 flex justify-center font-sans">
+      <div className="w-full max-w-7xl flex flex-col justify-start items-start gap-10">
         <div className="w-full flex justify-start items-end">
           <div className="flex flex-col justify-start items-start gap-2">
-            <div className="flex flex-col justify-start items-start">
-              <h2 className="justify-center text-sky-950 text-3xl font-semibold font-['Hanken_Grotesk'] leading-10">Browse by Role</h2>
-            </div>
-            <div className="flex flex-col justify-start items-start">
-              <p className="justify-center text-zinc-700 text-base font-normal font-['Hanken_Grotesk'] leading-6">Tailored learning experiences for your specific responsibilities.</p>
-            </div>
+            <h2 className="text-slate-900 text-3xl font-semibold leading-10">Browse by Role</h2>
+            <p className="text-slate-600 text-base font-normal">Tailored learning experiences for your specific responsibilities.</p>
           </div>
         </div>
         <div className="self-stretch flex justify-start items-stretch gap-4 overflow-x-auto pb-4">

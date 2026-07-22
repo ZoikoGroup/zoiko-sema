@@ -12,11 +12,11 @@ const TrustGovernance = () => {
   ];
   
   return (
-    <div className="w-full bg-[#f8f9ff] py-28 px-4 md:px-8 lg:px-10 flex justify-center">
-      <div className="w-full max-w-5xl flex flex-col gap-14 items-center">
+    <div className="w-full bg-[#f8f9ff] py-24 px-4 md:px-8 lg:px-10 flex justify-center font-sans">
+      <div className="w-full max-w-5xl flex flex-col gap-12 items-center">
         <div className="flex flex-col items-center gap-3 text-center">
-          <h2 className="text-[#0f172a] text-3xl md:text-[34px] font-bold font-['Hanken_Grotesk'] leading-tight">Trust & Governance</h2>
-          <p className="text-slate-600 text-[15px] font-normal font-['Hanken_Grotesk'] max-w-xl">
+          <h2 className="text-[#0f172a] text-3xl md:text-[34px] font-bold leading-tight tracking-tight">Trust & Governance</h2>
+          <p className="text-slate-500 text-[15px] font-normal max-w-xl leading-relaxed">
             Implementation guides for security-first organizations with strict compliance requirements.
           </p>
         </div>

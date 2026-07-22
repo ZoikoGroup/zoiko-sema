@@ -63,7 +63,7 @@ const subprocessorCategories = [
 const relatedLinks: LinkItem[] = [
   { title: 'Security Center', description: 'Security safeguards, access controls, and enterprise security review.', color: '#3b82f6', action: 'Visit Security Center', link: '/security-center' },
   { title: 'Responsible AI', description: 'How AI features are governed, reviewed, and kept transparent.', color: '#0d9488', action: 'View Responsible AI', link: '/responsive-ai' },
-  { title: 'Compliance', description: 'Compliance posture, assurance documents, and review paths.', color: '#10b981', action: 'View Compliance', link: '/compliance' },
+  { title: 'Compliance', description: 'Compliance posture, assurance documents, and review paths.', color: '#10b981', action: 'View Compliance', link: '/compliance-audit' },
   { title: 'Data Processing Addendum', description: 'Supports enterprise privacy and legal review of data processing.', color: '#7c3aed', action: 'View DPA', link: '/data-processing-addendum' },
   { title: 'Accessibility', description: 'Accessibility commitments and barrier-reporting routes.', color: '#334155', action: 'View Accessibility', link: '/accessibility' },
   { title: 'Report a Concern', description: 'Raise a privacy, security, or misuse concern to the right team.', color: '#f43f5e', action: 'Report a Concern', link: '/report-concern' },
@@ -329,7 +329,7 @@ export default function PrivacyPage() {
               </div>
             </Reveal>
             <div className="mt-8">
-              <a href="/admin-console" className="inline-flex items-center gap-2 bg-blue-600 px-6 py-3.5 text-sm font-bold text-white transition rounded-full hover:bg-blue-500">View controls in Admin Console</a>
+              <Link href="/admin-console" className="inline-flex items-center gap-2 bg-blue-600 px-6 py-3.5 text-sm font-bold text-white transition rounded-full hover:bg-blue-500">View controls in Admin Console</Link>
             </div>
           </section>
 
@@ -678,9 +678,9 @@ export default function PrivacyPage() {
           <h2 className="text-3xl font-bold sm:text-4xl leading-10">Running privacy or procurement review?</h2>
           <p className="mx-auto mt-4 max-w-2xl text-purple-200 text-base font-normal leading-7">Request the DPA, review Security & Compliance, check Subprocessors, or connect with the right team for enterprise privacy and data-processing questions.</p>
           <div className="mt-8 flex flex-wrap justify-center items-center gap-4">
-            <a href="/data-processing-addendum" className="bg-white px-6 py-3.5 text-base font-bold text-indigo-800 rounded-full transition hover:bg-purple-50">View DPA</a>
-            <a href="/trust-center" className="bg-white/10 border border-white/40 px-6 py-3.5 text-base font-bold text-white rounded-full transition hover:bg-white/20">Visit Trust Center</a>
-            <a href="/contact-sales" className="text-base font-bold text-white transition border-b border-white/50 pb-0.5 hover:border-white">Contact sales</a>
+            <Link href="/data-processing-addendum" className="bg-white px-6 py-3.5 text-base font-bold text-indigo-800 rounded-full transition hover:bg-purple-50">View DPA</Link>
+            <Link href="/trust-center" className="bg-white/10 border border-white/40 px-6 py-3.5 text-base font-bold text-white rounded-full transition hover:bg-white/20">Visit Trust Center</Link>
+            <Link href="/contact-sales" className="text-base font-bold text-white transition border-b border-white/50 pb-0.5 hover:border-white">Contact sales</Link>
           </div>
         </Reveal>
 
