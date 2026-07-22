@@ -31,24 +31,28 @@ const communicationModes = [
     desc: "Capture agendas, decisions, and next steps during or after meetings.",
     linkText: "Use Notes in Meetings →",
     image: "/sema-notes/image 36.png",
+    href: "/ai-meetings",
   },
   {
     title: "Calls",
     desc: "Record call notes, outcomes, and follow-up tasks where policy allows.",
     linkText: "Use Notes in Calls →",
     image: "/sema-notes/image 37.png",
+    href: "/audio-calls",
   },
   {
     title: "Messaging",
     desc: "Turn important thread moments into shared notes and decisions.",
     linkText: "Use Notes in Messaging →",
     image: "/sema-notes/image 38.png",
+    href: "/messaging",
   },
   {
     title: "Mail",
     desc: "Create notes from customer or internal email context.",
     linkText: "Use Notes with Mail →",
     image: "/sema-notes/image 39.png",
+    href: "/sema-mail",
   },
   {
     title: "Calendar",
@@ -56,12 +60,14 @@ const communicationModes = [
     linkText: "Use Notes with Calendar →",
     image: "/sema-notes/image 40.png",
     imageClass: "object-bottom",
+    href: "/calendar",
   },
   {
     title: "Files",
     desc: "Keep notes connected to documents, decks, briefs, and attachments.",
     linkText: "Use Notes with Files →",
     image: "/sema-notes/image 41.png",
+    href: "/files",
   },
 ];
 
@@ -130,7 +136,7 @@ export default function CommunicationModesSection() {
                 {/* Interactive Anchor Link Elements */}
                 <div className="pt-3">
                   <a
-                    href="#"
+                    href={item.href}
                     className="inline-flex items-center text-blue-600 dark:text-indigo-400 text-xs font-bold font-sans transition-colors duration-200 hover:text-blue-700 dark:hover:text-indigo-300"
                   >
                     {item.linkText}

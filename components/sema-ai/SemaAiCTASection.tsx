@@ -103,15 +103,15 @@ export default function SemaAiCTASection() {
               className={`sacta-hidden ${ctaIn ? "sacta-visible" : ""} flex flex-wrap items-center justify-center gap-3 mb-6`}
               style={{ animationDelay: "0.14s" }}
             >
-              <button className="sacta-btn-primary bg-white text-gray-900 text-[13.5px] font-semibold rounded-full px-6 py-3">
+              <a href="/get-a-demo" className="sacta-btn-primary bg-white text-gray-900 text-[13.5px] font-semibold rounded-full px-6 py-3">
                 Watch Sema AI Demo
-              </button>
-              <button className="sacta-btn-secondary text-white text-[13.5px] font-semibold rounded-full px-6 py-3">
+              </a>
+              <a href="/start-free" className="sacta-btn-secondary text-white text-[13.5px] font-semibold rounded-full px-6 py-3">
                 Start Free
-              </button>
-              <button className="sacta-btn-secondary text-white text-[13.5px] font-semibold rounded-full px-6 py-3">
+              </a>
+              <a href="/contact-sales" className="sacta-btn-secondary text-white text-[13.5px] font-semibold rounded-full px-6 py-3">
                 Contact Sales
-              </button>
+              </a>
             </div>
 
             <div
@@ -120,7 +120,7 @@ export default function SemaAiCTASection() {
               style={{ animationDelay: "0.2s" }}
             >
               <a
-                href="#"
+                href="/trust-center"
                 className="sacta-link inline-flex items-center gap-1.5 text-[13px] font-semibold text-white"
               >
                 Visit Trust Center

@@ -71,7 +71,7 @@ export default function SearchableMemorySection() {
             {/* Micro-interaction Navigation Anchor */}
             <div>
               <a
-                href="#"
+                href="/search"
                 className="inline-flex items-center gap-2 text-blue-600 dark:text-indigo-400 text-sm font-bold tracking-wide group transition-colors duration-200 hover:text-blue-700 dark:hover:text-indigo-300"
               >
                 <span>Search across Sema</span>
