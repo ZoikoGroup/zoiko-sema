@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -31,15 +32,15 @@ const Hero = () => {
         </div>
         
         <div className="flex flex-wrap justify-center items-center gap-4 mt-6 mb-8">
-          <button className="px-7 py-2.5 bg-[#0f172a] text-white rounded-lg text-sm font-semibold font-['Hanken_Grotesk'] hover:bg-slate-800 transition-colors">
+          <a href="#quick-start" className="px-7 py-2.5 bg-[#0f172a] text-white rounded-lg text-sm font-semibold font-['Hanken_Grotesk'] hover:bg-slate-800 transition-colors">
             Browse Guides
-          </button>
-          <button className="px-7 py-2.5 bg-white border border-slate-200 text-[#0f172a] rounded-lg text-sm font-semibold font-['Hanken_Grotesk'] hover:bg-slate-50 transition-colors shadow-sm">
+          </a>
+          <Link href="/start-free" className="px-7 py-2.5 bg-white border border-slate-200 text-[#0f172a] rounded-lg text-sm font-semibold font-['Hanken_Grotesk'] hover:bg-slate-50 transition-colors shadow-sm">
             Start Free
-          </button>
-          <button className="px-7 py-2.5 text-slate-600 rounded-lg text-sm font-semibold font-['Hanken_Grotesk'] hover:bg-slate-100 transition-colors">
+          </Link>
+          <Link href="/get-a-demo" className="px-7 py-2.5 text-slate-600 rounded-lg text-sm font-semibold font-['Hanken_Grotesk'] hover:bg-slate-100 transition-colors">
             Get a Demo
-          </button>
+          </Link>
         </div>
       </div>
       

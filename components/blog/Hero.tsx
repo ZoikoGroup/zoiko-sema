@@ -20,10 +20,10 @@ export default function Hero() {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <button
+            <a href="#latest"
             className="rounded-full bg-[#4F63F0] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#3E51DE]">
               Read Latest Articles
-            </button>
+            </a>
             <button onClick={()=> router.push('/resources')}
             className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0B1330] transition hover:bg-gray-100">
               Explore All Resources

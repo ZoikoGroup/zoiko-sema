@@ -45,7 +45,7 @@ const options = [
       </>
     ),
     linkText: "Contact Sales →",
-    href: "/contact",
+    href: "/contact-sales",
     type: "enterprise",
   },
 ];

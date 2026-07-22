@@ -69,17 +69,17 @@ export default function WhitePapersHeroSection() {
 
             {/* BUTTONS */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <button className="rounded-full bg-[#3457E8] px-6 py-[15px] text-[15px] font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#4567F2] hover:shadow-[0_10px_30px_rgba(52,87,232,0.35)] active:translate-y-0">
+              <a href="#library" className="rounded-full bg-[#3457E8] px-6 py-[15px] text-[15px] font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#4567F2] hover:shadow-[0_10px_30px_rgba(52,87,232,0.35)] active:translate-y-0">
                 Read the featured paper
-              </button>
+              </a>
 
-              <button className="rounded-full border border-white/25 bg-white px-6 py-[15px] text-[15px] font-bold text-black transition-all duration-300 hover:-translate-y-1 hover:bg-slate-100 hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)] active:translate-y-0">
+              <a href="#library" className="rounded-full border border-white/25 bg-white px-6 py-[15px] text-[15px] font-bold text-black transition-all duration-300 hover:-translate-y-1 hover:bg-slate-100 hover:shadow-[0_10px_30px_rgba(255,255,255,0.15)] active:translate-y-0">
                 Browse all white papers
-              </button>
+              </a>
 
-              <button className="px-3 py-3 text-[15px] font-bold text-[#A98CF0] transition-all duration-300 hover:translate-x-1 hover:text-white">
+              <a href="/contact-sales" className="px-3 py-3 text-[15px] font-bold text-[#A98CF0] transition-all duration-300 hover:translate-x-1 hover:text-white">
                 Talk to an expert →
-              </button>
+              </a>
             </div>
 
             {/* BADGES */}
