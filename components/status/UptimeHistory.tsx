@@ -61,7 +61,8 @@ export default function UptimeHistory() {
   };
 
   return (
-    <section 
+    <section
+      id="uptime"
       ref={containerRef}
       className="w-full py-16 px-4 sm:px-6 lg:px-16 bg-slate-50 dark:bg-gray-900 transition-colors duration-300 font-sans"
     >

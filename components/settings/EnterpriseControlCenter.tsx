@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from 'react';
+import Link from 'next/link';
 
 // --- Scroll Reveal Hook for Sequential Element Animation ---
 function useScrollReveal() {
@@ -75,14 +76,14 @@ export default function EnterpriseControlCenter() {
               isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
             }`}
           >
-            <button className="group/btn flex items-center gap-2 px-8 py-4 bg-gray-950 dark:bg-white text-white dark:text-gray-950 text-base font-bold    rounded-xl transition-all duration-300 hover:-translate-y-1 hover:bg-neutral-800 dark:hover:bg-neutral-100 active:translate-y-0 shadow-md">
+            <Link href="/admin-console" className="group/btn flex items-center gap-2 px-8 py-4 bg-gray-950 dark:bg-white text-white dark:text-gray-950 text-base font-bold    rounded-xl transition-all duration-300 hover:-translate-y-1 hover:bg-neutral-800 dark:hover:bg-neutral-100 active:translate-y-0 shadow-md">
               <span>Open Control Center</span>
               <span className="transform transition-transform duration-200 group-hover/btn:translate-x-1">→</span>
-            </button>
-            
-            <button className="px-8 py-4 bg-transparent text-zinc-900 dark:text-white text-base font-bold    rounded-xl border border-neutral-300 dark:border-neutral-700 transition-all duration-300 hover:-translate-y-1 hover:bg-neutral-100/50 dark:hover:bg-gray-900 active:translate-y-0">
+            </Link>
+
+            <Link href="/help-center" className="px-8 py-4 bg-transparent text-zinc-900 dark:text-white text-base font-bold    rounded-xl border border-neutral-300 dark:border-neutral-700 transition-all duration-300 hover:-translate-y-1 hover:bg-neutral-100/50 dark:hover:bg-gray-900 active:translate-y-0">
               Documentation
-            </button>
+            </Link>
           </div>
         </div>
 

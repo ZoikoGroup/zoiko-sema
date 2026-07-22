@@ -126,8 +126,9 @@ function FeaturedQuestionsSection() {
 
   return (
     <section
+      id="featured-questions"
       ref={ref}
-      className={`w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-28 bg-violet-50/50 dark:bg-gray-950/40 text-slate-900 dark:text-white transition-all duration-1000 ease-out transform ${
+      className={`w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-28 bg-violet-50/50 dark:bg-gray-950/40 text-slate-900 dark:text-white transition-all duration-1000 ease-out transform scroll-mt-24 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
       }`}
     >

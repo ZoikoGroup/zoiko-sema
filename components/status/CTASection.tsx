@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { Mail } from 'lucide-react';
+import Link from 'next/link';
 
 export default function CTASection() {
   const [revealed, setRevealed] = useState(false);
@@ -29,18 +30,18 @@ export default function CTASection() {
 
         {/* Actions Cluster Panel */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-          <button className="w-full sm:w-auto px-8 h-12 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-full shadow-xl shadow-blue-600/30 flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5 active:translate-y-0">
+          <Link href="#subscribe" className="w-full sm:w-auto px-8 h-12 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-full shadow-xl shadow-blue-600/30 flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5 active:translate-y-0">
             <Mail className="w-4 h-4" />
             <span>Subscribe to updates</span>
-          </button>
-          
-          <button className="w-full sm:w-auto px-8 h-12 bg-slate-800 hover:bg-slate-700 text-white text-sm font-bold rounded-full border border-slate-700 transition-all hover:-translate-y-0.5 active:translate-y-0">
+          </Link>
+
+          <Link href="#incidents" className="w-full sm:w-auto px-8 h-12 bg-slate-800 hover:bg-slate-700 text-white text-sm font-bold rounded-full border border-slate-700 transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center">
             View incident history
-          </button>
-          
-          <button className="w-full sm:w-auto px-6 h-12 text-blue-400 hover:text-blue-300 text-sm font-bold transition-colors">
+          </Link>
+
+          <Link href="/customer-support" className="w-full sm:w-auto px-6 h-12 text-blue-400 hover:text-blue-300 text-sm font-bold transition-colors flex items-center justify-center">
             Contact support &rarr;
-          </button>
+          </Link>
         </div>
 
       </div>

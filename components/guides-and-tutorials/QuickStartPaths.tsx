@@ -45,7 +45,7 @@ const QuickStartPaths = () => {
   ];
 
   return (
-    <div className="w-full bg-white py-20 px-4 md:px-8 lg:px-10 flex justify-center font-sans">
+    <div id="quick-start" className="w-full bg-white py-20 px-4 md:px-8 lg:px-10 flex justify-center font-sans scroll-mt-24">
       <div className="w-full max-w-7xl flex flex-col gap-10">
         <div className="flex flex-col gap-2">
           <h2 className="text-[#0f172a] text-[32px] font-bold leading-tight">Quick Start Paths</h2>
@@ -104,4 +104,3 @@ const QuickStartPaths = () => {
 };
 
 export default QuickStartPaths;
-

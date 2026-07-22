@@ -1,14 +1,15 @@
 import React from 'react';
+import Link from 'next/link';
 
 const BrowseByProduct = () => {
     const products = [
-        { title: 'Meetings', icon: 'icon-29.svg' },
-        { title: 'Workspace', icon: 'icon-42.svg' },
-        { title: 'AI', icon: 'icon-41.svg' },
-        { title: 'Administration', icon: 'icon-44.svg' },
-        { title: 'Security', icon: 'icon-34.svg' },
-        { title: 'Integrations', icon: 'icon-45.svg' },
-        { title: 'Analytics', icon: 'icon-38.svg' }
+        { title: 'Meetings', icon: 'icon-29.svg', href: '/video-meetings' },
+        { title: 'Workspace', icon: 'icon-42.svg', href: '/channels-spaces' },
+        { title: 'AI', icon: 'icon-41.svg', href: '/sema-ai' },
+        { title: 'Administration', icon: 'icon-44.svg', href: '/admin-console' },
+        { title: 'Security', icon: 'icon-34.svg', href: '/security-center' },
+        { title: 'Integrations', icon: 'icon-45.svg', href: '/integration-scalability' },
+        { title: 'Analytics', icon: 'icon-38.svg', href: '/insights-analytics' }
     ];
 
     return (
@@ -26,14 +27,14 @@ const BrowseByProduct = () => {
                 </div>
                 <div className="self-stretch flex justify-start items-stretch gap-4 overflow-x-auto pb-4">
                     {products.map((product, index) => (
-                        <div key={index} className="flex-1 min-w-[140px] p-7 bg-white rounded-2xl border border-slate-200 hover:border-indigo-200 hover:shadow-md transition-all cursor-pointer flex flex-col justify-center items-center gap-4">
-                            <div className="w-12 h-12 rounded-xl bg-slate-50 flex justify-center items-center p-2.5">
-                                <img src={`/guides-and-Tutorials/${product.icon}`} alt={product.title} className="w-7 h-7 object-contain" />
+                        <Link key={index} href={product.href} className="flex-1 min-w-[150px] p-8 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-300 hover:shadow-md transition-shadow cursor-pointer flex flex-col justify-center items-center gap-4">
+                            <div className="flex flex-col justify-start items-center">
+                                <img src={`/guides-and-Tutorials/${product.icon}`} alt={product.title} className="w-8 h-8 object-contain" />
                             </div>
                             <div className="flex flex-col justify-start items-center px-1">
                                 <span className="text-center text-slate-900 text-[15px] font-semibold tracking-tight">{product.title}</span>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>
@@ -42,4 +43,3 @@ const BrowseByProduct = () => {
 };
 
 export default BrowseByProduct;
-

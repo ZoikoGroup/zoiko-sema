@@ -118,18 +118,20 @@ export default function ProductOverviewGetStartedSection() {
             className={`pogs-hidden ${ctaIn ? "pogs-visible" : ""} flex flex-col sm:flex-row items-center justify-center gap-3 mb-5`}
             style={{ animationDelay: "0.2s" }}
           >
-            <button
+            <a
+              href="/start-free"
               className="pogs-btn-primary rounded-full px-7 py-3 text-[14px] font-semibold text-white"
               style={{ backgroundColor: "#4F5BFF" }}
             >
               Start free
-            </button>
-            <button
+            </a>
+            <a
+              href="/contact-sales"
               className="pogs-btn-outline rounded-full border px-7 py-3 text-[14px] font-semibold text-white"
               style={{ borderColor: "rgba(255,255,255,0.22)" }}
             >
               Contact sales
-            </button>
+            </a>
           </div>
 
           {/* Link */}

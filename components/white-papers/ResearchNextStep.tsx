@@ -31,7 +31,7 @@ const options = [
       </>
     ),
     linkText: "Get a demo →",
-    href: "/request-tailored-demo",
+    href: "/get-a-demo",
     type: "guided",
   },
   {

@@ -46,7 +46,7 @@ export default function DocsCards() {
         }
       `}</style>
 
-      <section id="docs" className="bg-[#F4F2FD] px-6 py-20 sm:px-10 lg:px-16">
+      <section id="docs" className="bg-[#F4F2FD] px-6 py-20 sm:px-10 lg:px-16 scroll-mt-24">
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2 lg:grid-cols-3">
           {cards.map((card, index) => {
             const Icon = card.icon;

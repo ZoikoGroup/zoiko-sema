@@ -153,7 +153,7 @@ export default function PerformanceAnalyticsHeroSection() {
                         {/* CTA Buttons */}
 
                         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                        <Link href="geta-a-demo">
+                        <Link href="/get-a-demo">
                             <button className="hero-btn rounded-full bg-[#4F5BD5] px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#4F5BD5]/25">
                                 Request a demo
                             </button>
@@ -167,11 +167,11 @@ export default function PerformanceAnalyticsHeroSection() {
 
                         {/* Explore Link */}
 
-                        <button className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#7C86F0] transition-all duration-300 hover:gap-3 hover:text-white">
+                        <Link href="/zoikotime/workforce-overview" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#7C86F0] transition-all duration-300 hover:gap-3 hover:text-white">
                             Explore Reporting & Workforce Analytics
 
                             <FiArrowRight className="h-4 w-4" />
-                        </button>
+                        </Link>
 
                         {/* Feature Pills */}
 

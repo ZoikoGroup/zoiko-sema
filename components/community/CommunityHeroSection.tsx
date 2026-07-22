@@ -70,12 +70,12 @@ export default function CommunityHeroSection() {
 
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-4 items-center">
-            <button className="px-7 py-3.5 bg-blue-600 text-white text-sm font-semibold   rounded-full shadow-lg shadow-blue-600/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-700/30 active:translate-y-0">
+            <a href="#featured-questions" className="px-7 py-3.5 bg-blue-600 text-white text-sm font-semibold   rounded-full shadow-lg shadow-blue-600/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-700/30 active:translate-y-0">
               Browse answers
-            </button>
-            <button className="px-7 py-3.5 bg-transparent text-white text-sm font-semibold   rounded-full border border-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:border-white/50 active:translate-y-0">
+            </a>
+            <a href="/signup" className="px-7 py-3.5 bg-transparent text-white text-sm font-semibold   rounded-full border border-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:border-white/50 active:translate-y-0">
               Join the community
-            </button>
+            </a>
           </div>
 
           {/* Meta Information Tags */}

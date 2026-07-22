@@ -9,3 +9,4 @@ export { default as WorkerTransparencySection } from "./WorkerTransparencySectio
 export { default as RolesIntegrationsSection } from "./RolesIntegrationsSection";
 export { default as TrustProcurementSection } from "./TrustProcurementSection";
 export { default as PerformanceAnalyticsFAQSection } from "./PerformanceAnalyticsFAQSection";
+export { default as PerformanceAnalyticsCTASection } from "./PerformanceAnalyticsCTASection";

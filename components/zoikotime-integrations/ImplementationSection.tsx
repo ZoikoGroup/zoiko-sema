@@ -148,7 +148,7 @@ export default function ImplementationSection() {
                             } mt-8 flex justify-center`}
                     >
                         <Link
-                            href="/implementation"
+                            href="/enterprise"
                             className="implementation-link inline-flex items-center gap-2 text-sm font-semibold text-[#4F5BD5]"
                         >
                             Plan Implementation

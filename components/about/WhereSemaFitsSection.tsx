@@ -1,5 +1,4 @@
-"use client"
-import Link from "next/link";
+"use client";
 import { ArrowRight } from "lucide-react";
 
 interface EcosystemCard {
@@ -15,14 +14,14 @@ const leftCards: EcosystemCard[] = [
     description:
       "Related workforce and customer context that can connect to Sema for relevant customers.",
     action: "Learn about ZoikoTime",
-    link: "/sema-zoikotime",
+    link: "https://zoikotime.com/",
   },
   {
     logo: "/about/zoikoone.png",
     description:
       "Corporate and technology company background lives on About Zoiko Tech.",
     action: "About Zoiko Tech",
-    link: "/about-zoikotech",
+    link: "https://zoikoone.com/",
   },
 ];
 
@@ -32,14 +31,14 @@ const rightCards: EcosystemCard[] = [
     description:
       "Group-wide compute and structure lives on the Zoiko Group page.",
     action: "Zoiko Group",
-    link: "/zoiko-group",
+    link: "https://zoikocloud.com/",
   },
   {
     logo: "/about/zoikomail.png",
     description:
       "Continue to Help Center, Trust Center, Blog, and Product Updates.",
     action: "Browse Resources",
-    link: "/resources",
+    link: "https://zoikomail.com/",
   },
 ];
 
@@ -69,13 +68,15 @@ export default function WhereSemaFitsSection() {
                 <p className="mt-2 text-xs leading-relaxed text-gray-500">
                   {description}
                 </p>
-                <Link
+                <a
                   href={link}
-                  className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex cursor-pointer items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]"
                 >
                   {action}
                   <ArrowRight size={12} />
-                </Link>
+                </a>
               </div>
             ))}
           </div>
@@ -98,13 +99,15 @@ export default function WhereSemaFitsSection() {
                 <p className="mt-2 text-xs leading-relaxed text-gray-500">
                   {description}
                 </p>
-                <Link
+                <a
                   href={link}
-                  className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex cursor-pointer items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]"
                 >
                   {action}
                   <ArrowRight size={12} />
-                </Link>
+                </a>
               </div>
             ))}
           </div>

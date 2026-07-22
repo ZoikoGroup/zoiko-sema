@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 import {
   PlayCircle,
   HelpCircle,
@@ -13,6 +14,7 @@ interface ResourceCard {
   icon: LucideIcon;
   title: string;
   description: string;
+  href: string;
 }
 
 const cards: ResourceCard[] = [
@@ -20,31 +22,37 @@ const cards: ResourceCard[] = [
     icon: PlayCircle,
     title: "Customer Stories",
     description: "See how world-class teams use Zoiko Sema to transform their workflows.",
+    href: "/customer-stories",
   },
   {
     icon: HelpCircle,
     title: "Help Center",
     description: "Find technical documentation and step-by-step setup guides.",
+    href: "/help-center",
   },
   {
     icon: Bell,
     title: "Product Updates",
     description: "Stay informed about our latest feature releases and bug fixes.",
+    href: "/product-update",
   },
   {
     icon: Code2,
     title: "Developer Docs",
     description: "Explore our APIs and SDKs to build custom integrations.",
+    href: "/developer-docs",
   },
   {
     icon: Activity,
     title: "System Status",
     description: "Real-time performance monitoring of our global infrastructure.",
+    href: "/status",
   },
   {
     icon: ShieldCheck,
     title: "Trust Center",
     description: "Our commitment to security, compliance, and data privacy.",
+    href: "/trust-center",
   },
 ];
 
@@ -53,8 +61,8 @@ export default function ExploreMoreGridSection() {
     <section className="bg-white px-6 py-16 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map(({ icon: Icon, title, description }) => (
-            <div key={title} className="rounded-2xl bg-[#F7F8FA] p-6">
+          {cards.map(({ icon: Icon, title, description, href }) => (
+            <Link key={title} href={href} className="rounded-2xl bg-[#F7F8FA] p-6 transition hover:bg-[#EEF0F4]">
               <span className="mb-4 flex h-8 w-8 items-center justify-center text-[#0058BE]">
                 <Icon size={20} strokeWidth={1.75} />
               </span>
@@ -62,7 +70,7 @@ export default function ExploreMoreGridSection() {
               <p className="mt-2 text-xs leading-relaxed text-gray-500">
                 {description}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

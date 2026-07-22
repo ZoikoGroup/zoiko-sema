@@ -165,7 +165,7 @@ export default function PerformanceAnalyticsCTASection() {
                             } mt-8 flex justify-center`}
                     >
                         <Link
-                            href="/reporting-workforce-analytics"
+                            href="/zoikotime/workforce-overview"
                             className="cta-link inline-flex items-center gap-2 text-sm font-semibold text-[#7C86F0]"
                         >
                             Explore Reporting &amp; Workforce Analytics

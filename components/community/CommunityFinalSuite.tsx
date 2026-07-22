@@ -243,19 +243,19 @@ function JoinCommunityCTA() {
         </p>
 
         <div className="flex flex-wrap gap-4 items-center justify-center pt-4">
-          <button className="px-7 py-3.5 bg-blue-600 text-white text-sm font-semibold   rounded-full shadow-lg shadow-blue-600/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-700/30 active:translate-y-0">
+          <a href="/signup" className="px-7 py-3.5 bg-blue-600 text-white text-sm font-semibold   rounded-full shadow-lg shadow-blue-600/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-700/30 active:translate-y-0">
             Join the community
-          </button>
-          <button className="px-7 py-3.5 bg-transparent text-white text-sm font-semibold   rounded-full border border-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:border-white/50 active:translate-y-0">
+          </a>
+          <a href="/start-free" className="px-7 py-3.5 bg-transparent text-white text-sm font-semibold   rounded-full border border-white/30 transition-all duration-300 hover:-translate-y-1 hover:bg-white/10 hover:border-white/50 active:translate-y-0">
             Start free
-          </button>
+          </a>
         </div>
 
         <div className="pt-2">
-          <button className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 text-sm font-semibold   transition-all group duration-200">
+          <a href="/get-a-demo" className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 text-sm font-semibold   transition-all group duration-200">
             <span>Get a demo</span>
             <span className="transform transition-transform group-hover:translate-x-1">→</span>
-          </button>
+          </a>
         </div>
       </div>
 

@@ -54,12 +54,12 @@ export default function RouteExceptionsCTA() {
 
         {/* Button Controls Frame */}
         <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center w-full">
-          <button className="w-full sm:w-auto bg-[#2F54EB] hover:bg-blue-600 text-white font-semibold text-sm px-8 py-4 rounded-full transition-all shadow-lg shadow-blue-500/20">
+          <a href="/get-a-demo" className="w-full sm:w-auto bg-[#2F54EB] hover:bg-blue-600 text-white font-semibold text-sm px-8 py-4 rounded-full transition-all shadow-lg shadow-blue-500/20 text-center">
             Request a demo
-          </button>
-          <button className="w-full sm:w-auto bg-transparent hover:bg-white/5 text-white font-semibold text-sm px-8 py-4 rounded-full border border-white/20 transition-all">
+          </a>
+          <a href="/start-free" className="w-full sm:w-auto bg-transparent hover:bg-white/5 text-white font-semibold text-sm px-8 py-4 rounded-full border border-white/20 transition-all text-center">
             Start free
-          </button>
+          </a>
         </div>
 
         {/* Link Control */}

@@ -66,12 +66,12 @@ export default function GetStartedSection() {
 
         {/* Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <button className="bg-[#2a4bf7] hover:bg-[#223ec7] text-white font-medium text-sm px-7 py-3.5 rounded-full transition-all duration-200 shadow-xl shadow-[#2a4bf7]/20">
+          <a href="/get-a-demo" className="bg-[#2a4bf7] hover:bg-[#223ec7] text-white font-medium text-sm px-7 py-3.5 rounded-full transition-all duration-200 shadow-xl shadow-[#2a4bf7]/20">
             Request a demo
-          </button>
-          <button className="bg-transparent border border-[#2b2e56] hover:border-[#424785] text-white font-medium text-sm px-7 py-3.5 rounded-full transition-all duration-200">
+          </a>
+          <a href="/privacy" className="bg-transparent border border-[#2b2e56] hover:border-[#424785] text-white font-medium text-sm px-7 py-3.5 rounded-full transition-all duration-200">
             Read Privacy Policy
-          </button>
+          </a>
         </div>
       </div>
     </section>

@@ -308,8 +308,12 @@ export default function ComplianceAuditDemoFormSection() {
                       className="ca-demo-check mt-0.5 h-4 w-4 rounded border-gray-300"
                     />
                     <span className="text-[12px] leading-snug text-gray-600">
-                      I have read the Privacy Notice and consent to my details
-                      being processed to handle this demo request.
+                      I have read the{" "}
+                      <a href="/privacy-notice" className="font-medium underline">
+                        Privacy Notice
+                      </a>{" "}
+                      and consent to my details being processed to handle this
+                      demo request.
                     </span>
                   </label>
                   {errors.agree && touched.agree && (

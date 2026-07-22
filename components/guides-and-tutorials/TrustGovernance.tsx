@@ -1,45 +1,14 @@
 import React from 'react';
-import { 
-  FileText, 
-  LockKeyhole, 
-  VideoOff, 
-  UserCheck, 
-  ShieldCheck, 
-  RotateCcw 
-} from 'lucide-react';
+import Link from 'next/link';
 
 const TrustGovernance = () => {
   const items = [
-    { 
-      title: 'AI Guidance', 
-      desc: 'Ethical implementation and LLM safety configuration.', 
-      icon: FileText 
-    },
-    { 
-      title: 'Permissions', 
-      desc: 'Granular RBAC and hierarchical access control.', 
-      icon: LockKeyhole 
-    },
-    { 
-      title: 'Recording', 
-      desc: 'Regional data sovereignty and recording consent.', 
-      icon: VideoOff 
-    },
-    { 
-      title: 'Guest Access', 
-      desc: 'Hardening your perimeter for external collaborators.', 
-      icon: UserCheck 
-    },
-    { 
-      title: 'Security', 
-      desc: 'SOC2, HIPAA, and GDPR compliance workflows.', 
-      icon: ShieldCheck 
-    },
-    { 
-      title: 'Retention', 
-      desc: 'Automated data lifecycle and archival management.', 
-      icon: RotateCcw 
-    }
+    { title: 'AI Guidance', desc: 'Ethical implementation and LLM safety configuration.', icon: 'icon-39.svg', href: '/ai-use-policy' },
+    { title: 'Permissions', desc: 'Granular RBAC and hierarchical access control.', icon: 'icon-48.svg', href: null },
+    { title: 'Recording', desc: 'Regional data sovereignty and recording consent.', icon: 'icon-43.svg', href: null },
+    { title: 'Guest Access', desc: 'Hardening your perimeter for external collaborators.', icon: 'icon-44.svg', href: null },
+    { title: 'Security', desc: 'SOC2, HIPAA, and GDPR compliance workflows.', icon: 'icon-34.svg', href: '/security-center' },
+    { title: 'Retention', desc: 'Automated data lifecycle and archival management.', icon: 'icon-31.svg', href: null }
   ];
   
   return (
@@ -54,17 +23,27 @@ const TrustGovernance = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
           {items.map((item, i) => {
-            const IconComponent = item.icon;
-            return (
-              <div 
-                key={i} 
-                className="p-8 bg-white rounded-2xl border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-indigo-200 transition-all cursor-pointer flex flex-col items-start"
-              >
-                <div className="mb-4 text-indigo-600">
-                  <IconComponent size={26} strokeWidth={2} />
+            const cardClass = "self-stretch p-8 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-300 inline-flex flex-col justify-start items-start gap-3 hover:shadow-md transition-shadow cursor-pointer";
+            const content = (
+              <>
+                <div className="self-stretch flex flex-col justify-start items-start">
+                    <div className="w-7 h-7 bg-indigo-700" style={{ maskImage: `url(/guides-and-Tutorials/${item.icon})`, maskSize: 'contain', maskRepeat: 'no-repeat', maskPosition: 'center', WebkitMaskImage: `url(/guides-and-Tutorials/${item.icon})`, WebkitMaskSize: 'contain', WebkitMaskRepeat: 'no-repeat', WebkitMaskPosition: 'center' }} />
                 </div>
-                <h3 className="text-[#0f172a] text-lg font-bold mb-2">{item.title}</h3>
-                <p className="text-slate-500 text-sm font-normal leading-relaxed">{item.desc}</p>
+                <div className="self-stretch pt-3 flex flex-col justify-start items-start">
+                    <div className="self-stretch justify-center text-slate-900 text-xl font-semibold font-['Hanken_Grotesk'] leading-7">{item.title}</div>
+                </div>
+                <div className="self-stretch flex flex-col justify-start items-start">
+                    <div className="self-stretch justify-start text-zinc-700 text-base font-normal font-['Hanken_Grotesk'] leading-6">{item.desc}</div>
+                </div>
+              </>
+            );
+            return item.href ? (
+              <Link key={i} href={item.href} className={cardClass}>
+                {content}
+              </Link>
+            ) : (
+              <div key={i} className={cardClass}>
+                {content}
               </div>
             );
           })}
@@ -75,5 +54,3 @@ const TrustGovernance = () => {
 };
 
 export default TrustGovernance;
-
-
