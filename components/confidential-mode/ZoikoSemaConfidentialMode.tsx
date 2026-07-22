@@ -1,5 +1,4 @@
 "use client"
-import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 
 // --- CUSTOM INTERSECTION OBSERVER HOOK FOR FLOATING REVEAL EFFECTS ---
@@ -31,7 +30,6 @@ function useScrollReveal() {
 
 export default function ZoikoSemaConfidentialMode() {
   const [sectionRef, isVisible] = useScrollReveal();
-  const router = useRouter();
   const securityTags = [
     'E2EE meetings',
     'Protected messaging',
@@ -75,12 +73,12 @@ export default function ZoikoSemaConfidentialMode() {
 
           {/* Interactive Action Buttons */}
           <div className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 transition-all duration-1000 delay-150 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-            <button onClick={()=>router.push('/start-free')} className="px-8 py-3.5 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm rounded-full shadow-lg hover:shadow-blue-600/20 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
+            <a href="/start-free" className="px-8 py-3.5 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm rounded-full shadow-lg hover:shadow-blue-600/20 transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center justify-center">
               Start free
-            </button>
-            <button onClick={()=>router.push('/contact')} className="px-8 py-3.5 cursor-pointer border border-white/30 hover:border-white/60 hover:bg-white/5 text-white font-semibold text-sm rounded-full transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 text-center">
+            </a>
+            <a href="/contact" className="px-8 py-3.5 cursor-pointer border border-white/30 hover:border-white/60 hover:bg-white/5 text-white font-semibold text-sm rounded-full transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0 text-center inline-flex items-center justify-center">
               Contact sales
-            </button>
+            </a>
           </div>
 
           {/* Inline Privacy/Security Framework Tags */}

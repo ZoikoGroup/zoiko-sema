@@ -77,8 +77,6 @@ export default function SemaAiSearchMemorySection() {
       >
         <div className="mx-auto w-full max-w-7xl px-6 md:px-10 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-
-            {/* LEFT — content */}
             <div>
               <p
                 ref={eyebrowRef}
@@ -109,18 +107,17 @@ export default function SemaAiSearchMemorySection() {
                 className={`sasm-hidden ${linkIn ? "sasm-visible" : ""}`}
                 style={{ animationDelay: "0.15s" }}
               >
-                <a
-                  href="#"
+                <button
+                  type="button"
                   className="sasm-link inline-flex items-center gap-1.5 text-[13.5px] font-semibold"
                   style={{ color: BRAND }}
                 >
                   Explore Search
-                  <span className="sasm-arrow">→</span>
-                </a>
+                  <span className="sasm-arrow">â†’</span>
+                </button>
               </div>
             </div>
 
-            {/* RIGHT — contained rounded image */}
             <div
               ref={imageRef}
               className={`sasm-image-hidden ${imageIn ? "sasm-image-visible" : ""}`}
@@ -133,7 +130,6 @@ export default function SemaAiSearchMemorySection() {
                 />
               </div>
             </div>
-
           </div>
         </div>
       </section>

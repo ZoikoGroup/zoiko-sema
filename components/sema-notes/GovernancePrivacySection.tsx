@@ -135,7 +135,7 @@ export default function GovernancePrivacySection() {
               Explore notes governance
             </a>
             <a
-              href="#"
+              href="/trust-center"
               className="w-full sm:w-auto px-6 h-12 rounded-full border border-white/30 text-white text-sm font-semibold inline-flex items-center justify-center bg-white/0 hover:bg-white/5 hover:border-white/50 transition-all duration-150"
             >
               Visit Trust Center

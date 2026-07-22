@@ -33,24 +33,28 @@ const audienceCards = [
     title: "Remember every conversation",
     desc: "Start with personal notes, calls, meetings, and search.",
     action: "Start Free →",
+    href: "/start-free",
   },
   {
     tag: "Teams",
     title: "Keep decisions visible",
     desc: "Shared notes help teams move from discussion to execution.",
     action: "Explore Teams →",
+    href: "#",
   },
   {
     tag: "Businesses",
     title: "Govern notes at scale",
     desc: "Deploy notes with policy, admin controls, and audit support.",
     action: "Contact Sales →",
+    href: "/contact-sales",
   },
   {
     tag: "Regulated teams",
     title: "Protect sensitive discussions",
     desc: "Use Confidential Mode and policy-led governance.",
     action: "Visit Trust Center →",
+    href: "/trust-center",
   },
 ];
 
@@ -141,7 +145,7 @@ export default function MarketingSectionsPack() {
                     </p>
                   </div>
                   <a 
-                    href="#" 
+                    href={card.href} 
                     className="text-blue-600 text-xs font-bold group-hover:text-blue-700 transition-colors"
                   >
                     {card.action}
@@ -223,19 +227,19 @@ export default function MarketingSectionsPack() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
               <a 
-                href="#" 
+                href="/start-free" 
                 className="w-full sm:w-auto px-6 h-12 rounded-full bg-white text-slate-900 text-sm font-semibold inline-flex items-center justify-center hover:bg-slate-50 transition-colors duration-150"
               >
                 Start Free
               </a>
               <a 
-                href="#" 
+                href="/contact-sales" 
                 className="w-full sm:w-auto px-6 h-12 rounded-full border border-white/30 text-white text-sm font-semibold inline-flex items-center justify-center bg-transparent hover:bg-white/5 hover:border-white/50 transition-all duration-150"
               >
                 Contact Sales
               </a>
               <a 
-                href="#" 
+                href="/sema-ai" 
                 className="w-full sm:w-auto px-6 h-12 rounded-full border border-white/30 text-white text-sm font-semibold inline-flex items-center justify-center bg-transparent hover:bg-white/5 hover:border-white/50 transition-all duration-150"
               >
                 Explore Sema AI

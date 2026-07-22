@@ -118,18 +118,18 @@ function GetStartedCTA() {
 
         {/* Primary and Secondary Action Triggers */}
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto pt-4">
-          <button className="w-full sm:w-auto px-8 h-12 bg-blue-600 text-white font-semibold text-sm font-['Inter'] rounded-full shadow-lg shadow-blue-600/20 hover:bg-blue-500 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0">
+          <a href="/get-a-demo" className="w-full sm:w-auto px-8 h-12 bg-blue-600 text-white font-semibold text-sm font-['Inter'] rounded-full shadow-lg shadow-blue-600/20 hover:bg-blue-500 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center justify-center">
             Get a demo
-          </button>
-          <button className="w-full sm:w-auto px-8 h-12 border border-white/30 text-white font-semibold text-sm font-['Inter'] rounded-full hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0">
+          </a>
+          <a href="/contact-sales" className="w-full sm:w-auto px-8 h-12 border border-white/30 text-white font-semibold text-sm font-['Inter'] rounded-full hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center justify-center">
             Talk to sales
-          </button>
+          </a>
         </div>
 
         {/* Core Compliance Redirect Link */}
         <div className="pt-6">
           <a
-            href="#"
+            href="/security-compliance"
             className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 text-sm font-semibold font-['Inter'] transition-colors group"
           >
             <span>Explore security & compliance</span>

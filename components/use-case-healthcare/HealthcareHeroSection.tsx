@@ -59,19 +59,19 @@ export default function HealthcareHeroSection() {
 
           {/* CTA Action Hub Trigger Controls */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
-            <button className="h-12 px-7 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold font-['Inter'] rounded-full transition-all duration-300 hover:-translate-y-0.5 active:scale-98 shadow-lg shadow-blue-600/20">
+            <a href="/get-a-demo" className="h-12 px-7 bg-blue-600 hover:bg-blue-500 text-white text-sm font-semibold font-['Inter'] rounded-full transition-all duration-300 hover:-translate-y-0.5 active:scale-98 shadow-lg shadow-blue-600/20 inline-flex items-center justify-center">
               Get a demo
-            </button>
+            </a>
             
-            <button className="h-12 px-7 text-white text-sm font-semibold font-['Inter'] rounded-full border border-white/30 hover:bg-white/5 transition-all duration-300 hover:-translate-y-0.5 active:scale-98">
+            <a href="/contact-sales" className="h-12 px-7 text-white text-sm font-semibold font-['Inter'] rounded-full border border-white/30 hover:bg-white/5 transition-all duration-300 hover:-translate-y-0.5 active:scale-98 inline-flex items-center justify-center">
               Talk to sales
-            </button>
+            </a>
           </div>
 
           {/* Secondary Inline Document Redirect */}
           <div className="pt-2">
             <a 
-              href="#" 
+              href="/security-compliance" 
               className="inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 text-sm font-semibold font-['Inter'] transition-colors group"
             >
               <span>Explore security & compliance</span>

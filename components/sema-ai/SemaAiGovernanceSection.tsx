@@ -207,9 +207,10 @@ export default function SemaAiGovernanceSection() {
             <button className="sag-btn text-white text-[13.5px] font-semibold rounded-full px-6 py-3">
               Explore AI Governance
             </button>
+            <a href="/trust-center">
             <button className="sag-btn text-white text-[13.5px] font-semibold rounded-full px-6 py-3">
               Visit Trust Center
-            </button>
+            </button></a>
           </div>
 
         </div>

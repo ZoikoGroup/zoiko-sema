@@ -60,7 +60,7 @@ export default function PlatformHeroSection() {
 
           {/* Action Call to Actions */}
           <div className="w-full sm:w-[548px] pt-1 inline-flex flex-col sm:flex-row justify-start items-start gap-3">
-            <a href="/start-free">
+            <a href="/start">
             <button className="w-full sm:w-auto px-7 py-3.5 bg-blue-600 hover:bg-blue-700 active:scale-98 transition-all rounded-full shadow-[0px_10px_24px_0px_rgba(52,87,232,0.30)] flex flex-col justify-center items-center cursor-pointer">
               <span className="text-center text-white text-sm font-bold   leading-5">
                 Start free

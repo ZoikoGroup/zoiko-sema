@@ -81,13 +81,13 @@ export default function SemaNotesHeroSection() {
           {/* Primary CTA Buttons Actions Frame */}
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-12 sm:mb-16">
             <a
-              href="#"
+              href="/start-free"
               className="w-full sm:w-64 h-12 bg-blue-600 rounded-full text-white text-base font-semibold inline-flex items-center justify-center transition-all duration-200 hover:bg-blue-700 shadow-[0px_10px_30px_-8px_rgba(52,87,232,0.55)] hover:shadow-[0px_12px_32px_-6px_rgba(52,87,232,0.7)]"
             >
               Start Free
             </a>
             <a
-              href="#"
+              href="/contact-sales"
               className="w-full sm:w-64 h-12 rounded-full border border-white/60 text-white text-base font-semibold inline-flex items-center justify-center bg-white/5 hover:bg-white/10 transition-colors duration-200"
             >
               Contact Sales

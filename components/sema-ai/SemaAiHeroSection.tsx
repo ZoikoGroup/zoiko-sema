@@ -155,12 +155,12 @@ export default function SemaAiHeroSection() {
             <button className="sai-btn-primary text-white text-[13.5px] font-semibold rounded-full px-5 py-2.5">
               Watch Sema AI demo
             </button>
-            <button className="sai-btn-secondary text-white text-[13.5px] font-semibold rounded-full px-5 py-2.5">
+            <a href="/start-free" className="sai-btn-secondary text-white text-[13.5px] font-semibold rounded-full px-5 py-2.5 inline-flex items-center justify-center">
               Start Free
-            </button>
-            <button className="sai-btn-secondary text-white text-[13.5px] font-semibold rounded-full px-5 py-2.5">
+            </a>
+            <a href="/contact-sales" className="sai-btn-secondary text-white text-[13.5px] font-semibold rounded-full px-5 py-2.5 inline-flex items-center justify-center">
               Contact Sales
-            </button>
+            </a>
           </div>
 
           {/* Explore link */}
@@ -169,13 +169,14 @@ export default function SemaAiHeroSection() {
             className={`sai-hidden ${linkIn ? "sai-visible" : ""} mb-7`}
             style={{ animationDelay: "0.2s" }}
           >
-            <a
-              href="#"
+            <a href="/ai-meetings">
+            <button
+              type="button"
               className="sai-explore-link inline-flex items-center gap-1.5 text-[13px] font-semibold text-white"
             >
               Explore AI Meeting Summaries
               <span className="sai-arrow">→</span>
-            </a>
+            </button></a>
           </div>
 
           {/* Checklist */}

@@ -280,7 +280,7 @@ function GovernanceAndBoundaries() {
         {/* Footer Redirect Action Link */}
         <div className="flex justify-center pt-4">
           <a
-            href="#"
+            href="/security-compliance"
             className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 text-sm font-semibold font-['Inter'] transition-colors group"
           >
             <span>Explore security & compliance</span>

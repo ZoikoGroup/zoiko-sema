@@ -106,12 +106,12 @@ export default function SemaAiCTASection() {
               <button className="sacta-btn-primary bg-white text-gray-900 text-[13.5px] font-semibold rounded-full px-6 py-3">
                 Watch Sema AI Demo
               </button>
-              <button className="sacta-btn-secondary text-white text-[13.5px] font-semibold rounded-full px-6 py-3">
+              <a href="/start-free" className="sacta-btn-secondary text-white text-[13.5px] font-semibold rounded-full px-6 py-3 inline-flex items-center justify-center">
                 Start Free
-              </button>
-              <button className="sacta-btn-secondary text-white text-[13.5px] font-semibold rounded-full px-6 py-3">
+              </a>
+              <a href="/contact-sales" className="sacta-btn-secondary text-white text-[13.5px] font-semibold rounded-full px-6 py-3 inline-flex items-center justify-center">
                 Contact Sales
-              </button>
+              </a>
             </div>
 
             <div
@@ -120,7 +120,7 @@ export default function SemaAiCTASection() {
               style={{ animationDelay: "0.2s" }}
             >
               <a
-                href="#"
+                href="/trust-center"
                 className="sacta-link inline-flex items-center gap-1.5 text-[13px] font-semibold text-white"
               >
                 Visit Trust Center

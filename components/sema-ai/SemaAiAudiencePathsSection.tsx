@@ -32,24 +32,28 @@ const paths = [
     title: "Remember and follow up faster",
     description: "Remember conversations, capture notes, and follow up faster.",
     cta: "Start Free",
+    href: "/start-free",
   },
   {
     tag: "Teams",
     title: "Summarize into shared action",
     description: "Summarize meetings, messages, and calls into shared action.",
     cta: "Explore Team Collaboration",
+    href: "/team-collaboration",
   },
   {
     tag: "Businesses",
     title: "Deploy with admin controls",
     description: "Deploy AI communication with admin controls and policy.",
     cta: "Contact Sales",
+    href: "/contact-sales",
   },
   {
     tag: "Regulated Teams",
     title: "Stronger governance",
     description: "Use AI with stronger governance, review, retention, and audit controls.",
     cta: "Explore Trust Center",
+    href: "/trust-center",
   },
 ];
 
@@ -134,12 +138,12 @@ export default function SemaAiAudiencePathsSection() {
                   {path.description}
                 </p>
                 <a
-                  href="#"
+                  href={path.href}
                   className="sapa-link inline-flex items-center gap-1 text-[12.5px] font-semibold"
                   style={{ color: BRAND }}
                 >
                   {path.cta}
-                  <span className="sapa-arrow">→</span>
+                  <span >&rarr;</span>
                 </a>
               </div>
             ))}

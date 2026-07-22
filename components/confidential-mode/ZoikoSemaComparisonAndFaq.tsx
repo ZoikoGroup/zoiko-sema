@@ -255,25 +255,27 @@ regulated workflows, and enterprise deployment.          </p>
 
           {/* Actions & Buttons Row Reveal */}
           <div className={`flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 transition-all duration-1000 delay-300 transform ${ctaVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
+            <a href="/start-free">
             <button className="w-full sm:w-auto px-8 h-12 bg-blue-600 hover:bg-blue-500 active:scale-95 text-white text-sm font-semibold rounded-full font-sans transition-all shadow-md shadow-blue-950/20">
               Start free
-            </button>
+            </button></a>
+            <a href="/contact-sales">
             <button className="w-full sm:w-auto px-8 h-12 border border-white/20 hover:border-white/40 hover:bg-white/5 active:scale-95 text-white text-sm font-semibold rounded-full font-sans transition-all">
               Contact sales
-            </button>
+            </button></a>
           </div>
 
           {/* Text Arrow Trigger Link Reveal */}
           <div className={`pt-2 transition-all duration-1000 delay-400 transform ${ctaVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
             <a 
-              href="#View Trust Center" 
+              href="/trust-center" 
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition-colors group"
             >
               <span>View Trust Center</span>
               <span className="transform group-hover:translate-x-1 transition-transform duration-200">→</span>
             </a>
             <a 
-              href="#Request security review" 
+              href="/security-center" 
               className=" px-5 inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-400 hover:text-indigo-300 transition-colors group"
             >
               <span>Request security review</span>

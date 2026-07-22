@@ -1,5 +1,7 @@
 "use client";
 
+"use client";
+
 import React from "react";
 
 export default function HeroSection() {
@@ -46,18 +48,18 @@ export default function HeroSection() {
         </p>
 
         <div className="hero-rise hero-rise-3 mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button
-            type="button"
-            className="hero-cta-primary w-full rounded-xl bg-[#4A47D2] px-15 py-5 text-[15px] font-semibold text-white sm:w-auto"
+          <a
+            href="/start-free"
+            className="hero-cta-primary w-full rounded-xl bg-[#4A47D2] px-15 py-5 text-[15px] font-semibold text-white sm:w-auto inline-flex items-center justify-center"
           >
             Get Started for Free
-          </button>
-          <button
-            type="button"
-            className="hero-cta-secondary w-full rounded-xl border border-slate-200 bg-white px-15 py-5 text-[15px] font-semibold text-slate-900 sm:w-auto"
+          </a>
+          <a
+            href="/get-a-demo"
+            className="hero-cta-secondary w-full rounded-xl border border-slate-200 bg-white px-15 py-5 text-[15px] font-semibold text-slate-900 sm:w-auto inline-flex items-center justify-center"
           >
             Request Demo
-          </button>
+          </a>
         </div>
       </div>
 

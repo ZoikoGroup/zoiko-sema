@@ -116,13 +116,13 @@ export default function ZoikoTimeBridgeSection() {
           {/* Interactive Button Configuration Panel */}
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
             <a
-              href="#"
+              href="/sema-zoikotime"
               className="w-full sm:w-auto px-6 h-12 rounded-full text-slate-900 bg-white text-sm font-semibold inline-flex items-center justify-center hover:bg-slate-100 transition-colors duration-150 shadow-sm"
             >
               Explore Sema + ZoikoTime
             </a>
             <a
-              href="#"
+              href="/get-a-demo"
               className="w-full sm:w-auto px-6 h-12 rounded-full border border-white/30 text-white text-sm font-semibold inline-flex items-center justify-center bg-transparent hover:bg-white/5 hover:border-white/50 transition-all duration-150"
             >
               Request integration demo
