@@ -21,7 +21,7 @@ export function HelpCenterLearningTracksSection() {
     <div className="w-full bg-white flex justify-center py-16 overflow-hidden">
       <div className="w-full max-w-[1280px] px-8 lg:px-12 flex flex-col items-start gap-12">
         <div className="w-full flex flex-col justify-start items-start">
-          <div className="w-full justify-center text-zinc-900 text-3xl font-semibold font-['Hanken_Grotesk'] leading-10">
+          <div className="w-full justify-center text-zinc-900 text-3xl font-semibold font-sans leading-10">
             Product Learning Tracks
           </div>
         </div>
@@ -37,12 +37,12 @@ export function HelpCenterLearningTracksSection() {
                 />
               </div>
               <div className="w-full pt-4 flex flex-col justify-start items-start">
-                <div className="w-full justify-center text-zinc-900 text-2xl font-semibold font-['Hanken_Grotesk'] leading-8 group-hover:text-blue-600 transition-colors">
+                <div className="w-full justify-center text-zinc-900 text-2xl font-semibold font-sans leading-8 group-hover:text-blue-600 transition-colors">
                   {track.title}
                 </div>
               </div>
               <div className="w-full flex flex-col justify-start items-start">
-                <div className="w-full justify-center text-zinc-700 text-base font-normal font-['Inter'] leading-6">
+                <div className="w-full justify-center text-zinc-700 text-base font-normal font-sans leading-6">
                   {track.meta}
                 </div>
               </div>

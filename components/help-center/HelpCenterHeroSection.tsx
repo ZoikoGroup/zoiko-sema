@@ -6,19 +6,19 @@ export function HelpCenterHeroSection() {
       <div className="w-full max-w-[1280px] px-8 lg:px-12 flex flex-col lg:flex-row items-center gap-10">
         <div className="flex-1 flex flex-col justify-start items-start gap-6">
           <div className="px-4 py-1 bg-blue-100 rounded-full inline-flex justify-start items-center">
-            <span className="text-sky-950 text-xs font-medium font-['Hanken_Grotesk'] uppercase leading-4 tracking-wider">
+            <span className="text-sky-950 text-xs font-medium font-sans uppercase leading-4 tracking-wider">
               Help Center
             </span>
           </div>
           
           <div className="w-full max-w-[576px] flex flex-col justify-start items-start">
-            <h1 className="text-white text-4xl sm:text-5xl font-bold font-['Hanken_Grotesk'] leading-[1.2]">
+            <h1 className="text-white text-4xl sm:text-5xl font-bold font-sans leading-[1.2]">
               Find answers faster.
             </h1>
           </div>
           
           <div className="w-full max-w-[512px] flex flex-col justify-start items-start">
-            <p className="text-slate-500 text-base sm:text-lg font-normal font-['Inter'] leading-7">
+            <p className="text-slate-500 text-base sm:text-lg font-normal font-sans leading-7">
               Search setup guides, troubleshooting articles, product help,<br className="hidden sm:block" />
               admin controls, AI Meeting Summary guidance, integrations,<br className="hidden sm:block" />
               billing, and support resources for Zoiko Sema.
@@ -30,7 +30,7 @@ export function HelpCenterHeroSection() {
               href="/contact-sales" 
               className="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-700 transition-colors rounded-full flex justify-center items-center shadow-[0px_12px_24px_-12px_rgba(60,60,120,0.60)]"
             >
-              <span className="text-white text-sm font-semibold font-['Plus_Jakarta_Sans']">
+              <span className="text-white text-sm font-semibold font-sans">
                 Contact
               </span>
             </Link>
@@ -38,7 +38,7 @@ export function HelpCenterHeroSection() {
               href="/resources" 
               className="w-full sm:w-auto px-6 py-3 bg-white hover:bg-gray-50 transition-colors rounded-full flex justify-center items-center border border-gray-200"
             >
-              <span className="text-slate-900 text-sm font-semibold font-['Plus_Jakarta_Sans']">
+              <span className="text-slate-900 text-sm font-semibold font-sans">
                 Explore All Resources
               </span>
             </Link>

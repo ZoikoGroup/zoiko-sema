@@ -52,7 +52,7 @@ export default function SecurityFaq() {
       <section className="bg-white px-6 py-20 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-[800px] flex flex-col justify-start items-center gap-16">
           <div className="fade-up w-full text-center">
-            <h2 className="text-4xl font-extrabold text-zinc-900 font-['Hanken_Grotesk'] md:text-[40px]">
+            <h2 className="text-4xl font-extrabold text-zinc-900 font-sans md:text-[40px]">
               Frequently Asked Questions
             </h2>
           </div>
@@ -68,7 +68,7 @@ export default function SecurityFaq() {
                   onClick={() => setOpen(open === index ? -1 : index)}
                   className="flex w-full items-center justify-between gap-4 p-6 text-left"
                 >
-                  <span className="text-base font-bold text-zinc-900 font-['Hanken_Grotesk'] leading-6">
+                  <span className="text-base font-bold text-zinc-900 font-sans leading-6">
                     {faq.question}
                   </span>
 

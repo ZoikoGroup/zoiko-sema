@@ -6,10 +6,10 @@ export default function SalesWhyChoose() {
         <div className="w-[1200px] max-w-[1280px] left-[120px] top-[72px] absolute inline-flex flex-col justify-start items-start gap-16">
             <div className="self-stretch flex flex-col justify-start items-start gap-2">
                 <div className="self-stretch flex flex-col justify-start items-center">
-                    <div className="text-center justify-center text-zinc-900 text-3xl font-semibold font-['Hanken_Grotesk'] leading-10">Why Sales Teams Choose Zoiko Sema</div>
+                    <div className="text-center justify-center text-zinc-900 text-3xl font-semibold font-sans leading-10">Why Sales Teams Choose Zoiko Sema</div>
                 </div>
                 <div className="self-stretch flex flex-col justify-start items-center">
-                    <div className="text-center justify-center text-zinc-700 text-base font-normal font-['Hanken_Grotesk'] leading-6">Transition from messy syncs to structured revenue collaboration.</div>
+                    <div className="text-center justify-center text-zinc-700 text-base font-normal font-sans leading-6">Transition from messy syncs to structured revenue collaboration.</div>
                 </div>
             </div>
             <div className="self-stretch inline-flex justify-center items-start gap-10">

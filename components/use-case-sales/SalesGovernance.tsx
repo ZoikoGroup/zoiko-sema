@@ -6,13 +6,13 @@ export default function SalesGovernance() {
         <div className="w-[1200px] left-[120px] top-[72px] absolute inline-flex justify-center items-center gap-16">
             <div className="flex-1 pt-0.5 inline-flex flex-col justify-start items-start gap-6">
                 <div className="px-4 py-1 bg-black rounded-sm inline-flex justify-start items-start">
-                    <div className="justify-center text-white text-[10px] font-normal font-['Hanken_Grotesk'] leading-4 tracking-wide">ADMIN CONSOLE</div>
+                    <div className="justify-center text-white text-[10px] font-normal font-sans leading-4 tracking-wide">ADMIN CONSOLE</div>
                 </div>
                 <div className="self-stretch flex flex-col justify-start items-start">
-                    <div className="self-stretch justify-center text-zinc-900 text-3xl font-semibold font-['Hanken_Grotesk'] leading-10">Enterprise-Grade Governance</div>
+                    <div className="self-stretch justify-center text-zinc-900 text-3xl font-semibold font-sans leading-10">Enterprise-Grade Governance</div>
                 </div>
                 <div className="self-stretch flex flex-col justify-start items-start">
-                    <div className="self-stretch justify-center text-zinc-700 text-base font-normal font-['Hanken_Grotesk'] leading-6">Control your data, your recordings, and your AI. Designed for highly regulated<br/>sales environments.</div>
+                    <div className="self-stretch justify-center text-zinc-700 text-base font-normal font-sans leading-6">Control your data, your recordings, and your AI. Designed for highly regulated<br/>sales environments.</div>
                 </div>
                 <div className="self-stretch pt-10 flex flex-col justify-start items-start gap-6">
                     <div className="self-stretch inline-flex justify-start items-start gap-6">
@@ -21,10 +21,10 @@ export default function SalesGovernance() {
                         </div>
                         <div className="inline-flex flex-col justify-start items-start">
                             <div className="self-stretch flex flex-col justify-start items-start">
-                                <div className="justify-center text-zinc-900 text-base font-bold font-['Hanken_Grotesk'] leading-6">Identity &amp; RBAC</div>
+                                <div className="justify-center text-zinc-900 text-base font-bold font-sans leading-6">Identity &amp; RBAC</div>
                             </div>
                             <div className="self-stretch flex flex-col justify-start items-start">
-                                <div className="justify-center text-zinc-700 text-sm font-normal font-['Hanken_Grotesk'] leading-5">Granular permissions for reps, managers, and external partners.</div>
+                                <div className="justify-center text-zinc-700 text-sm font-normal font-sans leading-5">Granular permissions for reps, managers, and external partners.</div>
                             </div>
                         </div>
                     </div>
@@ -34,10 +34,10 @@ export default function SalesGovernance() {
                         </div>
                         <div className="inline-flex flex-col justify-start items-start">
                             <div className="self-stretch flex flex-col justify-start items-start">
-                                <div className="justify-center text-zinc-900 text-base font-bold font-['Hanken_Grotesk'] leading-6">Recording Policy</div>
+                                <div className="justify-center text-zinc-900 text-base font-bold font-sans leading-6">Recording Policy</div>
                             </div>
                             <div className="self-stretch flex flex-col justify-start items-start">
-                                <div className="justify-center text-zinc-700 text-sm font-normal font-['Hanken_Grotesk'] leading-5">Automated regional compliance and selective recording triggers.</div>
+                                <div className="justify-center text-zinc-700 text-sm font-normal font-sans leading-5">Automated regional compliance and selective recording triggers.</div>
                             </div>
                         </div>
                     </div>
@@ -46,36 +46,36 @@ export default function SalesGovernance() {
             
             <div className="flex-1 p-16 relative bg-slate-900 rounded-2xl inline-flex flex-col justify-start items-start gap-6 overflow-hidden">
                 <div className="self-stretch flex flex-col justify-start items-start z-10">
-                    <div className="self-stretch justify-center text-indigo-700 text-xs font-bold font-['Hanken_Grotesk'] uppercase leading-4 tracking-wide">SECURITY DASHBOARD PREVIEW</div>
+                    <div className="self-stretch justify-center text-indigo-700 text-xs font-bold font-sans uppercase leading-4 tracking-wide">SECURITY DASHBOARD PREVIEW</div>
                 </div>
                 <div className="self-stretch flex flex-col justify-start items-start gap-4 z-10">
                     <div className="self-stretch h-10 px-6 bg-white/5 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/10 flex justify-between items-center">
                         <div className="inline-flex flex-col justify-start items-start">
-                            <div className="justify-center text-slate-500 text-xs font-normal font-['Hanken_Grotesk'] leading-4">SOC2 Compliance Status:</div>
+                            <div className="justify-center text-slate-500 text-xs font-normal font-sans leading-4">SOC2 Compliance Status:</div>
                         </div>
                         <div className="inline-flex flex-col justify-start items-end">
-                            <div className="justify-center text-green-400 text-base font-bold font-['Hanken_Grotesk'] leading-6">ACTIVE</div>
+                            <div className="justify-center text-green-400 text-base font-bold font-sans leading-6">ACTIVE</div>
                         </div>
                     </div>
                     <div className="self-stretch h-10 px-6 bg-white/5 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/10 flex justify-between items-center">
                         <div className="inline-flex flex-col justify-start items-start">
-                            <div className="justify-center text-slate-500 text-xs font-normal font-['Hanken_Grotesk'] leading-4">Recording Consent Rate:</div>
+                            <div className="justify-center text-slate-500 text-xs font-normal font-sans leading-4">Recording Consent Rate:</div>
                         </div>
                         <div className="inline-flex flex-col justify-start items-end">
-                            <div className="justify-center text-slate-500 text-base font-bold font-['Hanken_Grotesk'] leading-6">98.4%</div>
+                            <div className="justify-center text-slate-500 text-base font-bold font-sans leading-6">98.4%</div>
                         </div>
                     </div>
                     <div className="self-stretch h-10 px-6 bg-white/5 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/10 flex justify-between items-center">
                         <div className="inline-flex flex-col justify-start items-start">
-                            <div className="justify-center text-slate-500 text-xs font-normal font-['Hanken_Grotesk'] leading-4">Data Residency:</div>
+                            <div className="justify-center text-slate-500 text-xs font-normal font-sans leading-4">Data Residency:</div>
                         </div>
                         <div className="inline-flex flex-col justify-start items-end">
-                            <div className="justify-center text-slate-500 text-base font-bold font-['Hanken_Grotesk'] leading-6">EU-West (Frankfurt)</div>
+                            <div className="justify-center text-slate-500 text-base font-bold font-sans leading-6">EU-West (Frankfurt)</div>
                         </div>
                     </div>
                     <div className="self-stretch pt-10 border-t border-white/10 flex flex-col justify-start items-start mt-2">
                         <button className="self-stretch py-2 rounded-lg outline outline-1 outline-offset-[-1px] outline-white/20 inline-flex justify-center items-center hover:bg-white/5 transition-colors">
-                            <div className="text-center justify-center text-slate-500 text-xs font-bold font-['Hanken_Grotesk'] leading-4">Generate Compliance Audit</div>
+                            <div className="text-center justify-center text-slate-500 text-xs font-bold font-sans leading-4">Generate Compliance Audit</div>
                         </button>
                     </div>
                 </div>

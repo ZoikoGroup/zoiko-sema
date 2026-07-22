@@ -26,7 +26,7 @@ export function HeroSection() {
 
           {/* Headline */}
           <div className="pt-px">
-            <h1 className="text-white text-5xl font-bold font-['Hanken_Grotesk'] leading-[60px]">
+            <h1 className="text-white text-5xl font-bold font-sans leading-[60px]">
               Coordinate hybrid and remote teams without losing momentum.
             </h1>
           </div>

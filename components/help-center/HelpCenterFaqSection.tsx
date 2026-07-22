@@ -26,7 +26,7 @@ export function HelpCenterFaqSection() {
   return (
     <div className="w-full bg-white flex justify-center py-20 px-8 lg:px-12">
       <div className="w-full max-w-[1000px] flex flex-col items-center gap-10">
-        <h2 className="text-center text-zinc-900 text-3xl font-semibold font-['Hanken_Grotesk'] leading-10">
+        <h2 className="text-center text-zinc-900 text-3xl font-semibold font-sans leading-10">
           Frequently Asked Questions
         </h2>
         
@@ -42,7 +42,7 @@ export function HelpCenterFaqSection() {
                   onClick={() => toggleAccordion(idx)}
                   className="w-full p-6 flex justify-between items-center text-left focus:outline-none focus-visible:bg-slate-50 transition-colors hover:bg-slate-50"
                 >
-                  <span className="text-zinc-900 text-lg sm:text-xl md:text-2xl font-semibold font-['Hanken_Grotesk'] pr-4">
+                  <span className="text-zinc-900 text-lg sm:text-xl md:text-2xl font-semibold font-sans pr-4">
                     {faq.question}
                   </span>
                   <div className={`transform transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180' : ''}`}>
@@ -56,7 +56,7 @@ export function HelpCenterFaqSection() {
                   className={`w-full overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'}`}
                 >
                   <div className="px-6 pb-6 pt-2">
-                    <p className="text-zinc-700 text-base font-normal font-['Inter'] leading-6">
+                    <p className="text-zinc-700 text-base font-normal font-sans leading-6">
                       {faq.answer}
                     </p>
                   </div>

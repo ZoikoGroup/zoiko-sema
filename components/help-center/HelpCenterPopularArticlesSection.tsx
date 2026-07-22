@@ -30,7 +30,7 @@ export function HelpCenterPopularArticlesSection() {
     <div className="w-full bg-violet-50 flex justify-center py-16 overflow-hidden">
       <div className="w-full max-w-[1280px] px-8 lg:px-12 flex flex-col items-start gap-12">
         <div className="w-full flex flex-col justify-start items-start">
-          <h2 className="text-zinc-900 text-3xl font-semibold font-['Hanken_Grotesk'] leading-10">
+          <h2 className="text-zinc-900 text-3xl font-semibold font-sans leading-10">
             Popular Articles
           </h2>
         </div>
@@ -44,37 +44,37 @@ export function HelpCenterPopularArticlesSection() {
               <div className="p-6 flex flex-col gap-3 h-full">
                 <div className="inline-flex justify-start items-center gap-2">
                   <div className="px-2 py-0.5 bg-blue-600/10 rounded-sm">
-                    <span className="text-sky-700 text-base font-normal font-['Hanken_Grotesk'] leading-6">
+                    <span className="text-sky-700 text-base font-normal font-sans leading-6">
                       {article.category}
                     </span>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-zinc-700 text-base font-normal font-['Hanken_Grotesk'] leading-6">
+                    <span className="text-zinc-700 text-base font-normal font-sans leading-6">
                       • {article.subcategory}
                     </span>
                   </div>
                 </div>
                 
                 <div className="pt-1">
-                  <h3 className="text-zinc-900 text-2xl font-semibold font-['Hanken_Grotesk'] leading-8">
+                  <h3 className="text-zinc-900 text-2xl font-semibold font-sans leading-8">
                     {article.title}
                   </h3>
                 </div>
                 
                 <div className="pb-3 flex-grow">
-                  <p className="text-zinc-700 text-base font-normal font-['Inter'] leading-6">
+                  <p className="text-zinc-700 text-base font-normal font-sans leading-6">
                     {article.description}
                   </p>
                 </div>
                 
                 <div className="pt-6 border-t border-neutral-300 flex justify-between items-center mt-auto">
                   <div>
-                    <span className="text-zinc-700 text-base font-normal font-['Hanken_Grotesk'] leading-6">
+                    <span className="text-zinc-700 text-base font-normal font-sans leading-6">
                       {article.updated}
                     </span>
                   </div>
                   <div>
-                    <a href={article.href} className="text-sky-700 text-base font-bold font-['Hanken_Grotesk'] leading-6 hover:underline">
+                    <a href={article.href} className="text-sky-700 text-base font-bold font-sans leading-6 hover:underline">
                       Read Article
                     </a>
                   </div>

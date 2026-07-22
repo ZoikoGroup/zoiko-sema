@@ -18,7 +18,7 @@ export function TimelineMappingSection() {
             inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
           }`}
         >
-          <h2 className="text-zinc-900 text-3xl font-semibold font-['Hanken_Grotesk'] leading-10">
+          <h2 className="text-zinc-900 text-3xl font-semibold font-sans leading-10">
             Precision Timeline Mapping
           </h2>
 
@@ -38,7 +38,7 @@ export function TimelineMappingSection() {
                   className="size-5"
                 />
               </div>
-              <h3 className="text-zinc-900 text-sm font-semibold font-['Hanken_Grotesk'] leading-5 tracking-wide">
+              <h3 className="text-zinc-900 text-sm font-semibold font-sans leading-5 tracking-wide">
                 Dynamic Overlap Engine
               </h3>
             </div>

@@ -79,7 +79,7 @@ export default function SecurityControlCenter() {
                   </div>
 
                   <div className="self-stretch flex flex-col justify-start items-center">
-                    <div className="text-center justify-center text-zinc-700 text-xs font-normal font-['Hanken_Grotesk'] uppercase leading-4 tracking-wide">
+                    <div className="text-center justify-center text-zinc-700 text-xs font-normal font-sans uppercase leading-4 tracking-wide">
                       {step.label}
                     </div>
                   </div>
@@ -100,7 +100,7 @@ export default function SecurityControlCenter() {
 
             <div className="relative z-10 w-full flex flex-wrap items-end justify-between gap-4">
               <div className="flex flex-col gap-2">
-                <h3 className="text-base font-normal font-['Hanken_Grotesk'] leading-6 text-white">
+                <h3 className="text-base font-normal font-sans leading-6 text-white">
                   Security Control Center
                 </h3>
                 <p className="text-base font-normal font-['Inter'] leading-6 text-slate-500">
@@ -111,7 +111,7 @@ export default function SecurityControlCenter() {
               <button
                 onClick={handleSync}
                 disabled={syncing}
-                className="flex items-center justify-center gap-2 rounded-lg bg-sky-700 px-10 py-2 text-base font-normal font-['Hanken_Grotesk'] leading-6 text-white transition hover:bg-sky-600 disabled:opacity-70"
+                className="flex items-center justify-center gap-2 rounded-lg bg-sky-700 px-10 py-2 text-base font-normal font-sans leading-6 text-white transition hover:bg-sky-600 disabled:opacity-70"
               >
                 <RefreshCcw
                   size={16}

@@ -33,7 +33,7 @@ export default function SecurityComplianceHero() {
             </div>
 
             <div className="pt-px flex flex-col justify-start items-start">
-              <h1 className="text-white text-4xl font-extrabold font-['Hanken_Grotesk'] leading-[52px] md:text-5xl md:leading-[56px]">
+              <h1 className="text-white text-4xl font-extrabold font-sans leading-[52px] md:text-5xl md:leading-[56px]">
                 Enterprise security and governance built into every workspace.
               </h1>
             </div>

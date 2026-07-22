@@ -28,12 +28,12 @@ export function SemaIntelligenceSection() {
           className={`flex-1 max-w-[496px] pt-[3px] flex flex-col gap-6 transition-all duration-1000 transform ${inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
             }`}
         >
-          <span className="text-indigo-300 text-sm font-semibold font-['Hanken_Grotesk'] uppercase leading-5 tracking-wider">
+          <span className="text-indigo-300 text-sm font-semibold font-sans uppercase leading-5 tracking-wider">
             SEMA INTELLIGENCE
           </span>
 
           <div className="pt-px">
-            <h2 className="text-white text-3xl font-semibold font-['Hanken_Grotesk'] leading-10">
+            <h2 className="text-white text-3xl font-semibold font-sans leading-10">
               Never miss a decision again
             </h2>
           </div>

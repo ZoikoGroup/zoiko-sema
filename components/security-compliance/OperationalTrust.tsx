@@ -46,7 +46,7 @@ export default function OperationalTrust() {
       <section className="bg-slate-900 px-6 py-20 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-6xl">
           <div className="fade-up flex flex-col justify-start items-center gap-6 text-center">
-            <h2 className="text-4xl font-extrabold text-white font-['Hanken_Grotesk'] md:text-[40px]">
+            <h2 className="text-4xl font-extrabold text-white font-sans md:text-[40px]">
               Built on Operational Trust
             </h2>
 
@@ -70,7 +70,7 @@ export default function OperationalTrust() {
                   </div>
 
                   <div className="pt-2 flex flex-col justify-start items-center w-full">
-                    <h3 className="text-center text-white text-base font-normal font-['Hanken_Grotesk'] leading-6">
+                    <h3 className="text-center text-white text-base font-normal font-sans leading-6">
                       {item.title}
                     </h3>
                   </div>

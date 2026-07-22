@@ -81,7 +81,7 @@ export default function SolvedAtScale() {
                   <Icon className="text-blue-600" size={24} strokeWidth={2} />
 
                   <div className="pt-4 flex flex-col justify-start items-start w-full">
-                    <h3 className="text-base font-bold font-['Hanken_Grotesk'] leading-6 text-zinc-900">
+                    <h3 className="text-base font-bold font-sans leading-6 text-zinc-900">
                       {item.title}
                     </h3>
                   </div>
