@@ -12,32 +12,26 @@ const BrowseByProduct = () => {
     ];
 
     return (
-        <div className="w-full bg-violet-50 pt-20 pb-12 px-4 md:px-8 lg:px-10 flex justify-center">
-            <div className="w-full max-w-7xl flex flex-col justify-start items-start gap-12">
+        <div className="w-full bg-violet-50/50 pt-20 pb-12 px-4 md:px-8 lg:px-10 flex justify-center font-sans">
+            <div className="w-full max-w-7xl flex flex-col justify-start items-start gap-10">
                 <div className="w-full flex justify-between items-end">
                     <div className="flex flex-col justify-start items-start gap-2">
-                        <div className="flex flex-col justify-start items-start">
-                            <h2 className="justify-center text-sky-950 text-3xl font-semibold font-['Hanken_Grotesk'] leading-10">Browse by Product</h2>
-                        </div>
-                        <div className="flex flex-col justify-start items-start">
-                            <p className="justify-center text-zinc-700 text-base font-normal font-['Hanken_Grotesk'] leading-6">Find specialized guides for every part of the Zoiko Sema ecosystem.</p>
-                        </div>
+                        <h2 className="text-slate-900 text-3xl font-semibold leading-10">Browse by Product</h2>
+                        <p className="text-slate-600 text-base font-normal">Find specialized guides for every part of the Zoiko Sema ecosystem.</p>
                     </div>
-                    <div className="flex justify-start items-center gap-1 cursor-pointer hover:opacity-80">
-                        <div className="justify-center text-indigo-700 text-sm font-medium font-['Hanken_Grotesk'] leading-5 tracking-tight">View All</div>
-                        <div className="flex flex-col justify-start items-start">
-                            <img src="/guides-and-Tutorials/icon-27.svg" alt="View All" className="w-4 h-4 object-contain" />
-                        </div>
+                    <div className="flex justify-start items-center gap-1.5 cursor-pointer group">
+                        <span className="text-indigo-600 group-hover:text-indigo-700 text-sm font-semibold tracking-tight transition-colors">View All</span>
+                        <img src="/guides-and-Tutorials/icon-27.svg" alt="View All" className="w-4 h-4 object-contain group-hover:translate-x-0.5 transition-transform" />
                     </div>
                 </div>
                 <div className="self-stretch flex justify-start items-stretch gap-4 overflow-x-auto pb-4">
                     {products.map((product, index) => (
-                        <div key={index} className="flex-1 min-w-[150px] p-8 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-300 hover:shadow-md transition-shadow cursor-pointer flex flex-col justify-center items-center gap-4">
-                            <div className="flex flex-col justify-start items-center">
-                                <img src={`/guides-and-Tutorials/${product.icon}`} alt={product.title} className="w-8 h-8 object-contain" />
+                        <div key={index} className="flex-1 min-w-[140px] p-7 bg-white rounded-2xl border border-slate-200 hover:border-indigo-200 hover:shadow-md transition-all cursor-pointer flex flex-col justify-center items-center gap-4">
+                            <div className="w-12 h-12 rounded-xl bg-slate-50 flex justify-center items-center p-2.5">
+                                <img src={`/guides-and-Tutorials/${product.icon}`} alt={product.title} className="w-7 h-7 object-contain" />
                             </div>
-                            <div className="flex flex-col justify-start items-center px-2">
-                                <div className="text-center justify-center text-slate-900 text-[15px] font-medium font-['Hanken_Grotesk'] leading-5 tracking-tight">{product.title}</div>
+                            <div className="flex flex-col justify-start items-center px-1">
+                                <span className="text-center text-slate-900 text-[15px] font-semibold tracking-tight">{product.title}</span>
                             </div>
                         </div>
                     ))}
@@ -48,3 +42,4 @@ const BrowseByProduct = () => {
 };
 
 export default BrowseByProduct;
+

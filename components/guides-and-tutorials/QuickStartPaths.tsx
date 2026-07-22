@@ -45,55 +45,58 @@ const QuickStartPaths = () => {
   ];
 
   return (
-    <div className="w-full bg-white py-20 px-4 md:px-8 lg:px-10 flex justify-center">
+    <div className="w-full bg-white py-20 px-4 md:px-8 lg:px-10 flex justify-center font-sans">
       <div className="w-full max-w-7xl flex flex-col gap-10">
         <div className="flex flex-col gap-2">
-          <h2 className="text-[#0f172a] text-[32px] font-bold font-['Hanken_Grotesk'] leading-tight">Quick Start Paths</h2>
-          <p className="text-slate-600 text-base font-normal font-['Hanken_Grotesk']">Get up and running in minutes with these essential starting points.</p>
+          <h2 className="text-[#0f172a] text-[32px] font-bold leading-tight">Quick Start Paths</h2>
+          <p className="text-slate-600 text-base font-normal">Get up and running in minutes with these essential starting points.</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {paths.map((path, index) => (
-            <div key={index} className="w-full p-6 bg-white rounded-xl outline outline-1 outline-offset-[-1px] outline-neutral-300 hover:shadow-md transition-shadow flex flex-col justify-start items-start">
-                <div className="w-full pb-6 flex flex-col justify-start items-start">
-                    <div className="w-full flex justify-between items-start">
-                        <div className="w-[44px] h-[44px] bg-slate-100 rounded-lg flex items-center justify-center">
-                            <img src={`/guides-and-Tutorials/${path.icon}`} alt={path.title} className="w-5 h-5 object-contain" />
-                        </div>
-                        <div className="pb-0.5 flex flex-col justify-start items-end gap-0.5">
-                            <div className="flex flex-col justify-start items-end">
-                                <div className="text-right justify-center text-zinc-500 text-xs font-semibold font-['Hanken_Grotesk'] uppercase leading-4 tracking-wide">DIFFICULTY</div>
-                            </div>
-                            <div className="text-right justify-center text-sky-950 text-sm font-medium font-['Hanken_Grotesk'] leading-5 tracking-tight">{path.difficulty}</div>
-                        </div>
+          {paths.map((path, index) => {
+            const hasProgress = parseInt(path.progress) > 0;
+            return (
+              <div key={index} className="w-full p-6 bg-white rounded-xl border border-slate-200 hover:shadow-md transition-all flex flex-col justify-between">
+                <div>
+                  <div className="w-full pb-6 flex justify-between items-start">
+                    <div className="w-11 h-11 bg-slate-50 border border-slate-100 rounded-lg flex items-center justify-center p-2">
+                      <img src={`/guides-and-Tutorials/${path.icon}`} alt={path.title} className="w-6 h-6 object-contain" />
                     </div>
-                </div>
-                <div className="w-full pb-4 flex flex-col justify-start items-start">
-                    <div className="w-full flex flex-col justify-start items-start">
-                        <div className="w-full justify-start text-slate-900 text-xl font-semibold font-['Hanken_Grotesk'] leading-7">{path.title}</div>
+                    <div className="flex flex-col items-end">
+                      <span className="text-zinc-400 text-[10px] font-bold uppercase tracking-wider">DIFFICULTY</span>
+                      <span className="text-slate-900 text-sm font-semibold mt-0.5">{path.difficulty}</span>
                     </div>
-                </div>
-                <div className="w-full pb-8 flex flex-col justify-start items-start flex-grow">
-                    <div className="w-full flex flex-col justify-start items-start gap-3">
-                        <div className="w-full flex justify-between items-start">
-                            <div className="flex flex-col justify-start items-start">
-                                <div className="justify-center text-zinc-700 text-xs font-semibold font-['Hanken_Grotesk'] leading-4 tracking-wide">{path.readTime}</div>
-                            </div>
-                            <div className="flex flex-col justify-start items-start">
-                                <div className={`justify-center ${parseInt(path.progress) > 0 ? 'text-indigo-700' : 'text-zinc-700'} text-xs font-bold font-['Hanken_Grotesk'] leading-4 tracking-wide`}>{path.progress} Progress</div>
-                            </div>
-                        </div>
-                        <div className="w-full h-2 bg-[#e0e7ff] rounded-full"></div>
-                        <div className="w-full pt-2 flex flex-col justify-start items-start">
-                            <div className="w-full justify-start text-zinc-700 text-xs font-semibold font-['Hanken_Grotesk'] leading-4 tracking-wide">Prerequisites: {path.prereq}</div>
-                        </div>
+                  </div>
+                  
+                  <div className="w-full pb-4">
+                    <h3 className="text-slate-900 text-xl font-semibold leading-7">{path.title}</h3>
+                  </div>
+                  
+                  <div className="w-full pb-6 flex flex-col gap-3">
+                    <div className="w-full flex justify-between items-center text-xs">
+                      <span className="text-zinc-600 font-medium">{path.readTime}</span>
+                      <span className={`font-bold ${hasProgress ? 'text-indigo-600' : 'text-zinc-400'}`}>{path.progress} Progress</span>
                     </div>
+                    
+                    <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-indigo-600 rounded-full transition-all duration-300"
+                        style={{ width: path.progressWidth }}
+                      />
+                    </div>
+                    
+                    <div className="pt-1">
+                      <span className="text-zinc-500 text-xs font-medium">Prerequisites: <span className="text-slate-700 font-semibold">{path.prereq}</span></span>
+                    </div>
+                  </div>
                 </div>
-                <div className="w-full py-3 bg-blue-50 hover:bg-blue-100 cursor-pointer transition-colors rounded-lg flex flex-col justify-center items-center">
-                    <div className="text-center justify-center text-sky-950 text-sm font-medium font-['Hanken_Grotesk'] leading-5 tracking-tight">{path.btnText}</div>
+
+                <div className="w-full py-2.5 bg-blue-50/70 hover:bg-blue-100/80 cursor-pointer transition-colors rounded-lg flex justify-center items-center">
+                  <span className="text-indigo-900 text-sm font-semibold tracking-tight">{path.btnText}</span>
                 </div>
-            </div>
-          ))}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
@@ -101,3 +104,4 @@ const QuickStartPaths = () => {
 };
 
 export default QuickStartPaths;
+
