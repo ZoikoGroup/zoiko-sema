@@ -53,14 +53,14 @@ const cards: TrustCard[] = [
     title: "Enterprise deployment",
     description: "Deployment, identity, and admin controls for larger organizations.",
     action: "Explore Enterprise Deployment",
-    link:"/enterprise-deployment"
+    link:"/enterprise"
   },
   {
     icon: Headphones,
     title: "Support",
     description: "Help Center and contact routes when teams need assistance.",
     action: "Get Help",
-    link:"/get-help"
+    link:"/help-center"
   },
 ];
 

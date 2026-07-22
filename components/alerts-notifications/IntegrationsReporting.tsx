@@ -45,7 +45,7 @@ export default function IntegrationsReporting() {
         {/* CTA Link */}
         <div className="flex justify-center">
           <a
-            href="#integrations"
+            href="/zoikotime-integrations"
             className="group flex items-center gap-2 text-sm font-semibold text-[#4F46E5] hover:text-[#3B30E3] transition-colors"
           >
             View integrations

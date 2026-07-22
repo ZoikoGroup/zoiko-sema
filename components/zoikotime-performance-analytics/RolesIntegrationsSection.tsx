@@ -145,7 +145,7 @@ export default function RolesIntegrationsSection() {
                             } mt-10 flex flex-wrap items-center justify-center gap-8`}
                     >
                         <Link
-                            href="/integrations"
+                            href="/zoikotime-integrations"
                             className="roles-link inline-flex items-center gap-2 text-sm font-semibold text-[#4F5BD5]"
                         >
                             See Integrations
@@ -154,7 +154,7 @@ export default function RolesIntegrationsSection() {
                         </Link>
 
                         <Link
-                            href="/contact"
+                            href="/contact-sales"
                             className="roles-link inline-flex items-center gap-2 text-sm font-semibold text-[#4F5BD5]"
                         >
                             Talk to Sales

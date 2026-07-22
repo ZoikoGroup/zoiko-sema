@@ -152,6 +152,7 @@ export default function MediaKitAndTaxonomyPage() {
           SECTION 2: MEDIA KIT AND ASSET LIBRARY
           ========================================================================= */}
       <section
+        id="media-kit"
         ref={section2.ref}
         className={`w-full py-16 sm:py-24 px-4 sm:px-8 lg:px-28 bg-white dark:bg-gray-950 text-slate-900 dark:text-white border-b border-slate-100 dark:border-slate-900 transition-all duration-1000 ease-out transform ${
           section2.isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'

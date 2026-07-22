@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import Link from "next/link";
 import { ArrowRight, Shield, Sparkles, Link as LinkIcon, Settings } from 'lucide-react';
 
 export default function ZoikoSemaMeetingsHero() {
@@ -45,12 +46,19 @@ export default function ZoikoSemaMeetingsHero() {
 
           {/* Primary & Secondary Call to Action Buttons */}
           <div className="w-full flex flex-col sm:flex-row items-center gap-4 pt-2">
-            <button className="w-full sm:w-auto px-8 py-3 bg-blue-600 hover:bg-blue-700 active:scale-98 transition-all duration-200 rounded-full text-white text-sm font-semibold  shadow-lg shadow-blue-600/20 cursor-pointer">
-              Start free
-            </button>
-            <button className="w-full sm:w-auto px-8 py-3 bg-transparent hover:bg-white/5 active:scale-98 transition-all duration-200 rounded-full border border-white/30 text-white dark:text-gray-200 text-sm font-semibold  cursor-pointer">
-              Get a demo
-            </button>
+             <Link
+    href="/start-free"
+    className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3 bg-blue-600 hover:bg-blue-700 active:scale-95 transition-all duration-200 rounded-full text-white text-sm font-semibold shadow-lg shadow-blue-600/20 cursor-pointer"
+  >
+    Start free
+  </Link>
+
+  <Link
+    href="/get-a-demo"
+    className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3 bg-transparent hover:bg-white/5 active:scale-95 transition-all duration-200 rounded-full border border-white/30 text-white dark:text-gray-200 text-sm font-semibold cursor-pointer"
+  >
+    Get a demo
+  </Link>
           </div>
 
           {/* Secondary Action Text Navigation Links */}

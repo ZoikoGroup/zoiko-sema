@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from 'react';
+import Link from "next/link";
 import { ArrowRight, Plus, Minus, Layers, CheckSquare, FileText, Calendar, Search } from 'lucide-react';
 
 // Intersection observer hook to handle the dynamic entry float-up transformations
@@ -153,7 +154,7 @@ export default function ZoikoSemaExtendedSuite() {
                   </p>
                 </div>
                 
-                <a href="#" className="inline-flex items-center gap-1.5 text-blue-600 dark:text-blue-400 font-semibold   text-sm group-hover:text-blue-700 transition-colors">
+                <a href="/use-cases" className="inline-flex items-center gap-1.5 text-blue-600 dark:text-blue-400 font-semibold   text-sm group-hover:text-blue-700 transition-colors">
                   <span>Select use case</span>
                   <ArrowRight className="size-3.5 transform group-hover:translate-x-0.5 transition-transform" />
                 </a>
@@ -258,19 +259,21 @@ export default function ZoikoSemaExtendedSuite() {
 
           {/* Action Interactive Callout Row elements */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto pt-2">
-            <button className="w-full sm:w-auto px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold   rounded-full shadow-lg hover:shadow-blue-600/20 hover:-translate-y-0.5 transition-all cursor-pointer">
-              Start free
-            </button>
-            
-            <button className="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-white/30 hover:border-white/60 hover:bg-white/5 text-white text-sm font-semibold   rounded-full hover:-translate-y-0.5 transition-all cursor-pointer">
-              Get a demo
-            </button>
+             <Link
+    href="/start-free"
+    className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-full shadow-lg hover:shadow-blue-600/20 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
+  >
+    Start free
+  </Link>
+
+  <Link
+    href="/get-a-demo"
+    className="inline-flex w-full sm:w-auto items-center justify-center px-8 py-3.5 bg-transparent border border-white/30 hover:border-white/60 hover:bg-white/5 text-white text-sm font-semibold rounded-full hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
+  >
+    Get a demo
+  </Link>
           </div>
 
-          <a href="#" className="inline-flex items-center gap-1.5 text-indigo-400 hover:text-indigo-300 font-semibold   text-sm pt-2 transition-colors group">
-            <span>Open Sema Meet</span>
-            <ArrowRight className="size-4 transform group-hover:translate-x-1 transition-transform" />
-          </a>
 
         </div>
       </section>

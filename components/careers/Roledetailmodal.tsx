@@ -158,7 +158,10 @@ export default function RoleDetailModal({
 
                 <button
                   type="button"
-                  // TODO: wire to your roles board / talent community route
+                  onClick={() => {
+                    onClose();
+                    document.getElementById("community")?.scrollIntoView({ behavior: "smooth" });
+                  }}
                   className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#4F5BD5] px-5 py-3 text-[14px] font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#5C68E0]"
                 >
                   Apply / Join Talent Community

@@ -71,18 +71,18 @@ export default function Hero() {
           </p>
 
           <div className="prh-rise prh-rise-4 mt-9 flex flex-wrap items-center gap-4">
-            <button
-              type="button"
+            <a
+              href="/get-a-demo"
               className="prh-btn-primary rounded-full bg-indigo-600 px-8 py-4 text-[15px] font-semibold text-white"
             >
               Request a demo
-            </button>
-            <button
-              type="button"
+            </a>
+            <a
+              href="/privacy"
               className="prh-btn-secondary rounded-full border border-white/20 px-8 py-4 text-[15px] font-semibold text-white"
             >
               Read Privacy Policy
-            </button>
+            </a>
           </div>
 
           <p className="prh-rise prh-rise-5 mt-8 max-w-md text-[13.5px] italic leading-relaxed text-slate-500">

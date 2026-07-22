@@ -57,18 +57,18 @@ export default function Hero() {
 
           {/* Buttons */}
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <button className="rounded-full bg-[#2F54EB] px-7 py-3.5 text-sm font-semibold transition hover:bg-blue-600 shadow-lg shadow-blue-500/20">
+            <a href="/get-a-demo" className="rounded-full bg-[#2F54EB] px-7 py-3.5 text-sm font-semibold transition hover:bg-blue-600 shadow-lg shadow-blue-500/20">
               Request a demo
-            </button>
+            </a>
 
-            <button className="rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold hover:bg-white/5">
+            <a href="/start-free" className="rounded-full border border-white/20 px-7 py-3.5 text-sm font-semibold hover:bg-white/5">
               Start free
-            </button>
+            </a>
 
-            <button className="group flex items-center gap-2 pl-2 text-sm font-semibold text-[#8C84FF] transition hover:text-white">
+            <a href="#policy-controls" className="group flex items-center gap-2 pl-2 text-sm font-semibold text-[#8C84FF] transition hover:text-white">
               Explore policy controls
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
+            </a>
           </div>
 
           {/* Feature Pills */}

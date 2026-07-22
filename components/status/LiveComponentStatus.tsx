@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 // --- Types & Dummy Data ---
 type StatusType = "Operational" | "Degraded" | "Monitoring" | "Maintenance";
@@ -211,12 +212,12 @@ export default function LiveComponentStatus() {
                   </p>
                 </div>
                 
-                <a
-                  href="#"
+                <Link
+                  href="#uptime"
                   className="inline-flex items-center gap-1.5 text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 text-xs font-bold leading-4 transition-colors w-max"
                 >
                   View history <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform" />
-                </a>
+                </Link>
               </div>
             ))
           ) : (

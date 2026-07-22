@@ -50,7 +50,7 @@ const audiences: Audience[] = [
     description:
       "Manage client work, follow-ups, and deliverables with client spaces and follow-up controls.",
     action: "View Freelancer Workflow",
-    link:"/freelancer-workflow"
+    link:"/freelancer-workflows"
   },
   {
     icon: Settings,
@@ -66,7 +66,7 @@ const audiences: Audience[] = [
     description:
       "Keep communication moderated and governed with enterprise trails, retention, and audit records.",
     action: "View Regulated Workflow",
-    link:"/regulated-workflow"
+    link:"/regulated-workflows"
   },
 ];
 

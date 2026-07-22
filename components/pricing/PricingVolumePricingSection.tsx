@@ -18,13 +18,13 @@ const TIERS: Tier[] = [
     title: "50-250 seats",
     description: "Volume discounts and dedicated onboarding support.",
     cta: "Get a custom quote",
-    href: "#custom-quote",
+    href: "/contact-sales/",
   },
   {
     title: "250+ seats",
     description: "Enterprise rollout planning, security review, and procurement support.",
     cta: "Contact Sales",
-    href: "#talk-sales",
+    href: "/contact-sales/",
   },
   {
     title: "Multi-region / ZoikoTime",

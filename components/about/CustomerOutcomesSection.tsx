@@ -8,6 +8,7 @@ import {
   Play,
   LucideIcon,
 } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface Outcome {
   icon: LucideIcon;
@@ -44,6 +45,7 @@ const outcomes: Outcome[] = [
 ];
 
 export default function CustomerOutcomesSection() {
+  const router = useRouter();
   return (
     <section className="bg-[#F3F2FD] px-6 py-16 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl text-center">
@@ -73,7 +75,10 @@ export default function CustomerOutcomesSection() {
             </div>
           ))}
 
-          <div className="rounded-2xl bg-[#4F46E5] p-6 text-white shadow-sm">
+          <button
+            onClick={() => router.push("/customer-stories")}
+            className="cursor-pointer rounded-2xl bg-[#4F46E5] p-6 text-left text-white shadow-sm transition hover:bg-[#4338CA]"
+          >
             <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white/15">
               <Play size={18} strokeWidth={2} fill="white" />
             </div>
@@ -81,7 +86,7 @@ export default function CustomerOutcomesSection() {
             <p className="mt-2 text-sm leading-relaxed text-white/75">
               Read how teams get connected communication to work.
             </p>
-          </div>
+          </button>
         </div>
       </div>
     </section>

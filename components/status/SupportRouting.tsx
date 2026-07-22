@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { AlertTriangle, HelpCircle, ShieldAlert, Code, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const PATHS = [
   {
@@ -11,6 +12,7 @@ const PATHS = [
     title: 'Active incident affecting your component',
     desc: 'Incident detail page',
     action: 'View active incidents',
+    href: '#incidents',
     color: 'text-yellow-600 dark:text-yellow-400'
   },
   {
@@ -20,6 +22,7 @@ const PATHS = [
     title: 'Issue not listed in known incidents',
     desc: 'Help Center + Support form',
     action: 'Contact support',
+    href: '/customer-support',
     color: 'text-sky-700 dark:text-sky-400'
   },
   {
@@ -29,6 +32,7 @@ const PATHS = [
     title: 'Admin needing org-level impact info',
     desc: 'Enterprise admin support',
     action: 'Contact admin support',
+    href: '/customer-support',
     color: 'text-violet-600 dark:text-violet-400'
   },
   {
@@ -38,6 +42,7 @@ const PATHS = [
     title: 'Developer seeing API degradation',
     desc: 'API status + Developer Docs',
     action: 'View API status',
+    href: '/developer-docs',
     color: 'text-green-600 dark:text-green-400'
   }
 ];
@@ -90,10 +95,10 @@ export default function SupportRouting() {
                   </p>
                 </div>
 
-                <button className={`flex items-center gap-1.5 text-sm font-bold border-t border-slate-50 dark:border-slate-900 pt-4 w-full group ${path.color}`}>
+                <Link href={path.href} className={`flex items-center gap-1.5 text-sm font-bold border-t border-slate-50 dark:border-slate-900 pt-4 w-full group ${path.color}`}>
                   <span>{path.action}</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </button>
+                </Link>
               </div>
             );
           })}

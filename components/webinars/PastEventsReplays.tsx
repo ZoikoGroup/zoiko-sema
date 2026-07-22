@@ -150,12 +150,12 @@ export default function PastEventsReplays() {
         </div>
 
         {/* Global Hub Navigation Link Redirect Button Footer */}
-        <div className="w-full pt-4 flex justify-center items-center">
+        {/* <div className="w-full pt-4 flex justify-center items-center">
           <button className="flex items-center gap-1.5 group text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200 text-sm font-semibold   py-2.5 px-5 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500/20">
             <span>Browse all on-demand sessions</span>
             <ArrowRight className="size-4 stroke-[2.5px] transition-transform duration-300 group-hover:translate-x-1" />
           </button>
-        </div>
+        </div> */}
 
       </div>
     </section>

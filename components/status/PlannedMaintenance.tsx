@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState, useRef } from 'react';
 import { Bell, Calendar, Plus } from 'lucide-react';
+import Link from 'next/link';
 
 interface MaintenanceEvent {
   id: string;
@@ -77,10 +78,10 @@ export default function PlannedMaintenance() {
             </h2>
           </div>
 
-          <button className="group px-5 py-2.5 self-start md:self-auto rounded-full border border-violet-100 dark:border-slate-800 hover:border-violet-300 dark:hover:border-slate-700 bg-white dark:bg-slate-950 text-violet-600 dark:text-violet-400 text-sm font-bold flex items-center gap-2 hover:-translate-y-0.5 transition-all duration-200">
+          <Link href="#subscribe" className="group px-5 py-2.5 self-start md:self-auto rounded-full border border-violet-100 dark:border-slate-800 hover:border-violet-300 dark:hover:border-slate-700 bg-white dark:bg-slate-950 text-violet-600 dark:text-violet-400 text-sm font-bold flex items-center gap-2 hover:-translate-y-0.5 transition-all duration-200">
             <Bell className="w-4 h-4" />
             <span>Subscribe to maintenance updates</span>
-          </button>
+          </Link>
         </div>
 
         {/* Maintenance Cards Layout */}
@@ -149,10 +150,10 @@ export default function PlannedMaintenance() {
                   <Calendar className="w-3.5 h-3.5" />
                   <span>Add to calendar</span>
                 </button>
-                <button className="px-4 py-2 bg-white hover:bg-slate-50 dark:bg-slate-900 dark:hover:bg-slate-800 text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 text-xs font-bold rounded-xl border border-violet-100 dark:border-slate-800 flex items-center gap-1.5 transition-colors">
+                <Link href="#subscribe" className="px-4 py-2 bg-white hover:bg-slate-50 dark:bg-slate-900 dark:hover:bg-slate-800 text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 text-xs font-bold rounded-xl border border-violet-100 dark:border-slate-800 flex items-center gap-1.5 transition-colors">
                   <Plus className="w-3.5 h-3.5" />
                   <span>Subscribe</span>
-                </button>
+                </Link>
               </div>
             </div>
           ))}

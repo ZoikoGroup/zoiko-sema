@@ -117,7 +117,7 @@ export function IntegrationsCtaSection() {
             className={`ict-hidden ${ctaIn ? "ict-visible" : ""} mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center`}
             style={{ animationDelay: "0.24s" }}
           >
-            <Link href="/geta-a-demo">
+            <Link href="/get-a-demo">
             <button
               type="button"
               className="ict-btn-primary rounded-full bg-[#2F6BEB] px-7 py-3 text-[14px] font-semibold text-white hover:bg-[#3B78F0]"

@@ -513,9 +513,9 @@ export default function OpenRolesSection() {
 
               <p className="text-gray-500 dark:text-gray-400">
                 Don't see the right role?
-                <button className="ml-2 font-semibold text-[#5B63F6] hover:underline">
+                <a href="#community" className="ml-2 font-semibold text-[#5B63F6] hover:underline">
                   Join the talent community
-                </button>
+                </a>
               </p>
 
               <span className="text-gray-500 dark:text-gray-400">

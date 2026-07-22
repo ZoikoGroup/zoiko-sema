@@ -70,7 +70,7 @@ const pillars: Pillar[] = [
     leftDot: "bg-[#6C63FF]",
     rightColor: "text-orange-500",
     action: "Explore AI Summaries",
-    link:"/ai-summaries",
+    link:"/ai-meetings",
   },
   {
     icon: LayoutGrid,
@@ -94,7 +94,7 @@ const pillars: Pillar[] = [
     leftDot: "bg-green-400",
     rightColor: "text-green-600",
     action: "Explore Admin Console",
-    link:"admin-console",
+    link:"/admin-console",
   },
 ];
 
