@@ -48,13 +48,13 @@ export default function CTAHeroSection() {
         <div className={`w-full max-w-md sm:max-w-none pt-4 flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3 transition-all duration-1000 delay-450 transform ${
           revealed ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
         }`}>
-          <button className="px-7 py-3.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-full shadow-[0px_10px_24px_0px_rgba(52,87,232,0.30)] active:scale-98 transition-all duration-200">
+          <a href="/start" className="px-7 py-3.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-full shadow-[0px_10px_24px_0px_rgba(52,87,232,0.30)] active:scale-98 transition-all duration-200 inline-flex items-center justify-center">
             Start free
-          </button>
+          </a>
           
-          <button className="px-7 py-3.5 bg-white/10 hover:bg-white/15 border border-white/20 text-white text-sm font-semibold rounded-full active:scale-98 transition-all duration-200">
+          <a href="/get-a-demo" className="px-7 py-3.5 bg-white/10 hover:bg-white/15 border border-white/20 text-white text-sm font-semibold rounded-full active:scale-98 transition-all duration-200 inline-flex items-center justify-center">
             Get a demo
-          </button>
+          </a>
           
           <button className="px-7 py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 text-white text-sm font-semibold rounded-full active:scale-98 transition-all duration-200">
             Explore Teams

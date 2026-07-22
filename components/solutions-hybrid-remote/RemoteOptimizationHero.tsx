@@ -58,12 +58,12 @@ export default function RemoteOptimizationHero() {
           </p>
           
           <div className="flex flex-wrap items-center gap-4 pt-3 w-full sm:w-auto">
-            <button className="w-full sm:w-auto px-6 py-3 bg-blue-600 dark:bg-blue-500 text-white text-sm font-bold   rounded-full transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 dark:hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-500/20 active:translate-y-0">
+            <a href="/start-free" className="w-full sm:w-auto px-6 py-3 bg-blue-600 dark:bg-blue-500 text-white text-sm font-bold   rounded-full transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700 dark:hover:bg-blue-600 hover:shadow-lg hover:shadow-blue-500/20 active:translate-y-0 inline-flex items-center justify-center">
               Start free
-            </button>
-            <button className="w-full sm:w-auto px-6 py-3 bg-white text-slate-900 text-sm font-bold   rounded-full border border-transparent transition-all duration-300 hover:-translate-y-1 hover:bg-slate-100 hover:shadow-lg active:translate-y-0">
+            </a>
+            <a href="/get-a-demo" className="w-full sm:w-auto px-6 py-3 bg-white text-slate-900 text-sm font-bold   rounded-full border border-transparent transition-all duration-300 hover:-translate-y-1 hover:bg-slate-100 hover:shadow-lg active:translate-y-0 inline-flex items-center justify-center">
               Get a demo
-            </button>
+            </a>
           </div>
         </div>
 

@@ -50,12 +50,12 @@ export default function Hero() {
           </p>
 
           <div className="hero-anim hero-anim-delay-3 mt-9 flex flex-wrap items-center gap-4">
-            <button className="rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-indigo-500">
+            <a href="/start-free" className="rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-indigo-500 inline-flex items-center justify-center">
               Start free
-            </button>
-            <button className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0B0E2E] transition-colors duration-200 hover:bg-slate-200">
+            </a>
+            <a href="/get-a-demo" className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#0B0E2E] transition-colors duration-200 hover:bg-slate-200 inline-flex items-center justify-center">
               Get a demo
-            </button>
+            </a>
           </div>
         </div>
 

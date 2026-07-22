@@ -81,7 +81,7 @@ const plans: Plan[] = [
       "Dedicated support",
     ],
     action: "Talk to sales",
-    link:"/contact",
+    link:"/contact-sales",
   },
 ];
 

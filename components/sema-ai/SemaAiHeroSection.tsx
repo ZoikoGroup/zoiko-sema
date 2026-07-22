@@ -169,13 +169,14 @@ export default function SemaAiHeroSection() {
             className={`sai-hidden ${linkIn ? "sai-visible" : ""} mb-7`}
             style={{ animationDelay: "0.2s" }}
           >
-            <a
-              href="/ai-meetings"
+            <a href="/ai-meetings">
+            <button
+              type="button"
               className="sai-explore-link inline-flex items-center gap-1.5 text-[13px] font-semibold text-white"
             >
               Explore AI Meeting Summaries
               <span className="sai-arrow">→</span>
-            </a>
+            </button></a>
           </div>
 
           {/* Checklist */}

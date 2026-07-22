@@ -31,12 +31,12 @@ export default function Hero() {
             workspace.
           </p>
           <div className="flex flex-wrap items-center gap-4 pt-4">
-            <button className="bg-[#3B82F6] hover:bg-blue-600 text-white font-semibold text-xs px-6 py-3 rounded-full transition-all shadow-lg shadow-blue-500/20">
+            <a href="/start-free" className="bg-[#3B82F6] hover:bg-blue-600 text-white font-semibold text-xs px-6 py-3 rounded-full transition-all shadow-lg shadow-blue-500/20 inline-flex items-center justify-center">
               Get Started
-            </button>
-            <button className="bg-white hover:bg-gray-100 text-[#0B0F19] font-semibold text-xs px-6 py-3 rounded-full transition-all border border-gray-200 shadow-sm">
+            </a>
+            <a href="/contact-sales" className="bg-white hover:bg-gray-100 text-[#0B0F19] font-semibold text-xs px-6 py-3 rounded-full transition-all border border-gray-200 shadow-sm inline-flex items-center justify-center">
               Talk to Sales
-            </button>
+            </a>
           </div>
         </div>
 

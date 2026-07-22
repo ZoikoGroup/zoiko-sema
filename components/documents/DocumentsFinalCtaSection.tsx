@@ -35,13 +35,15 @@ export default function DocumentsFinalCtaSection() {
           className="fade-in-item mt-8 flex flex-wrap items-center justify-center gap-3"
           style={{ animationDelay: "200ms" }}
         >
+          <a href="/start-free">
           <button className="flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-[#6C5CE7] transition hover:bg-gray-100">
             Start free
             <ArrowRight size={16} />
-          </button>
+          </button></a>
+          <a href="/get-a-demo">
           <button className="rounded-full border border-white/40 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10">
             Get a demo
-          </button>
+          </button></a>
         </div>
       </div>
     </section>

@@ -143,7 +143,7 @@ export default function SemaAiAudiencePathsSection() {
                   style={{ color: BRAND }}
                 >
                   {path.cta}
-                  <span className="sapa-arrow">→</span>
+                  <span >&rarr;</span>
                 </a>
               </div>
             ))}

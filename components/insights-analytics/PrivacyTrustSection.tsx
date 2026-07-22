@@ -19,7 +19,7 @@ export default function PrivacyTrustSection() {
       title: "Security Center",
       desc: "Access model, admin safeguards, and reporting<br/>scope by role.",
       linkText: "Visit Security Center →",
-      href: "/security-center"
+      href: "/security-center" 
     },
     {
       title: "Compliance",

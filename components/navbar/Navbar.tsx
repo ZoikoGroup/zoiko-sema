@@ -65,10 +65,10 @@ const menuItems: NavItem[] = [
     url: "/zoikotime",
     children: [
       { label: "Overview", href: "/product-overview", desc: "See how ZoikoTime works and the value it delivers." },
-      { label: "Workforce Overview", href: "/workforce-truth", desc: "Real-time visibility into activity, status, and performance." },
+      { label: "Workforce Overview", href: "/zoikotime/workforce-overview", desc: "Real-time visibility into activity, status, and performance." },
       { label: "Performance Analytics", href: "/zoikotime-performance-analytics", desc: "Insights and reports that help you drive productivity and outcomes." },
       { label: "Compliance & Audit", href: "/compliance-audit", desc: "Audit trails, data retention, and policy compliance made simple." },
-      { label: "Time Tracking", href: "/zoikotime-time-tracking", desc: "Automatic time tracking with smart classification and accuracy." },
+      { label: "Time Tracking", href: "/zoikotime/time-tracking", desc: "Automatic time tracking with smart classification and accuracy." },
       { label: "Break Management", href: "/break-management", desc: "Define breaks, enforce policies, and maintain healthy work habits." },
       { label: "Alerts & Notifications", href: "/alerts-notifications", desc: "Custom alerts for inactivity, overtime, breaks, and policy events." },
       { label: "Policies & Rules", href: "/policies-rules", desc: "Configure workforce policies, thresholds, and working schedules." },
@@ -603,7 +603,7 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Workforce Overview",
       desc: "Real-time visibility into activity, status, and performance.",
-      href: "/zoikotime-workforce-overview",
+      href: "/zoikotime/workforce-overview",
       icon: zoikoTimeIcon(<><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></>),
     },
     {
@@ -623,7 +623,7 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Time Tracking",
       desc: "Automatic time tracking with smart classification and accuracy.",
-      href: "/zoikotime-time-tracking",
+      href: "/zoikotime/time-tracking",
       icon: zoikoTimeIcon(<><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></>),
     },
     {
