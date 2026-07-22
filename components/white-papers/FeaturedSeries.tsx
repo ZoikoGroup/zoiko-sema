@@ -112,15 +112,15 @@ export default function FeaturedSeries() {
             </p>
           </div>
 
-          <button
-            type="button"
+          <a
+            href="#library"
             className="group self-start text-sm font-bold text-[#2DD4BF] transition-all duration-300 hover:translate-x-1 lg:self-end"
           >
             Explore series{" "}
             <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>
-          </button>
+          </a>
         </div>
 
         {/* SERIES CARDS */}

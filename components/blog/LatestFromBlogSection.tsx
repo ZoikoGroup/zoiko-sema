@@ -38,7 +38,7 @@ const posts: Post[] = [
 
 export default function LatestFromBlogSection() {
   return (
-    <section className="bg-white px-6 py-16 sm:px-10 lg:px-16">
+    <section id="latest" className="bg-white px-6 py-16 sm:px-10 lg:px-16 scroll-mt-24">
       <div className="mx-auto max-w-6xl">
         <div className="flex items-center justify-between">
           <h2 className="text-2xl font-bold text-gray-900 sm:text-[28px]">

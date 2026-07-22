@@ -163,7 +163,7 @@ export default function ResearchLibrary() {
   }, [search, activeFilter, activeSort]);
 
   return (
-    <section className="relative overflow-hidden bg-white px-5 py-20 sm:px-8 lg:px-12 xl:px-32">
+    <section id="library" className="relative overflow-hidden bg-white px-5 py-20 sm:px-8 lg:px-12 xl:px-32 scroll-mt-24">
 
       {/* Background glow */}
       <div className="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-blue-100/30 blur-3xl" />

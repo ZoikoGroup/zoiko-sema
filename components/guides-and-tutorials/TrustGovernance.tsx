@@ -1,13 +1,14 @@
 import React from 'react';
+import Link from 'next/link';
 
 const TrustGovernance = () => {
   const items = [
-    { title: 'AI Guidance', desc: 'Ethical implementation and LLM safety configuration.', icon: 'icon-39.svg' },
-    { title: 'Permissions', desc: 'Granular RBAC and hierarchical access control.', icon: 'icon-48.svg' },
-    { title: 'Recording', desc: 'Regional data sovereignty and recording consent.', icon: 'icon-43.svg' },
-    { title: 'Guest Access', desc: 'Hardening your perimeter for external collaborators.', icon: 'icon-44.svg' },
-    { title: 'Security', desc: 'SOC2, HIPAA, and GDPR compliance workflows.', icon: 'icon-34.svg' },
-    { title: 'Retention', desc: 'Automated data lifecycle and archival management.', icon: 'icon-31.svg' }
+    { title: 'AI Guidance', desc: 'Ethical implementation and LLM safety configuration.', icon: 'icon-39.svg', href: '/ai-use-policy' },
+    { title: 'Permissions', desc: 'Granular RBAC and hierarchical access control.', icon: 'icon-48.svg', href: null },
+    { title: 'Recording', desc: 'Regional data sovereignty and recording consent.', icon: 'icon-43.svg', href: null },
+    { title: 'Guest Access', desc: 'Hardening your perimeter for external collaborators.', icon: 'icon-44.svg', href: null },
+    { title: 'Security', desc: 'SOC2, HIPAA, and GDPR compliance workflows.', icon: 'icon-34.svg', href: '/security-center' },
+    { title: 'Retention', desc: 'Automated data lifecycle and archival management.', icon: 'icon-31.svg', href: null }
   ];
   
   return (
@@ -21,8 +22,10 @@ const TrustGovernance = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-          {items.map((item, i) => (
-            <div key={i} className="self-stretch p-8 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-300 inline-flex flex-col justify-start items-start gap-3 hover:shadow-md transition-shadow cursor-pointer">
+          {items.map((item, i) => {
+            const cardClass = "self-stretch p-8 bg-white rounded-2xl outline outline-1 outline-offset-[-1px] outline-neutral-300 inline-flex flex-col justify-start items-start gap-3 hover:shadow-md transition-shadow cursor-pointer";
+            const content = (
+              <>
                 <div className="self-stretch flex flex-col justify-start items-start">
                     <div className="w-7 h-7 bg-indigo-700" style={{ maskImage: `url(/guides-and-Tutorials/${item.icon})`, maskSize: 'contain', maskRepeat: 'no-repeat', maskPosition: 'center', WebkitMaskImage: `url(/guides-and-Tutorials/${item.icon})`, WebkitMaskSize: 'contain', WebkitMaskRepeat: 'no-repeat', WebkitMaskPosition: 'center' }} />
                 </div>
@@ -32,8 +35,18 @@ const TrustGovernance = () => {
                 <div className="self-stretch flex flex-col justify-start items-start">
                     <div className="self-stretch justify-start text-zinc-700 text-base font-normal font-['Hanken_Grotesk'] leading-6">{item.desc}</div>
                 </div>
-            </div>
-          ))}
+              </>
+            );
+            return item.href ? (
+              <Link key={i} href={item.href} className={cardClass}>
+                {content}
+              </Link>
+            ) : (
+              <div key={i} className={cardClass}>
+                {content}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
