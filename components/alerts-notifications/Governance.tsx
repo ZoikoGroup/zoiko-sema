@@ -11,6 +11,7 @@ export default function Governance() {
       linear-gradient(180deg, #07091F 0%, #0B0F2D 50%, #0E1238 100%)
     `,
       }}
+      id="policy-controls"
       className="text-white px-6 py-20 relative overflow-hidden animate-fade-up-gov"
     >
       {/* Inline Animation Style */}
@@ -57,7 +58,7 @@ export default function Governance() {
         {/* CTA Link */}
         <div className="flex justify-center">
           <a
-            href="#trust-center"
+            href="/trust-center"
             className="group flex items-center gap-2 text-sm font-semibold text-[#8C84FF] hover:text-white transition-colors"
           >
             Visit Trust Center

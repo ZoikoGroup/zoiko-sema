@@ -51,16 +51,16 @@ export default function HeroSection() {
 
             {/* Action Group */}
             <div className="flex flex-wrap items-center gap-4 mb-8">
-              <button className="bg-[#2a4bf7] hover:bg-[#1e3bd4] text-white font-semibold text-sm px-6 py-3.5 rounded-full transition-all duration-200">
+              <a href="/get-a-demo" className="bg-[#2a4bf7] hover:bg-[#1e3bd4] text-white font-semibold text-sm px-6 py-3.5 rounded-full transition-all duration-200">
                 Request a Demo
-              </button>
+              </a>
 
-              <button className="bg-white hover:bg-gray-100 text-[#0b0e26] font-semibold text-sm px-6 py-3.5 rounded-full transition-all duration-200">
+              <a href="/start-free" className="bg-white hover:bg-gray-100 text-[#0b0e26] font-semibold text-sm px-6 py-3.5 rounded-full transition-all duration-200">
                 Start Free
-              </button>
+              </a>
 
               <a
-                href="#"
+                href="/how-it-works"
                 className="text-[#00e5a3] hover:underline text-sm font-semibold flex items-center gap-1 ml-2 transition-all"
               >
                 See how it works →

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from 'react';
+import Link from 'next/link';
 
 // --- Custom Intersection Observer Hook for Entrance Animations ---
 function useScrollReveal() {
@@ -70,12 +71,12 @@ export default function ZoikoSemaNewsroom() {
 
             {/* Interactive Call to Actions Triggers */}
             <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
-              <button className="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white font-semibold text-sm   rounded-full shadow-lg shadow-blue-600/10 hover:bg-blue-500 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0">
+              <Link href="/press#contact" className="w-full sm:w-auto px-6 py-3 bg-blue-600 text-white font-semibold text-sm text-center  rounded-full shadow-lg shadow-blue-600/10 hover:bg-blue-500 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0">
                 Contact press team
-              </button>
-              <button className="w-full sm:w-auto px-6 py-3 border border-white/30 text-white font-semibold text-sm   rounded-full hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0">
+              </Link>
+              <Link href="#media-kit" className="w-full sm:w-auto px-6 py-3 border border-white/30 text-white font-semibold text-sm text-center  rounded-full hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0">
                 Download media kit
-              </button>
+              </Link>
             </div>
           </div>
 

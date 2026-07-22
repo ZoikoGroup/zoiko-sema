@@ -27,7 +27,7 @@ const items = [
     title: "System status",
     description: "Current service availability and incident transparency.",
     icon: Activity,
-    href: "/trust-center",
+    href: "/status",
     label: "System Status",
   },
 ];

@@ -16,19 +16,19 @@ export default function GetStartedSection() {
         {/* Action Buttons Interface Row */}
         <div className="flex flex-wrap items-center gap-3">
           {/* Primary Call to Action */}
-          <button className="bg-[#2b56f5] hover:bg-[#2044cc] text-white font-bold text-[13px] px-6 py-4 rounded-xl transition-all shadow-sm whitespace-nowrap">
+          <a href="/get-a-demo" className="bg-[#2b56f5] hover:bg-[#2044cc] text-white font-bold text-[13px] px-6 py-4 rounded-xl transition-all shadow-sm whitespace-nowrap">
             Request a Demo
-          </button>
+          </a>
 
           {/* Secondary Action */}
-          <button className="bg-transparent border border-white/20 hover:border-white/40 text-white font-bold text-[13px] px-6 py-4 rounded-xl transition-all whitespace-nowrap">
+          <a href="/start-free" className="bg-transparent border border-white/20 hover:border-white/40 text-white font-bold text-[13px] px-6 py-4 rounded-xl transition-all whitespace-nowrap">
             Start Free
-          </button>
+          </a>
 
           {/* Platform Access Action */}
-          <button className="bg-[#191e38] hover:bg-[#202747] text-[#a5a9cc] hover:text-white font-bold text-[13px] px-6 py-4 rounded-xl transition-all whitespace-nowrap">
+          <a href="/login" className="bg-[#191e38] hover:bg-[#202747] text-[#a5a9cc] hover:text-white font-bold text-[13px] px-6 py-4 rounded-xl transition-all whitespace-nowrap">
             Open ZoikoTime Dashboard
-          </button>
+          </a>
         </div>
       </div>
     </section>

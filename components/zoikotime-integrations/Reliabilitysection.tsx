@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
+import Link from "next/link";
 
 // Reusable scroll-in-view hook. Generic over the element type so the ref can be
 // attached to any element (div, ul, section, ...) without a type mismatch.
@@ -32,7 +33,7 @@ export function ReliabilitySection() {
   const { ref: eyebrowRef, inView: eyebrowIn } = useInView(0.4);
   const { ref: headRef, inView: headIn } = useInView<HTMLHeadingElement>(0.3);
   const { ref: imgRef, inView: imgIn } = useInView(0.1);
-  const { ref: linkRef, inView: linkIn } = useInView<HTMLButtonElement>(0.4);
+  const { ref: linkRef, inView: linkIn } = useInView<HTMLAnchorElement>(0.4);
 
   return (
     <>
@@ -99,14 +100,14 @@ export function ReliabilitySection() {
 
           {/* Link */}
           <div className="mt-8 text-center">
-            <button
+            <Link
+              href="/status"
               ref={linkRef}
-              type="button"
               className={`rl-hidden rl-link ${linkIn ? "rl-visible" : ""} inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#2F6BEB] dark:text-[#6B8AF5]`}
             >
               View System Status
               <FiArrowRight className="rl-link-arrow h-4 w-4" aria-hidden="true" />
-            </button>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from 'react';
+import Link from "next/link";
 import { BarChart3, HelpCircle, ChevronDown, Headphones, Download, Eye } from 'lucide-react';
 
 export default function AnalyticsAndSupportPage() {
@@ -162,9 +163,12 @@ function SupportFaqSection() {
               </p>
             </div>
 
-            <button className="px-6 py-2.5 bg-indigo-700 hover:bg-indigo-600 text-white text-base font-bold    rounded-lg transition-all shadow-sm active:scale-95 z-10 cursor-pointer">
-              Contact Support
-            </button>
+            <Link
+  href="/contact"
+  className="inline-flex items-center justify-center px-6 py-2.5 bg-indigo-700 hover:bg-indigo-600 text-white text-base font-bold rounded-lg transition-all shadow-sm active:scale-95 z-10 cursor-pointer"
+>
+  Contact Support
+</Link>
 
             {/* Background Decorative Matrix Vector Graphic Context */}
             <div className="absolute right-[-20px] bottom-[-20px] opacity-10 dark:opacity-[0.05] text-slate-500 pointer-events-none transform group-hover:scale-110 transition-transform duration-500">

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from 'react';
+import Link from "next/link";
 
 // --- Custom Intersection Observer Hook for Entrance Animations ---
 function useScrollReveal() {
@@ -64,12 +65,19 @@ export default function WebinarsEventsHero() {
 
           {/* Action Buttons Hub Container */}
           <div className="w-full sm:w-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-            <button className="px-7 py-3.5 bg-blue-600 text-white text-sm font-semibold   rounded-full shadow-md transition-all duration-200 hover:bg-blue-500 hover:-translate-y-0.5 active:translate-y-0">
-              Register for next event
-            </button>
-            <button className="px-7 py-3.5 bg-transparent text-white text-sm font-semibold   rounded-full border border-white/30 transition-all duration-200 hover:bg-white/10 hover:border-white/50 hover:-translate-y-0.5 active:translate-y-0 text-center">
-              Contact Support
-            </button>
+             <Link
+    href="/login"
+    className="inline-flex items-center justify-center px-7 py-3.5 bg-blue-600 text-white text-sm font-semibold rounded-full shadow-md transition-all duration-200 hover:bg-blue-500 hover:-translate-y-0.5 active:translate-y-0"
+  >
+    Register for next event
+  </Link>
+
+  <Link
+    href="/contact"
+    className="inline-flex items-center justify-center px-7 py-3.5 bg-transparent text-white text-sm font-semibold rounded-full border border-white/30 transition-all duration-200 hover:bg-white/10 hover:border-white/50 hover:-translate-y-0.5 active:translate-y-0 text-center"
+  >
+    Contact Support
+  </Link>
           </div>
 
           {/* Compliance Disclaimer Note */}

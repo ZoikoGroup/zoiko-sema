@@ -1,10 +1,12 @@
 "use client"
 import { ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 interface EcosystemCard {
   logo: string;
   description: string;
   action: string;
+  link: string;
 }
 
 const leftCards: EcosystemCard[] = [
@@ -13,12 +15,14 @@ const leftCards: EcosystemCard[] = [
     description:
       "Related workforce and customer context that can connect to Sema for relevant customers.",
     action: "Learn about ZoikoTime",
+    link: "https://zoikotime.com/",
   },
   {
     logo: "/about/zoikoone.png",
     description:
       "Corporate and technology company background lives on About Zoiko Tech.",
     action: "About Zoiko Tech",
+    link: "https://zoikoone.com/",
   },
 ];
 
@@ -28,16 +32,19 @@ const rightCards: EcosystemCard[] = [
     description:
       "Group-wide compute and structure lives on the Zoiko Group page.",
     action: "Zoiko Group",
+    link: "https://zoikocloud.com/",
   },
   {
     logo: "/about/zoikomail.png",
     description:
       "Continue to Help Center, Trust Center, Blog, and Product Updates.",
     action: "Browse Resources",
+    link: "https://zoikomail.com/",
   },
 ];
 
 export default function WhereSemaFitsSection() {
+  const router = useRouter();
   return (
     <section className="bg-[#FFFFFF] px-6 py-16 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-6xl text-center">
@@ -54,7 +61,7 @@ export default function WhereSemaFitsSection() {
 
         <div className="mt-10 grid grid-cols-1 items-center gap-5 text-left lg:grid-cols-[1fr_1.1fr_1fr]">
           <div className="grid grid-cols-1 gap-5">
-            {leftCards.map(({ logo, description, action }) => (
+            {leftCards.map(({ logo, description, action, link }) => (
               <div
                 key={logo}
                 className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
@@ -63,7 +70,8 @@ export default function WhereSemaFitsSection() {
                 <p className="mt-2 text-xs leading-relaxed text-gray-500">
                   {description}
                 </p>
-                <button className="mt-3 flex items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]">
+                <button onClick={() => router.push(link)}
+                className="mt-3 flex cursor-pointer items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]">
                   {action}
                   <ArrowRight size={12} />
                 </button>
@@ -80,7 +88,7 @@ export default function WhereSemaFitsSection() {
           </div>
 
           <div className="grid grid-cols-1 gap-5">
-            {rightCards.map(({ logo, description, action }) => (
+            {rightCards.map(({ logo, description, action, link }) => (
               <div
                 key={logo}
                 className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
@@ -89,7 +97,8 @@ export default function WhereSemaFitsSection() {
                 <p className="mt-2 text-xs leading-relaxed text-gray-500">
                   {description}
                 </p>
-                <button className="mt-3 flex items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]">
+                <button onClick={() => router.push(link)}
+                className="mt-3 flex cursor-pointer items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]">
                   {action}
                   <ArrowRight size={12} />
                 </button>

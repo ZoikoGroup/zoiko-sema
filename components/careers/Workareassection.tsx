@@ -204,7 +204,7 @@ export function WorkAreasSection() {
 
             {/* Featured — Browse all roles */}
             <a
-              href="#"
+              href="#roles"
               className={`wa-feature wa-hidden ${gridIn ? "wa-visible" : ""} flex flex-col rounded-2xl bg-[#4F5BD5] p-6 text-white transition-[transform,box-shadow]`}
               style={{ animationDelay: `${0.1 + TEAMS.length * 0.06}s` }}
             >

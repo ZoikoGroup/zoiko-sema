@@ -26,12 +26,12 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-wrap gap-4 pt-2">
-            <button className="bg-[#000000] hover:bg-slate-900 text-white font-bold text-xs md:text-sm px-15 py-3.5 rounded-lg transition-all shadow-md">
+            <a href="/get-a-demo" className="bg-[#000000] hover:bg-slate-900 text-white font-bold text-xs md:text-sm px-15 py-3.5 rounded-lg transition-all shadow-md">
               Schedule a Demo
-            </button>
-            <button className="bg-transparent hover:bg-black/5 text-[#0F172A] border border-black/10 font-bold text-xs md:text-sm px-15 py-3.5 rounded-lg transition-all">
+            </a>
+            <a href="/zoikotime/overview" className="bg-transparent hover:bg-black/5 text-[#0F172A] border border-black/10 font-bold text-xs md:text-sm px-15 py-3.5 rounded-lg transition-all">
               View Ecosystem
-            </button>
+            </a>
           </div>
         </div>
 
