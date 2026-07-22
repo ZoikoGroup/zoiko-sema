@@ -1,10 +1,12 @@
 "use client"
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 interface EcosystemCard {
   logo: string;
   description: string;
   action: string;
+  link: string;
 }
 
 const leftCards: EcosystemCard[] = [
@@ -13,12 +15,14 @@ const leftCards: EcosystemCard[] = [
     description:
       "Related workforce and customer context that can connect to Sema for relevant customers.",
     action: "Learn about ZoikoTime",
+    link: "/sema-zoikotime",
   },
   {
     logo: "/about/zoikoone.png",
     description:
       "Corporate and technology company background lives on About Zoiko Tech.",
     action: "About Zoiko Tech",
+    link: "/about-zoikotech",
   },
 ];
 
@@ -28,12 +32,14 @@ const rightCards: EcosystemCard[] = [
     description:
       "Group-wide compute and structure lives on the Zoiko Group page.",
     action: "Zoiko Group",
+    link: "/zoiko-group",
   },
   {
     logo: "/about/zoikomail.png",
     description:
       "Continue to Help Center, Trust Center, Blog, and Product Updates.",
     action: "Browse Resources",
+    link: "/resources",
   },
 ];
 
@@ -54,7 +60,7 @@ export default function WhereSemaFitsSection() {
 
         <div className="mt-10 grid grid-cols-1 items-center gap-5 text-left lg:grid-cols-[1fr_1.1fr_1fr]">
           <div className="grid grid-cols-1 gap-5">
-            {leftCards.map(({ logo, description, action }) => (
+            {leftCards.map(({ logo, description, action, link }) => (
               <div
                 key={logo}
                 className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
@@ -63,10 +69,13 @@ export default function WhereSemaFitsSection() {
                 <p className="mt-2 text-xs leading-relaxed text-gray-500">
                   {description}
                 </p>
-                <button className="mt-3 flex items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]">
+                <Link
+                  href={link}
+                  className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]"
+                >
                   {action}
                   <ArrowRight size={12} />
-                </button>
+                </Link>
               </div>
             ))}
           </div>
@@ -80,19 +89,22 @@ export default function WhereSemaFitsSection() {
           </div>
 
           <div className="grid grid-cols-1 gap-5">
-            {rightCards.map(({ logo, description, action }) => (
+            {rightCards.map(({ logo, description, action, link }) => (
               <div
                 key={logo}
                 className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
               >
-               <img src={logo} alt="logo" />
+                <img src={logo} alt="logo" />
                 <p className="mt-2 text-xs leading-relaxed text-gray-500">
                   {description}
                 </p>
-                <button className="mt-3 flex items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]">
+                <Link
+                  href={link}
+                  className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-[#4F63F0] hover:text-[#3E51DE]"
+                >
                   {action}
                   <ArrowRight size={12} />
-                </button>
+                </Link>
               </div>
             ))}
           </div>

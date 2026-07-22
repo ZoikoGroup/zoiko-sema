@@ -48,7 +48,7 @@ export default function QuickstartWorkflow() {
         }
       `}</style>
 
-      <section className="bg-white px-6 py-20 sm:px-10 lg:px-16">
+      <section id="quickstart" className="bg-white px-6 py-20 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-6xl">
           {/* Heading */}
           <div className="fade-up text-center">

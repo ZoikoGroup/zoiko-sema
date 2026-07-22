@@ -19,7 +19,7 @@ export default function ApiExample() {
         }
       `}</style>
 
-      <section className="bg-[#161D34] px-6 py-20 md:px-10 lg:px-16 xl:px-24">
+      <section id="api-example" className="bg-[#161D34] px-6 py-20 md:px-10 lg:px-16 xl:px-24">
         <div className="mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-[1.05fr_.95fr]">
           {/* LEFT */}
           <div className="fade-up">

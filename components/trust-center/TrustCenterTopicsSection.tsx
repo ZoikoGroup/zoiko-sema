@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useInView } from "./useInView";
 
 // TODO: replace with your actual image path, e.g. "/Images/trust-center-doorways.webp"
@@ -46,7 +47,7 @@ const topics: TopicCard[] = [
     title: "Compliance",
     description: "Review-ready compliance material and procurement routing.",
     action: "View Compliance",
-    href: "/data-processing-addendum",
+    href: "/compliance-audit",
     linkColor: "text-emerald-600",
   },
   {
@@ -56,7 +57,7 @@ const topics: TopicCard[] = [
     title: "Subprocessors",
     description: "Vendor and subprocessor categories, notices, and updates.",
     action: "View Subprocessors",
-    href: "/data-processing-addendum",
+    href: "/subprocessors",
     linkColor: "text-amber-600",
   },
   {
@@ -67,7 +68,7 @@ const topics: TopicCard[] = [
     description:
       "Report security, privacy, AI, abuse, or accessibility concerns.",
     action: "Report a concern",
-    href: "/contact",
+    href: "/report-concern",
     linkColor: "text-red-600",
   },
   {
@@ -156,13 +157,13 @@ export default function TrustCenterTopicsSection() {
                   <p className="mt-2 text-[13px] leading-relaxed text-gray-500">
                     {description}
                   </p>
-                  <a
+                  <Link
                     href={href}
                     className={`tc-topics-link mt-4 flex items-center gap-1 text-xs font-semibold ${linkColor}`}
                   >
                     {action}
                     <span className="tc-arrow">→</span>
-                  </a>
+                  </Link>
                 </div>
               ))}
             </div>

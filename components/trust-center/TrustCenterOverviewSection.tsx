@@ -17,7 +17,7 @@ const rows: OverviewRow[] = [
   { label: "Admin-governed controls", dotColor: "bg-indigo-500", action: "Admin Console", href: "/admin-console" },
   { label: "Responsible AI", dotColor: "bg-emerald-500", action: "AI Use Policy", href: "/ai-use-policy" },
   { label: "Privacy and data", dotColor: "bg-teal-500", action: "Privacy & Data / DPA", href: "/privacy-notice" },
-  { label: "Reliability and incidents", dotColor: "bg-amber-500", action: "System Status", href: "/system-status" },
+  { label: "Reliability and incidents", dotColor: "bg-amber-500", action: "System Status", href: "/status" },
 ];
 
 export default function TrustCenterOverviewSection() {

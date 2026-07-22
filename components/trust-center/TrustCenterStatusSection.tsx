@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ExternalLink, Clock } from "lucide-react";
 import { useInView } from "./useInView";
 
@@ -72,13 +73,13 @@ export default function TrustCenterStatusSection() {
               maintenance notices, and uptime history — all public.
             </p>
 
-            <a
-              href="/system-status"
+            <Link
+              href="/status"
               className="tc-status-btn mt-6 inline-flex items-center gap-2 rounded-xl bg-[#0B1330] px-6 py-3 text-sm font-semibold text-white"
             >
               View System Status
               <ExternalLink size={15} strokeWidth={2} />
-            </a>
+            </Link>
           </div>
 
           <div ref={panelRef} className={`tc-status-hidden ${panelIn ? "tc-status-visible" : ""} rounded-2xl bg-[#F3F2FD] p-6`}>

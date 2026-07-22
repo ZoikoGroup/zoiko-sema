@@ -66,7 +66,7 @@ const rows: EvidenceRow[] = [
     access: "Public",
     description: "System Status and incident communication.",
     action: "View System Status",
-    href: "/system-status",
+    href: "/status",
   },
   {
     title: "Compliance support notes",

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from 'react';
+import Link from 'next/link';
 import { AlertTriangle, HelpCircle, ShieldAlert, Code, ArrowRight } from 'lucide-react';
 
 const PATHS = [
@@ -11,7 +12,8 @@ const PATHS = [
     title: 'Active incident affecting your component',
     desc: 'Incident detail page',
     action: 'View active incidents',
-    color: 'text-yellow-600 dark:text-yellow-400'
+    color: 'text-yellow-600 dark:text-yellow-400',
+    link: '#incidents'
   },
   {
     icon: "/status/Icon (1).png",
@@ -20,7 +22,8 @@ const PATHS = [
     title: 'Issue not listed in known incidents',
     desc: 'Help Center + Support form',
     action: 'Contact support',
-    color: 'text-sky-700 dark:text-sky-400'
+    color: 'text-sky-700 dark:text-sky-400',
+    link: '/help-center'
   },
   {
     icon: "/status/Icon (2).png",
@@ -29,7 +32,8 @@ const PATHS = [
     title: 'Admin needing org-level impact info',
     desc: 'Enterprise admin support',
     action: 'Contact admin support',
-    color: 'text-violet-600 dark:text-violet-400'
+    color: 'text-violet-600 dark:text-violet-400',
+    link: '/admin-console'
   },
   {
     icon:"/status/Icon (3).png",
@@ -38,7 +42,8 @@ const PATHS = [
     title: 'Developer seeing API degradation',
     desc: 'API status + Developer Docs',
     action: 'View API status',
-    color: 'text-green-600 dark:text-green-400'
+    color: 'text-green-600 dark:text-green-400',
+    link: '#api-status'
   }
 ];
 
@@ -66,7 +71,6 @@ export default function SupportRouting() {
         {/* Custom Card Track Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {PATHS.map((path, idx) => {
-            const Icon = path.icon;
             return (
               <div 
                 key={idx}
@@ -77,7 +81,7 @@ export default function SupportRouting() {
               >
                 <div>
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${path.bgIcon}`}>
-                    <img className="w-5 h-5" src={path.icon} />
+                    <img className="w-5 h-5" src={path.icon} alt={path.title} />
                   </div>
                   <span className="text-slate-400 dark:text-slate-500 text-xs font-bold uppercase tracking-tight block mb-1">
                     {path.tag}
@@ -90,10 +94,13 @@ export default function SupportRouting() {
                   </p>
                 </div>
 
-                <button className={`flex items-center gap-1.5 text-sm font-bold border-t border-slate-50 dark:border-slate-900 pt-4 w-full group ${path.color}`}>
+                <Link
+                  href={path.link}
+                  className={`flex items-center gap-1.5 text-sm font-bold border-t border-slate-50 dark:border-slate-900 pt-4 w-full group ${path.color}`}
+                >
                   <span>{path.action}</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </button>
+                </Link>
               </div>
             );
           })}
