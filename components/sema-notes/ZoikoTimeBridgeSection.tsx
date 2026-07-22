@@ -122,7 +122,7 @@ export default function ZoikoTimeBridgeSection() {
               Explore Sema + ZoikoTime
             </a>
             <a
-              href="/get-a-demo"
+              href="/zoikotime-request-demo"
               className="w-full sm:w-auto px-6 h-12 rounded-full border border-white/30 text-white text-sm font-semibold inline-flex items-center justify-center bg-transparent hover:bg-white/5 hover:border-white/50 transition-all duration-150"
             >
               Request integration demo

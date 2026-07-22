@@ -34,36 +34,42 @@ const products = [
     imageSrc: "/Images/Mask group (3).png",
     description: "Summaries, decisions, owners, next steps, follow-up drafts.",
     cta: "Explore AI Meeting Summaries",
+    href: "/ai-meetings",
   },
   {
     name: "Messaging",
     imageSrc: "/Images/Mask group (4).png",
     description: "Thread recaps, unanswered question detection, context search.",
     cta: "Explore Messaging",
+    href: "/messaging",
   },
   {
     name: "Calls",
     imageSrc: "/Images/Mask group (5).png",
     description: "Call notes, follow-up capture, missed-context recovery.",
     cta: "Explore Calls",
+    href: "/audio-calls",
   },
   {
     name: "Mail",
     imageSrc: "/Images/Mask group (6).png",
     description: "Draft replies, summarize threads, connect email to work context.",
     cta: "Explore Mail",
+    href: "/sema-mail",
   },
   {
     name: "Calendar",
     imageSrc: "/Images/Mask group (7).png",
     description: "Suggested follow-ups, meeting preparation, schedule context.",
     cta: "Explore Calendar",
+    href: "/calendar",
   },
   {
     name: "Files and Search",
     imageSrc: "/Images/Mask group (8).png",
     description: "Source-aware answers, file context, searchable memory.",
     cta: "Explore Search",
+    href: "/search",
   },
 ];
 
@@ -157,7 +163,7 @@ export default function SemaAiProductsSection() {
                     {product.description}
                   </p>
                   <a
-                    href="#"
+                    href={product.href}
                     className="sap-link inline-flex items-center gap-1 text-[12.5px] font-semibold"
                     style={{ color: BRAND }}
                   >

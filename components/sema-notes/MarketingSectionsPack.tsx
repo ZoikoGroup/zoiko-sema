@@ -40,7 +40,7 @@ const audienceCards = [
     title: "Keep decisions visible",
     desc: "Shared notes help teams move from discussion to execution.",
     action: "Explore Teams →",
-    href: "#",
+    href: "/teams-and-groups",
   },
   {
     tag: "Businesses",
@@ -144,8 +144,8 @@ export default function MarketingSectionsPack() {
                       {card.desc}
                     </p>
                   </div>
-                  <a 
-                    href={card.href} 
+                  <a
+                    href={card.href}
                     className="text-blue-600 text-xs font-bold group-hover:text-blue-700 transition-colors"
                   >
                     {card.action}
@@ -226,20 +226,20 @@ export default function MarketingSectionsPack() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-              <a 
-                href="/start-free" 
+              <a
+                href="/start-free"
                 className="w-full sm:w-auto px-6 h-12 rounded-full bg-white text-slate-900 text-sm font-semibold inline-flex items-center justify-center hover:bg-slate-50 transition-colors duration-150"
               >
                 Start Free
               </a>
-              <a 
-                href="/contact-sales" 
+              <a
+                href="/contact-sales"
                 className="w-full sm:w-auto px-6 h-12 rounded-full border border-white/30 text-white text-sm font-semibold inline-flex items-center justify-center bg-transparent hover:bg-white/5 hover:border-white/50 transition-all duration-150"
               >
                 Contact Sales
               </a>
-              <a 
-                href="/sema-ai" 
+              <a
+                href="/sema-ai"
                 className="w-full sm:w-auto px-6 h-12 rounded-full border border-white/30 text-white text-sm font-semibold inline-flex items-center justify-center bg-transparent hover:bg-white/5 hover:border-white/50 transition-all duration-150"
               >
                 Explore Sema AI

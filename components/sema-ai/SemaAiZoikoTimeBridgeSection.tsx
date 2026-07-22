@@ -193,10 +193,10 @@ export default function SemaAiZoikoTimeBridgeSection() {
             className={`sazb-hidden ${ctaIn ? "sazb-visible" : ""} flex flex-wrap items-center justify-center gap-3`}
             style={{ animationDelay: "0.2s" }}
           >
-            <a href="/sema-zoikotime" className="sazb-btn-primary bg-white text-gray-900 text-[13.5px] font-semibold rounded-full px-6 py-3 inline-flex items-center justify-center">
+            <a href="/sema-zoikotime" className="sazb-btn-primary bg-white text-gray-900 text-[13.5px] font-semibold rounded-full px-6 py-3">
               Explore Sema + ZoikoTime
             </a>
-            <a href="/get-a-demo" className="sazb-btn-secondary text-white text-[13.5px] font-semibold rounded-full px-6 py-3 inline-flex items-center justify-center">
+            <a href="/get-a-demo" className="sazb-btn-secondary text-white text-[13.5px] font-semibold rounded-full px-6 py-3">
               Request Integration Demo
             </a>
           </div>
