@@ -11,10 +11,10 @@ export default function WhyChooseUs() {
 
         <div className="flex items-center justify-center gap-10 mt-5">
           <div>
-            <img src="/marketing/disconnected.png" alt="Image" />
+            <img src="/marketing/Disconnected.png" alt="Image" />
           </div>
           <div>
-            <img src="/marketing/connected.png" alt="Image" />
+            <img src="/marketing/Connected.png" alt="Image" />
           </div>
         </div>
       </div>
