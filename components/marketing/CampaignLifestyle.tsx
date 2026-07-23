@@ -11,7 +11,7 @@ export default function CampaignLifecycle() {
         </h2>
 
         <div>
-          <img src="/marketing/background.png" alt="Image" />
+          <img src="/marketing/Background.png" alt="Image" />
         </div>
       </div>
     </section>
