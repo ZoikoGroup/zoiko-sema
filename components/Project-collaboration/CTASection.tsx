@@ -5,7 +5,7 @@ export function CTASection() {
     <section className="w-full bg-[#6C4FE0] py-24 lg:py-32 font-sans antialiased">
       <div className="max-w-[1248px] mx-auto px-6 md:px-10 flex flex-col items-center text-center">
         
-        <h2 className="text-white text-4xl font-bold font-['Inter'] leading-10 w-[684.88px] max-w-full">
+        <h2 className="text-white text-4xl font-bold font-['Inter'] leading-10 w-full max-w-4xl">
           Ready to bring project work into one<br/>governed workspace?
         </h2>
         

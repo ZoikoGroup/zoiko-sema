@@ -70,11 +70,10 @@ export default function QuickstartWorkflow() {
                 style={{ animationDelay: `${index * 0.12}s` }}
               >
                 <div
-                  className={`mx-auto flex h-12 w-12 items-center justify-center rounded-full border text-sm font-semibold transition ${
-                    step.active
+                  className={`mx-auto flex h-12 w-12 items-center justify-center rounded-full border text-sm font-semibold transition ${step.active
                       ? "border-[#3457E8] bg-[#3457E8] text-white"
                       : "border-[#D7D9E4] bg-white text-[#4B5563]"
-                  }`}
+                    }`}
                 >
                   {step.number}
                 </div>

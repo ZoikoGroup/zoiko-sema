@@ -71,7 +71,7 @@ export default function SystemStatusHero() {
               <Bell className="w-4 h-4 group-hover:rotate-12 transition-transform" />
               <span>Subscribe to updates</span>
             </Link>
-            <Link href="#incidents" className="group w-full sm:w-auto px-6 py-3.5 bg-white hover:bg-slate-100 text-slate-900 font-bold font-sans text-sm rounded-full transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5">
+            <Link href="/status#incidents" className="group w-full sm:w-auto px-6 py-3.5 bg-white hover:bg-slate-100 text-slate-900 font-bold font-sans text-sm rounded-full transition-all flex items-center justify-center gap-2 hover:-translate-y-0.5">
               <span>View latest incidents</span>
               <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Link>
@@ -80,7 +80,7 @@ export default function SystemStatusHero() {
           {/* Subtext Link */}
           <p className="text-sm text-slate-400 mt-4 leading-relaxed font-sans max-w-xl">
             Clear incident communication for messaging, meetings, AI summaries, admin services, integrations, and ZoikoTime-connected workflows.{' '}
-            <Link href="/customer-support" className="text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center gap-1 transition-colors group">
+            <Link href="/contact" className="text-blue-400 hover:text-blue-300 font-semibold inline-flex items-center gap-1 transition-colors group">
               Contact support <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </p>

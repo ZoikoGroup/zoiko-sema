@@ -21,11 +21,11 @@ export function GovernanceControlsSection() {
       <div className="max-w-[1248px] mx-auto px-6 md:px-10 flex flex-col items-center">
 
         {/* Header */}
-        <div ref={headRef} className={`flex flex-col items-center text-center gap-4 transition-all duration-700 transform ${headIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div ref={headRef} className={`flex flex-col items-center text-center gap-4 max-w-4xl transition-all duration-700 transform ${headIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="text-violet-600 text-xs font-bold uppercase tracking-widest font-['Inter']">
             GOVERNANCE & CONTROLS
           </span>
-          <h2 className="text-slate-900 text-4xl font-bold font-['Inter'] w-[671.33px] max-w-full leading-[1.15]">
+          <h2 className="text-slate-900 text-4xl font-bold font-['Inter'] w-full max-w-4xl leading-[1.15]">
             Secure, auditable project collaboration &mdash;<br />without surveillance.
           </h2>
         </div>
