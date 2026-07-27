@@ -57,7 +57,7 @@ export default function HeroSection() {
           <div className="relative w-full max-w-[701px] aspect-[4/3] rounded-[20px] overflow-hidden shadow-2xl">
             {/* Using a placeholder since we don't have the exact image asset */}
             <Image
-              src="/insights/product-proof-dashboard.png"
+              src="/Insights/product-proof-dashboard.png"
               alt="Insights and Analytics Dashboard Preview"
               fill
               className="object-cover"
