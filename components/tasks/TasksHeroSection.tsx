@@ -75,12 +75,12 @@ export default function PlatformHeroSection() {
           </div>
 
           {/* Text Navigation Anchor Link */}
-          <div className="w-full sm:w-[548px] h-6 pt-1 inline-flex justify-start items-center gap-1.5 cursor-pointer group">
+          {/* <div className="w-full sm:w-[548px] h-6 pt-1 inline-flex justify-start items-center gap-1.5 cursor-pointer group">
             <span className="text-blue-600 text-xs font-semibold   leading-5 group-hover:underline">
               See how source-linked tasks work
             </span>
             <ArrowRight className="size-3 text-blue-600 transition-transform group-hover:translate-x-0.5" />
-          </div>
+          </div> */}
 
           {/* Fine Print Footer Context */}
           <div className="w-full max-w-[480px] flex flex-col justify-start items-start pt-2">

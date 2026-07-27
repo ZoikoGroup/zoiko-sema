@@ -228,10 +228,11 @@ export default function TeamsMovementSection() {
 
                 {/* Footer Link Elements */}
                 <div>
+                  <a href="/department-solutions">
                   <button className="text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 text-sm font-bold inline-flex items-center gap-1 group/btn transition-colors duration-200">
                     Learn more 
                     <span className="transform transition-transform duration-200 group-hover/btn:translate-x-1">→</span>
-                  </button>
+                  </button></a>
                 </div>
               </div>
             ))}

@@ -37,7 +37,7 @@ export default function VisualOverlapIntelligence() {
             </p>
 
             <a
-              href="#global-overlap"
+              href="/government-use-case"
               className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#5B5FEF] transition hover:text-[#4B4FE0]"
             >
               Check global overlap

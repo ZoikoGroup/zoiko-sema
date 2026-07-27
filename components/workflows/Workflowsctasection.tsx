@@ -108,21 +108,17 @@ export function WorkflowsCtaSection() {
             className={`wc-hidden ${ctaIn ? "wc-visible" : ""} flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center`}
             style={{ animationDelay: "0.24s" }}
           >
-            <Link href="/start-free">
-            <button
-              type="button"
-              className="wc-btn-primary rounded-lg bg-[#2F6BEB] px-8 py-3 text-[14px] font-semibold text-white"
+            <Link
+              href="/start-free"
+              className="wc-btn-primary inline-flex items-center justify-center rounded-lg bg-[#2F6BEB] px-8 py-3 text-[14px] font-semibold text-white"
             >
               Start Free
-            </button>
             </Link>
-            <Link href="/get-a-demo">
-            <button
-              type="button"
-              className="wc-btn-secondary rounded-lg border border-white/15 bg-white/[0.06] px-8 py-3 text-[14px] font-semibold text-white backdrop-blur-[2px]"
+            <Link
+              href="/get-a-demo"
+              className="wc-btn-secondary inline-flex items-center justify-center rounded-lg border border-white/15 bg-white/[0.06] px-8 py-3 text-[14px] font-semibold text-white backdrop-blur-[2px]"
             >
               Get a demo
-            </button>
             </Link>
           </div>
 
@@ -132,13 +128,10 @@ export function WorkflowsCtaSection() {
             className={`wc-hidden ${linkIn ? "wc-visible" : ""} mt-6`}
             style={{ animationDelay: "0.32s" }}
           >
-            <button
-              type="button"
-              className="wc-link inline-flex items-center justify-center gap-1.5 text-[13px] font-semibold text-white"
-            >
+            <Link href="/integration-scalability" className="wc-link inline-flex items-center justify-center gap-1.5 text-[13px] font-semibold text-white">
               Explore Integrations
               <FiArrowRight className="wc-link-arrow h-4 w-4" aria-hidden="true" />
-            </button>
+            </Link>
           </div>
         </div>
       </section>

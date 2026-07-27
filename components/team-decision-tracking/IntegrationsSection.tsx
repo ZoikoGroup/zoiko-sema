@@ -88,9 +88,9 @@ export function IntegrationsSection() {
                 Every linked source respects role, workspace, and retention rules.
               </p>
             </div>
-            <div className="text-white text-xs font-bold font-['Inter'] hover:text-violet-200 transition-colors cursor-pointer w-fit">
+            <a href="https://meet.zoikosema.com/" className="text-white text-xs font-bold font-['Inter'] hover:text-violet-200 transition-colors cursor-pointer w-fit">
               View integrations &rarr;
-            </div>
+            </a>
           </div>
 
         </div>
