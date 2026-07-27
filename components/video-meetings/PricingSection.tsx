@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import CheckoutModal from "./CheckoutModal";
 
 function useInView(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
@@ -49,6 +50,7 @@ const plans = [
     subtext: "Billed annually",
     buttonText: "Buy now",
     link:"/buy-now",
+    checkout: true,
     isPopular: true,
     features: [
       "All of Basic, plus:",
@@ -66,6 +68,7 @@ const plans = [
     subtext: "Billed annually · 250+ users",
     buttonText: "Buy now",
     link:"/buy-now",
+    checkout: true,
     isPopular: false,
     features: [
       "All of Pro, plus:",
@@ -80,6 +83,7 @@ const plans = [
 export default function PricingSection() {
   const { ref: headerRef, inView: headerIn } = useInView(0.2);
   const { ref: gridRef, inView: gridIn } = useInView(0.1);
+  const [checkoutPlan, setCheckoutPlan] = useState<typeof plans[number] | null>(null);
 
   return (
     <>
@@ -103,9 +107,29 @@ export default function PricingSection() {
           transform: translateY(-8px);
         }
 
+        .pr-buy-btn {
+          position: relative;
+          transition: transform .25s cubic-bezier(.25,1,.5,1), box-shadow .25s ease, background-color .2s ease, color .2s ease;
+        }
+        .pr-buy-btn:hover {
+          transform: translateY(-3px);
+        }
+        .pr-buy-btn:active {
+          transform: translateY(-1px) scale(.98);
+        }
+        .pr-buy-btn-solid:hover {
+          background-color: #1d4ed8;
+          box-shadow: 0px 18px 36px -10px rgba(52,87,232,0.6);
+        }
+        .pr-buy-btn-outline:hover {
+          background-color: #0f172a;
+          color: #fff;
+        }
+
         @media (prefers-reduced-motion: reduce) {
           .pr-hidden, .pr-visible, .pr-card { opacity: 1 !important; transform: none !important; animation: none !important; }
           .pr-interactive-card:hover { transform: none !important; }
+          .pr-buy-btn:hover { transform: none !important; }
         }
       `}</style>
 
@@ -167,11 +191,17 @@ export default function PricingSection() {
 
                   {/* CTA Action Button */}
                   <div className="mb-8">
-                    {plan.isPopular ? (
-                      <a href={plan.link}>
-                      <button className="w-full py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full text-base transition-all duration-200 shadow-[0px_10px_30px_-8px_rgba(52,87,232,0.55)] active:scale-[0.98]">
+                    {plan.checkout ? (
+                      <button
+                        onClick={() => setCheckoutPlan(plan)}
+                        className={
+                          plan.isPopular
+                            ? "pr-buy-btn pr-buy-btn-solid w-full py-3.5 bg-blue-600 text-white font-semibold rounded-full text-base transition-all duration-200 shadow-[0px_10px_30px_-8px_rgba(52,87,232,0.55)] active:scale-[0.98]"
+                            : "pr-buy-btn pr-buy-btn-outline w-full py-3.5 bg-transparent text-slate-900 font-semibold rounded-full text-base border border-slate-900 transition-all duration-200 active:scale-[0.98]"
+                        }
+                      >
                         {plan.buttonText}
-                      </button></a>
+                      </button>
                     ) : (
                       <a href={plan.link}>
                       <button className="w-full py-3.5 bg-transparent hover:bg-slate-900 hover:text-white text-slate-900 font-semibold rounded-full text-base border border-slate-900 transition-all duration-200 active:scale-[0.98]">
@@ -204,6 +234,8 @@ export default function PricingSection() {
 
         </div>
       </section>
+
+      <CheckoutModal key={checkoutPlan?.name ?? "closed"} plan={checkoutPlan} onClose={() => setCheckoutPlan(null)} />
     </>
   );
 }
