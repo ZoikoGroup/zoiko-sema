@@ -35,11 +35,11 @@ export default function ZoikoSemaPlatformTour() {
   const [govRef, govVisible] = useScrollReveal();
 
   const integrationApps = [
-    { name: 'Mail', desc: 'Send a clean follow-up email after the meeting.', linkText: 'Draft follow-up',href:"/follow-up" },
-    { name: 'Calendar', desc: 'Attach summary to the meeting event and next meeting.', linkText: 'Attach to event',href:"/attach-to-event" },
-    { name: 'Files', desc: 'Save the approved summary as a shared document or PDF.', linkText: 'Save summary',href:"/save-summary" },
-    { name: 'Search', desc: 'Find outcomes later by decision, person, date, topic, or client.', linkText: 'Search records',href:"/search-records" },
-    { name: 'ZoikoTime', desc: 'Connect approved outcomes to work context where policy allows.', linkText: 'Explore bridge',href:"/explore-bridge" },
+    { name: 'Mail', desc: 'Send a clean follow-up email after the meeting.', linkText: 'Draft follow-up',href:"https://meet.zoikosema.com/"},
+    { name: 'Calendar', desc: 'Attach summary to the meeting event and next meeting.', linkText: 'Attach to event',href:"https://meet.zoikosema.com/" },
+    { name: 'Files', desc: 'Save the approved summary as a shared document or PDF.', linkText: 'Save summary',href:"https://meet.zoikosema.com/" },
+    { name: 'Search', desc: 'Find outcomes later by decision, person, date, topic, or client.', linkText: 'Search records',href:"https://meet.zoikosema.com/" },
+    { name: 'ZoikoTime', desc: 'Connect approved outcomes to work context where policy allows.', linkText: 'Explore bridge',href:"https://meet.zoikosema.com/" },
   ];
 
   const policyRows = [
@@ -123,12 +123,14 @@ export default function ZoikoSemaPlatformTour() {
                 Tabs stay within one click. Primary actions: share recap, create follow-up, copy decisions, save to notes.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
+                <a href="https://meet.zoikosema.com/ai-summaries">
                 <button className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-full shadow-md transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
                   Share recap
-                </button>
+                </button></a>
+                <a href="https://meet.zoikosema.com/ai-summaries">
                 <button className="px-5 py-2.5 border border-white/30 hover:border-white/60 hover:bg-white/5 text-white font-semibold text-xs rounded-full transition-all duration-200 transform hover:-translate-y-0.5 active:translate-y-0">
                   Create follow-up
-                </button>
+                </button></a>
               </div>
             </div>
           </div>

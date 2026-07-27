@@ -172,7 +172,7 @@ export default function TemplateGallerySection() {
 
             <section className="bg-white py-20 dark:bg-[#0D0B24] sm:py-24">
 
-                <div className="mx-auto max-w-7xl px-6 sm:px-8">
+                <div id="templates" className="mx-auto max-w-7xl px-6 sm:px-8">
 
                     {/* Header */}
 
@@ -241,7 +241,7 @@ export default function TemplateGallerySection() {
                                     </p>
 
                                     {/* CTA */}
-
+                                        <a href="https://meet.zoikosema.com/">
                                     <button
                                         type="button"
                                         className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#4F5BD5] transition-colors hover:text-[#3945D8] dark:text-[#8A94F8] dark:hover:text-white"
@@ -249,7 +249,7 @@ export default function TemplateGallerySection() {
                                         {template.action}
 
                                         <FiArrowRight className="tg-arrow h-4 w-4" />
-                                    </button>
+                                    </button></a>
                                 </div>
                             );
                         })}

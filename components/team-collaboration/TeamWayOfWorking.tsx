@@ -185,6 +185,7 @@ export default function TeamWayOfWorking() {
             className={`pt-4 ww-hidden ${ctaInView ? "ww-visible" : ""}`}
             style={{ animationDelay: '0.2s' }}
           >
+            <a href="https://meet.zoikosema.com/">
             <button className="relative group px-6 py-3 bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white text-base font-semibold rounded-xl shadow-[0px_10px_24px_-10px_rgba(79,70,229,0.5)] transition-all duration-150 flex items-center gap-2">
               <span>Explore team workflows</span>
               <svg 
@@ -196,7 +197,7 @@ export default function TeamWayOfWorking() {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
-            </button>
+            </button></a>
           </div>
 
         </div>

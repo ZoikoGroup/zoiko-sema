@@ -46,7 +46,7 @@ const PLANS = [
       "Basic admin & audit"
     ],
     cta: "Explore Teams",
-    link:"/teams",
+    link:"/use-cases/team-collaboration",
     popular: true,
     featured: true
   },

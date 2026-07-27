@@ -85,7 +85,8 @@ export default function ZoikoSemaPlatformTour() {
     {
       title: "Project standups",
       desc: "Blockers, tasks, dependencies, and due dates.",
-      link: "/enterprise",
+      link:"Explore Teams",
+      href: "/enterprise",
     },
     {
       title: "Sales handoffs",
@@ -96,7 +97,8 @@ export default function ZoikoSemaPlatformTour() {
     {
       title: "Remote teams",
       desc: "Time-zone-aware outcomes and searchable team memory.",
-      link: "/solutions-hybrid-remote",
+      link:"Explore Remote Work",
+      href: "/solutions-hybrid-remote",
     },
     {
       title: "Regulated teams",

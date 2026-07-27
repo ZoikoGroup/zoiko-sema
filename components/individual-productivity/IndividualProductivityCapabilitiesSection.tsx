@@ -38,6 +38,7 @@ const capabilities = [
         <path d="M12 3a9 9 0 0 1 0 18z" fill={BRAND} stroke="none" />
       </svg>
     ),
+    href:'https://meet.zoikosema.com/',
   },
   {
     title: "Priority inbox",
@@ -50,6 +51,7 @@ const capabilities = [
         <path d="M3 7l9 6 9-6" />
       </svg>
     ),
+    href:'https://meet.zoikosema.com/',
   },
   {
     title: "Task planning",
@@ -61,6 +63,7 @@ const capabilities = [
         <polyline points="20 6 9 17 4 12" />
       </svg>
     ),
+    href:'https://meet.zoikosema.com/',
   },
   {
     title: "Meeting preparation",
@@ -76,6 +79,7 @@ const capabilities = [
         <path d="M9 15l2 2 4-4" />
       </svg>
     ),
+    href:'https://meet.zoikosema.com/',
   },
   {
     title: "Notes and decisions",
@@ -88,6 +92,7 @@ const capabilities = [
         <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z" />
       </svg>
     ),
+    href:'https://meet.zoikosema.com/',
   },
   {
     title: "Focus mode",
@@ -101,6 +106,7 @@ const capabilities = [
         <circle cx="12" cy="12" r="1" fill={BRAND} stroke="none" />
       </svg>
     ),
+    href:'https://meet.zoikosema.com/',
   },
 ];
 
@@ -193,7 +199,7 @@ export default function IndividualProductivityCapabilitiesSection() {
                 </p>
 
                 <a
-                  href="#"
+                  href={cap.href}
                   className="ipc-link inline-flex items-center gap-1 text-[13px] font-semibold"
                   style={{ color: BRAND }}
                 >

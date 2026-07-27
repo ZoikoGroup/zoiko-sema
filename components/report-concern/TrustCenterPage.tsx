@@ -140,7 +140,7 @@ export default function TrustCenterPage() {
           <p className="text-purple-200 text-sm sm:text-base   max-w-2xl leading-relaxed">Start a protected concern report, visit the Security Center, review Privacy & Data resources, or contact support if your issue is urgent or account-related.</p>
           <div className="flex flex-col sm:flex-row items-center gap-4 mt-4 w-full sm:w-auto">
             <a href="#report-concern" className="w-full sm:w-auto px-8 py-3.5 bg-white text-violet-600 font-bold text-sm rounded-full shadow-md hover:-translate-y-0.5 hover:shadow-lg transition-all inline-flex items-center justify-center">Report a Concern</a>
-            <button className="w-full sm:w-auto px-8 py-3.5 bg-white/20 border border-white/30 text-white font-semibold   text-sm rounded-full hover:bg-white/30 transition-all">Get Support</button>
+            <a href="/contact" ><button className="w-full sm:w-auto px-8 py-3.5 bg-white/20 border border-white/30 text-white font-semibold   text-sm rounded-full hover:bg-white/30 transition-all">Get Support</button></a>
             <Link href="/security-center" className="w-full sm:w-auto px-8 py-3.5 bg-white/20 border border-white/30 text-white font-semibold text-sm rounded-full hover:bg-white/30 transition-all inline-flex items-center justify-center">Visit Security Center</Link>
           </div>
         </div>
