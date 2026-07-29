@@ -1,3 +1,9 @@
+import { Metadata } from "next";
+export const metadat={
+  title:"Project Collaboration Platform | Zoiko Sema",
+  description:"Zoiko Sema brings project collaboration into one governed workspace with messages, tasks, files, decisions, and AI summaries from kickoff to delivery."
+}
+
 import React from "react";
 import { ProjectCollabHeroSection } from "@/components/Project-collaboration";
 import { TrustedBySection } from "@/components/Project-collaboration";

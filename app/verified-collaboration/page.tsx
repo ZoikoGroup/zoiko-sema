@@ -1,3 +1,8 @@
+import { Metadata } from "next";
+export const metadat={
+  title:"Zoiko Sema | Verified Collaboration Platform",
+  description:"Discover Zoiko Sema verified collaboration platform that helps teams build trust, improve accountability, and connect work with real outcomes."
+}
 import {
   VerifiedCollaborationHeroSection,
   VerifiedCollaborationProblemSection,
