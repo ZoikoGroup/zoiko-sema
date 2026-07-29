@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   ComplianceHeroSection,
   ComplianceOverviewSection,
@@ -11,6 +12,12 @@ import {
   ComplianceFooterCtaSection,
   ComplianceFaqSection,
 } from "@/components/compliance";
+
+export const metadata: Metadata = {
+  title: "Compliance Solutions & Standards | Zoiko Sema",
+  description:
+    "Discover Zoiko Sema compliance solutions built with strong security standards, privacy practices & reliable frameworks to help protect your business data.",
+};
 
 export default function CompliancePage() {
   const sidebarLinks = [

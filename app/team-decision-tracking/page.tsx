@@ -1,4 +1,9 @@
 import React from "react";
+import { Metadata } from "next";
+export const metadat={
+  title:"Team Decision Tracking Platform | Zoiko Sema",
+  description:"Zoiko Sema helps teams track decisions with clear context, ownership, approvals, and records in one governed workspace for better execution."
+}
 import {
   TeamDecisionTrackingHeroSection,
   TrustedBySection,
