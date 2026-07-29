@@ -14,7 +14,7 @@ export function ScheduleMeetScreen() {
   ];
 
   return (
-    <section className="relative w-full bg-indigo-50 py-24">
+    <section id="scheduler" className="relative w-full bg-indigo-50 py-24 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 flex flex-col xl:flex-row gap-16">
         
         {/* Left Column */}

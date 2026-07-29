@@ -64,7 +64,7 @@ const menuItems: NavItem[] = [
     title: "ZoikoTime",
     url: "/zoikotime",
     children: [
-      { label: "Overview", href: "/product-overview", desc: "See how ZoikoTime works and the value it delivers." },
+      { label: "Overview", href: "/zoikotime/overview", desc: "See how ZoikoTime works and the value it delivers." },
       { label: "Workforce Overview", href: "/zoikotime/workforce-overview", desc: "Real-time visibility into activity, status, and performance." },
       { label: "Performance Analytics", href: "/zoikotime-performance-analytics", desc: "Insights and reports that help you drive productivity and outcomes." },
       { label: "Compliance & Audit", href: "/compliance-audit", desc: "Audit trails, data retention, and policy compliance made simple." },
@@ -597,7 +597,7 @@ const zoikoTimeColumns: ZoikoTimeLink[][] = [
     {
       title: "Overview",
       desc: "See how ZoikoTime works and the value it delivers.",
-      href: "/product-overview",
+      href: "/zoikotime/overview",
       icon: zoikoTimeIcon(<><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></>),
     },
     {

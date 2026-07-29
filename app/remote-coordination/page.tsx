@@ -1,3 +1,10 @@
+import { Metadata } from "next";
+export const metadat={
+  title:"Remote Coordination Platform | Zoiko Sema",
+  description:"Manage distributed teams with the Zoiko Sema remote coordination platform built for seamless communication, AI insights, and connected workflows."
+}
+
+
 import React from "react";
 import { RemoteCoordinationHeroSection } from "@/components/remote-coordination";
 import { TrustedBySection } from "@/components/remote-coordination";

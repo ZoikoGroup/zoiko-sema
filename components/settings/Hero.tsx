@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 
 export default function WorkspaceSettingsHero() {
@@ -42,13 +43,17 @@ export default function WorkspaceSettingsHero() {
           </p>
 
           <div className="flex flex-wrap gap-4 pt-2">
-            <button className="group bg-black hover:bg-slate-900 text-white font-bold text-xs md:text-sm px-15 py-4 rounded-lg transition-all flex items-center gap-2">
-              Open Control Center
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
-            <button className="bg-white hover:bg-slate-50 text-[#0F172A] border border-black/10 font-bold text-xs md:text-sm px-10 py-4 rounded-lg transition-all">
-              Documentation
-            </button>
+            <Link href="/admin-console">
+              <button className="group bg-black hover:bg-slate-900 text-white font-bold text-xs md:text-sm px-15 py-4 rounded-lg transition-all flex items-center gap-2 cursor-pointer">
+                Open Control Center
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </button>
+            </Link>
+            <Link href="/developer-docs">
+              <button className="bg-white hover:bg-slate-50 text-[#0F172A] border border-black/10 font-bold text-xs md:text-sm px-10 py-4 rounded-lg transition-all cursor-pointer">
+                Documentation
+              </button>
+            </Link>
           </div>
         </div>
 
