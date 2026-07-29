@@ -60,7 +60,7 @@ export default function PlatformHeroSection() {
 
           {/* Action Call to Actions */}
           <div className="w-full sm:w-[548px] pt-1 inline-flex flex-col sm:flex-row justify-start items-start gap-3">
-            <a href="/start">
+            <a href="/start-free">
             <button className="w-full sm:w-auto px-7 py-3.5 bg-blue-600 hover:bg-blue-700 active:scale-98 transition-all rounded-full shadow-[0px_10px_24px_0px_rgba(52,87,232,0.30)] flex flex-col justify-center items-center cursor-pointer">
               <span className="text-center text-white text-sm font-bold   leading-5">
                 Start free
@@ -75,12 +75,12 @@ export default function PlatformHeroSection() {
           </div>
 
           {/* Text Navigation Anchor Link */}
-          <div className="w-full sm:w-[548px] h-6 pt-1 inline-flex justify-start items-center gap-1.5 cursor-pointer group">
+          {/* <div className="w-full sm:w-[548px] h-6 pt-1 inline-flex justify-start items-center gap-1.5 cursor-pointer group">
             <span className="text-blue-600 text-xs font-semibold   leading-5 group-hover:underline">
               See how source-linked tasks work
             </span>
             <ArrowRight className="size-3 text-blue-600 transition-transform group-hover:translate-x-0.5" />
-          </div>
+          </div> */}
 
           {/* Fine Print Footer Context */}
           <div className="w-full max-w-[480px] flex flex-col justify-start items-start pt-2">

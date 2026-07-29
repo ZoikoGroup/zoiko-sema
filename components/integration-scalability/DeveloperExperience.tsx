@@ -43,12 +43,13 @@ export default function DeveloperExperience() {
           </div>
 
           <div className="dev-anim dev-anim-delay-2 flex shrink-0 items-center gap-3">
-            <button className="rounded-lg bg-[#0058BE] px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-indigo-500">
+            {/* <button className="rounded-lg bg-[#0058BE] px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-indigo-500">
               Explore Docs
-            </button>
+            </button> */}
+          <a href="/developer-docs">
             <button className="rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors duration-200 hover:bg-slate-50">
               Get API Key
-            </button>
+            </button></a>
           </div>
         </div>
 

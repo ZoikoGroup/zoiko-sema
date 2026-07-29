@@ -30,7 +30,7 @@ export function UseCasesSection() {
       title: "Client teams",
       desc: "Capture client approvals, commitments, next steps, and evidence after calls.",
       linkText: "Explore client follow-up \u2192",
-      link: "/client-call-follow-up",
+      link: "/client-portal",
       icon: "\u260F", // ☏
       iconBg: "bg-emerald-50",
       iconColor: "text-green-600"
@@ -39,7 +39,7 @@ export function UseCasesSection() {
       title: "Remote teams",
       desc: "Prevent decisions from getting lost across time zones and async updates.",
       linkText: "See remote workflow \u2192",
-      link: "/remote-coordination",
+      link: "/remote-work",
       icon: "\u21C4", // ⇄
       iconBg: "bg-yellow-50",
       iconColor: "text-yellow-600"
@@ -57,7 +57,7 @@ export function UseCasesSection() {
       title: "Regulated teams",
       desc: "Support audit-ready decision trails with permissions, retention, and export controls.",
       linkText: "Explore regulated workflows \u2192",
-      link: "/regulated-workflows",
+      link: "/regulated-industries",
       icon: "\u2696", // ⚖
       iconBg: "bg-pink-100",
       iconColor: "text-pink-500"

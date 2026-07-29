@@ -46,13 +46,13 @@ export default function StructuredAsyncStandups() {
               reviews automatically when tasks hit 100% completion.
             </p>
 
-            <a
+            {/* <a
               href="#async-standups"
               className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#5B5FEF] transition hover:text-[#4B4FE0]"
             >
               Explore standup automation
               <span aria-hidden>→</span>
-            </a>
+            </a> */}
           </div>
         </div>
       </section>

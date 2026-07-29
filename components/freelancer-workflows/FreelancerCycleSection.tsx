@@ -228,7 +228,8 @@ export default function FreelancerCycleSection() {
             ))}
 
             {/* Permanent filled CTA card */}
-            <div
+            <a
+              href="https://meet.zoikosema.com/"
               className={`fwc-cta-card fwc-card ${gridIn ? "active" : ""} rounded-2xl p-6 cursor-pointer`}
               style={{ animationDelay: `${steps.length * 70}ms` }}
             >
@@ -245,7 +246,7 @@ export default function FreelancerCycleSection() {
                 {ctaCard.cta}
                 <ArrowIcon className="fwc-cta-arrow" />
               </span>
-            </div>
+            </a>
           </div>
 
         </div>

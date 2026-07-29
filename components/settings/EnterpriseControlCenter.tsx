@@ -81,7 +81,7 @@ export default function EnterpriseControlCenter() {
               <span className="transform transition-transform duration-200 group-hover/btn:translate-x-1">→</span>
             </Link>
 
-            <Link href="/help-center" className="px-8 py-4 bg-transparent text-zinc-900 dark:text-white text-base font-bold    rounded-xl border border-neutral-300 dark:border-neutral-700 transition-all duration-300 hover:-translate-y-1 hover:bg-neutral-100/50 dark:hover:bg-gray-900 active:translate-y-0">
+            <Link href="/developer-docs" className="px-8 py-4 bg-transparent text-zinc-900 dark:text-white text-base font-bold    rounded-xl border border-neutral-300 dark:border-neutral-700 transition-all duration-300 hover:-translate-y-1 hover:bg-neutral-100/50 dark:hover:bg-gray-900 active:translate-y-0">
               Documentation
             </Link>
           </div>

@@ -12,14 +12,14 @@ export function ProductShowcaseSection() {
       <div className="max-w-[1248px] mx-auto px-6 md:px-10 flex flex-col items-center">
         
         {/* Header */}
-        <div ref={headRef} className={`flex flex-col items-center text-center gap-6 max-w-[653px] transition-all duration-700 transform ${headIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div ref={headRef} className={`flex flex-col items-center text-center gap-6 max-w-4xl transition-all duration-700 transform ${headIn ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="text-violet-400 text-xs font-bold uppercase tracking-widest">
             PRODUCT SHOWCASE
           </span>
-          <h2 className="text-white text-4xl font-bold font-['Inter'] w-[635.94px] max-w-full">
+          <h2 className="text-white text-4xl font-bold font-['Inter'] w-full max-w-4xl">
             One workspace for the whole project<br/>lifecycle.
           </h2>
-          <p className="text-slate-300 text-base font-normal font-['Inter'] leading-6 w-[653.31px] max-w-full">
+          <p className="text-slate-300 text-base font-normal font-['Inter'] leading-6 max-w-2xl">
             Move from project room to meeting recap to a reviewed stakeholder update &mdash; without<br/>losing context across tools.
           </p>
         </div>

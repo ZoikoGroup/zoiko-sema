@@ -48,7 +48,7 @@ export default function CTAHeroSection() {
         <div className={`w-full max-w-md sm:max-w-none pt-4 flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3 transition-all duration-1000 delay-450 transform ${
           revealed ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
         }`}>
-          <a href="/start" className="px-7 py-3.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-full shadow-[0px_10px_24px_0px_rgba(52,87,232,0.30)] active:scale-98 transition-all duration-200 inline-flex items-center justify-center">
+          <a href="/start-free" className="px-7 py-3.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-full shadow-[0px_10px_24px_0px_rgba(52,87,232,0.30)] active:scale-98 transition-all duration-200 inline-flex items-center justify-center">
             Start free
           </a>
           
@@ -56,9 +56,10 @@ export default function CTAHeroSection() {
             Get a demo
           </a>
           
+          <a href="/use-cases/team-collaboration">
           <button className="px-7 py-3.5 bg-white/5 hover:bg-white/10 border border-white/10 text-white text-sm font-semibold rounded-full active:scale-98 transition-all duration-200">
             Explore Teams
-          </button>
+          </button></a>
         </div>
 
         {/* Secondary Sub-navigation Links */}
@@ -66,9 +67,9 @@ export default function CTAHeroSection() {
           revealed ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
         }`}>
           {[
-            { label: "Compare plans", href: "#" },
-            { label: "Trust Center", href: "#" },
-            { label: "Admin Console", href: "#" }
+            { label: "Compare plans", href: "/pricing" },
+            { label: "Trust Center", href: "/trust-center" },
+            { label: "Admin Console", href: "/admin-console" }
           ].map((link) => (
             <a 
               key={link.label}

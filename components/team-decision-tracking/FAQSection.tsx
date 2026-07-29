@@ -49,9 +49,10 @@ export function FAQSection() {
           <p className="text-gray-500 text-sm font-normal font-['Inter'] leading-6 mb-8 w-64">
             Still have questions? Our team can walk<br/>you through it.
           </p>
+          <a href="/contact-sales">
           <button className="px-6 py-2.5 bg-blue-600 text-white text-sm font-bold rounded-full hover:bg-blue-700 transition-colors">
             Talk to sales
-          </button>
+          </button></a>
         </div>
 
         {/* Right Col (Accordion) */}

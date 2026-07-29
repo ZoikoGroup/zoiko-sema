@@ -168,31 +168,25 @@ export function WorkflowsHeroSection() {
               className={`wf-hidden ${ctaIn ? "wf-visible" : ""} flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center`}
               style={{ animationDelay: "0.24s" }}
             >
-            <Link href="/start-free">  
-              <button
-                type="button"
-                className="wf-btn-primary w-full rounded-lg bg-[#4F5BD5] px-6 py-3 text-[14px] font-semibold text-white"
+              <Link
+                href="/start-free"
+                className="wf-btn-primary inline-flex w-full items-center justify-center rounded-lg bg-[#4F5BD5] px-6 py-3 text-[14px] font-semibold text-white sm:w-auto"
               >
                 Start Free
-              </button>
               </Link>
-              <Link href="get-a-demo">
-              <button
-                type="button"
-                className="wf-btn-secondary w-full rounded-lg border border-white/15 bg-white/[0.06] px-6 py-3 text-[14px] font-semibold text-white"
+              <Link
+                href="/get-a-demo"
+                className="wf-btn-secondary inline-flex w-full items-center justify-center rounded-lg border border-white/15 bg-white/[0.06] px-6 py-3 text-[14px] font-semibold text-white sm:w-auto"
               >
                 Get a demo
-              </button>
-            </Link>
-            <Link href="">
-              <button
-                type="button"
+              </Link>
+              <Link
+                href="/integration-scalability"
                 className="wf-link inline-flex items-center justify-center gap-1.5 px-2 py-3 text-[14px] font-semibold text-[#8C95F2]"
               >
-                Explore workflow templates
+                Explore integrations
                 <FiArrowRight className="wf-link-arrow h-4 w-4" aria-hidden="true" />
-              </button>
-            </Link>
+              </Link>
             </div>
 
             {/* Tag chips */}

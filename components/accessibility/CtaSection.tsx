@@ -66,7 +66,9 @@ export default function CtaSection() {
               Report a barrier
             </button>
 
-            <button className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-sans text-sm font-bold rounded-full border border-white/30 hover:border-white/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
+            <button 
+            onClick={() => router.push("/get-a-demo")}
+            className="w-full sm:w-auto px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-sans text-sm font-bold rounded-full border border-white/30 hover:border-white/50 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200">
               Request VPAT / ACR
             </button>
 

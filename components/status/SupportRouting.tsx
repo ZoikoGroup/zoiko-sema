@@ -12,7 +12,7 @@ const PATHS = [
     title: 'Active incident affecting your component',
     desc: 'Incident detail page',
     action: 'View active incidents',
-    href: '#incidents',
+    href: '/status#incidents',
     color: 'text-yellow-600 dark:text-yellow-400'
   },
   {
@@ -22,7 +22,7 @@ const PATHS = [
     title: 'Issue not listed in known incidents',
     desc: 'Help Center + Support form',
     action: 'Contact support',
-    href: '/customer-support',
+    href: '/contact',
     color: 'text-sky-700 dark:text-sky-400'
   },
   {
@@ -32,7 +32,7 @@ const PATHS = [
     title: 'Admin needing org-level impact info',
     desc: 'Enterprise admin support',
     action: 'Contact admin support',
-    href: '/customer-support',
+    href: '/contact-sales',
     color: 'text-violet-600 dark:text-violet-400'
   },
   {
@@ -72,9 +72,10 @@ export default function SupportRouting() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {PATHS.map((path, idx) => {
             return (
-              <div 
+              <Link 
                 key={idx}
-                className={`p-6 bg-white dark:bg-slate-950 border border-violet-100 dark:border-slate-800 rounded-2xl flex flex-col justify-between hover:shadow-xl dark:hover:shadow-2xl/20 hover:-translate-y-1.5 transition-all duration-300 transform ${
+                href={path.href}
+                className={`p-6 bg-white dark:bg-slate-950 border border-violet-100 dark:border-slate-800 rounded-2xl flex flex-col justify-between hover:shadow-xl dark:hover:shadow-2xl/20 hover:-translate-y-1.5 transition-all duration-300 transform block ${
                   revealed ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
                 }`}
                 style={{ transitionDelay: `${idx * 75}ms` }}
@@ -94,11 +95,11 @@ export default function SupportRouting() {
                   </p>
                 </div>
 
-                <Link href={path.href} className={`flex items-center gap-1.5 text-sm font-bold border-t border-slate-50 dark:border-slate-900 pt-4 w-full group ${path.color}`}>
+                <div className={`flex items-center gap-1.5 text-sm font-bold border-t border-slate-50 dark:border-slate-900 pt-4 w-full group ${path.color}`}>
                   <span>{path.action}</span>
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
+                </div>
+              </Link>
             );
           })}
         </div>

@@ -22,7 +22,7 @@ export default function MetricMethodologySection() {
         {/* Big Image */}
         <div className="w-full max-w-5xl relative rounded-2xl overflow-hidden shadow-2xl aspect-[16/9] border border-gray-100">
           <Image 
-            src="/insights/methodology-dashboard.png" 
+            src="/Insights/methodology-dashboard.png" 
             alt="Team looking at dashboard displays"
             fill
             className="object-cover"
