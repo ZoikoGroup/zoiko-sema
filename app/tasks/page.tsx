@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import {
+
   TasksBenefitsSection,
   TasksCtaSection,
   TasksFaqSection,
@@ -11,7 +12,10 @@ import {
   TasksWorkflowSection,
 } from "@/components/tasks";
 
-
+export const metadata: Metadata = {
+  title: "AI Task Management Platform | Zoiko Sema",
+  description: "Manage workflows efficiently with AI task management tools from Zoiko Sema, designed to automate tasks, improve productivity & streamline business operations.",
+};
 export default function Page() {
   return (
     <>

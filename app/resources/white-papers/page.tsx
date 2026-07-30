@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import WhitePapersHeroSection from "@/components/white-papers/WhitePapersHeroSection";
 import ResearchLibrary from "@/components/white-papers/ResearchLibrary";
 import FindYourPath from "@/components/white-papers/FindYourPath";
@@ -7,6 +8,10 @@ import LatestUpdated from "@/components/white-papers/LatestUpdated";
 import WhitePapersFAQ from "@/components/white-papers/WhitePapersFAQ";
 import ResearchNextStep from "@/components/white-papers/ResearchNextStep";
 
+export const metadata: Metadata = {
+  title: "Zoiko Sema White Papers | AI Communication Research",
+  description: "Explore Zoiko Sema white papers featuring AI communication research, insights, and resources on intelligent platforms, secure collaboration & digital innovation.",
+};
 export default function WhitePapersPage() {
   return (
     <main className="min-h-screen bg-white">

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   WorkforceOverviewHero,
   OperationalFinancialGovernance,
@@ -14,6 +15,10 @@ import {
   WorkforceFaq,
 } from "@/components/zoikotime-workforce-overview";
 
+export const metadata: Metadata = {
+  title: "ZoikoTime Workforce Overview | Zoiko Sema",
+  description: "Improve workforce visibility with ZoikoTime. Access centralized workforce insights, monitor trends, and make smarter management decisions.",
+};
 export default function WorkforceOverviewPage() {
   return (
     <main>
