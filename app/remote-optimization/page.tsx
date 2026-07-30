@@ -11,9 +11,9 @@ import {
 } from "@/components/remote-optimization";
 
 export const metadata: Metadata = {
-  title: "Remote Optimization | Zoiko Sema",
+  title: "Remote Team Collaboration | Zoiko Sema",
   description:
-    "Coordinate hybrid and remote teams without losing momentum. One governed workspace for async updates, meetings, AI summaries, handoffs, and follow-ups across every time zone.",
+    "Strengthen remote team collaboration with Zoiko Sema. Keep global teams aligned with connected updates, meetings, handoffs, and AI-powered summaries.",
 };
 
 export default function RemoteOptimizationPage() {

@@ -1,8 +1,8 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 export const metadata = {
-  title: "Zoiko Sema Resources | AI Communication Guides",
+  title: "Zoiko Sema Resource Library | Downloads & Guides",
   description:
-    "Discover Zoiko Sema AI communication guides with practical resources on meeting intelligence, decision capture, workflows, and accountable collaboration.",
+    "Access trusted Zoiko Sema resources in one library, including technical guides, API documentation, white papers, templates, case studies, and compliance assets.",
 };
 
 import { 

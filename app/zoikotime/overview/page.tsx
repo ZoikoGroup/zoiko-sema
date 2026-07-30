@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   ZoikoTimeOverviewHero,
   WhyCategoryExists,
@@ -10,6 +11,12 @@ import {
   ZoikoTimeOverviewFaq,
   ZoikoTimeOverviewFinalCta,
 } from "@/components/zoikotime-overview";
+
+export const metadata: Metadata = {
+  title: "ZoikoTime Workforce Platform | Zoiko Sema",
+  description:
+    "Zoiko Sema delivers workforce assurance through ZoikoTime, providing activity visibility, productivity insights and secure tools for modern teams.",
+};
 
 export default function ZoikoTimeOverviewPage() {
   return (
