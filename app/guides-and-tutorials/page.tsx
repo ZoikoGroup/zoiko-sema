@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react';
 import Hero from '@/components/guides-and-tutorials/Hero';
 import QuickStartPaths from '@/components/guides-and-tutorials/QuickStartPaths';
@@ -8,6 +9,10 @@ import TutorialGrid from '@/components/guides-and-tutorials/TutorialGrid';
 import TrustGovernance from '@/components/guides-and-tutorials/TrustGovernance';
 import Faq from '@/components/guides-and-tutorials/Faq';
 
+export const metadata: Metadata = {
+  title: "Zoiko Sema Guides & Tutorials | Product Learning Hub",
+  description: "Explore Zoiko Sema guides, tutorials, and learning paths to master features, setup workflows, security, administration, and enterprise implementation.",
+};
 export default function LearnPage() {
   return (
     <main className="min-h-screen bg-violet-50 font-sans w-full overflow-x-hidden">

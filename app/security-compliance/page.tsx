@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import {
+
   SecurityComplianceHero,
   SolvedAtScale,
   SecurityControlCenter,
@@ -11,6 +13,10 @@ import {
   SecurityFaq,
 } from "@/components/security-compliance";
 
+export const metadata: Metadata = {
+  title: "Security & Compliance Solutions | Zoiko Sema",
+  description: "Zoiko Sema delivers security & compliance solutions to help organisations manage identity, access, communication security, AI governance & audit readiness.",
+};
 export default function SecurityCompliancePage() {
   return (
     <main>

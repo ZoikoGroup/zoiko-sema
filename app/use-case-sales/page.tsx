@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from 'react';
 import SalesHeroSection from '@/components/use-case-sales/SalesHeroSection';
 import SalesWhyChoose from '@/components/use-case-sales/SalesWhyChoose';
@@ -7,6 +8,12 @@ import SalesDealRooms from '@/components/use-case-sales/SalesDealRooms';
 import SalesEnablementAnalytics from '@/components/use-case-sales/SalesEnablementAnalytics';
 import SalesGovernance from '@/components/use-case-sales/SalesGovernance';
 import SalesPlatformContext from '@/components/use-case-sales/SalesPlatformContext';
+
+export const metadata: Metadata = {
+  title: "Sales Revenue Governance Platform | Zoiko Sema",
+  description:
+    "Zoiko Sema sales revenue governance platform connects customer conversations, meetings, AI summaries, commitments and sales tasks in one secure workspace.",
+};
 
 export default function SalesUseCasePage() {
   return (
