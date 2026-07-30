@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: "Client Call Follow-Up | Zoiko Sema",
   description:
-    "Turn client calls into trusted follow-ups, clear owners, and next steps.",
+    "Zoiko Sema streamlines client follow-up management by connecting call recaps, commitments, owners, tasks, CRM updates and client-ready follow-ups.",
 };
 
 export default function ClientCallFollowUp() {
