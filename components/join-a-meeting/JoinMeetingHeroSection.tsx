@@ -40,22 +40,26 @@ type ConnectionMethod = {
   icon: IconType;
   title: string;
   description: string;
+  href:string;
 };
 
 const CONNECTION_METHODS: ConnectionMethod[] = [
   {
     icon: FiLink,
     title: "Direct Link",
+    href:"https://meet.zoikosema.com/login",
     description: "Join via magic invitation link",
   },
   {
     icon: FiKey,
     title: "Meeting Code",
+     href:"https://meet.zoikosema.com/login",
     description: "Enter the unique 9-digit session code",
   },
   {
     icon: FiGrid,
     title: "QR Access",
+    href:"https://meet.zoikosema.com/login",
     description: "Scan physical room display codes",
   },
 ];
@@ -206,7 +210,7 @@ export default function JoinMeetingHeroSection() {
                 const Icon = item.icon;
 
                 return (
-
+                  <a href={item.href}>
                   <button
                     key={item.title}
                     type="button"
@@ -236,7 +240,7 @@ export default function JoinMeetingHeroSection() {
                       </div>
 
                     </div>
-                  </button>
+                  </button></a>
 
                 );
 
