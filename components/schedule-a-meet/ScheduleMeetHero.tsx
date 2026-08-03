@@ -16,7 +16,7 @@ export function ScheduleMeetHero() {
             Coordinate calendars, time zones, and guests, resolve policy before sending, and keep every event connected to the right workspace and outcome — one idempotent invitation at a time.
           </p>
           <div className="flex flex-wrap items-center gap-4 mb-10">
-            <a href="#scheduler" className="h-12 px-7 bg-blue-600 rounded-full flex items-center justify-center text-white text-base font-bold font-['Inter'] hover:bg-blue-700 transition-colors">
+            <a href="https://meet.zoikosema.com/login" className="h-12 px-7 bg-blue-600 rounded-full flex items-center justify-center text-white text-base font-bold font-['Inter'] hover:bg-blue-700 transition-colors">
               Schedule a Meeting
             </a>
             <a href="#scheduler" className="text-blue-600 text-sm font-bold font-['Inter'] hover:underline">
