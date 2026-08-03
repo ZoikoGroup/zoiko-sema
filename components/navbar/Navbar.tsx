@@ -16,7 +16,7 @@ const menuItems: NavItem[] = [
       { label: "Video Meetings", href: "/video-meetings", desc: "HD video meetings with screen sharing, recording, and live captions." },
       { label: "Messaging", href: "/messaging", desc: "Secure team messaging with threads, reactions, and rich media." },
       { label: "Audio Calls", href: "/audio-calls", desc: "Crystal-clear voice calls for one-to-one or group conversations." },
-      { label: "Sema Meet", href: "/sema-meet", desc: "Join, start, or schedule meetings with enterprise-grade controls." },
+      { label: "Sema Meet", href: "https://meet.zoikosema.com/login", desc: "Join, start, or schedule meetings with enterprise-grade controls." },
       { label: "Channels & Spaces", href: "/channels-spaces", desc: "Organized team spaces for focused discussions and collaboration." },
       { label: "Tasks & To-dos", href: "/tasks", desc: "Assign tasks, set due dates, and track progress in real time." },
       { label: "Documents", href: "/documents", desc: "Create, store, and share documents with version history and permissions." },
@@ -104,7 +104,7 @@ const menuItems: NavItem[] = [
       { label: "Join a Meeting", href: "/join-a-meeting", desc: "Enter a meeting link, code, or invite to join instantly." },
       { label: "Start a Meeting", href: "/sema-meet/start", desc: "Launch an instant meeting from your workspace." },
       { label: "Schedule a Meeting", href: "/sema-meet/schedule", desc: "Create a meeting with calendar, guests, and policy controls." },
-      { label: "Download Apps", href: "/download", desc: "Get Sema for desktop, iOS, and Android." },
+      // { label: "Download Apps", href: "/download", desc: "Get Sema for desktop, iOS, and Android." },
       { label: "Sema Meet Overview", href: "/sema-meet-overview", desc: "Learn how Sema meetings work." },
     ],
   },
@@ -156,7 +156,7 @@ const productColumns: ProductColumn[] = [
       {
         title: "Sema Meet",
         desc: "Join, start, or schedule meetings with enterprise-grade controls.",
-        href: "/sema-meet",
+        href: "https://meet.zoikosema.com/login",
         icon: productIcon(<><polygon points="23 7 16 12 23 17 23 7" /><rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></>),
       },
     ],
@@ -729,12 +729,12 @@ const semaMeetLinks: SemaMeetLink[] = [
     href: "/schedule-a-meet",
     icon: semaMeetIcon(<><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></>),
   },
-  {
-    title: "Download Apps",
-    desc: "Get Sema for desktop, iOS, and Android.",
-    href: "/download",
-    icon: semaMeetIcon(<><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></>),
-  },
+  // {
+  //   title: "Download Apps",
+  //   desc: "Get Sema for desktop, iOS, and Android.",
+  //   href: "/download",
+  //   icon: semaMeetIcon(<><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line x1="12" y1="15" x2="12" y2="3" /></>),
+  // },
 ];
 
 const semaMeetOverview = {
@@ -750,7 +750,7 @@ const semaMeetFeatured = {
   // TODO: swap in the real image URL/path here (e.g. "/Images/sema-meet-featured.webp")
   image: "/Images/products-featured.png",
   ctaText: "Open Sema Meet",
-  ctaHref: "/sema-meet",
+  ctaHref: "https://meet.zoikosema.com/login",
 };
 
 /* ---------------- Workspace grid popup data ---------------- */
