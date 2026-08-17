@@ -289,7 +289,7 @@ export function SignupSection() {
               <div className="mt-4 flex items-center gap-3">
                 {/* 👇 replace with the real avatar (PNG in /public/images/) */}
                 <img
-                  src="/images/avatar-lena-park.png"
+                  src="/Images/avatar-lena-park.png"
                   alt="Lena Park"
                   className="h-9 w-9 rounded-full object-cover"
                 />

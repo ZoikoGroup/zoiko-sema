@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 export const metadata = {
-  title: "Zoiko Sema Login | Secure Account Access",
+  title: "Zoiko Sema Login | Secure Workspace Access",
   description:
-    "Access your Zoiko Sema account securely. Log in to manage meetings, collaboration tools, and AI-powered communication features from one platform.",
+    "Zoiko Sema login provides secure account access for users. Enter your credentials to access your workspace, meetings, and collaboration features anytime.",
 }
 import { Loginsection } from '@/components/login';
 export default function LoginPage() {

@@ -6,8 +6,8 @@ import {
 } from "@/components/contact-sales";
 
 export const metadata: Metadata = {
-  title: "Contact Sales | Zoiko Sema",
-  description: "Talk to our team to see how Zoiko Sema can help your organization communicate, collaborate, and achieve more securely and at scale.",
+  title: "Zoiko Sema Contact Sales | Secure Team Solutions",
+  description: "Contact Zoiko Sema sales experts to learn about secure communication solutions, request a demo, and discover how our platform can support your business.",
 };
 
 export default function ContactSalesPage() {

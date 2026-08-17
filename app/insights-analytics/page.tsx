@@ -17,7 +17,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Insights & Analytics - ZoikoSema",
-  description: "See what helps communication move work forward. Unlimited adoption, meeting-to-work follow-through, AI usage, guest access, and policy health through role-aware reporting.",
+  description: "Zoiko Sema insights & analytics platform helps teams uncover work intelligence, analyze performance, and make smarter decisions with trusted data.",
 };
 
 export default function InsightsAnalyticsPage() {
