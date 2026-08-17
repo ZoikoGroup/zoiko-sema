@@ -17,8 +17,8 @@ import {
 } from "@/components/subprocessors";
 
 export const metadata: Metadata = {
-  title: "Subprocessors | Zoiko Sema",
-  description: "A transparent view of service-provider categories, data-processing roles, regions, and update notices.",
+  title: "Trusted Subprocessors for Data Processing | Zoiko Sema",
+  description: "Learn about Zoiko Sema subprocessors and trusted data partners supporting secure data processing, privacy protection, and transparent business operations.",
 };
 
 export default function SubprocessorsPage() {

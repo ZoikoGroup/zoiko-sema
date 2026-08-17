@@ -14,8 +14,8 @@ import {
 } from '@/components/government-use-case';
 
 export const metadata = {
-  title: 'Government Use Case | Zoiko Sema',
-  description: 'Coordinate public-sector work with clarity, control, and evidence. Bring approved messages, meetings, interagency handoffs, and audit evidence into one governed workspace.',
+  title: 'Government Coordination Platform | Zoiko Sema',
+  description: 'Zoiko Sema helps government teams coordinate communication, meetings, tasks and interagency handoffs with governed workflows, AI summaries & audit evidence.',
 };
 
 export default function GovernmentUseCasePage() {
