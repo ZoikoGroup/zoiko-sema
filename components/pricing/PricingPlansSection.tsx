@@ -43,10 +43,20 @@ const plans: Plan[] = [
     fineAnnual: "Billed annually or monthly",
   },
   {
+    name: "Team",
+    desc: "For small teams and growing orgs",
+    annualUsd: 18,
+    features: ["Everything in Pro", "Team workspaces & channels", "Admin controls & shared files"],
+    cta: "Start team plan",
+    href: "/start-free/",
+    fineMonthly: "Billed monthly",
+    fineAnnual: "Billed annually or monthly",
+  },
+  {
     name: "Business",
     desc: "For teams needing governance",
     annualUsd: 24,
-    features: ["Everything in Pro", "Admin Console & policies", "Confidential Mode"],
+    features: ["Everything in Team", "Admin Console & policies", "Confidential Mode"],
     cta: "Talk to sales",
     href: "/contact-sales/",
     fineMonthly: "3-seat minimum",
@@ -182,8 +192,8 @@ export default function PricingPlansSection() {
             </div>
           </div>
 
-          {/* ── 4-card pricing grid ── */}
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+          {/* ── 5-card pricing grid ── */}
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 items-stretch">
             {plans.map((plan, i) => {
               const monthlyUsd = plan.annualUsd / 0.8; // undiscounted monthly rate
               const price = billing === "monthly" ? monthlyUsd : plan.annualUsd;
@@ -209,7 +219,7 @@ export default function PricingPlansSection() {
                     {/* Popular badge */}
                     {plan.badge && (
                       <span
-                        className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white"
+                        className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white"
                         style={{ background: "#3B5BFF" }}
                       >
                         {plan.badge}
@@ -240,7 +250,7 @@ export default function PricingPlansSection() {
                       ) : (
                         <p
                           key={`${plan.name}-${billing}`}
-                          className="pps-price-value text-[30px] font-extrabold text-[#15131F] leading-none"
+                          className="pps-price-value text-[30px] font-extrabold text-[#15131F] leading-none whitespace-nowrap"
                         >
                           {formatPrice(price)}
                           <span className="text-[13px] font-medium text-[#9CA3AF]"> /user/mo</span>
