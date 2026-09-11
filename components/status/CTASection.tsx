@@ -35,11 +35,11 @@ export default function CTASection() {
             <span>Subscribe to updates</span>
           </Link>
 
-          <Link href="#incidents" className="w-full sm:w-auto px-8 h-12 bg-slate-800 hover:bg-slate-700 text-white text-sm font-bold rounded-full border border-slate-700 transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center">
+          <Link href="/status#incidents" className="w-full sm:w-auto px-8 h-12 bg-slate-800 hover:bg-slate-700 text-white text-sm font-bold rounded-full border border-slate-700 transition-all hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center">
             View incident history
           </Link>
 
-          <Link href="/customer-support" className="w-full sm:w-auto px-6 h-12 text-blue-400 hover:text-blue-300 text-sm font-bold transition-colors flex items-center justify-center">
+          <Link href="/contact" className="w-full sm:w-auto px-6 h-12 text-blue-400 hover:text-blue-300 text-sm font-bold transition-colors flex items-center justify-center">
             Contact support &rarr;
           </Link>
         </div>

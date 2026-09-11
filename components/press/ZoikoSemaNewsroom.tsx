@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 // Intersection Observer hook for scroll-triggered float entries
 function useElementOnScreen(options: IntersectionObserverInit) {
@@ -163,15 +164,15 @@ export default function ZoikoSemaNewsroom() {
         </p>
 
         <div className="pt-2">
-          <a 
-            href="#" 
+          <Link 
+            href="/product-update" 
             className="inline-flex items-center gap-2 bg-white dark:bg-gray-950 border border-slate-200 dark:border-gray-800 px-5 py-2.5 rounded-xl text-sm font-semibold text-slate-900 dark:text-white shadow-sm hover:bg-slate-50 dark:hover:bg-gray-850 hover:-translate-y-0.5 transition-all duration-200 group"
           >
             <span>Read announcement</span>
             <span className="font-bold text-blue-600 dark:text-blue-400 transition-transform duration-200 group-hover:translate-x-0.5">
               →
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
@@ -249,10 +250,10 @@ export default function ZoikoSemaNewsroom() {
                 </div>
 
                 <div className="px-6 pb-6 pt-2 border-t border-slate-50 dark:border-gray-800/50">
-                  <a href="#" className="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 text-xs font-semibold group hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
+                  <Link href="/product-update" className="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 text-xs font-semibold group hover:text-blue-700 dark:hover:text-blue-300 transition-colors">
                     <span>Read announcement</span>
                     <span className="transition-transform duration-200 group-hover:translate-x-0.5 font-bold">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))

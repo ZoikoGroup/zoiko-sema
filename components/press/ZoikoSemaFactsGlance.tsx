@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 // Hook to trigger scroll entry animations when the section arrives in view
 function useElementOnScreen(options: IntersectionObserverInit) {
@@ -28,6 +29,7 @@ export default function ZoikoSemaFactsGlance() {
 
   return (
     <section 
+      id="facts"
       ref={sectionRef}
       className="w-full bg-violet-50 dark:bg-gray-950 py-16 sm:py-20 md:py-24 transition-colors duration-300 overflow-hidden"
     >
@@ -117,18 +119,18 @@ export default function ZoikoSemaFactsGlance() {
             
             <div className="flex flex-col gap-2">
               {[
-                "Trust Center",
-                "Product Overview",
-                "Customer Stories"
-              ].map((linkText, linkIdx) => (
-                <a 
+                { label: "Trust Center", href: "/trust-center" },
+                { label: "Product Overview", href: "/product-overview" },
+                { label: "Customer Stories", href: "/customer-stories" }
+              ].map((linkItem, linkIdx) => (
+                <Link 
                   key={linkIdx} 
-                  href="#" 
+                  href={linkItem.href} 
                   className="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 text-xs font-semibold group hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-250 py-0.5"
                 >
-                  <span>{linkText}</span>
+                  <span>{linkItem.label}</span>
                   <span className="transition-transform duration-200 group-hover:translate-x-0.5 font-bold">→</span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

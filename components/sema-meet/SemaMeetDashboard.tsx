@@ -363,12 +363,13 @@ export default function SemaMeetDashboard() {
               </p>
             </div>
 
+            <a href="https://meet.zoikosema.com/">
             <button
               type="button"
               className="shrink-0 rounded-full bg-indigo-700 px-7 py-3 text-[15px] font-semibold text-white shadow-sm transition-colors hover:bg-indigo-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
             >
               Open lobby
-            </button>
+            </button></a>
           </div>
 
           {/* Quick action cards */}

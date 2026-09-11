@@ -51,16 +51,14 @@ function OrganizationIdentity() {
         {/* Header Stack */}
         <div className="flex flex-col justify-start items-start space-y-2">
           <h2
-            className={`text-2xl sm:text-3xl font-semibold    leading-tight transition-all duration-700 ease-out transform delay-75 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
-            }`}
+            className={`text-2xl sm:text-3xl font-semibold    leading-tight transition-all duration-700 ease-out transform delay-75 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
+              }`}
           >
             Organization Identity
           </h2>
           <p
-            className={`text-zinc-700 dark:text-gray-400 text-sm sm:text-base font-normal    transition-all duration-700 ease-out transform delay-150 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
-            }`}
+            className={`text-zinc-700 dark:text-gray-400 text-sm sm:text-base font-normal    transition-all duration-700 ease-out transform delay-150 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
+              }`}
           >
             Global corporate profile and departmental structure.
           </p>
@@ -68,9 +66,8 @@ function OrganizationIdentity() {
 
         {/* Dynamic Image Panel */}
         <div
-          className={`w-full aspect-[1200/560] rounded-[20px] overflow-hidden shadow-lg border border-neutral-200/40 dark:border-neutral-800 transition-all duration-1000 ease-out transform delay-300 hover:-translate-y-1.5 hover:shadow-2xl ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}
+          className={`w-full aspect-[1200/560] rounded-[20px] overflow-hidden shadow-lg border border-neutral-200/40 dark:border-neutral-800 transition-all duration-1000 ease-out transform delay-300 hover:-translate-y-1.5 hover:shadow-2xl ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}
         >
           <img
             className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-[1.01]"
@@ -95,9 +92,8 @@ function VisualShowcaseFrame() {
       className="w-full py-12 lg:py-16 px-4 sm:px-8 lg:px-28 bg-violet-50 dark:bg-gray-950/40"
     >
       <div
-        className={`max-w-[1200px] mx-auto aspect-[1200/464] rounded-[20px] overflow-hidden shadow-xl border border-neutral-300/25 dark:border-neutral-800/60 transition-all duration-1000 ease-out transform hover:-translate-y-2 hover:shadow-2xl ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
-        }`}
+        className={`max-w-[1200px] mx-auto aspect-[1200/464] rounded-[20px] overflow-hidden shadow-xl border border-neutral-300/25 dark:border-neutral-800/60 transition-all duration-1000 ease-out transform hover:-translate-y-2 hover:shadow-2xl ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+          }`}
       >
         <img
           className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-[1.015]"
@@ -124,16 +120,14 @@ function HighRiskWorkflow() {
         {/* Centered Descriptive Header Text Stack */}
         <div className="max-w-[768px] mx-auto text-center space-y-4">
           <h2
-            className={`text-2xl sm:text-3xl font-semibold    leading-tight transition-all duration-700 ease-out transform delay-75 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
-            }`}
+            className={`text-2xl sm:text-3xl font-semibold    leading-tight transition-all duration-700 ease-out transform delay-75 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
+              }`}
           >
             High-Risk Change Workflow
           </h2>
           <p
-            className={`text-zinc-700 dark:text-gray-400 text-sm sm:text-base font-normal    leading-relaxed transition-all duration-700 ease-out transform delay-150 ${
-              isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
-            }`}
+            className={`text-zinc-700 dark:text-gray-400 text-sm sm:text-base font-normal    leading-relaxed transition-all duration-700 ease-out transform delay-150 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
+              }`}
           >
             Changes to critical security settings trigger an institutional-grade approval sequence, ensuring no unauthorized modifications reach production.
           </p>
@@ -141,9 +135,8 @@ function HighRiskWorkflow() {
 
         {/* Main Interface Action Interactive Screenshot Container */}
         <div
-          className={`w-full aspect-[1200/600] rounded-[20px] overflow-hidden shadow-xl border border-neutral-200/60 dark:border-neutral-800 transition-all duration-1000 ease-out transform delay-300 hover:-translate-y-2 hover:shadow-2xl ${
-            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
-          }`}
+          className={`w-full aspect-[1200/600] rounded-[20px] overflow-hidden shadow-xl border border-neutral-200/60 dark:border-neutral-800 transition-all duration-1000 ease-out transform delay-300 hover:-translate-y-2 hover:shadow-2xl ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+            }`}
         >
           <img
             className="w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-[1.01]"

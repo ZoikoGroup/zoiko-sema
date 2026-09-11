@@ -195,9 +195,8 @@ export default function PricingPlansSection() {
                   style={{ animationDelay: `${i * 0.08}s` }}
                 >
                   <div
-                    className={`pps-card h-full rounded-2xl p-6 flex flex-col relative ${
-                      plan.popular ? "pps-card-popular" : "border border-gray-200"
-                    }`}
+                    className={`pps-card h-full rounded-2xl p-6 flex flex-col relative ${plan.popular ? "pps-card-popular" : "border border-gray-200"
+                      }`}
                     style={{
                       background: "#fff",
                       borderColor: plan.popular ? "#3B5BFF" : undefined,

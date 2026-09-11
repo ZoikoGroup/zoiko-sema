@@ -23,7 +23,7 @@ export default function RolesPlansSection() {
         {/* Pricing/Plan Image */}
         <div className="w-full max-w-[1050px] relative flex justify-center">
             <Image 
-              src="/insights/hero-dashboard.png"
+              src="/Insights/hero-dashboard.png"
               alt="Roles and Plans"
               width={1050}
               height={500}

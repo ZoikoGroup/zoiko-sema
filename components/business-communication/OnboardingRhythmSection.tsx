@@ -114,9 +114,10 @@ export default function OnboardingRhythmSection() {
             sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
+          <a href="/guides-and-tutorials">
           <button className="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold text-sm rounded-[52px] shadow-sm transition-all duration-200 transform active:scale-95 whitespace-nowrap">
             Get onboarding guidance
-          </button>
+          </button></a>
           <a href="/start-free">
           <button className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-bold text-sm tracking-wide transition-colors duration-200 transform active:scale-95 px-4 py-2">
             Start free

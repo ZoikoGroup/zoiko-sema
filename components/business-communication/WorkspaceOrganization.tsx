@@ -108,12 +108,13 @@ export default function WorkspaceOrganization() {
             </p>
 
             <div className="pt-2">
+              <a href="https://meet.zoikosema.com/">
               <button className="group px-6 py-3 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white font-bold text-sm rounded-full shadow-md shadow-blue-600/10 transition-all duration-150 hover:-translate-y-0.5 flex items-center gap-2">
                 <span>Explore workspace setup</span>
                 <svg className="size-4 transform group-hover:translate-x-0.5 transition-transform duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
-              </button>
+              </button></a>
             </div>
           </div>
 

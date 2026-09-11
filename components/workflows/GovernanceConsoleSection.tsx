@@ -41,6 +41,7 @@ type GovernanceItem = {
     title: string;
     description: string;
     action: string;
+    href:string;
 };
 
 const GOVERNANCE_ITEMS: GovernanceItem[] = [
@@ -50,6 +51,7 @@ const GOVERNANCE_ITEMS: GovernanceItem[] = [
         description:
             "Every workflow has a named owner and run identity.",
         action: "Explore Admin Console",
+        href:'/admin-console'
     },
     {
         icon: FiKey,
@@ -57,6 +59,7 @@ const GOVERNANCE_ITEMS: GovernanceItem[] = [
         description:
             "Authorization scopes, secrets, and token expiry are explicit and revocable.",
         action: "Visit Trust Center",
+        href:'/trust-center'
     },
     {
         icon: FiClipboard,
@@ -64,6 +67,7 @@ const GOVERNANCE_ITEMS: GovernanceItem[] = [
         description:
             "Workflow changes, runs, and approvals are auditable where required.",
         action: "Read the AI Use Policy",
+        href:'/ai-use-policy'
     },
 ];
 
@@ -256,6 +260,7 @@ export default function GovernanceConsoleSection() {
 
                                     {/* Action */}
 
+                                     <a href={item.href}>
                                     <button
                                         type="button"
                                         className="inline-flex items-center gap-2 justify-start md:justify-end text-sm font-semibold text-[#4F5BD5] transition-colors hover:text-[#3945D8] dark:text-[#8A94F8] dark:hover:text-white"
@@ -264,7 +269,7 @@ export default function GovernanceConsoleSection() {
 
                                         <FiArrowRight className="gc-arrow h-4 w-4" />
 
-                                    </button>
+                                    </button></a>   
                                 </div>
                             );
                         })}

@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react';
+import Link from 'next/link';
 
 // --- CUSTOM INTERSECTION OBSERVER REVEAL HOOK ---
 function useScrollReveal() {
@@ -42,14 +43,14 @@ export default function ResourcesAndInquiryHub() {
   const [consent, setConsent] = useState(false);
 
   const resourceCards = [
-    { title: 'About Sema', action: 'Read About Sema', icon:"/press/Frame (13).png" },
-    { title: 'About Zoiko Tech', action: 'Read About Zoiko Tech', icon:"/press/Frame (14).png"  },
-    { title: 'Product Overview', action: 'View Product', icon:"/press/Frame (15).png"  },
-    { title: 'Customer Stories', action: 'Read Stories' , icon:"/press/Frame (16).png" },
-    { title: 'Product Updates', action: 'View Updates' , icon:"/press/Frame (17).png" },
-    { title: 'Trust Center', action: 'Visit Trust Center', icon:"/press/Frame (14).png"  },
-    { title: 'System Status', action: 'View Status', icon:"/press/Frame (16).png"  },
-    { title: 'Contact', action: 'Contact Zoiko Sema' , icon:"/press/Frame (18).png" },
+    { title: 'About Sema', action: 'Read About Sema', icon:"/press/Frame (13).png", href: '/about' },
+    { title: 'About Zoiko Tech', action: 'Read About Zoiko Tech', icon:"/press/Frame (14).png", href: '/about-zoikotech' },
+    { title: 'Product Overview', action: 'View Product', icon:"/press/Frame (15).png", href: '/product-overview' },
+    { title: 'Customer Stories', action: 'Read Stories' , icon:"/press/Frame (16).png", href: '/customer-stories' },
+    { title: 'Product Updates', action: 'View Updates' , icon:"/press/Frame (17).png", href: '/product-update' },
+    { title: 'Trust Center', action: 'Visit Trust Center', icon:"/press/Frame (14).png", href: '/trust-center' },
+    { title: 'System Status', action: 'View Status', icon:"/press/Frame (16).png", href: '/status' },
+    { title: 'Contact', action: 'Contact Zoiko Sema' , icon:"/press/Frame (18).png", href: '/contact' },
   ];
 
   return (
@@ -77,9 +78,10 @@ export default function ResourcesAndInquiryHub() {
         {/* Resources Grid Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {resourceCards.map((card, idx) => (
-            <div 
+            <Link 
               key={idx}
-              className="group bg-white dark:bg-gray-900 border border-slate-200/80 dark:border-gray-800 p-5 rounded-xl shadow-[0px_1px_3px_rgba(16,22,60,0.02)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md hover:border-blue-500/40 dark:hover:border-blue-400/40"
+              href={card.href}
+              className="group bg-white dark:bg-gray-900 border border-slate-200/80 dark:border-gray-800 p-5 rounded-xl shadow-[0px_1px_3px_rgba(16,22,60,0.02)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-md hover:border-blue-500/40 dark:hover:border-blue-400/40 block"
             >
               {/* Box Structural Icon Layout */}
               <div className="size-9 bg-slate-50 dark:bg-gray-950 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:bg-blue-50 dark:group-hover:bg-blue-950/40 transition-colors mb-4">
@@ -92,12 +94,12 @@ export default function ResourcesAndInquiryHub() {
                 <h4 className="text-sm font-bold font-['Plus_Jakarta_Sans'] text-slate-900 dark:text-white">
                   {card.title}
                 </h4>
-                <button className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 dark:text-blue-400 focus:outline-none">
+                <div className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 dark:text-blue-400">
                   <span className="group-hover:underline">{card.action}</span>
                   <span className="transform transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-                </button>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>

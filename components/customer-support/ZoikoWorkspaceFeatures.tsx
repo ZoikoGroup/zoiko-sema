@@ -167,10 +167,11 @@ function EscalationSection() {
           </div>
 
           {/* Core Action Button Trigger */}
+          <a href="https://meet.zoikosema.com/">
           <button className="h-12 px-7 bg-blue-600 hover:bg-blue-500 rounded-full shadow-[0px_2px_12px_0px_rgba(52,87,232,0.35)] flex justify-center items-center gap-2 font-bold  text-sm transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-98">
             View escalation flow
             <ArrowRight className="size-4" />
-          </button>
+          </button></a>
         </div>
 
         {/* Right Graphical Dashboard Simulation Block */}

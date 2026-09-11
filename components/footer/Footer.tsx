@@ -297,7 +297,7 @@ export default function Footer() {
                   { label: "Team Decision Tracking", href: "/team-decision-tracking" },
                   { label: "Remote Coordination", href: "/remote-coordination" },
                   { label: "Project Collaboration", href: "/project-collaboration" },
-                  { label: "Personal-to-Team", href: "/personal-to-team" },
+                  { label: "Personal-to-Team", href: "/Personal-to-team" },
                 ]}
               />
 
@@ -338,7 +338,7 @@ export default function Footer() {
                   { label: "Blog", href: "/blog" },
                   { label: "Help Center", href: "/help-center" },
                   { label: "Customer Stories", href: "/customer-stories" },
-                  { label: "Product Updates", href: "/product-updates" },
+                  { label: "Product Updates", href: "/product-update" },
                   { label: "Developer Docs", href: "/developer-docs" },
                   { label: "System Status", href: "/status" },
                   { label: "Trust Center", href: "/trust-center" },

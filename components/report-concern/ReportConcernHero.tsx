@@ -65,12 +65,13 @@ export default function ReportConcernHero() {
 
           {/* Interactive Button Group */}
           <div className="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
+            <a href="#report-concern">
             <button 
               type="button"
               className="w-full sm:w-auto text-center bg-white hover:bg-slate-100 text-slate-900 text-base font-semibold px-8 py-3.5 rounded-full transition-all duration-300 shadow-md hover:-translate-y-0.5 active:translate-y-0"
             >
               Report a Concern
-            </button>
+            </button></a>
             <a
               href="/contact"
               className="w-full sm:w-auto text-center bg-blue-600 hover:bg-blue-500 text-white text-base font-semibold px-8 py-3.5 rounded-full transition-all duration-300 shadow-md hover:shadow-blue-500/20 hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center justify-center"

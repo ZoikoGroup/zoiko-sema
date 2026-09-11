@@ -122,7 +122,7 @@ export default function TeamCollaborationHero() {
 
               {/* Secondary Option Action */}
               <a
-                href="/start"
+                href="/start-free"
                 className="px-6 py-3.5 bg-white/5 hover:bg-white/10 rounded-xl font-semibold text-base border border-white/20 hover:border-white/40 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
                 Start free

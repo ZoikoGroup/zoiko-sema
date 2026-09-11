@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import React from "react";
 import { SharedStyles } from "@/components/Personal-to-team/SharedStyles";
 import { PersonalToTeamHeroSection } from "@/components/Personal-to-team/PersonalToTeamHeroSection";
@@ -11,6 +12,12 @@ import { IntegrationsEcosystemSection } from "@/components/Personal-to-team/Inte
 import { TestimonialStatsSection } from "@/components/Personal-to-team/TestimonialStatsSection";
 import { FAQSection } from "@/components/Personal-to-team/FAQSection";
 import { CTASection } from "@/components/Personal-to-team/CTASection";
+
+export const metadata: Metadata = {
+  title: "Personal-to-Team Collaboration | Zoiko Sema",
+  description:
+    "Zoiko Sema connects personal work with team collaboration, making it easy to share tasks, files, context, and handoffs securely across teams.",
+};
 
 export default function PersonalToTeamRoute() {
   return (

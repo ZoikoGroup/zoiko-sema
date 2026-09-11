@@ -131,12 +131,14 @@ export function ProductShowcaseSection() {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
+          <a href="/product-overview">
           <button className="px-6 py-3 bg-white rounded-full text-slate-900 text-sm font-bold hover:bg-gray-100 transition-colors">
             View product tour
-          </button>
+          </button></a>
+          <a href="/get-a-demo">
           <button className="px-4 py-3 border-b border-white/40 text-white text-sm font-bold hover:border-white transition-colors">
             Get a demo
-          </button>
+          </button></a>
         </div>
 
       </div>

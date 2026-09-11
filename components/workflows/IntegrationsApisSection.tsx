@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import {
     FiArrowRight,
@@ -217,23 +218,23 @@ export default function IntegrationsApisSection() {
 
                             <div className="mt-8 flex flex-wrap items-center gap-8">
 
-                                <a
-                                    href="#"
+                                <Link
+                                    href="/integration-scalability"
                                     className="inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-[#8A94F8]"
                                 >
                                     View Integrations
 
                                     <FiArrowRight className="ia-arrow h-4 w-4" />
-                                </a>
+                                </Link>
 
-                                <a
-                                    href="#"
+                                <Link
+                                    href="/developer-docs"
                                     className="inline-flex items-center gap-2 text-sm font-semibold text-white transition-colors hover:text-[#8A94F8]"
                                 >
                                     Developer Docs
 
                                     <FiArrowRight className="ia-arrow h-4 w-4" />
-                                </a>
+                                </Link>
 
                             </div>
 

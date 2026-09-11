@@ -58,9 +58,10 @@ export default function ExternalCollaboration() {
             <button className="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-500 active:bg-blue-700 active:scale-95 text-white font-bold text-sm rounded-full transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-blue-600/20">
               Talk to sales
             </button></a>
+            <a href="https://meet.zoikosema.com/">
             <button className="px-2 py-1 text-white font-bold text-sm border-b border-white/20 hover:border-white transition-colors duration-200 transform active:scale-95 whitespace-nowrap">
               See guest controls
-            </button>
+            </button></a>
           </div>
         </div>
 

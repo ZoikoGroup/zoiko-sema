@@ -37,10 +37,12 @@ export default function RetailHero() {
             retail location.
           </p>
 
+       
           <div className="pt-2">
+             <a href="/products">
             <button className="bg-[#000000] hover:bg-slate-900 text-white font-bold text-sm px-7 py-4 rounded-xl transition-all shadow-md">
               Explore the Hub
-            </button>
+            </button></a>
           </div>
         </div>
 

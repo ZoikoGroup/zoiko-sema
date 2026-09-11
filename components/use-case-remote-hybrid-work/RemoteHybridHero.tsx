@@ -42,7 +42,7 @@ export default function RemoteHybridHero() {
 
           <div className="fade-up delay-2 mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="/get-a-demo"
+              href="https://meet.zoikosema.com/"
               className="rounded-full bg-[#5B5FEF] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#4B4FE0]"
             >
               Launch Remote Hub
