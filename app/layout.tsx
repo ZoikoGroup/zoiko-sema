@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   title: "Zoiko Sema | AI Communication for Verified Work",
   description:
     "Zoiko Sema turns conversations into accountable work with secure messaging, video meetings, AI summaries, and ZoikoTime workforce truth for serious teams.",
+  verification: {
+    google: "1240l0gxTMKux_pFWRJ_orBzM5aK2kil_wLkFBdpiXo",
+  },
 };
 
 export default function RootLayout({
