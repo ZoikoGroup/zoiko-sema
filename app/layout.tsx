@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import SemaGuideWidget from "@/components/chatbot/SemaGuideWidget";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -423,6 +424,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <SemaGuideWidget />
       </body>
     </html>
   );
