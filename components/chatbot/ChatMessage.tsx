@@ -2,7 +2,7 @@
 
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Sparkles } from "lucide-react";
 import type { ChatTurn } from "@/lib/semaGuideApi";
 
 interface AnswerAction {
@@ -50,8 +50,10 @@ export default function ChatMessage({ turn, verified, sources }: {
   return (
     <div className="flex max-w-[90%] flex-col gap-1.5 self-start">
       <div className="flex items-center gap-2">
+        {/* Same avatar treatment as the real in-product AiMessage.jsx —
+            a Sparkles icon in an accent gradient circle, not a letter. */}
         <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#5B4CE6] to-[#3F63F2] text-white">
-          <span className="text-[11px] font-bold">S</span>
+          <Sparkles className="h-3.5 w-3.5" />
         </span>
         <span className="text-[11px] text-[#6B7280]">Sema Guide</span>
       </div>

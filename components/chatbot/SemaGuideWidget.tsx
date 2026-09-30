@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import { MessageCircle, X, MoreVertical } from "lucide-react";
+import { ArrowUp, X, MoreVertical } from "lucide-react";
 import ChatMessage from "./ChatMessage";
 import { starterPromptsForPath, isChatExcludedOnPath } from "./starterPrompts";
 import { sendPublicChatMessage, type ChatTurn, type ChatSource } from "@/lib/semaGuideApi";
@@ -85,18 +85,23 @@ export default function SemaGuideWidget() {
 
   return (
     <>
-      {/* Launcher — 60x60, bottom-6/right-6 (24px), matching the in-product
-          Sema Guide launcher's real values exactly (client/src/components/
-          SemaGuideToggle.jsx + features/sema-guide/styles.css), not the
-          wireframe's own recommended 56x56 (existing values win per the
-          spec's own instruction). */}
+      {/* Launcher — copied exactly from the real in-product launcher
+          (client/src/components/SemaGuideToggle.jsx + features/sema-guide/
+          styles.css .sg-launcher-inner): a white 60x60/18px-radius surface
+          with a soft elevation shadow, not a colored button — it's the
+          icon asset that carries the brand, not a background fill. */}
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? "Close Sema Guide" : "Open Sema Guide"}
-        className="fixed bottom-6 right-6 z-40 grid h-[60px] w-[60px] place-items-center rounded-[18px] bg-gradient-to-br from-[#5B4CE6] to-[#3F63F2] text-white shadow-[0_8px_24px_rgba(63,99,242,0.35)] transition-transform hover:scale-105 active:scale-95"
+        className="fixed bottom-6 right-6 z-40 grid h-[60px] w-[60px] place-items-center rounded-[18px] border border-[rgba(15,23,42,0.06)] bg-white shadow-[0_4px_10px_rgba(15,23,42,0.08),0_12px_28px_rgba(15,23,42,0.14)] transition-transform hover:scale-105 active:scale-95"
       >
-        {open ? <X className="h-6 w-6" /> : <MessageCircle className="h-7 w-7" />}
+        {open ? (
+          <X className="h-6 w-6 text-[#6B7280]" />
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element -- fixed 34x34 UI chrome, not content; next/image's overhead isn't warranted here.
+          <img src="/sema-guide-icon.svg" alt="" width={34} height={34} />
+        )}
       </button>
 
       {open && (
@@ -116,11 +121,17 @@ export default function SemaGuideWidget() {
             className="fixed inset-0 z-50 flex flex-col overflow-hidden bg-white sm:inset-auto sm:bottom-6 sm:right-6 sm:h-[560px] sm:max-h-[720px] sm:w-[420px] sm:rounded-[22px] sm:border sm:border-[#E5E8F0] sm:shadow-[0_10px_40px_rgba(0,0,0,0.12)]"
             style={{ height: "100dvh" }}
           >
-            {/* Header */}
+            {/* Header — same logo image and 60px height as the real
+                in-product header (GuideHeader.jsx uses /email-logo.png at
+                the same spot). The "Public Zoiko Sema assistant" line below
+                it is the one deliberate addition the wireframe requires for
+                this anonymous surface (there's no equivalent in-product,
+                since that context is already known to be authenticated). */}
             <div className="flex h-[60px] shrink-0 items-center justify-between border-b border-[#F0F1F5] px-4">
-              <div>
-                <div className="text-[14px] font-bold text-[#111827]">Sema Guide</div>
-                <div className="text-[11px] text-[#6B7280]">Public Zoiko Sema assistant</div>
+              <div className="flex flex-col justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element -- fixed-size brand mark, not content */}
+                <img src="/sema-guide-logo.png" alt="ZoikoSema" height={22} className="w-auto" />
+                <div className="mt-0.5 text-[11px] text-[#6B7280]">Public Zoiko Sema assistant</div>
               </div>
               <div className="flex items-center gap-1">
                 <button
@@ -231,7 +242,7 @@ export default function SemaGuideWidget() {
                   className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-white transition disabled:cursor-not-allowed disabled:bg-[#D9DCE5] disabled:text-[#9CA3AF]"
                   style={{ backgroundColor: input.trim() && !loading ? "#5B4CE6" : undefined }}
                 >
-                  <MessageCircle className="h-5 w-5" />
+                  <ArrowUp className="h-5 w-5" strokeWidth={2.5} />
                 </button>
               </div>
               <p className="mt-2 flex items-center justify-between text-[10.5px] leading-tight text-[#9CA3AF]">
