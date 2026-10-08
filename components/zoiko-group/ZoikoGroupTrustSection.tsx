@@ -55,7 +55,7 @@ const cards: TrustCard[] = [
     description:
       "Service availability, incidents, maintenance, and update history.",
     action: "View Status",
-    href: "/system-status",
+    href: "/status",
   },
 ];
 

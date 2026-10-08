@@ -30,31 +30,31 @@ const useCases = [
     title: "Find meeting outcomes",
     desc: "Search for decisions, owners, and next steps after meetings.",
     linkLabel: "Explore Meetings",
-    href: "/sema/meetings",
+    href: "/ai-meetings",
   },
   {
     title: "Recover client context",
     desc: "Find client discussions across calls, mail, files, and spaces.",
     linkLabel: "Explore Client Workflows",
-    href: "/sema/client-workflows",
+    href: "/freelancer-workflows",
   },
   {
     title: "Search project history",
     desc: "Locate project updates, files, blockers, and resolved issues.",
     linkLabel: "Explore Channels & Spaces",
-    href: "/sema/channels-spaces",
+    href: "/channels-spaces",
   },
   {
     title: "Find follow-ups",
     desc: "Search action items assigned across meetings, messages, and mail.",
     linkLabel: "Explore Sema AI",
-    href: "/sema/ai",
+    href: "/sema-ai",
   },
   {
     title: "Support governed review",
     desc: "Help authorized admins and managers find permitted records without overexposure.",
     linkLabel: "Explore Admin Console",
-    href: "/sema/admin-console",
+    href: "/admin-console",
   },
 ];
 

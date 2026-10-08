@@ -86,19 +86,19 @@ export default function SearchFinalCtaSection() {
 
             <div className="flex flex-wrap items-center justify-center gap-3 mb-5">
               <a
-                href="/sema/start-free"
+                href="/start-free"
                 className="sfc-btn-primary inline-flex items-center justify-center rounded-full bg-white text-gray-900 text-[13.5px] font-semibold px-6 py-2.5"
               >
                 Start Free
               </a>
               <a
-                href="/sema/contact-sales"
+                href="/contact-sales"
                 className="sfc-btn-outline inline-flex items-center justify-center rounded-full bg-transparent text-white text-[13.5px] font-semibold px-6 py-2.5 border border-white/25"
               >
                 Contact Sales
               </a>
               <a
-                href="/sema/ai"
+                href="/sema-ai"
                 className="sfc-btn-outline inline-flex items-center justify-center rounded-full bg-transparent text-white text-[13.5px] font-semibold px-6 py-2.5 border border-white/25"
               >
                 Explore Sema AI

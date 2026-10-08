@@ -48,7 +48,7 @@ const capabilities = [
     description:
       "Workspace health, adoption milestones, and retention signals — without content surveillance.",
     icon: BarChart3,
-    href: "/insights",
+    href: "/insights-analytics",
     cta: "View analytics",
   },
 ];

@@ -86,7 +86,7 @@ const sections: Section[] = [
     infoBox: {
       text: "Full AI governance rules are documented separately.",
       linkText: "Read AI Use Policy",
-      linkHref: "/ai-use-poilicy",
+      linkHref: "/ai-use-policy",
     },
   },
   {
@@ -119,7 +119,7 @@ const sections: Section[] = [
     ],
     infoBox: {
       linkText: "Report Abuse — routes to the Trust & Safety reporting form.",
-      linkHref: "/report-abuse",
+      linkHref: "/report-concern",
       fullLink: true,
     },
   },

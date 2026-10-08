@@ -14,7 +14,7 @@ interface FitLink {
 
 const links: FitLink[] = [
   { icon: Shield, label: "Trust Center & Security Policy", href: "/trust-center" },
-  { icon: Activity, label: "System Status", href: "/system-status" },
+  { icon: Activity, label: "System Status", href: "/status" },
   { icon: LayoutGrid, label: "Admin Console & DPA", href: "/admin-console" },
 ];
 

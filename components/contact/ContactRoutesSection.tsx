@@ -44,7 +44,7 @@ const routes = [
     title: "Customer support",
     desc: "Get help with product issues, account questions, workspace settings, and troubleshooting.",
     linkLabel: "Get Support",
-    href: "/contact-support",
+    href: "/customer-support",
     iconBg: "bg-emerald-600",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

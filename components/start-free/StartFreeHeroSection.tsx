@@ -553,7 +553,7 @@ export default function StartFreeHeroSection() {
                     {/* Fine print */}
                     <p className="text-[11px] text-center leading-relaxed text-gray-400">
                       No card required · Cancel anytime · By continuing, you agree to the{" "}
-                      <Link href="/terms" className="sf-link text-[#474787] font-medium">
+                      <Link href="/terms-of-service" className="sf-link text-[#474787] font-medium">
                         Terms of Service
                       </Link>
                       ,{" "}
