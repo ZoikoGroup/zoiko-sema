@@ -13,7 +13,7 @@ const resources: ResourceLink[] = [
   {
     title: "How Sema and ZoikoTime work together",
     desc: "What the integration covers, how it's governed, and where boundaries sit.",
-    href: "/resources/sema-zoikotime-integration",
+    href: "/sema-zoikotime",
   },
   {
     title: "What governed communication context means",

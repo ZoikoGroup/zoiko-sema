@@ -14,7 +14,7 @@ const solutions = [
     title: "Teams",
     desc: "Channels, spaces, calls, meetings, and AI summaries for teams and small businesses.",
     cta: "View Teams",
-    href: "/solutions/teams",
+    href: "/team-collaboration",
   },
   {
     title: "Businesses",
@@ -26,7 +26,7 @@ const solutions = [
     title: "Freelancers & Consultants",
     desc: "Client-ready messaging, simple setup, dependable call quality and history.",
     cta: "Try Freelancer",
-    href: "/solutions/freelancers",
+    href: "/freelancer-workflows",
   },
   {
     title: "Negotiated Teams",

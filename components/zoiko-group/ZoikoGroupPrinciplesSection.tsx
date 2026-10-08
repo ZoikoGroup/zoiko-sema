@@ -42,7 +42,7 @@ const principles: Principle[] = [
     description:
       "Service transparency and operational status should be easy to find.",
     action: "System Status",
-    href: "/system-status",
+    href: "/status",
   },
   {
     icon: MessageCircle,
