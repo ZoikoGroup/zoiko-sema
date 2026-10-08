@@ -117,7 +117,7 @@ export default function ContactHeroSection() {
                   Contact Sales
                 </a>
                 <a
-                  href="/get-support"
+                  href="/customer-support"
                   className="chs-btn-secondary inline-flex items-center justify-center rounded-full bg-white text-gray-900 text-[13.5px] font-semibold px-6 py-3"
                 >
                   Get Support

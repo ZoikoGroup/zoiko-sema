@@ -79,7 +79,7 @@ const routes: RouteCard[] = [
     primaryAction: "Help Center",
     secondaryAction: "System Status",
     link:"/help-center",
-    linksec:"/system-status"
+    linksec:"/status"
   },
 ];
 
