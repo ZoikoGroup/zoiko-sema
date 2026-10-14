@@ -1,9 +1,42 @@
 "use client";
 
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { CheckCircle2, Sparkles } from "lucide-react";
 import type { ChatTurn } from "@/lib/semaGuideApi";
+
+// Answers often include GFM tables (e.g. plan comparisons) far wider than the
+// 420px panel. Unstyled, they stretched the bubble and made the whole
+// conversation scroll sideways; each table now scrolls inside its own box.
+const markdownComponents: Components = {
+  p: ({ children }) => <p className="my-2 first:mt-0 last:mb-0">{children}</p>,
+  h1: ({ children }) => <h3 className="mb-1.5 mt-3 text-[15px] font-bold first:mt-0">{children}</h3>,
+  h2: ({ children }) => <h3 className="mb-1.5 mt-3 text-[15px] font-bold first:mt-0">{children}</h3>,
+  h3: ({ children }) => <h4 className="mb-1 mt-3 text-[14px] font-semibold first:mt-0">{children}</h4>,
+  h4: ({ children }) => <h4 className="mb-1 mt-3 text-[14px] font-semibold first:mt-0">{children}</h4>,
+  ul: ({ children }) => <ul className="my-2 list-disc space-y-1 pl-5 first:mt-0 last:mb-0">{children}</ul>,
+  ol: ({ children }) => <ol className="my-2 list-decimal space-y-1 pl-5 first:mt-0 last:mb-0">{children}</ol>,
+  li: ({ children }) => <li className="pl-0.5">{children}</li>,
+  strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+  a: ({ href, children }) => (
+    <a href={href} className="font-medium text-[#3F63F2] underline underline-offset-2">{children}</a>
+  ),
+  code: ({ children }) => <code className="rounded bg-[#F3F4F6] px-1 py-0.5 text-[12.5px]">{children}</code>,
+  hr: () => <hr className="my-3 border-[#E5E8F0]" />,
+  table: ({ children }) => (
+    <div className="my-2 max-w-full overflow-x-auto rounded-lg border border-[#E5E8F0] first:mt-0 last:mb-0">
+      <table className="w-full border-collapse text-left text-[12.5px] leading-snug">{children}</table>
+    </div>
+  ),
+  thead: ({ children }) => <thead className="bg-[#F5F7FC]">{children}</thead>,
+  th: ({ children }) => (
+    <th className="min-w-[96px] whitespace-nowrap border-b border-[#E5E8F0] px-2.5 py-2 align-bottom font-semibold">{children}</th>
+  ),
+  td: ({ children }) => (
+    <td className="min-w-[96px] border-b border-[#E5E8F0] px-2.5 py-2 align-top">{children}</td>
+  ),
+  tr: ({ children }) => <tr className="last:[&>td]:border-b-0">{children}</tr>,
+};
 
 interface AnswerAction {
   label: string;
@@ -48,7 +81,7 @@ export default function ChatMessage({ turn, verified, sources }: {
   const source = sources?.[0];
 
   return (
-    <div className="flex max-w-[90%] flex-col gap-1.5 self-start">
+    <div className="flex min-w-0 max-w-[90%] flex-col gap-1.5 self-start">
       <div className="flex items-center gap-2">
         {/* Same avatar treatment as the real in-product AiMessage.jsx —
             a Sparkles icon in an accent gradient circle, not a letter. */}
@@ -59,8 +92,8 @@ export default function ChatMessage({ turn, verified, sources }: {
       </div>
 
       <div className="min-w-0 rounded-2xl rounded-tl-sm border border-[#E5E8F0] bg-white px-4 py-3 text-[14px] leading-relaxed text-[#111827] break-words">
-        <div className="sg-markdown">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{turn.content}</ReactMarkdown>
+        <div className="sg-markdown min-w-0">
+          <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>{turn.content}</ReactMarkdown>
         </div>
       </div>
 
