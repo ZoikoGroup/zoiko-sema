@@ -63,7 +63,6 @@ function CountUp({
 
   useEffect(() => {
     if (!start) return;
-    let timeoutId: ReturnType<typeof setTimeout>;
 
     const run = () => {
       const startTime = performance.now();
@@ -82,7 +81,7 @@ function CountUp({
       rafRef.current = requestAnimationFrame(tick);
     };
 
-    timeoutId = setTimeout(run, delay);
+    const timeoutId = setTimeout(run, delay);
     return () => {
       clearTimeout(timeoutId);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);

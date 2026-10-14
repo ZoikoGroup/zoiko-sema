@@ -8,7 +8,7 @@ export const metadata = {
 
 import { DeploymentCommandCenter, EnterpriseDeploymentSection, EnterpriseIntegrationsSection, Finalsection, IdentityProvisioning, RolloutJourneyTimeline } from "@/components/enterprise";
 
-export default function(){
+export default function EnterprisePage(){
     return(
         <main>
             <EnterpriseDeploymentSection/>
