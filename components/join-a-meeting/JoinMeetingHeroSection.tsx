@@ -210,9 +210,8 @@ export default function JoinMeetingHeroSection() {
                 const Icon = item.icon;
 
                 return (
-                  <a href={item.href}>
+                  <a href={item.href} key={item.title}>
                   <button
-                    key={item.title}
                     type="button"
                     style={{
                       animationDelay: `${0.15 + index * 0.08}s`,

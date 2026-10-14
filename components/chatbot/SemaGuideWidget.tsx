@@ -169,7 +169,7 @@ export default function SemaGuideWidget() {
             )}
 
             {/* Conversation area */}
-            <div className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto px-4 py-4">
+            <div className="flex min-h-0 flex-1 flex-col gap-3 overflow-y-auto overflow-x-hidden px-4 py-4">
               {messages.length === 0 && !loading ? (
                 <div className="flex flex-col gap-4">
                   <div className="rounded-2xl bg-[#F5F7FC] p-5">

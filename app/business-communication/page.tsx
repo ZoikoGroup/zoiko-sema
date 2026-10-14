@@ -7,7 +7,7 @@ export const metadata = {
 
 
 import { BusinessAdministration, CommunicationHealthSection, ExternalCollaboration, FAQSection, GovernedAISection, HeroSection, IntegrationsSection, OnboardingRhythmSection, ProductShowcase, SemaProductSuite, TeamsMovementSection, WorkspaceOrganization, WorkspaceWorkflows, ZoikoTimeIntegration } from "@/components/business-communication";
-export default function(){
+export default function BusinessCommunicationPage(){
     return(
         <main>
             <HeroSection/>

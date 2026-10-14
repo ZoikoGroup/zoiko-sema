@@ -93,7 +93,14 @@ export function ComplianceControlMapSection() {
   );
 }
 
-function DomainCard({ domain }: { domain: any }) {
+type ComplianceDomain = {
+  title: string;
+  description: string;
+  iconBg: string;
+  image: string;
+};
+
+function DomainCard({ domain }: { domain: ComplianceDomain }) {
   return (
     <div className="bg-gray-50 rounded-2xl overflow-hidden border border-violet-100 flex flex-col h-[200px] shadow-sm relative z-20 hover:shadow-md transition-shadow">
       <div className="h-28 w-full relative bg-gray-100">
