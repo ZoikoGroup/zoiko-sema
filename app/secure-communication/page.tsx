@@ -7,7 +7,7 @@ export const metadata = {
 
 import { SecureCommunicationPage } from "@/components/secure-communication";
 
-export default function(){
+export default function SecureCommunicationRoutePage(){
     return(
         <main>
             <SecureCommunicationPage/>
