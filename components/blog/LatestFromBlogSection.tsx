@@ -44,7 +44,7 @@ export default function LatestFromBlogSection() {
           <h2 className="text-2xl font-bold text-gray-900 sm:text-[28px]">
             Latest from the Blog
           </h2>
-          <a href="#" className="text-sm font-semibold text-[#3B5BFF] hover:text-[#2E47D9]">
+          <a href="/blog/archive" className="text-sm font-semibold text-[#3B5BFF] hover:text-[#2E47D9]">
             View all posts
           </a>
         </div>
