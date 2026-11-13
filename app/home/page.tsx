@@ -7,8 +7,9 @@ import {
   EveryConversationInContextSection,
   StartWithOneConversationSection,
   BusinessAdoptionSection,
-  TestimonialCarouselSection, 
+  TestimonialCarouselSection,
  } from "@/components/home";
+import BlackFridayPopup from "@/components/black-friday/BlackFridayPopup";
 
 export default function HomePage() {
   return (
@@ -22,8 +23,9 @@ export default function HomePage() {
         <EveryConversationInContextSection />
         <StartWithOneConversationSection />
         <BusinessAdoptionSection />
-        <TestimonialCarouselSection />        
+        <TestimonialCarouselSection />
       </div>
+      <BlackFridayPopup />
     </main>
   );
 }
