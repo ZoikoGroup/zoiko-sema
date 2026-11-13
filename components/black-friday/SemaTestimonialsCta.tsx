@@ -33,7 +33,7 @@ const TESTIMONIALS = [
 
 const STARS = [0, 1, 2, 3, 4] as const;
 
-const COUNTDOWN_TARGET = "2026-11-30T23:59:59";
+export const COUNTDOWN_TARGET = "2026-11-30T23:59:59";
 
 const RING_TEXT = "BLACK FRIDAY OFFER · BLACK FRIDAY OFFER · ";
 
@@ -97,7 +97,7 @@ function SaveBadge({ ringId }: { ringId: string }) {
   );
 }
 
-function useCountdown(target: string) {
+export function useCountdown(target: string) {
   const [time, setTime] = useState({ days: 0, hrs: 0, min: 0, sec: 0 });
 
   useEffect(() => {
