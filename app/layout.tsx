@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import SemaGuideWidget from "@/components/chatbot/SemaGuideWidget";
-import BlackFridayPopup from "@/components/black-friday/BlackFridayPopup";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -426,7 +425,6 @@ export default function RootLayout({
         </main>
         <Footer />
         <SemaGuideWidget />
-        <BlackFridayPopup />
       </body>
     </html>
   );

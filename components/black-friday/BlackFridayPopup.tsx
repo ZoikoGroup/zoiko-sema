@@ -2,12 +2,10 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { ArrowRight, Diamond, X, Zap } from "lucide-react";
 import { COUNTDOWN_TARGET, useCountdown } from "./SemaTestimonialsCta";
 
 const OFFER_PATH = "/black-friday";
-const DISMISSED_KEY = "zs-bf-popup-dismissed-2026";
 const OPEN_DELAY_MS = 1200;
 const CLOSE_ANIMATION_MS = 250;
 
@@ -19,22 +17,6 @@ const DEALS = [
 ] as const;
 
 const pad = (n: number) => String(n).padStart(2, "0");
-
-function wasDismissed() {
-  try {
-    return sessionStorage.getItem(DISMISSED_KEY) === "1";
-  } catch {
-    return false;
-  }
-}
-
-function rememberDismissed() {
-  try {
-    sessionStorage.setItem(DISMISSED_KEY, "1");
-  } catch {
-    // Storage blocked (private mode etc.) — the popup may show again, which is fine.
-  }
-}
 
 function SpinningSaveBadge() {
   return (
@@ -97,28 +79,28 @@ function OfferCountdown() {
   );
 }
 
+/**
+ * Rendered by the home page only, so it opens on every home-page load
+ * (each visit remounts it) and never on other pages.
+ */
 export default function BlackFridayPopup() {
-  const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
   const dialogRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLAnchorElement>(null);
 
-  // Decide whether to open: once per session, never on the offer page, never after the offer ends.
+  // Open shortly after load, unless the offer has already ended.
   useEffect(() => {
-    if (pathname?.startsWith(OFFER_PATH)) return;
     if (Date.now() > new Date(COUNTDOWN_TARGET).getTime()) return;
-    if (wasDismissed()) return;
 
     const timer = setTimeout(() => {
       setMounted(true);
       requestAnimationFrame(() => setVisible(true));
     }, OPEN_DELAY_MS);
     return () => clearTimeout(timer);
-  }, [pathname]);
+  }, []);
 
   const close = useCallback(() => {
-    rememberDismissed();
     setVisible(false);
     setTimeout(() => setMounted(false), CLOSE_ANIMATION_MS);
   }, []);
