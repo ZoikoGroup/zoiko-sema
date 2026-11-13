@@ -2,8 +2,8 @@ name: Deploy to VM
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -17,19 +17,9 @@ jobs:
           key: ${{ secrets.VM_SSH_PRIVATE_KEY }}
           script: |
             set -e
-            cd ${{ secrets.VM_APP_DIR }}
-            echo "==> Pulling latest changes"
+            cd ~/zoikosema-site/app
             git fetch origin main
             git reset --hard origin/main
-
-            echo "==> Installing dependencies"
-            npm install
-
-            echo "==> Building app"
-            npm run build
-
-            echo "==> Restarting app with PM2"
-            pm2 reload zoiko-sema --update-env || pm2 start npm --name "zoiko-sema" -- start
-            pm2 save
-
-            echo "==> Deployment complete"
+            cd ..
+            docker compose up -d --build
+            docker image prune -f
