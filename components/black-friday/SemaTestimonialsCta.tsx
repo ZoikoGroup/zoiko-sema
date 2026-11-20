@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Star } from "lucide-react";
+import { CalendarDays, Star } from "lucide-react";
+import { OFFER_DATES, OFFER_END } from "./offer";
 
 const TESTIMONIALS = [
   {
@@ -33,7 +34,7 @@ const TESTIMONIALS = [
 
 const STARS = [0, 1, 2, 3, 4] as const;
 
-export const COUNTDOWN_TARGET = "2026-11-30T23:59:59";
+const COUNTDOWN_TARGET = OFFER_END;
 
 const RING_TEXT = "BLACK FRIDAY OFFER · BLACK FRIDAY OFFER · ";
 
@@ -226,7 +227,12 @@ export default function SemaTestimonialsCta() {
                 it&apos;s open.
               </p>
 
-              <ul className="mt-8 flex items-center justify-center gap-3">
+              <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#fbbf24]/50 bg-[#fbbf24]/10 px-4 py-1.5 text-sm font-semibold text-[#fbbf24]">
+                <CalendarDays className="h-4 w-4" aria-hidden="true" />
+                Offer runs {OFFER_DATES}, 2026
+              </p>
+
+              <ul className="mt-6 flex items-center justify-center gap-3">
                 {units.map((unit) => (
                   <li
                     key={unit.label}

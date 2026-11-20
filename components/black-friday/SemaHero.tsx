@@ -20,6 +20,7 @@ import {
   Zap,
   type LucideIcon,
 } from "lucide-react";
+import { OFFER_DATES } from "./offer";
 
 const HEADLINE = [
   { text: "Meet. Message. Call.", accent: false },
@@ -167,7 +168,7 @@ export default function SemaHero() {
                   className="h-3 w-3 sm:h-3.5 sm:w-3.5 fill-[#fbbf24]"
                   aria-hidden="true"
                 />
-                Black Friday 2026 — Limited Time
+                Black Friday 2026 · {OFFER_DATES}
               </span>
               <span className="inline-flex items-center gap-2 rounded-full border border-[#3b5bdb]/50 bg-[#3b5bdb]/10 px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm leading-5 text-[#a9bcff]">
                 <span
