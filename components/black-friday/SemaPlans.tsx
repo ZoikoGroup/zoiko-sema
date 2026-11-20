@@ -9,6 +9,7 @@ import {
   Hash,
   FileText,
 } from "lucide-react";
+import { OFFER_DATES } from "./offer";
 
 const PLANS = [
   {
@@ -182,7 +183,7 @@ export default function SemaPlans() {
               aria-hidden="true"
             />
             <span className="leading-snug">
-              Black Friday: 25% off eligible first-year annual plans*
+              Black Friday ({OFFER_DATES}): 25% off eligible first-year annual plans*
             </span>
           </p>
         </div>

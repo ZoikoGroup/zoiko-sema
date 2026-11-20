@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Diamond, X, Zap } from "lucide-react";
-import { COUNTDOWN_TARGET, useCountdown } from "./SemaTestimonialsCta";
+import { useCountdown } from "./SemaTestimonialsCta";
+import { OFFER_DATES, OFFER_END, OFFER_START } from "./offer";
 
 const OFFER_PATH = "/black-friday";
 const OPEN_DELAY_MS = 1200;
@@ -56,7 +57,7 @@ function SpinningSaveBadge() {
 
 // Separate component so the 1s countdown interval only runs while the popup is open.
 function OfferCountdown() {
-  const { days, hrs, min, sec } = useCountdown(COUNTDOWN_TARGET);
+  const { days, hrs, min, sec } = useCountdown(OFFER_END);
   const units = [
     { label: "Days", value: days },
     { label: "Hrs", value: hrs },
@@ -89,9 +90,10 @@ export default function BlackFridayPopup() {
   const dialogRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLAnchorElement>(null);
 
-  // Open shortly after load, unless the offer has already ended.
+  // Open shortly after load, only while the offer window is live.
   useEffect(() => {
-    if (Date.now() > new Date(COUNTDOWN_TARGET).getTime()) return;
+    const now = Date.now();
+    if (now < new Date(OFFER_START).getTime() || now > new Date(OFFER_END).getTime()) return;
 
     const timer = setTimeout(() => {
       setMounted(true);
@@ -188,7 +190,7 @@ export default function BlackFridayPopup() {
         <div className="relative px-6 pb-6 pt-7 sm:px-8 sm:pb-8">
           <span className="inline-flex items-center gap-2 rounded-full border border-[#fbbf24]/50 bg-[#fbbf24]/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.04em] text-[#fbbf24] sm:text-xs">
             <Diamond className="h-3 w-3 fill-[#fbbf24]" aria-hidden="true" />
-            Black Friday 2026 — Limited Time
+            Black Friday 2026 · {OFFER_DATES}
           </span>
 
           <div className="mt-5 flex items-center justify-between gap-5">
