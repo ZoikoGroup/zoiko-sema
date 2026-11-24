@@ -1,0 +1,9 @@
+export { default as CreatorHeroSection } from "./CreatorHeroSection";
+export { default as WhyPartnerSection } from "./WhyPartnerSection";
+export { default as WhoCanApplySection } from "./WhoCanApplySection";
+export { default as PartnershipModelsSection } from "./PartnershipModelsSection";
+export { default as HowItWorksSection } from "./HowItWorksSection";
+export { default as CreatorApplicationSection } from "./CreatorApplicationSection";
+export { default as ResponsibleMarketingSection } from "./ResponsibleMarketingSection";
+export { default as CreatorFaqSection } from "./CreatorFaqSection";
+export { default as CreatorCtaSection } from "./CreatorCtaSection";
